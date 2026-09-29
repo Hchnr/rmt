@@ -79,7 +79,7 @@ def main():
     dataset_args={'dataset_id':str(data.resolve()),'subset_list':spec['subsets'],'few_shot_num':0}
     if args.benchmark=='live_code_bench':dataset_args['extra_params']={'start_date':spec['start_date'],'end_date':spec['end_date'],'timeout':6,'debug':False}
     config=TaskConfig(model=args.model,model_id=args.model,eval_type='openai_api',api_url=base+'/v1',api_key='EMPTY',
-        datasets=[args.benchmark],dataset_args={args.benchmark:dataset_args},generation_config=generation,
+        model_args=protocol.get('model_args',{}),datasets=[args.benchmark],dataset_args={args.benchmark:dataset_args},generation_config=generation,
         eval_batch_size=4,seed=protocol['seed'],work_dir=str(work),use_cache=str(work),ignore_errors=False)
     provenance={'key':key,'protocol':protocol,'phase':args.phase,'thinking':args.thinking,'metadata':metadata,
         'selection':manifest,'code':code,'commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()}

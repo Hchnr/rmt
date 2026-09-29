@@ -4,6 +4,7 @@ from pathlib import Path
 from rmt.evaluation.prepare import records,digest
 from rmt.evaluation.run import file_hash
 cfg=json.loads(Path('configs/eval/quick_non_thinking.json').read_text())
+cfg['model_args']={'timeout':7200,'max_retries':0}
 cfg['name']='v004_full_non_thinking';cfg['generation']['max_tokens']=32768
 cfg['benchmarks']={k:v for k,v in cfg['benchmarks'].items() if k in ['ifeval','math_500']}
 cfg['deviations']=['Full IFEval and MATH-500 only; other report benchmarks not covered',

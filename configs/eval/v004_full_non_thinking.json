@@ -43,5 +43,9 @@
       ]
     }
   },
-  "pilot_max_tokens": 1024
+  "pilot_max_tokens": 1024,
+  "model_args": {
+    "timeout": 7200,
+    "max_retries": 0
+  }
 }
