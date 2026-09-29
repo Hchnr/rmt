@@ -79,8 +79,9 @@ def test_compiled_outputs_survive_next_invocation_and_weight_update(pair):
     from rmt.experts import project_qkv,project_output
     _,model=pair;model=model.to(device='cuda',dtype=torch.bfloat16).eval()
     bank=model.model.cell.bank;bank.compile_projections()
-    ids=torch.tensor([[7,9,12]],device='cuda')
+    ids=torch.tensor([[7]],device='cuda')
     with torch.inference_mode():
+        for _ in range(3):model(ids,use_cache=False)
         first=model(ids,use_cache=False,output_hidden_states=True)
         snapshots=[x.clone() for x in first.hidden_states]
         logits=first.logits.clone()

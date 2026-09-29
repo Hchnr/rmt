@@ -78,6 +78,12 @@ class BoundExpertBank(nn.Module):
         # Shared functions avoid constructing one compiled graph wrapper per expert.
         self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
         self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
+        prefill_options = {"emulate_precision_casts": True, "pattern_matcher": False}
+        # Arbitrary prompt lengths must not create an unbounded CUDA-graph pool.
+        # Prefill still uses Inductor; replay is reserved for small decode shapes.
+        self._prefill_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options=prefill_options)
+        self._prefill_output = torch.compile(project_output, dynamic=True, fullgraph=True, options=prefill_options)
+        self._prefill_mlp = torch.compile(project_mlp, dynamic=True, fullgraph=True, options=prefill_options)
         self._mlp = torch.compile(project_mlp, dynamic=True, fullgraph=True,
             options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
         self.compiled = True
@@ -91,7 +97,8 @@ class BoundExpertBank(nn.Module):
         if not self.compiled:
             return project_output(expert, attended, residual)
         h = residual + expert.self_attn.o_proj(attended)
-        return h + self._mlp(expert, expert.post_attention_layernorm(h))
+        mlp = self._mlp if h.shape[0] <= 8 else self._prefill_mlp
+        return h + mlp(expert, expert.post_attention_layernorm(h))
 
     def groups(self, indices):
         flat = indices.reshape(-1)
@@ -111,7 +118,8 @@ class BoundExpertBank(nn.Module):
 
     def qkv(self, hidden, groups, uniform_expert=None):
         if uniform_expert is not None:
-            return self._project_qkv(self.experts[uniform_expert], hidden)
+            kernel = self._prefill_qkv if self.compiled and hidden.shape[-2] > 1 else self._project_qkv
+            return kernel(self.experts[uniform_expert], hidden)
         flat = hidden.reshape(-1, hidden.shape[-1])
         outputs = [flat.new_zeros((flat.shape[0], width)) for width in (self.q_width, self.kv_width, self.kv_width)]
         for e, positions in groups:
@@ -123,7 +131,8 @@ class BoundExpertBank(nn.Module):
 
     def output(self, attended, hidden, groups, uniform_expert=None):
         if uniform_expert is not None:
-            return self._project_output(self.experts[uniform_expert], attended, hidden)
+            kernel = self._prefill_output if self.compiled and hidden.shape[-2] > 1 else self._project_output
+            return kernel(self.experts[uniform_expert], attended, hidden)
         flat = hidden.reshape(-1, hidden.shape[-1])
         attn_flat = attended.reshape(-1, attended.shape[-1])
         result = torch.zeros_like(flat)

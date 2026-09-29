@@ -15,6 +15,7 @@ with torch.inference_mode():
   enc=r.tokenizer(prompts,padding=True,return_tensors='pt').to(r.device)
   expected=[];continuation=[]
   for compiled in [False,True]:
+   bank.compiled=compiled
    bank._project_qkv,bank._project_output=fast if compiled else (project_qkv,project_output)
    ids=enc.input_ids;mask=enc.attention_mask;cache=RmtCapacityCache(ids.shape[1]+8)
    for step in range(5):

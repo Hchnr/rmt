@@ -22,7 +22,8 @@
       "triton.cudagraphs": true
     },
     "dynamo_specialize_float": true,
-    "cudagraph_step_boundary": "RmtModel.forward; returned diagnostic hidden states cloned"
+    "cudagraph_step_boundary": "RmtModel.forward; returned diagnostic hidden states cloned",
+    "cuda_graph_policy": "Uniform decode only; mixed MLP groups <=8 tokens; arbitrary prefill lengths compiled without CUDA replay"
   },
   "qwen": {
     "backend": "qwen",
