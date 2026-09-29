@@ -94,3 +94,9 @@ print(tokenizer.batch_decode(result, skip_special_tokens=True))
 ## v0.0.3 推理与评测
 
 新增 recurrence KV cache、默认编译的离线／HTTP 批量推理、Qwen HF 对照，以及使用 EvalScope 的五类固定样本回归。复现命令和边界见 [使用说明](plans/v0.0.3_usage.md)，过程、问题及验收结论见 [实施记录](plans/v0.0.3_infer_eval_record.md)。
+
+## v0.0.4 训练稳定性与真实数据对照
+
+新增确定性正式训练入口、真实指令语料 packing、精确教师 KL、FSDP2、重计算、可选训练 compile、DCP 恢复和 HF 导出。两组真实 4B／128 步候选已通过独立进程精确恢复；短程开放路由没有显示优于固定路径的质量证据。完整 IFEval 为 80.41%，数学全量和独占八卡吞吐仍在收尾。
+
+结果与限制见 [阶段报告](reports/v0.0.4/summary.md)，复现命令见 [使用说明](plans/v0.0.4_usage.md)，持续记录见 [实施记录](plans/v0.0.4_train_stability_record.md)。本轮是训练链路和路由稳定性诊断，未宣称实现 24h 同计算预算超过原 Qwen。
