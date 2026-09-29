@@ -1,0 +1,7 @@
+[
+  {
+    "config": "configs/train/probe_learned_2048.yaml",
+    "report": "reports/v0.0.4/probe_learned_2048.json",
+    "wall_seconds": 107.91336963698268
+  }
+]

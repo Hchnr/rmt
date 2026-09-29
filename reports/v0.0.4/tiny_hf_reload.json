@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "work": "artifacts/v0.0.4/train/tiny_v2",
+  "expected_training_dev_ce": 4.499699115753174,
+  "hf_reload_dev_ce": 4.499699115753174,
+  "absolute_difference": 0.0,
+  "tolerance": 0.005,
+  "routing_mode": "learned",
+  "prior": 3.0,
+  "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+}
