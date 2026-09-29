@@ -27,5 +27,5 @@ for name,location,paper in [('ifeval',a.ifeval,81.2),('math_500',a.math,84.8)]:
   'metadata':provenance['metadata'],'generation':provenance['protocol']['generation']}
 Path('reports/v0.0.4/full_baseline.json').write_text(json.dumps({'results':results,
  'paper':'https://arxiv.org/html/2505.09388v1#S4.T18',
- 'scope':'Entire pinned IFEval and MATH-500 files, report sampling and output cap; prompt/version/RNG parity not guaranteed. Attention backend differs per benchmark and is recorded.'},indent=2)+'\n')
+ 'scope':'Entire pinned IFEval and MATH-500 files, report sampling and output cap; prompt/version/RNG parity not guaranteed. HF SDPA replica topology is recorded; incomplete earlier eager attempts are excluded.'},indent=2)+'\n')
 for name,r in results.items():print(name,r['observed_score_percent'],r['difference_percentage_points'],r['audit']['length_fraction'])
