@@ -95,3 +95,15 @@
 
 - 合并后 15 项单测全部通过，`git ls-files -u` 为空、`git diff --check` 通过。
 - 四卡真实模型已完成 5 步，峰值约 41.4GiB／卡；正在保存和恢复验证。报告索引与下一阶段建议已写入 `reports/bootstrap/README.md`。
+
+
+### v0.0.2 最终交接
+
+- **代码冲突已解决并提交**：merge commit `3dd87b2`；GPU 范围始终以最新授权为准，目前默认／允许物理 GPU 0–3。
+- **B0–B5 本版验收完成**：资产完整指纹、15 项单测、真实 4B BF16 零误差等价、混合路由／packing／cache／EOS、HF 独立进程重载、两卡四项组合 20 步、分布式全局 batch 梯度对照、八卡 4B 5 步及同进程恢复均通过。
+- 四卡 4B 完成 5 步和同进程恢复；随后退出进程，重新 torchrun 恢复，下一步 loss = 24.785930633544922，与保存前参考一致，每个 rank 全部参数 SHA-256 一致。最终报告：`reports/bootstrap/qwen3_4b_four_gpu_fresh_resume.json`。
+- 更新后的 HF 源码已重新通过独立进程重载／生成检查；推理产物：`artifacts/bootstrap/rmt-bound-4b`。此 checkpoint 是严格迁移的 layer_order 基线，不是质量提升模型。
+- 八卡独立进程恢复属于追加检查，因授权变化中止，保留 `interrupted` 状态；四卡独立进程恢复补足真实规模重启验证，没有把八卡未完成项伪记通过。
+- 当前训练 smoke checkpoint 支持同配置、同 world size 的精确重启验收；变更 world size 的恢复／数据重分片没有验证。当前 mask、dispatch、compile 范围和生产性能限制详见 README。
+- 完整复现命令见仓库 README；报告索引与下一阶段建议见 `reports/bootstrap/README.md`。本次没有运行正式评测或 24h 质量实验，也没有声称超过 Qwen3-4B。
+- 下一阶段优先解决路由开放的训练稳定性，并使用真实序列长度做吞吐和原 Qwen 对照，再确定正式蒸馏语料及公平质量评测。当前数步内快速移除原层先验的日程只用于压力测试，不建议直接用于正式训练。

@@ -16,7 +16,7 @@
 | `qwen3_4b_integration.json` | 已授权窗口内的八卡 4B，5 步及同进程恢复 |
 | `qwen3_4b_integration_fresh_resume.json` | 八卡独立进程恢复因授权缩至前四卡而中止；不是通过结果 |
 
-后续四卡报告使用 `qwen3_4b_four_gpu*` 名称，保留八卡历史结果。checkpoint 路径均与配置对应。
+四卡 `qwen3_4b_four_gpu.json` 已通过 5 步及同进程恢复；`qwen3_4b_four_gpu_fresh_resume.json` 已通过独立进程恢复，下一步 loss 和每个 rank 全部参数 SHA-256 相同。热步约 67–88 input tokens/s，训练峰值约 41.4GiB／卡。checkpoint 路径均与配置对应，八卡历史结果保留。
 
 ## 性能读法
 
