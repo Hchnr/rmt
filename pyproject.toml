@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bound-rmt"
+version = "0.0.2"
+description = "Recurrent Qwen3 with bound, token-routed transformer experts"
+requires-python = ">=3.11,<3.14"
+dependencies = ["torch==2.7.1", "transformers==4.51.3", "safetensors>=0.5", "PyYAML>=6", "accelerate>=1.6,<2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
