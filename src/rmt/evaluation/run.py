@@ -47,6 +47,7 @@ def main():
     metadata['weights']=model_fingerprint(metadata['model'])
     code={str(p):file_hash(p) for p in sorted(Path('src/rmt').rglob('*.py'))}
     generation=protocol['generation'].copy()
+    if args.phase=='pilot':generation['max_tokens']=protocol.get('pilot_max_tokens',generation['max_tokens'])
     if args.thinking:generation={**generation,'extra_body':{'chat_template_kwargs':{'enable_thinking':True}}}
     key=digest({'model':metadata,'selection':manifest,'generation':generation,'code':code,'evalscope':'1.0.0'})
     work=Path('artifacts/v0.0.3/eval')/args.phase/args.model/args.benchmark/key[:16]

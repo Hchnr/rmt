@@ -8,7 +8,7 @@
     "top_p": 0.8,
     "top_k": 20,
     "presence_penalty": 1.5,
-    "max_tokens": 1024,
+    "max_tokens": 2048,
     "seed": 17,
     "extra_body": {
       "chat_template_kwargs": {
@@ -18,7 +18,7 @@
   },
   "deviations": [
     "32 deterministic stratified/random samples, not full datasets",
-    "1024 output tokens instead of report 32768",
+    "2048 formal output tokens (pilot 1024) instead of report 32768",
     "EvalScope 1.0.0 adapters, not a verified paper prompt reproduction",
     "C-Eval zero-shot, overriding adapter default five-shot",
     "MMLU-Redux 2.0 snapshot; paper exact revision unspecified",
@@ -80,5 +80,6 @@
       "file_size": 557699297,
       "file_sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
     }
-  }
+  },
+  "pilot_max_tokens": 1024
 }

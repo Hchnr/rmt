@@ -13,7 +13,7 @@ from ..runtime import write_report,versions
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--model',default='artifacts/bootstrap/rmt-bound-4b')
-    p.add_argument('--output',default='reports/v0.0.3/performance.json');p.add_argument('--mixed',action='store_true');p.add_argument('--matrix',action='store_true')
+    p.add_argument('--output',default='reports/v0.0.3/performance.json');p.add_argument('--profile',action='store_true');p.add_argument('--mixed',action='store_true');p.add_argument('--matrix',action='store_true')
     args=p.parse_args()
     torch.manual_seed(17)
     r=Runner(args.model,compiled=False,max_context=4096)
@@ -40,11 +40,12 @@ def main():
     if args.matrix:
         r.eos=set()  # Fixed output length, explicitly recorded below.
         cases=[(b,['test '*length]*b) for length,b in [(128,1),(512,4),(2048,1)]]
-    eager=[];expected=[]
+    eager=[];expected=[];eager_spread=[]
     for batch,case_prompts in cases:
         r.generate(case_prompts,[cfg]*batch)
         runs=[r.generate(case_prompts,[cfg]*batch) for _ in range(3)]
         eager.append(statistics.median(x[0]['batch_seconds'] for x in runs));expected.append(runs[-1])
+        eager_spread.append([x[0]['batch_seconds'] for x in runs])
     t=time.perf_counter();r.model.model.cell.bank.compile_projections()
     r.generate(prompts,[cfg]*4);cold=time.perf_counter()-t
     with torch.inference_mode():
@@ -63,15 +64,27 @@ def main():
         compiled=statistics.median(x[0]['batch_seconds'] for x in runs)
         rows.append({'batch':batch,'prompt_tokens':runs[-1][0]['prompt_tokens'],'eager_seconds':eager[j],'compiled_seconds':compiled,'speedup':eager[j]/compiled,
                      'generated_tokens_per_second':sum(x['completion_tokens'] for x in runs[-1])/compiled,
+                     'eager_run_seconds':eager_spread[j],'compiled_run_seconds':[x[0]['batch_seconds'] for x in runs],
+                     'ttft_seconds':runs[-1][0]['ttft_seconds'],
+                     'decode_step_seconds':[b-a for a,b in zip(runs[-1][0]['step_end_seconds'],runs[-1][0]['step_end_seconds'][1:])],
                      'greedy_equal':all(x['token_ids']==y['token_ids'] for x,y in zip(expected[j],runs[-1]))})
     from torch._dynamo.utils import counters,compile_times
     status='passed' if metric['relative_rmse']<=1e-3 and delta<=1e-3 else 'failed_numeric'
     geomean=math.prod(x['speedup'] for x in rows)**(1/len(rows))
-    report={'status':status,'performance_geomean':geomean,'performance_gate_passed':geomean>=1.10,'environment':versions(),'mixed':args.mixed,'matrix':args.matrix,'fixed_output_tokens':32 if args.matrix else None,'numeric':metric,'delta_nll':delta,
-            'learned_route_flips':flips,'learned_max_abs':learned_error,'cold_compile_seconds':cold,'rows':rows,'peak_memory_bytes':torch.cuda.max_memory_allocated(),
+    numeric_status=status
+    if status=='passed' and not args.mixed and geomean<1.10:status='failed_performance'
+    if status=='passed' and args.mixed and geomean<1.10:status='numeric_passed_mixed_performance_limited'
+    profile=None
+    if args.profile:
+        with torch.profiler.profile(activities=[torch.profiler.ProfilerActivity.CPU,torch.profiler.ProfilerActivity.CUDA]) as prof:
+            r.generate(prompts[:1],[cfg])
+        profile=prof.key_averages().table(sort_by='self_cpu_time_total',row_limit=25)
+    report={'status':status,'numeric_status':numeric_status,'profile':profile,'performance_geomean':geomean,'performance_gate_passed':geomean>=1.10,'environment':versions(),'mixed':args.mixed,'matrix':args.matrix,'fixed_output_tokens':32 if args.matrix else None,'numeric':metric,'delta_nll':delta,
+            'learned_route_flips':flips,'learned_max_abs':learned_error,'cold_compile_seconds':cold,'rows':rows,'peak_memory_bytes':torch.cuda.max_memory_allocated(),'peak_reserved_bytes':torch.cuda.max_memory_reserved(),
+            'compile_cache_note':'First compiled call in process; existing on-disk Inductor cache may be warm.',
             'compile_counters':{str(k):dict(v) for k,v in counters.items()},'compile_times':compile_times(repr='str')}
     write_report(args.output,report);print(json.dumps(report),flush=True)
-    if status!='passed':raise RuntimeError('Compiled numerics outside fixed acceptance thresholds')
+    if status in ('failed_numeric','failed_performance'):raise RuntimeError('Compiled inference outside fixed acceptance thresholds')
 
 
 if __name__=='__main__':main()

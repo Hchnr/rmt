@@ -47,22 +47,14 @@ class BoundExpertBank(nn.Module):
         # Shared functions avoid constructing one compiled graph wrapper per expert.
         self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
         self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
-        self._linear_qkv = torch.compile(project_linear_qkv, dynamic=True, fullgraph=True,
-            options={"emulate_precision_casts": True, "pattern_matcher": False})
         self._mlp = torch.compile(project_mlp, dynamic=True, fullgraph=True,
             options={"emulate_precision_casts": True, "pattern_matcher": False})
         self.compiled = True
 
     def mixed_qkv(self, expert, x):
-        if not self.compiled:
-            return project_qkv(expert, x)
-        # Keep reductions in eager for regrouped token counts: BF16 RMSNorm
-        # reduction changes can amplify through arbitrary recurrent routes.
-        attn = expert.self_attn
-        q, k, v = self._linear_qkv(expert, expert.input_layernorm(x))
-        q = attn.q_norm(q.view(*x.shape[:-1], -1, attn.head_dim))
-        k = attn.k_norm(k.view(*x.shape[:-1], -1, attn.head_dim))
-        return q.flatten(-2), k.flatten(-2), v
+        # Norm reductions stay eager for numerical parity. Compiling only the
+        # remaining three GEMMs adds wrapper overhead without fusion benefits.
+        return project_qkv(expert, x)
 
     def mixed_output(self, expert, attended, residual):
         if not self.compiled:

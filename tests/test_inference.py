@@ -50,3 +50,25 @@ def test_sorted_grouping_preserves_token_order(pair):
     _,m=pair
     groups=m.model.cell.bank.groups(torch.tensor([[2,0,2],[1,0,1]]))
     assert [(e,p.tolist()) for e,p in groups]==[(0,[1,4]),(1,[3,5]),(2,[0,2])]
+
+
+def test_batch_early_finish_padding_and_cache(pair,monkeypatch):
+    from rmt.inference.runner import Runner
+    class Tokens:
+        def encode(self,text,add_special_tokens=False):return list(map(int,text.split()))
+        def decode(self,ids,skip_special_tokens=True):return ' '.join(map(str,ids))
+    _,model=pair
+    runner=Runner.__new__(Runner)
+    runner.model=model.eval();runner.device=torch.device('cpu');runner.backend='rmt'
+    runner.tokenizer=Tokens();runner.pad=0;runner.eos=set();runner.max_context=32
+    monkeypatch.setattr(torch.cuda,'synchronize',lambda *args:None)
+    prompts=['4 5','7 8 9 10'];configs=[Generation(max_new_tokens=1,temperature=0,presence_penalty=0),Generation(max_new_tokens=4,temperature=0,presence_penalty=0)]
+    cached=runner.generate(prompts,configs);full=runner.generate(prompts,configs,use_cache=False)
+    alone=runner.generate(prompts[1:],[configs[1]])[0]
+    assert [x['token_ids'] for x in cached]==[x['token_ids'] for x in full]
+    assert cached[1]['token_ids']==alone['token_ids']
+    assert [x['completion_tokens'] for x in cached]==[1,4]
+    assert [x['prompt_tokens'] for x in cached]==[2,4]
+    stop=str(cached[1]['token_ids'][0])
+    stopped=runner.generate(prompts[1:],[Generation(max_new_tokens=4,temperature=0,presence_penalty=0,stop=(stop,))])[0]
+    assert stopped['finish_reason']=='stop' and stopped['text']=='' and stopped['completion_tokens']==1
