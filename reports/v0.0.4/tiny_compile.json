@@ -16,7 +16,7 @@
       "lr_warmup_steps": 1,
       "attention": "sdpa",
       "checkpoint": true,
-      "compile": false,
+      "compile": true,
       "loss_chunk_size": 4,
       "kd_weight": 0.5,
       "validation_batches": 1,
@@ -24,8 +24,8 @@
       "save": true,
       "export": true,
       "verify_replay": true,
-      "artifact_dir": "artifacts/v0.0.4/train/tiny_v2",
-      "report": "reports/v0.0.4/tiny_train.json"
+      "artifact_dir": "artifacts/v0.0.4/train/tiny_compile",
+      "report": "reports/v0.0.4/tiny_compile.json"
     },
     "data": {
       "fixture": true
@@ -69,12 +69,12 @@
       "ce": 4.569427490234375,
       "kl": 9.607629181118682e-08,
       "grad_norm": 4.453873634338379,
-      "seconds": 0.3561977446079254,
+      "seconds": 1.4828656911849976,
       "input_tokens": 16,
       "targets": 12,
-      "input_tokens_per_second": 44.91886901855469,
-      "targets_per_second": 33.689151763916016,
-      "peak_allocated_bytes": 67426816,
+      "input_tokens_per_second": 10.789918899536133,
+      "targets_per_second": 8.092438697814941,
+      "peak_allocated_bytes": 119837696,
       "off_layer_fraction": 0.0,
       "expert_counts": [
         16,
@@ -90,11 +90,11 @@
       "ce": 4.544893741607666,
       "kl": 3.447421477176249e-05,
       "grad_norm": 4.342027187347412,
-      "seconds": 0.061970628798007965,
+      "seconds": 0.07446616888046265,
       "input_tokens": 16,
       "targets": 12,
-      "input_tokens_per_second": 258.18682861328125,
-      "targets_per_second": 193.64012145996094,
+      "input_tokens_per_second": 214.8626708984375,
+      "targets_per_second": 161.14700317382812,
       "peak_allocated_bytes": 67531264,
       "off_layer_fraction": 0.0,
       "expert_counts": [
@@ -111,11 +111,11 @@
       "ce": 4.521810054779053,
       "kl": 0.0001230173947988078,
       "grad_norm": 4.2325663566589355,
-      "seconds": 0.06140048801898956,
+      "seconds": 0.06326501816511154,
       "input_tokens": 16,
       "targets": 12,
-      "input_tokens_per_second": 260.5842590332031,
-      "targets_per_second": 195.4381866455078,
+      "input_tokens_per_second": 252.9043731689453,
+      "targets_per_second": 189.67828369140625,
       "peak_allocated_bytes": 67531264,
       "off_layer_fraction": 0.0,
       "expert_counts": [
@@ -154,9 +154,36 @@
       "off_layer_fraction": 0.0
     }
   ],
-  "wall_seconds": 5.405132552608848,
+  "wall_seconds": 8.554656576365232,
   "train_packs": 1,
   "dev_packs": 1,
-  "compile_counters": {},
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 10,
+      "unique_graphs": 2
+    },
+    "aot_autograd": {
+      "total": 2,
+      "autograd_cache_miss": 2,
+      "autograd_cache_saved": 2,
+      "ok": 2
+    },
+    "inductor": {
+      "fxgraph_cache_miss": 3,
+      "extern_calls": 12,
+      "async_compile_cache_miss": 4,
+      "triton_bundler_save_kernel": 64,
+      "triton_bundler_save_static_autotuner": 3,
+      "benchmarking.InductorBenchmarker.benchmark": 8,
+      "benchmarking.InductorBenchmarker.benchmark_gpu": 8
+    },
+    "graph_break": {},
+    "aten_mm_info": {
+      "aten.mm_s26_48_32": 5,
+      "aten.mm_s26_32_48": 4,
+      "aten.mm_32_48_s26": 1,
+      "aten.mm_48_32_s26": 2
+    }
+  },
   "scope": "Short instruction-training experiment, not a quality superiority claim"
 }
