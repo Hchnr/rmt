@@ -1,0 +1,52 @@
+{
+  "pytest": {
+    "passed": 29,
+    "warnings": 14,
+    "seconds": 6.1,
+    "command": "CUDA_VISIBLE_DEVICES=0 PYTHONPATH=src .venv-cached/bin/python -m pytest -q"
+  },
+  "real_checkpoint_checks": {
+    "fixed": {
+      "training_report": "reports/v0.0.4/fixed_128.json",
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 4,
+        "next_loss": 2.1276345252990723,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.4/train/fixed_128_deterministic",
+        "expected_training_dev_ce": 2.0091822147369385,
+        "hf_reload_dev_ce": 2.0086207229618602,
+        "absolute_difference": 0.0005614917750782489,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      },
+      "training_source_still_matches": true
+    },
+    "opened": {
+      "training_report": "reports/v0.0.4/opened_128.json",
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 4,
+        "next_loss": 2.258298873901367,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.4/train/opened_128_deterministic",
+        "expected_training_dev_ce": 2.0724825859069824,
+        "hf_reload_dev_ce": 2.072128872467534,
+        "absolute_difference": 0.00035371343944845535,
+        "tolerance": 0.005,
+        "routing_mode": "learned",
+        "prior": 3.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      },
+      "training_source_still_matches": true
+    }
+  }
+}
