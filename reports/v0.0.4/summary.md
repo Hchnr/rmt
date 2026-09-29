@@ -53,6 +53,8 @@
 
 数据为 `HuggingFaceH4/no_robots` 固定 revision `e6f9a4ac5c37faeb744ba9ecf0473184d7f8105b`，CC-BY-NC-4.0，仅用于研究诊断。训练保留 9,484 条、开发 500 条；只监督最后 assistant 回答，屏蔽文档间和切块边界 targets，packing attention 隔离文档。训练语料总量仅约 278 万输入 token，不足以支撑有意义的 24h 持续训练配方。
 
+补充审计保留训练样本的全部 user turns，与本地 11 个固定评测源文件的 1,717 个题干做 NFKC／大小写／空白规范化精确匹配，重叠为 0。范围只包括已有源池；这不是语义去污染或原模型预训练污染保证，且未改变已经冻结的训练数据。见 [重叠审计](training_overlap_audit.json)。
+
 LCB 已有 `test5.jsonl` 只覆盖到 2025-01-04，不能代表论文 Oct 2024–Feb 2025 的完整 v5 范围。旧 32 题结果仍是工程回归；本轮未以它冒充完整论文评测。
 
 ## 完整 IFEval 基线与恢复边界
