@@ -60,6 +60,8 @@ def main():
         delta=abs((f(a[:,:-1].float().reshape(-1,a.shape[-1]),labels)-f(b[:,:-1].float().reshape(-1,b.shape[-1]),labels)).item())
     rows=[]
     for j,(batch,case_prompts) in enumerate(cases):
+        # Warm each shape through CUDA graph recording, not just Dynamo tracing.
+        for _ in range(3):r.generate(case_prompts,[cfg]*batch)
         runs=[r.generate(case_prompts,[cfg]*batch) for _ in range(3)]
         compiled=statistics.median(x[0]['batch_seconds'] for x in runs)
         rows.append({'batch':batch,'prompt_tokens':runs[-1][0]['prompt_tokens'],'eager_seconds':eager[j],'compiled_seconds':compiled,'speedup':eager[j]/compiled,

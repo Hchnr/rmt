@@ -72,3 +72,23 @@ def test_batch_early_finish_padding_and_cache(pair,monkeypatch):
     stop=str(cached[1]['token_ids'][0])
     stopped=runner.generate(prompts[1:],[Generation(max_new_tokens=4,temperature=0,presence_penalty=0,stop=(stop,))])[0]
     assert stopped['finish_reason']=='stop' and stopped['text']=='' and stopped['completion_tokens']==1
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(),reason='CUDA graph integration requires a GPU')
+def test_compiled_outputs_survive_next_invocation_and_weight_update(pair):
+    from rmt.experts import project_qkv,project_output
+    _,model=pair;model=model.to(device='cuda',dtype=torch.bfloat16).eval()
+    bank=model.model.cell.bank;bank.compile_projections()
+    ids=torch.tensor([[7,9,12]],device='cuda')
+    with torch.inference_mode():
+        first=model(ids,use_cache=False,output_hidden_states=True)
+        snapshots=[x.clone() for x in first.hidden_states]
+        logits=first.logits.clone()
+        model(ids+1,use_cache=False)
+        assert torch.equal(first.logits,logits)
+        assert all(torch.equal(x,y) for x,y in zip(first.hidden_states,snapshots))
+        bank.experts[0].self_attn.o_proj.weight.zero_()
+        compiled=model(ids,use_cache=False).logits.clone()
+        bank.compiled=False;bank._project_qkv=project_qkv;bank._project_output=project_output
+        eager=model(ids,use_cache=False).logits
+        torch.testing.assert_close(compiled,eager,rtol=1e-3,atol=1e-3)

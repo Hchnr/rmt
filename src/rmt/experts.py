@@ -14,7 +14,8 @@ if not hasattr(torch.ops.rmt, "reference_variance"):
     def _reference_variance(x):
         return x.float().pow(2).mean(-1, keepdim=True)
 
-    _VARIANCE_LIBRARY.impl("reference_variance", _reference_variance, "CompositeExplicitAutograd")
+    _VARIANCE_LIBRARY.impl("reference_variance", _reference_variance, "CUDA")
+    _VARIANCE_LIBRARY.impl("reference_variance", _reference_variance, "CPU")
 
     @torch.library.register_fake("rmt::reference_variance")
     def _reference_variance_fake(x):
@@ -68,6 +69,9 @@ class BoundExpertBank(nn.Module):
         self.compiled = False
 
     def compile_projections(self):
+        # RMS epsilon is a configuration constant. Avoid CPU scalar tensors and
+        # device-copy partitions inside otherwise capturable projection graphs.
+        torch._dynamo.config.specialize_float = True
         # Compile the numerical kernels, leaving variable-length dispatch in Python.
         # Disable addmm pattern fusion: on regrouped 2-D BF16 tensors it changes
         # the rounding of residual additions, even with emulate_precision_casts.

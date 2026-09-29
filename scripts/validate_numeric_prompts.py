@@ -18,6 +18,7 @@ with torch.inference_mode():
    bank._project_qkv,bank._project_output=fast if compiled else (project_qkv,project_output)
    ids=enc.input_ids;mask=enc.attention_mask;cache=RmtCapacityCache(ids.shape[1]+8)
    for step in range(5):
+    if compiled:torch.compiler.cudagraph_mark_step_begin()
     pos=(mask.cumsum(-1)-1).clamp_min(0)[:,-ids.shape[1]:]
     output=r.model(ids,attention_mask=mask,position_ids=pos,use_cache=True,past_key_values=cache,logits_to_keep=1).logits.float()
     if not compiled:

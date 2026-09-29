@@ -102,8 +102,6 @@ class Runner:
         generators=[torch.Generator(device=self.device).manual_seed(c.seed) for c in configs]
         start=time.perf_counter(); first=None; token_times=[]
         for step in range(budget):
-            if self.backend=='rmt' and self.model.model.cell.bank.compiled:
-                torch.compiler.cudagraph_mark_step_begin()
             positions=(mask.cumsum(-1)-1).clamp_min(0)
             current=ids[:,-1:] if use_cache and step else ids
             output=self.model(input_ids=current,attention_mask=mask,position_ids=positions[:,-current.shape[1]:],
