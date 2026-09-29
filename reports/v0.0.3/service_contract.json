@@ -6,9 +6,9 @@
       "concurrent_identical_requests": 4,
       "stop_passed": true,
       "non_thinking": {
-        "id": "cmpl-6625853b272e4afc9e8c6750ba0c9ea4",
+        "id": "cmpl-98deac9abc3d482a911027eac91d00a2",
         "object": "chat.completion",
-        "created": 1790679203,
+        "created": 1790680617,
         "model": "rmt",
         "choices": [
           {
@@ -27,13 +27,14 @@
         },
         "rmt_metadata": {
           "prompt_sha256": "68227edfd192f254a6a5b56b7a6381885749e7a599b3291ec16e5fe086303f19",
-          "seed": 17
+          "seed": 17,
+          "batch_split_retries": 0
         }
       },
       "thinking": {
-        "id": "cmpl-3f95c71910074b5fa4537d2c96058390",
+        "id": "cmpl-84ba8e9410384a6f84790c9bd8bb76cc",
         "object": "chat.completion",
-        "created": 1790679208,
+        "created": 1790680623,
         "model": "rmt",
         "choices": [
           {
@@ -41,7 +42,7 @@
             "finish_reason": "length",
             "message": {
               "role": "assistant",
-              "content": "<think>\nOkay, so the user is asking, \"What is 1 + 1?\" Hmm, that seems straightforward, but I need to make sure I answer correctly. Let me think. In basic arithmetic, 1 plus 1 is 2. But wait, maybe they're looking for something more? Like in different contexts?\n\nWell, in standard mathematics, addition of two ones gives two. But maybe they want to know about different number systems? Like binary? In binary, 1 + 1 is 10, which is 2 in decimal. But the question doesn't specify, so I should probably stick to"
+              "content": "<think>\nOkay, so the user is asking, \"What is 1 + 1?\" Hmm, that seems straightforward, but I need to make sure I answer correctly. Let me start by recalling basic arithmetic. In standard arithmetic, 1 plus 1 equals 2. That's the most common answer. But wait, maybe the user is looking for something more? Like in different contexts?\n\nFor example, in binary, 1 + 1 is 10, which is 2 in decimal. But the question doesn't specify a base, so I should probably stick with base 10 unless told otherwise. Also,"
             }
           }
         ],
@@ -52,7 +53,8 @@
         },
         "rmt_metadata": {
           "prompt_sha256": "fc8f0fc4582311ffb0b3fbdd6cbbfd3971e2a32c1e774a3de25cfd044928f5d4",
-          "seed": 17
+          "seed": 17,
+          "batch_split_retries": 0
         }
       }
     },
@@ -61,9 +63,9 @@
       "concurrent_identical_requests": 4,
       "stop_passed": true,
       "non_thinking": {
-        "id": "cmpl-db5f4965cf75458291e4e6554921e3c6",
+        "id": "cmpl-cd3bbdf4f95749d7bb7a94525db889ce",
         "object": "chat.completion",
-        "created": 1790679210,
+        "created": 1790680625,
         "model": "qwen",
         "choices": [
           {
@@ -82,13 +84,14 @@
         },
         "rmt_metadata": {
           "prompt_sha256": "68227edfd192f254a6a5b56b7a6381885749e7a599b3291ec16e5fe086303f19",
-          "seed": 17
+          "seed": 17,
+          "batch_split_retries": 0
         }
       },
       "thinking": {
-        "id": "cmpl-9645123bcdb1452cac469c13f05fd8a2",
+        "id": "cmpl-f75b466373524087a983dded30db3236",
         "object": "chat.completion",
-        "created": 1790679218,
+        "created": 1790680633,
         "model": "qwen",
         "choices": [
           {
@@ -107,7 +110,8 @@
         },
         "rmt_metadata": {
           "prompt_sha256": "fc8f0fc4582311ffb0b3fbdd6cbbfd3971e2a32c1e774a3de25cfd044928f5d4",
-          "seed": 17
+          "seed": 17,
+          "batch_split_retries": 0
         }
       }
     }

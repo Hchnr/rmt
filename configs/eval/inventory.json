@@ -5,46 +5,56 @@
       "benchmark": "MMLU-Redux",
       "adapter": "mmlu_redux",
       "adapter_version": "evalscope==1.0.0",
-      "status": "quick_representative_in_progress",
+      "status": "quick_representative_completed",
       "protocol": "quick_non_thinking.json",
       "snapshot": "dataset_manifest.json",
-      "full_report_status": "deferred"
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
     },
     {
       "benchmark": "C-Eval",
       "adapter": "ceval",
       "adapter_version": "evalscope==1.0.0",
-      "status": "quick_representative_in_progress",
+      "status": "quick_representative_completed",
       "protocol": "quick_non_thinking.json",
       "snapshot": "dataset_manifest.json",
-      "full_report_status": "deferred"
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
     },
     {
       "benchmark": "IFEval",
       "adapter": "ifeval",
       "adapter_version": "evalscope==1.0.0",
-      "status": "quick_representative_in_progress",
+      "status": "quick_representative_completed",
       "protocol": "quick_non_thinking.json",
       "snapshot": "dataset_manifest.json",
-      "full_report_status": "deferred"
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
     },
     {
       "benchmark": "MATH-500",
       "adapter": "math_500",
       "adapter_version": "evalscope==1.0.0",
-      "status": "quick_representative_in_progress",
+      "status": "quick_representative_completed",
       "protocol": "quick_non_thinking.json",
       "snapshot": "dataset_manifest.json",
-      "full_report_status": "deferred"
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
     },
     {
       "benchmark": "LiveCodeBench v5",
       "adapter": "live_code_bench",
       "adapter_version": "evalscope==1.0.0",
-      "status": "quick_representative_in_progress",
+      "status": "quick_representative_completed",
       "protocol": "quick_non_thinking.json",
       "snapshot": "dataset_manifest.json",
-      "full_report_status": "deferred"
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
     },
     {
       "benchmark": "GPQA-Diamond",

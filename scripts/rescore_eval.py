@@ -3,7 +3,8 @@ import argparse
 import os
 from pathlib import Path
 import json
-p=argparse.ArgumentParser();p.add_argument('work');a=p.parse_args();work=Path(a.work)
+import hashlib
+p=argparse.ArgumentParser();p.add_argument('work');p.add_argument('--reason',default='Explicit scorer repair; original inference reused');a=p.parse_args();work=Path(a.work)
 os.environ['NLTK_DATA']=str(Path('artifacts/v0.0.3/nltk_data').resolve())
 from evalscope import TaskConfig,run_task
 from rmt.evaluation.audit import audit
@@ -18,4 +19,4 @@ result=run_task(config)
 if sandbox.FAILURES:raise RuntimeError(sandbox.FAILURES)
 provenance=json.loads((work/'provenance.json').read_text())
 print(audit(work,provenance['selection']['count']))
-(work/'rescore.json').write_text(json.dumps({'reason':'NLTK punkt resources installed; original inference reused','result':result},default=str,indent=2))
+(work/'rescore.json').write_text(json.dumps({'reason':a.reason,'scorer_sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in Path('src/rmt/evaluation').glob('*.py')},'result':result},default=str,indent=2))

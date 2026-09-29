@@ -5,7 +5,9 @@
       "file",
       "network",
       "write"
-    ]
+    ],
+    "euid": 65534,
+    "egid": 65534
   },
   "correct": [
     true,

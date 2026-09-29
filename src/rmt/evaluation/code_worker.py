@@ -13,6 +13,15 @@ def restrict_process():
     sec=ctypes.CDLL(ctypes.util.find_library('seccomp'))
     vms=int(Path('/proc/self/statm').read_text().split()[0])*os.sysconf('SC_PAGE_SIZE')
     resource.setrlimit(resource.RLIMIT_AS,(vms+2*1024**3,vms+2*1024**3))
+    resource.setrlimit(resource.RLIMIT_CPU,(120,120))
+    resource.setrlimit(resource.RLIMIT_FSIZE,(0,0))
+    resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+    # The evaluation parent may run as root. Generated programs must not retain
+    # capabilities that can change another process or bypass their own limits.
+    if os.geteuid()==0:
+        os.setgroups([])
+        os.setresgid(65534,65534,65534)
+        os.setresuid(65534,65534,65534)
     class Ruleset(ctypes.Structure): _fields_=[('handled',ctypes.c_uint64)]
     class PathRule(ctypes.Structure):
         _pack_=1
@@ -39,15 +48,14 @@ def restrict_process():
     for name in ['socket','connect','bind','listen','accept','accept4','sendto','sendmsg','ptrace',
                  'process_vm_readv','process_vm_writev','pidfd_open','pidfd_send_signal','rt_sigqueueinfo','rt_tgsigqueueinfo','mount','umount2','unshare','setns','bpf',
                  'execve','execveat','fork','vfork','clone','clone3','kill','tkill','tgkill',
-                 'truncate','ftruncate','open_by_handle_at','io_uring_setup']:
+                 'truncate','ftruncate','open_by_handle_at','io_uring_setup','prlimit64','setrlimit',
+                 'chmod','fchmod','fchmodat','fchmodat2','chown','fchown','lchown','fchownat',
+                 'utime','utimes','futimesat','utimensat','chroot','capset']:
         nr=sec.seccomp_syscall_resolve_name(name.encode())
         if nr>=0 and sec.seccomp_rule_add(ctx,0x50000|1,nr,0)!=0:raise RuntimeError('seccomp rule')
     if sec.seccomp_load(ctx)!=0:raise RuntimeError('seccomp load')
     sec.seccomp_release(ctx)
     os.environ.clear()
-    resource.setrlimit(resource.RLIMIT_CPU,(120,120))
-    resource.setrlimit(resource.RLIMIT_FSIZE,(0,0))
-    resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 
 
 def main():
@@ -63,7 +71,7 @@ def main():
                            ('write',lambda:open('/tmp/rmt_sandbox_should_not_exist','w'))]:
             try: call()
             except (OSError,PermissionError): denied.append(label)
-        print(json.dumps({'denied':denied}));return
+        print(json.dumps({'denied':denied,'euid':os.geteuid(),'egid':os.getegid()}));return
     result,meta=run_test(payload['sample'],test=payload['generation'],timeout=payload.get('timeout',6),debug=False)
     print(json.dumps({'result':[bool(x) if type(x).__name__=='bool' or type(x).__name__=='bool_' else int(x) for x in result],
                       'metadata':meta},default=str))

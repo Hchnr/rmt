@@ -5,6 +5,7 @@ from pathlib import Path
 import requests
 from rmt.evaluation.run import file_hash,model_fingerprint
 from rmt.evaluation.audit import audit
+from rmt.evaluation.prepare import digest
 from evalscope import TaskConfig,run_task
 from evalscope.models.openai_compatible import OpenAICompatibleAPI
 from evalscope.api.benchmark import DefaultDataAdapter
@@ -17,6 +18,9 @@ metadata=session.get(config.api_url.removesuffix('/v1')+'/metadata',timeout=10).
 metadata['weights']=model_fingerprint(metadata['model'])
 assert metadata==provenance['metadata'],'Restarted service differs from original provenance'
 audit(work,provenance['selection']['count'])
+dataset=Path(config.dataset_args[config.datasets[0]]['dataset_id'])
+hashes=[digest(json.loads(line)) for p in sorted(dataset.glob('*.jsonl')) for line in p.read_text().splitlines()]
+assert sorted(hashes)==sorted(x['record_sha256'] for x in provenance['selection']['selection']), 'Dataset changed since original run'
 paths=[*(work/'predictions').rglob('*.jsonl'),*(work/'reviews').rglob('*.jsonl'),work/'responses.jsonl']
 before={str(p):file_hash(p) for p in paths}
 def forbidden(*args,**kwargs):raise RuntimeError('Resume unexpectedly requested fresh inference')
