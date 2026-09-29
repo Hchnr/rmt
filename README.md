@@ -48,7 +48,7 @@ CUDA_VISIBLE_DEVICES=0,1 TORCHINDUCTOR_COMPILE_THREADS=2 torchrun --standalone -
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --standalone --nproc_per_node=8 -m rmt.smoke_train --config configs/bootstrap/qwen3_4b_integration.yaml
 ```
 
-运行需自行保证所选 GPU 空闲。当前用户已授权本机 0–7，入口默认使用全部 8 卡；`CUDA_VISIBLE_DEVICES` 可缩小范围。测试与性能报告中的有效 token 是输入 token，loss 只统计文档内有效 next-token targets。
+运行需自行保证所选 GPU 空闲。当前用户仅授权物理 GPU 0–3，入口默认使用前四卡；上面的八卡命令是已执行验收的历史复现命令，重新获得授权前不能运行。`CUDA_VISIBLE_DEVICES` 可缩小范围。测试与性能报告中的有效 token 是输入 token，loss 只统计文档内有效 next-token targets。
 
 报告在 `reports/bootstrap/*.json`，大 checkpoint 在被 git 忽略的 `artifacts/bootstrap/`。重复 smoke 会覆盖该配置的训练 checkpoint；请为正式实验设置独立 artifact 路径。训练 checkpoint 使用 PyTorch Distributed Checkpoint，额外按 rank 保存 scheduler、Python／CPU／CUDA RNG、数据 cursor、先验日程配置；当前 smoke 会自动对比恢复后下一步与不中断分支的 loss 及全部参数。
 
@@ -84,3 +84,7 @@ print(tokenizer.batch_decode(result, skip_special_tokens=True))
 - compile 仅覆盖 QKV/norm、O/FFN 数值函数，Python 分组调度保持 eager。两卡组合测试用真实 Inductor；八卡默认 eager 投影，分别验证实际权重规模下的训练与恢复。
 - 当前 gather/scatter、逐专家 Python 循环和显式平方 attention mask 优先保证可检查性。它们是下一阶段吞吐优化对象，不是生产级 grouped GEMM、varlen attention 或 continuous batching。
 - 完整 Qwen 技术报告评测集、语料工程、24h 公平质量实验属于后续 plan；本版结果仅说明实现语义和训练系统可行。
+
+## 共享开发目录
+
+主开发目录为 `/share/project/eai_pwm/home/hcr/repos/test/rmt`。其他 worktree 若通过 `.venv` 软链接共享环境，应指向此目录已验证的 `.venv-cached`，并从各自源码目录使用 `PYTHONPATH=src` 运行，避免 editable 安装指向另一 worktree。`.gitignore` 同时忽略 `.venv` 目录和软链接。源码位于 `src/rmt/`，测试位于 `tests/`；可用 `python -m rmt.checkpoint --base-model /share/project/eai_pwm/models/Qwen/Qwen3-4B --output artifacts/bootstrap/rmt-bound-4b` 单独转换权重。
