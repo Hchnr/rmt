@@ -23,15 +23,21 @@ class Batcher:
         if isinstance(result,Exception): raise result
         return result
 
-    def execute(self,jobs):
+    def execute(self,jobs,retries=0):
         try:
             outputs=self.runner.generate([j[0] for j in jobs],[j[1] for j in jobs])
-            for job,out in zip(jobs,outputs): job[2].put(out)
+            for job,out in zip(jobs,outputs):
+                out['batch_split_retries']=retries
+                job[2].put(out)
         except Exception as error:
             import torch
-            if isinstance(error,torch.cuda.OutOfMemoryError) and len(jobs)>1:
+            split_needed=isinstance(error,torch.cuda.OutOfMemoryError) or (isinstance(error,ValueError) and 'exceeds configured context' in str(error))
+            if split_needed and len(jobs)>1:
+                # The traceback holds failed generation tensors/cache alive.
+                # Release it before attempting a smaller batch.
+                error.__traceback__=None
                 torch.cuda.empty_cache()
-                mid=len(jobs)//2;self.execute(jobs[:mid]);self.execute(jobs[mid:])
+                mid=len(jobs)//2;self.execute(jobs[:mid],retries+1);self.execute(jobs[mid:],retries+1)
             else:
                 for job in jobs: job[2].put(error)
 
@@ -99,7 +105,7 @@ def main():
                     'created':int(time.time()),'model':args.name,'choices':[choice],
                     'usage':{'prompt_tokens':out['prompt_tokens'],'completion_tokens':out['completion_tokens'],
                              'total_tokens':out['prompt_tokens']+out['completion_tokens']},
-                    'rmt_metadata':{'prompt_sha256':out['prompt_sha256'],'seed':cfg.seed}})
+                    'rmt_metadata':{'prompt_sha256':out['prompt_sha256'],'seed':cfg.seed,'batch_split_retries':out['batch_split_retries']}})
             except (ValueError,KeyError,TypeError) as error: self.send(400,{'error':{'message':str(error)}})
             except Exception as error: self.send(500,{'error':{'message':type(error).__name__}})
     print(json.dumps({'ready':True,'port':args.port,'model':args.name}),flush=True)

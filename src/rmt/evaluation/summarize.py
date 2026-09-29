@@ -38,7 +38,7 @@ def main():
                 'input_sha256':hashlib.sha256(rr[key]['input'].encode()).hexdigest()})
         comparisons[name]={'same_prompt_and_seed':True,'n':len(rr),'score_differences':differences,
             'exact_text_agreement':sum(rs[k]['choices'][0]['message']['content']==qs[k]['choices'][0]['message']['content'] for k in rs)/len(rs)}
-    output={'scope':'32 fixed samples per benchmark, non-thinking, 2048-token limit; not paper reproduction or evidence of superiority.',
+    output={'scope':'Fixed-sample non-thinking regression; per-run provenance/config records count and token limit. Not paper reproduction or evidence of superiority.',
         'results':results,'paired':comparisons,'gpu_hours_generation_and_scoring_upper_bound':sum(x['wall_seconds'] for group in results.values() for x in group.values())/3600}
     Path(a.output).write_text(json.dumps(output,indent=2,ensure_ascii=False)+'\n')
     for name,group in results.items():print(name,{model:r['official_report']['score'] for model,r in group.items()},comparisons[name]['exact_text_agreement'])

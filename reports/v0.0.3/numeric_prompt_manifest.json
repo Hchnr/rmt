@@ -1,0 +1,82 @@
+[
+  {
+    "benchmark": "mmlu_redux",
+    "sha256": "bd711b6a14789a5e6dbacee61927088ffbd4984fa755cfc5ec6ca4cdd3f7cef7"
+  },
+  {
+    "benchmark": "mmlu_redux",
+    "sha256": "aa475d2f1512889c8cdec1bc88f85a5a374770e19c381e8677db66f7bf5bfcf9"
+  },
+  {
+    "benchmark": "mmlu_redux",
+    "sha256": "efa3861967901d124c5a5b81dbce54ed13aa53142a7de99c729b354e47c4933a"
+  },
+  {
+    "benchmark": "mmlu_redux",
+    "sha256": "8578b46995eab30138931faa991a76f3992ed1b6c2387a3342ec4b6620c5469a"
+  },
+  {
+    "benchmark": "ceval",
+    "sha256": "be9a71d3169b4086098c28c7d6f4f4fe8a08ffb8bd85c4ca6fa6e037633a945c"
+  },
+  {
+    "benchmark": "ceval",
+    "sha256": "ef1567044aed01a6d70c9b5e732db5879f58897edf3e62368c296b5f44aaf561"
+  },
+  {
+    "benchmark": "ceval",
+    "sha256": "ef0b217ad0656300597f47dd360d01a44bd8199e0c95e63a374318aa881f620a"
+  },
+  {
+    "benchmark": "ceval",
+    "sha256": "c6108eb9fa6e63e7a2a0635cde50006d17713949ede9e058a05b031ad4ada90c"
+  },
+  {
+    "benchmark": "ifeval",
+    "sha256": "fb0d281866203703c0b68e07800749e34fc499b2f8b80136eb67a6ccbea48003"
+  },
+  {
+    "benchmark": "ifeval",
+    "sha256": "ac0636796f3c208358d825f3ed04d251ac8881bf539a132302338ffbceaa6f8d"
+  },
+  {
+    "benchmark": "ifeval",
+    "sha256": "36e0e72c0d4ace874e61efcbd1ee29b893a489a35c3a1b5b3427923ccba13709"
+  },
+  {
+    "benchmark": "ifeval",
+    "sha256": "d8a0e87f02d58883b9f49ec6bc2e0166077f70e4e3b5d66bb1e86cd6737f75a3"
+  },
+  {
+    "benchmark": "math_500",
+    "sha256": "697c01198011cd96cde05739b68a320b3ecfb2e399c4a4bfa16279950d0c8768"
+  },
+  {
+    "benchmark": "math_500",
+    "sha256": "200c09c3cb350dbb1e692a1d2b8f1ddc83ce534159e456044b3c35e2d6c0d878"
+  },
+  {
+    "benchmark": "math_500",
+    "sha256": "67994b9021194c482de470b8e5354a1f30bd63541b58a5a2c728926f99e3a1b8"
+  },
+  {
+    "benchmark": "math_500",
+    "sha256": "1a39cbc2b779186c0ea8f471e7ee7d77cfb7455eec89306dbdd8b78a06c9a9d1"
+  },
+  {
+    "benchmark": "live_code_bench",
+    "sha256": "c987e2ec98d098ec1effaf8de59175c032a3090aa0b080205e01aa1d518af480"
+  },
+  {
+    "benchmark": "live_code_bench",
+    "sha256": "7905de3c89eb0cf7aa9538f56262c253e1d3e5f82a2f8f1dd3a475e496d8214b"
+  },
+  {
+    "benchmark": "live_code_bench",
+    "sha256": "6416788dc0976c3d1137a00fc0c68242989c1cbfbc458ac27b07a74433e7132d"
+  },
+  {
+    "benchmark": "live_code_bench",
+    "sha256": "c0ff27277ead25dbbf9f20fa03ead830b9457e8a0942ac39367038e07e289d7b"
+  }
+]

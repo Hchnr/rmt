@@ -1,0 +1,12 @@
+[
+  {
+    "model": "rmt",
+    "benchmark": "ceval",
+    "work": "artifacts/v0.0.3/eval/pilot/rmt/ceval/546ef5e5b8a30633"
+  },
+  {
+    "model": "qwen",
+    "benchmark": "ceval",
+    "work": "artifacts/v0.0.3/eval/pilot/qwen/ceval/922b257214f2a5e5"
+  }
+]

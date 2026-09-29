@@ -37,7 +37,7 @@ def restrict_process():
     sec.seccomp_release.argtypes=[ctypes.c_void_p]
     ctx=sec.seccomp_init(0x7fff0000)
     for name in ['socket','connect','bind','listen','accept','accept4','sendto','sendmsg','ptrace',
-                 'process_vm_readv','process_vm_writev','mount','umount2','unshare','setns','bpf',
+                 'process_vm_readv','process_vm_writev','pidfd_open','pidfd_send_signal','rt_sigqueueinfo','rt_tgsigqueueinfo','mount','umount2','unshare','setns','bpf',
                  'execve','execveat','fork','vfork','clone','clone3','kill','tkill','tgkill',
                  'truncate','ftruncate','open_by_handle_at','io_uring_setup']:
         nr=sec.seccomp_syscall_resolve_name(name.encode())

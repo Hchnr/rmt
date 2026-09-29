@@ -4,25 +4,30 @@ from torch import nn
 from transformers.models.qwen3.modeling_qwen3 import Qwen3DecoderLayer
 
 
-@torch.library.custom_op("rmt::reference_rms_norm", mutates_args=())
-def reference_rms_norm(x: torch.Tensor, weight: torch.Tensor, epsilon: float) -> torch.Tensor:
-    # An opaque inference boundary preserves the exact HF CUDA reduction and
-    # BF16 casts; Triton reduction order can otherwise amplify across 36 steps.
-    dtype = x.dtype
-    h = x.float()
-    variance = h.pow(2).mean(-1, keepdim=True)
-    h = h * torch.rsqrt(variance + epsilon)
-    return weight * h.to(dtype)
+# A low-level library registration avoids custom_op's Python alias-checking
+# wrapper on every norm call. The schema is functional and the kernel allocates
+# a fresh tensor; keep the library alive for the lifetime of this module.
+_VARIANCE_LIBRARY = torch.library.Library("rmt", "FRAGMENT")
+if not hasattr(torch.ops.rmt, "reference_variance"):
+    _VARIANCE_LIBRARY.define("reference_variance(Tensor x) -> Tensor")
 
+    def _reference_variance(x):
+        return x.float().pow(2).mean(-1, keepdim=True)
 
-@reference_rms_norm.register_fake
-def _reference_rms_norm_fake(x, weight, epsilon):
-    return torch.empty_like(x, dtype=torch.promote_types(x.dtype, weight.dtype))
+    _VARIANCE_LIBRARY.impl("reference_variance", _reference_variance, "CompositeExplicitAutograd")
+
+    @torch.library.register_fake("rmt::reference_variance")
+    def _reference_variance_fake(x):
+        return x.new_empty((*x.shape[:-1], 1), dtype=torch.float32)
+
+reference_variance = torch.ops.rmt.reference_variance.default
 
 
 def inference_norm(norm, x):
     if torch.compiler.is_compiling() and not torch.is_grad_enabled():
-        return reference_rms_norm(x, norm.weight, norm.variance_epsilon)
+        variance = reference_variance(x)
+        h = x.float() * torch.rsqrt(variance + norm.variance_epsilon)
+        return norm.weight * h.to(x.dtype)
     return norm(x)
 
 
@@ -67,10 +72,10 @@ class BoundExpertBank(nn.Module):
         # Disable addmm pattern fusion: on regrouped 2-D BF16 tensors it changes
         # the rounding of residual additions, even with emulate_precision_casts.
         # Shared functions avoid constructing one compiled graph wrapper per expert.
-        self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
-        self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
+        self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
+        self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
         self._mlp = torch.compile(project_mlp, dynamic=True, fullgraph=True,
-            options={"emulate_precision_casts": True, "pattern_matcher": False})
+            options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
         self.compiled = True
 
     def mixed_qkv(self, expert, x):

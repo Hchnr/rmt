@@ -13,5 +13,5 @@ def test_oom_split_retains_config_and_response_identity(monkeypatch):
     monkeypatch.setattr(torch.cuda,'empty_cache',lambda:None)
     jobs=[('one',Generation(seed=1),queue.Queue()),('two',Generation(seed=2),queue.Queue())]
     batcher.execute(jobs)
-    assert jobs[0][2].get_nowait()=={'prompt':'one','seed':1}
-    assert jobs[1][2].get_nowait()=={'prompt':'two','seed':2}
+    assert jobs[0][2].get_nowait()=={'prompt':'one','seed':1,'batch_split_retries':1}
+    assert jobs[1][2].get_nowait()=={'prompt':'two','seed':2,'batch_split_retries':1}
