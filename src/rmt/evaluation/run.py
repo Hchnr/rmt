@@ -31,10 +31,11 @@ def model_fingerprint(path):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--model',choices=['rmt','qwen'],required=True)
     p.add_argument('--port',type=int,required=True);p.add_argument('--benchmark',required=True)
-    p.add_argument('--phase',choices=['pilot','representative'],default='pilot')
+    p.add_argument('--phase',choices=['pilot','representative','full'],default='pilot')
+    p.add_argument('--data-root',default='artifacts/v0.0.3/datasets');p.add_argument('--output-root',default='artifacts/v0.0.3/eval')
     p.add_argument('--config',default='configs/eval/quick_non_thinking.json');p.add_argument('--thinking',action='store_true')
     args=p.parse_args();protocol=json.loads(Path(args.config).read_text());spec=protocol['benchmarks'][args.benchmark]
-    data=Path('artifacts/v0.0.3/datasets')/args.phase/args.benchmark
+    data=Path(args.data_root)/args.phase/args.benchmark
     manifest=json.loads((data/'manifest.json').read_text())
     # Refuse changed local samples even if manifest and cache directory remain.
     hashes=[]
@@ -50,7 +51,7 @@ def main():
     if args.phase=='pilot':generation['max_tokens']=protocol.get('pilot_max_tokens',generation['max_tokens'])
     if args.thinking:generation={**generation,'extra_body':{'chat_template_kwargs':{'enable_thinking':True}}}
     key=digest({'model':metadata,'selection':manifest,'generation':generation,'code':code,'evalscope':'1.0.0'})
-    work=Path('artifacts/v0.0.3/eval')/args.phase/args.model/args.benchmark/key[:16]
+    work=Path(args.output_root)/args.phase/args.model/args.benchmark/key[:16]
     work.mkdir(parents=True,exist_ok=True)
     lock=threading.Lock()
     # Requests go to loopback only; do not inherit proxy routing for localhost.
