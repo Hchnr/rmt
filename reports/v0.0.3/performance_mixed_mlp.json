@@ -1,0 +1,157 @@
+{
+  "status": "numeric_passed_mixed_performance_limited",
+  "numeric_status": "passed",
+  "profile": "-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                       cudaLaunchKernel        19.84%     639.709ms        20.39%     657.575ms       5.034us       0.000us         0.00%      15.711us       0.000us        130639  \n                                               aten::mm         8.24%     265.719ms        11.33%     365.160ms      28.196us     169.375ms        39.11%     169.403ms      13.080us         12951  \n                                              aten::mul         5.40%     174.137ms         8.85%     285.292ms      12.517us      44.054ms        10.17%      44.058ms       1.933us         22792  \n                                            aten::copy_         5.35%     172.420ms        13.53%     436.128ms      11.535us      70.730ms        16.33%      70.737ms       1.871us         37808  \n## Call CompiledFxGraph fuuy2rmb2cj4h6ibbjjhurll7wzs...         4.60%     148.287ms         9.03%     291.069ms     194.825us       0.000us         0.00%      91.530ms      61.265us          1494  \n                                              aten::add         4.32%     139.290ms         7.02%     226.434ms      12.454us      26.141ms         6.04%      26.143ms       1.438us         18182  \n                                        cudaMemcpyAsync         3.88%     125.246ms         3.95%     127.235ms       9.244us       0.000us         0.00%       1.153us       0.000us         13764  \n                                    aten::empty_strided         3.05%      98.185ms         3.05%      98.185ms       4.073us       0.000us         0.00%       0.000us       0.000us         24104  \n                                             aten::mean         2.64%      85.136ms         3.94%     126.891ms      16.046us      20.178ms         4.66%      20.183ms       2.552us          7908  \n                                       aten::index_copy         2.54%      81.828ms         6.28%     202.526ms      30.120us      17.111ms         3.95%      25.419ms       3.780us          6724  \n                                              aten::pow         2.50%      80.722ms         3.92%     126.269ms      15.967us      10.050ms         2.32%      10.051ms       1.271us          7908  \n                             Torch-Compiled Region: 0/0         2.36%      76.101ms        11.81%     380.912ms     254.961us       0.000us         0.00%      91.530ms      61.265us          1494  \n                                            aten::empty         2.21%      71.188ms         2.21%      71.188ms       3.498us       0.000us         0.00%       0.000us       0.000us         20351  \n                                       cuLaunchKernelEx         2.08%      66.941ms         2.08%      66.941ms       5.538us       0.000us         0.00%       0.000us       0.000us         12087  \n                                         aten::_to_copy         2.06%      66.540ms        13.28%     428.314ms      18.661us       0.000us         0.00%      47.007ms       2.048us         22952  \n                                            aten::rsqrt         1.65%      53.264ms         2.82%      91.074ms      11.517us      10.549ms         2.44%      10.550ms       1.334us          7908  \n                                     aten::index_select         1.51%      48.766ms         3.27%     105.357ms      20.760us      10.690ms         2.47%      10.692ms       2.107us          5075  \n                                              aten::bmm         1.32%      42.649ms         1.73%      55.868ms      23.916us       6.443ms         1.49%       6.443ms       2.758us          2336  \n                                           aten::matmul         1.10%      35.550ms        10.95%     352.920ms      34.451us       0.000us         0.00%      75.459ms       7.366us         10244  \n                                              aten::cat         1.08%      34.951ms         1.70%      54.732ms      15.418us       6.888ms         1.59%       6.888ms       1.940us          3550  \n                               aten::unique_consecutive         1.07%      34.532ms         3.01%      97.158ms      84.339us       3.330ms         0.77%       6.176ms       5.361us          1152  \n                                Activity Buffer Request         1.00%      32.100ms         1.04%      33.506ms       1.971ms      52.320us         0.01%     254.939us      14.996us            17  \n                               TorchDynamo Cache Lookup         0.92%      29.663ms         0.92%      29.663ms      17.646us       0.000us         0.00%       0.000us       0.000us          1681  \n                                               aten::to         0.91%      29.351ms        14.19%     457.665ms      14.739us       0.000us         0.00%      47.007ms       1.514us         31052  \n                                            aten::fill_         0.85%      27.260ms         1.76%      56.727ms       9.794us       5.802ms         1.34%       5.802ms       1.002us          5792  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \nSelf CPU time total: 3.224s\nSelf CUDA time total: 433.095ms\n",
+  "performance_geomean": 0.9088378319259933,
+  "performance_gate_passed": false,
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "0",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "mixed": true,
+  "matrix": false,
+  "fixed_output_tokens": null,
+  "numeric": {
+    "max_abs": 0.0,
+    "relative_rmse": 0.0
+  },
+  "delta_nll": 0.0,
+  "learned_route_flips": 0,
+  "learned_max_abs": 0.0,
+  "cold_compile_seconds": 7.01238002628088,
+  "rows": [
+    {
+      "batch": 1,
+      "prompt_tokens": 23,
+      "eager_seconds": 2.000190868973732,
+      "compiled_seconds": 2.214732825756073,
+      "speedup": 0.9031296442228421,
+      "generated_tokens_per_second": 14.448695403733735,
+      "eager_run_seconds": [
+        1.9947321936488152,
+        2.000190868973732,
+        2.000706097111106
+      ],
+      "compiled_run_seconds": [
+        2.223244607448578,
+        2.214732825756073,
+        2.2105091996490955
+      ],
+      "ttft_seconds": 0.40105724334716797,
+      "decode_step_seconds": [
+        0.05904289521276951,
+        0.05853588134050369,
+        0.05851530097424984,
+        0.058365123346447945,
+        0.05835510604083538,
+        0.05844624899327755,
+        0.05816584639251232,
+        0.05819827504456043,
+        0.05849771574139595,
+        0.05835275538265705,
+        0.05833946540951729,
+        0.05824313499033451,
+        0.058389896526932716,
+        0.05824737250804901,
+        0.05830887146294117,
+        0.058070529252290726,
+        0.05840431898832321,
+        0.058217015117406845,
+        0.05822903849184513,
+        0.05844448506832123,
+        0.05832314118742943,
+        0.058324843645095825,
+        0.0584391001611948,
+        0.05843757651746273,
+        0.058412039652466774,
+        0.058285072445869446,
+        0.05821259133517742,
+        0.05840647406876087,
+        0.0584437120705843,
+        0.05827999301254749,
+        0.058517156168818474
+      ],
+      "greedy_equal": true
+    },
+    {
+      "batch": 4,
+      "prompt_tokens": 23,
+      "eager_seconds": 4.121893854811788,
+      "compiled_seconds": 4.506860416382551,
+      "speedup": 0.9145820979563954,
+      "generated_tokens_per_second": 28.4011458474988,
+      "eager_run_seconds": [
+        4.121893854811788,
+        4.0697774104774,
+        4.138721518218517
+      ],
+      "compiled_run_seconds": [
+        4.506860416382551,
+        4.478086352348328,
+        4.50905460678041
+      ],
+      "ttft_seconds": 0.6882920041680336,
+      "decode_step_seconds": [
+        0.11352971568703651,
+        0.1268889643251896,
+        0.1226260531693697,
+        0.11049721017479897,
+        0.12712780758738518,
+        0.12893252819776535,
+        0.11500361748039722,
+        0.12141448073089123,
+        0.12695916555821896,
+        0.12665779888629913,
+        0.11894891411066055,
+        0.1315465122461319,
+        0.13115952350199223,
+        0.11126736365258694,
+        0.126643318682909,
+        0.12818574905395508,
+        0.13171099312603474,
+        0.12353599071502686,
+        0.11767669580876827,
+        0.1336136870086193,
+        0.10148329101502895,
+        0.13058696687221527,
+        0.1286045927554369,
+        0.10888754390180111,
+        0.13030331395566463,
+        0.11867235042154789,
+        0.12563509866595268,
+        0.1250249296426773,
+        0.12568849883973598,
+        0.13063503243029118,
+        0.12130831554532051
+      ],
+      "greedy_equal": true
+    }
+  ],
+  "peak_memory_bytes": 8184465920,
+  "peak_reserved_bytes": 8210350080,
+  "compile_cache_note": "First compiled call in process; existing on-disk Inductor cache may be warm.",
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 10,
+      "unique_graphs": 2
+    },
+    "aot_autograd": {
+      "total": 2,
+      "autograd_cache_hit": 2,
+      "ok": 2
+    },
+    "inductor": {
+      "triton_bundler_load_static_autotuner": 2,
+      "async_compile_cache_miss": 4,
+      "async_compile_cache_hit": 2,
+      "extern_calls": 6,
+      "fxgraph_cache_hit": 2
+    }
+  },
+  "compile_times": "TorchDynamo compilation metrics:\nFunction, Runtimes (s)\n_compile.compile_inner, 1.9701, 0.0831\ncompile_attempt_0, 1.9378, 0.0551\nbytecode_tracing, 0.2010, 0.0266\nOutputGraph.call_user_compiler, 1.7260, 0.0227\ninductor_codecache_torch_key, 0.7888\n_recursive_pre_grad_passes, 0.0019, 0.0002\nAOTAutogradCache.inductor_load, 0.0361, 0.0036\nTritonBundler.read_and_emit, 0.0005, 0.0004\nTritonBundler.load_cached_static_autotuners, 0.0002, 0.0002\nPyCodeCache.load_by_key_path, 0.0085, 0.0023\nStaticAutotunerFuture.warm_precompile, 0.0014, 0.0008\nCachingAutotuner.synchronize, 0.0001, 0.0001\nasync_compile.wait, 0.0004, 0.0002\nbuild_guards, 0.0282, 0.0261\ngc, 0.0014, 0.0006\npgo.dynamic_whitelist, 0.0001"
+}

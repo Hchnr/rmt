@@ -1,0 +1,6 @@
+{
+  "reference": {"backend": "rmt", "compiled": false, "routing": "layer_order", "attention": "eager", "cache": "recurrence_capacity", "dtype": "bfloat16"},
+  "compiled": {"backend": "rmt", "compiled": true, "routing": "checkpoint", "attention": "eager", "cache": "recurrence_capacity", "dtype": "bfloat16", "mixed_compile_boundary": "MLP only; norms, QKV and residual eager", "uniform_compile_boundary": "QKV and output projections including norms/MLP", "inductor_options": {"emulate_precision_casts": true, "pattern_matcher": false}},
+  "qwen": {"backend": "qwen", "compiled": false, "attention": "eager", "cache": "hf_dynamic", "dtype": "bfloat16", "fallback_reason": "bounded vLLM dependency/network probe did not complete"},
+  "service": {"host": "127.0.0.1", "batch_size": 4, "batch_wait_ms": 15, "max_context": 8192, "replication": "one full model per explicitly allocated GPU", "presence_penalty_scope": "generated tokens only"}
+}

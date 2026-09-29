@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "os_probe": {
+    "denied": [
+      "file",
+      "network",
+      "write"
+    ]
+  },
+  "correct": [
+    true,
+    true
+  ],
+  "wrong": [
+    -2
+  ],
+  "timeout": [
+    -3
+  ]
+}
