@@ -48,5 +48,23 @@
       },
       "training_source_still_matches": true
     }
+  },
+  "final_integrity": {
+    "checked_utc": "2026-09-29T14:26:45.657446+00:00",
+    "json_and_completed_report_counts": "passed",
+    "training_source_identity": "passed",
+    "documentation_links": "passed",
+    "credential_url_scan_changed_tracked_text": "no matches",
+    "git_unmerged_entries": 0,
+    "gpu_memory_mib_after_cleanup": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
   }
 }

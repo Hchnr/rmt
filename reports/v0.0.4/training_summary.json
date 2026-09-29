@@ -1,5 +1,53 @@
 {
   "probes": {
+    "probe_8gpu_layer_order_2048": {
+      "world_size": 8,
+      "deterministic": true,
+      "sequence_length": 2048,
+      "hot_steps": 3,
+      "input_tokens_per_second": 17096.091087634508,
+      "targets_per_second": 11187.746522791042,
+      "peak_allocated_gib": 35.7984414100647,
+      "off_layer_fraction_mean": 0.0,
+      "24h_hot_input_tokens_upper_bound": 1477102269.9716215,
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
+    },
+    "probe_8gpu_layer_order_512": {
+      "world_size": 8,
+      "deterministic": true,
+      "sequence_length": 512,
+      "hot_steps": 3,
+      "input_tokens_per_second": 5626.644465775374,
+      "targets_per_second": 4073.552485796394,
+      "peak_allocated_gib": 35.78939247131348,
+      "off_layer_fraction_mean": 0.0,
+      "24h_hot_input_tokens_upper_bound": 486142081.8429923,
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
+    },
+    "probe_8gpu_learned_2048": {
+      "world_size": 8,
+      "deterministic": true,
+      "sequence_length": 2048,
+      "hot_steps": 3,
+      "input_tokens_per_second": 1368.4589313695358,
+      "targets_per_second": 895.5246888035987,
+      "peak_allocated_gib": 35.79738473892212,
+      "off_layer_fraction_mean": 0.9714539448420206,
+      "24h_hot_input_tokens_upper_bound": 118234851.67032789,
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
+    },
+    "probe_8gpu_learned_512": {
+      "world_size": 8,
+      "deterministic": true,
+      "sequence_length": 512,
+      "hot_steps": 3,
+      "input_tokens_per_second": 312.6874754337057,
+      "targets_per_second": 226.37805722008474,
+      "peak_allocated_gib": 35.78530311584473,
+      "off_layer_fraction_mean": 0.9727043509483337,
+      "24h_hot_input_tokens_upper_bound": 27016197.87747217,
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
+    },
     "probe_layer_order_2048": {
       "world_size": 4,
       "deterministic": false,
@@ -10,7 +58,7 @@
       "peak_allocated_gib": 41.42173957824707,
       "off_layer_fraction_mean": 0.0,
       "24h_hot_input_tokens_upper_bound": 1028457843.3913391,
-      "scope": "Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption"
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
     },
     "probe_layer_order_512": {
       "world_size": 4,
@@ -22,7 +70,7 @@
       "peak_allocated_gib": 41.40301847457886,
       "off_layer_fraction_mean": 0.0,
       "24h_hot_input_tokens_upper_bound": 311756582.6361709,
-      "scope": "Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption"
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
     },
     "probe_learned_2048": {
       "world_size": 4,
@@ -34,7 +82,7 @@
       "peak_allocated_gib": 41.42088508605957,
       "off_layer_fraction_mean": 0.9727340936660767,
       "24h_hot_input_tokens_upper_bound": 100666461.36901493,
-      "scope": "Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption"
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
     },
     "probe_learned_512": {
       "world_size": 4,
@@ -46,7 +94,31 @@
       "peak_allocated_gib": 41.407511711120605,
       "off_layer_fraction_mean": 0.9728662570317587,
       "24h_hot_input_tokens_upper_bound": 24717770.71529817,
-      "scope": "Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption"
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
+    },
+    "probe_training_compile": {
+      "world_size": 4,
+      "deterministic": true,
+      "sequence_length": 512,
+      "hot_steps": 3,
+      "input_tokens_per_second": 3473.9243210433665,
+      "targets_per_second": 2398.7125580651714,
+      "peak_allocated_gib": 41.40448331832886,
+      "off_layer_fraction_mean": 0.0,
+      "24h_hot_input_tokens_upper_bound": 300147061.33814687,
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
+    },
+    "probe_training_eager": {
+      "world_size": 4,
+      "deterministic": true,
+      "sequence_length": 512,
+      "hot_steps": 3,
+      "input_tokens_per_second": 2986.145584446061,
+      "targets_per_second": 2061.905859673507,
+      "peak_allocated_gib": 41.40301847457886,
+      "off_layer_fraction_mean": 0.0,
+      "24h_hot_input_tokens_upper_bound": 258002978.49613968,
+      "scope": "Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption"
     }
   },
   "training": {
