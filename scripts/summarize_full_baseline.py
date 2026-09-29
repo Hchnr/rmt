@@ -9,6 +9,7 @@ results={}
 for name,location,paper in [('ifeval',a.ifeval,81.2),('math_500',a.math,84.8)]:
  work=Path(location);provenance=json.loads((work/'provenance.json').read_text())
  checked=audit(work,provenance['selection']['count'])
+ checked['uncertainty_note']='Entire pinned dataset, one seeded response per prompt; binary Wilson intervals are descriptive and do not measure prompt/protocol or generation-seed sensitivity.'
  assert checked['unique_responses']==checked['review_count']
  official=json.loads(next((work/'reports').rglob('*.json')).read_text())
  # Compare shared sample identities, not arbitrary per-run sample indices.
