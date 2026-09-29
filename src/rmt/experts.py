@@ -18,6 +18,15 @@ def project_output(expert, attended, residual):
     return h + expert.mlp(expert.post_attention_layernorm(h))
 
 
+def project_linear_qkv(expert, normalized):
+    attn = expert.self_attn
+    return attn.q_proj(normalized), attn.k_proj(normalized), attn.v_proj(normalized)
+
+
+def project_mlp(expert, normalized):
+    return expert.mlp(normalized)
+
+
 class BoundExpertBank(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -38,7 +47,28 @@ class BoundExpertBank(nn.Module):
         # Shared functions avoid constructing one compiled graph wrapper per expert.
         self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
         self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
+        self._linear_qkv = torch.compile(project_linear_qkv, dynamic=True, fullgraph=True,
+            options={"emulate_precision_casts": True, "pattern_matcher": False})
+        self._mlp = torch.compile(project_mlp, dynamic=True, fullgraph=True,
+            options={"emulate_precision_casts": True, "pattern_matcher": False})
         self.compiled = True
+
+    def mixed_qkv(self, expert, x):
+        if not self.compiled:
+            return project_qkv(expert, x)
+        # Keep reductions in eager for regrouped token counts: BF16 RMSNorm
+        # reduction changes can amplify through arbitrary recurrent routes.
+        attn = expert.self_attn
+        q, k, v = self._linear_qkv(expert, expert.input_layernorm(x))
+        q = attn.q_norm(q.view(*x.shape[:-1], -1, attn.head_dim))
+        k = attn.k_norm(k.view(*x.shape[:-1], -1, attn.head_dim))
+        return q.flatten(-2), k.flatten(-2), v
+
+    def mixed_output(self, expert, attended, residual):
+        if not self.compiled:
+            return project_output(expert, attended, residual)
+        h = residual + expert.self_attn.o_proj(attended)
+        return h + self._mlp(expert, expert.post_attention_layernorm(h))
 
     def groups(self, indices):
         flat = indices.reshape(-1)
@@ -52,7 +82,7 @@ class BoundExpertBank(nn.Module):
         for e, positions in groups:
             if positions.numel() == 0:
                 continue
-            values = self._project_qkv(self.experts[e], flat.index_select(0, positions))
+            values = self.mixed_qkv(self.experts[e], flat.index_select(0, positions))
             outputs = [out.index_copy(0, positions, value) for out, value in zip(outputs, values)]
         return tuple(out.view(*hidden.shape[:-1], -1) for out in outputs)
 
@@ -65,6 +95,6 @@ class BoundExpertBank(nn.Module):
         for e, positions in groups:
             if positions.numel() == 0:
                 continue
-            value = self._project_output(self.experts[e], attn_flat.index_select(0, positions), flat.index_select(0, positions))
+            value = self.mixed_output(self.experts[e], attn_flat.index_select(0, positions), flat.index_select(0, positions))
             result = result.index_copy(0, positions, value)
         return result.view_as(hidden)

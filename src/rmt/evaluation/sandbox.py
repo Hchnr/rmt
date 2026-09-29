@@ -6,6 +6,8 @@ import subprocess
 import sys
 
 
+FAILURES=[]
+
 def isolated_check(sample,generation,timeout,debug=False):
     worker=Path(__file__).with_name('code_worker.py')
     env={k:v for k,v in os.environ.items() if k in ['PATH','LD_LIBRARY_PATH','PYTHONPATH','HOME']}
@@ -19,6 +21,7 @@ def isolated_check(sample,generation,timeout,debug=False):
     except subprocess.TimeoutExpired:return [-1]*count,{'error':'sandbox wall timeout'}
     except subprocess.CalledProcessError as error:
         # Infrastructure errors must abort evaluation, never become wrong answers.
+        FAILURES.append(error.stderr[-1500:])
         raise RuntimeError('LCB sandbox worker failed: '+error.stderr[-1500:]) from error
 
 
