@@ -9,5 +9,13 @@
   "observed_subset_score": 12.5,
   "next_check": "Run the full date interval with 32768 output tokens; four truncated subset items are not sufficient to attribute the score gap to truncation alone.",
   "source_file": "artifacts/v0.0.3/datasets/source/livecodebench/code_generation_lite/0fe84c3912ea0c4d4a78037083943e8f0c4dd505/test5.jsonl",
-  "sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
+  "sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214",
+  "loader_release_v5_files": [
+    "test.jsonl",
+    "test2.jsonl",
+    "test3.jsonl",
+    "test4.jsonl",
+    "test5.jsonl"
+  ],
+  "loader_url": "https://huggingface.co/datasets/livecodebench/code_generation_lite/blob/0fe84c3912ea0c4d4a78037083943e8f0c4dd505/code_generation_lite.py"
 }

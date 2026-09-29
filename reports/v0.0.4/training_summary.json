@@ -1,0 +1,38 @@
+{
+  "probes": {
+    "probe_layer_order_2048": {
+      "world_size": 4,
+      "sequence_length": 2048,
+      "hot_steps": 3,
+      "input_tokens_per_second": 11903.447261473832,
+      "targets_per_second": 7772.818399209609,
+      "peak_allocated_gib": 41.42173957824707,
+      "off_layer_fraction_mean": 0.0,
+      "24h_hot_input_tokens_upper_bound": 1028457843.3913391,
+      "scope": "Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption"
+    },
+    "probe_layer_order_512": {
+      "world_size": 4,
+      "sequence_length": 512,
+      "hot_steps": 3,
+      "input_tokens_per_second": 3608.2937805112374,
+      "targets_per_second": 2491.493424906049,
+      "peak_allocated_gib": 41.40301847457886,
+      "off_layer_fraction_mean": 0.0,
+      "24h_hot_input_tokens_upper_bound": 311756582.6361709,
+      "scope": "Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption"
+    },
+    "probe_learned_512": {
+      "world_size": 4,
+      "sequence_length": 512,
+      "hot_steps": 3,
+      "input_tokens_per_second": 286.0853092048399,
+      "targets_per_second": 197.5392554497276,
+      "peak_allocated_gib": 41.407511711120605,
+      "off_layer_fraction_mean": 0.9728662570317587,
+      "24h_hot_input_tokens_upper_bound": 24717770.71529817,
+      "scope": "Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption"
+    }
+  },
+  "training": {}
+}

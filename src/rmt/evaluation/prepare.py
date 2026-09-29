@@ -89,8 +89,8 @@ def prepare(name,spec,config,root):
     elif name=='math_500':
         raw=read('test.jsonl');groups={s:[x for x in raw if f"Level {x['level']}"==s] for s in spec['subsets']}
     else:
-        # v5's new October 2024–February 2025 records reside in test5.jsonl.
-        # Use that pinned increment, and explicitly record this coverage.
+        # Historical quick regression uses only test5, NOT the release_v5 union.
+        # At this revision it ends 2025-01-04; see v0.0.4 coverage audit.
         raw=[]
         for file in ['test5.jsonl']:raw.extend(read(file))
         groups={'release_v5':[x for x in raw if spec['start_date']<=x['contest_date'][:10]<=spec['end_date']]}
