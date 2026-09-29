@@ -10,7 +10,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from ..configuration_rmt import RmtConfig
 from ..modeling_rmt import RmtForCausalLM
 from ..cache import RmtCapacityCache
-from ..runtime import enforce_gpu_scope
+from ..runtime import enforce_gpu_scope,versions
 
 
 @dataclass(frozen=True)
@@ -61,6 +61,10 @@ class Runner:
         self.source_hashes={str(p.relative_to(Path(__file__).parents[1])):hashlib.sha256(p.read_bytes()).hexdigest()
             for p in Path(__file__).parents[1].rglob('*.py') if 'evaluation' not in p.parts}
         self.device=torch.device(device)
+        self.engine_environment=versions()
+        self.engine_environment.pop('cuda_visible_devices',None)
+        self.engine_environment.update(gpu_name=torch.cuda.get_device_name(self.device),
+            compute_capability=list(torch.cuda.get_device_capability(self.device)))
         self.tokenizer=AutoTokenizer.from_pretrained(path,local_files_only=True)
         self.tokenizer.padding_side='left'
         if backend=='rmt':

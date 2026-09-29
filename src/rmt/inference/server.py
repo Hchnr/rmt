@@ -75,7 +75,8 @@ def main():
                 self.send(200,{'model':args.model,'backend':args.backend,'compiled':not args.eager,
                     'cache':'recurrence_capacity' if args.backend=='rmt' else 'hf_dynamic',
                     'max_context':runner.max_context,'batch_size':args.batch_size,'source_sha256':runner.source_hashes,
-                    'routing_mode':getattr(runner.model.config,'routing_mode',None),'attention':args.attention});return
+                    'routing_mode':getattr(runner.model.config,'routing_mode',None),'attention':args.attention,
+                    'engine_environment':runner.engine_environment});return
             self.send(404,{'error':{'message':'Unknown endpoint'}})
         def do_POST(self):
             try:
