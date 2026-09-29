@@ -24,6 +24,7 @@ total=0.;count=0
 with torch.inference_mode():
  for step in range(cfg.get('validation_batches',2)):
   for rank in range(world):
+   if step*world+rank>=len(packs):continue
    batch=batch_at(packs,step,rank,world,'cuda');result=model(**batch,use_cache=False,loss_chunk_size=cfg.get('loss_chunk_size',64))
    n=(shifted_targets(batch['labels'],batch['attention_mask'],batch['segment_ids'])!=-100).sum().item();total+=result.ce_loss.item()*n;count+=n
 expected=report['validation'][-1]['ce'];observed=total/count
