@@ -19,7 +19,9 @@
     "torch": "2.10.0+cu130",
     "cuda_runtime": "13.0",
     "transformers": "4.57.6",
-    "cuda_visible_devices": "0,1"
+    "cuda_visible_devices": "0,1",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
   },
   "world_size": 2,
   "steps": [
@@ -36,9 +38,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 6.7128173597157,
-      "valid_tokens_per_second": 2.3834999736500544,
-      "peak_memory_bytes": 67600896
+      "seconds": 6.369867639616132,
+      "valid_tokens_per_second": 2.5118261328526144,
+      "peak_memory_bytes": 67604480,
+      "valid_targets": 12
     },
     {
       "step": 1,
@@ -53,9 +56,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.7883636299520731,
-      "valid_tokens_per_second": 20.295203117085304,
-      "peak_memory_bytes": 67721728
+      "seconds": 0.8099502362310886,
+      "valid_tokens_per_second": 19.754300059781706,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
     },
     {
       "step": 2,
@@ -70,9 +74,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.07857171073555946,
-      "valid_tokens_per_second": 203.63563234418447,
-      "peak_memory_bytes": 67721728
+      "seconds": 0.07837268523871899,
+      "valid_tokens_per_second": 204.1527599987784,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
     },
     {
       "step": 3,
@@ -87,9 +92,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.07826287299394608,
-      "valid_tokens_per_second": 204.43921093003652,
-      "peak_memory_bytes": 67721728
+      "seconds": 0.07556695118546486,
+      "valid_tokens_per_second": 211.73277139011486,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
     },
     {
       "step": 4,
@@ -104,9 +110,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.07531463354825974,
-      "valid_tokens_per_second": 212.44211444974502,
-      "peak_memory_bytes": 67721728
+      "seconds": 0.07634392753243446,
+      "valid_tokens_per_second": 209.57789986901648,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
     },
     {
       "step": 5,
@@ -121,9 +128,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.07796403579413891,
-      "valid_tokens_per_second": 205.22282918046207,
-      "peak_memory_bytes": 67721728
+      "seconds": 0.0751891452819109,
+      "valid_tokens_per_second": 212.79667350932505,
+      "peak_memory_bytes": 67724288,
+      "valid_targets": 12
     },
     {
       "step": 6,
@@ -138,9 +146,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.07792420871555805,
-      "valid_tokens_per_second": 205.327718609294,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07796683348715305,
+      "valid_tokens_per_second": 205.2154651456557,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 7,
@@ -155,9 +164,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.0783883947879076,
-      "valid_tokens_per_second": 204.11184644475208,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07481925189495087,
+      "valid_tokens_per_second": 213.84870330519504,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 8,
@@ -172,9 +182,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.0760758500546217,
-      "valid_tokens_per_second": 210.31641432218188,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.08164418488740921,
+      "valid_tokens_per_second": 195.9723159961077,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 9,
@@ -189,9 +200,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.08075791411101818,
-      "valid_tokens_per_second": 198.12299730779011,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.0754031389951706,
+      "valid_tokens_per_second": 212.19275766523148,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 10,
@@ -206,9 +218,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.08123075775802135,
-      "valid_tokens_per_second": 196.96972478900747,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07482432574033737,
+      "valid_tokens_per_second": 213.83420220216553,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 11,
@@ -223,9 +236,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.0818549282848835,
-      "valid_tokens_per_second": 195.46776639171264,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07800926268100739,
+      "valid_tokens_per_second": 205.10384857022188,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 12,
@@ -240,9 +254,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.07876266352832317,
-      "valid_tokens_per_second": 203.1419365883478,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.0761696957051754,
+      "valid_tokens_per_second": 210.05729183860805,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 13,
@@ -257,9 +272,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.0810511764138937,
-      "valid_tokens_per_second": 197.40614150120217,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07933806255459785,
+      "valid_tokens_per_second": 201.6686503907166,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 14,
@@ -274,9 +290,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.080235181376338,
-      "valid_tokens_per_second": 199.41376993906226,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07682774215936661,
+      "valid_tokens_per_second": 208.25810508410638,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 15,
@@ -291,9 +308,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.08053095079958439,
-      "valid_tokens_per_second": 198.6813745663931,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07835733145475388,
+      "valid_tokens_per_second": 204.19276285894105,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 16,
@@ -308,9 +326,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.07494072802364826,
-      "valid_tokens_per_second": 213.50206252267856,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07372833602130413,
+      "valid_tokens_per_second": 217.0128998351018,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 17,
@@ -325,9 +344,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.08053061552345753,
-      "valid_tokens_per_second": 198.68220174399892,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07884515263140202,
+      "valid_tokens_per_second": 202.9294061335561,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 18,
@@ -342,9 +362,10 @@
       ],
       "mode": "learned",
       "prior_strength": 0.0,
-      "seconds": 0.08088690787553787,
-      "valid_tokens_per_second": 197.80704220538985,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.07529574073851109,
+      "valid_tokens_per_second": 212.49541930353269,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     },
     {
       "step": 19,
@@ -359,9 +380,10 @@
       ],
       "mode": "forced",
       "prior_strength": 0.0,
-      "seconds": 0.0913914144039154,
-      "valid_tokens_per_second": 175.07114978313024,
-      "peak_memory_bytes": 67723264
+      "seconds": 0.09186548367142677,
+      "valid_tokens_per_second": 174.16769999521085,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
     }
   ],
   "resume": {

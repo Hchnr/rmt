@@ -64,3 +64,19 @@
 - 零梯度依赖修复后，分布式对照通过：forced 路径（rank 0 仅专家 0、rank 1 仅专家 1，专家 2 全局未使用）最大梯度误差 5.96e-8，learned 路径 1.19e-7；SGD 更新最大误差 7.45e-9。
 - 本机环境预设 `TORCH_ALLOW_TF32_CUBLAS_OVERRIDE=1`，不同 GEMM batch 形状下 TF32 使 FP32 梯度对照出现约 1.2e-4 差异。严格数值对照显式关闭 TF32（包括 NVIDIA override），保留原容差；性能短跑保留原环境，并在版本信息中记录。
 - 重新运行已修复的两卡组合短跑，然后恢复八卡 4B；增加 append-only cache_position 验证，拒绝未实现的静态／任意位置 cache 写入。
+
+### 八卡真实 4B 首轮验收通过与训练观察
+
+- 八卡 4B（E=R=36）完成 5 个 optimizer steps；开启 packing、FSDP2、循环重计算、分块 CE/KL，投影采用 eager。前两步恢复原层路径，第三／四步已出现学习路由变化，第五步强制反复混用专家 0／1。
+- 保存完整模型与 AdamW 状态后，恢复的下一步 loss 与不中断分支一致，全部参数最大差异为 0。报告为 `reports/bootstrap/qwen3_4b_integration.json`，训练 checkpoint 在 `artifacts/bootstrap/qwen3_4b_integration`（约 47GB）。
+- 首轮 rank 0 训练峰值约 35.8GiB；短序列 16、全局 128 input tokens 下热运行约 137–184 input tokens/s。此时序列／dispatch 极小，不能外推正式训练吞吐。后续报告改为记录所有 rank 的最大峰值。
+- **训练观察**：先验 4.0 时 CE≈2.80；在数步内降到 1.6 后 CE≈9.38，受控异常路径 CE≈17.25。说明原层权重对随意替换路径不具备即用兼容性。当前日程是触发路由变化的压力测试，不适合直接作为正式蒸馏日程；后续应维持强先验并慢慢开放路由，增加稳定性对照。
+- 进一步完善不同 rank 有效 targets 数量不一致时的全局 loss 归一化，对照测试也改为不同长度文档；保存每 rank 下一步参数 SHA-256，增加独立进程恢复验收入口。由此会重跑受影响的训练检查。
+
+### 恢复能力与验收加固
+
+- 小模型目前 **14 项 pytest 通过**，新增直通代理的解析梯度检查（forward 精确保持选中 expert 输出）。
+- 不等长 rank 文档的全局有效 target 归一化对照通过：最大梯度误差 1.79e-7、更新误差 7.45e-9。
+- 两卡重新训练、保存后，**退出进程并重新 torchrun** 恢复：下一步 loss 一致，每个 rank 全部参数 SHA-256 一致。新增 `--verify-saved-resume` 可复现实验；对比包括 optimizer／scheduler／RNG／数据 cursor 恢复。
+- 增加 `tiny_reshard.yaml`，比较 root FSDP 保留 unsharded 与 forward 后 reshard 的语义和开销；仅在稳定 root 边界比较，不引入专家条件 collectives。
+- 正在以最终训练入口重新完成八卡验收并做独立进程恢复。README 和最终锁文件已整理，原 plan 顶部注明当前实施状态及实际依赖版本。

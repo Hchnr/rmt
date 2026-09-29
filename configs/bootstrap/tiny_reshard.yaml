@@ -1,0 +1,14 @@
+seed: 17
+full_model: false
+bf16: false
+compile: true
+checkpoint: true
+sequence_length: 10
+steps: 20
+learning_rate: 0.001
+prior_strength: 0.0
+kd_weight: 0.5
+artifact_dir: artifacts/bootstrap/tiny_reshard
+report: reports/bootstrap/tiny_reshard.json
+
+reshard_after_forward: true

@@ -40,7 +40,7 @@ def assets(path, full_hash=False):
             'stored_parameters': sum(math.prod(v['shape']) for v in tensors.values()),
             'dtype_counts': {d:sum(v['dtype']==d for v in tensors.values()) for d in {v['dtype'] for v in tensors.values()}},
             'shards':shards, 'full_weight_hashes':full_hash,
-            'metadata_sha256':{f:sha256(root/f) for f in ['config.json','tokenizer_config.json','model.safetensors.index.json']}}
+            'metadata_sha256':{f:sha256(root/f) for f in ['config.json','generation_config.json','tokenizer_config.json','tokenizer.json','vocab.json','merges.txt','model.safetensors.index.json']}}
 
 
 def probe_cuda(distributed=False):

@@ -7,6 +7,7 @@ from torch.distributed.fsdp import fully_shard
 from transformers import Qwen3Config, Qwen3ForCausalLM
 from .checkpoint import from_qwen_model
 from .data import pack_sequences
+from .losses import shifted_targets
 from .runtime import enforce_gpu_scope, write_report
 
 
@@ -31,7 +32,7 @@ def main():
     fully_shard(model,reshard_after_forward=False)
     optimizer=torch.optim.SGD(model.parameters(),lr=.05)
     ref_optimizer=torch.optim.SGD(reference.parameters(),lr=.05)
-    batches=[pack_sequences([[5+i,7,10],[12,20+i,25]],length=8,device=device) for i in range(world)]
+    batches=[pack_sequences([[5+i,7,10][:3-i%2],[12,20+i,25]],length=8,device=device) for i in range(world)]
     global_batch={key:torch.cat([b[key] for b in batches],dim=0) for key in batches[0]}
     results=[]
     for mode in ['forced','learned']:
@@ -41,9 +42,11 @@ def main():
         ref_extra={} if mode=='learned' else {'forced_routes':torch.cat(routes,dim=0)}
         output=model(**batches[rank],use_cache=False,routing_mode=mode,**extra)
         expected=reference(**global_batch,use_cache=False,routing_mode=mode,**ref_extra)
-        mean_loss=output.loss.detach().clone(); dist.all_reduce(mean_loss); mean_loss/=world
+        counts=[(shifted_targets(b['labels'],b['attention_mask'],b['segment_ids'])!=-100).sum() for b in batches]
+        scale=world*counts[rank]/sum(counts)
+        mean_loss=output.loss.detach().clone()*scale; dist.all_reduce(mean_loss); mean_loss/=world
         torch.testing.assert_close(mean_loss,expected.loss,atol=1e-6,rtol=1e-5)
-        output.loss.backward(); expected.loss.backward()
+        (output.loss*scale).backward(); expected.loss.backward()
         max_grad=0.
         ref_params=dict(reference.named_parameters())
         for name,p in model.named_parameters():

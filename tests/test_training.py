@@ -75,3 +75,17 @@ def test_chunked_model_loss_matches_full_and_packing(pair):
     ga=torch.autograd.grad(a.loss,model.model.embed_tokens.weight,retain_graph=True)[0]
     gb=torch.autograd.grad(b.loss,model.model.embed_tokens.weight)[0]
     torch.testing.assert_close(ga,gb,atol=1e-6,rtol=1e-4)
+
+
+def test_straight_through_proxy_gradient():
+    from rmt.routing import selected_probability_st
+    h=torch.tensor([[[1.,2.]]],requires_grad=True)
+    z=torch.tensor([[[4.,6.]]],requires_grad=True)
+    probability=torch.tensor([[.7]],requires_grad=True)
+    result=selected_probability_st(z,h,probability)
+    assert torch.equal(result,z)
+    weights=torch.tensor([[[2.,3.]]])
+    (result*weights).sum().backward()
+    torch.testing.assert_close(probability.grad,torch.tensor([[18.]]))
+    torch.testing.assert_close(z.grad,weights)
+    torch.testing.assert_close(h.grad,torch.zeros_like(h))
