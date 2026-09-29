@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "performance_geomean": 1.1184822306903752,
+  "performance_gate_passed": true,
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "0",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "mixed": false,
+  "matrix": true,
+  "fixed_output_tokens": 32,
+  "numeric": {
+    "max_abs": 0.0,
+    "relative_rmse": 0.0
+  },
+  "delta_nll": 0.0,
+  "learned_route_flips": 0,
+  "learned_max_abs": 0.0,
+  "cold_compile_seconds": 4.1301734279841185,
+  "rows": [
+    {
+      "batch": 1,
+      "prompt_tokens": 129,
+      "eager_seconds": 0.9493458922952414,
+      "compiled_seconds": 0.8346773479133844,
+      "speedup": 1.1373806832885995,
+      "generated_tokens_per_second": 38.33816753263643,
+      "greedy_equal": true
+    },
+    {
+      "batch": 4,
+      "prompt_tokens": 513,
+      "eager_seconds": 0.9933628123253584,
+      "compiled_seconds": 0.9071833621710539,
+      "speedup": 1.0949967269550243,
+      "generated_tokens_per_second": 141.0960620945173,
+      "greedy_equal": true
+    },
+    {
+      "batch": 1,
+      "prompt_tokens": 2049,
+      "eager_seconds": 1.066076636314392,
+      "compiled_seconds": 0.9488986488431692,
+      "speedup": 1.1234884121861466,
+      "generated_tokens_per_second": 33.723306529113685,
+      "greedy_equal": true
+    }
+  ],
+  "peak_memory_bytes": 10133852160,
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 212,
+      "unique_graphs": 8
+    },
+    "inductor": {
+      "triton_bundler_load_static_autotuner": 24,
+      "async_compile_cache_miss": 66,
+      "async_compile_cache_hit": 42,
+      "extern_calls": 28,
+      "fxgraph_cache_hit": 8
+    },
+    "aot_autograd": {
+      "total": 8,
+      "autograd_cache_hit": 8,
+      "ok": 8
+    }
+  },
+  "compile_times": "TorchDynamo compilation metrics:\nFunction, Runtimes (s)\n_compile.compile_inner, 2.2463, 0.2057, 0.2329, 0.1516, 0.2322, 0.1580, 0.2689, 0.1069\ncompile_attempt_0, 2.2048, 0.1710, 0.1946, 0.1173, 0.1929, 0.1228, 0.2358, 0.0759\nbytecode_tracing, 0.3927, 0.1269, 0.1333, 0.0798, 0.1421, 0.0864, 0.2054, 0.0490\nOutputGraph.call_user_compiler, 1.7970, 0.0368, 0.0535, 0.0311, 0.0427, 0.0300, 0.0230, 0.0208\ninductor_codecache_torch_key, 0.8075\n_recursive_pre_grad_passes, 0.0047, 0.0004, 0.0005, 0.0004, 0.0005, 0.0004, 0.0005, 0.0008\nAOTAutogradCache.inductor_load, 0.0385, 0.0067, 0.0085, 0.0065, 0.0084, 0.0058, 0.0075, 0.0064\nTritonBundler.read_and_emit, 0.0008, 0.0007, 0.0008, 0.0007, 0.0008, 0.0005, 0.0007, 0.0007\nTritonBundler.load_cached_static_autotuners, 0.0004, 0.0003, 0.0003, 0.0003, 0.0004, 0.0002, 0.0003, 0.0003\nPyCodeCache.load_by_key_path, 0.0099, 0.0041, 0.0049, 0.0042, 0.0045, 0.0038, 0.0044, 0.0041\nStaticAutotunerFuture.warm_precompile, 0.0013, 0.0008, 0.0006, 0.0008, 0.0006, 0.0006, 0.0008, 0.0007, 0.0007, 0.0008, 0.0006, 0.0007, 0.0008, 0.0006, 0.0006, 0.0008, 0.0004, 0.0004, 0.0008, 0.0006, 0.0006, 0.0008, 0.0006, 0.0005\nCachingAutotuner.synchronize, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0000, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001\nasync_compile.wait, 0.0004, 0.0001, 0.0002, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001\nbuild_guards, 0.0363, 0.0324, 0.0352, 0.0320, 0.0364, 0.0329, 0.0304, 0.0286\ngc, 0.0023, 0.0012, 0.0012, 0.0009, 0.0011, 0.0008, 0.0007, 0.0007\npgo.dynamic_whitelist, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001"
+}

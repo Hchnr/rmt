@@ -2,6 +2,7 @@
 import argparse
 import json
 import statistics
+import math
 import time
 from pathlib import Path
 import torch
@@ -26,7 +27,11 @@ def main():
     # Common teacher-forced tokens isolate numeric differences from sampling.
     ids=torch.tensor([[11,12,13,14,15,16]],device=r.device)
     with torch.inference_mode():
-        a=r.model(ids,use_cache=False).logits
+        base=r.model(ids,use_cache=False,output_router_trace=True)
+        a=base.logits
+        forced=torch.stack(base.router_indices,dim=-1)
+        if args.mixed:
+            a=r.model(ids,use_cache=False,routing_mode='forced',forced_routes=forced).logits
         cache=RmtCapacityCache(16);pieces=[]
         for start,end in [(0,3),(3,4),(4,6)]:
             pieces.append(r.model(ids[:,start:end],use_cache=True,past_key_values=cache).logits)
@@ -43,7 +48,10 @@ def main():
     t=time.perf_counter();r.model.model.cell.bank.compile_projections()
     r.generate(prompts,[cfg]*4);cold=time.perf_counter()-t
     with torch.inference_mode():
-        b=r.model(ids,use_cache=False).logits
+        learned=r.model(ids,use_cache=False,output_router_trace=True)
+        learned_error=(a.float()-learned.logits.float()).abs().max().item()
+        flips=int((forced!=torch.stack(learned.router_indices,dim=-1)).sum())
+        b=r.model(ids,use_cache=False,routing_mode='forced',forced_routes=forced).logits if args.mixed else learned.logits
         metric={'max_abs':(a.float()-b.float()).abs().max().item(),
                 'relative_rmse':((a.float()-b.float()).square().mean().sqrt()/a.float().square().mean().sqrt()).item()}
         labels=ids[:,1:].reshape(-1)
@@ -58,8 +66,9 @@ def main():
                      'greedy_equal':all(x['token_ids']==y['token_ids'] for x,y in zip(expected[j],runs[-1]))})
     from torch._dynamo.utils import counters,compile_times
     status='passed' if metric['relative_rmse']<=1e-3 and delta<=1e-3 else 'failed_numeric'
-    report={'status':status,'environment':versions(),'mixed':args.mixed,'matrix':args.matrix,'fixed_output_tokens':32 if args.matrix else None,'numeric':metric,'delta_nll':delta,
-            'cold_compile_seconds':cold,'rows':rows,'peak_memory_bytes':torch.cuda.max_memory_allocated(),
+    geomean=math.prod(x['speedup'] for x in rows)**(1/len(rows))
+    report={'status':status,'performance_geomean':geomean,'performance_gate_passed':geomean>=1.10,'environment':versions(),'mixed':args.mixed,'matrix':args.matrix,'fixed_output_tokens':32 if args.matrix else None,'numeric':metric,'delta_nll':delta,
+            'learned_route_flips':flips,'learned_max_abs':learned_error,'cold_compile_seconds':cold,'rows':rows,'peak_memory_bytes':torch.cuda.max_memory_allocated(),
             'compile_counters':{str(k):dict(v) for k,v in counters.items()},'compile_times':compile_times(repr='str')}
     write_report(args.output,report);print(json.dumps(report),flush=True)
     if status!='passed':raise RuntimeError('Compiled numerics outside fixed acceptance thresholds')

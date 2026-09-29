@@ -1,0 +1,81 @@
+{
+  "status": "failed_numeric",
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "1",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "mixed": true,
+  "matrix": false,
+  "fixed_output_tokens": null,
+  "numeric": {
+    "max_abs": 16.09375,
+    "relative_rmse": 0.6538271307945251
+  },
+  "delta_nll": 1.1267757415771484,
+  "cold_compile_seconds": 11.808901529759169,
+  "rows": [
+    {
+      "batch": 1,
+      "prompt_tokens": 23,
+      "eager_seconds": 3.489237392321229,
+      "compiled_seconds": 3.436297880485654,
+      "speedup": 1.0154059728454312,
+      "generated_tokens_per_second": 9.312347506810854,
+      "greedy_equal": false
+    },
+    {
+      "batch": 4,
+      "prompt_tokens": 23,
+      "eager_seconds": 5.558395370841026,
+      "compiled_seconds": 5.079285625368357,
+      "speedup": 1.0943262066381478,
+      "generated_tokens_per_second": 25.200394197307475,
+      "greedy_equal": false
+    }
+  ],
+  "peak_memory_bytes": 8197785088,
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 106,
+      "unique_graphs": 4
+    },
+    "inductor": {
+      "pattern_matcher_count": 16,
+      "pattern_matcher_nodes": 22,
+      "removed_pointless_view_pair": 2,
+      "fxgraph_cache_miss": 4,
+      "extern_calls": 14,
+      "async_compile_cache_miss": 14,
+      "triton_bundler_save_kernel": 152,
+      "triton_bundler_save_static_autotuner": 4,
+      "benchmarking.InductorBenchmarker.benchmark": 15,
+      "benchmarking.InductorBenchmarker.benchmark_gpu": 15,
+      "async_compile_cache_hit": 4
+    },
+    "aot_autograd": {
+      "total": 4,
+      "autograd_cache_miss": 4,
+      "autograd_cache_saved": 4,
+      "ok": 4
+    },
+    "graph_break": {},
+    "aten_mm_info": {
+      "aten.mm_1_4096_2560": 1,
+      "aten.mm_1_1024_2560": 2,
+      "aten.mm_s77_4096_2560": 1,
+      "aten.mm_s77_1024_2560": 2,
+      "aten.addmm_1_2560_4096": 1,
+      "aten.mm_1_9728_2560": 2,
+      "aten.addmm_1_2560_9728": 1,
+      "aten.addmm_s26_2560_4096": 1,
+      "aten.mm_s26_9728_2560": 2,
+      "aten.addmm_s26_2560_9728": 1
+    }
+  },
+  "compile_times": "TorchDynamo compilation metrics:\nFunction, Runtimes (s)\n_compile.compile_inner, 3.3501, 1.7134, 0.4828, 0.6050\ncompile_attempt_0, 3.3120, 1.6769, 0.4520, 0.5710\nbytecode_tracing, 0.2559, 0.1262, 0.0492, 0.0641\nOutputGraph.call_user_compiler, 3.0416, 1.5417, 0.3960, 0.5001\ninductor_codecache_torch_key, 0.7963\n_recursive_pre_grad_passes, 0.0051, 0.0006, 0.0004, 0.0004\ncreate_aot_dispatcher_function, 1.3051, 1.5248, 0.3819, 0.4860\naot_collect_metadata, 0.0278, 0.0470, 0.0114, 0.0180\ncompile_fx.<locals>.fw_compiler_base, 1.2177, 1.3814, 0.3279, 0.4017\n_recursive_joint_graph_passes, 0.1571, 0.0114, 0.0066, 0.0079\npad_mm_benchmark, 0.0005, 0.0004, 0.0004, 0.0005, 0.0008, 0.0004, 0.0005, 0.0004, 0.0004, 0.0004, 0.0009, 0.0004, 0.0004, 0.0004\npad_mm_benchmark_get_do_bench, 0.0002, 0.0002, 0.0002, 0.0002, 0.0006, 0.0002, 0.0002, 0.0002, 0.0002, 0.0002, 0.0006, 0.0002, 0.0002, 0.0002\ncompile_fx_inner, 1.0600, 1.3695, 0.3209, 0.3933\nfx_codegen_and_compile, 1.0591, 1.3687, 0.3202, 0.3927\nadditional_fake_tensor_prop, 0.0122, 0.0198, 0.0065, 0.0094\n_recursive_post_grad_passes, 0.0237, 0.0063, 0.0204, 0.0392\nGraphLowering.run, 0.0528, 0.0622, 0.0174, 0.0215\nGraphLowering.compile_to_fn, 0.9444, 1.2565, 0.2597, 0.3048\nGraphLowering.compile_to_module, 0.9444, 1.2564, 0.2597, 0.3047\nGraphLowering.codegen, 0.1075, 0.3892, 0.0382, 0.0786\nScheduler.__init__, 0.0233, 0.1775, 0.0099, 0.0167\nScheduler.fused_nodes, 0.0045, 0.0099, 0.0013, 0.0037\nScheduler.codegen, 0.0787, 0.2082, 0.0254, 0.0587\nPythonWrapperCodegen.generate, 0.0030, 0.0026, 0.0021, 0.0023\nPyCodeCache.load_by_key_path, 0.8361, 0.8665, 0.2208, 0.2256\nasync_compile.precompile, 0.0110, 0.3783, 0.4396, 0.0084, 0.4374, 0.4183\nCachingAutotuner.synchronize, 0.0001, 0.0002, 0.0002, 0.0001, 0.0001, 0.0002, 0.0001, 0.0001, 0.0001, 0.0001\nasync_compile.wait, 0.0002, 0.0002, 0.2192, 0.2239\nTritonBundler.collect, 0.0019, 0.0022, 0.0010, 0.0009\nbuild_guards, 0.0324, 0.0325, 0.0281, 0.0303\ngc, 0.0030, 0.0020, 0.0019, 0.0026\nCachingAutotuner.benchmark_all_configs, 0.0151, 0.0201, 0.0203, 0.0199, 0.0134, 0.0133\nInductorBenchmarker.benchmark, 0.0077, 0.0064, 0.0065, 0.0063, 0.0063, 0.0066, 0.0064, 0.0063, 0.0064, 0.0063, 0.0063, 0.0064, 0.0062, 0.0064, 0.0063\nInductorBenchmarker.benchmark_gpu, 0.0076, 0.0064, 0.0064, 0.0063, 0.0063, 0.0065, 0.0063, 0.0063, 0.0063, 0.0063, 0.0062, 0.0064, 0.0062, 0.0063, 0.0063\npgo.dynamic_whitelist, 0.0001, 0.0001"
+}

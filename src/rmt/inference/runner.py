@@ -103,11 +103,13 @@ class Runner:
             output=self.model(input_ids=current,attention_mask=mask,position_ids=positions[:,-current.shape[1]:],
                 past_key_values=cache,use_cache=use_cache,logits_to_keep=1)
             if use_cache: cache=output.past_key_values
+            greedy_batch = output.logits[:,-1].argmax(-1).tolist() if all(
+                c.temperature == 0 and c.presence_penalty == 0 for c in configs) else None
             active=[not x for x in done]
             next_ids=[]
             for row,cfg in enumerate(configs):
                 if done[row]: next_ids.append(self.pad); continue
-                token=sample(output.logits[row,-1],histories[row],cfg,generators[row])
+                token=greedy_batch[row] if greedy_batch is not None else sample(output.logits[row,-1],histories[row],cfg,generators[row])
                 histories[row].append(token);next_ids.append(token)
                 texts[row]=self.tokenizer.decode(histories[row],skip_special_tokens=True)
                 stops=[texts[row].find(s) for s in cfg.stop if s in texts[row]]

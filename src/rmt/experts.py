@@ -33,9 +33,11 @@ class BoundExpertBank(nn.Module):
 
     def compile_projections(self):
         # Compile the numerical kernels, leaving variable-length dispatch in Python.
+        # Disable addmm pattern fusion: on regrouped 2-D BF16 tensors it changes
+        # the rounding of residual additions, even with emulate_precision_casts.
         # Shared functions avoid constructing one compiled graph wrapper per expert.
-        self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True})
-        self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True})
+        self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
+        self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False})
         self.compiled = True
 
     def groups(self, indices):
