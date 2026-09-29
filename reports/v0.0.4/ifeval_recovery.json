@@ -8,5 +8,23 @@
   "status": "completed",
   "unique_responses": 541,
   "review_count": 541,
-  "prior_runtime_error_root_cause": "not yet identified; exact pair diagnostic ongoing"
+  "prior_runtime_error_root_cause": "Unresolved: same pair replay succeeded after service restart; original server did not persist traceback",
+  "pair_replay": "passed, 1341 model forwards, 108.34 seconds",
+  "batch_comparison": [
+    {
+      "index": 484,
+      "same_prompt_and_seed": true,
+      "single_completion_tokens": 522,
+      "pair_completion_tokens": 520,
+      "same_text": false
+    },
+    {
+      "index": 485,
+      "same_prompt_and_seed": true,
+      "single_completion_tokens": 1061,
+      "pair_completion_tokens": 1341,
+      "same_text": false
+    }
+  ],
+  "limitation": "Batch composition can change sampled text even with the same request seed; original transient RuntimeError is not claimed fixed."
 }
