@@ -11,7 +11,7 @@ for p in sorted(root.glob('probe_*.json')):
   'peak_allocated_gib':max(x['peak_allocated_bytes'] for x in rows)/1024**3,
   'off_layer_fraction_mean':statistics.mean(x['off_layer_fraction'] for x in rows),
   '24h_hot_input_tokens_upper_bound':tokens/seconds*86400,
-  'scope':'Excludes load/compile/eval/save; same teacher and exact KL included; no linear GPU scaling assumption'}
+  'scope':'Three post-first-step timings only; excludes batch transfer, zero_grad, route diagnostics, load, eval and save; teacher and exact KL included; no linear GPU scaling assumption'}
 for name in ['fixed_128','opened_128']:
  p=root/(name+'.json')
  if not p.exists():continue
