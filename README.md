@@ -2,7 +2,7 @@
 
 Qwen3-4B 的 36 层迁移为 36 套绑定专家，由同一个 recurrent cell 循环调用 36 次。每个 token 每次循环选择一整套 Q/K/V/O、FFN 和套内 norm。attention 始终保留原序列的因果关系；KV cache 按循环深度保存。
 
-本项目当前是 **v0.0.2 正确性与系统兼容性验证**。训练使用少量固定样例，不能据此判断是否超过 Qwen3-4B。完整实现过程、失败定位和保守决策见 [record](plans/v0.0.2_bound_rmt_bootstrap/record.md)，设计见 [plan](plans/v0.0.2_bound_rmt_bootstrap.md)。
+本项目当前是 **v0.0.2 正确性与系统兼容性验证**。训练使用少量固定样例，不能据此判断是否超过 Qwen3-4B。完整实现过程、失败定位和保守决策见 [record](plans/v0.0.2_bound_rmt_bootstrap_record.md)，设计见 [plan](plans/v0.0.2_bound_rmt_bootstrap.md)。
 
 ## 环境
 

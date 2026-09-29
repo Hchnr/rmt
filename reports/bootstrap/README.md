@@ -1,6 +1,6 @@
 # Bootstrap 验收报告索引
 
-本目录记录工程正确性；fixture loss 不作为能力评测成绩。全部命令见仓库 README，异常定位与决策见 `plans/v0.0.2_bound_rmt_bootstrap/record.md`。
+本目录记录工程正确性；fixture loss 不作为能力评测成绩。全部命令见仓库 README，异常定位与决策见 `plans/v0.0.2_bound_rmt_bootstrap_record.md`。
 
 | 报告 | 内容 |
 | --- | --- |
