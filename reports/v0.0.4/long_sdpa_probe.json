@@ -1,0 +1,33 @@
+{
+  "scope": "Synthetic BF16 SDPA kernel shape probe, not a real-model long-generation pass",
+  "results": [
+    {
+      "length": 16000,
+      "finite": true
+    },
+    {
+      "length": 32000,
+      "finite": true
+    },
+    {
+      "length": 32767,
+      "finite": true
+    },
+    {
+      "length": 32768,
+      "finite": true
+    },
+    {
+      "length": 32769,
+      "finite": true
+    },
+    {
+      "length": 33000,
+      "finite": true
+    },
+    {
+      "length": 40000,
+      "finite": true
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import argparse
 from dataclasses import asdict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
+import logging
 import queue
 import threading
 import time
@@ -39,6 +40,7 @@ class Batcher:
                 torch.cuda.empty_cache()
                 mid=len(jobs)//2;self.execute(jobs[:mid],retries+1);self.execute(jobs[mid:],retries+1)
             else:
+                logging.exception("Inference batch failed (size=%s)",len(jobs))
                 for job in jobs: job[2].put(error)
 
     def work(self):

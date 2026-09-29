@@ -1,9 +1,9 @@
 {
   "pytest": {
-    "passed": 29,
+    "passed": 30,
     "warnings": 14,
-    "seconds": 6.1,
-    "command": "CUDA_VISIBLE_DEVICES=0 PYTHONPATH=src .venv-cached/bin/python -m pytest -q"
+    "seconds": 6.57,
+    "command": "CUDA_VISIBLE_DEVICES=6 PYTHONPATH=src .venv-cached/bin/python -m pytest -q"
   },
   "real_checkpoint_checks": {
     "fixed": {

@@ -1,0 +1,12 @@
+{
+  "original_key": "513cc7667b324bc818e6764cb8f4899f50cfcb9f6a45d573b16fdee1977c37be",
+  "source_snapshot_verified": true,
+  "runtime_metadata_equal": true,
+  "cached_predictions": 539,
+  "diagnostic_wrapper_sha256": "29d1dc87b7babcf2938fadedd1505473a601e429941c8bf7d24ec73bffd98194",
+  "scope": "Progress hooks and exception traceback only; no tensor/sampling changes; pending failure diagnosis",
+  "status": "completed",
+  "unique_responses": 541,
+  "review_count": 541,
+  "prior_runtime_error_root_cause": "not yet identified; exact pair diagnostic ongoing"
+}
