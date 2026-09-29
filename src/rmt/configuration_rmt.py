@@ -29,7 +29,11 @@ class RmtConfig(Qwen3Config):
         self.router_gradient = router_gradient
         self.norm_policy = norm_policy
         self.cache_layout_version = cache_layout_version
-        super().__init__(num_hidden_layers=self.num_recurrences, **kwargs)
+        layer_types = kwargs.pop("layer_types", None)
+        if layer_types is not None and any(t != "full_attention" for t in layer_types):
+            raise ValueError("Only full attention is supported")
+        super().__init__(num_hidden_layers=self.num_recurrences,
+                         layer_types=["full_attention"] * self.num_recurrences, **kwargs)
         if self.use_sliding_window:
             raise ValueError("Sliding-window attention is outside bootstrap scope")
         if self.num_attention_heads % self.num_key_value_heads:

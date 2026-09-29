@@ -80,3 +80,15 @@
 - 两卡重新训练、保存后，**退出进程并重新 torchrun** 恢复：下一步 loss 一致，每个 rank 全部参数 SHA-256 一致。新增 `--verify-saved-resume` 可复现实验；对比包括 optimizer／scheduler／RNG／数据 cursor 恢复。
 - 增加 `tiny_reshard.yaml`，比较 root FSDP 保留 unsharded 与 forward 后 reshard 的语义和开销；仅在稳定 root 边界比较，不引入专家条件 collectives。
 - 正在以最终训练入口重新完成八卡验收并做独立进程恢复。README 和最终锁文件已整理，原 plan 顶部注明当前实施状态及实际依赖版本。
+
+### 合并冲突解决与再次限制 GPU
+
+- 用户要求先解决 merge 冲突。冲突仅在 `.gitignore` 和 README：保留当前已验证的环境／验收说明，合入对方关于主开发目录、共享 worktree 环境和独立转换命令的内容；`.venv` 忽略规则同时覆盖目录与软链接。已提交 merge，没有覆盖现有测试报告。
+- 当前授权再次缩小为物理 GPU 0–3。已停止本任务仍在运行的八卡独立进程恢复 torchrun；没有终止其他任务。运行入口恢复前四卡限制。
+- 最新八卡 5 步及同进程恢复已完整通过，报告保留；八卡独立进程恢复因资源授权变化中止，不记为通过。新增独立产物路径的四卡配置，继续实际 4B 训练和独立进程恢复验收，避免覆盖八卡 checkpoint。
+
+### 最后接口检查与通信边界对照
+
+- 修复新版 HF 的 `layer_types` 长度对 E/R 解耦的影响：配置按循环次数保存 attention 类型；expert 中的原 HF 层编号仅作参数容器占位，cache 仍由 recurrent controller 按循环深度索引。补测 E=3、R=2／5 的 forward、cache 和权重迁移。
+- root `reshard_after_forward=True` 的两卡 20 步及恢复也通过，与持有权重版本的 loss／路由轨迹一致。本次小模型热步中位数约 86ms，对照持有权重版本约 77ms；显存差异被小模型／通信缓冲掩盖，不据此外推 4B。默认继续采用保留权重策略。
+- HF 导出目录的 Python 源码已更新到当前实现，权重不变；后续重载检查将校验一致性。

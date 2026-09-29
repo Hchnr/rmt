@@ -44,11 +44,13 @@ CUDA_VISIBLE_DEVICES=0,1 torchrun --standalone --nproc_per_node=2 -m rmt.fsdp_re
 # packing + compile + FSDP2 + 重计算，20 步及精确恢复
 CUDA_VISIBLE_DEVICES=0,1 TORCHINDUCTOR_COMPILE_THREADS=2 torchrun --standalone --nproc_per_node=2 -m rmt.smoke_train --config configs/bootstrap/tiny_integration.yaml
 
-# 8 卡 4B，5 步及保存恢复，含受控混合专家路由
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --standalone --nproc_per_node=8 -m rmt.smoke_train --config configs/bootstrap/qwen3_4b_integration.yaml
+# 当前授权下的 4 卡 4B，5 步及保存恢复
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --standalone --nproc_per_node=4 -m rmt.smoke_train --config configs/bootstrap/qwen3_4b_four_gpu.yaml
+# 退出训练进程后，恢复下一步并逐参数 SHA-256 对照
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --standalone --nproc_per_node=4 -m rmt.smoke_train --config configs/bootstrap/qwen3_4b_four_gpu.yaml --verify-saved-resume
 ```
 
-运行需自行保证所选 GPU 空闲。当前用户仅授权物理 GPU 0–3，入口默认使用前四卡；上面的八卡命令是已执行验收的历史复现命令，重新获得授权前不能运行。`CUDA_VISIBLE_DEVICES` 可缩小范围。测试与性能报告中的有效 token 是输入 token，loss 只统计文档内有效 next-token targets。
+运行需自行保证所选 GPU 空闲。当前用户仅授权物理 GPU 0–3，入口默认使用前四卡；八卡历史结果对应 `qwen3_4b_integration.yaml`，重新获得授权前不能运行八卡任务。`CUDA_VISIBLE_DEVICES` 可缩小范围。测试与性能报告中的有效 token 是输入 token，loss 只统计文档内有效 next-token targets。
 
 报告在 `reports/bootstrap/*.json`，大 checkpoint 在被 git 忽略的 `artifacts/bootstrap/`。重复 smoke 会覆盖该配置的训练 checkpoint；请为正式实验设置独立 artifact 路径。训练 checkpoint 使用 PyTorch Distributed Checkpoint，额外按 rank 保存 scheduler、Python／CPU／CUDA RNG、数据 cursor、先验日程配置；当前 smoke 会自动对比恢复后下一步与不中断分支的 loss 及全部参数。
 

@@ -21,7 +21,10 @@ def project_output(expert, attended, residual):
 class BoundExpertBank(nn.Module):
     def __init__(self, config):
         super().__init__()
-        self.experts = nn.ModuleList([Qwen3DecoderLayer(config, e) for e in range(config.num_experts)])
+        # Decoder layers are parameter containers only; their HF cache index
+        # is unused. Cache depth belongs to the recurrent controller, so E and
+        # R remain independent even when the expert count exceeds recurrence.
+        self.experts = nn.ModuleList([Qwen3DecoderLayer(config, 0) for _ in range(config.num_experts)])
         self.q_width = config.num_attention_heads * config.head_dim
         self.kv_width = config.num_key_value_heads * config.head_dim
         self._project_qkv = project_qkv

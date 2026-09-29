@@ -170,3 +170,20 @@ def test_cache_rejects_non_append_positions(pair):
     model.eval()
     with pytest.raises(ValueError,match='contiguous'):
         model(torch.tensor([[5,7]]),cache_position=torch.tensor([1,2]),use_cache=True)
+
+
+def test_expert_count_independent_from_recurrence_count(pair):
+    from rmt.checkpoint import from_qwen_model
+    teacher,_=pair
+    for depth in (2,5):
+        model=from_qwen_model(teacher,num_recurrences=depth).eval()
+        assert len(model.model.cell.bank.experts)==3
+        assert model.config.num_recurrences==depth
+        assert len(model.config.layer_types)==depth
+        ids=torch.tensor([[5,7,10]])
+        with torch.no_grad():
+            expected=model(ids,use_cache=False).logits
+            prefill=model(ids[:,:2],use_cache=True)
+            actual=model(ids[:,2:],past_key_values=prefill.past_key_values,use_cache=True)
+        assert len(actual.past_key_values.layers)==depth
+        torch.testing.assert_close(actual.logits,expected[:,2:],atol=1e-5,rtol=1e-4)
