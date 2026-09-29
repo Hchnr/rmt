@@ -92,3 +92,6 @@
 - 修复新版 HF 的 `layer_types` 长度对 E/R 解耦的影响：配置按循环次数保存 attention 类型；expert 中的原 HF 层编号仅作参数容器占位，cache 仍由 recurrent controller 按循环深度索引。补测 E=3、R=2／5 的 forward、cache 和权重迁移。
 - root `reshard_after_forward=True` 的两卡 20 步及恢复也通过，与持有权重版本的 loss／路由轨迹一致。本次小模型热步中位数约 86ms，对照持有权重版本约 77ms；显存差异被小模型／通信缓冲掩盖，不据此外推 4B。默认继续采用保留权重策略。
 - HF 导出目录的 Python 源码已更新到当前实现，权重不变；后续重载检查将校验一致性。
+
+- 合并后 15 项单测全部通过，`git ls-files -u` 为空、`git diff --check` 通过。
+- 四卡真实模型已完成 5 步，峰值约 41.4GiB／卡；正在保存和恢复验证。报告索引与下一阶段建议已写入 `reports/bootstrap/README.md`。
