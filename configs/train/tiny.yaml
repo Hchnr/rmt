@@ -20,5 +20,6 @@ eval_every: 2
 save: true
 export: true
 verify_replay: true
-artifact_dir: artifacts/v0.0.4/train/tiny_v2
+artifact_dir: artifacts/v0.0.4/train/tiny_deterministic
 report: reports/v0.0.4/tiny_train.json
+deterministic: true

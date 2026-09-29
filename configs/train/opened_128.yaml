@@ -18,9 +18,10 @@ verify_replay: true
 sequence_length: 2048
 routing_mode: learned
 prior_start: 4.0
-artifact_dir: artifacts/v0.0.4/train/opened_128
+artifact_dir: artifacts/v0.0.4/train/opened_128_deterministic
 report: reports/v0.0.4/opened_128.json
 prior_end: 3.0
 prior_warmup_steps: 16
 prior_decay_steps: 112
 eval_every: 32
+deterministic: true

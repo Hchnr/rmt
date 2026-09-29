@@ -46,6 +46,11 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--config',required=True)
     ap.add_argument('--resume',action='store_true');ap.add_argument('--verify-resume',action='store_true')
     a=ap.parse_args();cfg=yaml.safe_load(Path(a.config).read_text());enforce_gpu_scope()
+    if cfg.get('deterministic',True):
+        os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
+        torch.use_deterministic_algorithms(True)
+        torch.backends.cudnn.benchmark=False
+        torch.backends.cudnn.deterministic=True
     rank=int(os.environ.get('RANK',0));world=int(os.environ.get('WORLD_SIZE',1))
     device=torch.device('cuda',int(os.environ.get('LOCAL_RANK',0)))
     torch.cuda.set_device(device);torch.set_num_threads(2)
@@ -162,14 +167,17 @@ def main():
         # Every rank executes the same number of forwards, for FSDP collectives.
         rounds=cfg.get('validation_batches',2)
         for i in range(rounds):
-            batch=batch_at(dev,i,rank,world,device);result=forward(batch)
+            batch=batch_at(dev,i,rank,world,device)
+            include=i*world+rank<len(dev)
+            if not include:batch['labels']=torch.full_like(batch['labels'],-100)
+            result=forward(batch)
             nt=(shifted_targets(batch['labels'],batch['attention_mask'],batch['segment_ids'])!=-100).sum()
             sums+=torch.stack((result.ce_loss*nt,result.kd_loss*nt,nt.float(),batch['attention_mask'].sum().float()))
-            valid=batch['attention_mask'].bool()
+            valid=batch['attention_mask'].bool() & include
             for j,route in enumerate(result.router_indices):off+=(route[valid]!=j%model.config.num_experts).sum();used+=valid.sum()
         reduce_sum(sums);reduce_sum(off);reduce_sum(used)
         row={'event':'validation','step':step,'prior':model.model.cell.router.prior_strength,'ce':(sums[0]/sums[2]).item(),
-             'kl':(sums[1]/sums[2]).item(),'targets':sums[2].item(),'off_layer_fraction':(off/used).item()}
+             'kl':(sums[1]/sums[2]).item(),'targets':sums[2].item(),'off_layer_fraction':(off/used.clamp_min(1)).item(),'unique_packs':min(rounds*world,len(dev))}
         if not torch.isfinite(sums).all():raise FloatingPointError('Nonfinite validation')
         model.model.cell.router.prior_strength=saved;model.train();emit(row);return row
 
