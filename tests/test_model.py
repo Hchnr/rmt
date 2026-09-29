@@ -77,9 +77,9 @@ def test_cache_mixed_routes_and_chunking(pair):
                          past_key_values=cache, use_cache=True)
             outputs.append(part.logits)
         torch.testing.assert_close(full, torch.cat(outputs,1), atol=1e-5, rtol=1e-4)
-        assert len(cache.key_cache) == 3
-        assert all(t.shape[-2] == 5 for t in cache.key_cache)
-        assert cache.key_cache[0].data_ptr() != cache.key_cache[1].data_ptr()
+        assert len(cache.layers) == 3
+        assert all(t.shape[-2] == 5 for t in [layer.keys for layer in cache.layers])
+        assert cache.layers[0].keys.data_ptr() != cache.layers[1].keys.data_ptr()
 
 
 def test_checkpoint_gradients_and_router(pair):

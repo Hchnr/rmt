@@ -25,6 +25,8 @@ class RmtCausalLMOutput(CausalLMOutputWithPast):
     last_hidden_state: Optional[torch.Tensor] = None
     router_indices: Optional[tuple] = None
     router_probabilities: Optional[tuple] = None
+    ce_loss: Optional[torch.Tensor] = None
+    kd_loss: Optional[torch.Tensor] = None
 
 
 class RmtRecurrentCell(nn.Module):
@@ -172,7 +174,9 @@ class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
                 past_key_values=None, inputs_embeds=None, labels=None, use_cache=None,
                 output_attentions=False, output_hidden_states=False, return_dict=True,
                 cache_position=None, logits_to_keep=0, segment_ids=None, forced_routes=None,
-                routing_mode=None, output_router_trace=False, return_hidden_only=False, **kwargs):
+                routing_mode=None, output_router_trace=False, return_hidden_only=False,
+                loss_chunk_size=0, teacher_hidden_states=None, teacher_head_weight=None,
+                kd_weight=0.0, ce_weight=1.0, temperature=1.0, **kwargs):
         if output_attentions:
             raise ValueError("Attention weight materialization is not exposed")
         if use_cache is None:
@@ -181,8 +185,17 @@ class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
             input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, use_cache,
             output_hidden_states, cache_position, segment_ids, forced_routes, routing_mode, output_router_trace)
         loss = None
+        ce_loss = kd_loss = None
         logits = None
-        if not return_hidden_only:
+        if loss_chunk_size:
+            if labels is None:
+                raise ValueError("Chunked loss requires labels")
+            from .losses import distillation_loss
+            loss, ce_loss, kd_loss = distillation_loss(
+                hidden, self.lm_head.weight, labels, attention_mask, segment_ids,
+                teacher_hidden_states, teacher_head_weight, loss_chunk_size,
+                temperature, ce_weight, kd_weight)
+        elif not return_hidden_only:
             if labels is not None and logits_to_keep != 0:
                 raise ValueError("Training labels require all sequence logits")
             selected = hidden[:, -logits_to_keep:, :] if isinstance(logits_to_keep, int) else hidden[:, logits_to_keep, :]
@@ -199,6 +212,7 @@ class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
                     loss = logits.sum() * 0
         output = RmtCausalLMOutput(loss=loss, logits=logits, past_key_values=cache,
                                   hidden_states=states, last_hidden_state=hidden,
+                                  ce_loss=ce_loss, kd_loss=kd_loss,
                                   router_indices=routes if output_router_trace else None,
                                   router_probabilities=probs if output_router_trace else None)
         return output if return_dict else output.to_tuple()

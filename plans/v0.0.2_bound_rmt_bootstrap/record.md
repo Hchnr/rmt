@@ -34,3 +34,18 @@
 - 编译边界选为数值投影函数，动态 token 分组保持在 Python，避免把部分编译错误表述成全图编译。
 - router 采用计划中的选中概率直通代理，明确是有偏估计；固定路径绕过代理以校验真实梯度。
 - 已加入固定路径 forward/backward、因果性、packing 梯度、混合路由 cache、重计算与 HF 生成／导出的初始测试；此时尚未执行，不能视为通过。
+
+### 资源再次更新与离线依赖方案
+
+- 用户随后开放全部 8 卡；运行入口默认范围更新为 GPU 0–7，恢复八卡 4B 验收。之前的前四卡限制只对应当时授权窗口。
+- torch 2.7.1／CUDA 12.6 在线下载反复超时，两个 registry 路线均无法及时完成；没有继续无限重试。
+- 系统自带 Python 3.12／NGC torch 2.12 nightly 的 BF16 CUDA matmul 可运行，但为避免使用 nightly，选择本机 uv 缓存中的稳定 torch 2.10.0+cu130、Transformers 4.57.6、Python 3.13.14，在独立 `.venv-cached` 中离线安装。计划版本因此调整，数值基准也使用该锁定的 HF 版本。
+- 增加 `scripts/cached_environment.py`：只读缓存，按 wheel ABI 和依赖版本重建本地 wheelhouse，保留来源 manifest；不修改系统 Python 或共享缓存。后续用实际 CUDA／compile／NCCL 探针验证兼容性，不凭驱动版本号推断通过。
+
+### B0/B1 运行结果与 B2 对照修正
+
+- 环境安装完成，锁定 Python 3.13.14、torch 2.10.0+cu130、Transformers 4.57.6；离线缓存来源已保存到报告目录。
+- CUDA BF16 matmul/backward、SDPA/backward、真实 Inductor 编译、两卡 NCCL collective 全部通过（`reports/bootstrap/gpu_probe.json`）。
+- 小模型 10 项测试通过，含逐参数梯度等价、token 分组慢速参考、任务驱动 router 更新、精确分块 CE/KL 梯度、packing、cache 和 HF roundtrip。新版 DynamicCache 的存储接口由 key_cache 改为 layers，测试据实际接口更新。
+- 真实 4B 首轮发现对照输入位置不一致：HF 原模型直接 forward 默认物理 arange，而 RMT 左 padding 默认有效 token cumsum。已在教师对照显式传入相同 position_ids，保留原阈值重跑，不放宽误差阈值。
+- 增加真实模型验收入口和两卡／八卡短训练入口；当前开始运行组合探针，尚未声明通过。
