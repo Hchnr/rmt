@@ -1,0 +1,85 @@
+{
+  "name": "quick_non_thinking",
+  "seed": 17,
+  "samples_per_benchmark": 32,
+  "pilot_samples_per_benchmark": 16,
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "max_tokens": 2048,
+    "seed": 17,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    }
+  },
+  "deviations": [
+    "32 deterministic stratified/random samples, not full datasets",
+    "2048 formal output tokens (pilot 1024) instead of report 32768",
+    "EvalScope 1.0.0 adapters, not a verified paper prompt reproduction",
+    "C-Eval zero-shot, overriding adapter default five-shot",
+    "MMLU-Redux 2.0 snapshot; paper exact revision unspecified",
+    "LCB release_v5 date-filtered 2024-10-01 through 2025-02-28",
+    "LCB draws from pinned v5 increment test5.jsonl, date-filtered; full release_v5 concatenation is not downloaded"
+  ],
+  "benchmarks": {
+    "mmlu_redux": {
+      "repo": "edinburgh-dawg/mmlu-redux-2.0",
+      "revision": "372ea425445d51e1ba1188c56e5e893f8138621f",
+      "split": "test",
+      "subsets": [
+        "college_computer_science",
+        "high_school_geography",
+        "philosophy",
+        "business_ethics"
+      ]
+    },
+    "ceval": {
+      "repo": "ceval/ceval-exam",
+      "revision": "617524a00b307ff6f9933702f724131fe12ca7ce",
+      "split": "val",
+      "subsets": [
+        "college_programming",
+        "high_school_geography",
+        "high_school_history",
+        "business_administration"
+      ]
+    },
+    "ifeval": {
+      "repo": "google/IFEval",
+      "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+      "split": "train",
+      "subsets": [
+        "default"
+      ]
+    },
+    "math_500": {
+      "repo": "HuggingFaceH4/MATH-500",
+      "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+      "split": "test",
+      "subsets": [
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5"
+      ]
+    },
+    "live_code_bench": {
+      "repo": "livecodebench/code_generation_lite",
+      "revision": "0fe84c3912ea0c4d4a78037083943e8f0c4dd505",
+      "split": "test",
+      "subsets": [
+        "release_v5"
+      ],
+      "start_date": "2024-10-01",
+      "end_date": "2025-02-28",
+      "file_size": 557699297,
+      "file_sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
+    }
+  },
+  "pilot_max_tokens": 1024
+}

@@ -1,0 +1,231 @@
+{
+  "reference": "Qwen3 technical report post-training; not Qwen3.5 or Base few-shot",
+  "entries": [
+    {
+      "benchmark": "MMLU-Redux",
+      "adapter": "mmlu_redux",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "quick_representative_completed",
+      "protocol": "quick_non_thinking.json",
+      "snapshot": "dataset_manifest.json",
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
+    },
+    {
+      "benchmark": "C-Eval",
+      "adapter": "ceval",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "quick_representative_completed",
+      "protocol": "quick_non_thinking.json",
+      "snapshot": "dataset_manifest.json",
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
+    },
+    {
+      "benchmark": "IFEval",
+      "adapter": "ifeval",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "quick_representative_completed",
+      "protocol": "quick_non_thinking.json",
+      "snapshot": "dataset_manifest.json",
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
+    },
+    {
+      "benchmark": "MATH-500",
+      "adapter": "math_500",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "quick_representative_completed",
+      "protocol": "quick_non_thinking.json",
+      "snapshot": "dataset_manifest.json",
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
+    },
+    {
+      "benchmark": "LiveCodeBench v5",
+      "adapter": "live_code_bench",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "quick_representative_completed",
+      "protocol": "quick_non_thinking.json",
+      "snapshot": "dataset_manifest.json",
+      "full_report_status": "deferred",
+      "results": "reports/v0.0.3/quality.json",
+      "samples_per_model": 32
+    },
+    {
+      "benchmark": "GPQA-Diamond",
+      "adapter": "gpqa_diamond",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "deferred",
+      "reason": "Access/license and 10-repeat report protocol require separate validation",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "LiveBench 2024-11-25",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Pinned official runner and date snapshot integration deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "Arena-Hard",
+      "adapter": "arena_hard",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "deferred",
+      "reason": "Judge model, endpoint and budget not configured",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "AlignBench v1.1",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and judge endpoint/budget deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "Creative Writing v3",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Judge endpoint/budget and precise version deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "WritingBench",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Judge endpoint/budget and precise version deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "AIME 2024",
+      "adapter": "aime24",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "deferred",
+      "reason": "64-repeat long-output report run deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "AIME 2025",
+      "adapter": "aime25",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "deferred",
+      "reason": "64-repeat long-output report run deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "ZebraLogic",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and snapshot integration deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "AutoLogi",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and snapshot integration deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "BFCL v3",
+      "adapter": "bfcl_v3",
+      "adapter_version": "evalscope==1.0.0",
+      "status": "deferred",
+      "reason": "Tool interaction unsupported by initial text-only HTTP API; deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "CodeForces / CodeElo",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Contest rating evaluation needs separate official runner integration",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "Multi-IF",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official multilingual runner and frozen language sampling deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "INCLUDE",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and language sampling deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "MMMLU",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and language sampling deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "MT-AIME2024",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and language sampling deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "PolyMath",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and language sampling deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "MLogiQA",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Official runner and language sampling deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    },
+    {
+      "benchmark": "RULER",
+      "adapter": null,
+      "adapter_version": null,
+      "status": "deferred",
+      "reason": "Long-context appendix; runner and length validation deferred",
+      "snapshot": null,
+      "full_report_status": "not_run"
+    }
+  ]
+}

@@ -1,0 +1,1738 @@
+{
+  "mmlu_redux": {
+    "pilot": {
+      "benchmark": "mmlu_redux",
+      "source": {
+        "repo": "edinburgh-dawg/mmlu-redux-2.0",
+        "revision": "372ea425445d51e1ba1188c56e5e893f8138621f",
+        "split": "test",
+        "subsets": [
+          "college_computer_science",
+          "high_school_geography",
+          "philosophy",
+          "business_ethics"
+        ]
+      },
+      "files": [
+        {
+          "file": "college_computer_science/data-00000-of-00001.arrow",
+          "sha256": "f4c2115b5da06e23b5bfcfb5be7d909bb658ac86a1506b564f83339b1163f6ca"
+        },
+        {
+          "file": "high_school_geography/data-00000-of-00001.arrow",
+          "sha256": "4fad69de3874d0a36ac2aa5ade2d6700e507d67e9ea11deacac7f424d482d8f3"
+        },
+        {
+          "file": "philosophy/data-00000-of-00001.arrow",
+          "sha256": "ef81ced829d9ba6ef07cdb738f2b1684f392b32793dbeff73a9e9f4aaef0019d"
+        },
+        {
+          "file": "business_ethics/data-00000-of-00001.arrow",
+          "sha256": "a951880958fb05bf5a1b413fb8f67db98a4454f8d6c659240fe918039d106028"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "college_computer_science",
+          "source_index": 25,
+          "record_sha256": "0fb0c1bc9b59bc3dd63f7cd5844325757646972b5f5de36c4358e0035c5f0bfb",
+          "source_id": "25"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 56,
+          "record_sha256": "748815bd37a91b23d9eb5ff0cbe750967e52c361ab82531ee8181f0bbc816467",
+          "source_id": "56"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 7,
+          "record_sha256": "b71d4f645f5010fee978c691527217eeeb49226808440977c4075416ae03c967",
+          "source_id": "7"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 46,
+          "record_sha256": "9a1de4e29f15f55aa3fd5d72dc63642785c937bd008768cf8527162dedc8e2c6",
+          "source_id": "46"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 36,
+          "record_sha256": "7b6543d0ea2b347d6ca24de9318e7ba5f9dbb3d84f8b1da7ce9ea32f77d65ab3",
+          "source_id": "36"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 19,
+          "record_sha256": "6339ad6c04322f424bde697a5e98db3ab59814200770f344e4ea7e0f93b4a946",
+          "source_id": "19"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 79,
+          "record_sha256": "eef8575eaf401ef064bb4bc5cfc55348d4e59feb8e9b0e1e1fb0076c321f1a86",
+          "source_id": "79"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 27,
+          "record_sha256": "96b510e14c6b6a6e69717a18dfe0e50eba0fdf4f9044607c97b24c12bb3fb8d8",
+          "source_id": "27"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 19,
+          "record_sha256": "0aa0ed98d33a987c94e1eda1ab59f2f972f2c2d9ddc8475de2ef208ba191e14d",
+          "source_id": "19"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 96,
+          "record_sha256": "258e0c8ace0b5abb00aade6bf465bc1628b570b8055826c1f584add1a2b815bd",
+          "source_id": "96"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 45,
+          "record_sha256": "db9301ec221b4cb186ee2c96241967395c12a14a308f2c50c9bfe0edc4e80980",
+          "source_id": "45"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 98,
+          "record_sha256": "d2efd2f290d6670735faee6fd0a466365bf271196c565cd6f9fcf1da72166cf9",
+          "source_id": "98"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 51,
+          "record_sha256": "e1d464968a6dba8ef79e56f94f6053f8e7efb076d5af43b50479c4b1ec0a204a",
+          "source_id": "51"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 60,
+          "record_sha256": "e6f5673f5707ee57b937587612d5c6917d2a55af7d39ace45b5e31065670d457",
+          "source_id": "60"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 49,
+          "record_sha256": "f4fef1426df00dbae93ef8bfe59f029f42880f252d443a613332667ba980586e",
+          "source_id": "49"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 31,
+          "record_sha256": "8d8d3c159b75e0d981f71dc3168b1735c577321f6ab10035f7384be1c66af09b",
+          "source_id": "31"
+        }
+      ],
+      "count": 16,
+      "seed": 17
+    },
+    "representative": {
+      "benchmark": "mmlu_redux",
+      "source": {
+        "repo": "edinburgh-dawg/mmlu-redux-2.0",
+        "revision": "372ea425445d51e1ba1188c56e5e893f8138621f",
+        "split": "test",
+        "subsets": [
+          "college_computer_science",
+          "high_school_geography",
+          "philosophy",
+          "business_ethics"
+        ]
+      },
+      "files": [
+        {
+          "file": "college_computer_science/data-00000-of-00001.arrow",
+          "sha256": "f4c2115b5da06e23b5bfcfb5be7d909bb658ac86a1506b564f83339b1163f6ca"
+        },
+        {
+          "file": "high_school_geography/data-00000-of-00001.arrow",
+          "sha256": "4fad69de3874d0a36ac2aa5ade2d6700e507d67e9ea11deacac7f424d482d8f3"
+        },
+        {
+          "file": "philosophy/data-00000-of-00001.arrow",
+          "sha256": "ef81ced829d9ba6ef07cdb738f2b1684f392b32793dbeff73a9e9f4aaef0019d"
+        },
+        {
+          "file": "business_ethics/data-00000-of-00001.arrow",
+          "sha256": "a951880958fb05bf5a1b413fb8f67db98a4454f8d6c659240fe918039d106028"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "college_computer_science",
+          "source_index": 25,
+          "record_sha256": "0fb0c1bc9b59bc3dd63f7cd5844325757646972b5f5de36c4358e0035c5f0bfb",
+          "source_id": "25"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 56,
+          "record_sha256": "748815bd37a91b23d9eb5ff0cbe750967e52c361ab82531ee8181f0bbc816467",
+          "source_id": "56"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 7,
+          "record_sha256": "b71d4f645f5010fee978c691527217eeeb49226808440977c4075416ae03c967",
+          "source_id": "7"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 46,
+          "record_sha256": "9a1de4e29f15f55aa3fd5d72dc63642785c937bd008768cf8527162dedc8e2c6",
+          "source_id": "46"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 64,
+          "record_sha256": "003e0f29e2a372d322e30699b0415bbe89c1080cc5ff20c39b6bbef1cabba225",
+          "source_id": "64"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 52,
+          "record_sha256": "d8ecfafbae1d1578339f4bc2c63a25fdda59bad8594d0d803af38209e2d7332c",
+          "source_id": "52"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 62,
+          "record_sha256": "fb2d2c2bb3759356de2f003323816d6e0052dbfb82e32059707ac8af70572e5c",
+          "source_id": "62"
+        },
+        {
+          "subset": "college_computer_science",
+          "source_index": 48,
+          "record_sha256": "9a64aac0c3ce6e46c35498561027853bff9d67719bbfae27ff0f4427d83910c6",
+          "source_id": "48"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 36,
+          "record_sha256": "7b6543d0ea2b347d6ca24de9318e7ba5f9dbb3d84f8b1da7ce9ea32f77d65ab3",
+          "source_id": "36"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 19,
+          "record_sha256": "6339ad6c04322f424bde697a5e98db3ab59814200770f344e4ea7e0f93b4a946",
+          "source_id": "19"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 79,
+          "record_sha256": "eef8575eaf401ef064bb4bc5cfc55348d4e59feb8e9b0e1e1fb0076c321f1a86",
+          "source_id": "79"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 27,
+          "record_sha256": "96b510e14c6b6a6e69717a18dfe0e50eba0fdf4f9044607c97b24c12bb3fb8d8",
+          "source_id": "27"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 15,
+          "record_sha256": "2a4c96386b1334c6615bae14e8cd00a044cf4eff1f943cb6fdedcfa7a199dd52",
+          "source_id": "15"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 94,
+          "record_sha256": "dd66638514cebb41ed61bbfdbabaaccf00adb0704702a213d6c24cba2b6071a8",
+          "source_id": "94"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 71,
+          "record_sha256": "7f622263e88bfc31866134548c0a0709accfd3f4da04ce7f0228f9665808f436",
+          "source_id": "71"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 89,
+          "record_sha256": "9aa771ddfc116d29d49e58bca2de959bfc2533a70ec5bd84302802aac6ad6ade",
+          "source_id": "89"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 19,
+          "record_sha256": "0aa0ed98d33a987c94e1eda1ab59f2f972f2c2d9ddc8475de2ef208ba191e14d",
+          "source_id": "19"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 96,
+          "record_sha256": "258e0c8ace0b5abb00aade6bf465bc1628b570b8055826c1f584add1a2b815bd",
+          "source_id": "96"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 45,
+          "record_sha256": "db9301ec221b4cb186ee2c96241967395c12a14a308f2c50c9bfe0edc4e80980",
+          "source_id": "45"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 98,
+          "record_sha256": "d2efd2f290d6670735faee6fd0a466365bf271196c565cd6f9fcf1da72166cf9",
+          "source_id": "98"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 86,
+          "record_sha256": "12f028e3f8b47d079e8f92e7bc4c92477579881c64d45de65e4d17560ea76a00",
+          "source_id": "86"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 82,
+          "record_sha256": "7375ebe3563afb05cb0c3145f0bcb14a63d9bc322deb7ae99a109f4fac809747",
+          "source_id": "82"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 33,
+          "record_sha256": "ac6336681f3a0fe897bd7088f11b2d1013a5260e91537a6ed9feeee686d72060",
+          "source_id": "33"
+        },
+        {
+          "subset": "philosophy",
+          "source_index": 15,
+          "record_sha256": "379f16f2296b4fcea1a7ef8e204895a6178a5a1ca99eeb3bebbb1692ec77cd6f",
+          "source_id": "15"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 51,
+          "record_sha256": "e1d464968a6dba8ef79e56f94f6053f8e7efb076d5af43b50479c4b1ec0a204a",
+          "source_id": "51"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 60,
+          "record_sha256": "e6f5673f5707ee57b937587612d5c6917d2a55af7d39ace45b5e31065670d457",
+          "source_id": "60"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 49,
+          "record_sha256": "f4fef1426df00dbae93ef8bfe59f029f42880f252d443a613332667ba980586e",
+          "source_id": "49"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 31,
+          "record_sha256": "8d8d3c159b75e0d981f71dc3168b1735c577321f6ab10035f7384be1c66af09b",
+          "source_id": "31"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 73,
+          "record_sha256": "a37b5452169249c1f274c27a60099d45f846cf5df3648d33dafeea4f0893e5c7",
+          "source_id": "73"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 97,
+          "record_sha256": "c4ba5fe171331d3c211843ccfd29113f1ef1d47b7c78c52c787a84eb51714bfb",
+          "source_id": "97"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 1,
+          "record_sha256": "300072a9e060c9b823894ae98caf4a28cd7ea3e5e22d8fff810257d29c653938",
+          "source_id": "1"
+        },
+        {
+          "subset": "business_ethics",
+          "source_index": 80,
+          "record_sha256": "a0485bad3a1e99300d97c7f3fb1c0f2ff2a8a6f7f0966af096e979d1fbf484e0",
+          "source_id": "80"
+        }
+      ],
+      "count": 32,
+      "seed": 17
+    }
+  },
+  "ceval": {
+    "pilot": {
+      "benchmark": "ceval",
+      "source": {
+        "repo": "ceval/ceval-exam",
+        "revision": "617524a00b307ff6f9933702f724131fe12ca7ce",
+        "split": "val",
+        "subsets": [
+          "college_programming",
+          "high_school_geography",
+          "high_school_history",
+          "business_administration"
+        ]
+      },
+      "files": [
+        {
+          "file": "college_programming/val-00000-of-00001.parquet",
+          "sha256": "23705408d1e4733ce877217c64a5e6ba21b0a8f65347ff64f1f6c7654b446377"
+        },
+        {
+          "file": "high_school_geography/val-00000-of-00001.parquet",
+          "sha256": "4bad8dbc69442c2e2c57cabfc0d87e9c9b68f1271d5826787af678a5eeeedd85"
+        },
+        {
+          "file": "high_school_history/val-00000-of-00001.parquet",
+          "sha256": "67691bf762376036c778b70963fae896cf72289efefa4d6d450e9366981a8aec"
+        },
+        {
+          "file": "business_administration/val-00000-of-00001.parquet",
+          "sha256": "b897dc81b061d1468900b9b38f9d697e291bda5d7f5b33d5de2db12e59afc4bc"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "college_programming",
+          "source_index": 31,
+          "record_sha256": "2bdbb17f445bf403f1389b2c38c4d4cec252cac5375ae67b90e959cf027b0c89",
+          "source_id": "31"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 0,
+          "record_sha256": "60af61cd6b93c504d2ce24a32f7bd4880b968f1a84f0f45029a7b9c3f2c6bbf6",
+          "source_id": "0"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 4,
+          "record_sha256": "e076d51020cdcd331caca18ce236f6462a2b4838a568d206e7e3272fbf8083b7",
+          "source_id": "4"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 15,
+          "record_sha256": "5f4b785b5e0832d893a6b09364ef369daa75632d36dbb61ec37f09bf297cfac1",
+          "source_id": "15"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 16,
+          "record_sha256": "134663a8f66fe1f248735c66f386635b484c07e501abf757d010073d42729f4a",
+          "source_id": "16"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 9,
+          "record_sha256": "9c85b82d4489e24a93fbd26aee5111747d8168639e60c2b3f903c61b70e5fef8",
+          "source_id": "9"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 7,
+          "record_sha256": "ed7f6818037e557ba5de1f45d8c0d89db0a3e3108606b8c13aeaa36e7fd6fad1",
+          "source_id": "7"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 1,
+          "record_sha256": "f8255cb9c5a8a0d3a46985ef92d01136f0fef65328b0abe49870d54bc6bb2f18",
+          "source_id": "1"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 6,
+          "record_sha256": "a52aaeeb6c6895af2b336d99bbb07e6106f0d2b6181f585d28f4f053d37bd347",
+          "source_id": "6"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 16,
+          "record_sha256": "dcf3471b77f6d2374cd06261c49f9dc4df87d9e54385b4413fec2a7cbc572a46",
+          "source_id": "16"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 7,
+          "record_sha256": "cf53fcf9dba2baf36351efd4bfec12096cecf1ec45d6cc36794920d61eb27822",
+          "source_id": "7"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 11,
+          "record_sha256": "f0526a8b8f66b6970adf7113d911daf2362ad3227c70d4f4d837002672156ef9",
+          "source_id": "11"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 21,
+          "record_sha256": "c5b634720496cef0df7ec1598d10c234bfc326fd02cba6bb576e00d6428fb529",
+          "source_id": "21"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 7,
+          "record_sha256": "65c54df1c1b17719c7e15f8141e3d5be47a890e6cfed8441e321b6f97bf4ea1b",
+          "source_id": "7"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 32,
+          "record_sha256": "732f68621d38abb2c39fdba45fb1334e7e867ee08f026c514d88b2f47df721cd",
+          "source_id": "32"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 6,
+          "record_sha256": "f0fe1f4f4071ef1afe24c224056fb70bb1907f9b66063b95d055f787e285bd82",
+          "source_id": "6"
+        }
+      ],
+      "count": 16,
+      "seed": 17
+    },
+    "representative": {
+      "benchmark": "ceval",
+      "source": {
+        "repo": "ceval/ceval-exam",
+        "revision": "617524a00b307ff6f9933702f724131fe12ca7ce",
+        "split": "val",
+        "subsets": [
+          "college_programming",
+          "high_school_geography",
+          "high_school_history",
+          "business_administration"
+        ]
+      },
+      "files": [
+        {
+          "file": "college_programming/val-00000-of-00001.parquet",
+          "sha256": "23705408d1e4733ce877217c64a5e6ba21b0a8f65347ff64f1f6c7654b446377"
+        },
+        {
+          "file": "high_school_geography/val-00000-of-00001.parquet",
+          "sha256": "4bad8dbc69442c2e2c57cabfc0d87e9c9b68f1271d5826787af678a5eeeedd85"
+        },
+        {
+          "file": "high_school_history/val-00000-of-00001.parquet",
+          "sha256": "67691bf762376036c778b70963fae896cf72289efefa4d6d450e9366981a8aec"
+        },
+        {
+          "file": "business_administration/val-00000-of-00001.parquet",
+          "sha256": "b897dc81b061d1468900b9b38f9d697e291bda5d7f5b33d5de2db12e59afc4bc"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "college_programming",
+          "source_index": 31,
+          "record_sha256": "2bdbb17f445bf403f1389b2c38c4d4cec252cac5375ae67b90e959cf027b0c89",
+          "source_id": "31"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 0,
+          "record_sha256": "60af61cd6b93c504d2ce24a32f7bd4880b968f1a84f0f45029a7b9c3f2c6bbf6",
+          "source_id": "0"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 4,
+          "record_sha256": "e076d51020cdcd331caca18ce236f6462a2b4838a568d206e7e3272fbf8083b7",
+          "source_id": "4"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 15,
+          "record_sha256": "5f4b785b5e0832d893a6b09364ef369daa75632d36dbb61ec37f09bf297cfac1",
+          "source_id": "15"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 14,
+          "record_sha256": "014f728b70af1ead7991885754d4ad8f5abc34a5d3e973d4657e3a5be9bc083a",
+          "source_id": "14"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 19,
+          "record_sha256": "1e6dbd7ce455b64567653468206e98f9c66ab9e4525e5fd4c6181661c704f170",
+          "source_id": "19"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 32,
+          "record_sha256": "4f5689c2ae457d4dbcfa294cc9faea2a5aa19a107ad38099d0607786a48184ed",
+          "source_id": "32"
+        },
+        {
+          "subset": "college_programming",
+          "source_index": 8,
+          "record_sha256": "0e14c5b732da45d6da475d6ec93f362ea7e30b756509635513145fa2ef552221",
+          "source_id": "8"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 16,
+          "record_sha256": "134663a8f66fe1f248735c66f386635b484c07e501abf757d010073d42729f4a",
+          "source_id": "16"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 9,
+          "record_sha256": "9c85b82d4489e24a93fbd26aee5111747d8168639e60c2b3f903c61b70e5fef8",
+          "source_id": "9"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 7,
+          "record_sha256": "ed7f6818037e557ba5de1f45d8c0d89db0a3e3108606b8c13aeaa36e7fd6fad1",
+          "source_id": "7"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 1,
+          "record_sha256": "f8255cb9c5a8a0d3a46985ef92d01136f0fef65328b0abe49870d54bc6bb2f18",
+          "source_id": "1"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 17,
+          "record_sha256": "04fb38937337f8544932a6d746e9f434ce6d3b386d55c965164b87f6d7ebfe45",
+          "source_id": "17"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 15,
+          "record_sha256": "f5d2fabb1b0c3494c206edc1748e458a05f1cd16b8fa4ffaa5b6976762643b32",
+          "source_id": "15"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 0,
+          "record_sha256": "3a698680a083c9d50737ac34686b40a0d6a98e49874608730d19425c126511f7",
+          "source_id": "0"
+        },
+        {
+          "subset": "high_school_geography",
+          "source_index": 3,
+          "record_sha256": "1db1218998f4977d18a3fedf7a27e019fef6ef97ab17ad1195161a20e732cc2a",
+          "source_id": "3"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 6,
+          "record_sha256": "a52aaeeb6c6895af2b336d99bbb07e6106f0d2b6181f585d28f4f053d37bd347",
+          "source_id": "6"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 16,
+          "record_sha256": "dcf3471b77f6d2374cd06261c49f9dc4df87d9e54385b4413fec2a7cbc572a46",
+          "source_id": "16"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 7,
+          "record_sha256": "cf53fcf9dba2baf36351efd4bfec12096cecf1ec45d6cc36794920d61eb27822",
+          "source_id": "7"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 11,
+          "record_sha256": "f0526a8b8f66b6970adf7113d911daf2362ad3227c70d4f4d837002672156ef9",
+          "source_id": "11"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 4,
+          "record_sha256": "f89cff7d26e37ba66d4cd73d8001d8c4158acc6b221df3fcd37946e8247982dc",
+          "source_id": "4"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 3,
+          "record_sha256": "7a951a8a6f8d991f06e2f2193cda4cab37a0e2df7c09a2c0b79fc46a0413eb7e",
+          "source_id": "3"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 13,
+          "record_sha256": "d19826fbaef174d45b81a71ec08c26f809b0f0e9361244f5cec4b1cce8d7215e",
+          "source_id": "13"
+        },
+        {
+          "subset": "high_school_history",
+          "source_index": 14,
+          "record_sha256": "7a4ddabdd5ab2831059791c023ce22b40c0e2de4aed3f2c344af7c8b63f8fbf8",
+          "source_id": "14"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 21,
+          "record_sha256": "c5b634720496cef0df7ec1598d10c234bfc326fd02cba6bb576e00d6428fb529",
+          "source_id": "21"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 7,
+          "record_sha256": "65c54df1c1b17719c7e15f8141e3d5be47a890e6cfed8441e321b6f97bf4ea1b",
+          "source_id": "7"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 32,
+          "record_sha256": "732f68621d38abb2c39fdba45fb1334e7e867ee08f026c514d88b2f47df721cd",
+          "source_id": "32"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 6,
+          "record_sha256": "f0fe1f4f4071ef1afe24c224056fb70bb1907f9b66063b95d055f787e285bd82",
+          "source_id": "6"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 14,
+          "record_sha256": "e13c21de1b0964ac12ba16f49cd9b75bf2d3819285c384829677928af051060c",
+          "source_id": "14"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 15,
+          "record_sha256": "643e8a43db1dc368ee4a3a25769f5d401ffd5ea31126cbbf7e0a787be4f5a1da",
+          "source_id": "15"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 19,
+          "record_sha256": "9726a6ceb681ca64918a2539a985d957886f52479ace2090d46895451b8494c1",
+          "source_id": "19"
+        },
+        {
+          "subset": "business_administration",
+          "source_index": 17,
+          "record_sha256": "abcdf0d1936612678cebfd58d6fc03c4fd660d7fca5ad6a1cdeb22aa23ad5b65",
+          "source_id": "17"
+        }
+      ],
+      "count": 32,
+      "seed": 17
+    }
+  },
+  "ifeval": {
+    "pilot": {
+      "benchmark": "ifeval",
+      "source": {
+        "repo": "google/IFEval",
+        "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+        "split": "train",
+        "subsets": [
+          "default"
+        ]
+      },
+      "files": [
+        {
+          "file": "ifeval_input_data.jsonl",
+          "sha256": "6a85310ca8ce15eff755aa08a3a4ff931c7e273e7515ebb3c492ea85fd8288f2"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "default",
+          "source_index": 440,
+          "record_sha256": "107c4bd2bb3ead826832588811e02b3b1eefbbe95b339425b4dad5cc2ddd1df8",
+          "source_id": "332"
+        },
+        {
+          "subset": "default",
+          "source_index": 257,
+          "record_sha256": "8fe17b692ab3bd074778beb1b53db56899c9bed2a6c928ad83c67196816bcf9d",
+          "source_id": "2374"
+        },
+        {
+          "subset": "default",
+          "source_index": 463,
+          "record_sha256": "75c4a7688952dbfaa8d0df3e6050c0afa85dd816e70f31acf47b613067a559b4",
+          "source_id": "3414"
+        },
+        {
+          "subset": "default",
+          "source_index": 505,
+          "record_sha256": "cceb4a310a73fe7cf41750c1b5d02ab58266d06a123afcb7865b2dde17ef0fe6",
+          "source_id": "3623"
+        },
+        {
+          "subset": "default",
+          "source_index": 254,
+          "record_sha256": "e039e462b27cc39214f1e139c190a0a40a0abdd40ae05a16fdc76fab656c0cfc",
+          "source_id": "2359"
+        },
+        {
+          "subset": "default",
+          "source_index": 183,
+          "record_sha256": "c4c387009bf94dd5764fcba4a9aa0a69c2406a1d2af67f6016dee42b3dffd27e",
+          "source_id": "1996"
+        },
+        {
+          "subset": "default",
+          "source_index": 363,
+          "record_sha256": "875f57ee1c93817e689941cf7ab6f3a17dc0fcd63d00efe5c1636cf499fe7c89",
+          "source_id": "2880"
+        },
+        {
+          "subset": "default",
+          "source_index": 284,
+          "record_sha256": "8e5389146b41a8217efca9325e9c68eab7b4940751e8a12b297be4f0a3d1b552",
+          "source_id": "2471"
+        },
+        {
+          "subset": "default",
+          "source_index": 249,
+          "record_sha256": "7797d5ddee98f917967a389eee8852a26739b5de2d5b6ede09e3189d59e8b975",
+          "source_id": "2337"
+        },
+        {
+          "subset": "default",
+          "source_index": 28,
+          "record_sha256": "cf51464d0e1c226e04b4994abaa7ebb876754517aa9fd6fe8eec8714511e0020",
+          "source_id": "1147"
+        },
+        {
+          "subset": "default",
+          "source_index": 116,
+          "record_sha256": "a0eba8dcffc9c8fddc8ca393a283e1bc6278dc6dd5ebe1628cbefc3ca2be543d",
+          "source_id": "1629"
+        },
+        {
+          "subset": "default",
+          "source_index": 88,
+          "record_sha256": "e82d78cf5b8bda70e188ae0fdc32e01ef7cb9261aad0d34c90cc1cba0f7920e6",
+          "source_id": "1480"
+        },
+        {
+          "subset": "default",
+          "source_index": 111,
+          "record_sha256": "f0175de5c96aacd5de1f68b997d63076b003c36138976425d0639ef285b43fec",
+          "source_id": "1601"
+        },
+        {
+          "subset": "default",
+          "source_index": 486,
+          "record_sha256": "4330d6b66b73c941654a9e2d787eb00b21ef6b3eecc495cd17afc45c658edb38",
+          "source_id": "3518"
+        },
+        {
+          "subset": "default",
+          "source_index": 477,
+          "record_sha256": "b742213efccd7ee42a9b1eec47c166551c77dcd6d399efb761d27cc78d8ca2de",
+          "source_id": "3478"
+        },
+        {
+          "subset": "default",
+          "source_index": 155,
+          "record_sha256": "ad220ee8ecc2e3c4f75f71f12e4f3925dbed352bda4520bce02e47b4f889e7cc",
+          "source_id": "1834"
+        }
+      ],
+      "count": 16,
+      "seed": 17
+    },
+    "representative": {
+      "benchmark": "ifeval",
+      "source": {
+        "repo": "google/IFEval",
+        "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+        "split": "train",
+        "subsets": [
+          "default"
+        ]
+      },
+      "files": [
+        {
+          "file": "ifeval_input_data.jsonl",
+          "sha256": "6a85310ca8ce15eff755aa08a3a4ff931c7e273e7515ebb3c492ea85fd8288f2"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "default",
+          "source_index": 440,
+          "record_sha256": "107c4bd2bb3ead826832588811e02b3b1eefbbe95b339425b4dad5cc2ddd1df8",
+          "source_id": "332"
+        },
+        {
+          "subset": "default",
+          "source_index": 257,
+          "record_sha256": "8fe17b692ab3bd074778beb1b53db56899c9bed2a6c928ad83c67196816bcf9d",
+          "source_id": "2374"
+        },
+        {
+          "subset": "default",
+          "source_index": 463,
+          "record_sha256": "75c4a7688952dbfaa8d0df3e6050c0afa85dd816e70f31acf47b613067a559b4",
+          "source_id": "3414"
+        },
+        {
+          "subset": "default",
+          "source_index": 505,
+          "record_sha256": "cceb4a310a73fe7cf41750c1b5d02ab58266d06a123afcb7865b2dde17ef0fe6",
+          "source_id": "3623"
+        },
+        {
+          "subset": "default",
+          "source_index": 254,
+          "record_sha256": "e039e462b27cc39214f1e139c190a0a40a0abdd40ae05a16fdc76fab656c0cfc",
+          "source_id": "2359"
+        },
+        {
+          "subset": "default",
+          "source_index": 183,
+          "record_sha256": "c4c387009bf94dd5764fcba4a9aa0a69c2406a1d2af67f6016dee42b3dffd27e",
+          "source_id": "1996"
+        },
+        {
+          "subset": "default",
+          "source_index": 363,
+          "record_sha256": "875f57ee1c93817e689941cf7ab6f3a17dc0fcd63d00efe5c1636cf499fe7c89",
+          "source_id": "2880"
+        },
+        {
+          "subset": "default",
+          "source_index": 284,
+          "record_sha256": "8e5389146b41a8217efca9325e9c68eab7b4940751e8a12b297be4f0a3d1b552",
+          "source_id": "2471"
+        },
+        {
+          "subset": "default",
+          "source_index": 249,
+          "record_sha256": "7797d5ddee98f917967a389eee8852a26739b5de2d5b6ede09e3189d59e8b975",
+          "source_id": "2337"
+        },
+        {
+          "subset": "default",
+          "source_index": 28,
+          "record_sha256": "cf51464d0e1c226e04b4994abaa7ebb876754517aa9fd6fe8eec8714511e0020",
+          "source_id": "1147"
+        },
+        {
+          "subset": "default",
+          "source_index": 116,
+          "record_sha256": "a0eba8dcffc9c8fddc8ca393a283e1bc6278dc6dd5ebe1628cbefc3ca2be543d",
+          "source_id": "1629"
+        },
+        {
+          "subset": "default",
+          "source_index": 88,
+          "record_sha256": "e82d78cf5b8bda70e188ae0fdc32e01ef7cb9261aad0d34c90cc1cba0f7920e6",
+          "source_id": "1480"
+        },
+        {
+          "subset": "default",
+          "source_index": 111,
+          "record_sha256": "f0175de5c96aacd5de1f68b997d63076b003c36138976425d0639ef285b43fec",
+          "source_id": "1601"
+        },
+        {
+          "subset": "default",
+          "source_index": 486,
+          "record_sha256": "4330d6b66b73c941654a9e2d787eb00b21ef6b3eecc495cd17afc45c658edb38",
+          "source_id": "3518"
+        },
+        {
+          "subset": "default",
+          "source_index": 477,
+          "record_sha256": "b742213efccd7ee42a9b1eec47c166551c77dcd6d399efb761d27cc78d8ca2de",
+          "source_id": "3478"
+        },
+        {
+          "subset": "default",
+          "source_index": 155,
+          "record_sha256": "ad220ee8ecc2e3c4f75f71f12e4f3925dbed352bda4520bce02e47b4f889e7cc",
+          "source_id": "1834"
+        },
+        {
+          "subset": "default",
+          "source_index": 82,
+          "record_sha256": "91f91f75f7d000c0be50e72bba2b5fdd4b09c4d81f57c712ef1be30e34cfdb3b",
+          "source_id": "143"
+        },
+        {
+          "subset": "default",
+          "source_index": 70,
+          "record_sha256": "41049cc85407f9845bc367ce04c36abdb09b70196f1bbacafb67c77d0b7e9b0d",
+          "source_id": "1367"
+        },
+        {
+          "subset": "default",
+          "source_index": 63,
+          "record_sha256": "850ce11261a1c7b05590a561c263ec4c744f48e8510213d9bd06f37f748537cd",
+          "source_id": "1322"
+        },
+        {
+          "subset": "default",
+          "source_index": 327,
+          "record_sha256": "95dee65b37e249e7e4b87c7ebd9932f4d873c5ed1b622694a84b994cf59b5ac6",
+          "source_id": "2724"
+        },
+        {
+          "subset": "default",
+          "source_index": 345,
+          "record_sha256": "078718401a6ac9faed06bda73b9cd195acb15d0fc90fa503162d275c999cf363",
+          "source_id": "2807"
+        },
+        {
+          "subset": "default",
+          "source_index": 277,
+          "record_sha256": "0929dc3d5b2b89bbfd1377a0218d6d84ed6b1213866b92425da4b71f3fbc6d9f",
+          "source_id": "2447"
+        },
+        {
+          "subset": "default",
+          "source_index": 11,
+          "record_sha256": "ac7dadf97dc930b527962d9c4a2d2e0689819f1462b3f27ffd7baea0c48e34ed",
+          "source_id": "1075"
+        },
+        {
+          "subset": "default",
+          "source_index": 306,
+          "record_sha256": "233e260116984967f5db5ccf463582eeecc6bc8178ee60f6fe374d10c47b672d",
+          "source_id": "2596"
+        },
+        {
+          "subset": "default",
+          "source_index": 114,
+          "record_sha256": "b515e86f094419cd47f67116a0784f858acbf7a207af11f28f4e20d8a78c7847",
+          "source_id": "1620"
+        },
+        {
+          "subset": "default",
+          "source_index": 8,
+          "record_sha256": "848ad4d8591906967d70564c48724bee07e867735e8ff77036136985e2c73cef",
+          "source_id": "1051"
+        },
+        {
+          "subset": "default",
+          "source_index": 235,
+          "record_sha256": "c6cee2f212e34fc9fddf7b5d04f57b2cdb36f06455268e460e6bf8a94822031e",
+          "source_id": "2273"
+        },
+        {
+          "subset": "default",
+          "source_index": 313,
+          "record_sha256": "13c3a0f469e599836d1f52abec4b98cd61615cea1883baecb9029c42067267bc",
+          "source_id": "2628"
+        },
+        {
+          "subset": "default",
+          "source_index": 462,
+          "record_sha256": "1c4383bf080d6d9be500489d64843333c31c97165253987b80f1fedeb9a9dde7",
+          "source_id": "3409"
+        },
+        {
+          "subset": "default",
+          "source_index": 110,
+          "record_sha256": "24653568cfea237b3739b305d88e1728b87a43d3d84d862a51f326e51522b694",
+          "source_id": "16"
+        },
+        {
+          "subset": "default",
+          "source_index": 506,
+          "record_sha256": "115a109f2a7c17266b63fb0559b3e6c9e82d76f6b12b50510d03bec4c94cbe4a",
+          "source_id": "3624"
+        },
+        {
+          "subset": "default",
+          "source_index": 540,
+          "record_sha256": "048a7a7e4e67f4526e44081538e547683224fa7bd00e5271c11b081939aaca47",
+          "source_id": "3757"
+        }
+      ],
+      "count": 32,
+      "seed": 17
+    }
+  },
+  "math_500": {
+    "pilot": {
+      "benchmark": "math_500",
+      "source": {
+        "repo": "HuggingFaceH4/MATH-500",
+        "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+        "split": "test",
+        "subsets": [
+          "Level 1",
+          "Level 2",
+          "Level 3",
+          "Level 4",
+          "Level 5"
+        ]
+      },
+      "files": [
+        {
+          "file": "test.jsonl",
+          "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "Level 1",
+          "source_index": 31,
+          "record_sha256": "a1664f8fd1010b6aa2b80c50901fc2cb0e2259a35ef318bd97a6d9d5958e4650",
+          "source_id": "test/algebra/1303.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 26,
+          "record_sha256": "43f84ec814d74dfa602db0b49dacf33628178fb83c8f6a4cb06d45ff540a395f",
+          "source_id": "test/algebra/2551.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 41,
+          "record_sha256": "da54080286a306388e04bba3b7b3a1c534f0423f5076202bcfbc2b4a0d1baee9",
+          "source_id": "test/intermediate_algebra/752.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 14,
+          "record_sha256": "8c0b54a18f0d6c58ee9721eeafc8b4b9f4c762868830a7cfc452d71819e9cf95",
+          "source_id": "test/algebra/988.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 43,
+          "record_sha256": "346cd025ea14ff3171b38b3de803452dcd37f76128548c2af3f747bfdff73390",
+          "source_id": "test/prealgebra/1907.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 2,
+          "record_sha256": "9c6a0ec3574b848eccd25a4690d2a53b5c89207703ad3c186b32a590ee3e74d9",
+          "source_id": "test/prealgebra/1622.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 76,
+          "record_sha256": "54d4f74ff206ce8859f5d29f34c19f0905bd433b89aa8f5049b35cefb6e36fc3",
+          "source_id": "test/algebra/2680.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 87,
+          "record_sha256": "3d721ac97201848199e3d9f05ec01d4c9116278899cb25e50a49b88c3f8b50fc",
+          "source_id": "test/precalculus/625.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 79,
+          "record_sha256": "1da676daafd9c4082213c34caf338b6d83fa8f1229360a69c21428da8214d381",
+          "source_id": "test/prealgebra/1743.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 102,
+          "record_sha256": "eb6a02f3da8fbf32575840fa2f62900ba70c225b234ba9679c5978833ae62e76",
+          "source_id": "test/intermediate_algebra/1365.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 10,
+          "record_sha256": "2cd70a16300fc29711c89a20957e8f8f74c6d0933947ebae589ec27931ba5866",
+          "source_id": "test/prealgebra/1233.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 58,
+          "record_sha256": "2647d3ae1ae5c8aee64bacd7092a25517bbf6ed217788ef12b96347d29b923b3",
+          "source_id": "test/prealgebra/153.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 63,
+          "record_sha256": "957aededb9f72355b41226ab90228de2b2126ecda0838f84a03cf23f6a4542d5",
+          "source_id": "test/number_theory/1065.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 69,
+          "record_sha256": "8a51ada4bd842fb1fe68031643336892510afdd1818a289be6f2240b69b2845a",
+          "source_id": "test/number_theory/631.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 118,
+          "record_sha256": "2f1fb19ab55640d3a2fe14e412b2f58b187a8aa3df3519d223df223af6b339fe",
+          "source_id": "test/algebra/2780.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 56,
+          "record_sha256": "61af168e972841af71797052329e149abad951ed300c4dec9d3d723104ff4e0e",
+          "source_id": "test/geometry/229.json"
+        }
+      ],
+      "count": 16,
+      "seed": 17
+    },
+    "representative": {
+      "benchmark": "math_500",
+      "source": {
+        "repo": "HuggingFaceH4/MATH-500",
+        "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+        "split": "test",
+        "subsets": [
+          "Level 1",
+          "Level 2",
+          "Level 3",
+          "Level 4",
+          "Level 5"
+        ]
+      },
+      "files": [
+        {
+          "file": "test.jsonl",
+          "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "Level 1",
+          "source_index": 31,
+          "record_sha256": "a1664f8fd1010b6aa2b80c50901fc2cb0e2259a35ef318bd97a6d9d5958e4650",
+          "source_id": "test/algebra/1303.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 26,
+          "record_sha256": "43f84ec814d74dfa602db0b49dacf33628178fb83c8f6a4cb06d45ff540a395f",
+          "source_id": "test/algebra/2551.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 41,
+          "record_sha256": "da54080286a306388e04bba3b7b3a1c534f0423f5076202bcfbc2b4a0d1baee9",
+          "source_id": "test/intermediate_algebra/752.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 14,
+          "record_sha256": "8c0b54a18f0d6c58ee9721eeafc8b4b9f4c762868830a7cfc452d71819e9cf95",
+          "source_id": "test/algebra/988.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 24,
+          "record_sha256": "97f7c7573cdb36624a28b29cb349408c4692d93e62311f44ae3c1b6f9506b961",
+          "source_id": "test/geometry/226.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 17,
+          "record_sha256": "f2b43ce0b71a87412d090d3e8f20767cde3fac80a39db53757a5b0e41b35616f",
+          "source_id": "test/algebra/841.json"
+        },
+        {
+          "subset": "Level 1",
+          "source_index": 37,
+          "record_sha256": "a054300036fecb2170ea947f6d33c38b2021fc98843007adf179ded9fb0535d0",
+          "source_id": "test/algebra/2789.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 43,
+          "record_sha256": "346cd025ea14ff3171b38b3de803452dcd37f76128548c2af3f747bfdff73390",
+          "source_id": "test/prealgebra/1907.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 2,
+          "record_sha256": "9c6a0ec3574b848eccd25a4690d2a53b5c89207703ad3c186b32a590ee3e74d9",
+          "source_id": "test/prealgebra/1622.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 76,
+          "record_sha256": "54d4f74ff206ce8859f5d29f34c19f0905bd433b89aa8f5049b35cefb6e36fc3",
+          "source_id": "test/algebra/2680.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 7,
+          "record_sha256": "bd52435576fee12d06352d5f2e6c68de1d2f3bf01770ac11ab58ab556c1d5dd8",
+          "source_id": "test/number_theory/627.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 35,
+          "record_sha256": "a0cf6482e8f037d44d951838ae505caed051178d1500bf32a1f670a77d5cc47f",
+          "source_id": "test/number_theory/521.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 64,
+          "record_sha256": "6c728d229c93f84a44799dd0162ba807c5be3ef09f3fc46106362b968a3a90ae",
+          "source_id": "test/intermediate_algebra/1572.json"
+        },
+        {
+          "subset": "Level 2",
+          "source_index": 19,
+          "record_sha256": "bfe664962e90feb6721ac5313277690f01cca722781152cd35b10fa54dc62380",
+          "source_id": "test/geometry/456.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 87,
+          "record_sha256": "3d721ac97201848199e3d9f05ec01d4c9116278899cb25e50a49b88c3f8b50fc",
+          "source_id": "test/precalculus/625.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 79,
+          "record_sha256": "1da676daafd9c4082213c34caf338b6d83fa8f1229360a69c21428da8214d381",
+          "source_id": "test/prealgebra/1743.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 102,
+          "record_sha256": "eb6a02f3da8fbf32575840fa2f62900ba70c225b234ba9679c5978833ae62e76",
+          "source_id": "test/intermediate_algebra/1365.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 12,
+          "record_sha256": "24c303cdefe98d782c9a0c8e1a6f283cd6c03ae613c787301b6ecdf36dd9f39f",
+          "source_id": "test/algebra/769.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 62,
+          "record_sha256": "a1e692cffba7d7cb00764f5c1199103cad4e23711b31881bd8fe6f11bf0e6ae4",
+          "source_id": "test/algebra/634.json"
+        },
+        {
+          "subset": "Level 3",
+          "source_index": 84,
+          "record_sha256": "e8809db437ae55bf26d4e664e279a25681114199d542d82e99338d7076e67f58",
+          "source_id": "test/precalculus/1291.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 10,
+          "record_sha256": "2cd70a16300fc29711c89a20957e8f8f74c6d0933947ebae589ec27931ba5866",
+          "source_id": "test/prealgebra/1233.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 58,
+          "record_sha256": "2647d3ae1ae5c8aee64bacd7092a25517bbf6ed217788ef12b96347d29b923b3",
+          "source_id": "test/prealgebra/153.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 63,
+          "record_sha256": "957aededb9f72355b41226ab90228de2b2126ecda0838f84a03cf23f6a4542d5",
+          "source_id": "test/number_theory/1065.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 27,
+          "record_sha256": "1cbb1e58263e6e9f86c311ce25d31f2a18eb33c8cd0df70cda24fc5b2770f0b8",
+          "source_id": "test/algebra/2232.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 28,
+          "record_sha256": "6070c2de8725e34ae0fe0d843f50855ed66599fbb0c8049a09465bea6b26faf4",
+          "source_id": "test/intermediate_algebra/1063.json"
+        },
+        {
+          "subset": "Level 4",
+          "source_index": 112,
+          "record_sha256": "7a5968e440886ee1ec597132e9e19d26c90db400c9a690a8d8734119b403decd",
+          "source_id": "test/algebra/2391.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 69,
+          "record_sha256": "8a51ada4bd842fb1fe68031643336892510afdd1818a289be6f2240b69b2845a",
+          "source_id": "test/number_theory/631.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 118,
+          "record_sha256": "2f1fb19ab55640d3a2fe14e412b2f58b187a8aa3df3519d223df223af6b339fe",
+          "source_id": "test/algebra/2780.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 56,
+          "record_sha256": "61af168e972841af71797052329e149abad951ed300c4dec9d3d723104ff4e0e",
+          "source_id": "test/geometry/229.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 26,
+          "record_sha256": "06a416a0e511352e6e58248bddd82fb08cc53339ac1454ae4421edf457136734",
+          "source_id": "test/precalculus/44.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 82,
+          "record_sha256": "9c37d2a1159e9b04cc5dcad4f62544af9877f746e53baf6f7df6075f9fce630c",
+          "source_id": "test/algebra/2176.json"
+        },
+        {
+          "subset": "Level 5",
+          "source_index": 15,
+          "record_sha256": "bf18c3380375bb4f08f07b3d12193e9fcc29ac2132702967122406b77451c19b",
+          "source_id": "test/intermediate_algebra/956.json"
+        }
+      ],
+      "count": 32,
+      "seed": 17
+    }
+  },
+  "live_code_bench": {
+    "pilot": {
+      "benchmark": "live_code_bench",
+      "source": {
+        "repo": "livecodebench/code_generation_lite",
+        "revision": "0fe84c3912ea0c4d4a78037083943e8f0c4dd505",
+        "split": "test",
+        "subsets": [
+          "release_v5"
+        ],
+        "start_date": "2024-10-01",
+        "end_date": "2025-02-28",
+        "file_size": 557699297,
+        "file_sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
+      },
+      "files": [
+        {
+          "file": "test5.jsonl",
+          "sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "release_v5",
+          "source_index": 26,
+          "record_sha256": "dddcfd61eea0014eb6c2e69aa7d865a83e8c64ee300b8b6cb4d90988268b5e28",
+          "source_id": "abc377_e"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 86,
+          "record_sha256": "2af63085c35b97eef8196d0a3f6043dfe3506fe76cb8ea5eea68619c19e0458c",
+          "source_id": "arc185_b"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 114,
+          "record_sha256": "d0dbb02b20f1f90aee6cc1b1c01ec7b580789ec77674ee531bf8773ad985e647",
+          "source_id": "3612"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 150,
+          "record_sha256": "0b1d40efbc1fe1bb8793e98da1818873bc0dd514e15d99d054fa4dde351a2472",
+          "source_id": "3683"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 65,
+          "record_sha256": "edcb21c5954945b91b1e86a5b7b07289e453aad01a54ac4c8ae78c2968ac6a2a",
+          "source_id": "abc384_b"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 47,
+          "record_sha256": "1bc2d547ac246fa57f1881472444d685e8da5f6e0b3473988375d60998098cca",
+          "source_id": "abc380_g"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 53,
+          "record_sha256": "805780e230f509b8e4081d0f5835b4b24c07bfa4a4fec8fbbd7fa2d1a19c49d6",
+          "source_id": "abc381_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 156,
+          "record_sha256": "5d0c66c9307e103be7e4dc800b9b7ad2f7f8fbaa7999fb0bc5b0cdd16b0d1d7a",
+          "source_id": "3700"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 90,
+          "record_sha256": "2dd2ebb0873b18929feafbe621f81912b44d5381a5b7ae9cf3a90394ffb692bc",
+          "source_id": "arc186_b"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 18,
+          "record_sha256": "ab88e80d5d22fb0ae5e2d53abaf12bb3d109ad5a371cb1a0a8ae79f246db932a",
+          "source_id": "abc376_f"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 72,
+          "record_sha256": "186fca671772e261c616479cad2145f118bc46f022d6a6bb5aabe62f046e4eea",
+          "source_id": "abc385_f"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 140,
+          "record_sha256": "95cc2b80425809028c8a71922dcf6d7d484a1b875391ccb90149a2a1e0653e20",
+          "source_id": "3649"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 87,
+          "record_sha256": "9687a19a3fad9c38d8dbc3edf81ca643110b89c04d2787d84e8ff4175fbf05b5",
+          "source_id": "arc185_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 105,
+          "record_sha256": "fdcf56648da7f81d51f3fc052c39b911da26603db0a63a475eb1af7a5f0f28f9",
+          "source_id": "3502"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 119,
+          "record_sha256": "df9076270d3ae302848ada0b6d5b09ee3c22235a2caa1b59416b104868728a99",
+          "source_id": "3658"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 27,
+          "record_sha256": "f68faa7bdb01c80cb87c548c1f9101d4d629bce8a078f1f2b213e4a8a141373e",
+          "source_id": "abc377_d"
+        }
+      ],
+      "count": 16,
+      "seed": 17
+    },
+    "representative": {
+      "benchmark": "live_code_bench",
+      "source": {
+        "repo": "livecodebench/code_generation_lite",
+        "revision": "0fe84c3912ea0c4d4a78037083943e8f0c4dd505",
+        "split": "test",
+        "subsets": [
+          "release_v5"
+        ],
+        "start_date": "2024-10-01",
+        "end_date": "2025-02-28",
+        "file_size": 557699297,
+        "file_sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
+      },
+      "files": [
+        {
+          "file": "test5.jsonl",
+          "sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214"
+        }
+      ],
+      "selection": [
+        {
+          "subset": "release_v5",
+          "source_index": 26,
+          "record_sha256": "dddcfd61eea0014eb6c2e69aa7d865a83e8c64ee300b8b6cb4d90988268b5e28",
+          "source_id": "abc377_e"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 86,
+          "record_sha256": "2af63085c35b97eef8196d0a3f6043dfe3506fe76cb8ea5eea68619c19e0458c",
+          "source_id": "arc185_b"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 114,
+          "record_sha256": "d0dbb02b20f1f90aee6cc1b1c01ec7b580789ec77674ee531bf8773ad985e647",
+          "source_id": "3612"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 150,
+          "record_sha256": "0b1d40efbc1fe1bb8793e98da1818873bc0dd514e15d99d054fa4dde351a2472",
+          "source_id": "3683"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 65,
+          "record_sha256": "edcb21c5954945b91b1e86a5b7b07289e453aad01a54ac4c8ae78c2968ac6a2a",
+          "source_id": "abc384_b"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 47,
+          "record_sha256": "1bc2d547ac246fa57f1881472444d685e8da5f6e0b3473988375d60998098cca",
+          "source_id": "abc380_g"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 53,
+          "record_sha256": "805780e230f509b8e4081d0f5835b4b24c07bfa4a4fec8fbbd7fa2d1a19c49d6",
+          "source_id": "abc381_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 156,
+          "record_sha256": "5d0c66c9307e103be7e4dc800b9b7ad2f7f8fbaa7999fb0bc5b0cdd16b0d1d7a",
+          "source_id": "3700"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 90,
+          "record_sha256": "2dd2ebb0873b18929feafbe621f81912b44d5381a5b7ae9cf3a90394ffb692bc",
+          "source_id": "arc186_b"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 18,
+          "record_sha256": "ab88e80d5d22fb0ae5e2d53abaf12bb3d109ad5a371cb1a0a8ae79f246db932a",
+          "source_id": "abc376_f"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 72,
+          "record_sha256": "186fca671772e261c616479cad2145f118bc46f022d6a6bb5aabe62f046e4eea",
+          "source_id": "abc385_f"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 140,
+          "record_sha256": "95cc2b80425809028c8a71922dcf6d7d484a1b875391ccb90149a2a1e0653e20",
+          "source_id": "3649"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 87,
+          "record_sha256": "9687a19a3fad9c38d8dbc3edf81ca643110b89c04d2787d84e8ff4175fbf05b5",
+          "source_id": "arc185_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 105,
+          "record_sha256": "fdcf56648da7f81d51f3fc052c39b911da26603db0a63a475eb1af7a5f0f28f9",
+          "source_id": "3502"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 119,
+          "record_sha256": "df9076270d3ae302848ada0b6d5b09ee3c22235a2caa1b59416b104868728a99",
+          "source_id": "3658"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 27,
+          "record_sha256": "f68faa7bdb01c80cb87c548c1f9101d4d629bce8a078f1f2b213e4a8a141373e",
+          "source_id": "abc377_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 12,
+          "record_sha256": "2730bedf0617dac21a4d3583fabcde772b2f488a07ad2817de36c6b8ea92bf51",
+          "source_id": "abc375_g"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 109,
+          "record_sha256": "2ec0929608eca27d76994e5a4676bc163b07eef38fac6221edfd702f25c77b7c",
+          "source_id": "3629"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 152,
+          "record_sha256": "de66485304c2b329835408aac129301fc16fa49215646e0890df33e4f096bcd0",
+          "source_id": "3682"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 64,
+          "record_sha256": "e0cbfaeab828af6219cb26a587d7ad53c7c6baafc751b8b2a34ce4526fe53e10",
+          "source_id": "abc383_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 66,
+          "record_sha256": "519b04960666f1a999d0e7ece03bebd3c8a192db5143ad0ee4e6d24202566f4f",
+          "source_id": "abc384_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 99,
+          "record_sha256": "74432d6193fda7dc3019f735a504606368968d6938882f30c2fcdaf7ccd6152d",
+          "source_id": "arc189_c"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 131,
+          "record_sha256": "8f1ae300a18a4010c0fd360208cda9273e46d3509efa855fbf10d7d61e39d92f",
+          "source_id": "3591"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 142,
+          "record_sha256": "f4b526fb3503b994ff27bd364bd1a6f08cac1a4ce5213024a9eebe6898a285fe",
+          "source_id": "3680"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 19,
+          "record_sha256": "a227a14ceed673731cfbada59263e21415ee15862c5b607e2ac623f31d0c9215",
+          "source_id": "abc376_c"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 80,
+          "record_sha256": "9b5745043231f04b3e4a79002c80f6602b177c937102346302cfa0a309fd9393",
+          "source_id": "abc386_d"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 0,
+          "record_sha256": "e822f9be983c00d9487d8e093ab72860fd61a9602ce173b78c7c0a4bc4ed6516",
+          "source_id": "abc374_c"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 44,
+          "record_sha256": "593b039272e5ead88e7aa1c87e6bdaf5d0f570f994d82b57dda72bc26da10dd1",
+          "source_id": "abc380_c"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 153,
+          "record_sha256": "21a35456121fc5c6470a5c7c96e75d7435c187dea8781cee3650fb213608bfb0",
+          "source_id": "3685"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 151,
+          "record_sha256": "7f1360a268cbe0b37fc1618cc11a879fd0d68dc22a78672ea637ac094b2b756d",
+          "source_id": "3699"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 24,
+          "record_sha256": "a68076e5a7fbafa135e9f99cc02aa2ae6a88928f83e2e05f994f72f04b66bf21",
+          "source_id": "abc377_g"
+        },
+        {
+          "subset": "release_v5",
+          "source_index": 9,
+          "record_sha256": "32ec081842eb840511b88f1b092550ccc0cd2f33456bb4c18f654126d938dbd0",
+          "source_id": "abc375_c"
+        }
+      ],
+      "count": 32,
+      "seed": 17
+    }
+  }
+}

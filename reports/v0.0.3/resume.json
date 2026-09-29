@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "work": "artifacts/v0.0.3/eval/representative/rmt/ceval/eac210104c315239",
+  "model_calls": 0,
+  "immutable_output_files": 9,
+  "service_metadata_match": true
+}

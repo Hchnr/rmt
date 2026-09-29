@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "backends": {
+    "rmt": {
+      "invalid_requests_rejected": 6,
+      "concurrent_identical_requests": 4,
+      "stop_passed": true,
+      "non_thinking": {
+        "id": "cmpl-98deac9abc3d482a911027eac91d00a2",
+        "object": "chat.completion",
+        "created": 1790680617,
+        "model": "rmt",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "The sum of 1 and 1 is **2**.  \n\nIn basic arithmetic, when you add 1 and 1 together, the result is 2. This is a fundamental concept in mathematics.  \n\nSo, **1 + 1 = 2**."
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 20,
+          "completion_tokens": 56,
+          "total_tokens": 76
+        },
+        "rmt_metadata": {
+          "prompt_sha256": "68227edfd192f254a6a5b56b7a6381885749e7a599b3291ec16e5fe086303f19",
+          "seed": 17,
+          "batch_split_retries": 0
+        }
+      },
+      "thinking": {
+        "id": "cmpl-84ba8e9410384a6f84790c9bd8bb76cc",
+        "object": "chat.completion",
+        "created": 1790680623,
+        "model": "rmt",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "content": "<think>\nOkay, so the user is asking, \"What is 1 + 1?\" Hmm, that seems straightforward, but I need to make sure I answer correctly. Let me start by recalling basic arithmetic. In standard arithmetic, 1 plus 1 equals 2. That's the most common answer. But wait, maybe the user is looking for something more? Like in different contexts?\n\nFor example, in binary, 1 + 1 is 10, which is 2 in decimal. But the question doesn't specify a base, so I should probably stick with base 10 unless told otherwise. Also,"
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 16,
+          "completion_tokens": 128,
+          "total_tokens": 144
+        },
+        "rmt_metadata": {
+          "prompt_sha256": "fc8f0fc4582311ffb0b3fbdd6cbbfd3971e2a32c1e774a3de25cfd044928f5d4",
+          "seed": 17,
+          "batch_split_retries": 0
+        }
+      }
+    },
+    "qwen": {
+      "invalid_requests_rejected": 6,
+      "concurrent_identical_requests": 4,
+      "stop_passed": true,
+      "non_thinking": {
+        "id": "cmpl-cd3bbdf4f95749d7bb7a94525db889ce",
+        "object": "chat.completion",
+        "created": 1790680625,
+        "model": "qwen",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "The sum of 1 and 1 is **2**.  \n\nIn basic arithmetic, when you add 1 and 1 together, the result is 2. This is a fundamental concept in mathematics.  \n\nSo, **1 + 1 = 2**."
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 20,
+          "completion_tokens": 56,
+          "total_tokens": 76
+        },
+        "rmt_metadata": {
+          "prompt_sha256": "68227edfd192f254a6a5b56b7a6381885749e7a599b3291ec16e5fe086303f19",
+          "seed": 17,
+          "batch_split_retries": 0
+        }
+      },
+      "thinking": {
+        "id": "cmpl-f75b466373524087a983dded30db3236",
+        "object": "chat.completion",
+        "created": 1790680633,
+        "model": "qwen",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "content": "<think>\nOkay, so the user is asking, \"What is 1 + 1?\" Hmm, that seems straightforward, but I need to make sure I answer correctly. Let me start by recalling basic arithmetic. In standard arithmetic, 1 plus 1 equals 2. That's the most common answer. But wait, maybe the user is looking for something more? Like in different contexts?\n\nFor example, in binary, 1 + 1 is 10, which is 2 in decimal. But the question doesn't specify a base, so I should probably stick with base 10 unless told otherwise. Also,"
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 16,
+          "completion_tokens": 128,
+          "total_tokens": 144
+        },
+        "rmt_metadata": {
+          "prompt_sha256": "fc8f0fc4582311ffb0b3fbdd6cbbfd3971e2a32c1e774a3de25cfd044928f5d4",
+          "seed": 17,
+          "batch_split_retries": 0
+        }
+      }
+    }
+  }
+}

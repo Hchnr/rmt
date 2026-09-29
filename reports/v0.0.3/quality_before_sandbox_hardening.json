@@ -1,0 +1,912 @@
+{
+  "scope": "Fixed-sample non-thinking regression; per-run provenance/config records count and token limit. Not paper reproduction or evidence of superiority.",
+  "results": {
+    "live_code_bench": {
+      "rmt": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "pass": {
+            "mean": 0.125,
+            "n": 32,
+            "wilson_95": [
+              0.04970134387480073,
+              0.2806830548165022
+            ]
+          }
+        },
+        "length_fraction": 0.125,
+        "prompt_tokens": 18815,
+        "completion_tokens": 20491,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 381.7055170536041,
+        "work": "artifacts/v0.0.3/eval/representative/rmt/live_code_bench/b4e2c539ace2854c",
+        "official_report": {
+          "name": "rmt@live_code_bench",
+          "dataset_name": "live_code_bench",
+          "dataset_pretty_name": "Live-Code-Bench",
+          "dataset_description": "Live Code Bench is a benchmark for evaluating code generation models on real-world coding tasks. It includes a variety of programming problems with test cases to assess the model's ability to generate correct and efficient code solutions.",
+          "model_name": "rmt",
+          "score": 0.125,
+          "metrics": [
+            {
+              "name": "pass@1",
+              "num": 32,
+              "score": 0.125,
+              "macro_score": 0.125,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.125,
+                  "macro_score": 0.125,
+                  "subsets": [
+                    {
+                      "name": "release_v5",
+                      "score": 0.125,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      },
+      "qwen": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "pass": {
+            "mean": 0.125,
+            "n": 32,
+            "wilson_95": [
+              0.04970134387480073,
+              0.2806830548165022
+            ]
+          }
+        },
+        "length_fraction": 0.125,
+        "prompt_tokens": 18815,
+        "completion_tokens": 20491,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 496.88596272468567,
+        "work": "artifacts/v0.0.3/eval/representative/qwen/live_code_bench/e168b1e103ec656e",
+        "official_report": {
+          "name": "qwen@live_code_bench",
+          "dataset_name": "live_code_bench",
+          "dataset_pretty_name": "Live-Code-Bench",
+          "dataset_description": "Live Code Bench is a benchmark for evaluating code generation models on real-world coding tasks. It includes a variety of programming problems with test cases to assess the model's ability to generate correct and efficient code solutions.",
+          "model_name": "qwen",
+          "score": 0.125,
+          "metrics": [
+            {
+              "name": "pass@1",
+              "num": 32,
+              "score": 0.125,
+              "macro_score": 0.125,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.125,
+                  "macro_score": 0.125,
+                  "subsets": [
+                    {
+                      "name": "release_v5",
+                      "score": 0.125,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      }
+    },
+    "ceval": {
+      "rmt": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "acc": {
+            "mean": 0.71875,
+            "n": 32,
+            "wilson_95": [
+              0.5462549057408342,
+              0.8443541950225723
+            ]
+          }
+        },
+        "length_fraction": 0.0,
+        "prompt_tokens": 4304,
+        "completion_tokens": 3464,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 33.559208154678345,
+        "work": "artifacts/v0.0.3/eval/representative/rmt/ceval/eac210104c315239",
+        "official_report": {
+          "name": "rmt@ceval",
+          "dataset_name": "ceval",
+          "dataset_pretty_name": "C-Eval",
+          "dataset_description": "C-Eval is a benchmark designed to evaluate the performance of AI models on Chinese exams across various subjects, including STEM, social sciences, and humanities. It consists of multiple-choice questions that test knowledge and reasoning abilities in these areas.",
+          "model_name": "rmt",
+          "score": 0.7188,
+          "metrics": [
+            {
+              "name": "mean_acc",
+              "num": 32,
+              "score": 0.7188,
+              "macro_score": 0.7292,
+              "categories": [
+                {
+                  "name": [
+                    "Humanities"
+                  ],
+                  "num": 8,
+                  "score": 0.75,
+                  "macro_score": 0.75,
+                  "subsets": [
+                    {
+                      "name": "high_school_history",
+                      "score": 0.75,
+                      "num": 8
+                    }
+                  ]
+                },
+                {
+                  "name": [
+                    "STEM"
+                  ],
+                  "num": 8,
+                  "score": 0.75,
+                  "macro_score": 0.75,
+                  "subsets": [
+                    {
+                      "name": "college_programming",
+                      "score": 0.75,
+                      "num": 8
+                    }
+                  ]
+                },
+                {
+                  "name": [
+                    "Social Science"
+                  ],
+                  "num": 16,
+                  "score": 0.6875,
+                  "macro_score": 0.6875,
+                  "subsets": [
+                    {
+                      "name": "high_school_geography",
+                      "score": 0.5,
+                      "num": 8
+                    },
+                    {
+                      "name": "business_administration",
+                      "score": 0.875,
+                      "num": 8
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      },
+      "qwen": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "acc": {
+            "mean": 0.71875,
+            "n": 32,
+            "wilson_95": [
+              0.5462549057408342,
+              0.8443541950225723
+            ]
+          }
+        },
+        "length_fraction": 0.0,
+        "prompt_tokens": 4304,
+        "completion_tokens": 3464,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 52.050912618637085,
+        "work": "artifacts/v0.0.3/eval/representative/qwen/ceval/f1fd38a89560ce90",
+        "official_report": {
+          "name": "qwen@ceval",
+          "dataset_name": "ceval",
+          "dataset_pretty_name": "C-Eval",
+          "dataset_description": "C-Eval is a benchmark designed to evaluate the performance of AI models on Chinese exams across various subjects, including STEM, social sciences, and humanities. It consists of multiple-choice questions that test knowledge and reasoning abilities in these areas.",
+          "model_name": "qwen",
+          "score": 0.7188,
+          "metrics": [
+            {
+              "name": "mean_acc",
+              "num": 32,
+              "score": 0.7188,
+              "macro_score": 0.7292,
+              "categories": [
+                {
+                  "name": [
+                    "Humanities"
+                  ],
+                  "num": 8,
+                  "score": 0.75,
+                  "macro_score": 0.75,
+                  "subsets": [
+                    {
+                      "name": "high_school_history",
+                      "score": 0.75,
+                      "num": 8
+                    }
+                  ]
+                },
+                {
+                  "name": [
+                    "STEM"
+                  ],
+                  "num": 8,
+                  "score": 0.75,
+                  "macro_score": 0.75,
+                  "subsets": [
+                    {
+                      "name": "college_programming",
+                      "score": 0.75,
+                      "num": 8
+                    }
+                  ]
+                },
+                {
+                  "name": [
+                    "Social Science"
+                  ],
+                  "num": 16,
+                  "score": 0.6875,
+                  "macro_score": 0.6875,
+                  "subsets": [
+                    {
+                      "name": "high_school_geography",
+                      "score": 0.5,
+                      "num": 8
+                    },
+                    {
+                      "name": "business_administration",
+                      "score": 0.875,
+                      "num": 8
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      }
+    },
+    "math_500": {
+      "rmt": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "acc": {
+            "mean": 0.84375,
+            "n": 32,
+            "wilson_95": [
+              0.682458504024696,
+              0.9313557971749429
+            ]
+          }
+        },
+        "length_fraction": 0.09375,
+        "prompt_tokens": 2564,
+        "completion_tokens": 23006,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 254.18462252616882,
+        "work": "artifacts/v0.0.3/eval/representative/rmt/math_500/954bd7e413c91883",
+        "official_report": {
+          "name": "rmt@math_500",
+          "dataset_name": "math_500",
+          "dataset_pretty_name": "MATH-500",
+          "dataset_description": "MATH-500 is a benchmark for evaluating mathematical reasoning capabilities of AI models. It consists of 500 diverse math problems across five levels of difficulty, designed to test a model's ability to solve complex mathematical problems by generating step-by-step solutions and providing the correct final answer.",
+          "model_name": "rmt",
+          "score": 0.8437,
+          "metrics": [
+            {
+              "name": "mean_acc",
+              "num": 32,
+              "score": 0.8437,
+              "macro_score": 0.8437,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.8437,
+                  "macro_score": 0.8333,
+                  "subsets": [
+                    {
+                      "name": "Level 1",
+                      "score": 1.0,
+                      "num": 7
+                    },
+                    {
+                      "name": "Level 2",
+                      "score": 1.0,
+                      "num": 7
+                    },
+                    {
+                      "name": "Level 3",
+                      "score": 1.0,
+                      "num": 6
+                    },
+                    {
+                      "name": "Level 4",
+                      "score": 0.8333,
+                      "num": 6
+                    },
+                    {
+                      "name": "Level 5",
+                      "score": 0.3333,
+                      "num": 6
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      },
+      "qwen": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "acc": {
+            "mean": 0.84375,
+            "n": 32,
+            "wilson_95": [
+              0.682458504024696,
+              0.9313557971749429
+            ]
+          }
+        },
+        "length_fraction": 0.09375,
+        "prompt_tokens": 2564,
+        "completion_tokens": 23006,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 379.10827231407166,
+        "work": "artifacts/v0.0.3/eval/representative/qwen/math_500/664b2447290828f4",
+        "official_report": {
+          "name": "qwen@math_500",
+          "dataset_name": "math_500",
+          "dataset_pretty_name": "MATH-500",
+          "dataset_description": "MATH-500 is a benchmark for evaluating mathematical reasoning capabilities of AI models. It consists of 500 diverse math problems across five levels of difficulty, designed to test a model's ability to solve complex mathematical problems by generating step-by-step solutions and providing the correct final answer.",
+          "model_name": "qwen",
+          "score": 0.8437,
+          "metrics": [
+            {
+              "name": "mean_acc",
+              "num": 32,
+              "score": 0.8437,
+              "macro_score": 0.8437,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.8437,
+                  "macro_score": 0.8333,
+                  "subsets": [
+                    {
+                      "name": "Level 1",
+                      "score": 1.0,
+                      "num": 7
+                    },
+                    {
+                      "name": "Level 2",
+                      "score": 1.0,
+                      "num": 7
+                    },
+                    {
+                      "name": "Level 3",
+                      "score": 1.0,
+                      "num": 6
+                    },
+                    {
+                      "name": "Level 4",
+                      "score": 0.8333,
+                      "num": 6
+                    },
+                    {
+                      "name": "Level 5",
+                      "score": 0.3333,
+                      "num": 6
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      }
+    },
+    "ifeval": {
+      "rmt": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "prompt_level_strict": {
+            "mean": 0.71875,
+            "n": 32,
+            "wilson_95": [
+              0.5462549057408342,
+              0.8443541950225723
+            ]
+          },
+          "inst_level_strict": {
+            "mean": 0.796875,
+            "n": 32,
+            "wilson_95": null
+          },
+          "prompt_level_loose": {
+            "mean": 0.78125,
+            "n": 32,
+            "wilson_95": [
+              0.6124500635075647,
+              0.8897616374739581
+            ]
+          },
+          "inst_level_loose": {
+            "mean": 0.84375,
+            "n": 32,
+            "wilson_95": null
+          }
+        },
+        "length_fraction": 0.0,
+        "prompt_tokens": 1891,
+        "completion_tokens": 10368,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 127.13292932510376,
+        "work": "artifacts/v0.0.3/eval/representative/rmt/ifeval/d2d562f0db1a334d",
+        "official_report": {
+          "name": "rmt@ifeval",
+          "dataset_name": "ifeval",
+          "dataset_pretty_name": "IFEval",
+          "dataset_description": "IFEval is a benchmark for evaluating instruction-following language models, focusing on their ability to understand and respond to various prompts. It includes a diverse set of tasks and metrics to assess model performance comprehensively.",
+          "model_name": "rmt",
+          "score": 0.7188,
+          "metrics": [
+            {
+              "name": "mean_prompt_level_strict",
+              "num": 32,
+              "score": 0.7188,
+              "macro_score": 0.7188,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.7188,
+                  "macro_score": 0.7188,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.7188,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mean_inst_level_strict",
+              "num": 32,
+              "score": 0.7969,
+              "macro_score": 0.7969,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.7969,
+                  "macro_score": 0.7969,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.7969,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mean_prompt_level_loose",
+              "num": 32,
+              "score": 0.7812,
+              "macro_score": 0.7812,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.7812,
+                  "macro_score": 0.7812,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.7812,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mean_inst_level_loose",
+              "num": 32,
+              "score": 0.8438,
+              "macro_score": 0.8438,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.8438,
+                  "macro_score": 0.8438,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.8438,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      },
+      "qwen": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "prompt_level_strict": {
+            "mean": 0.71875,
+            "n": 32,
+            "wilson_95": [
+              0.5462549057408342,
+              0.8443541950225723
+            ]
+          },
+          "inst_level_strict": {
+            "mean": 0.796875,
+            "n": 32,
+            "wilson_95": null
+          },
+          "prompt_level_loose": {
+            "mean": 0.78125,
+            "n": 32,
+            "wilson_95": [
+              0.6124500635075647,
+              0.8897616374739581
+            ]
+          },
+          "inst_level_loose": {
+            "mean": 0.84375,
+            "n": 32,
+            "wilson_95": null
+          }
+        },
+        "length_fraction": 0.0,
+        "prompt_tokens": 1891,
+        "completion_tokens": 10362,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 194.87003183364868,
+        "work": "artifacts/v0.0.3/eval/representative/qwen/ifeval/82a664f117b5a999",
+        "official_report": {
+          "name": "qwen@ifeval",
+          "dataset_name": "ifeval",
+          "dataset_pretty_name": "IFEval",
+          "dataset_description": "IFEval is a benchmark for evaluating instruction-following language models, focusing on their ability to understand and respond to various prompts. It includes a diverse set of tasks and metrics to assess model performance comprehensively.",
+          "model_name": "qwen",
+          "score": 0.7188,
+          "metrics": [
+            {
+              "name": "mean_prompt_level_strict",
+              "num": 32,
+              "score": 0.7188,
+              "macro_score": 0.7188,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.7188,
+                  "macro_score": 0.7188,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.7188,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mean_inst_level_strict",
+              "num": 32,
+              "score": 0.7969,
+              "macro_score": 0.7969,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.7969,
+                  "macro_score": 0.7969,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.7969,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mean_prompt_level_loose",
+              "num": 32,
+              "score": 0.7812,
+              "macro_score": 0.7812,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.7812,
+                  "macro_score": 0.7812,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.7812,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mean_inst_level_loose",
+              "num": 32,
+              "score": 0.8438,
+              "macro_score": 0.8438,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.8438,
+                  "macro_score": 0.8438,
+                  "subsets": [
+                    {
+                      "name": "default",
+                      "score": 0.8438,
+                      "num": 32
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      }
+    },
+    "mmlu_redux": {
+      "rmt": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "acc": {
+            "mean": 0.75,
+            "n": 32,
+            "wilson_95": [
+              0.5789344100575552,
+              0.8674759908149096
+            ]
+          }
+        },
+        "length_fraction": 0.0,
+        "prompt_tokens": 3874,
+        "completion_tokens": 10449,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 104.80139541625977,
+        "work": "artifacts/v0.0.3/eval/representative/rmt/mmlu_redux/267bd03ca62cae16",
+        "official_report": {
+          "name": "rmt@mmlu_redux",
+          "dataset_name": "mmlu_redux",
+          "dataset_pretty_name": "MMLU-Redux",
+          "dataset_description": "MMLU-Redux is a benchmark for evaluating language models on multiple-choice questions across various subjects. It includes questions from different domains, where the model must select the correct answer from given options. The bad answers are corrected.",
+          "model_name": "rmt",
+          "score": 0.75,
+          "metrics": [
+            {
+              "name": "mean_acc",
+              "num": 32,
+              "score": 0.75,
+              "macro_score": 0.75,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.75,
+                  "macro_score": 0.75,
+                  "subsets": [
+                    {
+                      "name": "college_computer_science",
+                      "score": 1.0,
+                      "num": 8
+                    },
+                    {
+                      "name": "high_school_geography",
+                      "score": 0.875,
+                      "num": 8
+                    },
+                    {
+                      "name": "philosophy",
+                      "score": 0.5,
+                      "num": 8
+                    },
+                    {
+                      "name": "business_ethics",
+                      "score": 0.625,
+                      "num": 8
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      },
+      "qwen": {
+        "status": "passed",
+        "review_count": 32,
+        "unique_responses": 32,
+        "metrics": {
+          "acc": {
+            "mean": 0.75,
+            "n": 32,
+            "wilson_95": [
+              0.5789344100575552,
+              0.8674759908149096
+            ]
+          }
+        },
+        "length_fraction": 0.0,
+        "prompt_tokens": 3874,
+        "completion_tokens": 10741,
+        "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates.",
+        "wall_seconds": 167.3934202194214,
+        "work": "artifacts/v0.0.3/eval/representative/qwen/mmlu_redux/70014b57267691ce",
+        "official_report": {
+          "name": "qwen@mmlu_redux",
+          "dataset_name": "mmlu_redux",
+          "dataset_pretty_name": "MMLU-Redux",
+          "dataset_description": "MMLU-Redux is a benchmark for evaluating language models on multiple-choice questions across various subjects. It includes questions from different domains, where the model must select the correct answer from given options. The bad answers are corrected.",
+          "model_name": "qwen",
+          "score": 0.75,
+          "metrics": [
+            {
+              "name": "mean_acc",
+              "num": 32,
+              "score": 0.75,
+              "macro_score": 0.75,
+              "categories": [
+                {
+                  "name": [
+                    "default"
+                  ],
+                  "num": 32,
+                  "score": 0.75,
+                  "macro_score": 0.75,
+                  "subsets": [
+                    {
+                      "name": "college_computer_science",
+                      "score": 1.0,
+                      "num": 8
+                    },
+                    {
+                      "name": "high_school_geography",
+                      "score": 0.875,
+                      "num": 8
+                    },
+                    {
+                      "name": "philosophy",
+                      "score": 0.5,
+                      "num": 8
+                    },
+                    {
+                      "name": "business_ethics",
+                      "score": 0.625,
+                      "num": 8
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "analysis": "N/A"
+        }
+      }
+    }
+  },
+  "paired": {
+    "live_code_bench": {
+      "same_prompt_and_seed": true,
+      "n": 32,
+      "score_differences": [],
+      "exact_text_agreement": 1.0
+    },
+    "ceval": {
+      "same_prompt_and_seed": true,
+      "n": 32,
+      "score_differences": [],
+      "exact_text_agreement": 1.0
+    },
+    "math_500": {
+      "same_prompt_and_seed": true,
+      "n": 32,
+      "score_differences": [],
+      "exact_text_agreement": 1.0
+    },
+    "ifeval": {
+      "same_prompt_and_seed": true,
+      "n": 32,
+      "score_differences": [],
+      "exact_text_agreement": 0.875
+    },
+    "mmlu_redux": {
+      "same_prompt_and_seed": true,
+      "n": 32,
+      "score_differences": [],
+      "exact_text_agreement": 0.875
+    }
+  },
+  "gpu_hours_generation_and_scoring_upper_bound": 0.6088034089406331
+}

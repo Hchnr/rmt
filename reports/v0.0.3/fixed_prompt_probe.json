@@ -1,0 +1,46 @@
+[
+  {
+    "tokens": [
+      4,
+      194
+    ],
+    "max_abs": 0.875,
+    "relative_rmse": 0.04714865982532501,
+    "top1_same": [
+      [
+        true
+      ],
+      [
+        true
+      ],
+      [
+        true
+      ],
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "tokens": [
+      4,
+      147
+    ],
+    "max_abs": 1.375,
+    "relative_rmse": 0.04204176366329193,
+    "top1_same": [
+      [
+        true
+      ],
+      [
+        true
+      ],
+      [
+        true
+      ],
+      [
+        true
+      ]
+    ]
+  }
+]

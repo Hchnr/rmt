@@ -1,0 +1,268 @@
+[
+  {
+    "model": "rmt",
+    "benchmark": "mmlu_redux",
+    "work": "artifacts/v0.0.3/eval/pilot/rmt/mmlu_redux/be533bc1a3a4ece2",
+    "wall_seconds": 60.706294536590576,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "acc": {
+        "mean": 0.8125,
+        "n": 16,
+        "wilson_95": [
+          0.5699111903802586,
+          0.9340840092857187
+        ]
+      }
+    },
+    "length_fraction": 0.0625,
+    "prompt_tokens": 1971,
+    "completion_tokens": 4474,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "rmt",
+    "benchmark": "ceval",
+    "work": "artifacts/v0.0.3/eval/pilot/rmt/ceval/0ff6ff47d491b3ca",
+    "wall_seconds": 18.396009922027588,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "acc": {
+        "mean": 0.6875,
+        "n": 16,
+        "wilson_95": [
+          0.44404355834740666,
+          0.8583535614521796
+        ]
+      }
+    },
+    "length_fraction": 0.0,
+    "prompt_tokens": 2217,
+    "completion_tokens": 1412,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "rmt",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.3/eval/pilot/rmt/ifeval/0181de4baa87002d",
+    "wall_seconds": 81.59663224220276,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "prompt_level_strict": {
+        "mean": 0.75,
+        "n": 16,
+        "wilson_95": [
+          0.5050168346449122,
+          0.8981793250878696
+        ]
+      },
+      "inst_level_strict": {
+        "mean": 0.84375,
+        "n": 16,
+        "wilson_95": null
+      },
+      "prompt_level_loose": {
+        "mean": 0.8125,
+        "n": 16,
+        "wilson_95": [
+          0.5699111903802586,
+          0.9340840092857187
+        ]
+      },
+      "inst_level_loose": {
+        "mean": 0.875,
+        "n": 16,
+        "wilson_95": null
+      }
+    },
+    "length_fraction": 0.0,
+    "prompt_tokens": 986,
+    "completion_tokens": 4504,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "rmt",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.3/eval/pilot/rmt/math_500/51883d76f4c4b3b3",
+    "wall_seconds": 121.42508125305176,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "acc": {
+        "mean": 0.875,
+        "n": 16,
+        "wilson_95": [
+          0.639771727342413,
+          0.9650225122567595
+        ]
+      }
+    },
+    "length_fraction": 0.125,
+    "prompt_tokens": 1218,
+    "completion_tokens": 8939,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "rmt",
+    "benchmark": "live_code_bench",
+    "work": "artifacts/v0.0.3/eval/pilot/rmt/live_code_bench/b169943df8478c13",
+    "wall_seconds": 168.5754861831665,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "pass": {
+        "mean": 0.0625,
+        "n": 16,
+        "wilson_95": [
+          0.01111934476464252,
+          0.28328737570298945
+        ]
+      }
+    },
+    "length_fraction": 0.25,
+    "prompt_tokens": 8890,
+    "completion_tokens": 8357,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "qwen",
+    "benchmark": "mmlu_redux",
+    "work": "artifacts/v0.0.3/eval/pilot/qwen/mmlu_redux/4353af5d65d2ee98",
+    "wall_seconds": 52.5159866809845,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "acc": {
+        "mean": 0.8125,
+        "n": 16,
+        "wilson_95": [
+          0.5699111903802586,
+          0.9340840092857187
+        ]
+      }
+    },
+    "length_fraction": 0.0,
+    "prompt_tokens": 1971,
+    "completion_tokens": 4364,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "qwen",
+    "benchmark": "ceval",
+    "work": "artifacts/v0.0.3/eval/pilot/qwen/ceval/9ef99b03d397734b",
+    "wall_seconds": 23.583767652511597,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "acc": {
+        "mean": 0.75,
+        "n": 16,
+        "wilson_95": [
+          0.5050168346449122,
+          0.8981793250878696
+        ]
+      }
+    },
+    "length_fraction": 0.0,
+    "prompt_tokens": 2217,
+    "completion_tokens": 1673,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "qwen",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.3/eval/pilot/qwen/ifeval/e60df8e2f38422e7",
+    "wall_seconds": 91.97924017906189,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "prompt_level_strict": {
+        "mean": 0.75,
+        "n": 16,
+        "wilson_95": [
+          0.5050168346449122,
+          0.8981793250878696
+        ]
+      },
+      "inst_level_strict": {
+        "mean": 0.84375,
+        "n": 16,
+        "wilson_95": null
+      },
+      "prompt_level_loose": {
+        "mean": 0.8125,
+        "n": 16,
+        "wilson_95": [
+          0.5699111903802586,
+          0.9340840092857187
+        ]
+      },
+      "inst_level_loose": {
+        "mean": 0.875,
+        "n": 16,
+        "wilson_95": null
+      }
+    },
+    "length_fraction": 0.0,
+    "prompt_tokens": 986,
+    "completion_tokens": 4548,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "qwen",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.3/eval/pilot/qwen/math_500/0b17d6ed0ee73a34",
+    "wall_seconds": 126.7012984752655,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "acc": {
+        "mean": 0.9375,
+        "n": 16,
+        "wilson_95": [
+          0.7167126242970107,
+          0.9888806552353576
+        ]
+      }
+    },
+    "length_fraction": 0.0625,
+    "prompt_tokens": 1218,
+    "completion_tokens": 8510,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  },
+  {
+    "model": "qwen",
+    "benchmark": "live_code_bench",
+    "work": "artifacts/v0.0.3/eval/pilot/qwen/live_code_bench/82eecb201ed743b6",
+    "wall_seconds": 176.83096837997437,
+    "status": "passed",
+    "review_count": 16,
+    "unique_responses": 16,
+    "metrics": {
+      "pass": {
+        "mean": 0.0625,
+        "n": 16,
+        "wilson_95": [
+          0.01111934476464252,
+          0.28328737570298945
+        ]
+      }
+    },
+    "length_fraction": 0.25,
+    "prompt_tokens": 8890,
+    "completion_tokens": 9588,
+    "uncertainty_note": "Wilson intervals only for binary per-prompt metrics; quick fixed subsets, not unbiased full-benchmark estimates."
+  }
+]

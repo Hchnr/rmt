@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "7",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "prefill_and_decode": [
+    {
+      "step": 0,
+      "bitwise_equal": true
+    },
+    {
+      "step": 1,
+      "bitwise_equal": true
+    },
+    {
+      "step": 2,
+      "bitwise_equal": true
+    },
+    {
+      "step": 3,
+      "bitwise_equal": true
+    },
+    {
+      "step": 4,
+      "bitwise_equal": true
+    }
+  ],
+  "tokenizer_equal": true,
+  "cached_uncached_greedy_equal": true,
+  "compiled_cached_greedy_equal": true,
+  "batch_single_greedy_equal": [
+    true,
+    true
+  ],
+  "mixed_forced": {
+    "max_abs": 0.0,
+    "relative_rmse": 0.0,
+    "seed": 171,
+    "shape": [
+      2,
+      32
+    ]
+  },
+  "scope": "Observed BF16 eager Qwen vs RMT fixed-route input shapes only; no universal bitwise claim."
+}

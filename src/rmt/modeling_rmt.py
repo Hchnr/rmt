@@ -83,6 +83,10 @@ class RmtModel(nn.Module):
         if (input_ids is None) == (inputs_embeds is None):
             raise ValueError("Specify exactly one of input_ids and inputs_embeds")
         hidden = self.embed_tokens(input_ids) if inputs_embeds is None else inputs_embeds
+        if self.cell.bank.compiled and not torch.is_grad_enabled():
+            if inputs_embeds is not None:
+                hidden = hidden.clone()
+            torch.compiler.cudagraph_mark_step_begin()
         b, s, _ = hidden.shape
         if self.training and (use_cache or past_key_values is not None):
             raise ValueError("Mutable inference cache is disabled during training")
@@ -122,7 +126,7 @@ class RmtModel(nn.Module):
         states, routes, probabilities = [], [], []
         for step in range(self.config.num_recurrences):
             if output_hidden_states:
-                states.append(hidden)
+                states.append(hidden.clone() if self.cell.bank.compiled else hidden)
             call = partial(self.cell, step=step, mask=mask, position_embeddings=pos,
                            mode=mode, forced=forced_routes, cache=cache)
             if self.gradient_checkpointing and self.training:
@@ -134,7 +138,7 @@ class RmtModel(nn.Module):
                 probabilities.append(probs)
         hidden = self.norm(hidden)
         if output_hidden_states:
-            states.append(hidden)
+            states.append(hidden.clone() if self.cell.bank.compiled else hidden)
         return hidden, cache, tuple(states) if output_hidden_states else None, tuple(routes), tuple(probabilities)
 
 

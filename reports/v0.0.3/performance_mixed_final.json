@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "performance_geomean": 0.9158397014885092,
+  "performance_gate_passed": false,
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "1",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "mixed": true,
+  "matrix": false,
+  "fixed_output_tokens": null,
+  "numeric": {
+    "max_abs": 0.0,
+    "relative_rmse": 0.0
+  },
+  "delta_nll": 0.0,
+  "learned_route_flips": 0,
+  "learned_max_abs": 0.0,
+  "cold_compile_seconds": 9.947983622550964,
+  "rows": [
+    {
+      "batch": 1,
+      "prompt_tokens": 23,
+      "eager_seconds": 3.5237425826489925,
+      "compiled_seconds": 3.75975382886827,
+      "speedup": 0.9372269417196605,
+      "generated_tokens_per_second": 8.511195534743926,
+      "greedy_equal": true
+    },
+    {
+      "batch": 4,
+      "prompt_tokens": 23,
+      "eager_seconds": 5.508784728124738,
+      "compiled_seconds": 6.155475873500109,
+      "speedup": 0.8949405117223453,
+      "generated_tokens_per_second": 20.794493005983796,
+      "greedy_equal": true
+    }
+  ],
+  "peak_memory_bytes": 8199727104,
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 16,
+      "unique_graphs": 4
+    },
+    "aot_autograd": {
+      "total": 4,
+      "autograd_cache_miss": 4,
+      "autograd_cache_saved": 4,
+      "ok": 4
+    },
+    "inductor": {
+      "fxgraph_cache_miss": 4,
+      "extern_calls": 12,
+      "async_compile_cache_miss": 2,
+      "triton_bundler_save_kernel": 32,
+      "triton_bundler_save_static_autotuner": 2,
+      "benchmarking.InductorBenchmarker.benchmark": 4,
+      "benchmarking.InductorBenchmarker.benchmark_gpu": 4
+    },
+    "graph_break": {},
+    "aten_mm_info": {
+      "aten.mm_1_4096_2560": 1,
+      "aten.mm_1_1024_2560": 2,
+      "aten.mm_s26_4096_2560": 1,
+      "aten.mm_s26_1024_2560": 2,
+      "aten.mm_1_9728_2560": 2,
+      "aten.mm_1_2560_9728": 1,
+      "aten.mm_s26_9728_2560": 2,
+      "aten.mm_s26_2560_9728": 1
+    }
+  },
+  "compile_times": "TorchDynamo compilation metrics:\nFunction, Runtimes (s)\n_compile.compile_inner, 2.1340, 0.1370, 0.4065, 0.5770\ncompile_attempt_0, 2.1047, 0.1092, 0.3776, 0.5474\nbytecode_tracing, 0.1886, 0.0186, 0.0284, 0.1911\nOutputGraph.call_user_compiler, 1.9054, 0.0845, 0.3434, 0.3504\ninductor_codecache_torch_key, 0.7602\n_recursive_pre_grad_passes, 0.0018, 0.0002, 0.0002, 0.0002\ncreate_aot_dispatcher_function, 0.2480, 0.0733, 0.3324, 0.3386\naot_collect_metadata, 0.0076, 0.0065, 0.0051, 0.0082\ncompile_fx.<locals>.fw_compiler_base, 0.2152, 0.0340, 0.3006, 0.2881\n_recursive_joint_graph_passes, 0.1448, 0.0010, 0.0010, 0.0014\ncompile_fx_inner, 0.0699, 0.0325, 0.2991, 0.2861\nfx_codegen_and_compile, 0.0694, 0.0320, 0.2986, 0.2851\nadditional_fake_tensor_prop, 0.0026, 0.0025, 0.0034, 0.0047\n_recursive_post_grad_passes, 0.0007, 0.0007, 0.0007, 0.0008\nGraphLowering.run, 0.0076, 0.0077, 0.0097, 0.0114\nGraphLowering.compile_to_fn, 0.0405, 0.0075, 0.2706, 0.2522\nGraphLowering.compile_to_module, 0.0404, 0.0074, 0.2705, 0.2521\nGraphLowering.codegen, 0.0071, 0.0054, 0.0209, 0.1339\nScheduler.__init__, 0.0020, 0.0022, 0.0053, 0.0076\nScheduler.fused_nodes, 0.0002, 0.0002, 0.0002, 0.0003\nScheduler.codegen, 0.0011, 0.0010, 0.0137, 0.1238\nPythonWrapperCodegen.generate, 0.0017, 0.0013, 0.0013, 0.0017\nPyCodeCache.load_by_key_path, 0.0066, 0.0014, 0.2491, 0.1175\nasync_compile.wait, 0.0002, 0.0002, 0.0002, 0.0001\nTritonBundler.collect, 0.0001, 0.0001, 0.0007, 0.0007\nbuild_guards, 0.0257, 0.0253, 0.0261, 0.0276\ngc, 0.0009, 0.0011, 0.0017, 0.0008\npgo.dynamic_whitelist, 0.0001, 0.0001\nasync_compile.precompile, 0.2475, 0.1158\nCachingAutotuner.synchronize, 0.0002, 0.0001\nCachingAutotuner.benchmark_all_configs, 0.0149, 0.0139\nInductorBenchmarker.benchmark, 0.0076, 0.0064, 0.0067, 0.0065\nInductorBenchmarker.benchmark_gpu, 0.0075, 0.0063, 0.0066, 0.0064"
+}

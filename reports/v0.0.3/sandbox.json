@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "os_probe": {
+    "denied": [
+      "file",
+      "network",
+      "write"
+    ],
+    "euid": 65534,
+    "egid": 65534
+  },
+  "correct": [
+    true,
+    true
+  ],
+  "wrong": [
+    -2
+  ],
+  "timeout": [
+    -3
+  ]
+}

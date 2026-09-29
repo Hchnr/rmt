@@ -7,3 +7,5 @@ __pycache__/
 artifacts/
 .cache/
 reports/bootstrap/*.log
+
+reports/v0.0.3/*.log

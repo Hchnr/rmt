@@ -1,0 +1,52 @@
+[
+  {
+    "model": "rmt",
+    "benchmark": "live_code_bench",
+    "work": "artifacts/v0.0.3/eval/representative/rmt/live_code_bench/b4e2c539ace2854c"
+  },
+  {
+    "model": "rmt",
+    "benchmark": "ceval",
+    "work": "artifacts/v0.0.3/eval/representative/rmt/ceval/eac210104c315239"
+  },
+  {
+    "model": "rmt",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.3/eval/representative/rmt/math_500/954bd7e413c91883"
+  },
+  {
+    "model": "rmt",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.3/eval/representative/rmt/ifeval/d2d562f0db1a334d"
+  },
+  {
+    "model": "rmt",
+    "benchmark": "mmlu_redux",
+    "work": "artifacts/v0.0.3/eval/representative/rmt/mmlu_redux/267bd03ca62cae16"
+  },
+  {
+    "model": "qwen",
+    "benchmark": "live_code_bench",
+    "work": "artifacts/v0.0.3/eval/representative/qwen/live_code_bench/e168b1e103ec656e"
+  },
+  {
+    "model": "qwen",
+    "benchmark": "ceval",
+    "work": "artifacts/v0.0.3/eval/representative/qwen/ceval/f1fd38a89560ce90"
+  },
+  {
+    "model": "qwen",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.3/eval/representative/qwen/math_500/664b2447290828f4"
+  },
+  {
+    "model": "qwen",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.3/eval/representative/qwen/ifeval/82a664f117b5a999"
+  },
+  {
+    "model": "qwen",
+    "benchmark": "mmlu_redux",
+    "work": "artifacts/v0.0.3/eval/representative/qwen/mmlu_redux/70014b57267691ce"
+  }
+]
