@@ -1,0 +1,13 @@
+{
+  "scope": "Transport-only recovery from frozen original source; no generation change",
+  "original_key": "f15e1e4146bf294480ef2a5c42d1b6e8f3200e9f20c410254d1c3425b111e172",
+  "source_hashes_verified": true,
+  "runtime_metadata_equal": true,
+  "model_args": {
+    "timeout": 7200,
+    "max_retries": 0
+  },
+  "wrapper_sha256": "272737b01a15abaaac488bc55e52496f0c51dbb98c0db316213dab358b7f75a5",
+  "cached_predictions_before": 334,
+  "raw_responses_before": 334
+}
