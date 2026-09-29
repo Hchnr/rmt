@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "separate_process_reload": true,
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "0",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  }
+}

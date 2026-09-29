@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "world_size": 2,
+  "fresh_process": true,
+  "next_step_loss": 3.685882806777954,
+  "all_parameter_sha256_equal": true
+}

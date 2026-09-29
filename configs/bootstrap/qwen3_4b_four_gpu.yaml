@@ -1,0 +1,14 @@
+seed: 17
+full_model: true
+base_model: /share/project/eai_pwm/models/Qwen/Qwen3-4B
+bf16: true
+compile: false
+checkpoint: true
+sequence_length: 16
+steps: 5
+learning_rate: 0.000001
+prior_strength: 4.0
+loss_chunk_size: 4
+kd_weight: 0.5
+artifact_dir: artifacts/bootstrap/qwen3_4b_four_gpu
+report: reports/bootstrap/qwen3_4b_four_gpu.json

@@ -1,0 +1,6 @@
+{
+  "status": "interrupted",
+  "world_size": 8,
+  "reason": "User restricted GPUs to physical 0–3 during startup; own eight-rank torchrun terminated. Four-rank fresh-process check replaces this optional extension.",
+  "passed": false
+}

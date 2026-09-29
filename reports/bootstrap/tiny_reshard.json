@@ -1,0 +1,453 @@
+{
+  "status": "passed",
+  "config": {
+    "seed": 17,
+    "full_model": false,
+    "bf16": false,
+    "compile": true,
+    "checkpoint": true,
+    "sequence_length": 10,
+    "steps": 20,
+    "learning_rate": 0.001,
+    "prior_strength": 0.0,
+    "kd_weight": 0.5,
+    "artifact_dir": "artifacts/bootstrap/tiny_reshard",
+    "report": "reports/bootstrap/tiny_reshard.json",
+    "reshard_after_forward": true
+  },
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "0,1",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "world_size": 2,
+  "steps": [
+    {
+      "step": 0,
+      "loss": 4.57904052734375,
+      "ce": 4.577114105224609,
+      "kl": 0.003851828631013632,
+      "router_grad_norm_mean_local": 0.013552876189351082,
+      "routes": [
+        11,
+        32,
+        5
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 6.576065661385655,
+      "valid_tokens_per_second": 2.4330657301600924,
+      "peak_memory_bytes": 67604480,
+      "valid_targets": 12
+    },
+    {
+      "step": 1,
+      "loss": 4.487992286682129,
+      "ce": 4.485772609710693,
+      "kl": 0.004439490847289562,
+      "router_grad_norm_mean_local": 0.017567837610840797,
+      "routes": [
+        23,
+        16,
+        9
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.7931406628340483,
+      "valid_tokens_per_second": 20.172966473347664,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
+    },
+    {
+      "step": 2,
+      "loss": 4.439971923828125,
+      "ce": 4.437130928039551,
+      "kl": 0.0056821200996637344,
+      "router_grad_norm_mean_local": 0.033760398626327515,
+      "routes": [
+        20,
+        17,
+        11
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.0796422902494669,
+      "valid_tokens_per_second": 200.8982909693145,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
+    },
+    {
+      "step": 3,
+      "loss": 4.334892749786377,
+      "ce": 4.3312482833862305,
+      "kl": 0.007288852706551552,
+      "router_grad_norm_mean_local": 0.03379169851541519,
+      "routes": [
+        5,
+        27,
+        16
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.07941141910851002,
+      "valid_tokens_per_second": 201.48235832603805,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
+    },
+    {
+      "step": 4,
+      "loss": 4.218235015869141,
+      "ce": 4.2147321701049805,
+      "kl": 0.007005976513028145,
+      "router_grad_norm_mean_local": 0.015285277739167213,
+      "routes": [
+        11,
+        27,
+        10
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.07847458496689796,
+      "valid_tokens_per_second": 203.8876663922351,
+      "peak_memory_bytes": 67723776,
+      "valid_targets": 12
+    },
+    {
+      "step": 5,
+      "loss": 4.192165851593018,
+      "ce": 4.188328742980957,
+      "kl": 0.00767484400421381,
+      "router_grad_norm_mean_local": 0.0188608318567276,
+      "routes": [
+        21,
+        19,
+        8
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08299329690635204,
+      "valid_tokens_per_second": 192.78665381921238,
+      "peak_memory_bytes": 67724288,
+      "valid_targets": 12
+    },
+    {
+      "step": 6,
+      "loss": 4.19594144821167,
+      "ce": 4.191221714019775,
+      "kl": 0.009439369663596153,
+      "router_grad_norm_mean_local": 0.024823857471346855,
+      "routes": [
+        17,
+        17,
+        14
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.07946418412029743,
+      "valid_tokens_per_second": 201.34857202810116,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 7,
+      "loss": 4.127791404724121,
+      "ce": 4.12273645401001,
+      "kl": 0.010109541937708855,
+      "router_grad_norm_mean_local": 0.019039425998926163,
+      "routes": [
+        6,
+        25,
+        17
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.07830781117081642,
+      "valid_tokens_per_second": 204.32189025304854,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 8,
+      "loss": 4.038455963134766,
+      "ce": 4.033659934997559,
+      "kl": 0.00959191657602787,
+      "router_grad_norm_mean_local": 0.014512691646814346,
+      "routes": [
+        10,
+        32,
+        6
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.07771490514278412,
+      "valid_tokens_per_second": 205.88071195098937,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 9,
+      "loss": 4.010002136230469,
+      "ce": 4.0045599937438965,
+      "kl": 0.010883788578212261,
+      "router_grad_norm_mean_local": 0.01622938923537731,
+      "routes": [
+        18,
+        25,
+        5
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08913081511855125,
+      "valid_tokens_per_second": 179.5114291136987,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 10,
+      "loss": 4.020542144775391,
+      "ce": 4.014130115509033,
+      "kl": 0.01282431185245514,
+      "router_grad_norm_mean_local": 0.021703746169805527,
+      "routes": [
+        14,
+        19,
+        15
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08595207333564758,
+      "valid_tokens_per_second": 186.15025070447246,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 11,
+      "loss": 3.980806827545166,
+      "ce": 3.974195957183838,
+      "kl": 0.013221405446529388,
+      "router_grad_norm_mean_local": 0.012928176671266556,
+      "routes": [
+        6,
+        29,
+        13
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.09706706739962101,
+      "valid_tokens_per_second": 164.83448432750808,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 12,
+      "loss": 3.9169797897338867,
+      "ce": 3.911268711090088,
+      "kl": 0.011421680450439453,
+      "router_grad_norm_mean_local": 0.03278210014104843,
+      "routes": [
+        12,
+        29,
+        7
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.09188372828066349,
+      "valid_tokens_per_second": 174.1331169228048,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 13,
+      "loss": 3.871565818786621,
+      "ce": 3.864752769470215,
+      "kl": 0.013626625761389732,
+      "router_grad_norm_mean_local": 0.014332409016788006,
+      "routes": [
+        19,
+        24,
+        5
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08648044057190418,
+      "valid_tokens_per_second": 185.01293349328853,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 14,
+      "loss": 3.8969833850860596,
+      "ce": 3.8892195224761963,
+      "kl": 0.01552753895521164,
+      "router_grad_norm_mean_local": 0.026454873383045197,
+      "routes": [
+        14,
+        21,
+        13
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08753282390534878,
+      "valid_tokens_per_second": 182.78857331623576,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 15,
+      "loss": 3.8816213607788086,
+      "ce": 3.873739719390869,
+      "kl": 0.015763625502586365,
+      "router_grad_norm_mean_local": 0.039400745183229446,
+      "routes": [
+        4,
+        33,
+        11
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08832119777798653,
+      "valid_tokens_per_second": 181.15696347573643,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 16,
+      "loss": 3.8065075874328613,
+      "ce": 3.7980475425720215,
+      "kl": 0.016920270398259163,
+      "router_grad_norm_mean_local": 0.022961946204304695,
+      "routes": [
+        8,
+        37,
+        3
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.07934626378118992,
+      "valid_tokens_per_second": 201.6478059272277,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 17,
+      "loss": 3.7683029174804688,
+      "ce": 3.7589221000671387,
+      "kl": 0.018761513754725456,
+      "router_grad_norm_mean_local": 0.02994059957563877,
+      "routes": [
+        17,
+        27,
+        4
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.09005755558609962,
+      "valid_tokens_per_second": 177.66416039022047,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 18,
+      "loss": 3.7787539958953857,
+      "ce": 3.7687413692474365,
+      "kl": 0.020025234669446945,
+      "router_grad_norm_mean_local": 0.036513254046440125,
+      "routes": [
+        16,
+        21,
+        11
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08605612069368362,
+      "valid_tokens_per_second": 185.92518313661765,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    {
+      "step": 19,
+      "loss": 4.0424628257751465,
+      "ce": 4.035181045532227,
+      "kl": 0.014563007280230522,
+      "router_grad_norm_mean_local": 0.0,
+      "routes": [
+        24,
+        24,
+        0
+      ],
+      "mode": "forced",
+      "prior_strength": 0.0,
+      "seconds": 0.10275977663695812,
+      "valid_tokens_per_second": 155.70294646052696,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    }
+  ],
+  "resume": {
+    "next_loss_equal": true,
+    "max_parameter_difference": 0.0,
+    "reference_step": {
+      "step": 20,
+      "loss": 3.685882806777954,
+      "ce": 3.6747708320617676,
+      "kl": 0.022224172949790955,
+      "router_grad_norm_mean_local": 0.015531354583799839,
+      "routes": [
+        13,
+        32,
+        3
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.08443480916321278,
+      "valid_tokens_per_second": 189.49530600669618,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    },
+    "restored_step": {
+      "step": 20,
+      "loss": 3.685882806777954,
+      "ce": 3.6747708320617676,
+      "kl": 0.022224172949790955,
+      "router_grad_norm_mean_local": 0.015531354583799839,
+      "routes": [
+        13,
+        32,
+        3
+      ],
+      "mode": "learned",
+      "prior_strength": 0.0,
+      "seconds": 0.06704198010265827,
+      "valid_tokens_per_second": 238.65643549757843,
+      "peak_memory_bytes": 67725312,
+      "valid_targets": 12
+    }
+  },
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 214,
+      "unique_graphs": 7
+    },
+    "inductor": {
+      "triton_bundler_load_static_autotuner": 53,
+      "async_compile_cache_miss": 123,
+      "async_compile_cache_hit": 70,
+      "extern_calls": 69,
+      "fxgraph_cache_hit": 14,
+      "pattern_matcher_count": 4,
+      "pattern_matcher_nodes": 8
+    },
+    "aot_autograd": {
+      "total": 7,
+      "autograd_cache_hit": 7,
+      "ok": 7
+    }
+  },
+  "compile_timings": "TorchDynamo compilation metrics:\nFunction, Runtimes (s)\n_compile.compile_inner, 4.2615\ncompile_attempt_0, 3.9973\nbytecode_tracing, 1.8139\nOutputGraph.call_user_compiler, 2.1150\ninductor_codecache_torch_key, 0.8396\n_recursive_pre_grad_passes, 0.0088\nAOTAutogradCache.inductor_load, 0.1431\nTritonBundler.read_and_emit, 0.0111\nTritonBundler.load_cached_static_autotuners, 0.0048\nPyCodeCache.load_by_key_path, 0.0767\nStaticAutotunerFuture.warm_precompile, 0.0327\nCachingAutotuner.synchronize, 0.0040\nasync_compile.wait, 0.0026\nbuild_guards, 0.2405\ngc, 0.0102\npgo.dynamic_whitelist, 0.0004",
+  "compile_scope": "QKV/norm and O/FFN kernels; Python token dispatch remains eager",
+  "training_scope": "fixtures only; no quality claim"
+}

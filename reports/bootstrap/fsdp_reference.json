@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "world_size": 2,
+  "checks": [
+    {
+      "mode": "forced",
+      "loss": 4.5741868019104,
+      "max_gradient_difference": 4.470348358154297e-08,
+      "max_parameter_difference": 3.725290298461914e-09
+    },
+    {
+      "mode": "learned",
+      "loss": 4.29547119140625,
+      "max_gradient_difference": 1.7881393432617188e-07,
+      "max_parameter_difference": 7.450580596923828e-09
+    }
+  ]
+}
