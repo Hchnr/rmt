@@ -13,11 +13,43 @@ def digest(value):
     return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False,default=str).encode()).hexdigest()
 
 
+def fetch_ranges(url, path, size, expected_sha, workers=24):
+    """Resume immutable large files in bounded chunks; check range and LFS hash."""
+    chunk=4*1024**2
+    def part(i):
+        start=i*chunk;end=min(size,start+chunk)-1
+        target=path.with_name(path.name+f'.part{i}')
+        if target.exists() and target.stat().st_size==end-start+1:return target
+        for attempt in range(4):
+            try:
+                response=requests.get(url,params={'range_start':start},
+                    headers={'Range':f'bytes={start}-{end}'},timeout=(15,90))
+                response.raise_for_status()
+                if response.status_code!=206 or response.headers.get('Content-Range')!=f'bytes {start}-{end}/{size}' or len(response.content)!=end-start+1:
+                    raise ValueError('Server did not honor byte range')
+                target.write_bytes(response.content);return target
+            except (requests.RequestException,ValueError) as error:
+                if attempt==3:raise RuntimeError(f'Range {i} failed: {type(error).__name__}') from None
+                time.sleep(1+attempt)
+    with ThreadPoolExecutor(workers) as pool:
+        parts=list(pool.map(part,range((size+chunk-1)//chunk)))
+    staging=path.with_suffix(path.suffix+'.assembling');h=hashlib.sha256()
+    with staging.open('wb') as out:
+        for item in parts:
+            block=item.read_bytes();h.update(block);out.write(block)
+    if h.hexdigest()!=expected_sha:raise RuntimeError('Downloaded LFS SHA256 mismatch')
+    staging.replace(path)
+    for item in parts:item.unlink()
+
+
 def fetch(spec,name,root):
     path=root/'source'/spec['repo']/spec['revision']/name
     if not path.exists():
         path.parent.mkdir(parents=True,exist_ok=True)
         url=f"https://huggingface.co/datasets/{spec['repo']}/resolve/{spec['revision']}/{name}"
+        if name=='test5.jsonl' and spec['repo']=='livecodebench/code_generation_lite':
+            fetch_ranges(url,path,spec['file_size'],spec['file_sha256'])
+            return path
         for attempt in range(3):
             try:
                 with requests.get(url,timeout=(15,60),stream=True) as response:
@@ -28,6 +60,8 @@ def fetch(spec,name,root):
             except requests.RequestException as error:
                 if attempt==2:raise RuntimeError(f'Download failed: {spec["repo"]}/{name}: {type(error).__name__}') from None
                 time.sleep(1+attempt)
+    if name=='test5.jsonl' and hashlib.sha256(path.read_bytes()).hexdigest()!=spec['file_sha256']:
+        raise RuntimeError('Cached LCB LFS SHA256 mismatch')
     return path
 
 

@@ -54,6 +54,7 @@ def main():
     lock=threading.Lock()
     # Requests go to loopback only; do not inherit proxy routing for localhost.
     os.environ['NO_PROXY']='localhost,127.0.0.1';os.environ['no_proxy']=os.environ['NO_PROXY']
+    os.environ['NLTK_DATA']=str(Path('artifacts/v0.0.3/nltk_data').resolve())
     from evalscope import TaskConfig,run_task
     from evalscope.api.benchmark import DefaultDataAdapter
     from evalscope.models.openai_compatible import OpenAICompatibleAPI
@@ -81,6 +82,8 @@ def main():
         'selection':manifest,'code':code,'commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()}
     (work/'provenance.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n')
     started=time.time();result=run_task(config)
+    from .audit import audit
+    audit(work, manifest['count'])
     if sandbox.FAILURES:raise RuntimeError('Sandbox infrastructure errors: '+repr(sandbox.FAILURES))
     (work/'run_summary.json').write_text(json.dumps({'wall_seconds':time.time()-started,'result':result},default=str,indent=2)+'\n')
     print('EVAL_WORK_DIR='+str(work),flush=True)

@@ -1,5 +1,7 @@
 """HF-compatible cached batch runner, shared by service and offline evaluation."""
 import hashlib
+import math
+from pathlib import Path
 import time
 from dataclasses import dataclass
 
@@ -23,9 +25,9 @@ class Generation:
     enable_thinking: bool = False
 
     def validate(self):
-        if not 1 <= self.max_new_tokens <= 38912:
+        if isinstance(self.max_new_tokens,bool) or not isinstance(self.max_new_tokens,int) or not 1 <= self.max_new_tokens <= 38912:
             raise ValueError('max_new_tokens must be in [1,38912]')
-        if self.temperature < 0 or not 0 < self.top_p <= 1 or self.top_k < 0:
+        if not isinstance(self.top_k,int) or isinstance(self.top_k,bool) or not all(math.isfinite(x) for x in (self.temperature,self.top_p,self.presence_penalty)) or self.temperature < 0 or not 0 < self.top_p <= 1 or self.top_k < 0:
             raise ValueError('Invalid sampling configuration')
         if not -2 <= self.presence_penalty <= 2:
             raise ValueError('presence_penalty must be in [-2,2]')
@@ -56,6 +58,8 @@ class Runner:
         enforce_gpu_scope()
         torch.set_num_threads(4)
         self.path,self.backend,self.compiled = str(path),backend,compiled
+        self.source_hashes={str(p.relative_to(Path(__file__).parents[1])):hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in Path(__file__).parents[1].rglob('*.py') if 'evaluation' not in p.parts}
         self.device=torch.device(device)
         self.tokenizer=AutoTokenizer.from_pretrained(path,local_files_only=True)
         self.tokenizer.padding_side='left'

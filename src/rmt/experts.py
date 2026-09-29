@@ -72,7 +72,19 @@ class BoundExpertBank(nn.Module):
 
     def groups(self, indices):
         flat = indices.reshape(-1)
-        return [(e, (flat == e).nonzero(as_tuple=True)[0]) for e in range(len(self.experts))]
+        if flat.numel() == 0:
+            return []
+        positions = torch.argsort(flat, stable=True)
+        experts, counts = torch.unique_consecutive(flat[positions], return_counts=True)
+        # One compact device-to-host transfer rather than one nonzero sync per
+        # possible expert. Stable sorting preserves token order within each group.
+        layout = torch.stack((experts, counts), dim=-1).tolist()
+        groups = []
+        start = 0
+        for expert, count in layout:
+            groups.append((expert, positions[start:start + count]))
+            start += count
+        return groups
 
     def qkv(self, hidden, groups, uniform_expert=None):
         if uniform_expert is not None:

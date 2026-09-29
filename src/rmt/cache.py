@@ -35,6 +35,10 @@ class RmtCapacityCache(DynamicCache):
             shape = (*key_states.shape[:-2], self.capacity, key_states.shape[-1])
             self.storage[layer_idx] = (key_states.new_empty(shape), value_states.new_empty(shape))
         keys, values = self.storage[layer_idx]
+        if key_states.shape != value_states.shape or key_states.shape[:-2] != keys.shape[:-2] or key_states.shape[-1] != keys.shape[-1]:
+            raise ValueError('Cache batch/head shape changed; reset requires the same storage layout')
+        if key_states.dtype != keys.dtype or key_states.device != keys.device:
+            raise ValueError('Cache dtype/device changed')
         keys[..., start:end, :].copy_(key_states)
         values[..., start:end, :].copy_(value_states)
         self.lengths[layer_idx] = end

@@ -29,3 +29,24 @@ def test_sampling_presence_and_seed():
     a=torch.Generator().manual_seed(9);b=torch.Generator().manual_seed(9)
     assert [sample(torch.tensor([2.,1.,0.]),[],cfg,a) for _ in range(20)]==[sample(torch.tensor([2.,1.,0.]),[],cfg,b) for _ in range(20)]
     with pytest.raises(ValueError): Generation(top_p=0).validate()
+
+
+def test_generation_rejects_invalid_numbers():
+    for kwargs in [{'temperature':float('nan')},{'temperature':float('inf')},
+                   {'max_new_tokens':1.5},{'top_k':2.5},{'max_new_tokens':True}]:
+        with pytest.raises(ValueError):Generation(**kwargs).validate()
+
+
+def test_capacity_reuse_rejects_broadcast():
+    cache=RmtCapacityCache(4)
+    x=torch.zeros(2,2,1,8)
+    cache.update(x,x,0)
+    cache.reset()
+    with pytest.raises(ValueError,match='shape'):
+        cache.update(x[:1],x[:1],0)
+
+
+def test_sorted_grouping_preserves_token_order(pair):
+    _,m=pair
+    groups=m.model.cell.bank.groups(torch.tensor([[2,0,2],[1,0,1]]))
+    assert [(e,p.tolist()) for e,p in groups]==[(0,[1,4]),(1,[3,5]),(2,[0,2])]

@@ -1,0 +1,8 @@
+{
+  "status": "configuration_only_not_executed",
+  "reference": "https://arxiv.org/html/2505.09388v1#S4.SS6",
+  "report_non_thinking": {"temperature": 0.7, "top_p": 0.8, "top_k": 20, "presence_penalty": 1.5, "max_tokens": 32768, "enable_thinking": false},
+  "report_thinking": {"temperature": 0.6, "top_p": 0.95, "top_k": 20, "max_tokens": 32768, "enable_thinking": true, "writing_presence_penalty": 1.5},
+  "overrides": {"aime": {"max_tokens": 38912, "repeats": 64, "aggregation": "mean_accuracy_not_pass_at_64"}, "gpqa_diamond": {"repeats": 10, "aggregation": "mean_accuracy"}},
+  "required_before_execution": ["Verify exact dataset and prompt revisions", "Validate context capacity including input", "Set repetition-specific seed and ID", "Obtain gated data or judge authorization where applicable"]
+}

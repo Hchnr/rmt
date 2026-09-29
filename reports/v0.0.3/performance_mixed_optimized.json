@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "performance_geomean": 0.8525440526440828,
+  "performance_gate_passed": false,
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "1",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "mixed": true,
+  "matrix": false,
+  "fixed_output_tokens": null,
+  "numeric": {
+    "max_abs": 0.0,
+    "relative_rmse": 0.0
+  },
+  "delta_nll": 0.0,
+  "learned_route_flips": 0,
+  "learned_max_abs": 0.0,
+  "cold_compile_seconds": 7.286557890474796,
+  "rows": [
+    {
+      "batch": 1,
+      "prompt_tokens": 23,
+      "eager_seconds": 1.9745103176683187,
+      "compiled_seconds": 2.31863078661263,
+      "speedup": 0.8515846201425415,
+      "generated_tokens_per_second": 13.80124864414051,
+      "greedy_equal": true
+    },
+    {
+      "batch": 4,
+      "prompt_tokens": 23,
+      "eager_seconds": 4.048725787550211,
+      "compiled_seconds": 4.7436486557126045,
+      "speedup": 0.8535045660842687,
+      "generated_tokens_per_second": 26.983448667905503,
+      "greedy_equal": true
+    }
+  ],
+  "peak_memory_bytes": 8184465920,
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 16,
+      "unique_graphs": 4
+    },
+    "aot_autograd": {
+      "total": 4,
+      "autograd_cache_hit": 4,
+      "ok": 4
+    },
+    "inductor": {
+      "extern_calls": 12,
+      "fxgraph_cache_hit": 4,
+      "triton_bundler_load_static_autotuner": 2,
+      "async_compile_cache_miss": 4,
+      "async_compile_cache_hit": 2
+    }
+  },
+  "compile_times": "TorchDynamo compilation metrics:\nFunction, Runtimes (s)\n_compile.compile_inner, 1.9139, 0.0671, 0.0736, 0.0751\ncompile_attempt_0, 1.8823, 0.0396, 0.0478, 0.0491\nbytecode_tracing, 0.1865, 0.0189, 0.0283, 0.0228\nOutputGraph.call_user_compiler, 1.6852, 0.0150, 0.0144, 0.0212\ninductor_codecache_torch_key, 0.7707\n_recursive_pre_grad_passes, 0.0017, 0.0002, 0.0002, 0.0002\nAOTAutogradCache.inductor_load, 0.0335, 0.0020, 0.0038, 0.0033\nTritonBundler.read_and_emit, 0.0001, 0.0001, 0.0004, 0.0003\nPyCodeCache.load_by_key_path, 0.0068, 0.0012, 0.0025, 0.0021\nasync_compile.wait, 0.0004, 0.0002, 0.0001, 0.0001\nbuild_guards, 0.0258, 0.0258, 0.0244, 0.0245\ngc, 0.0031, 0.0005, 0.0006, 0.0006\npgo.dynamic_whitelist, 0.0001, 0.0001\nTritonBundler.load_cached_static_autotuners, 0.0002, 0.0002\nStaticAutotunerFuture.warm_precompile, 0.0011, 0.0008\nCachingAutotuner.synchronize, 0.0001, 0.0001"
+}
