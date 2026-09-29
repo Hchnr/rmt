@@ -1,0 +1,22 @@
+{
+  "world_size": 4,
+  "sequence_length": 512,
+  "learning_rate": 0,
+  "hot_steps": 3,
+  "hot_speedup": 1.1633472725301803,
+  "max_ce_absolute_difference": 0.010271310806274414,
+  "eager_teacher_kl": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "compiled_teacher_kl": [
+    0.0008377963677048683,
+    0.0010162818944081664,
+    0.0010747485794126987,
+    0.0007169877644628286
+  ],
+  "compiled_graphs": 2,
+  "scope": "Operational real-4B forward/backward probe; numeric parity and trained quality are not established. Keep paired training eager. Step time excludes route diagnostics and rank-max first step may include staggered startup; rank-0 post-load wall uses a different clock scope."
+}
