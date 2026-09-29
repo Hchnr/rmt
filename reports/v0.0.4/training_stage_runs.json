@@ -1,7 +1,12 @@
 [
   {
-    "config": "configs/train/probe_learned_2048.yaml",
-    "report": "reports/v0.0.4/probe_learned_2048.json",
-    "wall_seconds": 107.91336963698268
+    "config": "configs/train/fixed_128.yaml",
+    "report": "reports/v0.0.4/fixed_128.json",
+    "wall_seconds": 438.2528456132859
+  },
+  {
+    "config": "configs/train/opened_128.yaml",
+    "report": "reports/v0.0.4/opened_128.json",
+    "wall_seconds": 482.54408556967974
   }
 ]
