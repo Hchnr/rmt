@@ -18,3 +18,6 @@ for ax in axes:ax.set_xlabel('Optimizer step');ax.grid(alpha=.2)
 axes[0].legend(fontsize=8)
 fig.suptitle('Deterministic 4 x H100, same token budget; not a benchmark quality claim',fontsize=11)
 fig.tight_layout();fig.savefig(root/'training_curves.png',dpi=170);fig.savefig(root/'training_curves.svg');plt.close(fig)
+
+svg=root/'training_curves.svg'
+svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
