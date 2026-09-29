@@ -1,0 +1,173 @@
+{
+  "status": "passed",
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "2"
+  },
+  "source": "/share/project/eai_pwm/models/Qwen/Qwen3-4B",
+  "tensor_equality_checked": 398,
+  "base_parameters": 4022468096,
+  "router_parameters": 93456,
+  "logits": {
+    "max_abs": 0.0,
+    "relative_rmse": 0.0
+  },
+  "delta_nll": 0.0,
+  "hidden_per_depth": [
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    }
+  ],
+  "batched_generation_equal": true,
+  "elapsed_seconds": 40.09147326275706,
+  "peak_memory_bytes": 8293901824,
+  "checkpoint": "artifacts/bootstrap/rmt-bound-4b"
+}

@@ -8,7 +8,7 @@ from torch import nn
 from torch.nn import functional as F
 from torch.utils.checkpoint import checkpoint
 from transformers import GenerationMixin
-from transformers.cache_utils import Cache
+from transformers.cache_utils import DynamicCache
 from transformers.modeling_outputs import CausalLMOutputWithPast
 from transformers.models.qwen3.modeling_qwen3 import (
     Qwen3PreTrainedModel, Qwen3RMSNorm, Qwen3RotaryEmbedding, apply_rotary_pos_emb,
@@ -86,12 +86,16 @@ class RmtModel(nn.Module):
         b, s, _ = hidden.shape
         if self.training and (use_cache or past_key_values is not None):
             raise ValueError("Mutable inference cache is disabled during training")
-        if past_key_values is not None and not isinstance(past_key_values, Cache):
-            raise TypeError("Use an HF Cache, not a legacy tuple")
+        if past_key_values is not None and not isinstance(past_key_values, DynamicCache):
+            raise TypeError("Only append-only HF DynamicCache is supported")
         if past_key_values is not None and not use_cache:
             raise ValueError("past_key_values requires use_cache=True")
         cache = (RmtCache() if past_key_values is None else past_key_values) if use_cache else None
         past = 0 if cache is None else cache.get_seq_length()
+        if cache_position is not None:
+            expected = torch.arange(past, past + s, device=hidden.device)
+            if cache_position.shape != expected.shape or not torch.equal(cache_position.to(hidden.device), expected):
+                raise ValueError("cache_position must append contiguous physical positions")
         if segment_ids is not None and use_cache:
             raise ValueError("Packed inference caching is not supported")
         if position_ids is None:
@@ -145,6 +149,8 @@ class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
 
     def __init__(self, config):
         super().__init__(config)
+        if config._attn_implementation not in ("eager", "sdpa"):
+            raise ValueError("Bootstrap supports eager and SDPA attention only")
         self.model = RmtModel(config)
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
         self.post_init()
@@ -210,6 +216,14 @@ class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
                     loss = F.cross_entropy(logits[:, :-1].float().reshape(-1, self.config.vocab_size), targets.reshape(-1))
                 else:
                     loss = logits.sum() * 0
+        if self.training and loss is not None:
+            # Conditional token dispatch can leave parameters unused on one rank.
+            # FSDP2 needs a local zero gradient for every shared collective member;
+            # otherwise a rank may retain None despite another rank using it.
+            # Define optimizer semantics consistently: unused parameters get zero
+            # gradients (so momentum/weight decay still apply), on every backend.
+            zero = sum(p.reshape(-1)[0] * 0 for p in self.parameters() if p.requires_grad)
+            loss = loss + zero.to(loss.dtype)
         output = RmtCausalLMOutput(loss=loss, logits=logits, past_key_values=cache,
                                   hidden_states=states, last_hidden_state=hidden,
                                   ce_loss=ce_loss, kd_loss=kd_loss,

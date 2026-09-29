@@ -23,4 +23,6 @@ def versions():
     import transformers
     return {"python": platform.python_version(), "torch": torch.__version__,
             "cuda_runtime": torch.version.cuda, "transformers": transformers.__version__,
-            "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES")}
+            "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
+            "tf32_override": os.environ.get("TORCH_ALLOW_TF32_CUBLAS_OVERRIDE"),
+            "nvidia_tf32_override": os.environ.get("NVIDIA_TF32_OVERRIDE")}

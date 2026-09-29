@@ -124,3 +124,49 @@ def test_batched_generate_and_hf_roundtrip(pair,tmp_path):
         torch.testing.assert_close(model(ids,attention_mask=mask,use_cache=False).logits,
                                    restored(ids,attention_mask=mask,use_cache=False).logits)
         assert restored.lm_head.weight is restored.model.embed_tokens.weight
+
+
+def test_cache_reorder_compact_and_sdpa(pair):
+    _, model=pair
+    model.eval(); model.config._attn_implementation='sdpa'
+    model.config.routing_mode='learned'
+    model.model.cell.router.prior_strength=0.0
+    with torch.no_grad(): model.model.cell.router.weight.normal_(std=0.02)
+    ids=torch.tensor([[5,7,10],[12,20,25],[4,9,30]])
+    tail=torch.tensor([[13],[14]])
+    order=torch.tensor([2,0])
+    with torch.no_grad():
+        prefill=model(ids,use_cache=True)
+        cache=prefill.past_key_values
+        cache.batch_select_indices(order)
+        continuation=model(tail,past_key_values=cache,use_cache=True).logits
+        full=model(torch.cat([ids[order],tail],dim=1),use_cache=False).logits[:,-1:]
+        torch.testing.assert_close(continuation,full,atol=1e-5,rtol=1e-4)
+        assert all(layer.keys.shape[0]==2 for layer in cache.layers)
+        for i in range(2):
+            single=model(torch.cat([ids[order[i]:order[i]+1],tail[i:i+1]],dim=1),use_cache=False).logits[:,-1:]
+            torch.testing.assert_close(continuation[i:i+1],single,atol=1e-5,rtol=1e-4)
+
+
+def test_eos_finishes_rows_independently(pair):
+    from transformers import LogitsProcessor, LogitsProcessorList
+    class DeterministicEOS(LogitsProcessor):
+        def __call__(self, ids, scores):
+            scores.fill_(-float('inf'))
+            scores[0,2]=0
+            scores[1,2 if ids.shape[1]>=4 else 11]=0
+            return scores
+    _,model=pair
+    model.eval()
+    ids=torch.tensor([[5,7],[12,20]])
+    result=model.generate(ids,attention_mask=torch.ones_like(ids),max_new_tokens=5,do_sample=False,
+        eos_token_id=2,pad_token_id=0,logits_processor=LogitsProcessorList([DeterministicEOS()]))
+    assert result.tolist()==[[5,7,2,0,0],[12,20,11,11,2]]
+
+
+def test_cache_rejects_non_append_positions(pair):
+    import pytest
+    _,model=pair
+    model.eval()
+    with pytest.raises(ValueError,match='contiguous'):
+        model(torch.tensor([[5,7]]),cache_position=torch.tensor([1,2]),use_cache=True)

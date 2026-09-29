@@ -49,3 +49,18 @@
 - 小模型 10 项测试通过，含逐参数梯度等价、token 分组慢速参考、任务驱动 router 更新、精确分块 CE/KL 梯度、packing、cache 和 HF roundtrip。新版 DynamicCache 的存储接口由 key_cache 改为 layers，测试据实际接口更新。
 - 真实 4B 首轮发现对照输入位置不一致：HF 原模型直接 forward 默认物理 arange，而 RMT 左 padding 默认有效 token cumsum。已在教师对照显式传入相同 position_ids，保留原阈值重跑，不放宽误差阈值。
 - 增加真实模型验收入口和两卡／八卡短训练入口；当前开始运行组合探针，尚未声明通过。
+
+### B2/B3 通过；B5 发现并处理局部未使用专家梯度
+
+- 相同显式 position_ids 后，真实 4B 的 398 个源 tensor 逐项相等，37 个 hidden 检查点、有效 token logits、ΔNLL 均为 **0**；迁移后基座参数 4,022,468,096，新增 router 参数 93,456。
+- `artifacts/bootstrap/rmt-bound-4b` 已完成 HF 导出。独立进程 AutoModel＋trust_remote_code 重载后 logits 逐位一致、生成一致、embedding/head 仍绑定。
+- 左右 padding batched generation、EOS 独立结束、SDPA 混合路由 cache 重排／剔除新增覆盖，小模型合计 12 项测试通过（后续修复后重新执行）。
+- 两卡 packing＋Inductor＋FSDP2＋重计算完成 20 步，包括混合学习路由和受控重复路由；同进程保存恢复后的下一步 loss 与全部参数完全一致。
+- 额外的同全局 batch 分布式梯度对照发现：某 rank 完全未调用某专家时，FSDP2 在该 rank 上的对应梯度可能为 None，即使其他 rank 使用了该专家。20 步能运行并不足以证明梯度正确。
+- 暂停刚启动的八卡短跑（仅终止本任务 torchrun），先修复：训练 loss 加入每个可训练参数的零值依赖，使局部未使用参数显式产生零梯度并参与同一个 reduce-scatter；单卡／分布式一致采用此语义。对应 optimizer 对未使用参数仍执行 momentum／weight decay，明确记录此决策。修复后重新验收分布式对照和两卡组合，再运行八卡。
+
+### 分布式修复确认与数值环境决策
+
+- 零梯度依赖修复后，分布式对照通过：forced 路径（rank 0 仅专家 0、rank 1 仅专家 1，专家 2 全局未使用）最大梯度误差 5.96e-8，learned 路径 1.19e-7；SGD 更新最大误差 7.45e-9。
+- 本机环境预设 `TORCH_ALLOW_TF32_CUBLAS_OVERRIDE=1`，不同 GEMM batch 形状下 TF32 使 FP32 梯度对照出现约 1.2e-4 差异。严格数值对照显式关闭 TF32（包括 NVIDIA override），保留原容差；性能短跑保留原环境，并在版本信息中记录。
+- 重新运行已修复的两卡组合短跑，然后恢复八卡 4B；增加 append-only cache_position 验证，拒绝未实现的静态／任意位置 cache 写入。
