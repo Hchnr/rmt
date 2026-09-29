@@ -9,3 +9,5 @@ artifacts/
 reports/bootstrap/*.log
 
 reports/v0.0.3/*.log
+
+reports/v0.0.4/*.log
