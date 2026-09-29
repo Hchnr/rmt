@@ -21,3 +21,16 @@
 - 本地基座：`/share/project/eai_pwm/models/Qwen/Qwen3-4B`。
 - 当前 8 张 H100 均被已有任务占用约 73GB／80GB，GPU 利用率 100%。不停止或修改已有任务；先完成环境、CPU 正确性实现，并随进展检查可用显存。GPU 验证按实际资源执行，未执行项绝不记为通过。
 - 采用独立 `.venv`、固定依赖；产物 checkpoint 不进入 Git，报告和代码进入 Git。
+
+### 资源与环境决策更新
+
+- 用户明确只授权物理 GPU 0–3；全部运行脚本和验证命令固定 `CUDA_VISIBLE_DEVICES=0,1,2,3` 或其子集。GPU 4–7 不使用。当前前四卡已经空闲。
+- 本轮分布式验收改为两卡小模型和四卡 4B；八卡验证列为 `not_run: waiting_for_user_resource_release`，不会自行扩大到八卡。
+- Python 3.11 下载长时间无进展，终止自己启动的下载，保守改用系统已有 Python 3.12 创建隔离环境；模型算法与依赖版本不因这个选择改变。
+
+### B1 首轮实现（待依赖安装完成后运行测试）
+
+- 已实现单个 recurrent cell、36 套参数组织、layer_order／forced／learned 三种路由、全序列 GQA、按循环索引的 HF cache，以及同套 norm 和七投影绑定。
+- 编译边界选为数值投影函数，动态 token 分组保持在 Python，避免把部分编译错误表述成全图编译。
+- router 采用计划中的选中概率直通代理，明确是有偏估计；固定路径绕过代理以校验真实梯度。
+- 已加入固定路径 forward/backward、因果性、packing 梯度、混合路由 cache、重计算与 HF 生成／导出的初始测试；此时尚未执行，不能视为通过。
