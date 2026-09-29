@@ -4,18 +4,40 @@ from torch import nn
 from transformers.models.qwen3.modeling_qwen3 import Qwen3DecoderLayer
 
 
+@torch.library.custom_op("rmt::reference_rms_norm", mutates_args=())
+def reference_rms_norm(x: torch.Tensor, weight: torch.Tensor, epsilon: float) -> torch.Tensor:
+    # An opaque inference boundary preserves the exact HF CUDA reduction and
+    # BF16 casts; Triton reduction order can otherwise amplify across 36 steps.
+    dtype = x.dtype
+    h = x.float()
+    variance = h.pow(2).mean(-1, keepdim=True)
+    h = h * torch.rsqrt(variance + epsilon)
+    return weight * h.to(dtype)
+
+
+@reference_rms_norm.register_fake
+def _reference_rms_norm_fake(x, weight, epsilon):
+    return torch.empty_like(x, dtype=torch.promote_types(x.dtype, weight.dtype))
+
+
+def inference_norm(norm, x):
+    if torch.compiler.is_compiling() and not torch.is_grad_enabled():
+        return reference_rms_norm(x, norm.weight, norm.variance_epsilon)
+    return norm(x)
+
+
 def project_qkv(expert, x):
     attn = expert.self_attn
-    y = expert.input_layernorm(x)
-    q = attn.q_norm(attn.q_proj(y).view(*x.shape[:-1], -1, attn.head_dim))
-    k = attn.k_norm(attn.k_proj(y).view(*x.shape[:-1], -1, attn.head_dim))
+    y = inference_norm(expert.input_layernorm, x)
+    q = inference_norm(attn.q_norm, attn.q_proj(y).view(*x.shape[:-1], -1, attn.head_dim))
+    k = inference_norm(attn.k_norm, attn.k_proj(y).view(*x.shape[:-1], -1, attn.head_dim))
     v = attn.v_proj(y).view(*x.shape[:-1], -1, attn.head_dim)
     return q.flatten(-2), k.flatten(-2), v.flatten(-2)
 
 
 def project_output(expert, attended, residual):
     h = residual + expert.self_attn.o_proj(attended)
-    return h + expert.mlp(expert.post_attention_layernorm(h))
+    return h + expert.mlp(inference_norm(expert.post_attention_layernorm, h))
 
 
 def project_linear_qkv(expert, normalized):

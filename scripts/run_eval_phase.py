@@ -28,7 +28,7 @@ def run_one(model,port,benchmark,phase):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--phase',default='representative',choices=['pilot','representative'])
     p.add_argument('--rmt-ports',default='8801,8803,8805');p.add_argument('--qwen-ports',default='8802,8804,8806')
-    p.add_argument('--benchmarks',default='math_500,mmlu_redux,ceval,ifeval,live_code_bench');a=p.parse_args()
+    p.add_argument('--benchmarks',default='live_code_bench,math_500,ifeval,mmlu_redux,ceval');a=p.parse_args()
     benchmarks=a.benchmarks.split(',');jobs=[]
     for model,ports in [('rmt',a.rmt_ports),('qwen',a.qwen_ports)]:
         for i,port in enumerate(map(int,ports.split(','))):jobs.append((model,port,benchmarks[i::len(ports.split(','))]))

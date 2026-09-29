@@ -14,3 +14,9 @@ subprocess.run(['.venv-eval/bin/python','-c',
 Path('reports/v0.0.3').mkdir(parents=True,exist_ok=True)
 with open('reports/v0.0.3/eval_environment.txt','w') as out:
     subprocess.run(['uv','pip','freeze','--python','.venv-eval/bin/python'],stdout=out,check=True)
+
+import hashlib,json
+lock=json.loads(Path('configs/eval/nltk_resources.json').read_text())
+for name,expected in lock['sha256'].items():
+    actual=hashlib.sha256((Path('artifacts/v0.0.3/nltk_data/tokenizers')/name).read_bytes()).hexdigest()
+    if actual!=expected:raise RuntimeError(f'NLTK resource differs from evaluated version: {name}')

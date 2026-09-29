@@ -60,6 +60,7 @@ def main():
     from evalscope.api.benchmark import DefaultDataAdapter
     from evalscope.models.openai_compatible import OpenAICompatibleAPI
     from . import sandbox
+    from .protocol import request_seed
     sandbox.install()
     # The official adapter's default local branch expects a HF builder. Our
     # pinned JSONL snapshots use its existing LocalDataLoader instead.
@@ -67,7 +68,7 @@ def main():
     DefaultDataAdapter.load_from_disk=lambda self,use_local_loader=False:original_load(self,use_local_loader=True)
     original_generate=OpenAICompatibleAPI.generate
     def generate(self,input,tools,tool_choice,config):
-        sample_seed=int(digest([protocol['seed'],[x.model_dump() for x in input]])[:8],16)
+        sample_seed=request_seed(input,protocol['seed'])
         return original_generate(self,input,tools,tool_choice,config.model_copy(update={'seed':sample_seed}))
     OpenAICompatibleAPI.generate=generate
     def response(self,value):
