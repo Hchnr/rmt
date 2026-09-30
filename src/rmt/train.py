@@ -92,6 +92,8 @@ def main():
                 if key in ('max_recurrences','num_experts') and getattr(model.config,key)!=value:
                     raise ValueError('Initial checkpoint structural identity differs')
                 setattr(model.config,key,value)
+            model.config.num_hidden_layers=model.config.num_recurrences
+            model.config.layer_types=["full_attention"]*model.config.num_recurrences
         else:
             model,_=load_qwen_as_rmt(cfg['base_model'],dtype=torch.float32,**cfg.get('model_overrides',{}))
         teacher,_=load_qwen_as_rmt(cfg['base_model'],dtype=dtype)

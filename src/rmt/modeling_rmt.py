@@ -175,6 +175,8 @@ class RmtModel(nn.Module):
         p_previous = hidden.detach()
         p_ready = torch.zeros_like(valid)
         previous_k = previous_v = None
+        # Earlier probability checks cannot contribute to a legal patience window.
+        first_probability_depth = max(1, self.config.min_recurrences - self.config.halt_patience + 1) if self.config.defer_probability_checks else 1
         for step in range(limit):
             if output_hidden_states:
                 states.append(hidden.clone() if self.cell.bank.compiled else hidden)
@@ -192,11 +194,13 @@ class RmtModel(nn.Module):
                 h_streak = torch.where(active & hs, h_streak + 1, 0)
                 stable = hs
                 if policy == "probability":
-                    stable = probability_stable(previous, hidden, active, self.norm, head_weight,
+                    eligible = active if step+1 >= first_probability_depth else torch.zeros_like(active)
+                    stable = probability_stable(previous, hidden, eligible, self.norm, head_weight,
                                                 self.config.halt_probability_threshold)
                 elif policy == "hybrid":
                     eligible = active & (h_streak >= self.config.halt_patience)
-                    stable = probability_stable(p_previous, hidden, eligible & p_ready, self.norm,
+                    check = eligible & p_ready if step+1 >= first_probability_depth else torch.zeros_like(active)
+                    stable = probability_stable(p_previous, hidden, check, self.norm,
                                                 head_weight, self.config.halt_probability_threshold)
                     p_previous = torch.where(eligible[...,None], hidden.detach(), p_previous)
                     p_ready = eligible

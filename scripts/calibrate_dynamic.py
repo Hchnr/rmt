@@ -18,10 +18,16 @@ def main():
     ap.add_argument('--policy',choices=['hidden','probability','hybrid'],required=True)
     ap.add_argument('--hidden-threshold',type=float,default=.4)
     ap.add_argument('--grid',type=float,nargs='+');ap.add_argument('--length',type=int,default=512)
+    ap.add_argument('--full-documents',action='store_true')
     a=ap.parse_args();torch.set_num_threads(4)
     tokenizer=AutoTokenizer.from_pretrained(a.model,local_files_only=True)
     m=RmtForCausalLM.from_pretrained(a.model,dtype=torch.bfloat16,attn_implementation='sdpa',local_files_only=True).cuda().eval()
-    packs=load_packs(a.data,a.length,tokenizer.pad_token_id,shuffle=False)
+    if a.full_documents:
+        documents=[json.loads(x) for x in Path(a.data).read_text().splitlines()]
+        packs=[{'input_ids':torch.tensor([x['input_ids']]),'labels':torch.tensor([x['labels']]),
+                'attention_mask':torch.ones(1,len(x['input_ids']),dtype=torch.long),
+                'segment_ids':torch.zeros(1,len(x['input_ids']),dtype=torch.long)} for x in documents]
+    else:packs=load_packs(a.data,a.length,tokenizer.pad_token_id,shuffle=False)
     if a.packs:packs=packs[:a.packs]
     if not packs:raise ValueError('Empty calibration set')
     grid=[.001,.003,.01,.02,.03,.05,.075,.1,.15,.2,.25,.3,.35,.4,.5,.7,1.] if a.policy=='hidden' else [.001,.003,.01,.02,.03,.05,.07,.1,.2,.4]
@@ -49,7 +55,7 @@ def main():
         eligible=[r for r in rows if 39<=r['mean_depth']<=41]
         chosen=min(eligible,key=lambda r:r['ce']) if eligible else None
         result={'model':a.model,'data':a.data,'data_sha256':hashlib.sha256(Path(a.data).read_bytes()).hexdigest(),
-            'policy':a.policy,'packs':len(packs),'pack_length':a.length,'selection':'lowest calibration CE among measured 39..41 mean depth; no benchmark selection',
+            'policy':a.policy,'packs':len(packs),'pack_length':None if a.full_documents else a.length,'full_documents':a.full_documents,'selection':'lowest calibration CE among measured 39..41 mean depth; no benchmark selection',
             'rows':rows,'selected':chosen,'status':'calibrated' if chosen else 'budget_not_met'}
         out.write_text(json.dumps(result,indent=2)+'\n')
     with torch.inference_mode():

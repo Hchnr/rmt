@@ -170,3 +170,25 @@ def test_cache_select_reorder_and_decode_preserve_heterogeneous_history():
             forced_exit_depths=torch.cat((stops[selection],next_stops),1),use_cache=False)
     torch.testing.assert_close(actual.logits[:,-1],expected.logits[:,-1],atol=1e-6,rtol=1e-5)
     assert torch.equal(actual.exit_depths,next_stops)
+
+
+@pytest.mark.parametrize('policy',['probability','hybrid'])
+def test_deferred_probability_checks_preserve_logits_depths_and_gradients(policy,monkeypatch):
+    model=make_model(policy).train();model.config.min_recurrences=5
+    ids=torch.tensor([[4,7,9,11]]);labels=ids.clone()
+    original=torch.nn.functional.linear;calls=[]
+    def linear(x,weight,bias=None):
+        if weight is model.lm_head.weight:calls.append(x.numel()//x.shape[-1])
+        return original(x,weight,bias)
+    monkeypatch.setattr(torch.nn.functional,'linear',linear)
+    outputs=[];gradients=[];counts=[]
+    for deferred in [False,True]:
+        model.config.defer_probability_checks=deferred;model.zero_grad(set_to_none=True);calls.clear()
+        out=model(ids,labels=labels,use_cache=False);out.loss.backward()
+        outputs.append((out.logits.detach().clone(),out.exit_depths.clone(),out.exit_reasons.clone()))
+        gradients.append({k:p.grad.clone() for k,p in model.named_parameters() if p.grad is not None})
+        counts.append(sum(calls))
+    assert counts[1]<counts[0]
+    for a,b in zip(outputs[0],outputs[1]):torch.testing.assert_close(a,b,atol=0,rtol=0)
+    assert gradients[0].keys()==gradients[1].keys()
+    for name in gradients[0]:torch.testing.assert_close(gradients[0][name],gradients[1][name],atol=0,rtol=0)
