@@ -1,0 +1,12 @@
+{
+  "candidate": "eos_teacher32_fixed40_ifeval",
+  "benchmark": "ifeval",
+  "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/97254057c9ea5234",
+  "status": "passed",
+  "score": 0.6839186691312384,
+  "correct": 370,
+  "count": 541,
+  "native_same_scoring_score": 0.8059149722735675,
+  "fixed36_score": 0.6728280961182994,
+  "scope": "Complete IFEval only; no significance or dynamic gain claim from the six-question difference. Remaining MATH and hybrid tasks pending."
+}

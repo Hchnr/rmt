@@ -1,0 +1,7 @@
+[
+  {
+    "candidate": "eos_teacher32_fixed40_ifeval",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/97254057c9ea5234"
+  }
+]
