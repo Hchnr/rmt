@@ -8,7 +8,10 @@ class RmtConfig(Qwen3Config):
     def __init__(self, num_experts=None, num_recurrences=None, binding_mode="full_block",
                  routing_mode="layer_order", router_top_k=1, router_prior_strength=4.0,
                  router_gradient="selected_probability_st", norm_policy="expert_bound",
-                 cache_layout_version=1, **kwargs):
+                 cache_layout_version=1, max_recurrences=None, halting_policy="fixed",
+                 min_recurrences=None, halt_patience=2, halt_threshold=0.01,
+                 halt_relative_threshold=0.01, halt_probability_threshold=0.001,
+                 recurrence_schedule="cycle", tail_experts=8, **kwargs):
         depth = kwargs.pop("num_hidden_layers", 36)
         self.num_experts = depth if num_experts is None else num_experts
         self.num_recurrences = depth if num_recurrences is None else num_recurrences
@@ -22,6 +25,24 @@ class RmtConfig(Qwen3Config):
             raise ValueError("Unsupported router gradient or norm policy")
         if cache_layout_version != 1:
             raise ValueError("Unsupported cache layout")
+        self.max_recurrences = self.num_recurrences if max_recurrences is None else max_recurrences
+        self.min_recurrences = self.num_recurrences if min_recurrences is None else min_recurrences
+        if not 1 <= self.min_recurrences <= self.max_recurrences or self.num_recurrences > self.max_recurrences:
+            raise ValueError("Invalid recurrence bounds")
+        if halting_policy not in ("fixed", "hidden", "probability", "hybrid"):
+            raise ValueError("Unknown halting policy")
+        if recurrence_schedule not in ("cycle", "tail") or tail_experts < 1 or halt_patience < 1:
+            raise ValueError("Invalid recurrence schedule or patience")
+        import math
+        if any(not math.isfinite(x) or x < 0 for x in (halt_threshold, halt_relative_threshold, halt_probability_threshold)):
+            raise ValueError("Halting thresholds must be finite and nonnegative")
+        self.halting_policy = halting_policy
+        self.halt_patience = halt_patience
+        self.halt_threshold = halt_threshold
+        self.halt_relative_threshold = halt_relative_threshold
+        self.halt_probability_threshold = halt_probability_threshold
+        self.recurrence_schedule = recurrence_schedule
+        self.tail_experts = min(tail_experts, self.num_experts)
         self.binding_mode = binding_mode
         self.routing_mode = routing_mode
         self.router_top_k = router_top_k

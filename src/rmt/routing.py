@@ -8,15 +8,15 @@ class BoundRouter(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.weight = nn.Parameter(torch.zeros(config.num_experts, config.hidden_size))
-        self.step_bias = nn.Parameter(torch.zeros(config.num_recurrences, config.num_experts))
+        self.step_bias = nn.Parameter(torch.zeros(config.max_recurrences, config.num_experts))
         self.num_experts = config.num_experts
         self.prior_strength = float(config.router_prior_strength)
 
-    def forward(self, hidden, step):
+    def forward(self, hidden, step, prior_expert=None):
         x = hidden.float()
         x = x * torch.rsqrt(x.square().mean(-1, keepdim=True) + 1e-6)
         scores = F.linear(x, self.weight.float()) + self.step_bias[step].float()
-        prior = F.one_hot(torch.tensor(step % self.num_experts, device=x.device), self.num_experts)
+        prior = F.one_hot(torch.tensor(step % self.num_experts if prior_expert is None else prior_expert, device=x.device), self.num_experts)
         probabilities = (scores + self.prior_strength * prior).softmax(-1)
         indices = probabilities.argmax(-1)
         selected = probabilities.gather(-1, indices.unsqueeze(-1))

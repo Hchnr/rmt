@@ -1,0 +1,210 @@
+{
+  "status": "passed",
+  "identity": {
+    "config": {
+      "tiny": true,
+      "seed": 17,
+      "sequence_length": 16,
+      "steps": 3,
+      "routing_mode": "learned",
+      "prior_start": 4.0,
+      "prior_end": 3.0,
+      "prior_warmup_steps": 1,
+      "prior_decay_steps": 2,
+      "learning_rate": 0.0001,
+      "router_learning_rate": 0.001,
+      "lr_warmup_steps": 1,
+      "attention": "sdpa",
+      "checkpoint": true,
+      "compile": false,
+      "loss_chunk_size": 4,
+      "kd_weight": 0.5,
+      "validation_batches": 1,
+      "eval_every": 2,
+      "save": true,
+      "export": true,
+      "verify_replay": true,
+      "artifact_dir": "artifacts/v0.0.4_dynamic_recurr/tiny",
+      "report": "reports/v0.0.4_dynamic_recurr/tiny.json",
+      "deterministic": true,
+      "model_overrides": {
+        "max_recurrences": 6,
+        "min_recurrences": 2,
+        "halting_policy": "hidden",
+        "halt_threshold": 100.0,
+        "halt_relative_threshold": 100.0,
+        "recurrence_schedule": "tail",
+        "tail_experts": 2
+      },
+      "recurrence_training": {
+        "mode": "dynamic",
+        "forced_fraction": 0.2
+      }
+    },
+    "data": {
+      "fixture": true
+    },
+    "world_size": 2,
+    "code": {
+      "src/rmt/__init__.py": "a9f3ed8f7ee47d16a07e0fcaa9b50c6de643c9abe4726e02d95183b3e5043b0b",
+      "src/rmt/configuration_rmt.py": "a982e400ce8b65800792e2f831fca9b020dd714362f41e1c8e277e06217e6ec5",
+      "src/rmt/data.py": "b6f33aae67cbafac4cf300edd4228c219e7e892b7e8d1acf03c9e303865f80b5",
+      "src/rmt/losses.py": "53ecea96f311a1e6570bd862cb5a19cefea5a8b1f6f3ea49cb1a0eac377ecac7",
+      "src/rmt/fsdp_reference.py": "eabc26c6778ed3a70083bc4f802922300014372dd31d91a4ae1fe52ac8d72f20",
+      "src/rmt/smoke_train.py": "1ab1b5cf7ef05ca1e6636b45471e0b882ee9c7fc22a50e00d314a50f72b0fa87",
+      "src/rmt/attention.py": "2dd0d5c0d8eb1818b13482d8f1d5a07a30de56b1013ff0dc46c72651f648a868",
+      "src/rmt/audit.py": "218a500816ff701b1cfaa078061814068f03a08adee53db32abfaeec23591054",
+      "src/rmt/cache.py": "5a33c8ee51c6dc29a54d95dacf9691151219c1ed33c670b33db7170cd522e5a9",
+      "src/rmt/checkpoint.py": "15ca93a6935b78495e828cb49255cb8df153f7194038daf284da066c38c120dd",
+      "src/rmt/experts.py": "8737e53abd1d376d42547dd9de276138fef6b41fd5e41eaa62ae9dc6aca17faa",
+      "src/rmt/modeling_rmt.py": "6090e2b3c4e95d55034a53baf21847cf03368caccf394c71ee19c24f467e9a6b",
+      "src/rmt/routing.py": "6ce2caeea73e9d35d00b0d617f3caf771169ad878e8042afe882663c64cd9b51",
+      "src/rmt/runtime.py": "1ab4365e4b9e893d8c382cb1db95c24861e8fe912b860838b26042f13059bd48",
+      "src/rmt/verify.py": "1656a69ed7a5aaff67ed6c4fda13549bdc0d76426ed4726c4342971d4339240e",
+      "src/rmt/train.py": "d8222c640935780e7e5686c6baf720275512fd5d906c21bc72438215684f37de",
+      "src/rmt/training_data.py": "444716bf5c0f41bd444605c9f5ed2f0f9aecb4844902cb13f4028b33c8adb445",
+      "src/rmt/halting.py": "26bf2c1e6bfc7c7f2b234f609b6e1909c67354fc56e1371228594b333d464d1a"
+    },
+    "environment": {
+      "python": "3.13.14",
+      "torch": "2.10.0+cu130",
+      "cuda_runtime": "13.0",
+      "transformers": "4.57.6",
+      "tf32_override": "1",
+      "nvidia_tf32_override": null,
+      "gpu": "NVIDIA H100 80GB HBM3"
+    }
+  },
+  "steps": [
+    {
+      "event": "train",
+      "step": 0,
+      "prior": 4.0,
+      "loss": 4.584673881530762,
+      "ce": 4.5842204093933105,
+      "kl": 0.0009068197687156498,
+      "grad_norm": 4.33062219619751,
+      "seconds": 0.23385928571224213,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 68.4172134399414,
+      "targets_per_second": 51.31290817260742,
+      "peak_allocated_bytes": 67459584,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        16,
+        16,
+        0
+      ],
+      "exit_depth_counts": [
+        0,
+        0,
+        16,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_recurrences": 2.0
+    },
+    {
+      "event": "train",
+      "step": 1,
+      "prior": 4.0,
+      "loss": 4.565969944000244,
+      "ce": 4.565510272979736,
+      "kl": 0.0009190982673317194,
+      "grad_norm": 4.2956743240356445,
+      "seconds": 0.0753646045923233,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 212.30125427246094,
+      "targets_per_second": 159.22593688964844,
+      "peak_allocated_bytes": 67580416,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        16,
+        16,
+        0
+      ],
+      "exit_depth_counts": [
+        0,
+        0,
+        16,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_recurrences": 2.0
+    },
+    {
+      "event": "train",
+      "step": 2,
+      "prior": 3.5,
+      "loss": 4.547085762023926,
+      "ce": 4.546603679656982,
+      "kl": 0.0009640862117521465,
+      "grad_norm": 4.2195725440979,
+      "seconds": 0.07176434248685837,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 222.9519500732422,
+      "targets_per_second": 167.21395874023438,
+      "peak_allocated_bytes": 67580416,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        16,
+        16,
+        0
+      ],
+      "exit_depth_counts": [
+        0,
+        0,
+        16,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_recurrences": 2.0
+    }
+  ],
+  "validation": [
+    {
+      "event": "validation",
+      "step": 0,
+      "prior": 4.0,
+      "ce": 4.5842204093933105,
+      "kl": 0.0009068197687156498,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 2,
+      "prior": 3.5,
+      "ce": 4.546603679656982,
+      "kl": 0.0009640862117521465,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 3,
+      "prior": 3.0,
+      "ce": 4.5286383628845215,
+      "kl": 0.0010246132733300328,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    }
+  ],
+  "wall_seconds": 3.847227381542325,
+  "train_packs": 1,
+  "dev_packs": 1,
+  "compile_counters": {},
+  "scope": "Short instruction-training experiment, not a quality superiority claim"
+}

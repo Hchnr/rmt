@@ -42,6 +42,22 @@ def parameter_digest(model):
     return h.hexdigest()
 
 
+def recurrence_controls(cfg, step):
+    """Rank-independent curriculum, reproducible from the saved step and seed."""
+    curriculum = cfg.get('recurrence_training', {})
+    if step is None or not curriculum:
+        return {}
+    rng = random.Random(cfg.get('seed',17) * 1000003 + step)
+    if step < curriculum.get('fixed_warmup_steps',0):
+        return {'halting_policy':'fixed','recurrence_limit':curriculum.get('base_depth',36)}
+    if curriculum.get('mode') == 'random':
+        depth = rng.choices(curriculum['depths'], curriculum['probabilities'])[0]
+        return {'halting_policy':'fixed','recurrence_limit':depth}
+    if rng.random() < curriculum.get('forced_fraction',0):
+        return {'halting_policy':'fixed','recurrence_limit':cfg['model_overrides']['max_recurrences']}
+    return {}
+
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--config',required=True)
     ap.add_argument('--resume',action='store_true');ap.add_argument('--verify-resume',action='store_true')
@@ -64,11 +80,19 @@ def main():
         qc=Qwen3Config(vocab_size=97,hidden_size=32,intermediate_size=48,num_hidden_layers=3,
             num_attention_heads=4,num_key_value_heads=2,head_dim=8,max_position_embeddings=4096,
             tie_word_embeddings=True,pad_token_id=0,eos_token_id=2)
-        original=Qwen3ForCausalLM(qc);model=from_qwen_model(original);teacher=copy.deepcopy(model).to(dtype)
+        original=Qwen3ForCausalLM(qc);model=from_qwen_model(original,**cfg.get("model_overrides",{}));teacher=from_qwen_model(original).to(dtype)
         packs=[pack_sequences([[5,7,10,20],[12,21,35,9]],0,cfg['sequence_length'])]
         dev=packs;data_hash={'fixture':True};tokenizer=None
     else:
-        model,_=load_qwen_as_rmt(cfg['base_model'],dtype=torch.float32)
+        if cfg.get('initial_checkpoint'):
+            from .modeling_rmt import RmtForCausalLM
+            model=RmtForCausalLM.from_pretrained(cfg['initial_checkpoint'],local_files_only=True,dtype=torch.float32)
+            for key,value in cfg.get('model_overrides',{}).items():
+                if key in ('max_recurrences','num_experts') and getattr(model.config,key)!=value:
+                    raise ValueError('Initial checkpoint structural identity differs')
+                setattr(model.config,key,value)
+        else:
+            model,_=load_qwen_as_rmt(cfg['base_model'],dtype=torch.float32,**cfg.get('model_overrides',{}))
         teacher,_=load_qwen_as_rmt(cfg['base_model'],dtype=dtype)
         tokenizer=AutoTokenizer.from_pretrained(cfg['base_model'],local_files_only=True)
         paths={name:cfg[name+'_data'] for name in ['train','dev']}
@@ -78,7 +102,8 @@ def main():
     model.config._attn_implementation=cfg.get('attention','sdpa')
     teacher.config._attn_implementation=cfg.get('attention','sdpa')
     mode=cfg.get('routing_mode','layer_order');model.config.routing_mode=mode
-    with torch.no_grad():model.model.cell.router.weight.normal_(std=cfg.get('router_init_std',0.01))
+    if not cfg.get('initial_checkpoint'):
+        with torch.no_grad():model.model.cell.router.weight.normal_(std=cfg.get('router_init_std',0.01))
     teacher=teacher.to(device).eval().requires_grad_(False);model=model.to(device).train()
     if cfg.get('checkpoint',True):model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False})
     if cfg.get('compile',False):model.model.cell.bank.compile_projections()
@@ -106,7 +131,7 @@ def main():
             print(json.dumps(row),flush=True)
             with (out/'events.jsonl').open('a') as f:f.write(json.dumps(row)+'\n')
 
-    def forward(batch,trace=True):
+    def forward(batch,trace=True,step=None):
         teacher_hidden=None
         if cfg.get('kd_weight',0.5):
             with torch.no_grad():
@@ -115,22 +140,27 @@ def main():
         with torch.autocast('cuda',dtype=dtype):
             return model(**batch,use_cache=False,loss_chunk_size=cfg.get('loss_chunk_size',64),
                 teacher_hidden_states=teacher_hidden,teacher_head_weight=teacher.lm_head.weight,
-                kd_weight=cfg.get('kd_weight',0.5),output_router_trace=trace)
+                kd_weight=cfg.get('kd_weight',0.5),output_router_trace=trace,**recurrence_controls(cfg,step))
 
     def route_stats(result,batch):
         valid=batch['attention_mask'].bool();counts=torch.zeros(model.config.num_experts,device=device,dtype=torch.long)
         off=torch.zeros((),device=device,dtype=torch.long)
         for i,route in enumerate(result.router_indices):
-            counts+=torch.bincount(route[valid],minlength=counts.numel())
-            off+=(route[valid]!=i%model.config.num_experts).sum()
+            selected=valid & (route>=0)
+            counts+=torch.bincount(route[selected],minlength=counts.numel())
+            off+=(route[selected]!=i%model.config.num_experts).sum()
         reduce_sum(counts);reduce_sum(off)
-        return {'off_layer_fraction':(off/counts.sum().clamp_min(1)).item(),'expert_counts':counts.tolist()}
+        depths=torch.bincount(result.exit_depths[valid],minlength=model.config.max_recurrences+1)
+        reduce_sum(depths)
+        mean=(depths*torch.arange(depths.numel(),device=device)).sum()/depths.sum().clamp_min(1)
+        return {'off_layer_fraction':(off/counts.sum().clamp_min(1)).item(),'expert_counts':counts.tolist(),
+                'exit_depth_counts':depths.tolist(),'mean_recurrences':mean.item()}
 
     def train_step(step):
         model.train();prior=prior_at(cfg,step);model.model.cell.router.prior_strength=prior
         batch=batch_at(packs,step,rank,world,device);opt.zero_grad(set_to_none=True)
         torch.cuda.synchronize();begin=time.monotonic();torch.cuda.reset_peak_memory_stats()
-        result=forward(batch)
+        result=forward(batch,step=step)
         nt=(shifted_targets(batch['labels'],batch['attention_mask'],batch['segment_ids'])!=-100).sum()
         totals=reduce_sum(torch.stack((nt,batch['attention_mask'].sum())))
         if totals[0].item()==0:raise ValueError('No supervised targets')
@@ -174,7 +204,9 @@ def main():
             nt=(shifted_targets(batch['labels'],batch['attention_mask'],batch['segment_ids'])!=-100).sum()
             sums+=torch.stack((result.ce_loss*nt,result.kd_loss*nt,nt.float(),batch['attention_mask'].sum().float()))
             valid=batch['attention_mask'].bool() & include
-            for j,route in enumerate(result.router_indices):off+=(route[valid]!=j%model.config.num_experts).sum();used+=valid.sum()
+            for j,route in enumerate(result.router_indices):
+                selected=valid & (route>=0)
+                off+=(route[selected]!=j%model.config.num_experts).sum();used+=selected.sum()
         reduce_sum(sums);reduce_sum(off);reduce_sum(used)
         row={'event':'validation','step':step,'prior':model.model.cell.router.prior_strength,'ce':(sums[0]/sums[2]).item(),
              'kl':(sums[1]/sums[2]).item(),'targets':sums[2].item(),'off_layer_fraction':(off/used.clamp_min(1)).item(),'unique_packs':min(rounds*world,len(dev))}
