@@ -23,7 +23,7 @@ work=Path(a.work);report=json.loads((work/'report.json').read_text());assert rep
 root=Path.cwd();gpus=a.gpu.split(',')
 if len(set(gpus))!=len(gpus) or not set(gpus)<=set(map(str,range(8))):
  raise ValueError('GPU IDs must be unique authorized IDs 0-7')
-processes=[];logs=[]
+processes=[];logs=[];service_started=time.monotonic();completed=False
 signal.signal(signal.SIGTERM,lambda *args: (_ for _ in ()).throw(KeyboardInterrupt()))
 def launch(command,env,suffix):
  log=Path(f'{a.report_root}/{prefix}_{a.name}_{suffix}.log').open('w');logs.append(log)
@@ -57,6 +57,7 @@ try:
   location=next(x.split('=',1)[1] for x in reversed(path.read_text().splitlines()) if x.startswith('EVAL_WORK_DIR='))
   results.append({'candidate':a.name,'benchmark':benchmark,'work':location});print(results[-1],flush=True)
   Path(f'{a.report_root}/{prefix}_{a.name}_runs.json').write_text(json.dumps(results,indent=2)+'\n')
+ completed=True
 finally:
  for process in reversed(processes):
   if process.poll() is None:process.terminate()
@@ -64,3 +65,5 @@ finally:
   try:process.wait(timeout=20)
   except subprocess.TimeoutExpired:process.kill();process.wait()
  for log in logs:log.close()
+ elapsed=time.monotonic()-service_started
+ Path(f'{a.report_root}/{prefix}_{a.name}_cost.json').write_text(json.dumps({'status':'completed' if completed else 'failed','gpus':gpus,'wall_seconds':elapsed,'reserved_gpu_hours':elapsed*len(gpus)/3600,'scope':'Allocated replica lifetime including loading, scoring waits and cleanup; not GPU kernel utilization'},indent=2)+'\n')
