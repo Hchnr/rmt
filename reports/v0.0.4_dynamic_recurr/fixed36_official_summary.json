@@ -1,0 +1,45 @@
+{
+  "status": "fixed36_complete_other_candidates_pending",
+  "rows": [
+    {
+      "candidate": "eos_teacher32_fixed36_math",
+      "benchmark": "math_500",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/4c47fb321385c9d2",
+      "metric": "acc",
+      "score": 0.81,
+      "native_same_scoring_score": 0.816,
+      "count": 500,
+      "correct": 405,
+      "cost": {
+        "status": "completed",
+        "gpus": [
+          "0",
+          "1"
+        ],
+        "wall_seconds": 7466.447387887165,
+        "reserved_gpu_hours": 4.148026326603981,
+        "scope": "Allocated replica lifetime including loading, scoring waits and cleanup; not GPU kernel utilization"
+      }
+    },
+    {
+      "candidate": "eos_teacher32_fixed36_ifeval",
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/5f47147510ed647e",
+      "metric": "prompt_level_strict",
+      "score": 0.6728280961182994,
+      "native_same_scoring_score": 0.8059149722735675,
+      "count": 541,
+      "correct": 364,
+      "cost": {
+        "status": "completed",
+        "gpus": [
+          "5"
+        ],
+        "wall_seconds": 7680.609334085137,
+        "reserved_gpu_hours": 2.133502592801427,
+        "scope": "Allocated replica lifetime including loading, scoring waits and cleanup; not GPU kernel utilization"
+      }
+    }
+  ],
+  "scope": "Full frozen benchmarks, one trained seed and one generated answer per prompt. No dynamic-vs-fixed-depth conclusion until remaining candidates complete."
+}
