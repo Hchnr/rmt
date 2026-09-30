@@ -106,7 +106,7 @@ def main():
         with torch.no_grad():model.model.cell.router.weight.normal_(std=cfg.get('router_init_std',0.01))
     teacher=teacher.to(device).eval().requires_grad_(False);model=model.to(device).train()
     if cfg.get('checkpoint',True):model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False})
-    if cfg.get('compile',False):model.model.cell.bank.compile_projections()
+    if cfg.get('compile',False):model.model.cell.bank.compile_projections(training=True)
     if world>1:
         fully_shard(model,reshard_after_forward=False,
             mp_policy=MixedPrecisionPolicy(param_dtype=dtype,reduce_dtype=torch.float32))

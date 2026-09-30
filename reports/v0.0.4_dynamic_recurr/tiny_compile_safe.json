@@ -1,0 +1,281 @@
+{
+  "status": "passed",
+  "identity": {
+    "config": {
+      "tiny": true,
+      "seed": 17,
+      "sequence_length": 16,
+      "steps": 4,
+      "routing_mode": "learned",
+      "prior_start": 0.0,
+      "prior_end": 0.0,
+      "prior_warmup_steps": 1,
+      "prior_decay_steps": 2,
+      "learning_rate": 0.0001,
+      "router_learning_rate": 0.001,
+      "lr_warmup_steps": 1,
+      "attention": "sdpa",
+      "checkpoint": true,
+      "compile": true,
+      "loss_chunk_size": 4,
+      "kd_weight": 0.5,
+      "validation_batches": 1,
+      "eval_every": 2,
+      "save": true,
+      "export": true,
+      "verify_replay": true,
+      "artifact_dir": "artifacts/v0.0.4_dynamic_recurr/tiny_compile_safe",
+      "report": "reports/v0.0.4_dynamic_recurr/tiny_compile_safe.json",
+      "deterministic": true,
+      "model_overrides": {
+        "max_recurrences": 6,
+        "min_recurrences": 2,
+        "halting_policy": "hybrid",
+        "halt_threshold": 0.4,
+        "halt_relative_threshold": 0.4,
+        "recurrence_schedule": "tail",
+        "tail_experts": 2,
+        "halt_probability_threshold": 0.001
+      },
+      "recurrence_training": {
+        "mode": "dynamic",
+        "forced_fraction": 0.2
+      }
+    },
+    "data": {
+      "fixture": true
+    },
+    "world_size": 2,
+    "code": {
+      "src/rmt/__init__.py": "a9f3ed8f7ee47d16a07e0fcaa9b50c6de643c9abe4726e02d95183b3e5043b0b",
+      "src/rmt/configuration_rmt.py": "a982e400ce8b65800792e2f831fca9b020dd714362f41e1c8e277e06217e6ec5",
+      "src/rmt/data.py": "b6f33aae67cbafac4cf300edd4228c219e7e892b7e8d1acf03c9e303865f80b5",
+      "src/rmt/losses.py": "53ecea96f311a1e6570bd862cb5a19cefea5a8b1f6f3ea49cb1a0eac377ecac7",
+      "src/rmt/fsdp_reference.py": "eabc26c6778ed3a70083bc4f802922300014372dd31d91a4ae1fe52ac8d72f20",
+      "src/rmt/smoke_train.py": "1ab1b5cf7ef05ca1e6636b45471e0b882ee9c7fc22a50e00d314a50f72b0fa87",
+      "src/rmt/attention.py": "2dd0d5c0d8eb1818b13482d8f1d5a07a30de56b1013ff0dc46c72651f648a868",
+      "src/rmt/audit.py": "218a500816ff701b1cfaa078061814068f03a08adee53db32abfaeec23591054",
+      "src/rmt/cache.py": "5a33c8ee51c6dc29a54d95dacf9691151219c1ed33c670b33db7170cd522e5a9",
+      "src/rmt/checkpoint.py": "15ca93a6935b78495e828cb49255cb8df153f7194038daf284da066c38c120dd",
+      "src/rmt/experts.py": "891aaa502612f1666d0e0b3cbdc688047812cb65f399a2e79959d4c925131ace",
+      "src/rmt/modeling_rmt.py": "254100536a310835054b381508d00b18b720aa33b3ee8b964ded3b3c7fd7f21d",
+      "src/rmt/routing.py": "6ce2caeea73e9d35d00b0d617f3caf771169ad878e8042afe882663c64cd9b51",
+      "src/rmt/runtime.py": "1ab4365e4b9e893d8c382cb1db95c24861e8fe912b860838b26042f13059bd48",
+      "src/rmt/verify.py": "1656a69ed7a5aaff67ed6c4fda13549bdc0d76426ed4726c4342971d4339240e",
+      "src/rmt/train.py": "c23d80781db833a0c90df4b97c8e3cc36123231779be165e310bf25e9ed23fbd",
+      "src/rmt/training_data.py": "444716bf5c0f41bd444605c9f5ed2f0f9aecb4844902cb13f4028b33c8adb445",
+      "src/rmt/halting.py": "e168dad888fb9c6de8aae1268dfe5ee4fef9a3e17b633605896309916906c2c2"
+    },
+    "environment": {
+      "python": "3.13.14",
+      "torch": "2.10.0+cu130",
+      "cuda_runtime": "13.0",
+      "transformers": "4.57.6",
+      "tf32_override": "1",
+      "nvidia_tf32_override": null,
+      "gpu": "NVIDIA H100 80GB HBM3"
+    }
+  },
+  "steps": [
+    {
+      "event": "train",
+      "step": 0,
+      "prior": 0.0,
+      "loss": 4.574638366699219,
+      "ce": 4.571306228637695,
+      "kl": 0.006664689164608717,
+      "grad_norm": 6.445981979370117,
+      "seconds": 0.9853489995002747,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 16.23790168762207,
+      "targets_per_second": 12.178425788879395,
+      "peak_allocated_bytes": 67482624,
+      "off_layer_fraction": 0.6590909361839294,
+      "expert_counts": [
+        26,
+        42,
+        20
+      ],
+      "exit_depth_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        8
+      ],
+      "mean_recurrences": 5.5
+    },
+    {
+      "event": "train",
+      "step": 1,
+      "prior": 0.0,
+      "loss": 4.540689945220947,
+      "ce": 4.5373454093933105,
+      "kl": 0.006689441855996847,
+      "grad_norm": 6.066333293914795,
+      "seconds": 0.2288867086172104,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 69.90357971191406,
+      "targets_per_second": 52.42768478393555,
+      "peak_allocated_bytes": 67603456,
+      "off_layer_fraction": 0.6136363744735718,
+      "expert_counts": [
+        26,
+        42,
+        20
+      ],
+      "exit_depth_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        8
+      ],
+      "mean_recurrences": 5.5
+    },
+    {
+      "event": "train",
+      "step": 2,
+      "prior": 0.0,
+      "loss": 4.517946720123291,
+      "ce": 4.514476776123047,
+      "kl": 0.0069397627376019955,
+      "grad_norm": 5.3601579666137695,
+      "seconds": 0.22125187516212463,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 72.3157730102539,
+      "targets_per_second": 54.2368278503418,
+      "peak_allocated_bytes": 67603456,
+      "off_layer_fraction": 0.6000000238418579,
+      "expert_counts": [
+        24,
+        32,
+        34
+      ],
+      "exit_depth_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        10
+      ],
+      "mean_recurrences": 5.625
+    },
+    {
+      "event": "train",
+      "step": 3,
+      "prior": 0.0,
+      "loss": 4.494770050048828,
+      "ce": 4.49114465713501,
+      "kl": 0.007250562310218811,
+      "grad_norm": 5.228725433349609,
+      "seconds": 0.2248222380876541,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 71.1673355102539,
+      "targets_per_second": 53.37550354003906,
+      "peak_allocated_bytes": 67603456,
+      "off_layer_fraction": 0.5777778029441833,
+      "expert_counts": [
+        22,
+        30,
+        38
+      ],
+      "exit_depth_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        10
+      ],
+      "mean_recurrences": 5.625
+    }
+  ],
+  "validation": [
+    {
+      "event": "validation",
+      "step": 0,
+      "prior": 0.0,
+      "ce": 4.571306228637695,
+      "kl": 0.006664689164608717,
+      "targets": 6.0,
+      "off_layer_fraction": 0.6590909361839294,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 2,
+      "prior": 0.0,
+      "ce": 4.514476776123047,
+      "kl": 0.0069397627376019955,
+      "targets": 6.0,
+      "off_layer_fraction": 0.6000000238418579,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 4,
+      "prior": 0.0,
+      "ce": 4.472001552581787,
+      "kl": 0.0073357499204576015,
+      "targets": 6.0,
+      "off_layer_fraction": 0.6000000238418579,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 4,
+      "prior": 0.0,
+      "ce": 4.472001552581787,
+      "kl": 0.0073357499204576015,
+      "targets": 6.0,
+      "off_layer_fraction": 0.6000000238418579,
+      "unique_packs": 1
+    }
+  ],
+  "wall_seconds": 7.963887143880129,
+  "train_packs": 1,
+  "dev_packs": 1,
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 20,
+      "unique_graphs": 4
+    },
+    "aot_autograd": {
+      "total": 4,
+      "autograd_cache_hit": 2,
+      "ok": 4,
+      "autograd_cache_miss": 2,
+      "autograd_cache_saved": 2
+    },
+    "inductor": {
+      "triton_bundler_load_static_autotuner": 4,
+      "async_compile_cache_miss": 12,
+      "async_compile_cache_hit": 4,
+      "extern_calls": 24,
+      "fxgraph_cache_hit": 3,
+      "fxgraph_cache_miss": 3,
+      "triton_bundler_save_kernel": 32,
+      "triton_bundler_save_static_autotuner": 3
+    },
+    "graph_break": {},
+    "aten_mm_info": {
+      "aten.mm_1_48_32": 5,
+      "aten.mm_1_32_48": 4,
+      "aten.mm_32_48_1": 1,
+      "aten.mm_48_32_1": 2
+    }
+  },
+  "scope": "Short instruction-training experiment, not a quality superiority claim"
+}

@@ -68,7 +68,7 @@ class BoundExpertBank(nn.Module):
         self._project_output = project_output
         self.compiled = False
 
-    def compile_projections(self):
+    def compile_projections(self, training=False):
         # RMS epsilon is a configuration constant. Avoid CPU scalar tensors and
         # device-copy partitions inside otherwise capturable projection graphs.
         torch._dynamo.config.specialize_float = True
@@ -76,8 +76,8 @@ class BoundExpertBank(nn.Module):
         # Disable addmm pattern fusion: on regrouped 2-D BF16 tensors it changes
         # the rounding of residual additions, even with emulate_precision_casts.
         # Shared functions avoid constructing one compiled graph wrapper per expert.
-        self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
-        self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
+        self._project_qkv = torch.compile(project_qkv, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": not training})
+        self._project_output = torch.compile(project_output, dynamic=True, fullgraph=True, options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": not training})
         prefill_options = {"emulate_precision_casts": True, "pattern_matcher": False}
         # Arbitrary prompt lengths must not create an unbounded CUDA-graph pool.
         # Prefill still uses Inductor; replay is reserved for small decode shapes.
@@ -85,7 +85,7 @@ class BoundExpertBank(nn.Module):
         self._prefill_output = torch.compile(project_output, dynamic=True, fullgraph=True, options=prefill_options)
         self._prefill_mlp = torch.compile(project_mlp, dynamic=True, fullgraph=True, options=prefill_options)
         self._mlp = torch.compile(project_mlp, dynamic=True, fullgraph=True,
-            options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": True})
+            options={"emulate_precision_casts": True, "pattern_matcher": False, "triton.cudagraphs": not training})
         self.compiled = True
 
     def mixed_qkv(self, expert, x):

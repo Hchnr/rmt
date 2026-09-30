@@ -116,11 +116,12 @@ class Runner:
                 measured=depths if step==0 else depths[:,-1:]
                 exits=output.exit_reasons if step==0 else output.exit_reasons[:,-1:]
                 phase='prefill' if step==0 else 'decode'
-                for row in range(len(prompts)):
+                statistics=torch.stack((measured.sum(-1),(measured>0).sum(-1),(exits==2).sum(-1)),-1).tolist()
+                for row,(depth_sum,positions,cap_count) in enumerate(statistics):
                     if not done[row]:
-                        depth_stats[row][phase+'_depth_sum']+=measured[row].sum().item()
-                        depth_stats[row][phase+'_positions']+=(measured[row]>0).sum().item()
-                        depth_stats[row]['cap_positions']+=(exits[row]==2).sum().item()
+                        depth_stats[row][phase+'_depth_sum']+=depth_sum
+                        depth_stats[row][phase+'_positions']+=positions
+                        depth_stats[row]['cap_positions']+=cap_count
             if use_cache: cache=output.past_key_values
             greedy_batch = output.logits[:,-1].argmax(-1).tolist() if all(
                 c.temperature == 0 and c.presence_penalty == 0 for c in configs) else None

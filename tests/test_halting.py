@@ -105,3 +105,28 @@ def test_config_roundtrip_and_invalid_controls(tmp_path):
     with pytest.raises(ValueError):model(ids,recurrence_limit=7)
     with pytest.raises(ValueError):model(ids,forced_exit_depths=torch.zeros_like(ids))
     with pytest.raises(FloatingPointError):hidden_stable(torch.ones(1,32),torch.full((1,32),float('nan')),model.config)
+
+
+def test_cache_refuses_missing_deeper_history_and_can_reset():
+    model=make_model();ids=torch.tensor([[4,7]])
+    cache=RmtCapacityCache(8)
+    with torch.no_grad():
+        model(ids,halting_policy='fixed',recurrence_limit=3,past_key_values=cache,use_cache=True)
+        with pytest.raises(ValueError,match='Incomplete recurrence cache'):
+            model(ids[:,:1],past_key_values=cache,use_cache=True)
+        cache.reset()
+        out=model(ids,past_key_values=cache,use_cache=True)
+        assert (out.exit_depths==2).all()
+        cache.batch_select_indices(torch.tensor([0,0]))
+        assert cache.storage[5][0].shape[0]==2
+
+
+def test_curriculum_is_rank_independent_and_replayable():
+    from rmt.train import recurrence_controls
+    cfg={'seed':17,'recurrence_training':{'mode':'random','depths':[36,40,44,48],
+         'probabilities':[.4,.3,.2,.1],'fixed_warmup_steps':3}}
+    a=[recurrence_controls(cfg,i) for i in range(100)]
+    torch.manual_seed(99)
+    b=[recurrence_controls(cfg,i) for i in range(100)]
+    assert a==b and all(x['recurrence_limit']==36 for x in a[:3])
+    assert {x['recurrence_limit'] for x in a}=={36,40,44,48}

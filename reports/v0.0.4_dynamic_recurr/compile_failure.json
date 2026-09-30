@@ -1,0 +1,9 @@
+{
+  "configuration": "configs/dynamic/tiny_compile.yaml",
+  "source_commit": "19a7390",
+  "status": "failed",
+  "phase": "first backward",
+  "error": "CUDA graph recording observed an input tensor deallocate during recording that did not occur during replay",
+  "resolution": "Keep real Inductor compilation; explicitly disable CUDA graph replay for training kernels, retain inference replay",
+  "log": "reports/v0.0.4_dynamic_recurr/tiny_compile.log"
+}

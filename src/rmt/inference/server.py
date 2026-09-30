@@ -78,6 +78,10 @@ def main():
                     'cache':'recurrence_capacity' if args.backend=='rmt' else 'hf_dynamic',
                     'max_context':runner.max_context,'batch_size':args.batch_size,'source_sha256':runner.source_hashes,
                     'routing_mode':getattr(runner.model.config,'routing_mode',None),'attention':args.attention,
+                    'recurrence_config':{key:getattr(runner.model.config,key,None) for key in (
+                        'num_experts','num_recurrences','max_recurrences','min_recurrences','halting_policy',
+                        'halt_patience','halt_threshold','halt_relative_threshold','halt_probability_threshold',
+                        'recurrence_schedule','tail_experts')},
                     'engine_environment':runner.engine_environment});return
             self.send(404,{'error':{'message':'Unknown endpoint'}})
         def do_POST(self):
@@ -108,7 +112,7 @@ def main():
                     'created':int(time.time()),'model':args.name,'choices':[choice],
                     'usage':{'prompt_tokens':out['prompt_tokens'],'completion_tokens':out['completion_tokens'],
                              'total_tokens':out['prompt_tokens']+out['completion_tokens']},
-                    'rmt_metadata':{'prompt_sha256':out['prompt_sha256'],'seed':cfg.seed,'batch_split_retries':out['batch_split_retries']}})
+                    'rmt_metadata':{'prompt_sha256':out['prompt_sha256'],'seed':cfg.seed,'batch_split_retries':out['batch_split_retries'],'recurrence':out.get('recurrence')}})
             except (ValueError,KeyError,TypeError) as error: self.send(400,{'error':{'message':str(error)}})
             except Exception as error: self.send(500,{'error':{'message':type(error).__name__}})
     print(json.dumps({'ready':True,'port':args.port,'model':args.name}),flush=True)

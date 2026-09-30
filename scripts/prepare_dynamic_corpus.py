@@ -12,10 +12,10 @@ from rmt.training_data import tokenize_response
 from rmt.evaluation.prepare import records
 
 SOURCES=[
- ('general','HuggingFaceH4/ultrachat_200k','8049631c405ae6576f93f445c6b8166f76f5505a','default','train_sft',4000),
- ('math','open-r1/OpenR1-Math-220k','e4e141ec9dea9f8326f4d347be56105859b2bd68','default','train',3000),
- ('code','OpenCoder-LLM/opc-sft-stage1','1bcab575f5e2d1c1fd6652720418524c27b3d58b','largescale_diverse_instruct','train',2000),
- ('chinese','OpenCoder-LLM/opc-sft-stage1','1bcab575f5e2d1c1fd6652720418524c27b3d58b','filtered_infinity_instruct','train',2000)]
+ ('general','HuggingFaceH4/ultrachat_200k','8049631c405ae6576f93f445c6b8166f76f5505a','default','train_sft',10000),
+ ('math','open-r1/OpenR1-Math-220k','e4e141ec9dea9f8326f4d347be56105859b2bd68','default','train',6000),
+ ('code','OpenCoder-LLM/opc-sft-stage1','1bcab575f5e2d1c1fd6652720418524c27b3d58b','largescale_diverse_instruct','train',6000),
+ ('chinese','OpenCoder-LLM/opc-sft-stage1','1bcab575f5e2d1c1fd6652720418524c27b3d58b','filtered_infinity_instruct','train',6000)]
 
 
 def normalize(text):

@@ -30,7 +30,7 @@ def main():
         descriptors[name]=fd;manifests[name]=(state,state_path,item)
         for index,start in enumerate(range(0,size,chunk)):
             if index not in state['done']:work.append((name,index,start,min(size-1,start+chunk-1)))
-    print(json.dumps({'pending_ranges':len(work),'workers':48,'chunk_bytes':chunk}),flush=True)
+    print(json.dumps({'pending_ranges':len(work),'workers':192,'chunk_bytes':chunk}),flush=True)
     def fetch(task):
         name,index,start,end=task
         for attempt in range(5):
@@ -53,7 +53,7 @@ def main():
                 else:time.sleep(min(2**attempt,8))
         return False
     done=0;failed=0;start=time.monotonic()
-    with concurrent.futures.ThreadPoolExecutor(48) as pool:
+    with concurrent.futures.ThreadPoolExecutor(192) as pool:
         for success in pool.map(fetch,work):
             done+=1;failed+=not success
             if done%32==0:print(json.dumps({'completed_ranges':done,'failed':failed,'seconds':time.monotonic()-start}),flush=True)
