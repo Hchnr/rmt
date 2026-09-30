@@ -11,7 +11,7 @@ class RmtConfig(Qwen3Config):
                  cache_layout_version=1, max_recurrences=None, halting_policy="fixed",
                  min_recurrences=None, halt_patience=2, halt_threshold=0.01,
                  halt_relative_threshold=0.01, halt_probability_threshold=0.001,
-                 recurrence_schedule="cycle", tail_experts=8, **kwargs):
+                 recurrence_schedule="cycle", tail_experts=8, learned_routing_start=0, **kwargs):
         depth = kwargs.pop("num_hidden_layers", 36)
         self.num_experts = depth if num_experts is None else num_experts
         self.num_recurrences = depth if num_recurrences is None else num_recurrences
@@ -36,6 +36,9 @@ class RmtConfig(Qwen3Config):
         import math
         if any(not math.isfinite(x) or x < 0 for x in (halt_threshold, halt_relative_threshold, halt_probability_threshold)):
             raise ValueError("Halting thresholds must be finite and nonnegative")
+        if not isinstance(learned_routing_start,int) or not 0 <= learned_routing_start <= self.max_recurrences:
+            raise ValueError("Invalid learned_routing_start")
+        self.learned_routing_start = learned_routing_start
         self.halting_policy = halting_policy
         self.halt_patience = halt_patience
         self.halt_threshold = halt_threshold

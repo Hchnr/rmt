@@ -22,6 +22,7 @@ from .checkpoint import load_qwen_as_rmt,from_qwen_model,export_hf
 from .training_data import load_packs,batch_at,file_sha
 from .data import pack_sequences
 from .losses import shifted_targets
+from .halting import prior_expert
 from .runtime import enforce_gpu_scope,versions,write_report
 
 
@@ -144,16 +145,18 @@ def main():
 
     def route_stats(result,batch):
         valid=batch['attention_mask'].bool();counts=torch.zeros(model.config.num_experts,device=device,dtype=torch.long)
-        off=torch.zeros((),device=device,dtype=torch.long)
+        off=torch.zeros((),device=device,dtype=torch.long);off_prior=torch.zeros_like(off)
         for i,route in enumerate(result.router_indices):
             selected=valid & (route>=0)
             counts+=torch.bincount(route[selected],minlength=counts.numel())
             off+=(route[selected]!=i%model.config.num_experts).sum()
-        reduce_sum(counts);reduce_sum(off)
+            off_prior+=(route[selected]!=prior_expert(model.config,i)).sum()
+        reduce_sum(counts);reduce_sum(off);reduce_sum(off_prior)
         depths=torch.bincount(result.exit_depths[valid],minlength=model.config.max_recurrences+1)
         reduce_sum(depths)
         mean=(depths*torch.arange(depths.numel(),device=device)).sum()/depths.sum().clamp_min(1)
         return {'off_layer_fraction':(off/counts.sum().clamp_min(1)).item(),'expert_counts':counts.tolist(),
+                'off_prior_fraction':(off_prior/counts.sum().clamp_min(1)).item(),
                 'exit_depth_counts':depths.tolist(),'mean_recurrences':mean.item()}
 
     def train_step(step):

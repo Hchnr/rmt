@@ -81,7 +81,7 @@ def main():
                     'recurrence_config':{key:getattr(runner.model.config,key,None) for key in (
                         'num_experts','num_recurrences','max_recurrences','min_recurrences','halting_policy',
                         'halt_patience','halt_threshold','halt_relative_threshold','halt_probability_threshold',
-                        'recurrence_schedule','tail_experts')},
+                        'recurrence_schedule','tail_experts','learned_routing_start')},
                     'engine_environment':runner.engine_environment});return
             self.send(404,{'error':{'message':'Unknown endpoint'}})
         def do_POST(self):

@@ -130,3 +130,13 @@ def test_curriculum_is_rank_independent_and_replayable():
     b=[recurrence_controls(cfg,i) for i in range(100)]
     assert a==b and all(x['recurrence_limit']==36 for x in a[:3])
     assert {x['recurrence_limit'] for x in a}=={36,40,44,48}
+
+
+def test_only_extra_recurrences_open_routing():
+    model=make_model();model.config.learned_routing_start=3
+    model.model.cell.router.prior_strength=0
+    with torch.no_grad():
+        model.model.cell.router.step_bias[:,2]=100
+        out=model(torch.tensor([[4,7]]),halting_policy='fixed',recurrence_limit=6,
+                  routing_mode='learned',output_router_trace=True,use_cache=False)
+    assert [r[0,0].item() for r in out.router_indices]==[0,1,2,2,2,2]

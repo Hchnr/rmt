@@ -49,7 +49,7 @@ class RmtRecurrentCell(nn.Module):
         uniform = None
         probabilities = hidden.new_empty(0, dtype=torch.float32)
         selected = None
-        if mode == "layer_order":
+        if mode == "layer_order" or (mode == "learned" and step < self.config.learned_routing_start):
             uniform = prior_expert(self.config, step)
             indices = torch.full((b, s), uniform, dtype=torch.long, device=hidden.device)
         elif mode == "forced":
