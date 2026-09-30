@@ -1,0 +1,59 @@
+{
+  "candidate": "artifacts/v0.0.4_dynamic_recurr/teacher/Qwen3-32B",
+  "vocabulary_mapping_equal": true,
+  "special_tokens_equal": true,
+  "prefixes": [
+    {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hello!"
+        }
+      ],
+      "template_equal": true,
+      "token_ids_equal": true
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "content": "证明勾股定理。"
+        }
+      ],
+      "template_equal": true,
+      "token_ids_equal": true
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Find $x^2+1=2$."
+        }
+      ],
+      "template_equal": true,
+      "token_ids_equal": true
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a Python function.\n```python\ndef f(x):\n    return x\n```"
+        }
+      ],
+      "template_equal": true,
+      "token_ids_equal": true
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Spaces  tabs\tand Unicode 🧪"
+        }
+      ],
+      "template_equal": true,
+      "token_ids_equal": true
+    }
+  ],
+  "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "status": "passed"
+}
