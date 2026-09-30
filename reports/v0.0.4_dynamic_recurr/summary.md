@@ -83,3 +83,17 @@ Earlier trained-checkpoint generation scores and performance used a single EOS i
 ## 修复后推理成本对照
 
 同脚本、32-token greedy、三次重复的编译 batch1/4 吞吐：fixed36 59.94/229.57，fixed40 41.02/147.11，H+P 13.96/54.65 token/s。各自 greedy 与 eager 相同。动态路径在相近平均深度下仍明显更慢，尚无推理效率收益；这是端到端实现对照，不是单算子归因，也不是完整长输出吞吐。见 corrected_inference_comparison.json。
+
+## 修复后的完整官方评测（当前三项完成）
+
+| 模型 | MATH-500（500 题） | IFEval strict prompt（541 题） |
+|---|---:|---:|
+| 原生 Qwen3-4B，同评分规则 | 81.60% | 80.59% |
+| 32B 蒸馏 fixed36 | 81.00%（405） | 67.28%（364） |
+| 32B 蒸馏 fixed40 | 运行中 | 68.39%（370） |
+| 32B 蒸馏 H+P | 运行中 | 运行中 |
+
+已完成行均通过唯一回答／review 全量审计，未完成项不填分数。
+固定 36 配方的数学接近原生，但指令遵循明显退化；固定 40 的 IFEval 比 fixed36 多 6 题，尚不据此声称显著提升。
+这说明源语料 CE 改善不能代替官方能力验证；尚不能据这些行识别教师规模的独立因果收益。
+详见 fixed36_official_summary.json、fixed40_ifeval_summary.json。
