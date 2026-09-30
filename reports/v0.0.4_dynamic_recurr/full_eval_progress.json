@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-30T09:04:21.029050+00:00",
+  "as_of": "2026-09-30T09:19:09.934423+00:00",
   "status": "running",
   "rows": [
     {
@@ -14,7 +14,7 @@
       "model": "teacher32_fixed40_eos_fixed",
       "benchmark": "ifeval",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/97254057c9ea5234",
-      "returned_responses": 332,
+      "returned_responses": 476,
       "returned_length_stops": 2,
       "returned_split_retries": 0
     },
@@ -22,7 +22,7 @@
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "ifeval",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/fb90b50d4a0b1181",
-      "returned_responses": 152,
+      "returned_responses": 204,
       "returned_length_stops": 1,
       "returned_split_retries": 0
     },
@@ -30,8 +30,8 @@
       "model": "teacher32_fixed40_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d",
-      "returned_responses": 258,
-      "returned_length_stops": 1,
+      "returned_responses": 310,
+      "returned_length_stops": 2,
       "returned_split_retries": 0
     },
     {
@@ -46,8 +46,8 @@
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
-      "returned_responses": 350,
-      "returned_length_stops": 0,
+      "returned_responses": 366,
+      "returned_length_stops": 1,
       "returned_split_retries": 0
     }
   ],
