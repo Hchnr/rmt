@@ -12,7 +12,7 @@ for path in sorted((root/'training_stages').glob('*.json')):
         training.append({'config':row['config'],'archive':str(path),
                          'gpu_hours':row['wall_seconds']*len(row['gpus'].split(','))/3600})
 evaluations=[]
-for path in sorted(root.glob('full_teacher32*_cost.json')):
+for path in sorted(root.glob('full_eos_teacher32*_cost.json')):
     row=json.loads(path.read_text())
     if row['status']!='completed':raise ValueError('Failed evaluation requires separate attempt accounting')
     evaluations.append({'report':str(path),'gpu_hours':row['reserved_gpu_hours']})

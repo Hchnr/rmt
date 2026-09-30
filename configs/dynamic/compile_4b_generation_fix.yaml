@@ -1,0 +1,41 @@
+base_model: /share/project/eai_pwm/models/Qwen/Qwen3-4B
+train_data: artifacts/v0.0.4_dynamic_recurr/corpus/train.jsonl
+dev_data: artifacts/v0.0.4_dynamic_recurr/corpus/dev.jsonl
+seed: 17
+steps: 4
+attention: sdpa
+checkpoint: true
+compile: true
+loss_chunk_size: 64
+kd_weight: 0.5
+learning_rate: 1.0e-05
+router_learning_rate: 0.0001
+lr_warmup_steps: 0
+validation_batches: 2
+save: true
+export: true
+verify_replay: true
+sequence_length: 512
+routing_mode: learned
+prior_start: 3.5
+artifact_dir: artifacts/v0.0.4_dynamic_recurr/train/compile_4b_generation_fix
+report: reports/v0.0.4_dynamic_recurr/compile_4b_generation_fix.json
+prior_end: 3.5
+prior_warmup_steps: 0
+prior_decay_steps: 4
+eval_every: 4
+deterministic: true
+model_overrides:
+  max_recurrences: 48
+  min_recurrences: 36
+  num_recurrences: 40
+  recurrence_schedule: tail
+  learned_routing_start: 36
+  halting_policy: hybrid
+  halt_threshold: 0.2
+  halt_relative_threshold: 0.2
+  halt_probability_threshold: 0.05
+initial_checkpoint: artifacts/v0.0.4_dynamic_recurr/train/hybrid/hf
+recurrence_training:
+  mode: dynamic
+  forced_fraction: 0.5

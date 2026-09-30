@@ -28,6 +28,14 @@ def model_fingerprint(path):
     value={str(p.name):file_hash(p) for p in files};target.write_text(json.dumps(value));return value
 
 
+def validate_generation_termination(metadata, protocol):
+    expected=protocol.get('expected_eos_token_ids')
+    if expected is not None:
+        actual=metadata.get('generation_termination',{}).get('eos_token_ids')
+        if actual is None or sorted(actual)!=sorted(expected):
+            raise ValueError(f'EOS policy mismatch: expected {expected}, got {actual}')
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--model',choices=['rmt','qwen'],required=True)
     p.add_argument('--port',type=int,required=True);p.add_argument('--benchmark',required=True)
@@ -48,6 +56,7 @@ def main():
     base=f'http://127.0.0.1:{args.port}'
     session=requests.Session();session.trust_env=False
     metadata=session.get(base+'/metadata',timeout=10).json()
+    validate_generation_termination(metadata,protocol)
     metadata['weights']=model_fingerprint(metadata['model'])
     code={str(p):file_hash(p) for p in sorted(Path('src/rmt').rglob('*.py'))}
     generation=protocol['generation'].copy()

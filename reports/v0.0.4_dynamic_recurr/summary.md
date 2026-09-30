@@ -74,3 +74,7 @@ H+P、SDPA、KV cache、生成预算 32 token，预热后重复三次：
 
 - 三个冻结 32B 学生的完整 IFEval／MATH-500 官方回归；IFEval 固定逐题评分 RNG，原生同一批答案重评为 436/541，旧 435/541 单独保留。
 - 最终成本汇总、验收清单和结论。
+
+## Generation-metadata correction (full rerun pending)
+
+Earlier trained-checkpoint generation scores and performance used a single EOS instead of the native two-EOS configuration and are historical diagnostics, not valid final native comparisons. Corrected immutable exports preserve identical weights/configuration and real-4B forward logits. Teacher-forced CE remains valid. All six official tasks will be rerun from scratch; thresholds and sampling remain frozen. See generation_repair_verification.json and *_eos_repair.json. The four-prompt stopping probe did not observe the omitted EOS and does not explain all long outputs.

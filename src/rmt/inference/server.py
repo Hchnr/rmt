@@ -75,6 +75,7 @@ def main():
             if self.path=='/v1/models': self.send(200,{'object':'list','data':[{'id':args.name,'object':'model'}]});return
             if self.path=='/metadata':
                 self.send(200,{'model':args.model,'backend':args.backend,'compiled':not args.eager,
+                    'generation_termination':{'eos_token_ids':sorted(runner.eos),'pad_token_id':runner.pad},
                     'cache':'recurrence_capacity' if args.backend=='rmt' else 'hf_dynamic',
                     'max_context':runner.max_context,'batch_size':args.batch_size,'source_sha256':runner.source_hashes,
                     'routing_mode':getattr(runner.model.config,'routing_mode',None),'attention':args.attention,

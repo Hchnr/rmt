@@ -21,3 +21,14 @@ def test_seed_ignores_generated_message_ids():
     assert request_seed(a,17)==request_seed(b,17)
     assert request_seed(a,17)!=request_seed(a,18)
     assert request_seed(a,17)!=request_seed([{'role':'user','content':'2+2?'}],17)
+
+
+def test_generation_policy_rejects_missing_native_eos():
+    import pytest
+    from rmt.evaluation.run import validate_generation_termination
+    protocol={'expected_eos_token_ids':[151643,151645]}
+    validate_generation_termination({'generation_termination':{'eos_token_ids':[151645,151643]}},protocol)
+    with pytest.raises(ValueError,match='EOS policy mismatch'):
+        validate_generation_termination({'generation_termination':{'eos_token_ids':[151645]}},protocol)
+    with pytest.raises(ValueError,match='EOS policy mismatch'):
+        validate_generation_termination({},protocol)

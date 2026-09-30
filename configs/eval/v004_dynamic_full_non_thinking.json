@@ -20,7 +20,8 @@
     "Full IFEval and MATH-500 only; other report benchmarks not covered",
     "Official EvalScope 1.0.0 prompts/scorers; exact paper prompt parity not established",
     "One request-specific sample seed; not identical to unpublished paper RNG",
-    "Unmodified official IFEval rules with per-record Python and langdetect seeds; punctuation fallback behavior retained and documented. Native baseline answers rescored identically."
+    "Unmodified official IFEval rules with per-record Python and langdetect seeds; punctuation fallback behavior retained and documented. Native baseline answers rescored identically.",
+    "Trained HF exports corrected to native two-EOS termination; earlier missing-EOS attempts are invalid and preserved separately."
   ],
   "benchmarks": {
     "ifeval": {
@@ -49,5 +50,9 @@
     "timeout": 7200,
     "max_retries": 0
   },
-  "ifeval_score_seed": 17
+  "ifeval_score_seed": 17,
+  "expected_eos_token_ids": [
+    151643,
+    151645
+  ]
 }

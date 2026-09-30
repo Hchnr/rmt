@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "old_eos_token_ids": [
+    151645
+  ],
+  "corrected_eos_token_ids": [
+    151643,
+    151645
+  ],
+  "forward_logits_bitwise_equal": true,
+  "probe": [
+    {
+      "key": 1154,
+      "finish_reason": "length",
+      "completion_tokens": 1024,
+      "last_token_id": 247,
+      "token_ids_sha256": "5457a5843edfc19c8c750fb0f8bd412046a50eee63d65f8d0f9df63080514b68"
+    },
+    {
+      "key": 1153,
+      "finish_reason": "stop",
+      "completion_tokens": 244,
+      "last_token_id": 151645,
+      "token_ids_sha256": "a75626ab0e7b98dbedb4fd43a3042765faca91f574c1cd21f6202ed59d17685c"
+    },
+    {
+      "key": 1148,
+      "finish_reason": "stop",
+      "completion_tokens": 111,
+      "last_token_id": 151645,
+      "token_ids_sha256": "4479513718360a417c15715b992af1d5df6bf35e806d8ed72a134cfca6ebdd75"
+    },
+    {
+      "key": 1147,
+      "finish_reason": "stop",
+      "completion_tokens": 45,
+      "last_token_id": 151645,
+      "token_ids_sha256": "00b9ab69356fd2e90fbc398f10e2777268f8d2b3dbd516db6b951bbdb65226ee"
+    }
+  ],
+  "observed_formerly_ignored_eos": 0,
+  "scope": "Generation metadata only; one real 4B forward and four bounded real prompts. Probe output cap1024 differs from the frozen full benchmark32768, so this is a stopping diagnostic, not a task score."
+}

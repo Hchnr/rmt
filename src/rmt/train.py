@@ -264,7 +264,7 @@ def main():
             config=RmtConfig.from_dict(model.config.to_dict());config.router_prior_strength=prior_at(cfg,total_steps)
             target=RmtForCausalLM(config).to(dtype=dtype)
             target.load_state_dict(state);target.tie_weights();target.eval()
-            export_hf(target,out/'hf',None if tiny else cfg['base_model'])
+            export_hf(target,out/'hf',None if tiny else cfg['base_model'],generation_config=teacher.generation_config)
             del target
         del state
         if world>1:dist.barrier()

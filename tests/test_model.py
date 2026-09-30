@@ -187,3 +187,29 @@ def test_expert_count_independent_from_recurrence_count(pair):
             actual=model(ids[:,2:],past_key_values=prefill.past_key_values,use_cache=True)
         assert len(actual.past_key_values.layers)==depth
         torch.testing.assert_close(actual.logits,expected[:,2:],atol=1e-5,rtol=1e-4)
+
+
+def test_export_preserves_reference_generation_and_multiple_eos(pair,tmp_path):
+    from transformers import GenerationConfig,AutoModelForCausalLM,LogitsProcessor,LogitsProcessorList
+    from rmt.checkpoint import export_hf
+    _,model=pair
+    generation=GenerationConfig(bos_token_id=1,pad_token_id=0,eos_token_id=[2,3],
+                                do_sample=True,temperature=.7,top_p=.8,top_k=20)
+    export_hf(model,tmp_path,generation_config=generation)
+    generation.eos_token_id.append(4)
+    restored=AutoModelForCausalLM.from_pretrained(tmp_path,local_files_only=True,trust_remote_code=True).eval()
+    assert restored.generation_config.eos_token_id==[2,3]
+    assert model.generation_config.eos_token_id==[2,3]
+    assert restored.generation_config.pad_token_id==0
+    assert restored.generation_config.temperature==.7
+    assert restored.generation_config.top_p==.8
+    assert restored.generation_config.top_k==20
+    class Endings(LogitsProcessor):
+        def __call__(self,ids,scores):
+            scores.fill_(-float('inf'))
+            scores[0,3]=0
+            scores[1,2 if ids.shape[1]>=4 else 11]=0
+            return scores
+    result=restored.generate(torch.tensor([[5,7],[12,20]]),max_new_tokens=5,do_sample=False,
+                            logits_processor=LogitsProcessorList([Endings()]))
+    assert result.tolist()==[[5,7,3,0,0],[12,20,11,11,2]]

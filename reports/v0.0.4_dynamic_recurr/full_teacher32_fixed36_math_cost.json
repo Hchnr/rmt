@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "gpus": [
+    "0",
+    "1"
+  ],
+  "wall_seconds": 629.3942152783275,
+  "reserved_gpu_hours": 0.34966345293240414,
+  "scope": "Allocated replica lifetime including loading, scoring waits and cleanup; not GPU kernel utilization"
+}

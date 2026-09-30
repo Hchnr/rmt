@@ -1,6 +1,7 @@
 """Run frozen quick regressions on a completed training export, owning its service."""
 import argparse
 import json
+import hashlib
 import os
 from pathlib import Path
 import subprocess
@@ -12,7 +13,7 @@ p.add_argument('--gpu',required=True);p.add_argument('--port',type=int,default=9
 p.add_argument('--report-root',default='reports/v0.0.4');p.add_argument('--output-root',default='artifacts/v0.0.4/quick_eval')
 p.add_argument('--phase',choices=['pilot','representative','full'],default='representative')
 p.add_argument('--benchmarks',nargs='+',choices=['math_500','ifeval'],default=['math_500','ifeval'])
-p.add_argument('--recover-work');p.add_argument('--eval-batch-size',type=int);p.add_argument('--data-root');p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
+p.add_argument('--response-timeout',type=float);p.add_argument('--recover-work');p.add_argument('--eval-batch-size',type=int);p.add_argument('--data-root');p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
 if a.recover_work and len(a.benchmarks)!=1:raise ValueError('Recovery must name exactly one benchmark')
 a.attention=a.attention or ('sdpa' if a.phase=='full' else 'eager')
 a.config=a.config or ('configs/eval/v004_dynamic_full_non_thinking.json' if a.phase=='full' else 'configs/eval/quick_non_thinking.json')
@@ -39,11 +40,14 @@ def ready(port,process):
   try:session.get(f'http://127.0.0.1:{port}/health',timeout=1).raise_for_status();return
   except requests.RequestException:time.sleep(1)
  raise TimeoutError(f'Service {port} startup')
+transport={'response_wait_seconds':a.response_timeout if a.response_timeout is not None else 3600,'wrapper_sha256':hashlib.sha256(Path('scripts/serve_eval_transport.py').read_bytes()).hexdigest() if a.response_timeout is not None else None,'scope':'Transport waiting only; no model, logits, sampler, generation cap or seed changes.'}
+Path(f'{a.report_root}/{prefix}_{a.name}_transport.json').write_text(json.dumps(transport,indent=2)+'\n')
 try:
  ports=[a.port] if len(gpus)==1 else list(range(a.port+1,a.port+1+len(gpus)))
  for gpu,port in zip(gpus,ports):
   env={**os.environ,'CUDA_VISIBLE_DEVICES':gpu,'PYTHONPATH':'src','TORCHINDUCTOR_COMPILE_THREADS':'2'}
-  launch([str(root/'.venv-cached/bin/python'),'-m','rmt.inference.server','--model',a.checkpoint or str(work/'hf'),
+  entry=([str(root/'.venv-cached/bin/python'),'scripts/serve_eval_transport.py','--response-timeout',str(a.response_timeout)] if a.response_timeout is not None else [str(root/'.venv-cached/bin/python'),'-m','rmt.inference.server'])
+  launch(entry+['--model',a.checkpoint or str(work/'hf'),
    '--attention',a.attention,'--name','rmt','--port',str(port),'--max-context',max_context],env,f'service_{port}')
  for port,process in zip(ports,processes):ready(port,process)
  if len(gpus)>1:
