@@ -59,3 +59,15 @@ PYTHONPATH=artifacts/v0.0.4_dynamic_recurr/math_verifier:src .venv-eval/bin/pyth
 ```
 
 实验进度、失败、实际资源与结论以 `plans/v0.0.4_dynamic_recurr_record.md` 和报告为准。
+
+## 32B 配对阶段
+
+`teacher32_fixed36`、`teacher32_fixed40`、`teacher32_anchor40`、`teacher32_hybrid`
+使用同一份筛选后的 32B 序列答案；`matched_source_fixed36` 使用完全相同接受 prompt 池的原来源答案。
+五组从相同 warmup HF 起点训练，64 steps × 4 ranks、长度 2048、compile 开启。
+`anchor40` 推理固定 40，训练与 hybrid 使用相同 seed/step 的 10% 强制 48 批次，
+用于区分实际动态退出与该保底训练日程的影响；普通 fixed40 对照同时保留。
+
+教师与源答案长度不同，相同步数不保证相同有效 targets 或相同 prompt 曝光次数；
+报告单列实际 token 与覆盖，源答案对照只解释替换答案后的整体训练配方，不能孤立归因到教师参数规模。
+本轮 1k 教师生成采用 2048 输出上限、八副本、每副本 batch 8；更大的数据扩容等待收益证据。

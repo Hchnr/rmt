@@ -8,14 +8,16 @@ from rmt.halting import hidden_stable,prior_expert
 p=argparse.ArgumentParser();p.add_argument('--model',required=True);p.add_argument('--output',required=True);a=p.parse_args()
 torch.set_num_threads(4);model=RmtForCausalLM.from_pretrained(a.model,dtype=torch.bfloat16,attn_implementation='sdpa',local_files_only=True).cuda().eval()
 rows=[json.loads(x) for x in Path('artifacts/v0.0.4_dynamic_recurr/corpus/halt_calibration.jsonl').read_text().splitlines()][:16]
-values={depth:{'tokens':0,'stable_twice':0,'plateau_then_unstable':0,'lags':{str(lag):[] for lag in [1,2,8]}} for depth in range(36,48)}
+values={depth:{'tokens':0,'stable_twice':0,'plateau_then_unstable':0,'expert_counts':[0]*model.config.num_experts,'lags':{str(lag):[] for lag in [1,2,8]}} for depth in range(36,48)}
 with torch.inference_mode():
  for row in rows:
   raw=[];hook=model.model.norm.register_forward_pre_hook(lambda module,args:raw.append(args[0].clone()))
-  out=model(torch.tensor([row['input_ids'][:256]],device='cuda'),halting_policy='fixed',recurrence_limit=48,output_hidden_states=True,use_cache=False,logits_to_keep=1)
+  out=model(torch.tensor([row['input_ids'][:256]],device='cuda'),halting_policy='fixed',recurrence_limit=48,output_hidden_states=True,output_router_trace=True,use_cache=False,logits_to_keep=1)
   hook.remove();states=list(out.hidden_states);states[-1]=raw[-1]
   stable=[None]+[hidden_stable(states[i-1],states[i],model.config) for i in range(1,49)]
   for depth,v in values.items():
+   counts=torch.bincount(out.router_indices[depth-1].flatten(),minlength=model.config.num_experts).tolist()
+   v['expert_counts']=[a+b for a,b in zip(v['expert_counts'],counts)]
    twice=stable[depth]&stable[depth-1];v['tokens']+=twice.numel();v['stable_twice']+=twice.sum().item()
    v['plateau_then_unstable']+=(twice & ~stable[depth+1]).sum().item()
    for lag in [1,2,8]:

@@ -1,0 +1,35 @@
+base_model: /share/project/eai_pwm/models/Qwen/Qwen3-4B
+train_data: artifacts/v0.0.4_dynamic_recurr/corpus/teacher32_train.jsonl
+dev_data: artifacts/v0.0.4_dynamic_recurr/corpus/dev.jsonl
+seed: 17
+steps: 64
+attention: sdpa
+checkpoint: true
+compile: true
+loss_chunk_size: 64
+kd_weight: 0.5
+learning_rate: 1.0e-05
+router_learning_rate: 0.0001
+lr_warmup_steps: 8
+validation_batches: 2
+save: true
+export: true
+verify_replay: true
+sequence_length: 2048
+routing_mode: learned
+prior_start: 4.0
+artifact_dir: artifacts/v0.0.4_dynamic_recurr/train/teacher32_fixed36
+report: reports/v0.0.4_dynamic_recurr/teacher32_fixed36.json
+prior_end: 3.5
+prior_warmup_steps: 8
+prior_decay_steps: 56
+eval_every: 32
+deterministic: true
+model_overrides:
+  max_recurrences: 48
+  min_recurrences: 36
+  num_recurrences: 36
+  recurrence_schedule: tail
+  learned_routing_start: 36
+  halting_policy: fixed
+initial_checkpoint: artifacts/v0.0.4_dynamic_recurr/train/warmup/hf

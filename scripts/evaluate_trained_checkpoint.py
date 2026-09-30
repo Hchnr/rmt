@@ -10,6 +10,7 @@ p=argparse.ArgumentParser();p.add_argument('--work',required=True);p.add_argumen
 p.add_argument('--gpu',required=True);p.add_argument('--port',type=int,default=9020)
 p.add_argument('--report-root',default='reports/v0.0.4');p.add_argument('--output-root',default='artifacts/v0.0.4/quick_eval')
 p.add_argument('--phase',choices=['pilot','representative','full'],default='representative')
+p.add_argument('--benchmarks',nargs='+',choices=['math_500','ifeval'],default=['math_500','ifeval'])
 p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
 a.attention=a.attention or ('sdpa' if a.phase=='full' else 'eager')
 a.config=a.config or ('configs/eval/v004_full_non_thinking.json' if a.phase=='full' else 'configs/eval/quick_non_thinking.json')
@@ -28,7 +29,7 @@ try:
   except requests.RequestException:time.sleep(1)
  else:raise TimeoutError('Service startup')
  results=[]
- for benchmark in ['math_500','ifeval']:
+ for benchmark in a.benchmarks:
   path=Path(f'{a.report_root}/{prefix}_{a.name}_{benchmark}.log')
   env={**os.environ,'CUDA_VISIBLE_DEVICES':'','PYTHONPATH':'src','OMP_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1'}
   with path.open('w') as output:

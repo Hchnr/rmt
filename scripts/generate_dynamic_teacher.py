@@ -35,7 +35,8 @@ def main():
     root=Path(a.output);root.mkdir(parents=True,exist_ok=True)
     config={'max_new_tokens':a.max_new_tokens,'do_sample':True,'temperature':.7,'top_p':.8,'top_k':20,
             'enable_thinking':False,'batch_size':a.batch_size,'seed_base':17000,'sampling_seed_scope':'batch'}
-    identity={'generator_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    identity={'selector_source_sha256':hashlib.sha256(Path(__file__).with_name('teacher_selection.py').read_bytes()).hexdigest(),
+        'generator_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         'selection_filter':{'code_programming_cue_pattern':PROGRAMMING_PATTERN,'scope':'Other domain labels are source buckets, not verified semantic classes'},
         'model':a.model,'model_config_sha256':hashlib.sha256((model_path/'config.json').read_bytes()).hexdigest(),
         'teacher_manifest_sha256':hashlib.sha256((model_path/'download_manifest.json').read_bytes()).hexdigest() if (model_path/'download_manifest.json').exists() else None,
