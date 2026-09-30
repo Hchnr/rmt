@@ -1,0 +1,34 @@
+[
+  {
+    "config": "configs/train/probe_8gpu_layer_order_512.yaml",
+    "report": "reports/v0.0.4/probe_8gpu_layer_order_512.json",
+    "gpus": "0,1,2,3,4,5,6,7",
+    "status": "passed",
+    "archive": "reports/v0.0.4/training_stages/20260929T141459.694902Z.json",
+    "wall_seconds": 124.92724021710455
+  },
+  {
+    "config": "configs/train/probe_8gpu_layer_order_2048.yaml",
+    "report": "reports/v0.0.4/probe_8gpu_layer_order_2048.json",
+    "gpus": "0,1,2,3,4,5,6,7",
+    "status": "passed",
+    "archive": "reports/v0.0.4/training_stages/20260929T141459.694902Z.json",
+    "wall_seconds": 120.67558557540178
+  },
+  {
+    "config": "configs/train/probe_8gpu_learned_512.yaml",
+    "report": "reports/v0.0.4/probe_8gpu_learned_512.json",
+    "gpus": "0,1,2,3,4,5,6,7",
+    "status": "passed",
+    "archive": "reports/v0.0.4/training_stages/20260929T141459.694902Z.json",
+    "wall_seconds": 150.18339044041932
+  },
+  {
+    "config": "configs/train/probe_8gpu_learned_2048.yaml",
+    "report": "reports/v0.0.4/probe_8gpu_learned_2048.json",
+    "gpus": "0,1,2,3,4,5,6,7",
+    "status": "passed",
+    "archive": "reports/v0.0.4/training_stages/20260929T141459.694902Z.json",
+    "wall_seconds": 159.14468278363347
+  }
+]

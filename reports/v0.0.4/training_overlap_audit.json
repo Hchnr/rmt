@@ -1,0 +1,75 @@
+{
+  "retained_train_records": 9484,
+  "train_user_turns": 11157,
+  "normalization": "NFKC, casefold, collapse whitespace",
+  "sources": [
+    {
+      "path": "artifacts/v0.0.3/datasets/source/HuggingFaceH4/MATH-500/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl",
+      "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+      "records": 500,
+      "question_fields": 500
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/ceval/ceval-exam/617524a00b307ff6f9933702f724131fe12ca7ce/business_administration/val-00000-of-00001.parquet",
+      "sha256": "b897dc81b061d1468900b9b38f9d697e291bda5d7f5b33d5de2db12e59afc4bc",
+      "records": 33,
+      "question_fields": 33
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/ceval/ceval-exam/617524a00b307ff6f9933702f724131fe12ca7ce/college_programming/val-00000-of-00001.parquet",
+      "sha256": "23705408d1e4733ce877217c64a5e6ba21b0a8f65347ff64f1f6c7654b446377",
+      "records": 37,
+      "question_fields": 37
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/ceval/ceval-exam/617524a00b307ff6f9933702f724131fe12ca7ce/high_school_geography/val-00000-of-00001.parquet",
+      "sha256": "4bad8dbc69442c2e2c57cabfc0d87e9c9b68f1271d5826787af678a5eeeedd85",
+      "records": 19,
+      "question_fields": 19
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/ceval/ceval-exam/617524a00b307ff6f9933702f724131fe12ca7ce/high_school_history/val-00000-of-00001.parquet",
+      "sha256": "67691bf762376036c778b70963fae896cf72289efefa4d6d450e9366981a8aec",
+      "records": 20,
+      "question_fields": 20
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/edinburgh-dawg/mmlu-redux-2.0/372ea425445d51e1ba1188c56e5e893f8138621f/business_ethics/data-00000-of-00001.arrow",
+      "sha256": "a951880958fb05bf5a1b413fb8f67db98a4454f8d6c659240fe918039d106028",
+      "records": 100,
+      "question_fields": 100
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/edinburgh-dawg/mmlu-redux-2.0/372ea425445d51e1ba1188c56e5e893f8138621f/college_computer_science/data-00000-of-00001.arrow",
+      "sha256": "f4c2115b5da06e23b5bfcfb5be7d909bb658ac86a1506b564f83339b1163f6ca",
+      "records": 100,
+      "question_fields": 100
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/edinburgh-dawg/mmlu-redux-2.0/372ea425445d51e1ba1188c56e5e893f8138621f/high_school_geography/data-00000-of-00001.arrow",
+      "sha256": "4fad69de3874d0a36ac2aa5ade2d6700e507d67e9ea11deacac7f424d482d8f3",
+      "records": 100,
+      "question_fields": 100
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/edinburgh-dawg/mmlu-redux-2.0/372ea425445d51e1ba1188c56e5e893f8138621f/philosophy/data-00000-of-00001.arrow",
+      "sha256": "ef81ced829d9ba6ef07cdb738f2b1684f392b32793dbeff73a9e9f4aaef0019d",
+      "records": 100,
+      "question_fields": 100
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/google/IFEval/966cd89545d6b6acfd7638bc708b98261ca58e84/ifeval_input_data.jsonl",
+      "sha256": "6a85310ca8ce15eff755aa08a3a4ff931c7e273e7515ebb3c492ea85fd8288f2",
+      "records": 541,
+      "question_fields": 541
+    },
+    {
+      "path": "artifacts/v0.0.3/datasets/source/livecodebench/code_generation_lite/0fe84c3912ea0c4d4a78037083943e8f0c4dd505/test5.jsonl",
+      "sha256": "7f77571c2a6df0c2a72a3277650309f67e01e0008e18117e624633df53f81214",
+      "records": 167,
+      "question_fields": 167
+    }
+  ],
+  "matches": [],
+  "scope": "Available pinned IFEval/MATH files and existing Redux/C-Eval/LCB source pools only; exact question/stem text, no semantic or pretraining contamination guarantee; audit does not alter frozen experiments"
+}

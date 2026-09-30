@@ -1,0 +1,67 @@
+{
+  "status": "failed_exact_resume",
+  "completed_training_steps": 128,
+  "replay_loss_equal": true,
+  "reference_grad_norm": 2.9444639682769775,
+  "restored_grad_norm": 2.9444406032562256,
+  "parameter_sha256_equal": false,
+  "validation": [
+    {
+      "event": "validation",
+      "step": 0,
+      "prior": 4.0,
+      "ce": 3.613619327545166,
+      "kl": 0.0,
+      "targets": 7985.0,
+      "off_layer_fraction": 0.0
+    },
+    {
+      "event": "validation",
+      "step": 32,
+      "prior": 4.0,
+      "ce": 2.068471670150757,
+      "kl": 0.35699859261512756,
+      "targets": 7985.0,
+      "off_layer_fraction": 0.0
+    },
+    {
+      "event": "validation",
+      "step": 64,
+      "prior": 4.0,
+      "ce": 2.0546152591705322,
+      "kl": 0.3774082064628601,
+      "targets": 7985.0,
+      "off_layer_fraction": 0.0
+    },
+    {
+      "event": "validation",
+      "step": 96,
+      "prior": 4.0,
+      "ce": 2.0477688312530518,
+      "kl": 0.37854138016700745,
+      "targets": 7985.0,
+      "off_layer_fraction": 0.0
+    },
+    {
+      "event": "validation",
+      "step": 128,
+      "prior": 4.0,
+      "ce": 2.03922438621521,
+      "kl": 0.38228172063827515,
+      "targets": 7985.0,
+      "off_layer_fraction": 0.0
+    },
+    {
+      "event": "validation",
+      "step": 128,
+      "prior": 4.0,
+      "ce": 2.03922438621521,
+      "kl": 0.38228172063827515,
+      "targets": 7985.0,
+      "off_layer_fraction": 0.0
+    }
+  ],
+  "artifact": "artifacts/v0.0.4/train/fixed_128",
+  "cause_evidence": "sdpa_backward_determinism.json",
+  "action": "Explicit deterministic algorithms and CUBLAS workspace; rerun both controls into new artifact directories; no relaxed equality gate"
+}

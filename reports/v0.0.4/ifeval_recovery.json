@@ -1,0 +1,30 @@
+{
+  "original_key": "513cc7667b324bc818e6764cb8f4899f50cfcb9f6a45d573b16fdee1977c37be",
+  "source_snapshot_verified": true,
+  "runtime_metadata_equal": true,
+  "cached_predictions": 539,
+  "diagnostic_wrapper_sha256": "29d1dc87b7babcf2938fadedd1505473a601e429941c8bf7d24ec73bffd98194",
+  "scope": "Progress hooks and exception traceback only; no tensor/sampling changes; pending failure diagnosis",
+  "status": "completed",
+  "unique_responses": 541,
+  "review_count": 541,
+  "prior_runtime_error_root_cause": "Unresolved: same pair replay succeeded after service restart; original server did not persist traceback",
+  "pair_replay": "passed, 1341 model forwards, 108.34 seconds",
+  "batch_comparison": [
+    {
+      "index": 484,
+      "same_prompt_and_seed": true,
+      "single_completion_tokens": 522,
+      "pair_completion_tokens": 520,
+      "same_text": false
+    },
+    {
+      "index": 485,
+      "same_prompt_and_seed": true,
+      "single_completion_tokens": 1061,
+      "pair_completion_tokens": 1341,
+      "same_text": false
+    }
+  ],
+  "limitation": "Batch composition can change sampled text even with the same request seed; original transient RuntimeError is not claimed fixed."
+}

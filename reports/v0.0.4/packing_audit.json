@@ -1,0 +1,39 @@
+{
+  "train": {
+    "512": {
+      "records_longer_than_pack": 1042,
+      "packs": 6620,
+      "retained_input_tokens": 2591691,
+      "retained_targets": 1740401,
+      "masked_boundary_targets": 913,
+      "padding_fraction": 0.2353630688255287
+    },
+    "2048": {
+      "records_longer_than_pack": 21,
+      "packs": 1524,
+      "retained_input_tokens": 2772431,
+      "retained_targets": 1741297,
+      "masked_boundary_targets": 17,
+      "padding_fraction": 0.11172829775672577
+    }
+  },
+  "dev": {
+    "512": {
+      "records_longer_than_pack": 69,
+      "packs": 362,
+      "retained_input_tokens": 140030,
+      "retained_targets": 90812,
+      "masked_boundary_targets": 62,
+      "padding_fraction": 0.24448592886740328
+    },
+    "2048": {
+      "records_longer_than_pack": 0,
+      "packs": 82,
+      "retained_input_tokens": 149758,
+      "retained_targets": 90874,
+      "masked_boundary_targets": 0,
+      "padding_fraction": 0.10824361661585369
+    }
+  },
+  "scope": "Unshuffled source-order packing diagnostic; actual training shuffles records once with seed 17, so pack counts/padding may differ. Targets per corpus unchanged."
+}

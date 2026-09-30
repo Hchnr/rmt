@@ -1,0 +1,146 @@
+{
+  "work": "artifacts/v0.0.4/eval/full/qwen/ifeval/513cc7667b324bc8",
+  "audit": {
+    "status": "passed",
+    "review_count": 541,
+    "unique_responses": 541,
+    "metrics": {
+      "prompt_level_strict": {
+        "mean": 0.8040665434380776,
+        "n": 541,
+        "wilson_95": [
+          0.7685254997487369,
+          0.8353198843968058
+        ]
+      },
+      "inst_level_strict": {
+        "mean": 0.8678373382624769,
+        "n": 541,
+        "wilson_95": null
+      },
+      "prompt_level_loose": {
+        "mean": 0.8391866913123844,
+        "n": 541,
+        "wilson_95": [
+          0.805856341063546,
+          0.8677341026489591
+        ]
+      },
+      "inst_level_loose": {
+        "mean": 0.8918669131238447,
+        "n": 541,
+        "wilson_95": null
+      }
+    },
+    "length_fraction": 0.0018484288354898336,
+    "prompt_tokens": 31590,
+    "completion_tokens": 212094,
+    "uncertainty_note": "Full 541-record pinned IFEval file; not a quick subset. One seeded generation per prompt; dynamic microbatching can change numerical results."
+  },
+  "official_report": {
+    "name": "qwen@ifeval",
+    "dataset_name": "ifeval",
+    "dataset_pretty_name": "IFEval",
+    "dataset_description": "IFEval is a benchmark for evaluating instruction-following language models, focusing on their ability to understand and respond to various prompts. It includes a diverse set of tasks and metrics to assess model performance comprehensively.",
+    "model_name": "qwen",
+    "score": 0.8041,
+    "metrics": [
+      {
+        "name": "mean_prompt_level_strict",
+        "num": 541,
+        "score": 0.8041,
+        "macro_score": 0.8041,
+        "categories": [
+          {
+            "name": [
+              "default"
+            ],
+            "num": 541,
+            "score": 0.8041,
+            "macro_score": 0.8041,
+            "subsets": [
+              {
+                "name": "default",
+                "score": 0.8041,
+                "num": 541
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "mean_inst_level_strict",
+        "num": 541,
+        "score": 0.8678,
+        "macro_score": 0.8678,
+        "categories": [
+          {
+            "name": [
+              "default"
+            ],
+            "num": 541,
+            "score": 0.8678,
+            "macro_score": 0.8678,
+            "subsets": [
+              {
+                "name": "default",
+                "score": 0.8678,
+                "num": 541
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "mean_prompt_level_loose",
+        "num": 541,
+        "score": 0.8392,
+        "macro_score": 0.8392,
+        "categories": [
+          {
+            "name": [
+              "default"
+            ],
+            "num": 541,
+            "score": 0.8392,
+            "macro_score": 0.8392,
+            "subsets": [
+              {
+                "name": "default",
+                "score": 0.8392,
+                "num": 541
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "mean_inst_level_loose",
+        "num": 541,
+        "score": 0.8919,
+        "macro_score": 0.8919,
+        "categories": [
+          {
+            "name": [
+              "default"
+            ],
+            "num": 541,
+            "score": 0.8919,
+            "macro_score": 0.8919,
+            "subsets": [
+              {
+                "name": "default",
+                "score": 0.8919,
+                "num": 541
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "analysis": "N/A"
+  },
+  "paper_score_percent": 81.2,
+  "score_percent": 80.41,
+  "scope": "Full HF SDPA result with two failed requests resumed under identical runtime/source/protocol; cause of prior error remains under diagnosis"
+}

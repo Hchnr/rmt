@@ -23,7 +23,8 @@
     "C-Eval zero-shot, overriding adapter default five-shot",
     "MMLU-Redux 2.0 snapshot; paper exact revision unspecified",
     "LCB release_v5 date-filtered 2024-10-01 through 2025-02-28",
-    "LCB draws from pinned v5 increment test5.jsonl, date-filtered; full release_v5 concatenation is not downloaded"
+    "LCB draws from pinned v5 increment test5.jsonl, date-filtered; full release_v5 concatenation is not downloaded",
+    "Coverage audit: pinned test5 actually spans 2024-09-22..2025-01-04; filtered pool 164 records, not the complete report interval"
   ],
   "benchmarks": {
     "mmlu_redux": {

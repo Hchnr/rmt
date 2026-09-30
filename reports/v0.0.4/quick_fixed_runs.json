@@ -1,0 +1,12 @@
+[
+  {
+    "candidate": "fixed",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.4/quick_eval/representative/rmt/math_500/b34dfeb64527c67c"
+  },
+  {
+    "candidate": "fixed",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.4/quick_eval/representative/rmt/ifeval/f67dee6d39e7f196"
+  }
+]

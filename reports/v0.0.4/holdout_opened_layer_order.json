@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "name": "opened_layer_order",
+  "model": "artifacts/v0.0.4/train/opened_128_deterministic/hf",
+  "routing_mode": "layer_order",
+  "prior": 3.0,
+  "ce": 2.0246401057029364,
+  "targets": 90874,
+  "unique_packs": 82,
+  "records": 500,
+  "off_layer_fraction": 0.0,
+  "seconds": 6.453150728717446,
+  "data_sha256": "193bf1c1ec749dbee6d44efac5b1b396c78faa1c373a36eb7340403fa1b1440d",
+  "scope": "Entire 500-record English instruction holdout; no repeated packs; no claim of benchmark superiority"
+}

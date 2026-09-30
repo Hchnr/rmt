@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "work": "artifacts/v0.0.4/train/fixed_128_deterministic",
+  "expected_training_dev_ce": 2.0091822147369385,
+  "hf_reload_dev_ce": 2.0086207229618602,
+  "absolute_difference": 0.0005614917750782489,
+  "tolerance": 0.005,
+  "routing_mode": "layer_order",
+  "prior": 4.0,
+  "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+}

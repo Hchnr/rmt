@@ -1,0 +1,47 @@
+{
+  "scope": "Initial random router, fixed first four held-out packs; diagnostic only, no optimization",
+  "rows": [
+    {
+      "prior": 4.0,
+      "ce": 3.9733944063995867,
+      "targets": 1261,
+      "off_layer_fraction": 0.0
+    },
+    {
+      "prior": 3.5,
+      "ce": 3.9733944063995867,
+      "targets": 1261,
+      "off_layer_fraction": 0.0
+    },
+    {
+      "prior": 3.0,
+      "ce": 4.017012996393759,
+      "targets": 1261,
+      "off_layer_fraction": 0.0007538511963290724
+    },
+    {
+      "prior": 2.5,
+      "ce": 4.471035305797629,
+      "targets": 1261,
+      "off_layer_fraction": 0.015093411996066864
+    },
+    {
+      "prior": 2.0,
+      "ce": 8.17209152150589,
+      "targets": 1261,
+      "off_layer_fraction": 0.08459521468371026
+    },
+    {
+      "prior": 1.0,
+      "ce": 15.610003193061944,
+      "targets": 1261,
+      "off_layer_fraction": 0.5442805637495903
+    },
+    {
+      "prior": 0.0,
+      "ce": 18.306376861826376,
+      "targets": 1261,
+      "off_layer_fraction": 0.9729596853490659
+    }
+  ]
+}

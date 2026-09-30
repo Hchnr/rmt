@@ -1,0 +1,193 @@
+{
+  "status": "passed",
+  "identity": {
+    "config": {
+      "tiny": true,
+      "seed": 17,
+      "sequence_length": 16,
+      "steps": 3,
+      "routing_mode": "learned",
+      "prior_start": 4.0,
+      "prior_end": 3.0,
+      "prior_warmup_steps": 1,
+      "prior_decay_steps": 2,
+      "learning_rate": 0.0001,
+      "router_learning_rate": 0.001,
+      "lr_warmup_steps": 1,
+      "attention": "sdpa",
+      "checkpoint": true,
+      "compile": true,
+      "loss_chunk_size": 4,
+      "kd_weight": 0.5,
+      "validation_batches": 1,
+      "eval_every": 2,
+      "save": true,
+      "export": true,
+      "verify_replay": true,
+      "artifact_dir": "artifacts/v0.0.4/train/tiny_compile_deterministic",
+      "report": "reports/v0.0.4/tiny_compile.json",
+      "deterministic": true
+    },
+    "data": {
+      "fixture": true
+    },
+    "world_size": 2,
+    "code": {
+      "src/rmt/configuration_rmt.py": "99089a93ae57a3d407a3dc7f88065f2717d01bfed7810eb8c4fce0155ba87b0a",
+      "src/rmt/__init__.py": "a9f3ed8f7ee47d16a07e0fcaa9b50c6de643c9abe4726e02d95183b3e5043b0b",
+      "src/rmt/data.py": "b6f33aae67cbafac4cf300edd4228c219e7e892b7e8d1acf03c9e303865f80b5",
+      "src/rmt/losses.py": "53ecea96f311a1e6570bd862cb5a19cefea5a8b1f6f3ea49cb1a0eac377ecac7",
+      "src/rmt/smoke_train.py": "1ab1b5cf7ef05ca1e6636b45471e0b882ee9c7fc22a50e00d314a50f72b0fa87",
+      "src/rmt/fsdp_reference.py": "eabc26c6778ed3a70083bc4f802922300014372dd31d91a4ae1fe52ac8d72f20",
+      "src/rmt/routing.py": "8a0cd259055cec9f0788f87d8dd36f6477b9f9af20a882a7278014a6856801ad",
+      "src/rmt/attention.py": "2dd0d5c0d8eb1818b13482d8f1d5a07a30de56b1013ff0dc46c72651f648a868",
+      "src/rmt/cache.py": "5a33c8ee51c6dc29a54d95dacf9691151219c1ed33c670b33db7170cd522e5a9",
+      "src/rmt/experts.py": "8737e53abd1d376d42547dd9de276138fef6b41fd5e41eaa62ae9dc6aca17faa",
+      "src/rmt/modeling_rmt.py": "ba5aa0e710a9470bfcde9510ae1d71981d44de32e3c4071777a560c52ec4127c",
+      "src/rmt/checkpoint.py": "15ca93a6935b78495e828cb49255cb8df153f7194038daf284da066c38c120dd",
+      "src/rmt/runtime.py": "1ab4365e4b9e893d8c382cb1db95c24861e8fe912b860838b26042f13059bd48",
+      "src/rmt/audit.py": "218a500816ff701b1cfaa078061814068f03a08adee53db32abfaeec23591054",
+      "src/rmt/verify.py": "1656a69ed7a5aaff67ed6c4fda13549bdc0d76426ed4726c4342971d4339240e",
+      "src/rmt/training_data.py": "444716bf5c0f41bd444605c9f5ed2f0f9aecb4844902cb13f4028b33c8adb445",
+      "src/rmt/train.py": "1cca185ec2e090b414946fbdb8cb2a771388b29f2fe0b70bd03192cbae595b55"
+    },
+    "environment": {
+      "python": "3.13.14",
+      "torch": "2.10.0+cu130",
+      "cuda_runtime": "13.0",
+      "transformers": "4.57.6",
+      "tf32_override": "1",
+      "nvidia_tf32_override": null,
+      "gpu": "NVIDIA H100 80GB HBM3"
+    }
+  },
+  "steps": [
+    {
+      "event": "train",
+      "step": 0,
+      "prior": 4.0,
+      "loss": 4.569427490234375,
+      "ce": 4.569427490234375,
+      "kl": 9.607629181118682e-08,
+      "grad_norm": 4.454997539520264,
+      "seconds": 0.9325568675994873,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 17.15713119506836,
+      "targets_per_second": 12.86784839630127,
+      "peak_allocated_bytes": 119836672,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "event": "train",
+      "step": 1,
+      "prior": 4.0,
+      "loss": 4.545055866241455,
+      "ce": 4.54503870010376,
+      "kl": 3.404575909371488e-05,
+      "grad_norm": 4.3430681228637695,
+      "seconds": 0.08111075311899185,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 197.26113891601562,
+      "targets_per_second": 147.94586181640625,
+      "peak_allocated_bytes": 67581952,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "event": "train",
+      "step": 2,
+      "prior": 3.5,
+      "loss": 4.521773815155029,
+      "ce": 4.521712303161621,
+      "kl": 0.0001227937318617478,
+      "grad_norm": 4.225516319274902,
+      "seconds": 0.07816674560308456,
+      "input_tokens": 16,
+      "targets": 12,
+      "input_tokens_per_second": 204.6906280517578,
+      "targets_per_second": 153.51797485351562,
+      "peak_allocated_bytes": 67581952,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "event": "validation",
+      "step": 0,
+      "prior": 4.0,
+      "ce": 4.569427490234375,
+      "kl": 9.607629181118682e-08,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 2,
+      "prior": 3.5,
+      "ce": 4.521712303161621,
+      "kl": 0.0001227937318617478,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 3,
+      "prior": 3.0,
+      "ce": 4.5000457763671875,
+      "kl": 0.00025494626606814563,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    }
+  ],
+  "wall_seconds": 6.605662124231458,
+  "train_packs": 1,
+  "dev_packs": 1,
+  "compile_counters": {
+    "stats": {
+      "calls_captured": 10,
+      "unique_graphs": 2
+    },
+    "aot_autograd": {
+      "total": 2,
+      "autograd_cache_miss": 2,
+      "autograd_cache_saved": 2,
+      "ok": 2
+    },
+    "inductor": {
+      "fxgraph_cache_miss": 3,
+      "extern_calls": 12,
+      "async_compile_cache_miss": 4,
+      "triton_bundler_save_kernel": 64,
+      "triton_bundler_save_static_autotuner": 3,
+      "benchmarking.InductorBenchmarker.benchmark": 8,
+      "benchmarking.InductorBenchmarker.benchmark_gpu": 8
+    },
+    "graph_break": {},
+    "aten_mm_info": {
+      "aten.mm_s26_48_32": 5,
+      "aten.mm_s26_32_48": 4,
+      "aten.mm_32_48_s26": 1,
+      "aten.mm_48_32_s26": 2
+    }
+  },
+  "scope": "Short instruction-training experiment, not a quality superiority claim"
+}
