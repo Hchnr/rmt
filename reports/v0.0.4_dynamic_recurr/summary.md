@@ -79,3 +79,7 @@ H 修复后 decode 均值 40.067；P 为 38.604，低于 39–41 预算区间；
 ## Generation-metadata correction (full rerun pending)
 
 Earlier trained-checkpoint generation scores and performance used a single EOS instead of the native two-EOS configuration and are historical diagnostics, not valid final native comparisons. Corrected immutable exports preserve identical weights/configuration and real-4B forward logits. Teacher-forced CE remains valid. All six official tasks will be rerun from scratch; thresholds and sampling remain frozen. See generation_repair_verification.json and *_eos_repair.json. The four-prompt stopping probe did not observe the omitted EOS and does not explain all long outputs.
+
+## 修复后推理成本对照
+
+同脚本、32-token greedy、三次重复的编译 batch1/4 吞吐：fixed36 59.94/229.57，fixed40 41.02/147.11，H+P 13.96/54.65 token/s。各自 greedy 与 eager 相同。动态路径在相近平均深度下仍明显更慢，尚无推理效率收益；这是端到端实现对照，不是单算子归因，也不是完整长输出吞吐。见 corrected_inference_comparison.json。
