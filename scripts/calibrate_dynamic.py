@@ -17,12 +17,16 @@ def main():
     ap.add_argument('--output',required=True);ap.add_argument('--packs',type=int,default=4)
     ap.add_argument('--policy',choices=['hidden','probability','hybrid'],required=True)
     ap.add_argument('--hidden-threshold',type=float,default=.4)
+    ap.add_argument('--grid',type=float,nargs='+');ap.add_argument('--length',type=int,default=512)
     a=ap.parse_args();torch.set_num_threads(4)
     tokenizer=AutoTokenizer.from_pretrained(a.model,local_files_only=True)
     m=RmtForCausalLM.from_pretrained(a.model,dtype=torch.bfloat16,attn_implementation='sdpa',local_files_only=True).cuda().eval()
-    packs=load_packs(a.data,512,tokenizer.pad_token_id,shuffle=False)[:a.packs]
+    packs=load_packs(a.data,a.length,tokenizer.pad_token_id,shuffle=False)
+    if a.packs:packs=packs[:a.packs]
     if not packs:raise ValueError('Empty calibration set')
     grid=[.001,.003,.01,.02,.03,.05,.075,.1,.15,.2,.25,.3,.35,.4,.5,.7,1.] if a.policy=='hidden' else [.001,.003,.01,.02,.03,.05,.07,.1,.2,.4]
+    if a.grid:grid=sorted(set(a.grid))
+    if not grid or any(t<=0 for t in grid):raise ValueError('Positive threshold grid required')
     rows=[];out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
     def measure(tau):
         c=m.config;c.halting_policy=a.policy;c.halt_threshold=tau if a.policy=='hidden' else a.hidden_threshold
@@ -45,7 +49,7 @@ def main():
         eligible=[r for r in rows if 39<=r['mean_depth']<=41]
         chosen=min(eligible,key=lambda r:r['ce']) if eligible else None
         result={'model':a.model,'data':a.data,'data_sha256':hashlib.sha256(Path(a.data).read_bytes()).hexdigest(),
-            'policy':a.policy,'packs':len(packs),'selection':'lowest calibration CE among measured 39..41 mean depth; no benchmark selection',
+            'policy':a.policy,'packs':len(packs),'pack_length':a.length,'selection':'lowest calibration CE among measured 39..41 mean depth; no benchmark selection',
             'rows':rows,'selected':chosen,'status':'calibrated' if chosen else 'budget_not_met'}
         out.write_text(json.dumps(result,indent=2)+'\n')
     with torch.inference_mode():

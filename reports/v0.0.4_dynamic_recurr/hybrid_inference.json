@@ -1,0 +1,602 @@
+{
+  "model": "artifacts/v0.0.4_dynamic_recurr/train/hybrid/hf",
+  "output_budget": 32,
+  "repeats": 3,
+  "rows": [
+    {
+      "compiled": false,
+      "batch_size": 1,
+      "warmup_seconds": 4.899280468001962,
+      "median_seconds": 2.5670116748660803,
+      "median_tokens_per_second": 12.465856822279324,
+      "median_ttft_seconds": 0.11128127202391624,
+      "peak_allocated_bytes": 8248072192,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 2.5670116748660803,
+          "ttft": 0.11128127202391624,
+          "tokens": 32
+        },
+        {
+          "seconds": 2.5734154917299747,
+          "ttft": 0.11089998669922352,
+          "tokens": 32
+        },
+        {
+          "seconds": 2.541009470820427,
+          "ttft": 0.11215267516672611,
+          "tokens": 32
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {},
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          1882,
+          315,
+          7497,
+          264,
+          28273,
+          12111,
+          11136,
+          17601,
+          279,
+          2701
+        ]
+      ]
+    },
+    {
+      "compiled": false,
+      "batch_size": 4,
+      "warmup_seconds": 4.828987983986735,
+      "median_seconds": 2.5471980813890696,
+      "median_tokens_per_second": 50.2512941318633,
+      "median_ttft_seconds": 0.11751477047801018,
+      "peak_allocated_bytes": 8294192640,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 2.5471980813890696,
+          "ttft": 0.11694386787712574,
+          "tokens": 128
+        },
+        {
+          "seconds": 2.5559278447180986,
+          "ttft": 0.11765486933290958,
+          "tokens": 128
+        },
+        {
+          "seconds": 2.539289467036724,
+          "ttft": 0.11751477047801018,
+          "tokens": 128
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {},
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          1882,
+          315,
+          7497,
+          264,
+          28273,
+          12111,
+          11136,
+          17601,
+          279,
+          2701
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          1882,
+          315,
+          7497,
+          264,
+          28273,
+          12111,
+          11136,
+          17601,
+          279,
+          2701
+        ]
+      ]
+    },
+    {
+      "compiled": true,
+      "batch_size": 1,
+      "warmup_seconds": 8.213677201420069,
+      "median_seconds": 2.3511351719498634,
+      "median_tokens_per_second": 13.610446724533276,
+      "median_ttft_seconds": 0.11985039338469505,
+      "peak_allocated_bytes": 8248073216,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 2.3905318081378937,
+          "ttft": 0.12207558378577232,
+          "tokens": 32
+        },
+        {
+          "seconds": 2.3241060692816973,
+          "ttft": 0.11985039338469505,
+          "tokens": 32
+        },
+        {
+          "seconds": 2.3511351719498634,
+          "ttft": 0.11967337876558304,
+          "tokens": 32
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {
+        "stats": {
+          "calls_captured": 105,
+          "unique_graphs": 7
+        },
+        "aot_autograd": {
+          "total": 7,
+          "autograd_cache_hit": 7,
+          "ok": 7
+        },
+        "inductor": {
+          "triton_bundler_load_static_autotuner": 17,
+          "async_compile_cache_miss": 41,
+          "async_compile_cache_hit": 24,
+          "extern_calls": 39,
+          "fxgraph_cache_hit": 7,
+          "cudagraph_recorded_non_static_inputs": 120
+        }
+      },
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          1882,
+          315,
+          7497,
+          264,
+          28273,
+          12111,
+          11136,
+          17601,
+          279,
+          2701
+        ]
+      ]
+    },
+    {
+      "compiled": true,
+      "batch_size": 4,
+      "warmup_seconds": 5.256905188784003,
+      "median_seconds": 2.4933118987828493,
+      "median_tokens_per_second": 51.33733972973268,
+      "median_ttft_seconds": 0.12898350320756435,
+      "peak_allocated_bytes": 8294193664,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 2.4435746129602194,
+          "ttft": 0.12785001285374165,
+          "tokens": 128
+        },
+        {
+          "seconds": 2.5177350752055645,
+          "ttft": 0.13579388335347176,
+          "tokens": 128
+        },
+        {
+          "seconds": 2.4933118987828493,
+          "ttft": 0.12898350320756435,
+          "tokens": 128
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1120,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1240,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {
+        "stats": {
+          "calls_captured": 195,
+          "unique_graphs": 11
+        },
+        "aot_autograd": {
+          "total": 11,
+          "autograd_cache_hit": 9,
+          "ok": 11,
+          "autograd_cache_miss": 2,
+          "autograd_cache_saved": 2
+        },
+        "inductor": {
+          "triton_bundler_load_static_autotuner": 23,
+          "async_compile_cache_miss": 72,
+          "async_compile_cache_hit": 41,
+          "extern_calls": 69,
+          "fxgraph_cache_hit": 9,
+          "cudagraph_recorded_non_static_inputs": 324,
+          "fxgraph_cache_miss": 2,
+          "triton_bundler_save_kernel": 96,
+          "triton_bundler_save_static_autotuner": 2,
+          "benchmarking.InductorBenchmarker.benchmark": 8,
+          "benchmarking.InductorBenchmarker.benchmark_gpu": 8
+        },
+        "graph_break": {},
+        "aten_mm_info": {
+          "aten.mm_s26*s36_2560_4096": 1,
+          "aten.mm_s26*s36_9728_2560": 2,
+          "aten.mm_s26*s36_2560_9728": 1,
+          "aten.mm_s26_2560_4096": 1,
+          "aten.mm_s26_9728_2560": 2,
+          "aten.mm_s26_2560_9728": 1
+        }
+      },
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          1882,
+          315,
+          7497,
+          264,
+          28273,
+          12111,
+          11136,
+          17601,
+          279,
+          2701
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          1882,
+          315,
+          7497,
+          264,
+          28273,
+          12111,
+          11136,
+          17601,
+          279,
+          2701
+        ]
+      ]
+    }
+  ],
+  "scope": "Projection compilation with eager dynamic control and rectangular KV; measured generation includes routing, stopping and sampling",
+  "speedup_by_batch": {
+    "1": 1.0918179888131163,
+    "4": 1.0216122911187027
+  }
+}
