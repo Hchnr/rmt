@@ -31,6 +31,7 @@ def load(work, benchmark, native=False):
 
 native = {b: load(r['work'], b, True) for b, r in baseline.items()}
 results = []
+student_scores = {}
 for run_path in a.runs:
     for run in json.loads(Path(run_path).read_text()):
         b = run['benchmark']; expected = {'ifeval': 541, 'math_500': 500}[b]
@@ -54,6 +55,8 @@ for run_path in a.runs:
         assert checked['unique_responses'] == expected
         scores, identities, provenance = load(run['work'], b)
         reference, native_ids, native_provenance = native[b]
+        assert sorted(provenance['metadata']['generation_termination']['eos_token_ids']) == [151643,151645]
+        student_scores[(run['candidate'], b)] = scores
         assert scores.keys() == reference.keys() and len(scores) == expected
         assert identities == native_ids
         assert provenance['protocol']['generation'] == native_provenance['protocol']['generation']
@@ -73,7 +76,23 @@ for run_path in a.runs:
                   'identical_generation_selection_and_request_seeds': True}
         checked['uncertainty_note'] = 'Entire pinned benchmark, one response per prompt; intervals conditional on this generation seed and protocol.'
         results.append(result)
-Path(a.output).write_text(json.dumps({'rows': results,
+paired_controls = []
+for b in ['ifeval', 'math_500']:
+    candidates = {name: scores for (name, benchmark), scores in student_scores.items() if benchmark == b}
+    for reference_part in ['fixed36', 'fixed40']:
+        ref = [name for name in candidates if reference_part in name]
+        dyn = [name for name in candidates if 'hybrid' in name]
+        if len(ref) != 1 or len(dyn) != 1:
+            raise ValueError(f'Expected one {reference_part} and hybrid control for {b}')
+        reference, dynamic = candidates[ref[0]], candidates[dyn[0]]
+        assert reference.keys() == dynamic.keys()
+        metric = 'prompt_level_strict' if b == 'ifeval' else 'acc'
+        delta = np.array([dynamic[k][metric]-reference[k][metric] for k in sorted(reference)])
+        sample = np.random.default_rng(1704).integers(0, len(delta), (2000,len(delta)))
+        paired_controls.append({'benchmark':b,'candidate':dyn[0],'reference':ref[0],
+            'paired_delta':float(delta.mean()),'paired_bootstrap_95pct':np.quantile(delta[sample].mean(1),[.025,.975]).tolist(),
+            'improved_questions':int((delta>0).sum()),'worsened_questions':int((delta<0).sum())})
+Path(a.output).write_text(json.dumps({'rows': results, 'paired_student_controls':paired_controls,
     'scope': 'Official rules; per-question seeded IFEval for all models, native answers rescored without regeneration. Paired bootstrap conditions on one response per prompt; no paper protocol parity claim.'}, indent=2)+'\n')
 for row in results:
     print(row['candidate'], row['benchmark'], row['score'], row['paired_delta'])

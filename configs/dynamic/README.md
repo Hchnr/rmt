@@ -87,9 +87,10 @@ IFEval 保留 EvalScope 原检查器规则，固定逐题 Python／langdetect �
 ```bash
 .venv-cached/bin/python scripts/evaluate_trained_checkpoint.py \
   --work artifacts/v0.0.4_dynamic_recurr/train/teacher32_hybrid \
-  --name teacher32_hybrid_ifeval --gpu 0 --port 9040 --phase full --benchmarks ifeval \
+  --checkpoint artifacts/v0.0.4_dynamic_recurr/train/teacher32_hybrid_eos_fixed/hf \
+  --response-timeout 7200 --name eos_teacher32_hybrid_ifeval --gpu 0 --port 9040 --phase full --benchmarks ifeval \
   --report-root reports/v0.0.4_dynamic_recurr \
-  --output-root artifacts/v0.0.4_dynamic_recurr/eval
+  --output-root artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected
 ```
 
 `--gpu 0,1` 可分配两个同模型副本；入口在 port+1／port+2 启动 worker、在 port 启动既有 least-busy 代理。
@@ -105,3 +106,5 @@ IFEval 保留 EvalScope 原检查器规则，固定逐题 Python／langdetect �
 把已持久化但未进入 prediction 缓存的 API 回答精确重放；
 只依赖 EvalScope prediction 缓存可能对并发失败留下的答案重复采样。
 `test_eval_durable_recovery.py` 可在禁止网络时验证该转换；不允许跨权重／协议复用。
+
+训练导出必须保留原生双 EOS `[151645,151643]`；完整协议的预检会拒绝不匹配。旧导出使用 `repair_generation_metadata.py` 创建独立变体，保留原权重／配置和修复 manifest；不得跨终止配置复用回答。
