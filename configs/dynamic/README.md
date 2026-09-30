@@ -95,3 +95,7 @@ IFEval 保留 EvalScope 原检查器规则，固定逐题 Python／langdetect �
 `--gpu 0,1` 可分配两个同模型副本；入口在 port+1／port+2 启动 worker、在 port 启动既有 least-busy 代理。
 各任务预留互不重叠的端口范围，元数据记录 replica_pool；不会更改请求 seed 或生成参数。
 微批布局可能与旧原生运行不同，不承诺采样回答 bitwise 一致。
+
+评测入口默认并发为每副本 4 个请求，可用 `--eval-batch-size` 显式覆盖；
+并发值写入 execution／缓存身份，原生历史运行的并发为 4。仅改变调度，不改变每题采样参数，
+但不同 batch 的浮点误差仍可能改变采样答案，因此它不是 bitwise 等价声明。
