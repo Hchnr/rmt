@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "file": "rank_7.jsonl",
+      "preserved_prefix_records": 104,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    },
+    {
+      "file": "rank_4.jsonl",
+      "preserved_prefix_records": 120,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    },
+    {
+      "file": "rank_5.jsonl",
+      "preserved_prefix_records": 120,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    },
+    {
+      "file": "rank_2.jsonl",
+      "preserved_prefix_records": 120,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    },
+    {
+      "file": "rank_1.jsonl",
+      "preserved_prefix_records": 120,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    },
+    {
+      "file": "rank_0.jsonl",
+      "preserved_prefix_records": 120,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    },
+    {
+      "file": "rank_6.jsonl",
+      "preserved_prefix_records": 125,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    },
+    {
+      "file": "rank_3.jsonl",
+      "preserved_prefix_records": 104,
+      "final_records": 125,
+      "prefix_sha_equal": true
+    }
+  ],
+  "preserved_records": 933,
+  "scope": "Every previously committed complete output line is byte-identical after exact-identity resume; only missing full batches were appended."
+}
