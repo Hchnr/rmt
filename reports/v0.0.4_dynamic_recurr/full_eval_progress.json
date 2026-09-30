@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-09-30T07:29:23.096232+00:00",
+  "as_of": "2026-09-30T07:50:50.692578+00:00",
   "status": "running",
   "rows": [
     {
       "model": "teacher32_fixed36_eos_fixed",
       "benchmark": "ifeval",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/5f47147510ed647e",
-      "returned_responses": 28
+      "returned_responses": 164
     },
     {
       "model": "teacher32_fixed40_eos_fixed",
@@ -36,7 +36,7 @@
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
-      "returned_responses": 217
+      "returned_responses": 282
     }
   ],
   "scope": "Progress counts only; not quality scores or completion acceptance."
