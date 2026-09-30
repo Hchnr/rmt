@@ -1,42 +1,54 @@
 {
-  "as_of": "2026-09-30T07:59:23.306660+00:00",
+  "as_of": "2026-09-30T08:14:54.334760+00:00",
   "status": "running",
   "rows": [
     {
       "model": "teacher32_fixed36_eos_fixed",
       "benchmark": "ifeval",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/5f47147510ed647e",
-      "returned_responses": 164
+      "returned_responses": 164,
+      "returned_length_stops": 1,
+      "returned_split_retries": 0
     },
     {
       "model": "teacher32_fixed40_eos_fixed",
       "benchmark": "ifeval",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/97254057c9ea5234",
-      "returned_responses": 276
+      "returned_responses": 288,
+      "returned_length_stops": 1,
+      "returned_split_retries": 0
     },
     {
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "ifeval",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/fb90b50d4a0b1181",
-      "returned_responses": 28
+      "returned_responses": 28,
+      "returned_length_stops": 0,
+      "returned_split_retries": 0
     },
     {
       "model": "teacher32_fixed40_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d",
-      "returned_responses": 197
+      "returned_responses": 217,
+      "returned_length_stops": 1,
+      "returned_split_retries": 0
     },
     {
       "model": "teacher32_fixed36_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/4c47fb321385c9d2",
-      "returned_responses": 362
+      "returned_responses": 430,
+      "returned_length_stops": 1,
+      "returned_split_retries": 0
     },
     {
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
-      "returned_responses": 294
+      "returned_responses": 318,
+      "returned_length_stops": 0,
+      "returned_split_retries": 0
     }
   ],
   "scope": "Progress counts only; not quality scores or completion acceptance."
