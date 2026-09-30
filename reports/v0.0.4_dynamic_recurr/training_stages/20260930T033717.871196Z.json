@@ -1,0 +1,34 @@
+[
+  {
+    "config": "configs/dynamic/fixed36.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/fixed36.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+    "wall_seconds": 375.3196510709822
+  },
+  {
+    "config": "configs/dynamic/fixed40.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/fixed40.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+    "wall_seconds": 396.62047034688294
+  },
+  {
+    "config": "configs/dynamic/hidden.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/hidden.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+    "wall_seconds": 392.2962283305824
+  },
+  {
+    "config": "configs/dynamic/probability.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/probability.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+    "wall_seconds": 503.19965973496437
+  }
+]

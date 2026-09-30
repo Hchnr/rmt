@@ -1,0 +1,10 @@
+[
+  {
+    "config": "configs/dynamic/hybrid.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/hybrid.json",
+    "gpus": "4,5,6,7",
+    "status": "passed",
+    "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033854.407197Z.json",
+    "wall_seconds": 423.93082130514085
+  }
+]

@@ -1,8 +1,8 @@
 # Bound RMT bootstrap
 
-Qwen3-4B 的 36 层迁移为 36 套绑定专家，由同一个 recurrent cell 循环调用 36 次。每个 token 每次循环选择一整套 Q/K/V/O、FFN 和套内 norm。attention 始终保留原序列的因果关系；KV cache 按循环深度保存。
+Qwen3-4B 的 36 层迁移为 36 套绑定专家，由同一个 recurrent cell 调用。默认固定 36 次；动态模式支持逐 token 退出，本轮实验最小 36、最大 48 次。每个 token 每次循环选择一整套 Q/K/V/O、FFN 和套内 norm。attention 始终保留原序列的因果关系；KV cache 按循环深度保存。
 
-本项目当前是 **v0.0.2 正确性与系统兼容性验证**。训练使用少量固定样例，不能据此判断是否超过 Qwen3-4B。完整实现过程、失败定位和保守决策见 [record](plans/v0.0.2_bound_rmt_bootstrap_record.md)，设计见 [plan](plans/v0.0.2_bound_rmt_bootstrap.md)。
+项目包括 v0.0.2 正确性验证、v0.0.3 推理评测、v0.0.4 训练与动态循环实验。动态循环的当前进度、质量结果与限制见 [阶段报告](reports/v0.0.4_dynamic_recurr/summary.md)；早期迁移设计见 [bootstrap plan](plans/v0.0.2_bound_rmt_bootstrap.md)。
 
 ## 环境
 
@@ -100,3 +100,13 @@ print(tokenizer.batch_decode(result, skip_special_tokens=True))
 新增确定性正式训练入口、真实指令语料 packing、精确教师 KL、FSDP2、重计算、可选训练 compile、DCP 恢复和 HF 导出。两组真实 4B／128 步候选已通过独立进程精确恢复；短程开放路由没有显示优于固定路径的质量证据。完整原生基线 IFEval 为 80.41%、MATH-500 为 81.6%；独占八卡 2048 长度热段为固定路径约 17,096 输入 tokens/s、充分混合约 1,368 tokens/s。
 
 结果与限制见 [阶段报告](reports/v0.0.4/summary.md)，复现命令见 [使用说明](plans/v0.0.4_usage.md)，持续记录见 [实施记录](plans/v0.0.4_train_stability_record.md)。本轮是训练链路和路由稳定性诊断，未宣称实现 24h 同计算预算超过原 Qwen。
+
+## v0.0.4 动态循环
+
+新增 H／P／H+P 固定退出策略、跨深度保留 K/V、实际投影跳算、随机深度预热与动态训练。
+真实 4B 多卡训练、HF 导出、独立进程精确恢复及训练 compile 已验证；训练编译关闭 CUDA graph replay，保留 Inductor。
+参数相对原生增加 93,888 个 router 参数，相对旧固定 RMT 再增加 432 个 step bias。
+
+复现入口见 [配置与命令](configs/dynamic/README.md)，持续决策和失败见 [实施记录](plans/v0.0.4_dynamic_recurr_record.md)。
+完整词表 P 检查可通过 `defer_probability_checks=False` 保留未延后参考；默认只计算能影响合法退出窗口的概率检查，验证结果一致。
+动态平均循环次数不等于真实加速；性能报告计入分发、退出判据与矩形 KV，质量报告区分固定对照、来源答案和 32B 序列蒸馏。
