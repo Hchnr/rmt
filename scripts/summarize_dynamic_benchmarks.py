@@ -35,6 +35,22 @@ for run_path in a.runs:
     for run in json.loads(Path(run_path).read_text()):
         b = run['benchmark']; expected = {'ifeval': 541, 'math_500': 500}[b]
         checked = audit(run['work'], expected)
+        responses=list(map(json.loads,(Path(run['work'])/'responses.jsonl').read_text().splitlines()))
+        unique={(x['rmt_metadata']['prompt_sha256'],x['rmt_metadata']['seed']):x for x in responses}
+        lengths=[x['usage']['completion_tokens'] for x in unique.values()]
+        retries=[x['rmt_metadata'].get('batch_split_retries',0) for x in unique.values()]
+        checked['output_length_tokens']={'p50':float(np.quantile(lengths,.5)),
+            'p90':float(np.quantile(lengths,.9)),'p99':float(np.quantile(lengths,.99)),'max':max(lengths)}
+        checked['batch_split_retries']={'affected_requests':sum(x>0 for x in retries),'max':max(retries)}
+        recurrence=[x['rmt_metadata']['recurrence'] for x in unique.values() if x['rmt_metadata'].get('recurrence')]
+        if recurrence:
+            totals={key:sum(row[key] for row in recurrence) for key in recurrence[0]}
+            request_means=[r['decode_depth_sum']/r['decode_positions'] for r in recurrence if r['decode_positions']]
+            checked['recurrence']={'totals':totals,
+                'prefill_token_weighted_mean':totals['prefill_depth_sum']/totals['prefill_positions'],
+                'decode_token_weighted_mean':totals['decode_depth_sum']/max(1,totals['decode_positions']),
+                'decode_request_weighted_mean':float(np.mean(request_means)) if request_means else None,
+                'scope':'cap_positions denotes the configured execution limit; fixed36/40 limit exits are not hard48 dynamic caps.'}
         assert checked['unique_responses'] == expected
         scores, identities, provenance = load(run['work'], b)
         reference, native_ids, native_provenance = native[b]
