@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import signal
 import time
 import requests
 p=argparse.ArgumentParser();p.add_argument('--work',required=True);p.add_argument('--name',required=True)
@@ -19,16 +20,33 @@ prefix='full' if a.phase=='full' else 'quick'
 max_context='40960' if a.phase=='full' else '8192'
 Path(a.report_root).mkdir(parents=True,exist_ok=True)
 work=Path(a.work);report=json.loads((work/'report.json').read_text());assert report['status']=='passed'
-root=Path.cwd();server_env={**os.environ,'CUDA_VISIBLE_DEVICES':a.gpu,'PYTHONPATH':'src','TORCHINDUCTOR_COMPILE_THREADS':'2'}
-log=Path(f'{a.report_root}/{prefix}_{a.name}_service.log').open('w')
-server=subprocess.Popen([str(root/'.venv-cached/bin/python'),'-m','rmt.inference.server','--model',a.checkpoint or str(work/'hf'),'--attention',a.attention,'--name','rmt','--port',str(a.port),'--max-context',max_context],env=server_env,stdout=log,stderr=subprocess.STDOUT)
-try:
- session=requests.Session();session.trust_env=False
+root=Path.cwd();gpus=a.gpu.split(',')
+if len(set(gpus))!=len(gpus) or not set(gpus)<=set(map(str,range(8))):
+ raise ValueError('GPU IDs must be unique authorized IDs 0-7')
+processes=[];logs=[]
+signal.signal(signal.SIGTERM,lambda *args: (_ for _ in ()).throw(KeyboardInterrupt()))
+def launch(command,env,suffix):
+ log=Path(f'{a.report_root}/{prefix}_{a.name}_{suffix}.log').open('w');logs.append(log)
+ process=subprocess.Popen(command,env=env,stdout=log,stderr=subprocess.STDOUT);processes.append(process)
+ return process
+session=requests.Session();session.trust_env=False
+def ready(port,process):
  for _ in range(180):
-  if server.poll() is not None:raise RuntimeError('Service exited')
-  try:session.get(f'http://127.0.0.1:{a.port}/health',timeout=1).raise_for_status();break
+  if process.poll() is not None:raise RuntimeError(f'Service {port} exited')
+  try:session.get(f'http://127.0.0.1:{port}/health',timeout=1).raise_for_status();return
   except requests.RequestException:time.sleep(1)
- else:raise TimeoutError('Service startup')
+ raise TimeoutError(f'Service {port} startup')
+try:
+ ports=[a.port] if len(gpus)==1 else list(range(a.port+1,a.port+1+len(gpus)))
+ for gpu,port in zip(gpus,ports):
+  env={**os.environ,'CUDA_VISIBLE_DEVICES':gpu,'PYTHONPATH':'src','TORCHINDUCTOR_COMPILE_THREADS':'2'}
+  launch([str(root/'.venv-cached/bin/python'),'-m','rmt.inference.server','--model',a.checkpoint or str(work/'hf'),
+   '--attention',a.attention,'--name','rmt','--port',str(port),'--max-context',max_context],env,f'service_{port}')
+ for port,process in zip(ports,processes):ready(port,process)
+ if len(gpus)>1:
+  pool=launch([str(root/'.venv-cached/bin/python'),'scripts/serve_eval_pool.py',
+   '--ports',','.join(map(str,ports)),'--port',str(a.port)],{**os.environ,'CUDA_VISIBLE_DEVICES':''},'pool')
+  ready(a.port,pool)
  results=[]
  for benchmark in a.benchmarks:
   path=Path(f'{a.report_root}/{prefix}_{a.name}_{benchmark}.log')
@@ -40,7 +58,9 @@ try:
   results.append({'candidate':a.name,'benchmark':benchmark,'work':location});print(results[-1],flush=True)
   Path(f'{a.report_root}/{prefix}_{a.name}_runs.json').write_text(json.dumps(results,indent=2)+'\n')
 finally:
- server.terminate()
- try:server.wait(timeout=20)
- except subprocess.TimeoutExpired:server.kill();server.wait()
- log.close()
+ for process in reversed(processes):
+  if process.poll() is None:process.terminate()
+ for process in reversed(processes):
+  try:process.wait(timeout=20)
+  except subprocess.TimeoutExpired:process.kill();process.wait()
+ for log in logs:log.close()

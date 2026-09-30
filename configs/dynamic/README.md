@@ -91,3 +91,7 @@ IFEval 保留 EvalScope 原检查器规则，固定逐题 Python／langdetect �
   --report-root reports/v0.0.4_dynamic_recurr \
   --output-root artifacts/v0.0.4_dynamic_recurr/eval
 ```
+
+`--gpu 0,1` 可分配两个同模型副本；入口在 port+1／port+2 启动 worker、在 port 启动既有 least-busy 代理。
+各任务预留互不重叠的端口范围，元数据记录 replica_pool；不会更改请求 seed 或生成参数。
+微批布局可能与旧原生运行不同，不承诺采样回答 bitwise 一致。
