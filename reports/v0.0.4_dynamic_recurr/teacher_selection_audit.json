@@ -1,0 +1,8 @@
+{
+  "data_sha256": "e8d22eb3a1d77adfa56d2dc531e9db397891b4d1162a36bf41528f56e996e40b",
+  "source_bucket_records": 5346,
+  "programming_cue_eligible": 3009,
+  "excluded_from_formal_teacher_code_quota": 2337,
+  "pattern": "```|\\b(python|javascript|typescript|java|rust|golang|sql|html|css|bash|programming|function|algorithm|debug|code|coding|script|implementation)\\b|c\\+\\+|c#|\u7f16\u7a0b|\u4ee3\u7801|\u51fd\u6570|\u7b97\u6cd5|\u7a0b\u5e8f|\u8c03\u8bd5",
+  "scope": "Frozen D1 corpus labels denote sources. OpenCoder diverse source contains general tasks. Formal teacher code quota adds a programming-cue filter; heuristic does not prove semantic correctness. Pilot was before this correction; historical training data unchanged."
+}

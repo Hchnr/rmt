@@ -6,6 +6,7 @@ from pathlib import Path
 import time
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from teacher_selection import eligible_teacher_prompt, PROGRAMMING_PATTERN
 
 
 def main():
@@ -22,9 +23,11 @@ def main():
     tok=AutoTokenizer.from_pretrained(a.model,local_files_only=True);tok.padding_side='left'
     rows=[json.loads(x) for x in Path(a.data).read_text().split('\n') if x]
     quotas=dict(zip(['general','math','code','chinese'],[int(a.limit*x) for x in [.4,.3,.2,.1]]))
+    quotas['general']+=a.limit-sum(quotas.values())
     selected=[]
     for row in rows:
         if quotas.get(row['domain'],0)<=0:continue
+        if not eligible_teacher_prompt(row):continue
         prompt=tok.apply_chat_template(row['messages'][:1],tokenize=False,add_generation_prompt=True,enable_thinking=False)
         if len(tok.encode(prompt,add_special_tokens=False))>1536:continue
         row['rendered_prompt']=prompt;selected.append(row);quotas[row['domain']]-=1
@@ -32,7 +35,9 @@ def main():
     root=Path(a.output);root.mkdir(parents=True,exist_ok=True)
     config={'max_new_tokens':a.max_new_tokens,'do_sample':True,'temperature':.7,'top_p':.8,'top_k':20,
             'enable_thinking':False,'batch_size':a.batch_size,'seed_base':17000,'sampling_seed_scope':'batch'}
-    identity={'model':a.model,'model_config_sha256':hashlib.sha256((model_path/'config.json').read_bytes()).hexdigest(),
+    identity={'generator_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'selection_filter':{'code_programming_cue_pattern':PROGRAMMING_PATTERN,'scope':'Other domain labels are source buckets, not verified semantic classes'},
+        'model':a.model,'model_config_sha256':hashlib.sha256((model_path/'config.json').read_bytes()).hexdigest(),
         'teacher_manifest_sha256':hashlib.sha256((model_path/'download_manifest.json').read_bytes()).hexdigest() if (model_path/'download_manifest.json').exists() else None,
         'data_sha256':hashlib.sha256(Path(a.data).read_bytes()).hexdigest(),'generation':config,
         'selection_ids':[x['id'] for x in selected],'unfilled_quotas':quotas,'rank':a.rank,'world_size':a.world_size,
@@ -75,6 +80,7 @@ def main():
     final_records=[json.loads(x) for x in output.read_text().splitlines()] if output.exists() else []
     summary={'status':'completed','assigned':len(assigned),'new_records':generated,'wall_seconds':time.monotonic()-started,
         'output_sha256':hashlib.sha256(output.read_bytes()).hexdigest() if output.exists() else None,
+        'peak_allocated_bytes':torch.cuda.max_memory_allocated() if model is not None else None,
         'output_tokens':sum(len(x['token_ids']) for x in final_records),
         'truncated_records':sum(x['finish_reason']=='length' for x in final_records)}
     (root/f'rank_{a.rank}_summary.json').write_text(json.dumps(summary,indent=2)+'\n')

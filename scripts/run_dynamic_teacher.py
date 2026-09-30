@@ -25,6 +25,7 @@ try:
  summaries=[json.loads((root/f'rank_{i}_summary.json').read_text()) for i in range(len(gpus))]
  report={'status':'completed','gpus':gpus,'wall_seconds':time.monotonic()-start,'workers':summaries,
     'worker_gpu_hours':sum(x['wall_seconds'] for x in summaries)/3600,
+    'reserved_gpu_hours':(time.monotonic()-start)*len(gpus)/3600,
     'output_tokens':sum(x['output_tokens'] for x in summaries),'truncated_records':sum(x['truncated_records'] for x in summaries)}
  (root/'generation_summary.json').write_text(json.dumps(report,indent=2)+'\n')
  Path('reports/v0.0.4_dynamic_recurr/teacher_generation.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True)

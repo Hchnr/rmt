@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "model": "artifacts/v0.0.4_dynamic_recurr/train/probability/hf",
+  "rows": [
+    {
+      "policy": "probability",
+      "prefix_tokens": 256,
+      "max_abs_logit_error": 0.0,
+      "cached_chunk_max_abs_error": 0.0,
+      "reference_seconds": 0.45213800109922886,
+      "deferred_seconds": 0.16804412752389908,
+      "speedup": 2.6905909046713115
+    },
+    {
+      "policy": "hybrid",
+      "prefix_tokens": 256,
+      "max_abs_logit_error": 0.0,
+      "cached_chunk_max_abs_error": 0.0,
+      "reference_seconds": 0.18503359146416187,
+      "deferred_seconds": 0.16023200005292892,
+      "speedup": 1.154785507283441
+    }
+  ],
+  "scope": "One real calibration prefix, FP16/BF16 rounding retained; tiny tests separately verify exact gradients. Not a universal bitwise or generation throughput claim."
+}

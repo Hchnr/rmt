@@ -1,0 +1,12 @@
+[
+  {
+    "candidate": "hybrid",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.4_dynamic_recurr/quick_eval/representative/rmt/math_500/332fbb9da5f67eec"
+  },
+  {
+    "candidate": "hybrid",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.4_dynamic_recurr/quick_eval/representative/rmt/ifeval/70d8305024884e8b"
+  }
+]
