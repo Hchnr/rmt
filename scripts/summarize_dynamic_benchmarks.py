@@ -56,6 +56,7 @@ for run_path in a.runs:
         scores, identities, provenance = load(run['work'], b)
         reference, native_ids, native_provenance = native[b]
         assert sorted(provenance['metadata']['generation_termination']['eos_token_ids']) == [151643,151645]
+        assert provenance['metadata']['weights']['generation_config.json'] == native_provenance['metadata']['weights']['generation_config.json']
         student_scores[(run['candidate'], b)] = scores
         assert scores.keys() == reference.keys() and len(scores) == expected
         assert identities == native_ids
