@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "profile": "configs/eval/v004_dynamic_full_non_thinking.json",
+  "rows": [
+    {
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4/eval/full/qwen/ifeval/513cc7667b324bc8",
+      "generation_equal": true,
+      "selection_equal": true,
+      "native_weight_hashes_equal": true,
+      "engine_versions_equal": true,
+      "baseline_scoring": "new per-record seeded official scoring of the same 541 answers; historical scores retained separately"
+    },
+    {
+      "benchmark": "math_500",
+      "work": "artifacts/v0.0.4/eval/full/qwen/math_500/4251241b6f9410b4",
+      "generation_equal": true,
+      "selection_equal": true,
+      "native_weight_hashes_equal": true,
+      "engine_versions_equal": true,
+      "baseline_scoring": "current official math scorer, all 500 unchanged"
+    }
+  ],
+  "scope": "Same frozen generation settings, samples, native weights and engine versions. No claim of identical microbatch layouts or exact paper prompts/RNG."
+}

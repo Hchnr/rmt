@@ -50,7 +50,8 @@ def main():
     generation=protocol['generation'].copy()
     if args.phase=='pilot':generation['max_tokens']=protocol.get('pilot_max_tokens',generation['max_tokens'])
     if args.thinking:generation={**generation,'extra_body':{'chat_template_kwargs':{'enable_thinking':True}}}
-    key=digest({'model':metadata,'selection':manifest,'generation':generation,'code':code,'evalscope':'1.0.0'})
+    scoring={'ifeval_score_seed':protocol.get('ifeval_score_seed') if args.benchmark=='ifeval' else None}
+    key=digest({'scoring':scoring,'model':metadata,'selection':manifest,'generation':generation,'code':code,'evalscope':'1.0.0'})
     work=Path(args.output_root)/args.phase/args.model/args.benchmark/key[:16]
     work.mkdir(parents=True,exist_ok=True)
     lock=threading.Lock()
@@ -63,6 +64,9 @@ def main():
     from . import sandbox
     from .protocol import request_seed
     sandbox.install()
+    if scoring['ifeval_score_seed'] is not None:
+        from .ifeval_rng import install as install_ifeval_rng
+        install_ifeval_rng(scoring['ifeval_score_seed'])
     # The official adapter's default local branch expects a HF builder. Our
     # pinned JSONL snapshots use its existing LocalDataLoader instead.
     original_load=DefaultDataAdapter.load_from_disk
@@ -81,7 +85,7 @@ def main():
     config=TaskConfig(model=args.model,model_id=args.model,eval_type='openai_api',api_url=base+'/v1',api_key='EMPTY',
         model_args=protocol.get('model_args',{}),datasets=[args.benchmark],dataset_args={args.benchmark:dataset_args},generation_config=generation,
         eval_batch_size=4,seed=protocol['seed'],work_dir=str(work),use_cache=str(work),ignore_errors=False)
-    provenance={'key':key,'protocol':protocol,'phase':args.phase,'thinking':args.thinking,'metadata':metadata,
+    provenance={'key':key,'scoring':scoring,'protocol':protocol,'phase':args.phase,'thinking':args.thinking,'metadata':metadata,
         'selection':manifest,'code':code,'commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()}
     (work/'provenance.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n')
     started=time.time();result=run_task(config)

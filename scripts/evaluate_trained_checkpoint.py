@@ -13,7 +13,7 @@ p.add_argument('--phase',choices=['pilot','representative','full'],default='repr
 p.add_argument('--benchmarks',nargs='+',choices=['math_500','ifeval'],default=['math_500','ifeval'])
 p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
 a.attention=a.attention or ('sdpa' if a.phase=='full' else 'eager')
-a.config=a.config or ('configs/eval/v004_full_non_thinking.json' if a.phase=='full' else 'configs/eval/quick_non_thinking.json')
+a.config=a.config or ('configs/eval/v004_dynamic_full_non_thinking.json' if a.phase=='full' else 'configs/eval/quick_non_thinking.json')
 prefix='full' if a.phase=='full' else 'quick'
 max_context='40960' if a.phase=='full' else '8192'
 Path(a.report_root).mkdir(parents=True,exist_ok=True)
