@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-30T07:17:58.780577+00:00",
+  "as_of": "2026-09-30T07:29:23.096232+00:00",
   "status": "running",
   "rows": [
     {
@@ -30,13 +30,13 @@
       "model": "teacher32_fixed36_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/4c47fb321385c9d2",
-      "returned_responses": 342
+      "returned_responses": 362
     },
     {
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
-      "returned_responses": 161
+      "returned_responses": 217
     }
   ],
   "scope": "Progress counts only; not quality scores or completion acceptance."
