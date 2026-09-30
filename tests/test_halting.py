@@ -140,3 +140,33 @@ def test_only_extra_recurrences_open_routing():
         out=model(torch.tensor([[4,7]]),halting_policy='fixed',recurrence_limit=6,
                   routing_mode='learned',output_router_trace=True,use_cache=False)
     assert [r[0,0].item() for r in out.router_indices]==[0,1,2,2,2,2]
+
+
+def test_inactive_tokens_skip_all_seven_projection_calls():
+    model=make_model();counts={name:0 for name in ['q_proj','k_proj','v_proj','o_proj','gate_proj','up_proj','down_proj']}
+    handles=[]
+    def count(name):
+        def hook(module,args):counts[name]+=args[0].numel()//args[0].shape[-1]
+        return hook
+    for expert in model.model.cell.bank.experts:
+        for name in counts:
+            owner=expert.self_attn if name in ['q_proj','k_proj','v_proj','o_proj'] else expert.mlp
+            handles.append(getattr(owner,name).register_forward_pre_hook(count(name)))
+    stops=torch.tensor([[2,6,3,5]])
+    with torch.no_grad():model(torch.tensor([[4,7,9,11]]),forced_exit_depths=stops,use_cache=False)
+    for handle in handles:handle.remove()
+    assert counts==dict.fromkeys(counts,stops.sum().item())
+
+
+def test_cache_select_reorder_and_decode_preserve_heterogeneous_history():
+    model=make_model();ids=torch.tensor([[4,7,9],[11,13,17]])
+    stops=torch.tensor([[2,6,3],[5,1,4]]);cache=RmtCapacityCache(8)
+    selection=torch.tensor([1,0,1]);next_ids=torch.tensor([[19],[23],[29]]);next_stops=torch.tensor([[6],[1],[4]])
+    with torch.no_grad():
+        model(ids,forced_exit_depths=stops,past_key_values=cache,use_cache=True)
+        cache.reorder_cache(selection)
+        actual=model(next_ids,forced_exit_depths=next_stops,past_key_values=cache,use_cache=True)
+        expected=model(torch.cat((ids[selection],next_ids),1),
+            forced_exit_depths=torch.cat((stops[selection],next_stops),1),use_cache=False)
+    torch.testing.assert_close(actual.logits[:,-1],expected.logits[:,-1],atol=1e-6,rtol=1e-5)
+    assert torch.equal(actual.exit_depths,next_stops)

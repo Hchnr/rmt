@@ -72,7 +72,11 @@ def main():
         with output.open('a') as f:
             for record in records:f.write(json.dumps(record,ensure_ascii=False)+'\n')
         generated+=len(records);print(json.dumps({'rank':a.rank,'generated':generated,'assigned':len(assigned),'seconds':seconds}),flush=True)
-    summary={'status':'completed','assigned':len(assigned),'new_records':generated,'wall_seconds':time.monotonic()-started}
+    final_records=[json.loads(x) for x in output.read_text().splitlines()] if output.exists() else []
+    summary={'status':'completed','assigned':len(assigned),'new_records':generated,'wall_seconds':time.monotonic()-started,
+        'output_sha256':hashlib.sha256(output.read_bytes()).hexdigest() if output.exists() else None,
+        'output_tokens':sum(len(x['token_ids']) for x in final_records),
+        'truncated_records':sum(x['finish_reason']=='length' for x in final_records)}
     (root/f'rank_{a.rank}_summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 
 
