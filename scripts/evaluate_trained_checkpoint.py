@@ -11,9 +11,10 @@ p.add_argument('--gpu',required=True);p.add_argument('--port',type=int,default=9
 p.add_argument('--report-root',default='reports/v0.0.4');p.add_argument('--output-root',default='artifacts/v0.0.4/quick_eval')
 p.add_argument('--phase',choices=['pilot','representative','full'],default='representative')
 p.add_argument('--benchmarks',nargs='+',choices=['math_500','ifeval'],default=['math_500','ifeval'])
-p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
+p.add_argument('--data-root');p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
 a.attention=a.attention or ('sdpa' if a.phase=='full' else 'eager')
 a.config=a.config or ('configs/eval/v004_dynamic_full_non_thinking.json' if a.phase=='full' else 'configs/eval/quick_non_thinking.json')
+a.data_root=a.data_root or ('artifacts/v0.0.4/datasets' if a.phase=='full' else 'artifacts/v0.0.3/datasets')
 prefix='full' if a.phase=='full' else 'quick'
 max_context='40960' if a.phase=='full' else '8192'
 Path(a.report_root).mkdir(parents=True,exist_ok=True)
@@ -34,7 +35,7 @@ try:
   env={**os.environ,'CUDA_VISIBLE_DEVICES':'','PYTHONPATH':'src','OMP_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1'}
   with path.open('w') as output:
    subprocess.run([str(root/'.venv-eval/bin/python'),'-m','rmt.evaluation.run','--model','rmt','--port',str(a.port),
-    '--benchmark',benchmark,'--config',a.config,'--phase',a.phase,'--output-root',a.output_root],env=env,stdout=output,stderr=subprocess.STDOUT,check=True)
+    '--benchmark',benchmark,'--config',a.config,'--phase',a.phase,'--data-root',a.data_root,'--output-root',a.output_root],env=env,stdout=output,stderr=subprocess.STDOUT,check=True)
   location=next(x.split('=',1)[1] for x in reversed(path.read_text().splitlines()) if x.startswith('EVAL_WORK_DIR='))
   results.append({'candidate':a.name,'benchmark':benchmark,'work':location});print(results[-1],flush=True)
   Path(f'{a.report_root}/{prefix}_{a.name}_runs.json').write_text(json.dumps(results,indent=2)+'\n')
