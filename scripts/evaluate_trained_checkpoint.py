@@ -12,7 +12,8 @@ p.add_argument('--gpu',required=True);p.add_argument('--port',type=int,default=9
 p.add_argument('--report-root',default='reports/v0.0.4');p.add_argument('--output-root',default='artifacts/v0.0.4/quick_eval')
 p.add_argument('--phase',choices=['pilot','representative','full'],default='representative')
 p.add_argument('--benchmarks',nargs='+',choices=['math_500','ifeval'],default=['math_500','ifeval'])
-p.add_argument('--eval-batch-size',type=int);p.add_argument('--data-root');p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
+p.add_argument('--recover-work');p.add_argument('--eval-batch-size',type=int);p.add_argument('--data-root');p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
+if a.recover_work and len(a.benchmarks)!=1:raise ValueError('Recovery must name exactly one benchmark')
 a.attention=a.attention or ('sdpa' if a.phase=='full' else 'eager')
 a.config=a.config or ('configs/eval/v004_dynamic_full_non_thinking.json' if a.phase=='full' else 'configs/eval/quick_non_thinking.json')
 a.data_root=a.data_root or ('artifacts/v0.0.4/datasets' if a.phase=='full' else 'artifacts/v0.0.3/datasets')
@@ -54,7 +55,8 @@ try:
   path=Path(f'{a.report_root}/{prefix}_{a.name}_{benchmark}.log')
   env={**os.environ,'CUDA_VISIBLE_DEVICES':'','PYTHONPATH':'src','OMP_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1'}
   with path.open('w') as output:
-   subprocess.run([str(root/'.venv-eval/bin/python'),'-m','rmt.evaluation.run','--model','rmt','--port',str(a.port),
+   entry=([str(root/'.venv-eval/bin/python'),'scripts/recover_eval_responses.py','--work',a.recover_work,'--report',f'{a.report_root}/{prefix}_{a.name}_recovery.json','--'] if a.recover_work else [str(root/'.venv-eval/bin/python'),'-m','rmt.evaluation.run'])
+   subprocess.run(entry+['--model','rmt','--port',str(a.port),
     '--benchmark',benchmark,'--config',a.config,'--phase',a.phase,'--data-root',a.data_root,'--eval-batch-size',str(a.eval_batch_size),'--output-root',a.output_root],env=env,stdout=output,stderr=subprocess.STDOUT,check=True)
   location=next(x.split('=',1)[1] for x in reversed(path.read_text().splitlines()) if x.startswith('EVAL_WORK_DIR='))
   results.append({'candidate':a.name,'benchmark':benchmark,'work':location});print(results[-1],flush=True)

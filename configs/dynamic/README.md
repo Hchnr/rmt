@@ -99,3 +99,9 @@ IFEval 保留 EvalScope 原检查器规则，固定逐题 Python／langdetect �
 评测入口默认并发为每副本 4 个请求，可用 `--eval-batch-size` 显式覆盖；
 并发值写入 execution／缓存身份，原生历史运行的并发为 4。仅改变调度，不改变每题采样参数，
 但不同 batch 的浮点误差仍可能改变采样答案，因此它不是 bitwise 等价声明。
+
+完整评测中断后，先保存日志／cost／responses 快照，再用原参数加
+`--recover-work <原 EVAL_WORK_DIR>` 恢复。包装会校验原始身份，
+把已持久化但未进入 prediction 缓存的 API 回答精确重放；
+只依赖 EvalScope prediction 缓存可能对并发失败留下的答案重复采样。
+`test_eval_durable_recovery.py` 可在禁止网络时验证该转换；不允许跨权重／协议复用。

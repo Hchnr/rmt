@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "records": 238,
+  "checks": [
+    "real saved text/usage preserved",
+    "no network calls for cached prompts",
+    "changed seed rejected",
+    "unknown prompt reaches original API path",
+    "raw response file unchanged"
+  ]
+}
