@@ -71,3 +71,23 @@ PYTHONPATH=artifacts/v0.0.4_dynamic_recurr/math_verifier:src .venv-eval/bin/pyth
 教师与源答案长度不同，相同步数不保证相同有效 targets 或相同 prompt 曝光次数；
 报告单列实际 token 与覆盖，源答案对照只解释替换答案后的整体训练配方，不能孤立归因到教师参数规模。
 本轮 1k 教师生成采用 2048 输出上限、八副本、每副本 batch 8；更大的数据扩容等待收益证据。
+
+## 最终官方评测协议
+
+完整 IFEval／MATH-500 使用 `configs/eval/v004_dynamic_full_non_thinking.json`。
+IFEval 保留 EvalScope 原检查器规则，固定逐题 Python／langdetect 随机种子，避免评分随顺序变化；
+此变更进入评测缓存身份。原生已有完整答案使用同样规则重评，历史未固定评分 RNG 的分数保留。
+`rescore_ifeval_deterministic.py` 验证顺序／逆序四线程一致，
+`check_ifeval_rng_failure.py` 验证异常传播及 RNG 状态恢复，
+`audit_dynamic_eval_protocol.py` 核对原生权重、生成配置、样本与服务版本。
+
+`--phase full --benchmarks ifeval` 可仅运行一个集合；冻结模型后分卡运行各集合，
+仍由现有官方工具评分，不按最终分数调整阈值。示例的 name 须唯一以保留运行索引：
+
+```bash
+.venv-cached/bin/python scripts/evaluate_trained_checkpoint.py \
+  --work artifacts/v0.0.4_dynamic_recurr/train/teacher32_hybrid \
+  --name teacher32_hybrid_ifeval --gpu 0 --port 9040 --phase full --benchmarks ifeval \
+  --report-root reports/v0.0.4_dynamic_recurr \
+  --output-root artifacts/v0.0.4_dynamic_recurr/eval
+```
