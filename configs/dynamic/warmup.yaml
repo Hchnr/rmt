@@ -1,0 +1,45 @@
+base_model: /share/project/eai_pwm/models/Qwen/Qwen3-4B
+train_data: artifacts/v0.0.4/corpus/train.jsonl
+dev_data: artifacts/v0.0.4/corpus/dev_pilot.jsonl
+seed: 17
+steps: 32
+attention: sdpa
+checkpoint: true
+compile: false
+loss_chunk_size: 64
+kd_weight: 0.5
+learning_rate: 1.0e-05
+router_learning_rate: 0.0001
+lr_warmup_steps: 8
+validation_batches: 1
+save: true
+export: true
+verify_replay: true
+sequence_length: 512
+routing_mode: layer_order
+prior_start: 4.0
+artifact_dir: artifacts/v0.0.4_dynamic_recurr/train/warmup
+report: reports/v0.0.4_dynamic_recurr/warmup.json
+prior_end: 4.0
+prior_warmup_steps: 16
+prior_decay_steps: 112
+eval_every: 16
+deterministic: true
+model_overrides:
+  max_recurrences: 48
+  halting_policy: fixed
+  recurrence_schedule: tail
+recurrence_training:
+  mode: random
+  fixed_warmup_steps: 4
+  base_depth: 36
+  depths:
+  - 36
+  - 40
+  - 44
+  - 48
+  probabilities:
+  - 0.4
+  - 0.3
+  - 0.2
+  - 0.1

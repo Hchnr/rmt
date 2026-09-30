@@ -104,12 +104,23 @@ class Runner:
         histories=[[] for _ in prompts]; done=[False]*len(prompts); texts=['']*len(prompts)
         reasons=['length']*len(prompts)
         generators=[torch.Generator(device=self.device).manual_seed(c.seed) for c in configs]
+        depth_stats=[{'prefill_depth_sum':0,'prefill_positions':0,'decode_depth_sum':0,'decode_positions':0,'cap_positions':0} for _ in prompts]
         start=time.perf_counter(); first=None; token_times=[]
         for step in range(budget):
             positions=(mask.cumsum(-1)-1).clamp_min(0)
             current=ids[:,-1:] if use_cache and step else ids
             output=self.model(input_ids=current,attention_mask=mask,position_ids=positions[:,-current.shape[1]:],
                 past_key_values=cache,use_cache=use_cache,logits_to_keep=1)
+            if getattr(output,'exit_depths',None) is not None:
+                depths=output.exit_depths
+                measured=depths if step==0 else depths[:,-1:]
+                exits=output.exit_reasons if step==0 else output.exit_reasons[:,-1:]
+                phase='prefill' if step==0 else 'decode'
+                for row in range(len(prompts)):
+                    if not done[row]:
+                        depth_stats[row][phase+'_depth_sum']+=measured[row].sum().item()
+                        depth_stats[row][phase+'_positions']+=(measured[row]>0).sum().item()
+                        depth_stats[row]['cap_positions']+=(exits[row]==2).sum().item()
             if use_cache: cache=output.past_key_values
             greedy_batch = output.logits[:,-1].argmax(-1).tolist() if all(
                 c.temperature == 0 and c.presence_penalty == 0 for c in configs) else None
@@ -136,5 +147,5 @@ class Runner:
         return [{'text':texts[i],'token_ids':histories[i],'finish_reason':reasons[i],
                  'prompt_tokens':len(encoded[i]),'completion_tokens':len(histories[i]),
                  'prompt_sha256':hashlib.sha256(prompts[i].encode()).hexdigest(),
-                 'batch_seconds':elapsed,'ttft_seconds':first,'step_end_seconds':token_times}
+                 'batch_seconds':elapsed,'ttft_seconds':first,'step_end_seconds':token_times,'recurrence':depth_stats[i]}
                 for i in range(len(prompts))]

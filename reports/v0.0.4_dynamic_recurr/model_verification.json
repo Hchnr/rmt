@@ -1,0 +1,20 @@
+{
+  "scope": "tested real 4B shapes; numerical tolerances, not universal bitwise equality",
+  "checks": {
+    "cached_vs_full": {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    "compiled_vs_eager": {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    },
+    "hf_remote_code_reload": {
+      "max_abs": 0.0,
+      "relative_rmse": 0.0
+    }
+  },
+  "compile_first_seconds": 2.776034926995635,
+  "parameters": 4022561984,
+  "status": "passed"
+}

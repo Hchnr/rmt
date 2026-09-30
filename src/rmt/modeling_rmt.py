@@ -150,6 +150,8 @@ class RmtModel(nn.Module):
             raise ValueError("recurrence_limit exceeds configured bounds")
         if policy != "fixed" and limit < self.config.min_recurrences:
             raise ValueError("Dynamic recurrence limit is below minimum")
+        if cache is not None and past and any(cache.get_seq_length(i) != past for i in range(limit)):
+            raise ValueError("Incomplete recurrence cache history; reset cache before changing fixed depth")
         dynamic = policy != "fixed" or forced_exit_depths is not None
         if forced_exit_depths is not None:
             if forced_exit_depths.shape != (b,s) or forced_exit_depths.dtype != torch.long or (forced_exit_depths < 1).any() or (forced_exit_depths > limit).any():

@@ -15,7 +15,6 @@ def hidden_stable(previous, current, config):
     if not torch.isfinite(b).all():
         raise FloatingPointError("Nonfinite recurrent hidden state")
     ar = a.square().mean(-1).sqrt()
-    br = b.square().mean(-1).sqrt()
     u = a * torch.rsqrt(a.square().mean(-1, keepdim=True) + 1e-6)
     v = b * torch.rsqrt(b.square().mean(-1, keepdim=True) + 1e-6)
     direction = (u - v).square().mean(-1).sqrt()
