@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-30T11:44:13.265530+00:00",
+  "as_of": "2026-09-30T11:59:16.072501+00:00",
   "status": "running",
   "rows": [
     {
@@ -30,8 +30,8 @@
       "model": "teacher32_fixed40_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d",
-      "returned_responses": 422,
-      "returned_length_stops": 3,
+      "returned_responses": 458,
+      "returned_length_stops": 4,
       "returned_split_retries": 0
     },
     {
@@ -46,7 +46,7 @@
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
-      "returned_responses": 478,
+      "returned_responses": 482,
       "returned_length_stops": 2,
       "returned_split_retries": 0
     }
