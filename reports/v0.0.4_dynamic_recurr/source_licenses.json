@@ -1,0 +1,29 @@
+{
+  "source_cards": [
+    {
+      "domain": "general",
+      "declared_license": "mit",
+      "card": "artifacts/v0.0.4_dynamic_recurr/corpus/source/general/README.md",
+      "card_sha256": "d2b3bf76702b85b28172f4dd971ae80c03348cd3fee518c7e6e6f4d43dd33431"
+    },
+    {
+      "domain": "math",
+      "declared_license": "apache-2.0",
+      "card": "artifacts/v0.0.4_dynamic_recurr/corpus/source/math/README.md",
+      "card_sha256": "87a0390ba632618254d50c1614feb6a5a7803a28710118e1705bab18bda5e64e"
+    },
+    {
+      "domain": "code",
+      "declared_license": "mit",
+      "card": "artifacts/v0.0.4_dynamic_recurr/corpus/source/code/README.md",
+      "card_sha256": "2d0790602fa64e24ca4b57d6e1016ba53b270f2435926098c6ba0bb916879a8a"
+    },
+    {
+      "domain": "chinese",
+      "declared_license": "mit",
+      "card_domain": "code",
+      "note": "Actual retained source is OpenCoder filtered_infinity_instruct; unavailable BAAI Gen card is not used as provenance"
+    }
+  ],
+  "scope": "Pinned source-card declarations; upstream source-specific conditions are not relabeled. Historical no_robots warmup remains research CC-BY-NC-4.0."
+}

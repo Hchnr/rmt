@@ -9,7 +9,7 @@ import torch.distributed as dist
 from torch.distributed.fsdp import fully_shard
 from rmt.configuration_rmt import RmtConfig
 from rmt.modeling_rmt import RmtForCausalLM
-p=argparse.ArgumentParser();p.add_argument('--output',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--pattern-offset',type=int,default=0);a=p.parse_args()
 rank=int(os.environ['RANK']);world=int(os.environ['WORLD_SIZE']);torch.cuda.set_device(int(os.environ['LOCAL_RANK']))
 dist.init_process_group('nccl');torch.manual_seed(42);torch.set_num_threads(2)
 c=RmtConfig(vocab_size=97,hidden_size=32,intermediate_size=48,num_hidden_layers=3,num_experts=3,
@@ -18,6 +18,7 @@ c=RmtConfig(vocab_size=97,hidden_size=32,intermediate_size=48,num_hidden_layers=
 c._attn_implementation='eager';model=RmtForCausalLM(c).cuda().train();reference=copy.deepcopy(model)
 model.model.gradient_checkpointing=True;fully_shard(model,reshard_after_forward=False)
 def batch(r):
+ r+=a.pattern_offset
  ids=torch.tensor([[4,7,9,11]],device='cuda');mask=torch.ones_like(ids);labels=ids.clone()
  if r%3==0:mask.zero_();labels.fill_(-100)
  stops=torch.tensor([[2,6,3,5] if r%3==1 else [6,6,6,6]],device='cuda')
@@ -39,6 +40,6 @@ for name,param in model.named_parameters():
 record={'rank':rank,'loss':out.loss.item(),'depths':out.exit_depths.tolist(),'max_gradient_abs_error':maximum,'compared_parameters':compared}
 records=[None]*world;dist.all_gather_object(records,record)
 if rank==0:
- report={'status':'passed','world_size':world,'checks':'FSDP2 + recomputation, empty ranks, mixed/capped token paths; gradients against independent unsharded rank-average reference','ranks':records}
+ report={'status':'passed','world_size':world,'pattern_offset':a.pattern_offset,'checks':'FSDP2 + recomputation, empty ranks, mixed/capped token paths; gradients against independent unsharded rank-average reference','ranks':records}
  Path(a.output).write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True)
 dist.destroy_process_group()

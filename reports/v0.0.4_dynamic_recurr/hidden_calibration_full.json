@@ -1,0 +1,5728 @@
+{
+  "status": "completed",
+  "model": "artifacts/v0.0.4_dynamic_recurr/train/hidden/hf",
+  "config": {
+    "num_experts": 36,
+    "num_recurrences": 40,
+    "max_recurrences": 48,
+    "min_recurrences": 36,
+    "learned_routing_start": 36,
+    "halting_policy": "hidden",
+    "halt_patience": 2,
+    "halt_threshold": 0.075,
+    "halt_relative_threshold": 0.075,
+    "halt_probability_threshold": 0.075,
+    "recurrence_schedule": "tail",
+    "tail_experts": 8,
+    "binding_mode": "full_block",
+    "routing_mode": "learned",
+    "router_top_k": 1,
+    "router_prior_strength": 3.5,
+    "router_gradient": "selected_probability_st",
+    "norm_policy": "expert_bound",
+    "cache_layout_version": 1,
+    "vocab_size": 151936,
+    "max_position_embeddings": 40960,
+    "hidden_size": 2560,
+    "intermediate_size": 9728,
+    "num_hidden_layers": 40,
+    "num_attention_heads": 32,
+    "use_sliding_window": false,
+    "sliding_window": null,
+    "max_window_layers": 36,
+    "num_key_value_heads": 8,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "initializer_range": 0.02,
+    "rms_norm_eps": 1e-06,
+    "use_cache": true,
+    "rope_theta": 1000000,
+    "rope_scaling": null,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "layer_types": [
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention"
+    ],
+    "return_dict": true,
+    "output_hidden_states": false,
+    "torchscript": false,
+    "dtype": "bfloat16",
+    "pruned_heads": {},
+    "tie_word_embeddings": true,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "is_decoder": false,
+    "cross_attention_hidden_size": null,
+    "add_cross_attention": false,
+    "tie_encoder_decoder": false,
+    "architectures": [
+      "RmtForCausalLM"
+    ],
+    "finetuning_task": null,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "task_specific_params": null,
+    "problem_type": null,
+    "tokenizer_class": null,
+    "prefix": null,
+    "bos_token_id": 151643,
+    "pad_token_id": null,
+    "eos_token_id": 151645,
+    "sep_token_id": null,
+    "decoder_start_token_id": null,
+    "max_length": 20,
+    "min_length": 0,
+    "do_sample": false,
+    "early_stopping": false,
+    "num_beams": 1,
+    "temperature": 1.0,
+    "top_k": 50,
+    "top_p": 1.0,
+    "typical_p": 1.0,
+    "repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "encoder_no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "num_return_sequences": 1,
+    "output_scores": false,
+    "return_dict_in_generate": false,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "num_beam_groups": 1,
+    "diversity_penalty": 0.0,
+    "_name_or_path": "artifacts/v0.0.4_dynamic_recurr/train/hidden/hf",
+    "transformers_version": "4.57.6",
+    "auto_map": {
+      "AutoConfig": "configuration_rmt.RmtConfig",
+      "AutoModelForCausalLM": "modeling_rmt.RmtForCausalLM"
+    },
+    "model_type": "bound_rmt",
+    "tf_legacy_loss": false,
+    "use_bfloat16": false,
+    "output_attentions": false
+  },
+  "data": "artifacts/v0.0.4_dynamic_recurr/corpus/halt_calibration.jsonl",
+  "data_sha256": "6d4a39eb8e5c5aa08de2c1c586415a741f1dd1bfd5d97d52690daa7d256c9ef7",
+  "documents": 682,
+  "ce": 0.8099602460861206,
+  "targets": 251451.0,
+  "depth_histogram": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    346868,
+    10,
+    4,
+    2,
+    5,
+    10,
+    1065,
+    1491,
+    4671,
+    8,
+    1854
+  ],
+  "mean_depth": 38.20478439331055,
+  "supervised_depth_histogram": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    245977,
+    8,
+    2,
+    1,
+    3,
+    7,
+    530,
+    760,
+    3004,
+    8,
+    1151
+  ],
+  "domain_ce": {
+    "code": 0.4985518897388632,
+    "general": 1.1880514901212729,
+    "math": 0.706833032610618,
+    "chinese": 1.141842669211788
+  },
+  "seconds": 86.88522565737367,
+  "documents_detail": [
+    {
+      "id": "001b4cf28c3bf76d04c37de3d9344b9a3c32b5558850fcc2717255e8500f2323",
+      "domain": "code",
+      "targets": 386,
+      "ce": 0.678007185459137,
+      "mean_depth": 38.099815368652344,
+      "cap_fraction": 0.0018484288593754172
+    },
+    {
+      "id": "0152bb65f500ce976c87317bb83cdede20390a49f7628bc1449e1068d14118cd",
+      "domain": "general",
+      "targets": 310,
+      "ce": 1.2717437744140625,
+      "mean_depth": 38.105525970458984,
+      "cap_fraction": 0.0075376881286501884
+    },
+    {
+      "id": "015c0a13c661666333d92392495bb55d9aca6b4e21defb7804a62eee1e0688c2",
+      "domain": "general",
+      "targets": 174,
+      "ce": 0.746783971786499,
+      "mean_depth": 38.58758544921875,
+      "cap_fraction": 0.03503503277897835
+    },
+    {
+      "id": "01890d3b8000cb43f2ee6ac4eedb9d387ad45a13431ed29ac15864205a368da2",
+      "domain": "math",
+      "targets": 454,
+      "ce": 0.5828482508659363,
+      "mean_depth": 38.07809829711914,
+      "cap_fraction": 0.0016977929044514894
+    },
+    {
+      "id": "01ba0901dc9a4d28297a3de984759cf37e366a8f41721b5a94e77f1169212ee9",
+      "domain": "math",
+      "targets": 192,
+      "ce": 1.1975282430648804,
+      "mean_depth": 38.16917419433594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "023ccdb17b431508b13ce7de8b65df8e8e068164da33dcbd25eb4260b200b62b",
+      "domain": "code",
+      "targets": 324,
+      "ce": 0.46139127016067505,
+      "mean_depth": 38.01902389526367,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "02690d32b5c61bb772bc73ea152c0bf04d8d23164f1988c1d14fa7b12b7c6e87",
+      "domain": "math",
+      "targets": 265,
+      "ce": 0.8896145820617676,
+      "mean_depth": 38.24361801147461,
+      "cap_fraction": 0.0069605568423867226
+    },
+    {
+      "id": "02c1b43ed8e8d895935f0cb63f38e86a91a045c7d531278120d64c5a8c7a5502",
+      "domain": "general",
+      "targets": 426,
+      "ce": 1.1942484378814697,
+      "mean_depth": 38.20902633666992,
+      "cap_fraction": 0.00593824265524745
+    },
+    {
+      "id": "0354a62fb58fd2550c6246f08d439e138c923af0f697d79a390848baba22e0cb",
+      "domain": "chinese",
+      "targets": 369,
+      "ce": 1.2028963565826416,
+      "mean_depth": 38.25,
+      "cap_fraction": 0.0026041667442768812
+    },
+    {
+      "id": "036520c7837b6681257078803439e280054680f5770a0e46bd2f884c6e9ef687",
+      "domain": "math",
+      "targets": 75,
+      "ce": 0.711741030216217,
+      "mean_depth": 38.29411697387695,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "036f5a38eaba06768a5de1a93e03096df1316f6b110c8937211f5211a36bb04f",
+      "domain": "general",
+      "targets": 514,
+      "ce": 1.3495620489120483,
+      "mean_depth": 38.094444274902344,
+      "cap_fraction": 0.0018518518190830946
+    },
+    {
+      "id": "03b19349d86184ae041a9c2914c45b6c784a6a799de7673db34d4f24b72e3958",
+      "domain": "code",
+      "targets": 615,
+      "ce": 0.5032561421394348,
+      "mean_depth": 38.05306625366211,
+      "cap_fraction": 0.0018298261566087604
+    },
+    {
+      "id": "043edf4cf0f2a209661423033f8a97a3cf55195790967c30724025b18fe7a20e",
+      "domain": "code",
+      "targets": 371,
+      "ce": 0.4281584918498993,
+      "mean_depth": 38.27555465698242,
+      "cap_fraction": 0.004444444552063942
+    },
+    {
+      "id": "04947895f2cfc9b91ca45e687bdcd5dc6dd75e9a35fa7dfd6099c87125bbfe28",
+      "domain": "code",
+      "targets": 368,
+      "ce": 0.8056234121322632,
+      "mean_depth": 38.14592361450195,
+      "cap_fraction": 0.0021459227427840233
+    },
+    {
+      "id": "04d68a8590e349cef2b3566820ad1e24df74e6be993ea1261f9817962d9b6b22",
+      "domain": "math",
+      "targets": 134,
+      "ce": 0.7520041465759277,
+      "mean_depth": 38.213706970214844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "05114a7dfaaefb6ad88f9e34e5fda99fc16735cac4f7077bb2533292722225f0",
+      "domain": "general",
+      "targets": 210,
+      "ce": 0.8933514356613159,
+      "mean_depth": 38.35627746582031,
+      "cap_fraction": 0.004048583097755909
+    },
+    {
+      "id": "05f4f2e8411d287cb8a54352ab2d1e8f3d0d233d93d2defd1faca00796105432",
+      "domain": "code",
+      "targets": 441,
+      "ce": 0.5607556700706482,
+      "mean_depth": 38.0817985534668,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "06ab99141da254c94014625094ca6e1fdde841a479088e79d6950681063200ef",
+      "domain": "general",
+      "targets": 45,
+      "ce": 0.9095938801765442,
+      "mean_depth": 38.8178825378418,
+      "cap_fraction": 0.051324501633644104
+    },
+    {
+      "id": "070cf3826e3c28d642c2844067fca9169b82b0f0b0e9653b79e4ac92df0651ae",
+      "domain": "general",
+      "targets": 246,
+      "ce": 0.6723418235778809,
+      "mean_depth": 38.21800994873047,
+      "cap_fraction": 0.007109005004167557
+    },
+    {
+      "id": "07748e4af3f704b790847c2c81e14624c66943ad67462521a862aa38ffb3ffba",
+      "domain": "math",
+      "targets": 92,
+      "ce": 1.9128713607788086,
+      "mean_depth": 38.04705810546875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0799a230a4a52f9111bbd8c59d29f92e0041c7e42374f29cbf28fe6cf15645df",
+      "domain": "math",
+      "targets": 604,
+      "ce": 1.0482709407806396,
+      "mean_depth": 38.09425735473633,
+      "cap_fraction": 0.002945508109405637
+    },
+    {
+      "id": "07f57e59b583340b086bc8eb54f33c55f7790b3e452a1336debd39936d6b4c6c",
+      "domain": "general",
+      "targets": 61,
+      "ce": 0.4083876609802246,
+      "mean_depth": 38.20848083496094,
+      "cap_fraction": 0.010600706562399864
+    },
+    {
+      "id": "08480b75a0bd62807772b069f3ecaeeac4de4491d11fd850ab176b9b57458f25",
+      "domain": "math",
+      "targets": 33,
+      "ce": 2.1333200931549072,
+      "mean_depth": 38.16758346557617,
+      "cap_fraction": 0.002747252816334367
+    },
+    {
+      "id": "09457e24424ec8fe8ab0d34e5fef09726a0ba7de6af7ff7210b73ad30220914e",
+      "domain": "math",
+      "targets": 209,
+      "ce": 0.579931914806366,
+      "mean_depth": 38.16510772705078,
+      "cap_fraction": 0.0031152646988630295
+    },
+    {
+      "id": "09ed2fd0df1128d5771f864c3c657b8e7aa8be7ac629f11215c501357607ad62",
+      "domain": "math",
+      "targets": 223,
+      "ce": 1.3974732160568237,
+      "mean_depth": 38.04999923706055,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0a5e680ba958d81142cb05a690089401f0d136f3f6dd3c6a177c270cf0228375",
+      "domain": "code",
+      "targets": 446,
+      "ce": 0.3839113414287567,
+      "mean_depth": 38.038002014160156,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0ac84d786f8f014e6a1e8fab64229d2baf4306b8847337540cc05e93f759eb91",
+      "domain": "math",
+      "targets": 197,
+      "ce": 0.6202932000160217,
+      "mean_depth": 38.078765869140625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0b8e8309352b90e3338254dfaadd4c1544b31d4140c9ed20bc0bae52d38d6707",
+      "domain": "math",
+      "targets": 229,
+      "ce": 0.3319063186645508,
+      "mean_depth": 38.07931137084961,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0baf515ff6a5e9f903fea81a5e93a91f37f65716951ef909a85c88c3a2d341fa",
+      "domain": "code",
+      "targets": 25,
+      "ce": 0.19670459628105164,
+      "mean_depth": 38.35555648803711,
+      "cap_fraction": 0.011111111380159855
+    },
+    {
+      "id": "0bdc550553c8cf413aefe88d1a3b9057d8c8d84fc4b09d184511ea581e302415",
+      "domain": "math",
+      "targets": 39,
+      "ce": 0.5273329019546509,
+      "mean_depth": 38.367347717285156,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0c47e8ca304978354ac43c7e30050792286a7358ffc7099bda31d5d9c0e755a9",
+      "domain": "general",
+      "targets": 756,
+      "ce": 1.4673653841018677,
+      "mean_depth": 38.28438186645508,
+      "cap_fraction": 0.0011655011912807822
+    },
+    {
+      "id": "0c655bef773f2e8bf487a2250da3c342d72ddc56cf956d21c1205a6d5ab58c23",
+      "domain": "code",
+      "targets": 750,
+      "ce": 0.28102245926856995,
+      "mean_depth": 38.304534912109375,
+      "cap_fraction": 0.012958962470293045
+    },
+    {
+      "id": "0d6873192c386f3c462af66c7b619580bec2cbed71c5489aa58d2eb25bcccbb1",
+      "domain": "code",
+      "targets": 792,
+      "ce": 0.41734564304351807,
+      "mean_depth": 38.10779571533203,
+      "cap_fraction": 0.0016583747928962111
+    },
+    {
+      "id": "0d94660e1cae0b8f46032cd843ff847498fbeef2ed62efa04f7291504c42c177",
+      "domain": "general",
+      "targets": 546,
+      "ce": 1.4801057577133179,
+      "mean_depth": 38.102256774902344,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0dc38c60800bb36f2c41bbf8da27288b98d558981c1b2e8cda47f045d7cc3012",
+      "domain": "code",
+      "targets": 382,
+      "ce": 0.7616646885871887,
+      "mean_depth": 38.09270095825195,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "0dc7f937a5404f624b6f4f8ba77c469e8224574c022d9e6a2406d03442aa6f03",
+      "domain": "math",
+      "targets": 1338,
+      "ce": 0.44772931933403015,
+      "mean_depth": 38.01860046386719,
+      "cap_fraction": 0.0007153076003305614
+    },
+    {
+      "id": "0e0576edf0be5ca53df3ae9d1a0f82270b91cbba08ef1db1482a182215e8614c",
+      "domain": "general",
+      "targets": 621,
+      "ce": 1.8365451097488403,
+      "mean_depth": 38.2073974609375,
+      "cap_fraction": 0.0026420080102980137
+    },
+    {
+      "id": "0e3d01c1b1f471f2735bb715281793c265c57e7c94b7ddd9242909395f026db4",
+      "domain": "math",
+      "targets": 487,
+      "ce": 1.6701534986495972,
+      "mean_depth": 38.083824157714844,
+      "cap_fraction": 0.00147058826405555
+    },
+    {
+      "id": "0e7bdfa97aef32d017f501f2eeff5da0a19fbc6e7e284a0a93407188be89a789",
+      "domain": "code",
+      "targets": 505,
+      "ce": 0.5845677852630615,
+      "mean_depth": 38.34244155883789,
+      "cap_fraction": 0.00803858507424593
+    },
+    {
+      "id": "0f646a4d8389fed14bb937432f3ae35f88d777ee7445cc298098923aaf197acc",
+      "domain": "general",
+      "targets": 398,
+      "ce": 1.218003273010254,
+      "mean_depth": 38.47311782836914,
+      "cap_fraction": 0.008602150715887547
+    },
+    {
+      "id": "0f761d598089ea22b0d4ecc8e4e679c6ca1b33862402f171171b251cdbfbff0e",
+      "domain": "general",
+      "targets": 372,
+      "ce": 1.0678192377090454,
+      "mean_depth": 38.54233169555664,
+      "cap_fraction": 0.016018304973840714
+    },
+    {
+      "id": "100fc61b8f96bdcd6283a70dc68e0cddab1d66fc9d75292c610fd77ee14078ed",
+      "domain": "math",
+      "targets": 194,
+      "ce": 0.8184833526611328,
+      "mean_depth": 38.04780960083008,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "109a7a33f9b0b0cba02ee5f449a9ae4d2ea9225f790a2c692a8c8fe4bb52468f",
+      "domain": "math",
+      "targets": 468,
+      "ce": 0.8403404355049133,
+      "mean_depth": 38.08534240722656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1119e283dc3b049fdada5f56388a8b9c6c93642912b05efc29321418fec1d695",
+      "domain": "math",
+      "targets": 210,
+      "ce": 0.9621095061302185,
+      "mean_depth": 38.022640228271484,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "12a7611f9677aa43c58ec7824a42f2cba6cf255b03b6f3018037fad168b71171",
+      "domain": "general",
+      "targets": 170,
+      "ce": 1.0489394664764404,
+      "mean_depth": 38.19071960449219,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "130119518c5bf594b6f2eb6972c064b70ff53dbcb0255de1856d86438489124d",
+      "domain": "general",
+      "targets": 311,
+      "ce": 1.2470585107803345,
+      "mean_depth": 38.276763916015625,
+      "cap_fraction": 0.00522193219512701
+    },
+    {
+      "id": "1306e5e531b852c97f3b28f8cf4337efbe33ad758cde30143c5e0a9eb5a0feb7",
+      "domain": "general",
+      "targets": 163,
+      "ce": 1.4594427347183228,
+      "mean_depth": 38.48019790649414,
+      "cap_fraction": 0.004950494971126318
+    },
+    {
+      "id": "13f1ba8a83a0c8a35f761fd97cb4861cc7f244ab1670fa661909dde2046c24e1",
+      "domain": "code",
+      "targets": 1052,
+      "ce": 0.2723301351070404,
+      "mean_depth": 38.18739318847656,
+      "cap_fraction": 0.0069084628485143185
+    },
+    {
+      "id": "14fee504753a8d06862b0fcf66adf6a3f6945993b801394da6c2de1748868e2a",
+      "domain": "general",
+      "targets": 262,
+      "ce": 0.9697703123092651,
+      "mean_depth": 38.09090805053711,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "152e8075480192f3d8e4ffcbb32579326dfeea4ac315e5f679593b355f14d4b6",
+      "domain": "code",
+      "targets": 279,
+      "ce": 0.8302264213562012,
+      "mean_depth": 38.19384765625,
+      "cap_fraction": 0.00615384615957737
+    },
+    {
+      "id": "15397d6f2e356fc6ae3aff290ea49df6362ea9939b70f3bda155c24bd348cd20",
+      "domain": "math",
+      "targets": 672,
+      "ce": 0.9917110204696655,
+      "mean_depth": 38.035221099853516,
+      "cap_fraction": 0.002515723230317235
+    },
+    {
+      "id": "153f22913f767bf9ad2214af04992423b0617851699aed4da588876f40d3ed16",
+      "domain": "math",
+      "targets": 93,
+      "ce": 0.9187743663787842,
+      "mean_depth": 38.143714904785156,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "16192e7fe0085f80e1110d2e9eb661a465d6429600ec43b502f8a31fc771818c",
+      "domain": "general",
+      "targets": 848,
+      "ce": 1.8309048414230347,
+      "mean_depth": 38.8565559387207,
+      "cap_fraction": 0.0051599591970443726
+    },
+    {
+      "id": "17376fd1cff0f423383543647c287febef38b965a852265c06c7c789667f8af4",
+      "domain": "math",
+      "targets": 144,
+      "ce": 1.3272898197174072,
+      "mean_depth": 38.060237884521484,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "17c5f4bf04fdbd5c0475aeb7cb341c0a23ea50c5ba5c57ca069b91460345e3b2",
+      "domain": "code",
+      "targets": 645,
+      "ce": 0.3273179233074188,
+      "mean_depth": 38.050052642822266,
+      "cap_fraction": 0.0010649627074599266
+    },
+    {
+      "id": "18d4f37aa26c7f5bdf2228a3fe4ce78488b4bab5a2cd579e14b8ddb4141d1700",
+      "domain": "code",
+      "targets": 399,
+      "ce": 0.4651775360107422,
+      "mean_depth": 38.07991409301758,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "18f54c8dc50c63b6368f8fe77b5b7b8745b78d69bd053acd50b84274bd83722a",
+      "domain": "general",
+      "targets": 21,
+      "ce": 0.5030229091644287,
+      "mean_depth": 38.123077392578125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "19a73729bba5d1613abf876230804e51e29c3646823ddb1f0212c78f4a8cb45c",
+      "domain": "code",
+      "targets": 783,
+      "ce": 0.710236132144928,
+      "mean_depth": 38.2590446472168,
+      "cap_fraction": 0.0058343056589365005
+    },
+    {
+      "id": "1a3917ceeb8a962ea18961d9493137ba41a9fa25dc5e82db51f80b87c4cfec39",
+      "domain": "code",
+      "targets": 424,
+      "ce": 0.5919599533081055,
+      "mean_depth": 38.154876708984375,
+      "cap_fraction": 0.004005340859293938
+    },
+    {
+      "id": "1a3c252683682a547737020212b063de58f6746c93989343dc01ed2025bb2c70",
+      "domain": "general",
+      "targets": 296,
+      "ce": 1.095719814300537,
+      "mean_depth": 38.01863479614258,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1a410676b9007650ad98fd5d5cd2e525227d212b212ecd19c996037404cae6c5",
+      "domain": "general",
+      "targets": 154,
+      "ce": 0.8513562083244324,
+      "mean_depth": 38.074283599853516,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1a61d4d110b0eae105d94950efaf19a52eb95dd9ff8fdbaf6142deb2a656e347",
+      "domain": "general",
+      "targets": 92,
+      "ce": 1.0518181324005127,
+      "mean_depth": 38.047298431396484,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1aad361cb27802866a032520644def178800ab025ccc74675587402daccef2f0",
+      "domain": "general",
+      "targets": 38,
+      "ce": 1.7376506328582764,
+      "mean_depth": 38.29824447631836,
+      "cap_fraction": 0.008771929889917374
+    },
+    {
+      "id": "1af62661caba6269f7c127b257a27161265aa264a65924a4a84cac4c37b60f5b",
+      "domain": "general",
+      "targets": 77,
+      "ce": 2.226331949234009,
+      "mean_depth": 38.02702713012695,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1af82130ebb76063fd0f87adf087557b60e2da4206c3ae96be71a5ae2d271f18",
+      "domain": "general",
+      "targets": 34,
+      "ce": 2.42012095451355,
+      "mean_depth": 38.1721305847168,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1b020c1f2b5f300bfae1214b134bd7766fc9326c9a9d9f9b0434c6ee5e6dec61",
+      "domain": "general",
+      "targets": 305,
+      "ce": 1.2184548377990723,
+      "mean_depth": 38.2609977722168,
+      "cap_fraction": 0.0029325513169169426
+    },
+    {
+      "id": "1b291c68a33dac35a47013491742643cc5431c3f8d0572882d0860fae79bd856",
+      "domain": "general",
+      "targets": 230,
+      "ce": 1.576197862625122,
+      "mean_depth": 38.052711486816406,
+      "cap_fraction": 0.003100775182247162
+    },
+    {
+      "id": "1b73b9f0c4d0c4f66e8e7b0d60f6dc2b46eb5fc97eb92ec45e058da9e3cc60cc",
+      "domain": "math",
+      "targets": 469,
+      "ce": 0.794304609298706,
+      "mean_depth": 38.030853271484375,
+      "cap_fraction": 0.0018148820381611586
+    },
+    {
+      "id": "1b80d91111b546cce27bc752267d4e90fa317025c30483f08e35b53321203bf0",
+      "domain": "code",
+      "targets": 380,
+      "ce": 0.6275930404663086,
+      "mean_depth": 38.418270111083984,
+      "cap_fraction": 0.004807692486792803
+    },
+    {
+      "id": "1bccd71da361012eefe1b52d2723c3a1c8f69adbc957af491f86502ecf152222",
+      "domain": "code",
+      "targets": 446,
+      "ce": 1.0340856313705444,
+      "mean_depth": 38.27530288696289,
+      "cap_fraction": 0.010121457278728485
+    },
+    {
+      "id": "1c806fdcf7101704f0e586da99609bcdf5f1c6f69c38a577e3f8f78c0d18d600",
+      "domain": "general",
+      "targets": 106,
+      "ce": 0.6793732643127441,
+      "mean_depth": 38.26545333862305,
+      "cap_fraction": 0.004848484881222248
+    },
+    {
+      "id": "1d772aff5543a0161ea4f45873dcde23662e2ab1daa83489ce5e4c51ee053dba",
+      "domain": "math",
+      "targets": 230,
+      "ce": 0.7197038531303406,
+      "mean_depth": 38.104896545410156,
+      "cap_fraction": 0.003496503457427025
+    },
+    {
+      "id": "1df7a63e108c423faf388d1fab4422b195ef994d54f5ab07b6da3918acc092fb",
+      "domain": "general",
+      "targets": 698,
+      "ce": 1.296356439590454,
+      "mean_depth": 38.281898498535156,
+      "cap_fraction": 0.014580802991986275
+    },
+    {
+      "id": "1efb332addcb2b5af008c3c955dd8b998080d5ea55364187be61ff2c3192e605",
+      "domain": "general",
+      "targets": 426,
+      "ce": 1.1439958810806274,
+      "mean_depth": 38.0548210144043,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1f062f9ad2f8eab557b3fc34957207600837549fa0062fc2e8b76ede9f089421",
+      "domain": "general",
+      "targets": 195,
+      "ce": 0.8467820882797241,
+      "mean_depth": 38.461185455322266,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "1f0ff37cb4cfbb89128ce39930276f9bb8a1120a4b8eb5f8d45f9eca3c635dcb",
+      "domain": "code",
+      "targets": 64,
+      "ce": 0.8425466418266296,
+      "mean_depth": 39.3701286315918,
+      "cap_fraction": 0.06493506580591202
+    },
+    {
+      "id": "20b53f54da7898ed03f81ecf66354dd2cf6f1186a704e5d6afa887496e507f42",
+      "domain": "code",
+      "targets": 307,
+      "ce": 0.8271973133087158,
+      "mean_depth": 38.1540641784668,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "20dd60ff5746b07783869c5060978776cf112e5b53b664beb0b06236878ee162",
+      "domain": "code",
+      "targets": 489,
+      "ce": 0.31017857789993286,
+      "mean_depth": 38.14606857299805,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "20f30ba85c2bc491864678cced5172122020578db06345c9b4771a99f5753692",
+      "domain": "code",
+      "targets": 362,
+      "ce": 0.6112945675849915,
+      "mean_depth": 38.103031158447266,
+      "cap_fraction": 0.004040404222905636
+    },
+    {
+      "id": "2103d4728b97ce2362edcff43b27d6b6280b39a1b7b310d25c41a64843a2b24a",
+      "domain": "code",
+      "targets": 449,
+      "ce": 0.6036266088485718,
+      "mean_depth": 38.117408752441406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2169c25ebf262da28a03c70c6a973f24f42ce45538c5c90bdac7e5212c9424d7",
+      "domain": "general",
+      "targets": 206,
+      "ce": 0.7815412282943726,
+      "mean_depth": 39.543861389160156,
+      "cap_fraction": 0.04385964944958687
+    },
+    {
+      "id": "219a21493df04365d0fdd3bdf73970813c3b74554eb26c2be39e9ffa97cf0ced",
+      "domain": "general",
+      "targets": 748,
+      "ce": 1.642084002494812,
+      "mean_depth": 38.036773681640625,
+      "cap_fraction": 0.001186239649541676
+    },
+    {
+      "id": "21e8dd2d9a7c65ab04ca4342645e39f2903b9e09c3e8c91a5a07f6664c7f76a4",
+      "domain": "general",
+      "targets": 118,
+      "ce": 1.1600478887557983,
+      "mean_depth": 38.16304397583008,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "21f475f90e384c3ce2ed56d1a2f7b29e8afc61340fb8f0568f3f528f919fdc41",
+      "domain": "general",
+      "targets": 285,
+      "ce": 0.9509798884391785,
+      "mean_depth": 38.143768310546875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2216084f226e58861153bae99bdf616407e230e5e5d04ff742634460955040ce",
+      "domain": "math",
+      "targets": 433,
+      "ce": 0.33971697092056274,
+      "mean_depth": 38.05916213989258,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "221ac29a112861f13e9463f88c2ca2a9b763c020dcb80aee9dd2f4f45abbe30d",
+      "domain": "general",
+      "targets": 64,
+      "ce": 0.44276174902915955,
+      "mean_depth": 38.24882507324219,
+      "cap_fraction": 0.004694835748523474
+    },
+    {
+      "id": "231a3138e4fc8c6261a4269943383c08c173f5d9fa946f8baee46e8184172f07",
+      "domain": "code",
+      "targets": 386,
+      "ce": 0.013694566674530506,
+      "mean_depth": 38.181339263916016,
+      "cap_fraction": 0.003144653979688883
+    },
+    {
+      "id": "23ef0d3763a8ef72ce318534d24e31636952c2c7578f6383e2e05e167c784161",
+      "domain": "code",
+      "targets": 552,
+      "ce": 0.585538923740387,
+      "mean_depth": 38.257320404052734,
+      "cap_fraction": 0.0030816642101854086
+    },
+    {
+      "id": "23f57625bcd2f5670cc0c2a796ed3b93df63f48275be7d9c2567cf7a026c1c40",
+      "domain": "code",
+      "targets": 42,
+      "ce": 0.6716125011444092,
+      "mean_depth": 38.57500076293945,
+      "cap_fraction": 0.012500000186264515
+    },
+    {
+      "id": "23fec4d158fda5def24c81775aa74e15303ace02e49bf6a46da6e06b06c0e9c1",
+      "domain": "math",
+      "targets": 157,
+      "ce": 1.4481697082519531,
+      "mean_depth": 38.1020393371582,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "24339061dc866956a79f5960d123bca751e187e753b42ad4bd7f8c9d1b2b0fc7",
+      "domain": "code",
+      "targets": 112,
+      "ce": 0.17510493099689484,
+      "mean_depth": 38.215187072753906,
+      "cap_fraction": 0.004219409078359604
+    },
+    {
+      "id": "245dd4a567ca289ad325f6405ee7b559ceb8cb5b9239910e741597e16ef56e4e",
+      "domain": "code",
+      "targets": 627,
+      "ce": 0.5648353695869446,
+      "mean_depth": 38.02608871459961,
+      "cap_fraction": 0.0014492754125967622
+    },
+    {
+      "id": "2489ed9d905149ace7b867a7862e0f7e055c1379b613510ff6da6f6de1f75dd3",
+      "domain": "math",
+      "targets": 804,
+      "ce": 0.4297017753124237,
+      "mean_depth": 38.07311248779297,
+      "cap_fraction": 0.003537735901772976
+    },
+    {
+      "id": "248f45571ac576970e7cb86ab9088643aa444a4b9acb02d8c2212f0f0d802445",
+      "domain": "general",
+      "targets": 136,
+      "ce": 1.6630562543869019,
+      "mean_depth": 38.203704833984375,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "24bcbe1b25d80151f05e4d370fb481358ea25fc1ee9229c50a12c7a2447de62c",
+      "domain": "general",
+      "targets": 758,
+      "ce": 2.041689395904541,
+      "mean_depth": 39.628841400146484,
+      "cap_fraction": 0.09456264972686768
+    },
+    {
+      "id": "254e28f316f90f608366abf9b3b193ce655fa7eee51847a80f840dc3a6fbe08d",
+      "domain": "math",
+      "targets": 874,
+      "ce": 0.5092191100120544,
+      "mean_depth": 38.20363235473633,
+      "cap_fraction": 0.0028680688701570034
+    },
+    {
+      "id": "259088460f84071afcbac6c81741a371934db9a817edc37e6dcf87c1ba66a7a2",
+      "domain": "general",
+      "targets": 102,
+      "ce": 0.7270492911338806,
+      "mean_depth": 38.09799575805664,
+      "cap_fraction": 0.0011135857785120606
+    },
+    {
+      "id": "25caaafd13c30671068ec195b2a10d473ac3001d9210edebcc2d15c3a39d5925",
+      "domain": "general",
+      "targets": 638,
+      "ce": 0.8498855829238892,
+      "mean_depth": 38.011314392089844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "25d4bd55aafd73c0ad90cdd5eaf87683b046b9fb5a11e66019c676a2164119ea",
+      "domain": "math",
+      "targets": 517,
+      "ce": 0.5011507868766785,
+      "mean_depth": 38.01300811767578,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "25dc5e674161ad5a9367e981b011a5d19934b91436e0c583511299a035142b9d",
+      "domain": "general",
+      "targets": 241,
+      "ce": 1.687474012374878,
+      "mean_depth": 38.15708541870117,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "26357bbd44b0c7316a283c4c94fdc9fdc2ce0826b3a4d2681a59798f06d201fc",
+      "domain": "general",
+      "targets": 767,
+      "ce": 1.656663179397583,
+      "mean_depth": 38.19053268432617,
+      "cap_fraction": 0.01065088715404272
+    },
+    {
+      "id": "268485244939e60a78cef050876a99e64f4c8e31763d63a56754fc7d31960093",
+      "domain": "general",
+      "targets": 60,
+      "ce": 1.0288569927215576,
+      "mean_depth": 38.586666107177734,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "26b0c5607615f77de0a4291ca984f3ac6ceb19299332bc23850d228d8c3d61a3",
+      "domain": "math",
+      "targets": 300,
+      "ce": 0.630128800868988,
+      "mean_depth": 38.0594596862793,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "26db0a3369cd9b38441d60a1e0466ad77c7a464442affd59beed1b51c29466e3",
+      "domain": "code",
+      "targets": 404,
+      "ce": 0.40100935101509094,
+      "mean_depth": 38.04960632324219,
+      "cap_fraction": 0.0009920635493472219
+    },
+    {
+      "id": "26f39abe858ad7acce7faee89e7a67f1ddcd13b9154a756c9cb507a9e48b64bf",
+      "domain": "code",
+      "targets": 47,
+      "ce": 1.2516344785690308,
+      "mean_depth": 38.5625,
+      "cap_fraction": 0.010416666977107525
+    },
+    {
+      "id": "271d90b956a7e7f4aa9083f309dd95b37caaf10fad588c6d4505e3614dbba05f",
+      "domain": "general",
+      "targets": 62,
+      "ce": 0.7272557020187378,
+      "mean_depth": 38.433048248291016,
+      "cap_fraction": 0.025641025975346565
+    },
+    {
+      "id": "272299bcf7bdb1d7065ccefd7b38cbb99ff530e5c5b84ae284eec4330cf4b6af",
+      "domain": "general",
+      "targets": 619,
+      "ce": 0.8672792911529541,
+      "mean_depth": 38.6324577331543,
+      "cap_fraction": 0.013869626447558403
+    },
+    {
+      "id": "280161e4e26ace1a4bf61743b7c894b0f72e5155e173778826d15b8a5a12a1fc",
+      "domain": "code",
+      "targets": 39,
+      "ce": 0.81690913438797,
+      "mean_depth": 38.18055725097656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "28c12f4e93457c62321e12a98b00305bf35758f214724b7d846b54926d28325c",
+      "domain": "code",
+      "targets": 2180,
+      "ce": 0.27616259455680847,
+      "mean_depth": 38.49034118652344,
+      "cap_fraction": 0.01374442782253027
+    },
+    {
+      "id": "29a6adad9c897b797e088be5c755c41c46a6a4f05b421c82c877711a528aed8f",
+      "domain": "math",
+      "targets": 313,
+      "ce": 0.42331570386886597,
+      "mean_depth": 38.14030456542969,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "29c2e756f0718768312914b748fb2d1926b8c1afc9505da876201c930f333ec3",
+      "domain": "general",
+      "targets": 71,
+      "ce": 0.2993027865886688,
+      "mean_depth": 38.214576721191406,
+      "cap_fraction": 0.004048583097755909
+    },
+    {
+      "id": "29da67bc23865aac7df79dd1861761ba78482ca6b7a7a9d2ac4478159795d5cf",
+      "domain": "code",
+      "targets": 550,
+      "ce": 0.7869994640350342,
+      "mean_depth": 38.22112274169922,
+      "cap_fraction": 0.0016501650679856539
+    },
+    {
+      "id": "2abbede90c550a8a6c292fc09abc77e00c87f8f7f48fda4e3153710e0399a88b",
+      "domain": "general",
+      "targets": 466,
+      "ce": 1.7705135345458984,
+      "mean_depth": 38.321205139160156,
+      "cap_fraction": 0.0015822785208001733
+    },
+    {
+      "id": "2b19c59ea19f6f80383288a7c4dab1c6382a44f143ec278b59a917dbdaf53237",
+      "domain": "code",
+      "targets": 494,
+      "ce": 0.6827514171600342,
+      "mean_depth": 38.09800338745117,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2b292ddf8d39eb7aee936e16459dc760825a5e7985450466936dd5f08aa7e996",
+      "domain": "general",
+      "targets": 43,
+      "ce": 1.0629551410675049,
+      "mean_depth": 38.17201614379883,
+      "cap_fraction": 0.004587155766785145
+    },
+    {
+      "id": "2b4ce3578a9f3fa121e703947b6d7afda8c2a4e1e35eea8877849e171d0b39be",
+      "domain": "general",
+      "targets": 264,
+      "ce": 1.2717446088790894,
+      "mean_depth": 38.13793182373047,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2c816b1c3322fcba1efafe96843e80d08bd56f19447d66833f261618f3ffea0a",
+      "domain": "math",
+      "targets": 139,
+      "ce": 0.7976725697517395,
+      "mean_depth": 38.187252044677734,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2d5a65c13d289acbdab6d96eabaaf7bdcaa0e2d0973403de505008bf6f5a2875",
+      "domain": "math",
+      "targets": 265,
+      "ce": 1.6005192995071411,
+      "mean_depth": 38.13499069213867,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2d88f043c2ecde2959a48a1c8669319433c0f24c78422de3860fde19798fdaf4",
+      "domain": "code",
+      "targets": 494,
+      "ce": 0.5853612422943115,
+      "mean_depth": 38.03392791748047,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2daf8ae75cf38ac2f44f3e7f16b9b49633151e5d3f9154e972649db4c41a2fe9",
+      "domain": "general",
+      "targets": 452,
+      "ce": 0.9930244088172913,
+      "mean_depth": 38.02531433105469,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2e2f90d238aa4de2c81c50918ba87f6a1e93b7507bff678d0bbd7aba8fb01719",
+      "domain": "general",
+      "targets": 240,
+      "ce": 1.1460957527160645,
+      "mean_depth": 38.13197708129883,
+      "cap_fraction": 0.005076142027974129
+    },
+    {
+      "id": "2e4c8e84175da9913e34971c02487b3d6e33ef4f7128758abecaf1b56a93350a",
+      "domain": "general",
+      "targets": 431,
+      "ce": 1.3295143842697144,
+      "mean_depth": 38.013946533203125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2e9f426c839558de08f21f653b456d7a156519f30d7d1ba5d7a5e4e3373c7902",
+      "domain": "code",
+      "targets": 450,
+      "ce": 0.6594464182853699,
+      "mean_depth": 38.433753967285156,
+      "cap_fraction": 0.009463722817599773
+    },
+    {
+      "id": "2f4853968e37feccb72d8845748c4dfa57d9af6377e7447c9c372f85df939f1d",
+      "domain": "math",
+      "targets": 99,
+      "ce": 2.3139536380767822,
+      "mean_depth": 38.039772033691406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "2f6c7d18f4f9c9908578521448f9204f110a492d61f9f774600ed1517ad2e628",
+      "domain": "code",
+      "targets": 539,
+      "ce": 0.6661689877510071,
+      "mean_depth": 38.06185531616211,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3229ef7fed47fd595aa9ada6221b3f6ee0d0cdb26009e8e1cc28fc802143f98a",
+      "domain": "chinese",
+      "targets": 85,
+      "ce": 1.6163610219955444,
+      "mean_depth": 38.56074523925781,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "325a4f0d279f07bfd64e95eb436ae82aa0d911386d82a31310a81af9a790537e",
+      "domain": "general",
+      "targets": 263,
+      "ce": 0.9580216407775879,
+      "mean_depth": 38.657535552978516,
+      "cap_fraction": 0.0034246575087308884
+    },
+    {
+      "id": "32a5afece74ca9321b60d7b05e994c5499c0ec311a6f004af598902aff86cef0",
+      "domain": "general",
+      "targets": 111,
+      "ce": 1.3085776567459106,
+      "mean_depth": 38.136985778808594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "335e50e03f1ed46213b34f22c8b8899321a0b9818157cf56fb18a9d0a0d7f407",
+      "domain": "math",
+      "targets": 186,
+      "ce": 0.2940916121006012,
+      "mean_depth": 38.05929183959961,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3368ff58c7ec4dca7abc87fd0973908d0c21d61ebc3b4a1f7e359db352c959dc",
+      "domain": "math",
+      "targets": 725,
+      "ce": 0.6306263208389282,
+      "mean_depth": 38.02900314331055,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "33bf362475226cfb1dd76a2fff9edce6c9f5530289fba48aca9cfad5a4223e76",
+      "domain": "math",
+      "targets": 219,
+      "ce": 0.8564709424972534,
+      "mean_depth": 38.169551849365234,
+      "cap_fraction": 0.0069204154424369335
+    },
+    {
+      "id": "33dd9373ec565b9d97d064ebc067252387cd22c4a6eb74c2ae77243ef9c3ffd4",
+      "domain": "code",
+      "targets": 327,
+      "ce": 0.987156093120575,
+      "mean_depth": 38.27925491333008,
+      "cap_fraction": 0.002659574383869767
+    },
+    {
+      "id": "341ff3b8c7e0d2d7dc229cb5d3a1c6e30d5e62ad23deb4f27ab3562cb2e26e42",
+      "domain": "math",
+      "targets": 516,
+      "ce": 0.9636774659156799,
+      "mean_depth": 38.210609436035156,
+      "cap_fraction": 0.014040561392903328
+    },
+    {
+      "id": "3461b71105dc2a1a6fc9334a0d7b3a9a21a1d72ddc690b02ac6699710010ac94",
+      "domain": "general",
+      "targets": 327,
+      "ce": 1.0376473665237427,
+      "mean_depth": 38.05882263183594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "34747bfa3ed674866d76693e343aaf7c1c0699a2ad05ab319c40772b3b7877d5",
+      "domain": "general",
+      "targets": 39,
+      "ce": 0.4884965419769287,
+      "mean_depth": 38.157371520996094,
+      "cap_fraction": 0.007968127727508545
+    },
+    {
+      "id": "34ebcf308d833763e4db196e62dfa87748808accfd900b48303d14b11b1735c5",
+      "domain": "general",
+      "targets": 459,
+      "ce": 1.1928132772445679,
+      "mean_depth": 38.09730911254883,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3518365565862ca9989c3a37357288cc01473988e012d6d0efbae319cd103064",
+      "domain": "code",
+      "targets": 256,
+      "ce": 0.41874057054519653,
+      "mean_depth": 38.01993179321289,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "359925f7659c6a4f38872bbfd965e9d5c8b49ad6919eb7bc399157d9ca3e0b22",
+      "domain": "general",
+      "targets": 335,
+      "ce": 1.158117651939392,
+      "mean_depth": 38.55269241333008,
+      "cap_fraction": 0.004683840554207563
+    },
+    {
+      "id": "35dcbe682622a7a0b076a9d728a55f5cffe3e7a9c6f2af6d5b3e582b23bf8665",
+      "domain": "math",
+      "targets": 200,
+      "ce": 0.3346395492553711,
+      "mean_depth": 38.07443618774414,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "36afc62f90b88f74adc1bee24a3b19e00985f2ce9716f5668d27567a7cfa7956",
+      "domain": "math",
+      "targets": 97,
+      "ce": 1.0336952209472656,
+      "mean_depth": 38.20346450805664,
+      "cap_fraction": 0.0043290043249726295
+    },
+    {
+      "id": "36c87dd6568f2756601f52270c72b03dc600ed46ee1c42d99cc07f44208bb48f",
+      "domain": "math",
+      "targets": 154,
+      "ce": 0.6254323720932007,
+      "mean_depth": 38.7242317199707,
+      "cap_fraction": 0.005571030545979738
+    },
+    {
+      "id": "36d8f850dfc369d03fa54a168130cf7be317b0f334b14769d5247004e55a7198",
+      "domain": "math",
+      "targets": 485,
+      "ce": 0.5436304211616516,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "372dcf0b33aac6255de408c334d71cb737f563f08219f49c4a7c1d73495968f5",
+      "domain": "code",
+      "targets": 603,
+      "ce": 0.17738275229930878,
+      "mean_depth": 38.260868072509766,
+      "cap_fraction": 0.007246376946568489
+    },
+    {
+      "id": "379850e10b4a44edffb061b80c77581676bde7745330f64cdca22017742c3a06",
+      "domain": "general",
+      "targets": 223,
+      "ce": 0.7489667534828186,
+      "mean_depth": 38.070709228515625,
+      "cap_fraction": 0.0011223345063626766
+    },
+    {
+      "id": "3807183af260d9f3f616769aece6dd78d8d85841310db2044175ddbd30331240",
+      "domain": "math",
+      "targets": 418,
+      "ce": 1.4149914979934692,
+      "mean_depth": 38.04660415649414,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "38736f489fe64c57958042243f03de1f467e396aee6903a011c967aa58fa7ed4",
+      "domain": "code",
+      "targets": 347,
+      "ce": 0.5212003588676453,
+      "mean_depth": 38.017677307128906,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3878ecc07ab39488220a8fa25a9cf081528692a7c07179b4bf59f00e4bbde25f",
+      "domain": "math",
+      "targets": 190,
+      "ce": 0.9697828888893127,
+      "mean_depth": 38.14410400390625,
+      "cap_fraction": 0.0043668122962117195
+    },
+    {
+      "id": "389e4f1bfea24be85e22da0f6d57be5e24f1fd6afc6935a76154fa474b3030bc",
+      "domain": "code",
+      "targets": 99,
+      "ce": 1.7792636156082153,
+      "mean_depth": 38.85483932495117,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "392707d501004fcd4bb5ddfccec76e89dc97a2483b95335f75cd8772e00a1c91",
+      "domain": "math",
+      "targets": 268,
+      "ce": 1.3139533996582031,
+      "mean_depth": 38.0578498840332,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "392e5b1a883d60a8094fce4560157843dc506efa5293c9059d7378dc26c1dedc",
+      "domain": "general",
+      "targets": 268,
+      "ce": 1.399556040763855,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "39b8e6df65f3c5a1f63c22b2a3d876f22d4a49873a4c12de80afe79a3c8a9055",
+      "domain": "code",
+      "targets": 604,
+      "ce": 0.5467548966407776,
+      "mean_depth": 38.145774841308594,
+      "cap_fraction": 0.0029154520016163588
+    },
+    {
+      "id": "3a45bdf849e523d1dc448e19909870a4d47c1e16a5c3aadae8d45b3f8e754bb5",
+      "domain": "math",
+      "targets": 360,
+      "ce": 0.347873330116272,
+      "mean_depth": 38.045738220214844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3a5a30a9d3fdf79f4dd61f1ded340b8562ac88b976239809d9e953459a74518b",
+      "domain": "general",
+      "targets": 44,
+      "ce": 0.9532176852226257,
+      "mean_depth": 39.41538619995117,
+      "cap_fraction": 0.0615384615957737
+    },
+    {
+      "id": "3b28564b649b96d4a769da2f712b498c203c93376e5ad4f056265052a1a9a7cf",
+      "domain": "math",
+      "targets": 317,
+      "ce": 0.4374472498893738,
+      "mean_depth": 38.068328857421875,
+      "cap_fraction": 0.0026281208265572786
+    },
+    {
+      "id": "3b79d0d5b66182dfc8633eb77203ac7b21f5f142a7191bd23cd67a5d532375b6",
+      "domain": "general",
+      "targets": 248,
+      "ce": 1.6162229776382446,
+      "mean_depth": 38.4151611328125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3b8e43587bbb9ae59ea52333df51730d1ae55891573bda3e8ce9948d73c575d4",
+      "domain": "general",
+      "targets": 295,
+      "ce": 1.3651604652404785,
+      "mean_depth": 38.15349578857422,
+      "cap_fraction": 0.0015197568573057652
+    },
+    {
+      "id": "3b94fa853df73dc2dcab88596bcb75bd3859478f5750a9ec1b849379ddab8045",
+      "domain": "general",
+      "targets": 247,
+      "ce": 1.9914947748184204,
+      "mean_depth": 38.18081283569336,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3c91a9c74d14b9b7d1a8a150f4d9300376e881ab6658dfef905d0bbaa6580bba",
+      "domain": "general",
+      "targets": 632,
+      "ce": 1.149213194847107,
+      "mean_depth": 38.2315788269043,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3d8077224f25bbc305c189e4c636e2642545035b88924e55b4b88be04118b334",
+      "domain": "general",
+      "targets": 305,
+      "ce": 1.291674017906189,
+      "mean_depth": 38.28297805786133,
+      "cap_fraction": 0.006382978521287441
+    },
+    {
+      "id": "3e151558d77d24a6c464e3da301a14c867a63e1f71109669954e767e5ef523a4",
+      "domain": "general",
+      "targets": 248,
+      "ce": 0.7340407967567444,
+      "mean_depth": 38.189781188964844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3e3680b150608a30e7a6e576eeacdb344c9b68634637cb48e24e665969cdd65f",
+      "domain": "math",
+      "targets": 302,
+      "ce": 0.8025580644607544,
+      "mean_depth": 38.08493423461914,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3e499331781e3da243fc5672d32f9d140fa653b42e9d8bfb21ca0617312b0efd",
+      "domain": "general",
+      "targets": 188,
+      "ce": 0.11482295393943787,
+      "mean_depth": 38.35714340209961,
+      "cap_fraction": 0.011904762126505375
+    },
+    {
+      "id": "3e53a5851ad290ecfedb77cea50572ffe379064fce2ccc7ec7f17583faaaef8e",
+      "domain": "math",
+      "targets": 225,
+      "ce": 0.6741527915000916,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3eae6ec9a5e805fc206bc321602ab29738106629e2b629109d60be91d08a21b8",
+      "domain": "code",
+      "targets": 379,
+      "ce": 0.5711440443992615,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3eae95ed285dc117157dda72abe4a5a20a45a4b42edf874f28c93c8788e42b14",
+      "domain": "math",
+      "targets": 572,
+      "ce": 0.24459099769592285,
+      "mean_depth": 38.04983901977539,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3f1bd70332f971ba9a7f9c6c40e8f6ef868031c0fbe06dace6f1020a270c3651",
+      "domain": "general",
+      "targets": 211,
+      "ce": 1.1421217918395996,
+      "mean_depth": 38.073482513427734,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3f2d8a0578fcff257ecc008123e315ca62228b87d247605834db9a36275675da",
+      "domain": "general",
+      "targets": 277,
+      "ce": 2.4497509002685547,
+      "mean_depth": 38.1726188659668,
+      "cap_fraction": 0.0059523810632526875
+    },
+    {
+      "id": "3f5e109a094c33c8d569466aec82cf1c50da32def971a2db6330f448eaeed425",
+      "domain": "code",
+      "targets": 58,
+      "ce": 1.8603847026824951,
+      "mean_depth": 38.35820770263672,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "3f9a07b7b4c42d0c331fad8bac8972814a0a5d7074d3adad02f6eefc25b4edfa",
+      "domain": "math",
+      "targets": 838,
+      "ce": 0.26633280515670776,
+      "mean_depth": 38.02428436279297,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "40411d6a37bb5de38ec3b8d80da1a0c9bbaca5c423c00b99913b010a8ce3cf80",
+      "domain": "general",
+      "targets": 55,
+      "ce": 0.8956144452095032,
+      "mean_depth": 38.14788818359375,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "40edd7e84840d3846b081faf69fb7e0e501c933a5fe6c03d3e0311ea21521dd4",
+      "domain": "code",
+      "targets": 671,
+      "ce": 0.559975266456604,
+      "mean_depth": 38.28171157836914,
+      "cap_fraction": 0.014686249196529388
+    },
+    {
+      "id": "40f7c300830166a028fb669f027de0fcf0fcb2ead64db87118945aa26bc049a8",
+      "domain": "general",
+      "targets": 143,
+      "ce": 0.5544349551200867,
+      "mean_depth": 38.04291915893555,
+      "cap_fraction": 0.004291845485568047
+    },
+    {
+      "id": "413875e0b8406408d76bd8b66d3b808b06db5c175953018ad6e367442657d493",
+      "domain": "general",
+      "targets": 91,
+      "ce": 1.2285655736923218,
+      "mean_depth": 38.06312942504883,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "41dc7da3df9ca3d52830650b7e8414433bb1159fa2874f6a7fc963045952a0fd",
+      "domain": "code",
+      "targets": 561,
+      "ce": 0.27874669432640076,
+      "mean_depth": 38.65388870239258,
+      "cap_fraction": 0.010452961549162865
+    },
+    {
+      "id": "420625b0cddff8cc5d0b420b286a79f6cf765aa98e408950339d40ba0778358e",
+      "domain": "code",
+      "targets": 693,
+      "ce": 0.7268155217170715,
+      "mean_depth": 38.091827392578125,
+      "cap_fraction": 0.003027245169505477
+    },
+    {
+      "id": "4273db610cb13dba42958fdf9ad31f52e277bc51a2d58bd3dd46d3ebf42bc269",
+      "domain": "general",
+      "targets": 133,
+      "ce": 1.061374545097351,
+      "mean_depth": 38.76397705078125,
+      "cap_fraction": 0.03105590119957924
+    },
+    {
+      "id": "42f6c71521f387a628ab1250a74565c6a9b58ecf541e875075522591cc936761",
+      "domain": "general",
+      "targets": 222,
+      "ce": 0.7369340062141418,
+      "mean_depth": 38.43230438232422,
+      "cap_fraction": 0.00712589081376791
+    },
+    {
+      "id": "43c2a36ae6f4e495538adcabfa6d1366fb33b48244e565981596b0d1e11d50ec",
+      "domain": "general",
+      "targets": 227,
+      "ce": 2.0778937339782715,
+      "mean_depth": 39.3870964050293,
+      "cap_fraction": 0.004032257944345474
+    },
+    {
+      "id": "44ddb0591d86e3b01cbb6900e8e768dde6d5001540859e7e0bcf064f56a4af24",
+      "domain": "math",
+      "targets": 420,
+      "ce": 0.5959654450416565,
+      "mean_depth": 38.049461364746094,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4615bb2d64a3557331b3ce0089045fa008f3d4e9d625375e4b4bf10600347a4c",
+      "domain": "general",
+      "targets": 105,
+      "ce": 0.8393899202346802,
+      "mean_depth": 39.9453125,
+      "cap_fraction": 0.078125
+    },
+    {
+      "id": "4646b63ce067819be31405892fcc3c3c7bc4df20ff8f3c94a147a99e734d7a9c",
+      "domain": "general",
+      "targets": 39,
+      "ce": 0.9301605224609375,
+      "mean_depth": 38.187156677246094,
+      "cap_fraction": 0.005504587199538946
+    },
+    {
+      "id": "46aec5e7b2b6dba58e16241ccf8b34105f4ab439d4ae71b1a2155599c4a9dab9",
+      "domain": "math",
+      "targets": 328,
+      "ce": 1.131071925163269,
+      "mean_depth": 38.11579132080078,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "47c677f2c12ced191a1fbbccc5fdc84332518ab0f6297c718ada4fe86b169838",
+      "domain": "general",
+      "targets": 220,
+      "ce": 0.8073341846466064,
+      "mean_depth": 38.1122932434082,
+      "cap_fraction": 0.0011820330983027816
+    },
+    {
+      "id": "47d67d78f7c332116620b24fc43ecffe645cef0ed05be31da575a154b138292e",
+      "domain": "general",
+      "targets": 410,
+      "ce": 0.760583221912384,
+      "mean_depth": 38.346099853515625,
+      "cap_fraction": 0.005673758685588837
+    },
+    {
+      "id": "47f501b4c771ac10c9ad6dff00eacd1430078f17b61a7ece8580355cf12a8296",
+      "domain": "code",
+      "targets": 289,
+      "ce": 0.4488583505153656,
+      "mean_depth": 38.17159652709961,
+      "cap_fraction": 0.002958579920232296
+    },
+    {
+      "id": "4819eed4d10f34dece3d1110f8791edec293af387556d22ed984e6682fd2bb63",
+      "domain": "math",
+      "targets": 349,
+      "ce": 0.5489331483840942,
+      "mean_depth": 38.08320617675781,
+      "cap_fraction": 0.0015408321050927043
+    },
+    {
+      "id": "484433ba626f893fd87c156e15292b835fa14d9fa4c3f0acfcb2317d31b0b2f8",
+      "domain": "math",
+      "targets": 153,
+      "ce": 0.9264988899230957,
+      "mean_depth": 38.157676696777344,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4851047635c479f72bc42a0f8a7a635e99e5b68f0c098dec6d2ec366f25dd384",
+      "domain": "math",
+      "targets": 242,
+      "ce": 0.8170493841171265,
+      "mean_depth": 38.11077880859375,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "48b5e16334dd8a42de7f3a13f30d4c1ae3bbe68bc0bde80aa7b6b709ab7c543c",
+      "domain": "general",
+      "targets": 315,
+      "ce": 1.7543056011199951,
+      "mean_depth": 38.20283126831055,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "49120aad7e8818a7131e4c9a3af6a3d58e64c28c061d7f525cae0a8647d8c709",
+      "domain": "general",
+      "targets": 484,
+      "ce": 1.5001542568206787,
+      "mean_depth": 38.63461685180664,
+      "cap_fraction": 0.023076923564076424
+    },
+    {
+      "id": "4924f61cdf86cc4a5ee8920934f0f525318efbb4929dafba17e7cfa3e0aba108",
+      "domain": "general",
+      "targets": 111,
+      "ce": 1.185205101966858,
+      "mean_depth": 38.10893630981445,
+      "cap_fraction": 0.002793296007439494
+    },
+    {
+      "id": "49a71e4b01130c36a6380fdd684b5cc2527d3862cc361afaa7551f8671a41719",
+      "domain": "code",
+      "targets": 343,
+      "ce": 0.4667778015136719,
+      "mean_depth": 38.46074295043945,
+      "cap_fraction": 0.00826446246355772
+    },
+    {
+      "id": "49d86759c59923faa353f1cb01243579c24dccd972842cee02301fff59954384",
+      "domain": "general",
+      "targets": 1042,
+      "ce": 0.24402375519275665,
+      "mean_depth": 38.22074508666992,
+      "cap_fraction": 0.005319148767739534
+    },
+    {
+      "id": "49f3dfb59d54888e43d37b9ea68fd5a264af297c19472c049306b16462ae8dda",
+      "domain": "math",
+      "targets": 811,
+      "ce": 0.3050133287906647,
+      "mean_depth": 38.00899887084961,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4a669ddb552cdceb9baae8fae914b11adcef4ae7ebd880bed61dd0c0e76546c9",
+      "domain": "general",
+      "targets": 244,
+      "ce": 1.465469479560852,
+      "mean_depth": 39.305755615234375,
+      "cap_fraction": 0.057553958147764206
+    },
+    {
+      "id": "4a7e1d53d4a38c37e419f513a855ddc8ddfbeca4aad8e3ba9dac1afd31cafe98",
+      "domain": "general",
+      "targets": 727,
+      "ce": 1.2739284038543701,
+      "mean_depth": 38.338783264160156,
+      "cap_fraction": 0.005841121077537537
+    },
+    {
+      "id": "4af856a61a3dd870ba0583a7ea3321050cdb80fbb57096335de60bb72249644c",
+      "domain": "math",
+      "targets": 257,
+      "ce": 0.6881352066993713,
+      "mean_depth": 38.11661911010742,
+      "cap_fraction": 0.0029154520016163588
+    },
+    {
+      "id": "4bc0885cd13a5e5a347416cb8ef44885949df42f34bdc1ff5603e841eaf56043",
+      "domain": "math",
+      "targets": 629,
+      "ce": 0.7906782627105713,
+      "mean_depth": 38.01707458496094,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4bc25e26972b930412b21cfbf7f1908c2ce5f42f78d7f5280960befbaf8fca53",
+      "domain": "math",
+      "targets": 130,
+      "ce": 0.4384591579437256,
+      "mean_depth": 38.02800369262695,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4c460ce4563a41cf8e46a7f73f612bdfe1f66bf868462d4eb40a6cb4b208566b",
+      "domain": "general",
+      "targets": 271,
+      "ce": 0.8985945582389832,
+      "mean_depth": 38.059783935546875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4c60e8160f9f5ab8a58b6676ddc73ada1b3bd1250b452febb7b5bfc667b5f1cd",
+      "domain": "general",
+      "targets": 148,
+      "ce": 0.6992963552474976,
+      "mean_depth": 38.42176055908203,
+      "cap_fraction": 0.015892421826720238
+    },
+    {
+      "id": "4cb87d40bd1cd2e8b5906f3b93db0d6e611c768c03ee286345da2f86dcfdd939",
+      "domain": "general",
+      "targets": 252,
+      "ce": 0.37390318512916565,
+      "mean_depth": 38.085105895996094,
+      "cap_fraction": 0.003546099178493023
+    },
+    {
+      "id": "4ce05067907a2346a06ca5e5ef55f74cb9a7365c4b10600f8ba2d761519604ec",
+      "domain": "math",
+      "targets": 204,
+      "ce": 0.643618106842041,
+      "mean_depth": 38.09810256958008,
+      "cap_fraction": 0.0031645570416003466
+    },
+    {
+      "id": "4ce66ac00a36793070f4a03a081320f736a0396fd61e59debdb464006ce3a2df",
+      "domain": "general",
+      "targets": 144,
+      "ce": 0.7766633033752441,
+      "mean_depth": 38.11456298828125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4d6908e86565bb321341e7eb9abd767b78204986e5c0543e22aed5a60d95dc5a",
+      "domain": "math",
+      "targets": 162,
+      "ce": 0.800848662853241,
+      "mean_depth": 38.218257904052734,
+      "cap_fraction": 0.01587301678955555
+    },
+    {
+      "id": "4d95be5caf1f1130a7b28b5cb881bf4a750d6b945b5d0ea9ec71d9fb6cd067f3",
+      "domain": "general",
+      "targets": 160,
+      "ce": 1.0205522775650024,
+      "mean_depth": 39.42473220825195,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4ddd27aa52d0e1e80eb0b357ac512e8d94583fe39b0d649f91eee08ce67ed1c2",
+      "domain": "math",
+      "targets": 188,
+      "ce": 1.3583199977874756,
+      "mean_depth": 38.10256576538086,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4e5d053954d19a431ca51e63a0086d4ee50eedb3f0f0a80051d9c703c87fe803",
+      "domain": "code",
+      "targets": 266,
+      "ce": 0.6102655529975891,
+      "mean_depth": 38.11411666870117,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "4f1be93a0fa605519fa481fee3b8acaeaf461700190f63faa6244a047c311cd5",
+      "domain": "math",
+      "targets": 89,
+      "ce": 1.9367167949676514,
+      "mean_depth": 38.28651809692383,
+      "cap_fraction": 0.00561797758564353
+    },
+    {
+      "id": "4ff0c4e385cc0f97b4c6cc0abf1c153ceaf128e909a04fe7ee71dfdd9f56c120",
+      "domain": "general",
+      "targets": 194,
+      "ce": 0.568088710308075,
+      "mean_depth": 38.04464340209961,
+      "cap_fraction": 0.004464285913854837
+    },
+    {
+      "id": "50add3a404ae74b9e05a0985a60276a48a66ebda57587f6996169704ee58a712",
+      "domain": "general",
+      "targets": 732,
+      "ce": 1.4011837244033813,
+      "mean_depth": 38.6129035949707,
+      "cap_fraction": 0.0059737153351306915
+    },
+    {
+      "id": "50dafe2a90ab5a577c50f2cc1d60bd1dc3aa33d0928683f5c5c3b877837ff3d0",
+      "domain": "math",
+      "targets": 625,
+      "ce": 0.6568485498428345,
+      "mean_depth": 38.043785095214844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "50f0341f99cdb61ea746199710549819f4425b135bc707860a6ebd931ec1bd1b",
+      "domain": "general",
+      "targets": 375,
+      "ce": 0.6246888637542725,
+      "mean_depth": 38.05541229248047,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "51dba57e0617c6d4f5c777686baf844c36fffbd7926664917ba31b0ca75bc8ac",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 1.84824538230896,
+      "mean_depth": 38.27055740356445,
+      "cap_fraction": 0.005305039696395397
+    },
+    {
+      "id": "52bae147406fa28698bc6c105976e97f80f2fc63e45ea04bc46fc626b4249fb0",
+      "domain": "code",
+      "targets": 462,
+      "ce": 0.3156338334083557,
+      "mean_depth": 38.02281188964844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "53334649ced70c4c044930e0d217ddf75552b7dd8ac042d8f27751d784089285",
+      "domain": "math",
+      "targets": 323,
+      "ce": 0.5981287956237793,
+      "mean_depth": 38.074283599853516,
+      "cap_fraction": 0.0019047618843615055
+    },
+    {
+      "id": "534fced75e76d65be4702264f86c0da779fc8d7b1f52f0ca6f51cb4110e3d457",
+      "domain": "math",
+      "targets": 139,
+      "ce": 0.9340547919273376,
+      "mean_depth": 38.149253845214844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "54271baf47a33e4c2ba00301c0cd348ee547b22672ca4ec53c784d445690896a",
+      "domain": "code",
+      "targets": 393,
+      "ce": 0.2993340492248535,
+      "mean_depth": 38.278831481933594,
+      "cap_fraction": 0.007299269549548626
+    },
+    {
+      "id": "54b2450968ebd8f52f26d4f952489ef99426528baf6be9ad64fd56eea9376682",
+      "domain": "math",
+      "targets": 29,
+      "ce": 3.097285032272339,
+      "mean_depth": 38.142860412597656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "54b689f1c3e00bd46e3b9627245d0eb9ac454a54e28fb0012eec9288768546ca",
+      "domain": "math",
+      "targets": 161,
+      "ce": 1.1594434976577759,
+      "mean_depth": 38.13744354248047,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "54e5b12dbae996904933f42ba1e508808e2af3def205321dbe33ba7838ea583e",
+      "domain": "code",
+      "targets": 124,
+      "ce": 0.20179572701454163,
+      "mean_depth": 38.15986251831055,
+      "cap_fraction": 0.003401360474526882
+    },
+    {
+      "id": "557cc062b83f08c78835265951e7d9743f74d287d2e485d17e7292b6e7a55044",
+      "domain": "general",
+      "targets": 209,
+      "ce": 1.1711171865463257,
+      "mean_depth": 38.0819091796875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "557fcd598a70c4519cb0cb9eec885f6f219380b6b9d900c9347079e1e1440d96",
+      "domain": "code",
+      "targets": 511,
+      "ce": 0.5512071251869202,
+      "mean_depth": 38.658626556396484,
+      "cap_fraction": 0.0185528751462698
+    },
+    {
+      "id": "55cd78c68fc880704f0ac3107b3d65664e7e6c750364c5cf238412d4ecdc9105",
+      "domain": "general",
+      "targets": 14,
+      "ce": 0.17885294556617737,
+      "mean_depth": 38.536861419677734,
+      "cap_fraction": 0.026465028524398804
+    },
+    {
+      "id": "55dc94197974efb5afbf884f806aebabe9ae4dd128eff24807144302b3ddf201",
+      "domain": "code",
+      "targets": 408,
+      "ce": 0.019971689209342003,
+      "mean_depth": 38.167640686035156,
+      "cap_fraction": 0.002344665816053748
+    },
+    {
+      "id": "5665e8a310f3f4715894540250597b911e74f5f31f76e9743930c2a37b190ec1",
+      "domain": "general",
+      "targets": 467,
+      "ce": 0.978277325630188,
+      "mean_depth": 38.061100006103516,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "567466ab8de65634723b5f0f7d12ab741d4f027b53a78fae2161cbbf3930ba9a",
+      "domain": "math",
+      "targets": 391,
+      "ce": 0.9673941731452942,
+      "mean_depth": 38.16304016113281,
+      "cap_fraction": 0.0021739129442721605
+    },
+    {
+      "id": "56785f437ad63dc4c96a814ee81ac4d52017bef17fab1096a005a7dc79850180",
+      "domain": "general",
+      "targets": 493,
+      "ce": 1.5577919483184814,
+      "mean_depth": 38.21640396118164,
+      "cap_fraction": 0.0017452007159590721
+    },
+    {
+      "id": "56a2548085afcad2e76d45a017f2a8c9c7745c382854b09e3cc6cfaf1ba54e60",
+      "domain": "math",
+      "targets": 1370,
+      "ce": 1.1291371583938599,
+      "mean_depth": 38.02323913574219,
+      "cap_fraction": 0.0006835269741714001
+    },
+    {
+      "id": "56b31dc8d831fae5708267a6a3365fb96376a29010497cc1d9e4bed81dd59a6d",
+      "domain": "math",
+      "targets": 6,
+      "ce": 2.9471709728240967,
+      "mean_depth": 38.37999725341797,
+      "cap_fraction": 0.009999999776482582
+    },
+    {
+      "id": "57d249933be1d0b0e37176926bff8f60ad76036bbeb0cd292aab4490ba38ef6d",
+      "domain": "general",
+      "targets": 192,
+      "ce": 1.183421015739441,
+      "mean_depth": 38.11191177368164,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "582d6184473e68f455a6abb1b7c140096eac4dd7fc3b29ccb5548b29502b77f8",
+      "domain": "general",
+      "targets": 471,
+      "ce": 1.1770609617233276,
+      "mean_depth": 38.18819808959961,
+      "cap_fraction": 0.0015948963118717074
+    },
+    {
+      "id": "585a8c9583837d42de18c96344e9ac6a348375a52bcb254c7d75dbd53137b07e",
+      "domain": "math",
+      "targets": 187,
+      "ce": 1.1345441341400146,
+      "mean_depth": 38.153846740722656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "587bd03e83a74c4434456b31b831ebdd30fad2fd2c5db836fea9bacc8a803bb8",
+      "domain": "general",
+      "targets": 133,
+      "ce": 0.9982482194900513,
+      "mean_depth": 39.20588302612305,
+      "cap_fraction": 0.03235294297337532
+    },
+    {
+      "id": "592cd0896acb58c3da1f61344f8ad179995fab45fdcf7df28621dbf65df58eba",
+      "domain": "code",
+      "targets": 451,
+      "ce": 0.43957826495170593,
+      "mean_depth": 38.04034423828125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "59a8ddb90bbbf5cf03ed3182f126eb4e113b5edd3671d4382a3c30ebd139a7ae",
+      "domain": "general",
+      "targets": 90,
+      "ce": 1.7140614986419678,
+      "mean_depth": 38.46500015258789,
+      "cap_fraction": 0.004999999888241291
+    },
+    {
+      "id": "5a3bcecf608886c54df602fac0ad474dc3264d2cd10f92b25fc5597be25cca97",
+      "domain": "general",
+      "targets": 172,
+      "ce": 0.9308193325996399,
+      "mean_depth": 38.12626266479492,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "5a4a4dc490ba2e59d7258fac28db166c1994510be2e519672a814f1520112ad8",
+      "domain": "general",
+      "targets": 135,
+      "ce": 1.2581162452697754,
+      "mean_depth": 38.412567138671875,
+      "cap_fraction": 0.0027322403620928526
+    },
+    {
+      "id": "5a571f288db4f16b535b3a88de4c9e15e7f2e7d2fa4e4fb849255c604fc91f8c",
+      "domain": "general",
+      "targets": 509,
+      "ce": 1.0891200304031372,
+      "mean_depth": 38.35253143310547,
+      "cap_fraction": 0.0017452007159590721
+    },
+    {
+      "id": "5bd9527e530953bdc3da453ede6923cf28fa555d38953af196814a9f201c710d",
+      "domain": "code",
+      "targets": 45,
+      "ce": 0.3938677906990051,
+      "mean_depth": 38.875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "5c37c6da0ea0eecb14dc9d091ed27334b8e9c0fbfa420d35ba1748c7c7179eef",
+      "domain": "math",
+      "targets": 257,
+      "ce": 0.7826014757156372,
+      "mean_depth": 38.08463668823242,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "5c581ff7ac67660389d0f0058e1b97371b36ea0701b8f7af4821bb2ad5e2057e",
+      "domain": "general",
+      "targets": 769,
+      "ce": 0.8824797868728638,
+      "mean_depth": 38.529273986816406,
+      "cap_fraction": 0.015222481451928616
+    },
+    {
+      "id": "5d05284b775bc1a16e8548fab3b2656b9dedcd661d4a558a116e40328c14a566",
+      "domain": "code",
+      "targets": 276,
+      "ce": 0.3963707983493805,
+      "mean_depth": 38.141510009765625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "5d2470584ba049e310f9f2ab26e820a946607d75b8083992bffc72a3c0185b19",
+      "domain": "general",
+      "targets": 359,
+      "ce": 1.0894004106521606,
+      "mean_depth": 38.32413864135742,
+      "cap_fraction": 0.006896551698446274
+    },
+    {
+      "id": "5d91feee74f2f4d97a22be13a1330d8a9793bc3e0e17bd874050f5de770afb9b",
+      "domain": "general",
+      "targets": 169,
+      "ce": 1.0941718816757202,
+      "mean_depth": 38.2156867980957,
+      "cap_fraction": 0.00937766395509243
+    },
+    {
+      "id": "5e029af83b2452f5e5ac799eb9b10c9656b484e071b0345da1d18f7ac9917346",
+      "domain": "general",
+      "targets": 351,
+      "ce": 0.6917925477027893,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "5e37b54d9b0abc609735b426de040ed4bcc68103d3d4a27f418d06582f20c0d6",
+      "domain": "code",
+      "targets": 445,
+      "ce": 0.28093427419662476,
+      "mean_depth": 38.035579681396484,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "5ee18964dc65629ede0402c451a064afc99128acc490b31488561e8a29b0adb8",
+      "domain": "general",
+      "targets": 716,
+      "ce": 1.1334240436553955,
+      "mean_depth": 38.25657272338867,
+      "cap_fraction": 0.0037546935491263866
+    },
+    {
+      "id": "5f29b5b7cc1cc470028449f9ba6f28d1308d0b6433b9f404f50da2c95183bd5e",
+      "domain": "general",
+      "targets": 197,
+      "ce": 1.5934339761734009,
+      "mean_depth": 39.11158752441406,
+      "cap_fraction": 0.01287553645670414
+    },
+    {
+      "id": "5f7da20f414fde41dde0de3641dab9fc8c260748761c8b5809ce1211527bf2da",
+      "domain": "math",
+      "targets": 176,
+      "ce": 1.7444653511047363,
+      "mean_depth": 38.092369079589844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "5feedb5ab458b5b9390cf59d6276ff334be4eb9e7579d7207bf7a98e76bdff29",
+      "domain": "general",
+      "targets": 217,
+      "ce": 0.7348712086677551,
+      "mean_depth": 38.30962371826172,
+      "cap_fraction": 0.0041841003112494946
+    },
+    {
+      "id": "601cc83fd4ee18aa923a1f336cee80d53517b51e60b21e649ee22a98dd2fcbe6",
+      "domain": "general",
+      "targets": 295,
+      "ce": 1.1168347597122192,
+      "mean_depth": 39.051212310791016,
+      "cap_fraction": 0.016172505915164948
+    },
+    {
+      "id": "603afec6a061e6711c79517984a195b870c194f253a821951163cf285c2d1f8c",
+      "domain": "general",
+      "targets": 229,
+      "ce": 0.7372170090675354,
+      "mean_depth": 38.31922912597656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "604efc4bcb156e316ce7b3165f7da9057004ce9ec6b8a07d635ecf207dadba76",
+      "domain": "general",
+      "targets": 1010,
+      "ce": 1.4820830821990967,
+      "mean_depth": 38.339271545410156,
+      "cap_fraction": 0.011576135642826557
+    },
+    {
+      "id": "6062369e7553b095817a964d57f79138b8bdc80214c80dfb4fb2f1ad354bfe40",
+      "domain": "general",
+      "targets": 195,
+      "ce": 0.8305850028991699,
+      "mean_depth": 38.23451232910156,
+      "cap_fraction": 0.0044247787445783615
+    },
+    {
+      "id": "62670759f4cee5ca0a0c2e35d4c6d1ac5f17ad868246d06bf050703c92b03d4b",
+      "domain": "math",
+      "targets": 1061,
+      "ce": 0.4127843976020813,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "62c5c88b4db1cb0a7d51805515581c7eed3c905a8a6b59c9870d406b5c55bea3",
+      "domain": "math",
+      "targets": 304,
+      "ce": 0.6489975452423096,
+      "mean_depth": 38.015625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "62fe64cb27ebc2459e6a5cee4a78afdca3c252c727b35c92780d9f89752a5555",
+      "domain": "code",
+      "targets": 397,
+      "ce": 0.7957490682601929,
+      "mean_depth": 38.388057708740234,
+      "cap_fraction": 0.0018656715983524919
+    },
+    {
+      "id": "63db7f0f37767faa21a91f2098ea2193ce0abef7a1c8ed4cb1cf1f7c6719b3b4",
+      "domain": "math",
+      "targets": 816,
+      "ce": 0.8529204726219177,
+      "mean_depth": 38.0886344909668,
+      "cap_fraction": 0.004545454401522875
+    },
+    {
+      "id": "6415529c642a042833b2518fad30d4969e9ab73b7af4f92fae284a7a5240c874",
+      "domain": "general",
+      "targets": 957,
+      "ce": 0.8064376711845398,
+      "mean_depth": 38.108856201171875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6433895c578178a0c65f1aed8037220a9cb0d827272412e218d429d529258e47",
+      "domain": "general",
+      "targets": 459,
+      "ce": 1.5562688112258911,
+      "mean_depth": 38.159088134765625,
+      "cap_fraction": 0.00206611561588943
+    },
+    {
+      "id": "648d4210b4253d31febea56f884d4e2c92c6682f015da350e505ffec0dd296c3",
+      "domain": "general",
+      "targets": 612,
+      "ce": 1.4751596450805664,
+      "mean_depth": 38.05124282836914,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "64b1ba6a06236aaef90f007685c7a5149ae5f56d437690754b26528368345a0d",
+      "domain": "code",
+      "targets": 497,
+      "ce": 0.6595627069473267,
+      "mean_depth": 38.3840446472168,
+      "cap_fraction": 0.011131725274026394
+    },
+    {
+      "id": "64c8ebb601e45e67fa65998bfcb5ebd41f95dcde387483b93a75ac020230ab25",
+      "domain": "code",
+      "targets": 256,
+      "ce": 0.5099294185638428,
+      "mean_depth": 38.20954895019531,
+      "cap_fraction": 0.0026525198481976986
+    },
+    {
+      "id": "650ece01f1f1a1cbb4c565e253959ab67ccfd3525723fb7ee6f0f8ec3ee0efa8",
+      "domain": "math",
+      "targets": 686,
+      "ce": 1.161549687385559,
+      "mean_depth": 38.03575897216797,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "651536b8a62fd094b86bd1409fdeebd7b6520add1194fe97321c25e9e4010bcb",
+      "domain": "code",
+      "targets": 581,
+      "ce": 0.5739551782608032,
+      "mean_depth": 38.05577850341797,
+      "cap_fraction": 0.0009960159659385681
+    },
+    {
+      "id": "65eb72bb783bceec9ee7511f0c316f8cb3478b42f619f21fa2ff004f79691c63",
+      "domain": "code",
+      "targets": 315,
+      "ce": 0.4810996949672699,
+      "mean_depth": 38.0905876159668,
+      "cap_fraction": 0.003552397945895791
+    },
+    {
+      "id": "66541f72ac9eaf99d3c3acfe44a4b767392604524f88f7bcdc7eb90a73cea10b",
+      "domain": "math",
+      "targets": 53,
+      "ce": 0.9987555742263794,
+      "mean_depth": 38.14556884765625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "66557fc14bdb105f9828ada3fd3f3b8f2f3eaa383c6579477019539edcc4bfeb",
+      "domain": "code",
+      "targets": 704,
+      "ce": 0.3902369737625122,
+      "mean_depth": 38.31191635131836,
+      "cap_fraction": 0.009345794096589088
+    },
+    {
+      "id": "67f12de107c359e9d4fad97566441d4d1f2f81bd726a0dd44e222e7abffd1b08",
+      "domain": "general",
+      "targets": 159,
+      "ce": 1.1297684907913208,
+      "mean_depth": 38.044132232666016,
+      "cap_fraction": 0.0009389671613462269
+    },
+    {
+      "id": "686f85173e22fb277d37aba045ee4ed8079f4c4dfdf2fae2de55b6d60e71c1ea",
+      "domain": "general",
+      "targets": 68,
+      "ce": 0.4596047103404999,
+      "mean_depth": 38.13333511352539,
+      "cap_fraction": 0.004444444552063942
+    },
+    {
+      "id": "689695b058123aa18e9fb6c0f636d1e6df638ed1427aca8bdde494bd9ddcb41c",
+      "domain": "general",
+      "targets": 258,
+      "ce": 1.3404632806777954,
+      "mean_depth": 38.585914611816406,
+      "cap_fraction": 0.002816901309415698
+    },
+    {
+      "id": "68e419db93c619cb1885e443436fc95ff262139e51a5a26a203f7839cb03efe2",
+      "domain": "general",
+      "targets": 266,
+      "ce": 1.2744064331054688,
+      "mean_depth": 38.388267517089844,
+      "cap_fraction": 0.008379887789487839
+    },
+    {
+      "id": "695b44bd77842ff9f9dcc86b262abc468be4a5bc9797093de3a945ecdb800bab",
+      "domain": "code",
+      "targets": 521,
+      "ce": 0.7483842968940735,
+      "mean_depth": 38.068119049072266,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6969eb6b7f693bb6e5510e4949e176ca404de204604d74449dcee4e0e4fa6747",
+      "domain": "general",
+      "targets": 19,
+      "ce": 0.05615030601620674,
+      "mean_depth": 39.00621032714844,
+      "cap_fraction": 0.043478261679410934
+    },
+    {
+      "id": "6a499d36972446b572cfc6099cdd63108c709d729b7c71a641ba526fb020cc53",
+      "domain": "general",
+      "targets": 208,
+      "ce": 0.8944739699363708,
+      "mean_depth": 38.03067398071289,
+      "cap_fraction": 0.0030674845911562443
+    },
+    {
+      "id": "6bbf7362393094e61a2a85ef0839cb9cb26f27de0fcc98cdcab237653fbdf7b0",
+      "domain": "general",
+      "targets": 299,
+      "ce": 0.9723410606384277,
+      "mean_depth": 38.372371673583984,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6bff156af9940f5cea0544ec2fd5788a3317e61894be8dbd455653bd30aea84a",
+      "domain": "math",
+      "targets": 163,
+      "ce": 0.8188683390617371,
+      "mean_depth": 38.19757843017578,
+      "cap_fraction": 0.004032257944345474
+    },
+    {
+      "id": "6ca3b92fde3cdd1f48d97251e62c1dad5f5b5b62551effa8ec67dabf3ce50a2e",
+      "domain": "general",
+      "targets": 51,
+      "ce": 0.7264812588691711,
+      "mean_depth": 38.10884475708008,
+      "cap_fraction": 0.004535147454589605
+    },
+    {
+      "id": "6cf8de3912ad6ea4ffcad306b4ae2ea5f98a83246068130b213065bb5895122c",
+      "domain": "general",
+      "targets": 595,
+      "ce": 1.715014934539795,
+      "mean_depth": 38.0282096862793,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6d800f36155f3e13a138810a4b2385bfb67f136dcf089ff971735330668d0b5d",
+      "domain": "math",
+      "targets": 180,
+      "ce": 0.995473325252533,
+      "mean_depth": 38.15999984741211,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6d8bf6ad26a2ecfdb2ccb939608e7e0e4f73212c7aff00c260c3fe2cd9ccadf1",
+      "domain": "code",
+      "targets": 308,
+      "ce": 0.5179275870323181,
+      "mean_depth": 38.217655181884766,
+      "cap_fraction": 0.007610349915921688
+    },
+    {
+      "id": "6e70ffce4330eaebe72e022d9def2f4c55b50a06351870bd7f753137bd44f5e7",
+      "domain": "general",
+      "targets": 223,
+      "ce": 0.3975433111190796,
+      "mean_depth": 38.22769546508789,
+      "cap_fraction": 0.009320905432105064
+    },
+    {
+      "id": "6edabdc4e22bff43b56ec96a35a9849d48a031e2e2977058ec5300c5347fcd51",
+      "domain": "code",
+      "targets": 440,
+      "ce": 0.36034253239631653,
+      "mean_depth": 38.03773498535156,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6efe729715dacb80f8b96e7823b18d83c4917a75ebdde6d9e65e3cfdbe200abb",
+      "domain": "general",
+      "targets": 19,
+      "ce": 0.3714812397956848,
+      "mean_depth": 38.45454788208008,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6f03069ab2fc6de73b4695b2752d6959674840b80e3fcae67048c1fb687a685d",
+      "domain": "general",
+      "targets": 60,
+      "ce": 0.5426978468894958,
+      "mean_depth": 39.005210876464844,
+      "cap_fraction": 0.02083333395421505
+    },
+    {
+      "id": "6f8507104698b5a2c47cb3b8582eb8703c6d5a1ffcbc868179af0350d845aca3",
+      "domain": "general",
+      "targets": 528,
+      "ce": 1.5628917217254639,
+      "mean_depth": 38.29087829589844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6fdbda4c6df25dc1e741c596e44b418a66c042f3c796f72fddc65cd15827a7d7",
+      "domain": "general",
+      "targets": 46,
+      "ce": 1.1711066961288452,
+      "mean_depth": 38.116668701171875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "6fe158926befff73da49ec7d2282920d7e37b99d2d16b80cb05dba2470b9895d",
+      "domain": "math",
+      "targets": 285,
+      "ce": 0.68574458360672,
+      "mean_depth": 38.104740142822266,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7000a04960de54117a637188ea1fc45b72b3c0ac28382a1dfc09c86fb7e0922d",
+      "domain": "general",
+      "targets": 172,
+      "ce": 0.7633528709411621,
+      "mean_depth": 38.03535461425781,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7190674c2bb4ed88279bfce0d8c99ea54071d597f28fe212bbf035a1fc5cfa66",
+      "domain": "math",
+      "targets": 330,
+      "ce": 0.8212114572525024,
+      "mean_depth": 38.083335876464844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "72224788dfc24dd7c8144d17c5ccc5a3bb078c25bb284f7b628a007a2b9a483b",
+      "domain": "code",
+      "targets": 418,
+      "ce": 0.4603433609008789,
+      "mean_depth": 38.05708312988281,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "723310afceb4442619e1a7cf72571236352ac488e7edc9ccf6dd034cff89aaa1",
+      "domain": "code",
+      "targets": 758,
+      "ce": 0.36855149269104004,
+      "mean_depth": 38.05861282348633,
+      "cap_fraction": 0.0011961722047999501
+    },
+    {
+      "id": "725082e5e79e36105a958fc050e80aab888a530bd25f02d3afa6adbc693b08af",
+      "domain": "math",
+      "targets": 430,
+      "ce": 0.8837906122207642,
+      "mean_depth": 38.03688430786133,
+      "cap_fraction": 0.0020491802133619785
+    },
+    {
+      "id": "727e7101a0d8b11df8deb3ac427e41803a4165ba9b82e5945e4958744f1de10c",
+      "domain": "math",
+      "targets": 1185,
+      "ce": 0.3141109347343445,
+      "mean_depth": 38.006107330322266,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7434fb5ce248ea21f77c0108632eb4f03be0a7fd45d4fa558347ec4920cb4e57",
+      "domain": "general",
+      "targets": 588,
+      "ce": 1.5958067178726196,
+      "mean_depth": 38.252960205078125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "744a7ed9eef0922bd5adbc08a2011a98d38618f13eeb55ca78d056f96998cd4d",
+      "domain": "math",
+      "targets": 190,
+      "ce": 0.4691650867462158,
+      "mean_depth": 38.047271728515625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "745e7b79cbc81c2b26f377a1c3f0fc76ff6105a11de962185b080363812a79a6",
+      "domain": "math",
+      "targets": 862,
+      "ce": 0.6457787156105042,
+      "mean_depth": 38.03978729248047,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "74b4644d46835ae5bb263ea007562b4bc76c24b1661cefe40f12fbdf7792a40e",
+      "domain": "math",
+      "targets": 197,
+      "ce": 0.6795196533203125,
+      "mean_depth": 38.081356048583984,
+      "cap_fraction": 0.003389830468222499
+    },
+    {
+      "id": "74b9bb0a184fad077a48ecbc34e44c0d49f0351af7b0503e1bc0bcac2670cc48",
+      "domain": "general",
+      "targets": 315,
+      "ce": 1.1796127557754517,
+      "mean_depth": 38.67741775512695,
+      "cap_fraction": 0.0029325513169169426
+    },
+    {
+      "id": "74bcc8c0a47ae5b3eb6745b6a6d8cec80ddf429f4f478f4c1a320f1a48825cad",
+      "domain": "general",
+      "targets": 26,
+      "ce": 0.283004492521286,
+      "mean_depth": 38.18768310546875,
+      "cap_fraction": 0.0029325513169169426
+    },
+    {
+      "id": "74cf665e2f59f0f4833e72d222436befa34fc023648252f4eafd111f4478029c",
+      "domain": "general",
+      "targets": 123,
+      "ce": 0.3706652522087097,
+      "mean_depth": 38.036842346191406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "752af3bfa368cb7cba915be6678931aa8da341e15f96b24ce3c8ffd88bd2d38c",
+      "domain": "code",
+      "targets": 854,
+      "ce": 0.6009787321090698,
+      "mean_depth": 38.21368408203125,
+      "cap_fraction": 0.009473683312535286
+    },
+    {
+      "id": "76083441753a847aa4a418ce15604e9c284827c03ad63cdd4681ba3b0694b1aa",
+      "domain": "general",
+      "targets": 530,
+      "ce": 1.7157505750656128,
+      "mean_depth": 38.20624923706055,
+      "cap_fraction": 0.004687500186264515
+    },
+    {
+      "id": "7608a92b6ebe295669e498753ebb58dc39965b1ac86522b26aeb453507afadf3",
+      "domain": "general",
+      "targets": 145,
+      "ce": 0.546434760093689,
+      "mean_depth": 38.43452835083008,
+      "cap_fraction": 0.018539976328611374
+    },
+    {
+      "id": "7677bf49fd1933dd6187ab5654c4267c3fb9140f40998b4298661a600a8ab609",
+      "domain": "general",
+      "targets": 229,
+      "ce": 0.9396679401397705,
+      "mean_depth": 38.61023712158203,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "769dbdf97eba45b6070bc538b97ec256952b6da4cafef7078083905e4deea0d8",
+      "domain": "math",
+      "targets": 688,
+      "ce": 1.1791555881500244,
+      "mean_depth": 38.04623794555664,
+      "cap_fraction": 0.0026420080102980137
+    },
+    {
+      "id": "77ad3160c75ff77cc2b25495b6eeaa669aab5997965e7881918194560c0f1e4b",
+      "domain": "code",
+      "targets": 222,
+      "ce": 0.6653167009353638,
+      "mean_depth": 38.043243408203125,
+      "cap_fraction": 0.0027027027681469917
+    },
+    {
+      "id": "77e706921369780fa6c740d0d18343eb87a856e67cc1277ac3d1262b51a6ab16",
+      "domain": "code",
+      "targets": 655,
+      "ce": 0.3348452150821686,
+      "mean_depth": 38.46485137939453,
+      "cap_fraction": 0.007173601072281599
+    },
+    {
+      "id": "7828f1f3b418cfe4f5767d9789135b77baef83c824aeeb2046294b6315cbd248",
+      "domain": "general",
+      "targets": 73,
+      "ce": 0.6353756785392761,
+      "mean_depth": 38.199703216552734,
+      "cap_fraction": 0.005917159840464592
+    },
+    {
+      "id": "78b8d527d6b557e5bf524c6f7119d1a4409ffcdbcfd328f71dbb91c257c2eb7c",
+      "domain": "general",
+      "targets": 590,
+      "ce": 0.9545207619667053,
+      "mean_depth": 39.13181686401367,
+      "cap_fraction": 0.030303029343485832
+    },
+    {
+      "id": "78ef75a5e0f0c466b38bf8ee04f255b2ad7ff58323a7b3ed27580e177001959f",
+      "domain": "code",
+      "targets": 721,
+      "ce": 0.5312770009040833,
+      "mean_depth": 38.26967239379883,
+      "cap_fraction": 0.01326259970664978
+    },
+    {
+      "id": "78f912d13f6ecb5b3a78635690774e97993d55d8e2c20c598ee4ad1530fbe8d6",
+      "domain": "math",
+      "targets": 200,
+      "ce": 0.8450882434844971,
+      "mean_depth": 38.2228889465332,
+      "cap_fraction": 0.0030120480805635452
+    },
+    {
+      "id": "7a4457a011c964ad9a34f5c872dfcd4b64f628e88c75c604a449355d819c3c59",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.6236914396286011,
+      "mean_depth": 38.2884635925293,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7b8d791ab880aa1680d5116329300209071907a9c93bad73604f4246f2692efc",
+      "domain": "general",
+      "targets": 115,
+      "ce": 0.6590364575386047,
+      "mean_depth": 38.42815399169922,
+      "cap_fraction": 0.005865102633833885
+    },
+    {
+      "id": "7bdfdf04ed41206c4f3d1ead9ce7538db369f56d38aa23c2b7b4c08de1b3b494",
+      "domain": "general",
+      "targets": 101,
+      "ce": 0.7587392330169678,
+      "mean_depth": 38.03571701049805,
+      "cap_fraction": 0.0021008404437452555
+    },
+    {
+      "id": "7d2186705e46da831284ec0871fd9c84f46ec2a882cb6d217de961805f530f61",
+      "domain": "math",
+      "targets": 146,
+      "ce": 1.0573419332504272,
+      "mean_depth": 38.10769271850586,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7d2b231d68e3b2a581d07a95cca1e68996e6b25d37db2acd8c47bd2e223e5687",
+      "domain": "general",
+      "targets": 295,
+      "ce": 1.2117493152618408,
+      "mean_depth": 38.03208541870117,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7e0222b8b1470fc85c31fe4421b2d9c335974285d2c1e96cd810291c5aa70c62",
+      "domain": "general",
+      "targets": 243,
+      "ce": 1.1830588579177856,
+      "mean_depth": 38.07380294799805,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7e4238ea6a08e786a589b852f69226a2e925002b9aa3fc8f9baec4fbf71ba373",
+      "domain": "general",
+      "targets": 353,
+      "ce": 0.896514892578125,
+      "mean_depth": 38.97089767456055,
+      "cap_fraction": 0.010582010261714458
+    },
+    {
+      "id": "7ee15f8c80601730ba49e3b9ee20df06631d7b668a2ca50f7931a67e9a931379",
+      "domain": "math",
+      "targets": 298,
+      "ce": 0.6668850779533386,
+      "mean_depth": 38.04705810546875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7f1e40e51d4ffb4bb3cab631d0e72e88b5f64863eb66abd9987a9f28eec66742",
+      "domain": "code",
+      "targets": 388,
+      "ce": 0.17141863703727722,
+      "mean_depth": 38.034400939941406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "7f982bdceccb3c36f6873084f0be79845aed806e9bb7f44512749e030d892aaf",
+      "domain": "math",
+      "targets": 327,
+      "ce": 1.4077733755111694,
+      "mean_depth": 38.06631088256836,
+      "cap_fraction": 0.0026525198481976986
+    },
+    {
+      "id": "80a15e7aa95dbf011c423b2db329ba5469dfe8541374ebd7900b986174e82681",
+      "domain": "code",
+      "targets": 450,
+      "ce": 0.3122977912425995,
+      "mean_depth": 38.04674530029297,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "818ea4ca718a8810f4b0d1ef7329d818ad3c63903c833f3f5621487e9c938d58",
+      "domain": "math",
+      "targets": 149,
+      "ce": 0.8132204413414001,
+      "mean_depth": 38.15048599243164,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "81938690f4b8d70dd5f71529b6303b0aac79024130395ba535e720d1ef9ad5fd",
+      "domain": "math",
+      "targets": 286,
+      "ce": 0.5414097309112549,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8223e041e5d2fcf8a4b31dbeba51a216b98ae0a30d7cbba471ef342f8e169f0b",
+      "domain": "general",
+      "targets": 257,
+      "ce": 1.3191285133361816,
+      "mean_depth": 39.08155822753906,
+      "cap_fraction": 0.021276595070958138
+    },
+    {
+      "id": "82b3eb0b312167b3e31146d2d20fd908c3c918a1e18743e92ad2579ef386fec6",
+      "domain": "code",
+      "targets": 432,
+      "ce": 0.6380248069763184,
+      "mean_depth": 38.05522155761719,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "838210558281642d99d6746f97b6243cfa1baad615ef3559f9ab38265d53d19a",
+      "domain": "general",
+      "targets": 317,
+      "ce": 1.5917693376541138,
+      "mean_depth": 38.15403747558594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "83c422b86a1df458d7e8d727852e18f4d5755a0ddbf35e7931121b0e11585029",
+      "domain": "general",
+      "targets": 539,
+      "ce": 1.826463222503662,
+      "mean_depth": 38.059112548828125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "83d400af7e2b680eecc9ad661a90c1e09d6d5a16832ab8783651c18b3240c6cc",
+      "domain": "code",
+      "targets": 402,
+      "ce": 0.7566108703613281,
+      "mean_depth": 38.230281829833984,
+      "cap_fraction": 0.010515246540307999
+    },
+    {
+      "id": "83fcbeb1301a817439d82c785bc0dfe03ea6f6fb5e873d55827d76824d2ed2e6",
+      "domain": "math",
+      "targets": 246,
+      "ce": 1.4580817222595215,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "84698a749206f8c4e393c5f4de60b47b59f33e5e6a88a8c8fa8860a1b66332e1",
+      "domain": "chinese",
+      "targets": 201,
+      "ce": 1.6604288816452026,
+      "mean_depth": 38.11627960205078,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "84768222d7cca0e4ce49db0b63c06b40a31a0d296224ac4d8723d6132f966433",
+      "domain": "general",
+      "targets": 218,
+      "ce": 0.6774211525917053,
+      "mean_depth": 38.32178497314453,
+      "cap_fraction": 0.011173184029757977
+    },
+    {
+      "id": "848f3a7f83a3141beaec8ec50ee191936ecabd393b164f935a677bdecc1c6ad6",
+      "domain": "code",
+      "targets": 446,
+      "ce": 0.7291278839111328,
+      "mean_depth": 38.153846740722656,
+      "cap_fraction": 0.001923076924867928
+    },
+    {
+      "id": "8509260a45a79f30e34eff0916bf14ed84e703e638e95c1b31e2d41425b694dd",
+      "domain": "general",
+      "targets": 74,
+      "ce": 1.8812297582626343,
+      "mean_depth": 42.375,
+      "cap_fraction": 0.3333333432674408
+    },
+    {
+      "id": "8561091f876701b5913f8dffdbdc2f2ab66a27adc14f7f5b5bb42a3a96357a86",
+      "domain": "chinese",
+      "targets": 401,
+      "ce": 1.8485246896743774,
+      "mean_depth": 38.062355041503906,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "861c91a01da2ee68242ec5b0c69e617970ca35c8264c6bbd491eeb61259169e7",
+      "domain": "chinese",
+      "targets": 244,
+      "ce": 0.9161080718040466,
+      "mean_depth": 38.0483283996582,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8673b1bb921fc894347d1a09fda221a60bfcf11ffc4394f909ef21964d41cbf2",
+      "domain": "code",
+      "targets": 576,
+      "ce": 0.8453220129013062,
+      "mean_depth": 38.04999923706055,
+      "cap_fraction": 0.002439024392515421
+    },
+    {
+      "id": "86a28a0c2f50d6df2f118ad60b0f80c178f0cf954da436162a7e6057ac091091",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.8178442120552063,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "876601c9bc282b9856f782dc431c1d810cde823a6927ace867d981a3a69b87b1",
+      "domain": "math",
+      "targets": 35,
+      "ce": 1.096553921699524,
+      "mean_depth": 38.1698112487793,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "87eb0f54e81774fe39dffc83681d47c63697dcc01465aea683246563c6d42a9a",
+      "domain": "general",
+      "targets": 828,
+      "ce": 1.495463252067566,
+      "mean_depth": 38.12221145629883,
+      "cap_fraction": 0.0010626992443576455
+    },
+    {
+      "id": "88687d02b472ae5621f97878975cae6198afd9769f3e6a71202111d2d1029f16",
+      "domain": "general",
+      "targets": 213,
+      "ce": 0.5333538055419922,
+      "mean_depth": 38.48583221435547,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8883f4deaed7b6acfa39c8ab0bd96679a8bb61fcc0476603fac267332f926401",
+      "domain": "general",
+      "targets": 341,
+      "ce": 0.924659013748169,
+      "mean_depth": 38.10079574584961,
+      "cap_fraction": 0.0026525198481976986
+    },
+    {
+      "id": "8887ec4e3722a32f5e3ae08ee883d4c62c150d8e87d8bc7ba7b5b5bbe4c264b2",
+      "domain": "general",
+      "targets": 111,
+      "ce": 0.8122978806495667,
+      "mean_depth": 38.13813400268555,
+      "cap_fraction": 0.007347538601607084
+    },
+    {
+      "id": "88ff8cc32ea92b4007babbb5c0cefe13d1d87acaaf510a01afe91dcec44b5d71",
+      "domain": "code",
+      "targets": 230,
+      "ce": 0.4966186583042145,
+      "mean_depth": 38.02473449707031,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "89211e44d44dbd619f57d276191d090dd56560fd0b4c22a6573c0d9080f2c289",
+      "domain": "math",
+      "targets": 723,
+      "ce": 0.8690674304962158,
+      "mean_depth": 38.07551193237305,
+      "cap_fraction": 0.002288329415023327
+    },
+    {
+      "id": "896887790472f38b80a4da1a2bcf9c306f9ffd377ba5f1d8bd78494f74350cc2",
+      "domain": "code",
+      "targets": 362,
+      "ce": 0.7762780785560608,
+      "mean_depth": 38.25498962402344,
+      "cap_fraction": 0.008869179524481297
+    },
+    {
+      "id": "89f3b17458ee78c67af004e6febfb5c480c5150135388482ecf4f7672545bde6",
+      "domain": "code",
+      "targets": 601,
+      "ce": 0.40734657645225525,
+      "mean_depth": 38.08473205566406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8a2e21a4a9d23321cba5b4ed6bde83dbf64f0b4353bf30ba64b0303fa0216b6c",
+      "domain": "code",
+      "targets": 529,
+      "ce": 0.3166442811489105,
+      "mean_depth": 38.06289291381836,
+      "cap_fraction": 0.0015723269898444414
+    },
+    {
+      "id": "8a317d6b15d576f4f9084caa243d0746da40a80e6d6db2a75ba8c2366a548fd0",
+      "domain": "math",
+      "targets": 848,
+      "ce": 0.22806866466999054,
+      "mean_depth": 38.01668167114258,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8a7ed97af24e1c506e9134fd427c4dda7d0d0cca54407d879c697e314eadf8ae",
+      "domain": "code",
+      "targets": 612,
+      "ce": 0.4065106511116028,
+      "mean_depth": 38.21675491333008,
+      "cap_fraction": 0.009308510459959507
+    },
+    {
+      "id": "8a85df1270c4da533ee44d1c6ce30a65d5d0d5709c720f3b263d53184c5c1a9b",
+      "domain": "general",
+      "targets": 274,
+      "ce": 1.9026566743850708,
+      "mean_depth": 38.35737609863281,
+      "cap_fraction": 0.0032786885276436806
+    },
+    {
+      "id": "8ab5efbad904beebb33890e5724ebaff66a61fa0c106b996a342f264567ce666",
+      "domain": "math",
+      "targets": 1057,
+      "ce": 0.773420512676239,
+      "mean_depth": 38.0203742980957,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8ae8983d09009ca9ca8ce4a5b9f60ddc4d10283cf511ed83e754fff28804d6e0",
+      "domain": "code",
+      "targets": 839,
+      "ce": 0.7826533913612366,
+      "mean_depth": 38.149051666259766,
+      "cap_fraction": 0.004449388012290001
+    },
+    {
+      "id": "8ba3d168c0a908ddb427790835595c3c23a9c28ee6777bc507e4de62372081ba",
+      "domain": "chinese",
+      "targets": 736,
+      "ce": 1.184576392173767,
+      "mean_depth": 38.02849578857422,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8bde9197e7111f9fdb9503cda3fe0e258e9d6bd021edcd91d31aa0a35de8138d",
+      "domain": "chinese",
+      "targets": 475,
+      "ce": 1.121128797531128,
+      "mean_depth": 38.06576919555664,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8c467ac8eea4cdff619f5fc13f67401feca4c5aa74945aec222b1dfe3358d7e4",
+      "domain": "code",
+      "targets": 315,
+      "ce": 0.5317464470863342,
+      "mean_depth": 38.14666748046875,
+      "cap_fraction": 0.005333333276212215
+    },
+    {
+      "id": "8de66ed24fbe6a23c1dd475293ca15bf0c6f9446f252cbfde4705de2fbf8c42e",
+      "domain": "general",
+      "targets": 46,
+      "ce": 0.42869406938552856,
+      "mean_depth": 38.13661193847656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8e1287cccf38026d60619d8374b33ce6a4097eedf4abfab3c3c750fbfbbe97c4",
+      "domain": "math",
+      "targets": 86,
+      "ce": 1.5478503704071045,
+      "mean_depth": 38.12571334838867,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8e1ee433ff51037dc18b0fbe2108785e621efbaed865defe1e9c55dd297911a0",
+      "domain": "general",
+      "targets": 184,
+      "ce": 0.8973456025123596,
+      "mean_depth": 38.11940383911133,
+      "cap_fraction": 0.002487562131136656
+    },
+    {
+      "id": "8e67862961b819dccf3281c93fb79b272f837f2ba4b98123e89867b9e2ae431a",
+      "domain": "math",
+      "targets": 186,
+      "ce": 1.0915236473083496,
+      "mean_depth": 38.16078567504883,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8e75de002c303161753701e58fc3a9b70368bfa0c74a8f62e24b458ae7527f04",
+      "domain": "code",
+      "targets": 486,
+      "ce": 0.5829819440841675,
+      "mean_depth": 38.07436752319336,
+      "cap_fraction": 0.0011441647075116634
+    },
+    {
+      "id": "8ec9f14b9be4d3ddc0029440f55ef037240e1f71966974178543d31447d285ba",
+      "domain": "math",
+      "targets": 373,
+      "ce": 0.8018324375152588,
+      "mean_depth": 38.0333366394043,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8ee3e15c948c2ad895d4e02bda8da85b8958ef9f37a50476bb537fd766116d2d",
+      "domain": "general",
+      "targets": 1054,
+      "ce": 0.8549710512161255,
+      "mean_depth": 38.46613693237305,
+      "cap_fraction": 0.02990325354039669
+    },
+    {
+      "id": "8f04fe106198529788788c3daba32a9e9cfb1a7006c3921c6cf2782d5e4d8da0",
+      "domain": "general",
+      "targets": 31,
+      "ce": 0.2744101881980896,
+      "mean_depth": 38.157894134521484,
+      "cap_fraction": 0.008771929889917374
+    },
+    {
+      "id": "8f0ee9f754dacb435c56b8887860e16047ecd8d8b95ee5002bed5a377a87c7ba",
+      "domain": "math",
+      "targets": 143,
+      "ce": 0.5892402529716492,
+      "mean_depth": 38.088706970214844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "8f91d505b301cd103af50d22a7716c3b1c2c1e7c4440132faf78f3d228fe89af",
+      "domain": "general",
+      "targets": 287,
+      "ce": 1.3427715301513672,
+      "mean_depth": 38.605770111083984,
+      "cap_fraction": 0.006410256493836641
+    },
+    {
+      "id": "902a6bdfea8ee4cb60b92c2134e45dbd79faf2c89028444505375e575ec790ef",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.45599350333213806,
+      "mean_depth": 38.19607925415039,
+      "cap_fraction": 0.019607843831181526
+    },
+    {
+      "id": "9119869e70db19ba95dc5076db16ef444a871fe34fa38cfe506b4dc620845580",
+      "domain": "code",
+      "targets": 426,
+      "ce": 0.4305758774280548,
+      "mean_depth": 38.000003814697266,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "911fef68ea19dd82ddb985dad60605dc43f9ffec6e19035dfa699d9ece1b1616",
+      "domain": "math",
+      "targets": 687,
+      "ce": 0.43988704681396484,
+      "mean_depth": 38.03318405151367,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "91452a9d3f082e8b187c9036155dc2fb5a227526cc9b375b63457ab86e205f8e",
+      "domain": "general",
+      "targets": 288,
+      "ce": 1.77565598487854,
+      "mean_depth": 38.085716247558594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9154455fc47a244b115f82dbcb69d4961f3f5bdfceafb90e95ed7936823e0439",
+      "domain": "general",
+      "targets": 202,
+      "ce": 0.31828972697257996,
+      "mean_depth": 38.22602081298828,
+      "cap_fraction": 0.00551267946138978
+    },
+    {
+      "id": "91b9490e5dd4f1cbb91627e2fb387dbe73cc04838f916ae68161c3a52c91146d",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.6388464570045471,
+      "mean_depth": 38.39655303955078,
+      "cap_fraction": 0.017241379246115685
+    },
+    {
+      "id": "91c7c84b55f464b462eb11c790d3dadaeb8069d3dce64a487433ca0f79d90d02",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 1.6105881929397583,
+      "mean_depth": 38.15498352050781,
+      "cap_fraction": 0.0036900369450449944
+    },
+    {
+      "id": "91f407eccc328e95161743b58ce9b703e925ca3c543d31863f8103786e62c330",
+      "domain": "math",
+      "targets": 90,
+      "ce": 1.3548253774642944,
+      "mean_depth": 38.1729736328125,
+      "cap_fraction": 0.0054054055362939835
+    },
+    {
+      "id": "92492c95933e7dc5566caea71acdaee73219d66e8eb65e944ac2653a9fa11c5e",
+      "domain": "math",
+      "targets": 125,
+      "ce": 1.0414389371871948,
+      "mean_depth": 38.11167526245117,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9260d39102bf5b7ec63b7ec13cc1b14392d9bfe90779363b1a356005c42a5dbd",
+      "domain": "code",
+      "targets": 489,
+      "ce": 0.3705537021160126,
+      "mean_depth": 38.04469299316406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9282db10efaccf29974f00457fc756388005c26df2519cdc7da808bf3c434551",
+      "domain": "general",
+      "targets": 408,
+      "ce": 1.15706467628479,
+      "mean_depth": 38.171295166015625,
+      "cap_fraction": 0.002314814832061529
+    },
+    {
+      "id": "92a815c76d4cc0f7b30cbe6cc2c75c2a9ef91b9752f56e730d8a8c40cdf47918",
+      "domain": "code",
+      "targets": 476,
+      "ce": 0.36036354303359985,
+      "mean_depth": 38.010948181152344,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "931d4643de04acb37434abb781a22011f2508e212b7afbf360a260a36775c165",
+      "domain": "general",
+      "targets": 40,
+      "ce": 0.2279411256313324,
+      "mean_depth": 38.3227653503418,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "933b55453c01c889c798bf0bca88e4f53477b22061b2685d0cfba9d7944000e5",
+      "domain": "code",
+      "targets": 387,
+      "ce": 0.1354854702949524,
+      "mean_depth": 38.02119445800781,
+      "cap_fraction": 0.0013245033333078027
+    },
+    {
+      "id": "93628be02d05e0bfb8f2af9abee7dd901397ddac661279a86274014a4ff6814b",
+      "domain": "general",
+      "targets": 126,
+      "ce": 0.948586106300354,
+      "mean_depth": 38.046356201171875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "93c5e18ab3d83908f7f4d3412d631b9e2d8b84469220b562399db3fcbff87dbd",
+      "domain": "code",
+      "targets": 341,
+      "ce": 0.6083791255950928,
+      "mean_depth": 38.10272216796875,
+      "cap_fraction": 0.0020964359864592552
+    },
+    {
+      "id": "93ddaf2db35baa04667785657e4c7bcb3ae1cf334a81d770b250a9ff9b74e610",
+      "domain": "code",
+      "targets": 272,
+      "ce": 0.4413788318634033,
+      "mean_depth": 38.1016960144043,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "941820da7e9e4e234d9b5f491fdf08e0e00fc7cccf253df08244b461f0b33784",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.6024506688117981,
+      "mean_depth": 38.10810852050781,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "94430132d07def766c5694ca2fc45d75b66de566cdd7bcab380493f7f23c5ff1",
+      "domain": "math",
+      "targets": 315,
+      "ce": 1.311053991317749,
+      "mean_depth": 38.11970138549805,
+      "cap_fraction": 0.0024937656708061695
+    },
+    {
+      "id": "945ace900b31779d840e3d91554f9b1490208b8e1e94784c24ae636814e104cf",
+      "domain": "math",
+      "targets": 303,
+      "ce": 0.75993812084198,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "94f2efe930a4b82893a152a9b8099b9ee948e58139837f67eeb5c36c196b3c87",
+      "domain": "general",
+      "targets": 269,
+      "ce": 0.9405615329742432,
+      "mean_depth": 38.04069900512695,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "94f75d3516500b3daacfe5a9f6881552633d4a9a6a5c70bdcc2d1a519344b4eb",
+      "domain": "math",
+      "targets": 335,
+      "ce": 0.9432182908058167,
+      "mean_depth": 38.14606857299805,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9547518d56c9dc31902045e8f34dfa34caf21fe97b6c3f5af7e71e56805b68db",
+      "domain": "math",
+      "targets": 134,
+      "ce": 1.074048399925232,
+      "mean_depth": 38.10988998413086,
+      "cap_fraction": 0.010989011265337467
+    },
+    {
+      "id": "95845b1cd51a2eb89abe3fc89515097883457d3c56c6c54982ec98df095a4047",
+      "domain": "math",
+      "targets": 246,
+      "ce": 0.1284005343914032,
+      "mean_depth": 38.02615737915039,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "95ea217b39eb852558673653dd4f4ec7f79c142154ac452c460e1b84f071d48d",
+      "domain": "code",
+      "targets": 71,
+      "ce": 0.6927006840705872,
+      "mean_depth": 38.10619354248047,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9660d82360a9fc7778890935184387a551637761ad4211785cb7c5b1e3dcc825",
+      "domain": "code",
+      "targets": 745,
+      "ce": 0.6985165476799011,
+      "mean_depth": 38.0325813293457,
+      "cap_fraction": 0.0012531328247860074
+    },
+    {
+      "id": "97009af22a52fe8eee2f96638ae487374a0579dc59901b0d05c32d9d962a2e86",
+      "domain": "general",
+      "targets": 305,
+      "ce": 1.1386795043945312,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "970f8e98dd6df6b9edbc5fa7ea6661d91f1c7c57e94b0b1af7295643c37623d2",
+      "domain": "code",
+      "targets": 719,
+      "ce": 0.4891517758369446,
+      "mean_depth": 38.07528305053711,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9750dcd8e123d145bc5da2a50297eae6ae15512fa013b09b91fdf81c2cae909e",
+      "domain": "general",
+      "targets": 846,
+      "ce": 0.7368016839027405,
+      "mean_depth": 38.23435974121094,
+      "cap_fraction": 0.0053022271022200584
+    },
+    {
+      "id": "9751ee59ff00eacb1f2a2f688edf3f0975165cb7890f0299cf976bc442840858",
+      "domain": "general",
+      "targets": 570,
+      "ce": 0.7948341965675354,
+      "mean_depth": 38.33073425292969,
+      "cap_fraction": 0.015600623562932014
+    },
+    {
+      "id": "977db9ac9cb24e0d147a1ba68f277d59b69d2633b2211c4da80b9e8a1cec0d4e",
+      "domain": "math",
+      "targets": 502,
+      "ce": 0.24245621263980865,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9798bbc2f21bb91ee460bb738dfc04148d0b2bcfe701d9f65918a99c36860dc7",
+      "domain": "math",
+      "targets": 124,
+      "ce": 1.2001909017562866,
+      "mean_depth": 38.18041229248047,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "97a0842e4c4863fd6e539623efdc0ac5fde7be94b5d320450e050f9f6621cca5",
+      "domain": "general",
+      "targets": 220,
+      "ce": 1.132754921913147,
+      "mean_depth": 38.317649841308594,
+      "cap_fraction": 0.003921568859368563
+    },
+    {
+      "id": "981454eed492d4b3171e4c4a19b5dbe3e465cccfd6b5c7fabd7b9e3cb6a1b1e7",
+      "domain": "chinese",
+      "targets": 112,
+      "ce": 0.48118072748184204,
+      "mean_depth": 38.496124267578125,
+      "cap_fraction": 0.007751937955617905
+    },
+    {
+      "id": "987b05721a01c2aa6662e8cb0ff3a2311c06f20c566e366558e13f61ca25310f",
+      "domain": "general",
+      "targets": 344,
+      "ce": 1.7226637601852417,
+      "mean_depth": 38.15752029418945,
+      "cap_fraction": 0.0071599045768380165
+    },
+    {
+      "id": "98a6d08bb2cc3734a1f185f5380213bd541e21901df6a17a72b0769bf3bb1823",
+      "domain": "code",
+      "targets": 491,
+      "ce": 0.8174201250076294,
+      "mean_depth": 38.055992126464844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "98c6db263b378a843dc14063261cb41cfe30484950b065b19a42ebc5ef228e85",
+      "domain": "code",
+      "targets": 58,
+      "ce": 1.923314094543457,
+      "mean_depth": 38.644317626953125,
+      "cap_fraction": 0.0058309040032327175
+    },
+    {
+      "id": "98eed599813687623e8796e06d973a28d333b8ef946486ef0fa175f56c8c380e",
+      "domain": "code",
+      "targets": 764,
+      "ce": 0.3865463137626648,
+      "mean_depth": 38.07143020629883,
+      "cap_fraction": 0.0011904762359336019
+    },
+    {
+      "id": "99082a2508fe4c76d1f9dd3d4da570a938a1674581d36a0093b58d83e4d05cb9",
+      "domain": "code",
+      "targets": 565,
+      "ce": 0.6529244184494019,
+      "mean_depth": 38.03767776489258,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "99400300507247325533d10fa829bca21cbb91dea642ac292a561f1f1e572640",
+      "domain": "general",
+      "targets": 30,
+      "ce": 0.19897179305553436,
+      "mean_depth": 38.35025405883789,
+      "cap_fraction": 0.0025380710139870644
+    },
+    {
+      "id": "994163062fee8be3bedca33634c61a34b4136d593459d518a3ef74a0008ea990",
+      "domain": "code",
+      "targets": 725,
+      "ce": 0.42671385407447815,
+      "mean_depth": 38.03108596801758,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "994559ea4c65c88274f8fae09a3737e237dd370f77b174e8362f3c06ad019eaa",
+      "domain": "general",
+      "targets": 311,
+      "ce": 1.1307754516601562,
+      "mean_depth": 38.25300979614258,
+      "cap_fraction": 0.009036144241690636
+    },
+    {
+      "id": "9af7ecd7cfcdb958c9707fdc2e65539ca1a4d00bf4b856d0b8dea9894b66e3a6",
+      "domain": "code",
+      "targets": 757,
+      "ce": 0.6258586645126343,
+      "mean_depth": 38.22194290161133,
+      "cap_fraction": 0.0063051702454686165
+    },
+    {
+      "id": "9b013ad9027f66dc0ae81654b73924194791f24a11098b933b0445b4a8662a93",
+      "domain": "general",
+      "targets": 311,
+      "ce": 1.4555805921554565,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9b0a3c1142ae434c02d2cc9ea60c1058b88fcd3d1239b89b428340c3cec8ef1a",
+      "domain": "code",
+      "targets": 842,
+      "ce": 0.34653350710868835,
+      "mean_depth": 38.19490432739258,
+      "cap_fraction": 0.002938295714557171
+    },
+    {
+      "id": "9b37db0b3a31918003f9d990d07de2de5ae7edb1856d65dea5af9088a5d45a7c",
+      "domain": "math",
+      "targets": 453,
+      "ce": 0.32455912232398987,
+      "mean_depth": 38.06612777709961,
+      "cap_fraction": 0.001612903201021254
+    },
+    {
+      "id": "9bd972bcc38c8b4ff6f5c0bc752efb1c2d6838c5c4792a8524de53acfce9e295",
+      "domain": "math",
+      "targets": 719,
+      "ce": 0.2804792821407318,
+      "mean_depth": 38.04498291015625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9be5f55d82927d37cf98278980d280a1ab3c271b68af3c55e27dad5f81a0ebe7",
+      "domain": "code",
+      "targets": 414,
+      "ce": 0.2648141384124756,
+      "mean_depth": 38.524452209472656,
+      "cap_fraction": 0.008431702852249146
+    },
+    {
+      "id": "9c65ada76954f8b50c4251f9f96995a7ff5411c2364614ec286faeebf108e488",
+      "domain": "chinese",
+      "targets": 63,
+      "ce": 1.7304366827011108,
+      "mean_depth": 38.30864334106445,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9c7bf44e3f0f13718e3a9ed62cade868a96ff6accf3d08e95f5744470f6380dd",
+      "domain": "code",
+      "targets": 539,
+      "ce": 0.765089213848114,
+      "mean_depth": 38.23857879638672,
+      "cap_fraction": 0.005076142027974129
+    },
+    {
+      "id": "9c9a78a3ab1055f24a40ec8875f22f71b0e8f9a7f4613d5b28c4e4aaa5b60ccd",
+      "domain": "code",
+      "targets": 109,
+      "ce": 0.6208746433258057,
+      "mean_depth": 38.10000228881836,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9cb3cd1a74da61b24da1e70f70f9fd1e5eb2b0f4ccf466fc9db5fb8f2b47b675",
+      "domain": "math",
+      "targets": 340,
+      "ce": 0.7932285070419312,
+      "mean_depth": 38.04781723022461,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9cc9026441c68be9665dc960319ce18142293142af513354c711819995e0387e",
+      "domain": "general",
+      "targets": 87,
+      "ce": 0.9775713086128235,
+      "mean_depth": 38.5234375,
+      "cap_fraction": 0.01953125
+    },
+    {
+      "id": "9db0ca787ca7b2e8d91cb65b1ccee99ecf746cea6246b37453bc508769f65afe",
+      "domain": "general",
+      "targets": 298,
+      "ce": 1.7471776008605957,
+      "mean_depth": 40.22865676879883,
+      "cap_fraction": 0.0731707289814949
+    },
+    {
+      "id": "9e89ec63d6fccd89f54af87434ba4b43be6b7abc6ce956ecfcd720988d9ab52e",
+      "domain": "code",
+      "targets": 516,
+      "ce": 0.7501749396324158,
+      "mean_depth": 38.05849075317383,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9eae648e472b1fb2f7d179307e1306ae259f837f89033f3825dc683e8384967d",
+      "domain": "math",
+      "targets": 376,
+      "ce": 0.7125816941261292,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "9f3a029498dce93708aff8cac66995ca1fd53a82e51c7f82ea05f7c48157e617",
+      "domain": "code",
+      "targets": 577,
+      "ce": 0.43987616896629333,
+      "mean_depth": 38.048484802246094,
+      "cap_fraction": 0.0015151514671742916
+    },
+    {
+      "id": "9f7a18d4eb39de6e352d4b3e69501970cb0fc8e42746e6af1d67aed8171bb607",
+      "domain": "math",
+      "targets": 257,
+      "ce": 0.5141188502311707,
+      "mean_depth": 38.1296272277832,
+      "cap_fraction": 0.0026455025654286146
+    },
+    {
+      "id": "9fe425f8a0c549aea409ba32e4371e90584494fefaf43d66d5d144dc8533ff4c",
+      "domain": "math",
+      "targets": 734,
+      "ce": 0.69059157371521,
+      "mean_depth": 38.162410736083984,
+      "cap_fraction": 0.012761020101606846
+    },
+    {
+      "id": "9fed4d66313711e1659cddafd2be5f6b82f170d333ff9264751a5b0e7dce60b2",
+      "domain": "math",
+      "targets": 190,
+      "ce": 0.48060616850852966,
+      "mean_depth": 38.05905532836914,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a026ace75f4d348dcd94e4465a70cc83a2944638ed56d3ee4532a1afda2debc4",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.34759047627449036,
+      "mean_depth": 38.5,
+      "cap_fraction": 0.021739130839705467
+    },
+    {
+      "id": "a0518d5d4260bf1465121a38e670cda9aa83a510751cfcdce3e7593320211caa",
+      "domain": "math",
+      "targets": 557,
+      "ce": 0.7282792329788208,
+      "mean_depth": 38.15415954589844,
+      "cap_fraction": 0.00818553939461708
+    },
+    {
+      "id": "a08917a086a4ad6aebea07e53c236908961dd2355773ab94d667618867ce1e08",
+      "domain": "code",
+      "targets": 536,
+      "ce": 0.6112379431724548,
+      "mean_depth": 38.181339263916016,
+      "cap_fraction": 0.0041928719729185104
+    },
+    {
+      "id": "a0a0befc09ffda803efc4dc93dee7da3b6d44cbebeedfec1e5ab06c49c318c84",
+      "domain": "code",
+      "targets": 294,
+      "ce": 0.38877516984939575,
+      "mean_depth": 38.10055923461914,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a21b2a21099dd9fb9a0419179f58aef3ccaf98b6101138877d9bf7160421a561",
+      "domain": "general",
+      "targets": 169,
+      "ce": 1.7112387418746948,
+      "mean_depth": 38.14912414550781,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a3f25add20bbcc6ba8eeac17882d3dae3a88e2f99be3632264d8cbc5de4d3dee",
+      "domain": "math",
+      "targets": 1275,
+      "ce": 1.2960861921310425,
+      "mean_depth": 38.011253356933594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a3fa49ea04978227421eb9606406f3358026a56b48b12414df3ff72216dd16d4",
+      "domain": "code",
+      "targets": 776,
+      "ce": 0.2694667875766754,
+      "mean_depth": 38.233455657958984,
+      "cap_fraction": 0.006242197006940842
+    },
+    {
+      "id": "a42fffd46273d897edbcecd26d5064a54bf704ddeea8169b8114c27fe3ea9ca7",
+      "domain": "math",
+      "targets": 426,
+      "ce": 0.6371548175811768,
+      "mean_depth": 38.044921875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a43900707cbf60b76bd21504a25a526b170f4bf1fbc43f3bfe03668f2ce2f1a3",
+      "domain": "code",
+      "targets": 351,
+      "ce": 0.25032663345336914,
+      "mean_depth": 38.149253845214844,
+      "cap_fraction": 0.0018656715983524919
+    },
+    {
+      "id": "a43c5c1b0decaec7dd88364f543b2bc4e1a87a328f2df018fece25dffe64a2f4",
+      "domain": "general",
+      "targets": 179,
+      "ce": 1.016566514968872,
+      "mean_depth": 38.34804153442383,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a511d4381fac1b89752e97bd3d9f4116e84510affa34cd3fd318a35580e59dd3",
+      "domain": "code",
+      "targets": 387,
+      "ce": 0.40298300981521606,
+      "mean_depth": 38.03174591064453,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a5308040104118ce5fc7cc5d2a10cea4e4aa6b47711ce569bd70f29376f200af",
+      "domain": "general",
+      "targets": 366,
+      "ce": 1.2534704208374023,
+      "mean_depth": 38.01339340209961,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a631272efe0fa59ee3e6758b42e5a78f839bccc5faeeca0ca2dbc081fa9e3c4e",
+      "domain": "math",
+      "targets": 262,
+      "ce": 0.5905483365058899,
+      "mean_depth": 38.17475891113281,
+      "cap_fraction": 0.0032362460624426603
+    },
+    {
+      "id": "a77fc6d77bca540d7880b87dbabecc7521ad6dcfdf8654c7b1cb141e12e154b3",
+      "domain": "math",
+      "targets": 209,
+      "ce": 0.8352713584899902,
+      "mean_depth": 38.07126235961914,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a7932883d28c55ea983930b39d4448dcee689a9c30c4163642444ffe9c829e1c",
+      "domain": "general",
+      "targets": 73,
+      "ce": 1.4278556108474731,
+      "mean_depth": 38.27631759643555,
+      "cap_fraction": 0.00657894741743803
+    },
+    {
+      "id": "a7f6566ec2a693ae503ae2fb1f2e0c9459887f6d290895606ec1213bd0f68052",
+      "domain": "code",
+      "targets": 422,
+      "ce": 0.7811564803123474,
+      "mean_depth": 38.342105865478516,
+      "cap_fraction": 0.00657894741743803
+    },
+    {
+      "id": "a81fd82b5f661e17ec8ba00ce1d582791bb3720ae43a6de4ff88173559434bbb",
+      "domain": "code",
+      "targets": 348,
+      "ce": 0.42198804020881653,
+      "mean_depth": 38.088111877441406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "a856c61263c7d4ac418975366f16e272da3100ad696c05f4ae37a03edbb3d537",
+      "domain": "general",
+      "targets": 301,
+      "ce": 1.24959135055542,
+      "mean_depth": 38.51506042480469,
+      "cap_fraction": 0.015060240402817726
+    },
+    {
+      "id": "a891378e7df8daf3160cd3d14b605ac536970395cceacf3d14e3a41518499899",
+      "domain": "code",
+      "targets": 84,
+      "ce": 1.3227779865264893,
+      "mean_depth": 39.81343078613281,
+      "cap_fraction": 0.007462686393409967
+    },
+    {
+      "id": "a9e5f22ae693cff5d4fe4025e4652337816a7485f351000a314c0a1ae0b2a164",
+      "domain": "code",
+      "targets": 438,
+      "ce": 0.7518641948699951,
+      "mean_depth": 38.132354736328125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "aa59c23a0dcefc757306ce343a0b3b63cd2d9a3efe327b854f9fa81fc2555c0f",
+      "domain": "code",
+      "targets": 351,
+      "ce": 0.3314920663833618,
+      "mean_depth": 38.079708099365234,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "aaa5e6ff6bcfae168711456ebb8593111a2be9315243c6f7d58bebc27042afc6",
+      "domain": "chinese",
+      "targets": 179,
+      "ce": 1.721948266029358,
+      "mean_depth": 38.09547805786133,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ab44e53e0eab4384319057daee7384ba03a99a3729e31d21702a63a0ac715442",
+      "domain": "code",
+      "targets": 49,
+      "ce": 0.9171572923660278,
+      "mean_depth": 38.212501525878906,
+      "cap_fraction": 0.012500000186264515
+    },
+    {
+      "id": "ab9b90f09cb1c064c33b751bafe5c8b667b067cc87d00f0016082913740de1c9",
+      "domain": "math",
+      "targets": 36,
+      "ce": 0.5831634998321533,
+      "mean_depth": 38.63529586791992,
+      "cap_fraction": 0.0117647061124444
+    },
+    {
+      "id": "ac09bc6eb32e427aeafbc7be70361d12500488b8887668fe6cae5e9dc93b990b",
+      "domain": "general",
+      "targets": 191,
+      "ce": 1.2016687393188477,
+      "mean_depth": 38.02812194824219,
+      "cap_fraction": 0.0016542597441002727
+    },
+    {
+      "id": "acd34d62629b659791333154796276d37a95005509a8c650172e5dad6dbb3365",
+      "domain": "general",
+      "targets": 717,
+      "ce": 0.5943843722343445,
+      "mean_depth": 38.07878875732422,
+      "cap_fraction": 0.001212121220305562
+    },
+    {
+      "id": "acda2bbd5c67f755a896b60d451f9ec6d3568e25b7e28881d3e5c1b8514e4fd6",
+      "domain": "math",
+      "targets": 116,
+      "ce": 1.009705662727356,
+      "mean_depth": 38.162010192871094,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ad43c28a01da58e81e035fc43019cfeaf3020d1557ab4883b7bc4d3c9b99ed1d",
+      "domain": "code",
+      "targets": 329,
+      "ce": 0.35055533051490784,
+      "mean_depth": 38.04773712158203,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "adb2147b0ed231d68c80b3623391f0b5971c3fc14f59064bb643e07333147d9b",
+      "domain": "general",
+      "targets": 265,
+      "ce": 1.0975114107131958,
+      "mean_depth": 39.095890045166016,
+      "cap_fraction": 0.027397260069847107
+    },
+    {
+      "id": "add24768445ed7b7ba6c6ed472d8f6a488c09be2a4bd3c2f8b553339dc80c451",
+      "domain": "general",
+      "targets": 328,
+      "ce": 1.4636693000793457,
+      "mean_depth": 38.01519012451172,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ade5334583557d57ee0795bb542a0034648c56a42593c430b0e59157837530e1",
+      "domain": "math",
+      "targets": 112,
+      "ce": 0.6587828397750854,
+      "mean_depth": 38.163841247558594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ae134847a48e4751062ce7ce8cb6a952f208995e7fed8f5fd687149605adb95f",
+      "domain": "general",
+      "targets": 231,
+      "ce": 1.4029268026351929,
+      "mean_depth": 38.31086349487305,
+      "cap_fraction": 0.00749063678085804
+    },
+    {
+      "id": "ae6d00a8948a66ce85274989fb1aff6d797027fb109604e0712c10e6e814e23c",
+      "domain": "general",
+      "targets": 429,
+      "ce": 1.3866069316864014,
+      "mean_depth": 38.4969482421875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "aea5272559cc7e9ebc570ab90337461a003ab9ca68e525e9105ea219e34ef114",
+      "domain": "general",
+      "targets": 376,
+      "ce": 0.5901781320571899,
+      "mean_depth": 38.058536529541016,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "aedc3cdb96dbdf88c61ce4a055ded2605e23844987be7df966880ff34f8f39e3",
+      "domain": "code",
+      "targets": 281,
+      "ce": 0.4228830635547638,
+      "mean_depth": 38.26979446411133,
+      "cap_fraction": 0.005865102633833885
+    },
+    {
+      "id": "af10ba1882c18fb794aebb5394a2dc4c09012a4916945dd936b0be0a315f4ad4",
+      "domain": "general",
+      "targets": 307,
+      "ce": 1.4193196296691895,
+      "mean_depth": 38.04191589355469,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "af57ae1dbbe0d3806be2e6264918a45bcd5a04b8b689ce75e6880c5364b65943",
+      "domain": "code",
+      "targets": 778,
+      "ce": 0.6978623270988464,
+      "mean_depth": 38.090797424316406,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "af7940a395bbdca1e1925598f7387db70fb5fcaf17270edb8456c0c8d188aafa",
+      "domain": "general",
+      "targets": 391,
+      "ce": 0.8657769560813904,
+      "mean_depth": 38.0860481262207,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "afb1401676b029ceb8bf9515c1e0a02ab6dbe67d743085421a4b83227aa3ba0e",
+      "domain": "math",
+      "targets": 1015,
+      "ce": 0.305729478597641,
+      "mean_depth": 38.11082458496094,
+      "cap_fraction": 0.0017316017765551805
+    },
+    {
+      "id": "afbbef3fbfdccc67d6292c994433e2d94bc218de974816f9363006352787e913",
+      "domain": "math",
+      "targets": 289,
+      "ce": 1.0662455558776855,
+      "mean_depth": 38.111385345458984,
+      "cap_fraction": 0.007425742223858833
+    },
+    {
+      "id": "b00e7beaa079680e5724cc57f13e7ae8f412998fa0a237202cef2ad3dc90a47a",
+      "domain": "general",
+      "targets": 332,
+      "ce": 1.0765682458877563,
+      "mean_depth": 38.41221237182617,
+      "cap_fraction": 0.005089058540761471
+    },
+    {
+      "id": "b0d8826ea964a47d3a1d25b681970105e6727b0448e239578c888521b37d27be",
+      "domain": "math",
+      "targets": 385,
+      "ce": 0.4296536445617676,
+      "mean_depth": 38.29741287231445,
+      "cap_fraction": 0.021551724523305893
+    },
+    {
+      "id": "b176976e184444bf4960d3d6ffd3c1418025d62dbd8c2232e0469d727dd2d2a6",
+      "domain": "chinese",
+      "targets": 335,
+      "ce": 0.4613576829433441,
+      "mean_depth": 38.122806549072266,
+      "cap_fraction": 0.0021929824724793434
+    },
+    {
+      "id": "b1a017a8dc2a3aff47e35ce65d0bffe9d89782c78a3ed4873cc0aacdaf5d0ea3",
+      "domain": "math",
+      "targets": 267,
+      "ce": 0.7536696791648865,
+      "mean_depth": 38.039756774902344,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "b1d83eb378fc6e0019a0480d78ecb8687b1b4e3caf41a35fd9a9184791076a4c",
+      "domain": "general",
+      "targets": 63,
+      "ce": 0.6451668739318848,
+      "mean_depth": 38.59388732910156,
+      "cap_fraction": 0.029694324359297752
+    },
+    {
+      "id": "b2f289351facdb65b9ea5332b36b7f2c69fc8b73d88dfe99d2c72e304ad88e12",
+      "domain": "general",
+      "targets": 335,
+      "ce": 0.8860368728637695,
+      "mean_depth": 38.19621658325195,
+      "cap_fraction": 0.002364066196605563
+    },
+    {
+      "id": "b366a6e9ad0c2e397d1dc079e7be6966899daaab427024544793c9f69c6f362f",
+      "domain": "code",
+      "targets": 340,
+      "ce": 0.3746229112148285,
+      "mean_depth": 38.06651306152344,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "b3b710a7321bea16daf97c3adcb1499af3b1c9c862d52114a4420604e1fe8044",
+      "domain": "general",
+      "targets": 483,
+      "ce": 1.442784309387207,
+      "mean_depth": 38.30739974975586,
+      "cap_fraction": 0.009487666189670563
+    },
+    {
+      "id": "b694b537eb175e657cd7d97c5fcf13c83f5ffe7383f42a5e16811c2c07856e8c",
+      "domain": "code",
+      "targets": 496,
+      "ce": 0.4369452893733978,
+      "mean_depth": 38.04963302612305,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "b6c8973cdaada12459837baca471f15b9d33e0a821dc012e1dc44f69faa0e7d3",
+      "domain": "general",
+      "targets": 386,
+      "ce": 0.4543009400367737,
+      "mean_depth": 38.07310485839844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "b6d12230f6214543d302e590f0b90d75eb386268cbfc41159faa091a8ee38563",
+      "domain": "math",
+      "targets": 185,
+      "ce": 1.297277569770813,
+      "mean_depth": 38.0610466003418,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "b7e59f4520c316cb6a558b2bbab74babca88f635e56e5fdf4af06d56984aad61",
+      "domain": "code",
+      "targets": 11,
+      "ce": 2.229987621307373,
+      "mean_depth": 38.121482849121094,
+      "cap_fraction": 0.00148148147854954
+    },
+    {
+      "id": "b820acfb70362ca189313f125b37313f39d61cfaafa703e492057ac2d5ec68b0",
+      "domain": "code",
+      "targets": 351,
+      "ce": 0.0643027126789093,
+      "mean_depth": 38.18926239013672,
+      "cap_fraction": 0.0013422819320112467
+    },
+    {
+      "id": "b8412ce0c7b1a407028178f3f594646761a97b942e018c793b811b4846549306",
+      "domain": "general",
+      "targets": 523,
+      "ce": 1.3674405813217163,
+      "mean_depth": 38.470977783203125,
+      "cap_fraction": 0.014925372786819935
+    },
+    {
+      "id": "b86e303bf0030bc7103effb1fd7f819f12c76e612e1590bc7b08bdc172335dcc",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 1.7642273902893066,
+      "mean_depth": 38.12367630004883,
+      "cap_fraction": 0.0017667844658717513
+    },
+    {
+      "id": "b8e360adab8ce31a26747c76dab3dac0f4f4c6b4c5c201f603152fddad7a96b8",
+      "domain": "math",
+      "targets": 183,
+      "ce": 1.1638567447662354,
+      "mean_depth": 38.05303192138672,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "b928a6d93318768d9e6b950e7c1f575b9d9c934ff53ffd1fd4a6824dc1a0c910",
+      "domain": "general",
+      "targets": 311,
+      "ce": 1.1093248128890991,
+      "mean_depth": 38.0941162109375,
+      "cap_fraction": 0.002352941082790494
+    },
+    {
+      "id": "b945f2c9487030efdb450be9f3dcb3f5b666d4055be474d6b7fa7c003568b1c5",
+      "domain": "math",
+      "targets": 1602,
+      "ce": 0.16227231919765472,
+      "mean_depth": 38.02314376831055,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "b987de057922c94dbd65c993abf040f418beb51c7d595150be97b42ef8599bc4",
+      "domain": "general",
+      "targets": 78,
+      "ce": 0.14941538870334625,
+      "mean_depth": 38.553165435791016,
+      "cap_fraction": 0.030379746109247208
+    },
+    {
+      "id": "b99942f9c0fb532300315195ff091345447ebaf100b69540ca0f7a016e5daecb",
+      "domain": "math",
+      "targets": 62,
+      "ce": 1.3815330266952515,
+      "mean_depth": 38.21678161621094,
+      "cap_fraction": 0.00699300691485405
+    },
+    {
+      "id": "b9be09296809064817bad99393a3d098d4d935e12e76248041778d3e3f1744a0",
+      "domain": "code",
+      "targets": 265,
+      "ce": 0.6475334763526917,
+      "mean_depth": 38.42630386352539,
+      "cap_fraction": 0.006802720949053764
+    },
+    {
+      "id": "ba558e2eff2fee112f4a1dc2ae3ef180d56281c186349b74c92450a0505f2ead",
+      "domain": "general",
+      "targets": 1038,
+      "ce": 0.7433915138244629,
+      "mean_depth": 38.271141052246094,
+      "cap_fraction": 0.006974716670811176
+    },
+    {
+      "id": "badf093d81f0a43092ab39e77ce6f66a7e8055204cce009f8fe6399ce3f60085",
+      "domain": "general",
+      "targets": 61,
+      "ce": 1.4656907320022583,
+      "mean_depth": 38.105350494384766,
+      "cap_fraction": 0.0033444815780967474
+    },
+    {
+      "id": "baf1ceb3085fe367f4ab9cc4eda3238ec62edad87dac6f747444faa4deddffb2",
+      "domain": "math",
+      "targets": 378,
+      "ce": 1.1322218179702759,
+      "mean_depth": 38.03532028198242,
+      "cap_fraction": 0.002207505516707897
+    },
+    {
+      "id": "bc72534271bd5b4deba9c69cd54c7c70359a4048deb8696da5c220bc65217044",
+      "domain": "chinese",
+      "targets": 455,
+      "ce": 0.7024906277656555,
+      "mean_depth": 38.26810073852539,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "bca216cca1799ab9cab8b4aa059958e0e777a1bceb3f6291bdf308162fb0d7a8",
+      "domain": "math",
+      "targets": 517,
+      "ce": 1.0899182558059692,
+      "mean_depth": 38.17326736450195,
+      "cap_fraction": 0.0033003301359713078
+    },
+    {
+      "id": "bd08eef90cd4935f5cefa9f700a7a57135756949c81fea2de9dba2af161fd3f2",
+      "domain": "code",
+      "targets": 461,
+      "ce": 0.37341439723968506,
+      "mean_depth": 38.1273307800293,
+      "cap_fraction": 0.00776397529989481
+    },
+    {
+      "id": "bd3f8eb6b45cffcff8ce82395ac181c1554cc63693404a5f0c71ead52e4a7d74",
+      "domain": "code",
+      "targets": 666,
+      "ce": 0.5088584423065186,
+      "mean_depth": 38.2716178894043,
+      "cap_fraction": 0.010172939859330654
+    },
+    {
+      "id": "bd5539b9cdc03bb81360efce28b31c8ac7293941c8bde7d82d4aa98c1dd2a32f",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 2.145646095275879,
+      "mean_depth": 38.137725830078125,
+      "cap_fraction": 0.0034217280335724354
+    },
+    {
+      "id": "bd6c4392e5eaaa0f970a81ae04df21558a642ef916ebfc9b88411bc595b39db9",
+      "domain": "code",
+      "targets": 1059,
+      "ce": 0.4118289649486542,
+      "mean_depth": 39.885276794433594,
+      "cap_fraction": 0.10749774426221848
+    },
+    {
+      "id": "bd86d081363a9a43fdb158e33e21398a46e8f919c5a06033a0791be5d4263f94",
+      "domain": "code",
+      "targets": 673,
+      "ce": 0.3283649981021881,
+      "mean_depth": 38.28063201904297,
+      "cap_fraction": 0.011857707984745502
+    },
+    {
+      "id": "bdbcfba586d5bce09ac6018e878c0cac29234a8743c29abf740247b28ad068f1",
+      "domain": "code",
+      "targets": 470,
+      "ce": 0.29345273971557617,
+      "mean_depth": 38.39912414550781,
+      "cap_fraction": 0.01315789483487606
+    },
+    {
+      "id": "bee046ea8a8612f464d0a0ff33db68b3f9f5d133d10c0ae8e62720c838a96e2d",
+      "domain": "code",
+      "targets": 414,
+      "ce": 0.5045668482780457,
+      "mean_depth": 38.19920349121094,
+      "cap_fraction": 0.0019920319318771362
+    },
+    {
+      "id": "bf46a9394b57df64bc3870ca6e0c3708d27434b62b78e12bbfb4cac3b0b6b3f5",
+      "domain": "general",
+      "targets": 715,
+      "ce": 1.1646997928619385,
+      "mean_depth": 38.84499740600586,
+      "cap_fraction": 0.007499999832361937
+    },
+    {
+      "id": "bf80f33c5908783e199872ea5de6f6cd522f0cf0b1519fe0ac0c69719cf7c131",
+      "domain": "chinese",
+      "targets": 83,
+      "ce": 2.445071220397949,
+      "mean_depth": 38.19607925415039,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "bf97afc9215f543e8edf35de5a2136f53f65c843ab095c6d564686961871c149",
+      "domain": "code",
+      "targets": 52,
+      "ce": 0.43113577365875244,
+      "mean_depth": 38.1329460144043,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "bfd09a17a8bf29e573c26915d030335219ee97894b1441317bceb86583228944",
+      "domain": "code",
+      "targets": 3631,
+      "ce": 0.3423830270767212,
+      "mean_depth": 38.25719451904297,
+      "cap_fraction": 0.010034328326582909
+    },
+    {
+      "id": "bfd9734247d628083bcdb579e4ab277e2cb23899a2895487f4142bf7ef5b5ed4",
+      "domain": "general",
+      "targets": 28,
+      "ce": 0.2225140631198883,
+      "mean_depth": 38.343196868896484,
+      "cap_fraction": 0.017751479521393776
+    },
+    {
+      "id": "c09570370bb9121087d61446e5a3181a81e20e1503c3df78361fc114499ad25b",
+      "domain": "math",
+      "targets": 104,
+      "ce": 1.4553885459899902,
+      "mean_depth": 38.28636169433594,
+      "cap_fraction": 0.004545454401522875
+    },
+    {
+      "id": "c1238007af02d01fa0d701a74fc87d9b6de800a3c9a6b9e189672a922711abc5",
+      "domain": "math",
+      "targets": 549,
+      "ce": 0.337062805891037,
+      "mean_depth": 38.07479476928711,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c154f0174fc80a48f9db197eb61a8587260e26bee96c6d77eb89328dbf645325",
+      "domain": "math",
+      "targets": 103,
+      "ce": 0.5702768564224243,
+      "mean_depth": 38.19867706298828,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c1b733c06271f283f8b34bf21f09b54e343134ed01ae49fbf4c02e4f3269de02",
+      "domain": "code",
+      "targets": 190,
+      "ce": 0.5688502788543701,
+      "mean_depth": 38.28520965576172,
+      "cap_fraction": 0.0035211266949772835
+    },
+    {
+      "id": "c31c91263da953317f7ca39b13a6430788a266d2e674ba0a1597d28f13a557bd",
+      "domain": "code",
+      "targets": 372,
+      "ce": 0.5383045673370361,
+      "mean_depth": 38.14645004272461,
+      "cap_fraction": 0.004576658830046654
+    },
+    {
+      "id": "c3485bd76a35eb7ae58652215b8e013101013766d3b27a281d7224de095af5b2",
+      "domain": "general",
+      "targets": 336,
+      "ce": 0.4791408181190491,
+      "mean_depth": 38.087059020996094,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c370f1d08fe8edea2c1459f249f84d1ff7489838c0d7b6b9f5e23f368bf808c2",
+      "domain": "code",
+      "targets": 877,
+      "ce": 0.43057623505592346,
+      "mean_depth": 38.33438491821289,
+      "cap_fraction": 0.009493670426309109
+    },
+    {
+      "id": "c3869d64c4d3c467bafc5f01bfa9976a129452d95f461960dfd48f45abbcd043",
+      "domain": "code",
+      "targets": 412,
+      "ce": 0.4585227370262146,
+      "mean_depth": 38.05656814575195,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c39dce61ff4ca269ef1aea621024369e45ef7315638195aefcf3dfbe85362053",
+      "domain": "code",
+      "targets": 308,
+      "ce": 0.44683605432510376,
+      "mean_depth": 38.366127014160156,
+      "cap_fraction": 0.009962639771401882
+    },
+    {
+      "id": "c41bff2cd40fa3013bba14f45d061b0d98f30811414fb609be9b975ec7db76d4",
+      "domain": "code",
+      "targets": 839,
+      "ce": 0.7779775857925415,
+      "mean_depth": 38.08108139038086,
+      "cap_fraction": 0.000965250947047025
+    },
+    {
+      "id": "c4232bae36fef0f1ac03d5de3586da02d237f0bbdf988afc4c34a9d12174e3f0",
+      "domain": "code",
+      "targets": 649,
+      "ce": 0.38642987608909607,
+      "mean_depth": 38.108848571777344,
+      "cap_fraction": 0.0047846888191998005
+    },
+    {
+      "id": "c485e45d0ad289cabbf4ce3d676ebdf865d57941eef814326a729b819f675d68",
+      "domain": "general",
+      "targets": 75,
+      "ce": 1.9080108404159546,
+      "mean_depth": 39.03883361816406,
+      "cap_fraction": 0.029126213863492012
+    },
+    {
+      "id": "c49dd9729e0a2cfb41cdaa81b7db6141ce83d2d93e619743820758ce3ff10ce0",
+      "domain": "math",
+      "targets": 280,
+      "ce": 0.3903765082359314,
+      "mean_depth": 38.122066497802734,
+      "cap_fraction": 0.002347417874261737
+    },
+    {
+      "id": "c4b4bd493ce26433d79ff1904560402251d9da72149488c84539456afd2e8a81",
+      "domain": "code",
+      "targets": 275,
+      "ce": 0.4164651930332184,
+      "mean_depth": 38.01829147338867,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c4ccb15fae9107b13100a083e9d8f34561683f44b0ff098783277d1127b27f06",
+      "domain": "chinese",
+      "targets": 442,
+      "ce": 0.2565478980541229,
+      "mean_depth": 38.35431671142578,
+      "cap_fraction": 0.007194244768470526
+    },
+    {
+      "id": "c5313f964d5fc8be2541feba8034c98d29c849648c8060decc381ed71304d9cb",
+      "domain": "general",
+      "targets": 56,
+      "ce": 0.932039201259613,
+      "mean_depth": 38.592594146728516,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c53f4900f7e1af232401ae8a5e1cd9343efeb1dbedc80805081ea552c513f75b",
+      "domain": "math",
+      "targets": 35,
+      "ce": 2.325676202774048,
+      "mean_depth": 38.076087951660156,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c5da0331b6dc04afac34c593157a31e52217d7bbbc0304695f8ee58c3d2a3998",
+      "domain": "code",
+      "targets": 383,
+      "ce": 0.4832683205604553,
+      "mean_depth": 38.00761413574219,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c5fea276e1bb20f517780d6bec428d7cbc1c42e7f5c590102fb0e6f8337cde08",
+      "domain": "general",
+      "targets": 56,
+      "ce": 0.8683834075927734,
+      "mean_depth": 38.27472686767578,
+      "cap_fraction": 0.0036630036775022745
+    },
+    {
+      "id": "c6aae70635ba07ebe6572e5ce081caeaa276b76fd6766c7267e0b34008107965",
+      "domain": "code",
+      "targets": 396,
+      "ce": 0.7580434083938599,
+      "mean_depth": 38.40860366821289,
+      "cap_fraction": 0.01075268816202879
+    },
+    {
+      "id": "c6bb6225cacaabe9a78f5f5e8022f181fbe8ecba949afd706ee3d5617c3598bd",
+      "domain": "math",
+      "targets": 846,
+      "ce": 1.1442546844482422,
+      "mean_depth": 38.024234771728516,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c786c8c9037a09f6a5cb5131856bccc87185f4612676479be7dc6c6b193f0a93",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.6321837902069092,
+      "mean_depth": 38.4140625,
+      "cap_fraction": 0.0234375
+    },
+    {
+      "id": "c79e95c000b1846f36de1ee8141ad7731cdf55a3acd7054b71d33ba771be61d8",
+      "domain": "math",
+      "targets": 842,
+      "ce": 0.35012486577033997,
+      "mean_depth": 38.05852508544922,
+      "cap_fraction": 0.0010090817231684923
+    },
+    {
+      "id": "c7d313f20f9be65386cd8a384ce2c8843fc6a0d8460bdb222f4a8d345201fdaa",
+      "domain": "general",
+      "targets": 581,
+      "ce": 1.0111277103424072,
+      "mean_depth": 38.930816650390625,
+      "cap_fraction": 0.012578615918755531
+    },
+    {
+      "id": "c7f2832fea1a926bab9f4761db3d9398ddf6053245ca9b1b01bcd66017132964",
+      "domain": "code",
+      "targets": 1254,
+      "ce": 0.3011740744113922,
+      "mean_depth": 38.33333206176758,
+      "cap_fraction": 0.005992509424686432
+    },
+    {
+      "id": "c866eee9965e34693beb4eabd4dba19ef9fb132847b2ff733f4784bdcaac5f1d",
+      "domain": "general",
+      "targets": 423,
+      "ce": 1.6015288829803467,
+      "mean_depth": 38.20188903808594,
+      "cap_fraction": 0.0018867924809455872
+    },
+    {
+      "id": "c8c53c83325fcb1545c2b3066e91e7879e4b0626c269a1214701e382467112eb",
+      "domain": "code",
+      "targets": 671,
+      "ce": 0.33779406547546387,
+      "mean_depth": 38.49585723876953,
+      "cap_fraction": 0.026243094354867935
+    },
+    {
+      "id": "c980275d44f3f2b999640b19e8425348321b82eac4f07e30ef8a1f2572ffb485",
+      "domain": "math",
+      "targets": 44,
+      "ce": 0.7058722376823425,
+      "mean_depth": 38.1783447265625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "c9835c1614b371bc645e5f6b56a14c70fbb483aaeb98cdc1e6b83d1ca2848d65",
+      "domain": "code",
+      "targets": 386,
+      "ce": 0.34951770305633545,
+      "mean_depth": 38.015625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "cb2042ab2e7f644efd2ecd29971b08f4cefc8cd77a2b266f594ab6d81162802d",
+      "domain": "math",
+      "targets": 87,
+      "ce": 0.5078142285346985,
+      "mean_depth": 38.18181610107422,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "cb6588d6ff3133ebe291051ee02a76feb076c0d988a9d6f89a8c86cc6b98b16b",
+      "domain": "general",
+      "targets": 588,
+      "ce": 1.2577369213104248,
+      "mean_depth": 38.22108459472656,
+      "cap_fraction": 0.007320644333958626
+    },
+    {
+      "id": "cb89b2d49353f0d3947c9f89a207d4f30feaf4cb1156ec5dab54cf380301e4fc",
+      "domain": "general",
+      "targets": 146,
+      "ce": 1.1263140439987183,
+      "mean_depth": 39.658958435058594,
+      "cap_fraction": 0.011560693383216858
+    },
+    {
+      "id": "cbdf4d9db6d15126cff9e279fa1220701540927352e706d1b07ca4ec172f27d5",
+      "domain": "general",
+      "targets": 20,
+      "ce": 0.3622491657733917,
+      "mean_depth": 38.20731735229492,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "cc2668ceffca3899679285a8338ebbee1ae6f809afc939bc703a94c43cfac66e",
+      "domain": "math",
+      "targets": 422,
+      "ce": 0.49373868107795715,
+      "mean_depth": 38.141510009765625,
+      "cap_fraction": 0.0037735849618911743
+    },
+    {
+      "id": "cc2e30ee5f32fd963f426472527fac75b38622569196cff854f743bf50a00122",
+      "domain": "math",
+      "targets": 192,
+      "ce": 1.043622612953186,
+      "mean_depth": 38.085716247558594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "cdbf312ca803123c424ad71cad4f3c514bb28550e850ac82686cca5e1316d3ea",
+      "domain": "general",
+      "targets": 135,
+      "ce": 0.7381578087806702,
+      "mean_depth": 38.03461837768555,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ce8da46ae16893d6d6ce47a36cf1839bc241399911f1dccfcee023d6337ac2a1",
+      "domain": "general",
+      "targets": 395,
+      "ce": 0.9578408598899841,
+      "mean_depth": 38.227455139160156,
+      "cap_fraction": 0.006147540640085936
+    },
+    {
+      "id": "cf4ab320bbf1c92ff5a1f52f671ace94a5214cb1d0ed507782f625a7d6c04395",
+      "domain": "math",
+      "targets": 31,
+      "ce": 1.4820352792739868,
+      "mean_depth": 38.3797492980957,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "cf7daa1eb4da40942443257281c38fd573f19f6b9cbac88d4eb622964e3a9ca9",
+      "domain": "math",
+      "targets": 472,
+      "ce": 0.5713311433792114,
+      "mean_depth": 38.04283142089844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "cfc2a283e6660c43b01e6049ede9a3cb08167905c4c1a21764bef0a2da6e8745",
+      "domain": "code",
+      "targets": 307,
+      "ce": 0.6245520710945129,
+      "mean_depth": 38.050506591796875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d04c6b8eb3e2179c165635185e1a50ef0380c2dcee0a3cd6a8f901dcf2d16be0",
+      "domain": "general",
+      "targets": 656,
+      "ce": 0.9060114622116089,
+      "mean_depth": 38.16644287109375,
+      "cap_fraction": 0.00671140942722559
+    },
+    {
+      "id": "d06831102797f458ed444cb385ac49a59b39470e02e57cb55f4fbe2c8e8e2b36",
+      "domain": "code",
+      "targets": 310,
+      "ce": 0.02758927457034588,
+      "mean_depth": 38.040252685546875,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d06969b669565e631516d2cc74a29c3a84957f9183b0a52911ac718087e1ab47",
+      "domain": "code",
+      "targets": 326,
+      "ce": 0.5306889414787292,
+      "mean_depth": 38.03095245361328,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d090047d4e2553928358db584f98054c549976f8ad80c168baafb7deebb69270",
+      "domain": "general",
+      "targets": 271,
+      "ce": 1.5367472171783447,
+      "mean_depth": 38.07770538330078,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d1679f97f56949e16ea0f80f9953a6a9e4c2b35091a97ff80a5c3c981b1925ca",
+      "domain": "general",
+      "targets": 87,
+      "ce": 1.5184389352798462,
+      "mean_depth": 38.407405853271484,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d17cfc8dd22f953ff340cc1ef89b8a872990b5df9a2511ab75fe99f86172efe8",
+      "domain": "general",
+      "targets": 269,
+      "ce": 1.1737873554229736,
+      "mean_depth": 38.9023551940918,
+      "cap_fraction": 0.05723905563354492
+    },
+    {
+      "id": "d1cd18223b336aacd7986dc1d6240cf1feef2e081aa39c81608be527bf93e6d1",
+      "domain": "math",
+      "targets": 416,
+      "ce": 0.3752743601799011,
+      "mean_depth": 38.0318489074707,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d24925d2e32c67b2202d9ac0f7ac0fe84cde70a7e364e96a0ed5ec1e5b1e7ec9",
+      "domain": "math",
+      "targets": 190,
+      "ce": 0.3221117854118347,
+      "mean_depth": 38.11869430541992,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d2a1303e31965f23de8f513a2751a51c5399821d64c633e63500170bb4a07d04",
+      "domain": "general",
+      "targets": 386,
+      "ce": 0.9622093439102173,
+      "mean_depth": 38.32279968261719,
+      "cap_fraction": 0.0022573363967239857
+    },
+    {
+      "id": "d2b5c9af01eed50662c3ebb7ff7cc1f8afa3b64fca83365adb591ad261558853",
+      "domain": "general",
+      "targets": 441,
+      "ce": 1.2433500289916992,
+      "mean_depth": 38.091487884521484,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d34f4ab0b291b1fd12cff1bc6a58ca04323f2dfcc7ebf56599ce007821de716e",
+      "domain": "code",
+      "targets": 134,
+      "ce": 0.5352634191513062,
+      "mean_depth": 38.13976287841797,
+      "cap_fraction": 0.0019685039296746254
+    },
+    {
+      "id": "d370b54d1c946806051c3ecbd3dfdae91b2e7cdc544baf05b4ef319a4cf9f787",
+      "domain": "code",
+      "targets": 60,
+      "ce": 0.4196668267250061,
+      "mean_depth": 38.55664825439453,
+      "cap_fraction": 0.02463054098188877
+    },
+    {
+      "id": "d428e204ec394a7c4f48f2d7b37ada93031bfccfa6e1c0a3470d546958c34731",
+      "domain": "code",
+      "targets": 239,
+      "ce": 0.9782470464706421,
+      "mean_depth": 38.3020133972168,
+      "cap_fraction": 0.00671140942722559
+    },
+    {
+      "id": "d458f2ddbc2b1d01ef416ea6a55b9fd1fe220d20b480daba03abf03d7c06dca3",
+      "domain": "code",
+      "targets": 452,
+      "ce": 0.015086566098034382,
+      "mean_depth": 38.54661178588867,
+      "cap_fraction": 0.012711863964796066
+    },
+    {
+      "id": "d53e2286347bef081618e1b07ce428bd39a670e80f499c6690019be8a81e9eef",
+      "domain": "math",
+      "targets": 144,
+      "ce": 1.3213775157928467,
+      "mean_depth": 38.129730224609375,
+      "cap_fraction": 0.0054054055362939835
+    },
+    {
+      "id": "d54bb78e69847e7c0437e4b9569f2c26f6a727f13c855c71c08ffe3f12f3b627",
+      "domain": "math",
+      "targets": 497,
+      "ce": 0.7687307596206665,
+      "mean_depth": 38.05537033081055,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d57670676947437353a4c87b7ee62015da85f8893e337c710fcfbe54498fe9c6",
+      "domain": "general",
+      "targets": 279,
+      "ce": 1.1447235345840454,
+      "mean_depth": 38.066368103027344,
+      "cap_fraction": 0.0008968609618023038
+    },
+    {
+      "id": "d597dc075eb1d7f35cd241b811598f2005e2c99188c657e83767183b9b7d1592",
+      "domain": "general",
+      "targets": 431,
+      "ce": 1.072229266166687,
+      "mean_depth": 38.09163284301758,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d5ab1598aab5193b7cae82be22bc8423b5b654e2c5be9392bad569647ff5b7d0",
+      "domain": "general",
+      "targets": 162,
+      "ce": 1.038180947303772,
+      "mean_depth": 38.22474670410156,
+      "cap_fraction": 0.014715719036757946
+    },
+    {
+      "id": "d5b4d9a545dc86f702c8d656a9d04d9c5b610a037d9cb6ba42534ae2e4157ab0",
+      "domain": "math",
+      "targets": 310,
+      "ce": 0.9234349131584167,
+      "mean_depth": 38.1767578125,
+      "cap_fraction": 0.004842615220695734
+    },
+    {
+      "id": "d5de33c65cb5f5052e47e1a16e3d6651257e644207325f5d55e2c839817e04a3",
+      "domain": "general",
+      "targets": 707,
+      "ce": 1.7389382123947144,
+      "mean_depth": 38.296783447265625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d63071ff71b4baa633fb02bf551efed50e633cccaffe1ec2dbb1d0728dcd2735",
+      "domain": "chinese",
+      "targets": 288,
+      "ce": 1.2862753868103027,
+      "mean_depth": 38.09708786010742,
+      "cap_fraction": 0.0032362460624426603
+    },
+    {
+      "id": "d691a4b7135341dff76c5a51924c0852824322fbf095c4e336fbd898355dab96",
+      "domain": "math",
+      "targets": 1795,
+      "ce": 0.4399998188018799,
+      "mean_depth": 38.12480545043945,
+      "cap_fraction": 0.002600103849545121
+    },
+    {
+      "id": "d696fc13cac8946dcd5afad3c0c5df3f5783cf248af65fa8ff4fc32dcd4695c9",
+      "domain": "code",
+      "targets": 430,
+      "ce": 0.973727285861969,
+      "mean_depth": 38.54375076293945,
+      "cap_fraction": 0.0031250000465661287
+    },
+    {
+      "id": "d775c33c6b246d7a128fa87260e2123a3039067701acf03d51b75a0f5afb4216",
+      "domain": "general",
+      "targets": 271,
+      "ce": 1.1124992370605469,
+      "mean_depth": 38.38029479980469,
+      "cap_fraction": 0.019337017089128494
+    },
+    {
+      "id": "d77e0083a3f1249b860f16a574348e3921c5d47a1c69c5e53d3a00c81fbfc8c1",
+      "domain": "general",
+      "targets": 574,
+      "ce": 0.3725584149360657,
+      "mean_depth": 38.051204681396484,
+      "cap_fraction": 0.0015060240402817726
+    },
+    {
+      "id": "d7a2ed6c7348a0e8bf835eb0f89de544caade804dcace75cafd2a02b576c34ff",
+      "domain": "general",
+      "targets": 237,
+      "ce": 0.8397026062011719,
+      "mean_depth": 38.13602828979492,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d7bc422117d6f90ff70a0eddb038155369b99e15d7c8fbaf8f45cbe8568d87be",
+      "domain": "math",
+      "targets": 1082,
+      "ce": 1.0100421905517578,
+      "mean_depth": 38.01747131347656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d7d3256eb8282a5056b76c314a672460c9af9ef4f4a0ead556864b7f02cb436d",
+      "domain": "math",
+      "targets": 504,
+      "ce": 0.5731275081634521,
+      "mean_depth": 38.03654479980469,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d807f16b4a6a5fa389fb5443cae2c1ce031cdac57d92b0097ba145ffc29b1b18",
+      "domain": "chinese",
+      "targets": 214,
+      "ce": 1.616300344467163,
+      "mean_depth": 38.052207946777344,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d86f173ae748f50032dddf77962b4e9b77102c1495eb6f044ea7544b09adaf0d",
+      "domain": "general",
+      "targets": 406,
+      "ce": 1.6808606386184692,
+      "mean_depth": 38.33744812011719,
+      "cap_fraction": 0.002057613106444478
+    },
+    {
+      "id": "d8a67af17b5e9f3524109c30d966494148225845fd97ec06a5b4c3d774d93341",
+      "domain": "math",
+      "targets": 245,
+      "ce": 0.9445570111274719,
+      "mean_depth": 38.0892448425293,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "d8ebe82ddc7b8cf292f0d50175557b3010528091ffc14303404992a57d20e645",
+      "domain": "general",
+      "targets": 133,
+      "ce": 0.7104966044425964,
+      "mean_depth": 38.36756134033203,
+      "cap_fraction": 0.011904762126505375
+    },
+    {
+      "id": "d904c72f1b167d23ceab76f9b0487bb9b4baca9d23f726d273a277b06c2d05af",
+      "domain": "math",
+      "targets": 266,
+      "ce": 1.2008026838302612,
+      "mean_depth": 38.157745361328125,
+      "cap_fraction": 0.002816901309415698
+    },
+    {
+      "id": "d93f864f994b1abd0bb3197150e14420d9fa06c6533b5c45ff98d071e7b85345",
+      "domain": "code",
+      "targets": 377,
+      "ce": 0.5991409420967102,
+      "mean_depth": 38.04338455200195,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "da292370ddcb1bc323fc48debac6b8ad15db6940049e8f6b250c5ab71fd8d2d1",
+      "domain": "code",
+      "targets": 451,
+      "ce": 0.07939392328262329,
+      "mean_depth": 38.369163513183594,
+      "cap_fraction": 0.018458198755979538
+    },
+    {
+      "id": "da59f75b3963d46da80729b77387cee00c73ce33ac379198c84ee571fdf64fc6",
+      "domain": "general",
+      "targets": 82,
+      "ce": 0.7277677655220032,
+      "mean_depth": 38.162010192871094,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "dab9f13b23986f99803de86d5e5e61038d90c4030afe6c5393517e3f0922a181",
+      "domain": "general",
+      "targets": 252,
+      "ce": 0.7692679166793823,
+      "mean_depth": 38.081851959228516,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "dac1b9cc7ada0ec0fadc9ac8dada5765471bd9b142fddb903c14db19467a8adf",
+      "domain": "math",
+      "targets": 1078,
+      "ce": 0.2238878607749939,
+      "mean_depth": 38.05038070678711,
+      "cap_fraction": 0.0007633587811142206
+    },
+    {
+      "id": "dce388379afa2258d49cad29dbed67a17fc6b4c06b4d508fa1570c0525b66cca",
+      "domain": "general",
+      "targets": 305,
+      "ce": 1.2191505432128906,
+      "mean_depth": 38.095237731933594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "dd56bc3e0fe23eba0ed908e3a72c3414e883cb9699a5e52c3e3b88ba651034ec",
+      "domain": "chinese",
+      "targets": 237,
+      "ce": 1.4957027435302734,
+      "mean_depth": 38.062068939208984,
+      "cap_fraction": 0.003448275849223137
+    },
+    {
+      "id": "dd95c108f076d7ef81925b44e5a087e212879d67f4d6e673a83139f45ba8082a",
+      "domain": "math",
+      "targets": 180,
+      "ce": 1.1319591999053955,
+      "mean_depth": 38.51405334472656,
+      "cap_fraction": 0.0401606410741806
+    },
+    {
+      "id": "dd98f5d39c62db3f5ec8862d82c548b9301cebc7b905e48ba2ad39f2fbab4ad8",
+      "domain": "math",
+      "targets": 399,
+      "ce": 0.6652154922485352,
+      "mean_depth": 38.07096862792969,
+      "cap_fraction": 0.0021505376789718866
+    },
+    {
+      "id": "dda181aafa7e965776dffe7b9576959ca5126017417c179873ac7dea16fa2ed1",
+      "domain": "general",
+      "targets": 500,
+      "ce": 1.2424038648605347,
+      "mean_depth": 38.1204833984375,
+      "cap_fraction": 0.001721170381642878
+    },
+    {
+      "id": "ddc5367c463e2c5dd5d90962d45326217c0988260e9ea88ecd511833544d09e9",
+      "domain": "general",
+      "targets": 212,
+      "ce": 0.6699491739273071,
+      "mean_depth": 38.10661697387695,
+      "cap_fraction": 0.0036764706019312143
+    },
+    {
+      "id": "dddc193e86f2294e327505829411493b6eb77651ee75ac1db141d513d93998aa",
+      "domain": "math",
+      "targets": 199,
+      "ce": 0.5919262766838074,
+      "mean_depth": 38.05223846435547,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "dde0fbefbc1c48b159f11ddabe50398fd080b6aeaa688e22f8f558e2b843b089",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 1.0834600925445557,
+      "mean_depth": 38.12717819213867,
+      "cap_fraction": 0.000871080148499459
+    },
+    {
+      "id": "de47ac11ffce21437008a5f65084957af1bf205c160ffc312fc1929ec33b0583",
+      "domain": "math",
+      "targets": 514,
+      "ce": 1.1046031713485718,
+      "mean_depth": 38.03981018066406,
+      "cap_fraction": 0.0015923567116260529
+    },
+    {
+      "id": "df91b81b977b8e21eb3da1b71b991fa5dd9d937670803455565fd0a743ab8c62",
+      "domain": "general",
+      "targets": 106,
+      "ce": 0.6475363969802856,
+      "mean_depth": 38.18450164794922,
+      "cap_fraction": 0.0055350554175674915
+    },
+    {
+      "id": "dfb2d5422b5298d1f12b1fc0bb7894fdf224075138df402eacb6da892189de48",
+      "domain": "code",
+      "targets": 618,
+      "ce": 0.20242418348789215,
+      "mean_depth": 38.33586883544922,
+      "cap_fraction": 0.015217390842735767
+    },
+    {
+      "id": "dfea875b66c0b082938f461c0b6ca3e2f82d5c84331ea1a385c99a6dff3b8831",
+      "domain": "math",
+      "targets": 420,
+      "ce": 0.8450140357017517,
+      "mean_depth": 38.128440856933594,
+      "cap_fraction": 0.005504587199538946
+    },
+    {
+      "id": "dff13dac56e3532fa3a56048b3ed3594e93a0438a2a3587b35e8875c6cde6bb7",
+      "domain": "general",
+      "targets": 760,
+      "ce": 1.073207139968872,
+      "mean_depth": 38.4233512878418,
+      "cap_fraction": 0.016509434208273888
+    },
+    {
+      "id": "e0655c8c4e25e9b0cf1b6f524a1d374d1a2531449bafd2a0b5411e9f166cfb99",
+      "domain": "math",
+      "targets": 378,
+      "ce": 0.8320479393005371,
+      "mean_depth": 38.04999923706055,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e1229218543f2e802847f9b3a6d01dae2b90ecf8a89d45baa0fda6be72328269",
+      "domain": "math",
+      "targets": 957,
+      "ce": 0.12770316004753113,
+      "mean_depth": 38.069278717041016,
+      "cap_fraction": 0.002734730951488018
+    },
+    {
+      "id": "e170d85579af8ecbe2b6fcbf14f0469b36b30a09b80250083754b84239814520",
+      "domain": "code",
+      "targets": 387,
+      "ce": 0.6233618855476379,
+      "mean_depth": 38.496212005615234,
+      "cap_fraction": 0.020202020183205605
+    },
+    {
+      "id": "e230f44eea292b6f1db6961fcff534cd19a0f8138cd2048ec03305b9d52a9672",
+      "domain": "general",
+      "targets": 210,
+      "ce": 0.34962838888168335,
+      "mean_depth": 38.10285186767578,
+      "cap_fraction": 0.004644989967346191
+    },
+    {
+      "id": "e2852f2e26ca5336f8b08d3038bd5c0ee846d1cd2ad130b1c56ef7fe42726c9c",
+      "domain": "code",
+      "targets": 32,
+      "ce": 0.38355451822280884,
+      "mean_depth": 38.095890045166016,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e2fc338d5596a07daf981e2e323380bad5ad6dc569d649876f1c6450d7de4b95",
+      "domain": "code",
+      "targets": 372,
+      "ce": 0.4160013794898987,
+      "mean_depth": 38.06074523925781,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e36dba2abc04ad0b0969447f0f118d9e5c39958466151b200331d7b8ced1baa6",
+      "domain": "math",
+      "targets": 177,
+      "ce": 1.2738399505615234,
+      "mean_depth": 38.075164794921875,
+      "cap_fraction": 0.003267973894253373
+    },
+    {
+      "id": "e39edbddcadb2eb177f9c8f3da2b319aaf33d02d63e040a6d0b0d4207b89f7ca",
+      "domain": "math",
+      "targets": 78,
+      "ce": 1.0481680631637573,
+      "mean_depth": 38.20087432861328,
+      "cap_fraction": 0.0043668122962117195
+    },
+    {
+      "id": "e3dd1db7b360d38dea346e948fde5ae12cde83e8a8cff9344c803eb048b0743b",
+      "domain": "math",
+      "targets": 285,
+      "ce": 0.835443913936615,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e4566c13d9f78748a9ba57e144407e79e603ad31a641546ac3eeef12b1428b2f",
+      "domain": "math",
+      "targets": 222,
+      "ce": 0.8281765580177307,
+      "mean_depth": 38.04747772216797,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e491a1233cf36914e1b3abaad488f8766a3e9688735b0f22c9ea8816ce0aa95d",
+      "domain": "general",
+      "targets": 236,
+      "ce": 0.7683455944061279,
+      "mean_depth": 38.16143798828125,
+      "cap_fraction": 0.008968610316514969
+    },
+    {
+      "id": "e4c3d4a3b367166ccc4e13854541e117375b29c58eb4abde01a5988187c066dd",
+      "domain": "math",
+      "targets": 297,
+      "ce": 0.5244635939598083,
+      "mean_depth": 38.08010482788086,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e54bc8c5c29dbf50a214c5faa3022b7c38f3127c6c313ef53909044e579cfeb5",
+      "domain": "general",
+      "targets": 162,
+      "ce": 0.7668045163154602,
+      "mean_depth": 38.54645919799805,
+      "cap_fraction": 0.013274336233735085
+    },
+    {
+      "id": "e65c9d36f9cad6fcce43fc0661dfc8c655f642948d06789139cde8d0d5bcff3f",
+      "domain": "general",
+      "targets": 582,
+      "ce": 0.9835173487663269,
+      "mean_depth": 38.628318786621094,
+      "cap_fraction": 0.02064896747469902
+    },
+    {
+      "id": "e6e702f7fee43df3ed4a469ace5b9025360be92c651df13c139f0c15ce3d3fec",
+      "domain": "code",
+      "targets": 536,
+      "ce": 0.6598771810531616,
+      "mean_depth": 38.1710319519043,
+      "cap_fraction": 0.0017452007159590721
+    },
+    {
+      "id": "e71872d6785d490953d141dee7c465969c0746cbb0482375704c318ab09dd642",
+      "domain": "code",
+      "targets": 469,
+      "ce": 0.438442587852478,
+      "mean_depth": 38.0650634765625,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e760ed15f71afa3efeddd3ae59a9ba0afaa1586ed0e0798dfb91dcb8870ae8e2",
+      "domain": "code",
+      "targets": 262,
+      "ce": 0.43740665912628174,
+      "mean_depth": 38.19551467895508,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e7b500f412e3bd22e4b0ce37a55af366c6f360fad3a075eee535d7a617a3cb32",
+      "domain": "general",
+      "targets": 181,
+      "ce": 1.1465026140213013,
+      "mean_depth": 39.092681884765625,
+      "cap_fraction": 0.02926829271018505
+    },
+    {
+      "id": "e7c52d94f282dcb781f1d4919facc04f20852190375d087ca00fbcc27c52753e",
+      "domain": "code",
+      "targets": 467,
+      "ce": 0.6541577577590942,
+      "mean_depth": 38.369232177734375,
+      "cap_fraction": 0.001923076924867928
+    },
+    {
+      "id": "e8ac7fd9a5fc113ff15f1fbd158148a46334d873da96699566eca184e044a530",
+      "domain": "general",
+      "targets": 51,
+      "ce": 1.1196435689926147,
+      "mean_depth": 38.609375,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "e9c8776d270a27558f2d3815a02ee072cd5d801b85244dcb6e2638f4ed2b66fc",
+      "domain": "math",
+      "targets": 491,
+      "ce": 1.2202410697937012,
+      "mean_depth": 38.0395393371582,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ea81191e2f761515bc7c04ffb376a7e11fa3da72c256719aeea1ff95b7b3719c",
+      "domain": "code",
+      "targets": 519,
+      "ce": 0.6866613030433655,
+      "mean_depth": 38.15192794799805,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "eab9b50390cb6dc07d8a5c77b887626545454e9d03f10ca0da7defea42fc3143",
+      "domain": "code",
+      "targets": 198,
+      "ce": 0.7200581431388855,
+      "mean_depth": 38.2260627746582,
+      "cap_fraction": 0.007978723384439945
+    },
+    {
+      "id": "eb42bb7c41986161d47826aaf5202d1c5e3fcce072a74f4bf4ce51a97b059455",
+      "domain": "code",
+      "targets": 385,
+      "ce": 0.5473010540008545,
+      "mean_depth": 38.11211013793945,
+      "cap_fraction": 0.006726457737386227
+    },
+    {
+      "id": "eb9744ba978014b74fee40753a8de7b54f82bb11028918206867c5bbcbf0fcfc",
+      "domain": "math",
+      "targets": 63,
+      "ce": 0.3835218548774719,
+      "mean_depth": 38.230770111083984,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ec3cf984a4a42d5e64e3cdf34fe4f5a8078ea92dd22f7217fc9a26c2b8d8a7b5",
+      "domain": "general",
+      "targets": 37,
+      "ce": 0.7351767420768738,
+      "mean_depth": 38.157894134521484,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ec7ee5856c16cf6eebffd993df04ae854c4f7f9691b8894c468de3141004ce18",
+      "domain": "general",
+      "targets": 304,
+      "ce": 1.272591471672058,
+      "mean_depth": 38.018348693847656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ecb1dbd5cae50f39b2da0c6f2c01823e4cd0b483a5dccd1eca79727f2815f79a",
+      "domain": "general",
+      "targets": 253,
+      "ce": 0.9786834716796875,
+      "mean_depth": 38.41197204589844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ecf7be95f6233cc21f786c51a7aa5a82110fd59a66d8390e9e75c7a25e832a97",
+      "domain": "math",
+      "targets": 96,
+      "ce": 0.6795927882194519,
+      "mean_depth": 38.21910095214844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ed12c02b276083acc24e782d0a5beaef819304417ddc4154c7112e70200eb843",
+      "domain": "math",
+      "targets": 384,
+      "ce": 0.7288536429405212,
+      "mean_depth": 38.09445571899414,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ed48013629963fbe8369c803c3087b0b84712a2c8ea3574bca4629ec9c1585f1",
+      "domain": "code",
+      "targets": 339,
+      "ce": 0.6616224646568298,
+      "mean_depth": 38.04578399658203,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ed5436ce081251ca1bc165785001d03249be9df95fe2f6b5f017d499982cc91c",
+      "domain": "math",
+      "targets": 771,
+      "ce": 0.5115132331848145,
+      "mean_depth": 38.029659271240234,
+      "cap_fraction": 0.0021186440717428923
+    },
+    {
+      "id": "ed7f3e88ac1b6d612f3cce9f71f99ced5c3455411400f52c33243a2ebd2a1275",
+      "domain": "code",
+      "targets": 333,
+      "ce": 0.43637144565582275,
+      "mean_depth": 38.17009353637695,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "edc3e7bcbbf698ae7524d5ef8bf007825fdea60dffdded1d6d7f7eb90ff09f99",
+      "domain": "general",
+      "targets": 191,
+      "ce": 0.9800376892089844,
+      "mean_depth": 38.01870346069336,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "edddb24193bf7c3b9f32ceed8ddc689257ee6a6d708c74caf986b10299134335",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 1.750246286392212,
+      "mean_depth": 38.158451080322266,
+      "cap_fraction": 0.0017605633474886417
+    },
+    {
+      "id": "ee276486e9637f735908e09413415f563c03a2d2a40dfe6ff30985f6ca4adf32",
+      "domain": "general",
+      "targets": 604,
+      "ce": 1.3027924299240112,
+      "mean_depth": 38.4610481262207,
+      "cap_fraction": 0.006359300576150417
+    },
+    {
+      "id": "ee3a29b6e54ffe94e8c87ffbda7cd064892aab690df96d80e15c8dff1efab29a",
+      "domain": "code",
+      "targets": 461,
+      "ce": 0.912680447101593,
+      "mean_depth": 38.29166793823242,
+      "cap_fraction": 0.0018939394503831863
+    },
+    {
+      "id": "ee3ebd98b7842c9f4789491b4285eac12af11857f5700b70e54ad660fe49146f",
+      "domain": "general",
+      "targets": 116,
+      "ce": 0.5345112681388855,
+      "mean_depth": 38.294517517089844,
+      "cap_fraction": 0.00913241971284151
+    },
+    {
+      "id": "ef7df445790bd8efd37e04b3d7613e825f02ae6f54b04cbc06fed7ed7e3957f4",
+      "domain": "math",
+      "targets": 437,
+      "ce": 0.18665137887001038,
+      "mean_depth": 38.057804107666016,
+      "cap_fraction": 0.0019267823081463575
+    },
+    {
+      "id": "ef92db52cbe5b47c0afde02913795432cbbb5c9b6740bdd194b55c1d17b682e5",
+      "domain": "code",
+      "targets": 359,
+      "ce": 0.40098702907562256,
+      "mean_depth": 38.02857208251953,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ef952601c01059d116a1fd97e73d9c46a82a948dad286132a0a0404b8cac7eb5",
+      "domain": "math",
+      "targets": 190,
+      "ce": 0.3205586373806,
+      "mean_depth": 38.160919189453125,
+      "cap_fraction": 0.0038314175326377153
+    },
+    {
+      "id": "efb9287de08c19ac5a74f035590322302d1ea032a015465ca40159ce5a93b35d",
+      "domain": "code",
+      "targets": 449,
+      "ce": 0.6397628784179688,
+      "mean_depth": 38.249996185302734,
+      "cap_fraction": 0.004098360426723957
+    },
+    {
+      "id": "efe6ef55343411cf6e752c1072535d175efc5c54f41af7f972a03caf5bdb767e",
+      "domain": "general",
+      "targets": 51,
+      "ce": 1.9112136363983154,
+      "mean_depth": 38.09333419799805,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f00b66c34aecdc43efdfac19e62179ddde7c054566e330f3294c8ee0ddacc3db",
+      "domain": "code",
+      "targets": 73,
+      "ce": 1.5180937051773071,
+      "mean_depth": 38.581817626953125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f011cf6edb07e0dff215d5000c971cead0db27095d52d278f20b082fa5660cb2",
+      "domain": "general",
+      "targets": 525,
+      "ce": 1.3568743467330933,
+      "mean_depth": 38.17314147949219,
+      "cap_fraction": 0.004854368977248669
+    },
+    {
+      "id": "f014b690c7a8f9e574c70035393d19d66edb601285babab2d1a3a13aec37a601",
+      "domain": "chinese",
+      "targets": 141,
+      "ce": 1.0767802000045776,
+      "mean_depth": 38.50898361206055,
+      "cap_fraction": 0.011976048350334167
+    },
+    {
+      "id": "f030541cbeba4243b344abc63b0dbea5ae1438a764625e45e7dd5acc034638d5",
+      "domain": "math",
+      "targets": 204,
+      "ce": 1.0540646314620972,
+      "mean_depth": 38.04069900512695,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f0d7df1c1ed226de705a2aabf3e0694ee350eaf125582d0553f39200aa424601",
+      "domain": "code",
+      "targets": 761,
+      "ce": 0.5559168457984924,
+      "mean_depth": 38.09794235229492,
+      "cap_fraction": 0.0016460905317217112
+    },
+    {
+      "id": "f0f1a82200aaa865da6188bca26f276f6f8e1f71d2d27ae2c0516b31a30c03aa",
+      "domain": "general",
+      "targets": 80,
+      "ce": 0.6920229196548462,
+      "mean_depth": 40.233009338378906,
+      "cap_fraction": 0.0776699036359787
+    },
+    {
+      "id": "f12ae0f2a1b4157872914670ff3624e214d4f5090d5f8969562d3487a55c828e",
+      "domain": "math",
+      "targets": 924,
+      "ce": 0.47294434905052185,
+      "mean_depth": 38.0373420715332,
+      "cap_fraction": 0.0009107468067668378
+    },
+    {
+      "id": "f148efd6ddff9a16056b6dc8c149b06cd4c9b054f4d272e70cb086a2ff3eec78",
+      "domain": "math",
+      "targets": 463,
+      "ce": 0.696946918964386,
+      "mean_depth": 38.02451705932617,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f15636ca055ed7032df085078684c296005a7ba32b786d1bd7cfa14be235359a",
+      "domain": "code",
+      "targets": 463,
+      "ce": 0.35537201166152954,
+      "mean_depth": 38.03605270385742,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f2332948fc08c3e063d9f06e3fdc4e755865155aab54449a0c2c3afd1a28e0cf",
+      "domain": "math",
+      "targets": 195,
+      "ce": 0.43685248494148254,
+      "mean_depth": 38.16343307495117,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f2c1fb35acaa56b1450cec07d5322d9d7457b04537ce7335ba6b71eb3690879c",
+      "domain": "general",
+      "targets": 412,
+      "ce": 1.5327198505401611,
+      "mean_depth": 38.352943420410156,
+      "cap_fraction": 0.004524887073785067
+    },
+    {
+      "id": "f422c3c71f070d97b7c6f71263a685a1f9639854bec1fca849adf0832dd621c4",
+      "domain": "code",
+      "targets": 416,
+      "ce": 0.015401040203869343,
+      "mean_depth": 38.330013275146484,
+      "cap_fraction": 0.007751937955617905
+    },
+    {
+      "id": "f45a9cee78f1f53793984375ffc014c0f62b844df6407fbb3a4e50a4baf49f2a",
+      "domain": "code",
+      "targets": 357,
+      "ce": 1.002335548400879,
+      "mean_depth": 38.233158111572266,
+      "cap_fraction": 0.005181347019970417
+    },
+    {
+      "id": "f46a54e072eae57035f5ff95cd460bc51677a91d963762d107e29c08117684fd",
+      "domain": "general",
+      "targets": 115,
+      "ce": 1.0318477153778076,
+      "mean_depth": 38.08482360839844,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f4849338b33c880ee59ed973831327da25dba663a2b8754cd89100ff74246197",
+      "domain": "general",
+      "targets": 98,
+      "ce": 1.344627022743225,
+      "mean_depth": 38.402366638183594,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f488d943097a403ab07d5484470ddb51ee59bdaaf327d7e79fc8fcf06e39f830",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 1.2509082555770874,
+      "mean_depth": 38.03114318847656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f5153ad5de8d7e4641dc5ee45a95e5e52d43712d0be366d9e39281b395eddba6",
+      "domain": "general",
+      "targets": 485,
+      "ce": 0.9430953860282898,
+      "mean_depth": 38.25971603393555,
+      "cap_fraction": 0.0035335689317435026
+    },
+    {
+      "id": "f52a9797dbd055285da9a7f4003e1d85d2b1fa3ca526ad0980637ecf6181d30a",
+      "domain": "math",
+      "targets": 185,
+      "ce": 1.053006887435913,
+      "mean_depth": 38.045936584472656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f5c7c16f7c38001f1bda6594075e771bc6f8822a31ca02fa7b31f0bce56a6a0e",
+      "domain": "code",
+      "targets": 628,
+      "ce": 0.6915806531906128,
+      "mean_depth": 38.094749450683594,
+      "cap_fraction": 0.001280409749597311
+    },
+    {
+      "id": "f5e29c0dbb4fa4a0c9d041e230b773d9c62002ed398d346b955c3a42275eb473",
+      "domain": "math",
+      "targets": 611,
+      "ce": 0.9561001658439636,
+      "mean_depth": 38.13677978515625,
+      "cap_fraction": 0.0045592705719172955
+    },
+    {
+      "id": "f602f58e938065e60aae4b7b5676665faa6d84fe1225fa2510999aa252ee16ad",
+      "domain": "math",
+      "targets": 295,
+      "ce": 0.5849568247795105,
+      "mean_depth": 38.07823944091797,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f6123797f0911105236172d22fefb227595407819e278252ce759a668c8dcd19",
+      "domain": "math",
+      "targets": 993,
+      "ce": 0.40350180864334106,
+      "mean_depth": 38.05827331542969,
+      "cap_fraction": 0.000939849647693336
+    },
+    {
+      "id": "f63e9f52706a8d6382dad33039cdf065e0deb250c5e4301eda4f1a0e7717f9fa",
+      "domain": "general",
+      "targets": 42,
+      "ce": 0.28662046790122986,
+      "mean_depth": 38.23606491088867,
+      "cap_fraction": 0.009836065582931042
+    },
+    {
+      "id": "f6f8a01f1d621deeddc0cb1bea3563648e3dbf8c8a5e50c0376d2b0b325ea15c",
+      "domain": "chinese",
+      "targets": 307,
+      "ce": 1.2745068073272705,
+      "mean_depth": 38.138553619384766,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "f7573bcf093b32e0dc87ce93111ab753d6dd8d3ba7c9fe99887647ed5f1a647c",
+      "domain": "code",
+      "targets": 652,
+      "ce": 0.8320722579956055,
+      "mean_depth": 38.02368927001953,
+      "cap_fraction": 0.0010298661654815078
+    },
+    {
+      "id": "f77e4b466aafb857c367e1d063232f66a0f840844d3363c6fec4829a42daf279",
+      "domain": "general",
+      "targets": 262,
+      "ce": 0.8636656403541565,
+      "mean_depth": 38.321678161621094,
+      "cap_fraction": 0.003496503457427025
+    },
+    {
+      "id": "f7fe294d7d42548bff47a554d259b8384a73aa55c143013b3c283b563bfd6181",
+      "domain": "code",
+      "targets": 147,
+      "ce": 0.46981993317604065,
+      "mean_depth": 38.32549285888672,
+      "cap_fraction": 0.003921568859368563
+    },
+    {
+      "id": "f81386afc74ce561637dabe6146914956c52a5c7a33bdd496a7cdabc1ac52791",
+      "domain": "general",
+      "targets": 590,
+      "ce": 1.2090152502059937,
+      "mean_depth": 38.41202163696289,
+      "cap_fraction": 0.004398826975375414
+    },
+    {
+      "id": "f874445d22e7e0e597569a3fa1346adee8981615dbb17ee0714b9622ba1b93e4",
+      "domain": "math",
+      "targets": 589,
+      "ce": 0.665368914604187,
+      "mean_depth": 38.051212310791016,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "fa570dfd8b81e0d67e534b320dc0d130c447cdd8880bd3dc0c832cf448c7abe8",
+      "domain": "general",
+      "targets": 734,
+      "ce": 0.6407079100608826,
+      "mean_depth": 38.21784210205078,
+      "cap_fraction": 0.009269988164305687
+    },
+    {
+      "id": "fab448681f9149d9d87f74525c2d0453cf0e50cca7800a49225b58b63668387f",
+      "domain": "code",
+      "targets": 170,
+      "ce": 0.026640191674232483,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "fbe416d0225bf76234e17cea419fcc75611ae63d6bbb708f7d7f92348486c3e2",
+      "domain": "code",
+      "targets": 303,
+      "ce": 0.4326763451099396,
+      "mean_depth": 38.0431022644043,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "fcb2b0f502bc160ec0c73890fcecfa382479a3f2dc2c454617cffae28e77318c",
+      "domain": "general",
+      "targets": 93,
+      "ce": 1.1929742097854614,
+      "mean_depth": 38.08654022216797,
+      "cap_fraction": 0.004807692486792803
+    },
+    {
+      "id": "fdb9e73ec841536b9fcd94d3988da82757b57b03169cc8a657ec7082eca57551",
+      "domain": "chinese",
+      "targets": 277,
+      "ce": 0.9119494557380676,
+      "mean_depth": 38.0,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "fde6eb78fd63f3035f360a89c0f7bb0b9ed1db4812fa7315f6799f6bd9acef4f",
+      "domain": "math",
+      "targets": 331,
+      "ce": 0.725781261920929,
+      "mean_depth": 38.0960578918457,
+      "cap_fraction": 0.002463054144755006
+    },
+    {
+      "id": "fe008e1fd722d0f4fb56a4f53ff7d32a2906a961a49050e06ebf809e4c5847ed",
+      "domain": "general",
+      "targets": 265,
+      "ce": 0.8026354312896729,
+      "mean_depth": 38.474544525146484,
+      "cap_fraction": 0.006109979934990406
+    },
+    {
+      "id": "fe5a46d1f1bfe0e547c02bae9a18100929c18cdc4781f2da9c58e0081a71a4a6",
+      "domain": "math",
+      "targets": 340,
+      "ce": 0.5990018248558044,
+      "mean_depth": 38.05352783203125,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "fec341f2eca063734ec8df71d80050ff1e93169cf5e99a26f1e795cb001d3642",
+      "domain": "general",
+      "targets": 191,
+      "ce": 0.4808094799518585,
+      "mean_depth": 38.013309478759766,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "feea0364c33559716bacb49a4ee81685b4e80dbfb350da11dc4f556eb644257f",
+      "domain": "math",
+      "targets": 203,
+      "ce": 0.6232651472091675,
+      "mean_depth": 38.11428451538086,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ff2de9af6008b22d0e4257f394d676ede6aae359b56cc9e511b67d0382fd5c1d",
+      "domain": "general",
+      "targets": 54,
+      "ce": 0.7296934723854065,
+      "mean_depth": 38.22010803222656,
+      "cap_fraction": 0.0
+    },
+    {
+      "id": "ffa6ea5e4a8cabd94ad40225c5ff3f73425808af7fe52c3f06647bc3534d1283",
+      "domain": "chinese",
+      "targets": 26,
+      "ce": 2.38002872467041,
+      "mean_depth": 38.14893341064453,
+      "cap_fraction": 0.0
+    }
+  ],
+  "scope": "Full documents, assistant CE, independent split; no generation benchmark or broad capability superiority claim"
+}

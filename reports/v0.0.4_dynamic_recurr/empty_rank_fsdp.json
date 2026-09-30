@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "world_size": 2,
+  "checks": "FSDP2 + recomputation, empty ranks, mixed/capped token paths; gradients against independent unsharded rank-average reference",
+  "ranks": [
+    {
+      "rank": 0,
+      "loss": 0.0,
+      "depths": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "max_gradient_abs_error": 0.0,
+      "compared_parameters": 37
+    },
+    {
+      "rank": 1,
+      "loss": 4.523429870605469,
+      "depths": [
+        [
+          2,
+          6,
+          3,
+          5
+        ]
+      ],
+      "max_gradient_abs_error": 0.0,
+      "compared_parameters": 37
+    }
+  ]
+}
