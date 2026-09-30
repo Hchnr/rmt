@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "command": "CUDA_VISIBLE_DEVICES=6 PYTHONPATH=src OMP_NUM_THREADS=1 .venv-cached/bin/python -m pytest -q",
+  "passed": 45,
+  "warnings": 14,
+  "seconds": 7.32,
+  "log_sha256": "e39e41bfc45bc095d3c334d109b0a626bfdd75ea626c9c654a821efd4350736d",
+  "scope": "Model/cache/training/data/inference/adapter unit and CUDA graph regression. Separate real 4B and FSDP reports cover distributed numerics."
+}
