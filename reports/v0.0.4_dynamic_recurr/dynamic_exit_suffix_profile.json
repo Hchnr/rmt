@@ -1,0 +1,471 @@
+{
+  "status": "passed",
+  "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_hybrid_eos_fixed/hf",
+  "batch_size": 4,
+  "token_budget": 8,
+  "profiled_wall_seconds": 14.860214384272695,
+  "tokens_unchanged": true,
+  "regions": [
+    {
+      "name": "rmt::qkv_dispatch_projection",
+      "calls": 320,
+      "cpu_total_us": 149579.45299999943,
+      "self_cpu_us": 24689.17200000015,
+      "device_total_us": 18710.499000001844,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::reference_variance",
+      "calls": 144,
+      "cpu_total_us": 10602.111999999976,
+      "self_cpu_us": 2080.2480000000096,
+      "device_total_us": 1374.4069999999338,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::kv_update",
+      "calls": 384,
+      "cpu_total_us": 32407.859000001154,
+      "self_cpu_us": 20258.894999998443,
+      "device_total_us": 1662.071000000099,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::kv_update",
+      "calls": 384,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 8680.382999999772,
+      "self_device_us": 8680.382999999772
+    },
+    {
+      "name": "rmt::attention",
+      "calls": 320,
+      "cpu_total_us": 69959.0829999997,
+      "self_cpu_us": 18098.640999999363,
+      "device_total_us": 3917.069999999937,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::attention",
+      "calls": 320,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 47354.7199999998,
+      "self_device_us": 47354.7199999998
+    },
+    {
+      "name": "rmt::output_ffn_dispatch_projection",
+      "calls": 320,
+      "cpu_total_us": 165337.7699999994,
+      "self_cpu_us": 19392.434999999346,
+      "device_total_us": 31795.1199999901,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::hidden_check",
+      "calls": 320,
+      "cpu_total_us": 220917.44199999963,
+      "self_cpu_us": 43286.83300000343,
+      "device_total_us": 20933.801000000218,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::hidden_check",
+      "calls": 320,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 201859.33899999937,
+      "self_device_us": 201859.33899999937
+    },
+    {
+      "name": "rmt::probability_check",
+      "calls": 320,
+      "cpu_total_us": 85636.91299999991,
+      "self_cpu_us": 22476.512000002593,
+      "device_total_us": 19602.82099999919,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::probability_check",
+      "calls": 320,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 54691.98899999917,
+      "self_device_us": 54691.98899999917
+    },
+    {
+      "name": "rmt::router",
+      "calls": 32,
+      "cpu_total_us": 16458.471000001067,
+      "self_cpu_us": 3715.5860000000102,
+      "device_total_us": 1273.4050000005227,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::router",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 14722.374999999505,
+      "self_device_us": 14722.374999999505
+    },
+    {
+      "name": "rmt::expert_groups",
+      "calls": 32,
+      "cpu_total_us": 11302.564999999973,
+      "self_cpu_us": 2627.1470000003756,
+      "device_total_us": 723.5790000004054,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::expert_groups",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 8620.45400000023,
+      "self_device_us": 8620.45400000023
+    },
+    {
+      "name": "rmt::qkv_dispatch_projection",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 41917.23200000019,
+      "self_device_us": 41917.23200000019
+    },
+    {
+      "name": "rmt::output_ffn_dispatch_projection",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 68726.59100000057,
+      "self_device_us": 68726.59100000057
+    }
+  ],
+  "top_self_cpu": [
+    {
+      "name": "cudaLaunchKernel",
+      "calls": 31792,
+      "cpu_total_us": 165424.26399999432,
+      "self_cpu_us": 165424.26399999432,
+      "device_total_us": 0,
+      "self_device_us": 0
+    },
+    {
+      "name": "rmt::hidden_check",
+      "calls": 320,
+      "cpu_total_us": 220917.44199999963,
+      "self_cpu_us": 43286.83300000343,
+      "device_total_us": 20933.801000000218,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "aten::where",
+      "calls": 4464,
+      "cpu_total_us": 128234.1380000017,
+      "self_cpu_us": 37012.84600000938,
+      "device_total_us": 9678.860000009432,
+      "self_device_us": 5802.851000003246
+    },
+    {
+      "name": "## Call CompiledFxGraph fxa63l5u5bovlx66k6breswbt4d24jp37lmsgydtool7ga3h6x6v ##",
+      "calls": 252,
+      "cpu_total_us": 48706.657999999676,
+      "self_cpu_us": 34583.69100000133,
+      "device_total_us": 608.4230000001844,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "## Call CompiledFxGraph ftvgtycjv6el3wxgjkaamjt64z2qtqmv6j6htq477gs2rsce6cgu ##",
+      "calls": 252,
+      "cpu_total_us": 45048.459999998886,
+      "self_cpu_us": 31477.740999997506,
+      "device_total_us": 774.4049999998242,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "aten::empty",
+      "calls": 7342,
+      "cpu_total_us": 27279.926999993815,
+      "self_cpu_us": 27099.28699999383,
+      "device_total_us": 0,
+      "self_device_us": 0
+    },
+    {
+      "name": "aten::mul",
+      "calls": 2976,
+      "cpu_total_us": 40633.90100000243,
+      "self_cpu_us": 25351.955000001042,
+      "device_total_us": 6889.142000000554,
+      "self_device_us": 6889.142000000554
+    },
+    {
+      "name": "rmt::qkv_dispatch_projection",
+      "calls": 320,
+      "cpu_total_us": 149579.45299999943,
+      "self_cpu_us": 24689.17200000015,
+      "device_total_us": 18710.499000001844,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "rmt::probability_check",
+      "calls": 320,
+      "cpu_total_us": 85636.91299999991,
+      "self_cpu_us": 22476.512000002593,
+      "device_total_us": 19602.82099999919,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "aten::mean",
+      "calls": 2042,
+      "cpu_total_us": 32671.182999998135,
+      "self_cpu_us": 22224.697000000167,
+      "device_total_us": 7671.426999997822,
+      "self_device_us": 7671.426999997822
+    },
+    {
+      "name": "aten::copy_",
+      "calls": 4012,
+      "cpu_total_us": 52360.072000003944,
+      "self_cpu_us": 21647.34100000511,
+      "device_total_us": 9319.649000000134,
+      "self_device_us": 9315.84200000011
+    },
+    {
+      "name": "cudaMemcpyAsync",
+      "calls": 2387,
+      "cpu_total_us": 21419.510999999256,
+      "self_cpu_us": 21419.510999999256,
+      "device_total_us": 0,
+      "self_device_us": 0
+    },
+    {
+      "name": "aten::pow",
+      "calls": 2042,
+      "cpu_total_us": 32159.225000002334,
+      "self_cpu_us": 20714.566999999377,
+      "device_total_us": 2465.25599999928,
+      "self_device_us": 2465.25599999928
+    },
+    {
+      "name": "rmt::kv_update",
+      "calls": 384,
+      "cpu_total_us": 32407.859000001154,
+      "self_cpu_us": 20258.894999998443,
+      "device_total_us": 1662.071000000099,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "cudaGraphLaunch",
+      "calls": 545,
+      "cpu_total_us": 20057.750000000233,
+      "self_cpu_us": 20057.750000000233,
+      "device_total_us": 0,
+      "self_device_us": 0
+    },
+    {
+      "name": "aten::add",
+      "calls": 2443,
+      "cpu_total_us": 31695.863000004258,
+      "self_cpu_us": 19825.613000002853,
+      "device_total_us": 3348.24100000192,
+      "self_device_us": 3348.24100000192
+    },
+    {
+      "name": "rmt::output_ffn_dispatch_projection",
+      "calls": 320,
+      "cpu_total_us": 165337.7699999994,
+      "self_cpu_us": 19392.434999999346,
+      "device_total_us": 31795.1199999901,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "aten::bitwise_and",
+      "calls": 2624,
+      "cpu_total_us": 33516.0490000029,
+      "self_cpu_us": 19120.78400000415,
+      "device_total_us": 3676.0629999995595,
+      "self_device_us": 3674.750999999583
+    },
+    {
+      "name": "rmt::attention",
+      "calls": 320,
+      "cpu_total_us": 69959.0829999997,
+      "self_cpu_us": 18098.640999999363,
+      "device_total_us": 3917.069999999937,
+      "self_device_us": 0.0
+    },
+    {
+      "name": "aten::_cudnn_attention_forward",
+      "calls": 320,
+      "cpu_total_us": 25099.910999999123,
+      "self_cpu_us": 16965.12499999837,
+      "device_total_us": 1915.7869999999884,
+      "self_device_us": 1915.7869999999884
+    }
+  ],
+  "top_self_device": [
+    {
+      "name": "rmt::hidden_check",
+      "calls": 320,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 201859.33899999937,
+      "self_device_us": 201859.33899999937
+    },
+    {
+      "name": "rmt::output_ffn_dispatch_projection",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 68726.59100000057,
+      "self_device_us": 68726.59100000057
+    },
+    {
+      "name": "rmt::probability_check",
+      "calls": 320,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 54691.98899999917,
+      "self_device_us": 54691.98899999917
+    },
+    {
+      "name": "rmt::attention",
+      "calls": 320,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 47354.7199999998,
+      "self_device_us": 47354.7199999998
+    },
+    {
+      "name": "rmt::qkv_dispatch_projection",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 41917.23200000019,
+      "self_device_us": 41917.23200000019
+    },
+    {
+      "name": "## Call CompiledFxGraph ftvgtycjv6el3wxgjkaamjt64z2qtqmv6j6htq477gs2rsce6cgu ##",
+      "calls": 252,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 34791.156000000396,
+      "self_device_us": 34791.156000000396
+    },
+    {
+      "name": "## Call CompiledFxGraph fxa63l5u5bovlx66k6breswbt4d24jp37lmsgydtool7ga3h6x6v ##",
+      "calls": 252,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 26365.852999999683,
+      "self_device_us": 26365.852999999683
+    },
+    {
+      "name": "Torch-Compiled Region: 1/1",
+      "calls": 252,
+      "cpu_total_us": 58943.944000000076,
+      "self_cpu_us": 11027.306000000768,
+      "device_total_us": 22303.393999991706,
+      "self_device_us": 21528.98899999188
+    },
+    {
+      "name": "aten::mm",
+      "calls": 595,
+      "cpu_total_us": 22284.274999999754,
+      "self_cpu_us": 16673.959000000283,
+      "device_total_us": 20897.08899999898,
+      "self_device_us": 20897.08899999898
+    },
+    {
+      "name": "## Call CompiledFxGraph f5y3eih7vfc6rvaka2ufbyedvo75vzgp7bfvoxpjjsu4bb3vzb7s ##",
+      "calls": 36,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 15511.234999999964,
+      "self_device_us": 15511.234999999964
+    },
+    {
+      "name": "rmt::router",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 14722.374999999505,
+      "self_device_us": 14722.374999999505
+    },
+    {
+      "name": "nvjet_sm90_tst_128x8_64x12_4x1_v_bz_TNT",
+      "calls": 586,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 11717.094999997353,
+      "self_device_us": 11717.094999997353
+    },
+    {
+      "name": "## Call CompiledFxGraph f4elbsajcmduv6iixkdsiidzauje32sito7taigh4sdqjheavqp2 ##",
+      "calls": 36,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 11482.694000000032,
+      "self_device_us": 11482.694000000032
+    },
+    {
+      "name": "Torch-Compiled Region: 0/1",
+      "calls": 252,
+      "cpu_total_us": 64302.32899999994,
+      "self_cpu_us": 12490.464999999385,
+      "device_total_us": 12013.21700000207,
+      "self_device_us": 11404.794000001886
+    },
+    {
+      "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",
+      "calls": 3050,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 10273.259999998098,
+      "self_device_us": 10273.259999998098
+    },
+    {
+      "name": "nvjet_sm90_tst_384x8_64x4_2x1_v_bz_TNT",
+      "calls": 38,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 9850.820000000167,
+      "self_device_us": 9850.820000000167
+    },
+    {
+      "name": "aten::copy_",
+      "calls": 4012,
+      "cpu_total_us": 52360.072000003944,
+      "self_cpu_us": 21647.34100000511,
+      "device_total_us": 9319.649000000134,
+      "self_device_us": 9315.84200000011
+    },
+    {
+      "name": "rmt::kv_update",
+      "calls": 384,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 8680.382999999772,
+      "self_device_us": 8680.382999999772
+    },
+    {
+      "name": "rmt::expert_groups",
+      "calls": 32,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 8620.45400000023,
+      "self_device_us": 8620.45400000023
+    },
+    {
+      "name": "## Call CompiledFxGraph fnd2xuscd7bbblguz4fzafhddubcpj3z5xt5lvrvrzznvpvtjr2v ##",
+      "calls": 12,
+      "cpu_total_us": 0,
+      "self_cpu_us": 0,
+      "device_total_us": 8523.140000000043,
+      "self_device_us": 8523.140000000043
+    }
+  ],
+  "scope": "One warmed prefill plus seven cached decode steps, greedy batch4, isolated process on shared machine. Profiler overhead is substantial; inclusive nested regions must not be summed. Device ranges may omit CUDA-graph internals. Diagnostic only, not latency benchmark or explanation of all 32768-token behavior."
+}
