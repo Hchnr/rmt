@@ -1,0 +1,36 @@
+{
+  "declared_at_utc": "2026-09-30T05:34:45.742648+00:00",
+  "primary_pair": [
+    "teacher32_fixed36",
+    "teacher32_hybrid"
+  ],
+  "additional_fixed_budget_control": "teacher32_fixed40",
+  "reason": "Full official task scores at matched approximately 40 recurrences are needed to distinguish added depth from the halting rule. This model was already in the frozen test roster; no new weight or threshold selection.",
+  "benchmarks": [
+    "ifeval",
+    "math_500"
+  ],
+  "selection_basis": "Experimental design and complete dev only; no test metrics consulted.",
+  "gpus": {
+    "teacher32_fixed36_math": [
+      0,
+      1
+    ],
+    "teacher32_hybrid_math": [
+      2,
+      3
+    ],
+    "teacher32_fixed40_math": [
+      4
+    ],
+    "teacher32_fixed36_ifeval": [
+      5
+    ],
+    "teacher32_hybrid_ifeval": [
+      6
+    ],
+    "teacher32_fixed40_ifeval": [
+      7
+    ]
+  }
+}

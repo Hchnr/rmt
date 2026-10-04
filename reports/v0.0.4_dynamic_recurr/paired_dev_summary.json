@@ -1,0 +1,79 @@
+{
+  "baseline": "reports/v0.0.4_dynamic_recurr/fixed36_dev.json",
+  "data_sha256": "9c75573f375247593042bf69ec319c26d012bba20b4e50ba925737cec68f4b48",
+  "rows": [
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/fixed40_dev.json",
+      "ce": 0.8299327492713928,
+      "mean_depth": 40.0,
+      "delta_ce_vs_baseline": 0.019608887515131467,
+      "paired_document_bootstrap_95pct": [
+        0.018093151104515398,
+        0.021061177838776608
+      ],
+      "fraction_at_depth40": 1.0,
+      "fraction_at_depth48": 0.0,
+      "domain_ce": {
+        "general": 1.1482299822046742,
+        "math": 0.6930158758822812,
+        "code": 0.5227864870448667,
+        "chinese": 1.3402057336738165
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/hidden_full_calibrated_dev.json",
+      "ce": 0.8403157591819763,
+      "mean_depth": 39.55928421020508,
+      "delta_ce_vs_baseline": 0.02999224392641374,
+      "paired_document_bootstrap_95pct": [
+        0.027282780924124034,
+        0.032697029545881766
+      ],
+      "fraction_at_depth40": 8.843296781039971e-06,
+      "fraction_at_depth48": 0.04368883386393114,
+      "domain_ce": {
+        "general": 1.1607894248758115,
+        "math": 0.6999612826885909,
+        "code": 0.5340766527185019,
+        "chinese": 1.3422043740580225
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/probability_calibrated_dev.json",
+      "ce": 0.8553115129470825,
+      "mean_depth": 39.05794143676758,
+      "delta_ce_vs_baseline": 0.044987392368983393,
+      "paired_document_bootstrap_95pct": [
+        0.04191598363987116,
+        0.048074211901748765
+      ],
+      "fraction_at_depth40": 0.0063200094328499,
+      "fraction_at_depth48": 0.06969402193137601,
+      "domain_ce": {
+        "general": 1.1839276588517529,
+        "math": 0.7130107407108575,
+        "code": 0.540868194151238,
+        "chinese": 1.3579938522843322
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/hybrid_dev.json",
+      "ce": 0.8301969170570374,
+      "mean_depth": 40.01369094848633,
+      "delta_ce_vs_baseline": 0.01987310438745989,
+      "paired_document_bootstrap_95pct": [
+        0.018162288201001128,
+        0.02156661210286946
+      ],
+      "fraction_at_depth40": 0.9971229807805684,
+      "fraction_at_depth48": 0.0013500766419054357,
+      "domain_ce": {
+        "general": 1.1499040555087732,
+        "math": 0.6917845825944274,
+        "code": 0.5223557962160024,
+        "chinese": 1.3437003142406698
+      }
+    }
+  ],
+  "scope": "2000 paired document bootstrap samples, seed 1704; conditional on one trained seed and these source documents; CE only, no task-score superiority claim."
+}

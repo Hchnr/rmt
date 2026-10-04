@@ -1,0 +1,5533 @@
+{
+  "status": "completed",
+  "model": "artifacts/v0.0.4_dynamic_recurr/train/matched_source_fixed36/hf",
+  "config": {
+    "num_experts": 36,
+    "num_recurrences": 36,
+    "max_recurrences": 48,
+    "min_recurrences": 36,
+    "defer_probability_checks": true,
+    "learned_routing_start": 36,
+    "halting_policy": "fixed",
+    "halt_patience": 2,
+    "halt_threshold": 0.01,
+    "halt_relative_threshold": 0.01,
+    "halt_probability_threshold": 0.001,
+    "recurrence_schedule": "tail",
+    "tail_experts": 8,
+    "binding_mode": "full_block",
+    "routing_mode": "learned",
+    "router_top_k": 1,
+    "router_prior_strength": 3.5,
+    "router_gradient": "selected_probability_st",
+    "norm_policy": "expert_bound",
+    "cache_layout_version": 1,
+    "vocab_size": 151936,
+    "max_position_embeddings": 40960,
+    "hidden_size": 2560,
+    "intermediate_size": 9728,
+    "num_hidden_layers": 36,
+    "num_attention_heads": 32,
+    "use_sliding_window": false,
+    "sliding_window": null,
+    "max_window_layers": 36,
+    "num_key_value_heads": 8,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "initializer_range": 0.02,
+    "rms_norm_eps": 1e-06,
+    "use_cache": true,
+    "rope_theta": 1000000,
+    "rope_scaling": null,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "layer_types": [
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention",
+      "full_attention"
+    ],
+    "return_dict": true,
+    "output_hidden_states": false,
+    "torchscript": false,
+    "dtype": "bfloat16",
+    "pruned_heads": {},
+    "tie_word_embeddings": true,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "is_decoder": false,
+    "cross_attention_hidden_size": null,
+    "add_cross_attention": false,
+    "tie_encoder_decoder": false,
+    "architectures": [
+      "RmtForCausalLM"
+    ],
+    "finetuning_task": null,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "task_specific_params": null,
+    "problem_type": null,
+    "tokenizer_class": null,
+    "prefix": null,
+    "bos_token_id": 151643,
+    "pad_token_id": null,
+    "eos_token_id": 151645,
+    "sep_token_id": null,
+    "decoder_start_token_id": null,
+    "max_length": 20,
+    "min_length": 0,
+    "do_sample": false,
+    "early_stopping": false,
+    "num_beams": 1,
+    "temperature": 1.0,
+    "top_k": 50,
+    "top_p": 1.0,
+    "typical_p": 1.0,
+    "repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "encoder_no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "num_return_sequences": 1,
+    "output_scores": false,
+    "return_dict_in_generate": false,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "num_beam_groups": 1,
+    "diversity_penalty": 0.0,
+    "_name_or_path": "artifacts/v0.0.4_dynamic_recurr/train/matched_source_fixed36/hf",
+    "transformers_version": "4.57.6",
+    "auto_map": {
+      "AutoConfig": "configuration_rmt.RmtConfig",
+      "AutoModelForCausalLM": "modeling_rmt.RmtForCausalLM"
+    },
+    "model_type": "bound_rmt",
+    "tf_legacy_loss": false,
+    "use_bfloat16": false,
+    "output_attentions": false
+  },
+  "data": "artifacts/v0.0.4_dynamic_recurr/corpus/dev.jsonl",
+  "data_sha256": "9c75573f375247593042bf69ec319c26d012bba20b4e50ba925737cec68f4b48",
+  "documents": 658,
+  "ce": 0.803747296333313,
+  "targets": 239997.0,
+  "depth_histogram": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    339240,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "mean_depth": 36.0,
+  "supervised_depth_histogram": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    239997,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "domain_ce": {
+    "general": 1.1228203118036513,
+    "math": 0.6850722941186747,
+    "code": 0.4819615770101082,
+    "chinese": 1.2947935336540706
+  },
+  "seconds": 44.08063955977559,
+  "documents_detail": [
+    {
+      "id": "006994aef91c325207927a6a6431b5b5729fb0ccc4c987e876b9dc5887d2a31d",
+      "domain": "general",
+      "targets": 449,
+      "ce": 1.9935312271118164,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "006af51d0dfe8f1287603bf151e527d67c2b17a241c066feaf75d4764cfbcfdc",
+      "domain": "math",
+      "targets": 513,
+      "ce": 0.7867924571037292,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "00a0d20c40d48b16083aa49a50aabccc02f73d51c1bae67aaef764e236d65957",
+      "domain": "math",
+      "targets": 146,
+      "ce": 0.8214408159255981,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "00bb377b3ac871f0c9c3f4aff263aa10d989e6e560271d58409ff25194a09e83",
+      "domain": "general",
+      "targets": 1029,
+      "ce": 0.8520534038543701,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0102794161143090d6cca0d6bc295310f16f59fe76a370628ac995380eda7454",
+      "domain": "general",
+      "targets": 862,
+      "ce": 0.8317438364028931,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "01568d23f770c7354073d8ac7d2476286ea5600a7ab38217aafe1ae1f52558dd",
+      "domain": "code",
+      "targets": 372,
+      "ce": 0.35923632979393005,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0158d75848d0cceaea563d98085f5edf76a126b7562199b7e28d660b1dfefb03",
+      "domain": "general",
+      "targets": 276,
+      "ce": 0.7641763091087341,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "019e6b189fae771280dde4c19119cdeaf2a9e80132aa77586c78c493d4177dbc",
+      "domain": "general",
+      "targets": 177,
+      "ce": 0.4956255257129669,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "01db4cff96325836feedc9e4a956486cc948e724edc102071f7f65e9602ae1ab",
+      "domain": "math",
+      "targets": 408,
+      "ce": 0.9354597330093384,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "028fd04009fe174476348e3e882347c8d436719610c20d9dd1e022c9a7dad20a",
+      "domain": "code",
+      "targets": 565,
+      "ce": 0.5879113078117371,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "02c29fece466784ec22e6bda5a64c3f3d7f74fb9c58943c53213906e8abd70ab",
+      "domain": "code",
+      "targets": 374,
+      "ce": 0.5383666753768921,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0523c1def6a1768215e916abe0b0ed14f9ca5670976f9381d426d12dccf3d9e0",
+      "domain": "math",
+      "targets": 933,
+      "ce": 0.6721720695495605,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "05a722b03f8c9ab58c6fce6b9e7e26016993ea0400fe67f66b5e14898cc791ce",
+      "domain": "math",
+      "targets": 480,
+      "ce": 0.8008305430412292,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "06bfbe48ba26f7ae90eef2fd0738a64b0826e04b4f2fa9d955323e35f8ad7fff",
+      "domain": "general",
+      "targets": 251,
+      "ce": 0.8777295351028442,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "06ec262676ffa9e3f524f5745fbc4666d6bbe7d370ba3793980e627109c9982c",
+      "domain": "general",
+      "targets": 153,
+      "ce": 1.0378178358078003,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "06f43c4f0531e6b5eff0a828e81e02290846f27a916c344820e9b5ecb315ded5",
+      "domain": "code",
+      "targets": 310,
+      "ce": 0.3004433214664459,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "073b5714dda2c6a02b7ad54c7b34c550151813022f4b9ebba2a2110e5e60ff40",
+      "domain": "math",
+      "targets": 326,
+      "ce": 0.6782742142677307,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "074bab1f49117050207f29c0afc3e3c1ec30a837c4a1897f07a46a514f809a16",
+      "domain": "general",
+      "targets": 19,
+      "ce": 0.5200217366218567,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "074cbca5b0f8043e83a6a205410742361826b69a331fd318c838f9643c3e907c",
+      "domain": "math",
+      "targets": 746,
+      "ce": 0.7006078362464905,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "084bdcb72fe8209cb116e974f44940917dd24402e47751b6b26830bd5c9a6c5e",
+      "domain": "general",
+      "targets": 419,
+      "ce": 0.7145473957061768,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "085dddf804d8c2ba2660f9e6b272175c39a65aaf45d3a910f85e16cac1235960",
+      "domain": "code",
+      "targets": 509,
+      "ce": 0.683151125907898,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "08d81747a538172a8aad4e4d6b869cd6ed7b5d0bb474f3c295268217b130c9db",
+      "domain": "general",
+      "targets": 209,
+      "ce": 0.6806601881980896,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "08e9a3e2560fe614e30118b56cde73a97008352d15b0ffb7b71b399481c41dda",
+      "domain": "math",
+      "targets": 103,
+      "ce": 0.7693655490875244,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "097dcd6415d331a3f8424506c101efa2701dd44e78221d11949581f7ca89b2b6",
+      "domain": "code",
+      "targets": 1012,
+      "ce": 0.3063981831073761,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "09a48ebc471deebbac17e940e8d37bde15e5b27d85826d8ac07dbde2d0fca2d7",
+      "domain": "general",
+      "targets": 223,
+      "ce": 1.29803466796875,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "09aaf74d04cb322bf0ee4d07f2d734442d9d7c51145b0de8940caffc4f2c036a",
+      "domain": "math",
+      "targets": 760,
+      "ce": 0.7317684888839722,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0a355d037f755c2abe547ac2559b77530d313ee11debf4faeca93297835a8738",
+      "domain": "code",
+      "targets": 1018,
+      "ce": 0.158961221575737,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0b0c831c36ea742caeaf83ca923613027fc12296ae9ddbe4681781d71851f4ed",
+      "domain": "code",
+      "targets": 388,
+      "ce": 0.40831267833709717,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0b1cb08f3a96062918dfa79f1b306b28a25b5059f66e9f3e1f161020c31d5d77",
+      "domain": "general",
+      "targets": 240,
+      "ce": 1.2939603328704834,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0b61cfa855f01d562090419a184b1b5dcf1f69ffa4c7dcc0a58b98939fac48a5",
+      "domain": "general",
+      "targets": 135,
+      "ce": 1.414239525794983,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "0bbe6df18ea2862ec486acc6ae487653ad106abcb88dd0b6f045250d5b4ed633",
+      "domain": "general",
+      "targets": 814,
+      "ce": 0.667431652545929,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0c4885f107e4e28cd2568e0cd800cb147f4ae796c5f6aead6be648af73dd4194",
+      "domain": "chinese",
+      "targets": 62,
+      "ce": 0.31346315145492554,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0ce513eb0d8a35cfc9a22b1427ce81191cd331910477e36bf4b2d8b77c445a34",
+      "domain": "math",
+      "targets": 660,
+      "ce": 0.5804559588432312,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0d5b7c879fe6365d33dc5e903d93464b93f7a041cbd111efb91635b7230ea275",
+      "domain": "math",
+      "targets": 441,
+      "ce": 1.1237883567810059,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0da1867c0a4a0ed011463388c4468b557b11987cdd895b35f437ca744b95a26c",
+      "domain": "math",
+      "targets": 37,
+      "ce": 1.8236807584762573,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0dcfc2505d2255c18d57e9ba1c9417ca981b3ebc3e1545663d6f4f8a28852b68",
+      "domain": "general",
+      "targets": 304,
+      "ce": 1.2295223474502563,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0e05ed90d37815dbe415a70707e77873977a41a48be3686eabd5721eea3ebac2",
+      "domain": "general",
+      "targets": 90,
+      "ce": 1.1889474391937256,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0e0ec6f7f5ba9c760ab7ed4f0b8223f0597be809c41470c31ba863abbb855c75",
+      "domain": "general",
+      "targets": 322,
+      "ce": 1.9292725324630737,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0e7d66a98a9830a7cb2a387103f8dcc92244f6c1d2cad3885be44e059af25ee7",
+      "domain": "general",
+      "targets": 592,
+      "ce": 0.7946728467941284,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0ea0313f6236c7415b6dbc6c15f548a5c231fe0b64e4642147bb6a784cc1f7f4",
+      "domain": "math",
+      "targets": 394,
+      "ce": 0.5154899954795837,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "0f2b5ac81206455299f53b77d54e3e6f707f92719cf8dcfd0a233bd8d72a011f",
+      "domain": "general",
+      "targets": 232,
+      "ce": 0.7994289994239807,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "10ce0e16a563c67148ca27d0f20d0b24e7a386d3963467c916cfeb0568d95cdd",
+      "domain": "code",
+      "targets": 383,
+      "ce": 0.5382912158966064,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "111bdff1a2605f7b76da3c65bf94c6e2fcb2f8b941ca6b86bd1c47ad8050e4d4",
+      "domain": "code",
+      "targets": 331,
+      "ce": 0.6469349265098572,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1126b5963c013d1102e1d14c236945b3e84060db9c9b9a9676de5d2781d7fb0f",
+      "domain": "code",
+      "targets": 458,
+      "ce": 0.8032196760177612,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1146e805da08a89bad0d06ece3168ae10e48c8b47ddb86474722b419d844356a",
+      "domain": "math",
+      "targets": 322,
+      "ce": 0.6859105825424194,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1168a094bb7c5a159e35aad7c2db1bcc2d4d3a06b27a5190f373feeb090a8905",
+      "domain": "math",
+      "targets": 887,
+      "ce": 0.43176957964897156,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "11d45a2f9942b117540c4fa10962c0ae89878ce1a42ab8901bd4df5b0ce8d60a",
+      "domain": "code",
+      "targets": 432,
+      "ce": 0.5317565202713013,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "11fffde21df0f7aff7f97f3aee0f4f0f0c0a07106016e2d4008b6fe5eca36dec",
+      "domain": "general",
+      "targets": 277,
+      "ce": 2.723590135574341,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "12395de83e040fc5c3fce814bac0597ac4e022812bad6d05d6a63576d1f6393a",
+      "domain": "general",
+      "targets": 716,
+      "ce": 1.026870846748352,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "12445a4526f19abe0fd83e07ec976bce0c24d9591b7b774ba64c997c7ec8c70b",
+      "domain": "general",
+      "targets": 337,
+      "ce": 0.885822594165802,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "12de298a8964ff9392d6cf5571380eb2db28f8bf24ab3558a25a1749a7d47f0f",
+      "domain": "general",
+      "targets": 255,
+      "ce": 0.7230418920516968,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "12ea85b948eb5ed1a3730dd3e987c0e58cb589c42825ef94dacf2a12b506fa04",
+      "domain": "math",
+      "targets": 91,
+      "ce": 0.8799631595611572,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "133597bb563399f6988548242712208fca460355595d4ea9500ff3171c284729",
+      "domain": "code",
+      "targets": 418,
+      "ce": 0.5948870182037354,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "14e6caf463c21f71aec9b943c61bda02bf2f08db4c6bcef1d9791f4480bef535",
+      "domain": "general",
+      "targets": 764,
+      "ce": 1.5611646175384521,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "15623be53c6ac1a87aabf1c6c216ebcc1bb3cfcbfd9fd75cbcbb5a86ccb744a2",
+      "domain": "math",
+      "targets": 259,
+      "ce": 0.6084668040275574,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "15f9c0a148a82879690c3b4efeef1a909f474bf62eff048e21ff340d92915937",
+      "domain": "general",
+      "targets": 1027,
+      "ce": 1.445228099822998,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "17af1210e1af9b469ab76ce8a6bbb4f342a50cd22d6f8befc738c5931e4813b4",
+      "domain": "general",
+      "targets": 516,
+      "ce": 0.9334166646003723,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "17b2bbcd531a10c5a4681f8659a853b10d8a27209e9660ed05be4a047a12ffe5",
+      "domain": "general",
+      "targets": 291,
+      "ce": 1.0652981996536255,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "1814d8de17b7cca89bb0306c8506f721800d56c729b2de89fa627c5bfd2cf287",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.7970573902130127,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "188db255aea494336cee49c09ff00859c89e523ade731c8fe686db23840779c8",
+      "domain": "math",
+      "targets": 262,
+      "ce": 1.1340465545654297,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "18f04508207ee1310d5cc1aa24fdac106803f7729bdfb2d88d1e490b84e2137d",
+      "domain": "math",
+      "targets": 291,
+      "ce": 0.9491715431213379,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1962677d3d81b6e18ee0b87eb9ec2c69c335c4c6d96f035c3f1dd95b02063c49",
+      "domain": "general",
+      "targets": 23,
+      "ce": 0.7327675223350525,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1a0cff3a5f6bc453473aa46068bf8b02fe95cf935eb19681ccfdec8252cdb902",
+      "domain": "code",
+      "targets": 190,
+      "ce": 0.02659779042005539,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1a58fc7c4530865ffcc3509ee32c17670ec787f3ef91c47ffb66791ca9071d3f",
+      "domain": "code",
+      "targets": 661,
+      "ce": 0.37421897053718567,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1ad8656bc6ab7d5a5ee2cde9a3204f01a3ef5675c9b2f150e499102f360ad3d0",
+      "domain": "math",
+      "targets": 102,
+      "ce": 1.4648330211639404,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "1b140f176f68e33493aab0fd0e805646618dac512fe3f54139ad8ceec13d34f1",
+      "domain": "general",
+      "targets": 626,
+      "ce": 0.9802917838096619,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1beda6e0bf57b9c5c5068d8ab81e16ae89b25e7fa993120f9500481c40abf53a",
+      "domain": "code",
+      "targets": 1151,
+      "ce": 0.20178288221359253,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1c475f4f956405d23b5e6e1a7c1041bd0de0ed35cf0206f1cee325f13eafd6b5",
+      "domain": "general",
+      "targets": 701,
+      "ce": 1.0658668279647827,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1c67b7f093dc19e5ad416bb60baed553dd4ea048072b4b421d9af71e8e995359",
+      "domain": "code",
+      "targets": 844,
+      "ce": 0.29028162360191345,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "1d41c467aa1d0a0248bed1430ab7962da2c75895c39aaf48fbd9bf8fe3eadc90",
+      "domain": "code",
+      "targets": 322,
+      "ce": 0.7004982829093933,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1d96746ec96d93300a10cdf61484a98070983b59ea4c49aa797b960efb5c7361",
+      "domain": "general",
+      "targets": 182,
+      "ce": 0.31340736150741577,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1e019268129c68352d5eda71db42ce7cbd94b7ce686b0ec2bf3b4edac134ed22",
+      "domain": "code",
+      "targets": 495,
+      "ce": 0.5451946258544922,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1ea96a78dc57cb1d1bb440ae1ced23024a28f14b2212f642aab0df7fea0707ec",
+      "domain": "code",
+      "targets": 522,
+      "ce": 0.45169493556022644,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1eb6153ef09034fa8866da515cae5c023dc8223011b0563e7eed31e7eb10a113",
+      "domain": "chinese",
+      "targets": 302,
+      "ce": 1.8043029308319092,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1ec7a11eefe87047168405ece70a340a860d78073b872f195aa9345199d49506",
+      "domain": "code",
+      "targets": 546,
+      "ce": 0.38692593574523926,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1f250309466a2a111a87d558255ad058cf180261c0cd3be834b801638ac14ec6",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 1.5807685852050781,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1fc4022d994db6512d7f6f4a9ca44e6b5271f24da57a39eeb5e5cf318cde6c53",
+      "domain": "math",
+      "targets": 113,
+      "ce": 0.6773695349693298,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "1fcf4d20c952e82d3f6b1818c72b7ae2da335d577d2ba36a49dac730e939873b",
+      "domain": "math",
+      "targets": 186,
+      "ce": 1.1523772478103638,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "20115f256e868a8e77e89c174adb2324a669b70b0d1b316732effade9b946f40",
+      "domain": "general",
+      "targets": 340,
+      "ce": 1.2841781377792358,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "20311be80a897f4be78132f32e2adfb355ea3d98019bd07c9696fcf6e656dbc6",
+      "domain": "code",
+      "targets": 334,
+      "ce": 0.39362385869026184,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "20d461b212d5a9b9e22b5030da5f38db1b0c3ea5573a610236769c288eff953f",
+      "domain": "code",
+      "targets": 591,
+      "ce": 0.5770211219787598,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "20f9000b704f017d840eb539b52089ef664f4a102b6af2a287eec79b6c325458",
+      "domain": "general",
+      "targets": 214,
+      "ce": 1.1684874296188354,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "21332383ba130c25ba98fe9afe81361753e9e504570cb036d312becb51302950",
+      "domain": "math",
+      "targets": 1033,
+      "ce": 0.9010559320449829,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2153a3282fd5e22d30d66a33e7a9e85aeaa9c5223a5ef2c552c95d62ac6c4d64",
+      "domain": "general",
+      "targets": 373,
+      "ce": 1.1882493495941162,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "21fa914e3d3c0fe447b905d3aa3d8dd16814652259527a8f042a375594286bee",
+      "domain": "code",
+      "targets": 35,
+      "ce": 0.5129584074020386,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "235fc7516a95fa2e95139eb1669857b370bc778af3f7bbfca3ab21c2fcc38ef5",
+      "domain": "code",
+      "targets": 413,
+      "ce": 0.27468141913414,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2380e3e8a01650364acbf6c2466dde29ddd45d57133f594aaaa4642dafb9242c",
+      "domain": "code",
+      "targets": 491,
+      "ce": 0.804521918296814,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "242365c39ea927cc05fb781b21033462839804c894c29cc003044a89b1ff4325",
+      "domain": "math",
+      "targets": 235,
+      "ce": 1.0695714950561523,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "248904ded29aab5d6105db5920e8c46d9d1a3d7b9448e60504ed0a5b5d71c722",
+      "domain": "general",
+      "targets": 29,
+      "ce": 0.4232594072818756,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "25095873ce6b6844f9b095c9ad0b7026d4131942690c1ed0e4576948d05a5644",
+      "domain": "math",
+      "targets": 230,
+      "ce": 0.727600634098053,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "271d442dab11833cfe873c4e2e4312161ed4eb6f35720fb16db10f3248e3b495",
+      "domain": "math",
+      "targets": 569,
+      "ce": 0.6839675903320312,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "273bf01b7c344ad0d1252e4ce9ee4b6639079e0aa94f726a184f721a112d7177",
+      "domain": "math",
+      "targets": 438,
+      "ce": 0.7159696817398071,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "27be8d629f89ec3372117aeeab376c997df843bfde178b27fdd05229fd84273f",
+      "domain": "code",
+      "targets": 71,
+      "ce": 1.0442358255386353,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2801b07176f0dc1e976d0a35e75fc5fc392ed82058e7fa28db63e27b9cc6052c",
+      "domain": "code",
+      "targets": 329,
+      "ce": 0.5545467138290405,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "282dc9c9e543e53b594eb234f21ec83fe752d05c3c293e3ae5e4b6aa536a85d2",
+      "domain": "general",
+      "targets": 197,
+      "ce": 0.823617160320282,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "28ecad7056632d7239635fc46f76c5707eb680d8764df0c84c12fd0b3b3e03d4",
+      "domain": "general",
+      "targets": 180,
+      "ce": 1.078589916229248,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "28f8e18dba2e85847ae298e64733f2241ba905cf7317ec17bb4fa6c8907fe476",
+      "domain": "code",
+      "targets": 48,
+      "ce": 0.39028599858283997,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "28fcd9a35dffced822a32ce5fd63cdb630a8004eec0c69683a3d2bbcebe8cd6f",
+      "domain": "general",
+      "targets": 19,
+      "ce": 0.9553834199905396,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2929b59ec9093be959d64f27d5addd4ac618559f8a50aa357c5181a6d089d087",
+      "domain": "general",
+      "targets": 639,
+      "ce": 0.8744704723358154,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2951624eaab033702dfab01e5e8245f8c80f69b691dd4ae3e13088faac9ec5b8",
+      "domain": "general",
+      "targets": 149,
+      "ce": 1.667396903038025,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2999196ee412183af6f826989dbde99c34752cd6aede97167779f5f81b73022d",
+      "domain": "general",
+      "targets": 37,
+      "ce": 0.6393808722496033,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "29c6e0c151a6dd1d4a2b09eb2bffd819063ab77e82a51a622a037c9c20db0c1a",
+      "domain": "general",
+      "targets": 452,
+      "ce": 1.5191755294799805,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "29f395c5dcda6b32cdb48b79f822e2ddd40cc274d190c80a86218e35b51ff356",
+      "domain": "general",
+      "targets": 747,
+      "ce": 1.5238666534423828,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2b8002a2c14c161d7caeee1906ec75d6718eef01dc40374fb29f0d585a2a4518",
+      "domain": "general",
+      "targets": 642,
+      "ce": 1.6450812816619873,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2b87a304b27a5a4a2c8e4314f81e68bb27a1a8d9bfd395dcd555a50065e83dfc",
+      "domain": "general",
+      "targets": 247,
+      "ce": 0.714002251625061,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2bbc96870e8ad9e90f290fd321d266f2f3c0f5f16ca6681ca613c0bde452e14d",
+      "domain": "general",
+      "targets": 615,
+      "ce": 1.211846947669983,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2bd83481d49a4f137fdc0c1a694a5f7a7aa948696237f7196ec9bce32ddc21f2",
+      "domain": "code",
+      "targets": 412,
+      "ce": 0.605053722858429,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2c537ea8ac30ddb897a6edac9b4db54cad179ef823f4668c8adfb296170b44a4",
+      "domain": "math",
+      "targets": 101,
+      "ce": 0.8076208233833313,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2c58615d6dca4022c330a7037d5f1220b545f27e53bb69891d18d997602bac30",
+      "domain": "code",
+      "targets": 842,
+      "ce": 0.4755411148071289,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2ceed499a557da3f5fc322a732fc3438036b412cef5f700d84f3ca7a08e688ec",
+      "domain": "general",
+      "targets": 250,
+      "ce": 1.4095051288604736,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2de039a1d730529c9650eb97071d8222f28975b65d9f24b14280e952d9f6372b",
+      "domain": "general",
+      "targets": 126,
+      "ce": 1.474873661994934,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2e0f863928ea95f6c01b0d245e34a7ab550a43c4fd6cdbb6c872d2219e779121",
+      "domain": "math",
+      "targets": 132,
+      "ce": 0.7159462571144104,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2e5d318abfb7b6e1a0d297dd9d3436acb0ec8cf6535007bf1b717890f738cf52",
+      "domain": "general",
+      "targets": 1029,
+      "ce": 0.6378414630889893,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2e6a29434951de59e7245052d429332f9f35df7ef44137806c1d4e30c4bec60c",
+      "domain": "general",
+      "targets": 80,
+      "ce": 0.977591335773468,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2ee54d0c317d355b35885ee0b2220f70369f3ccde204e647a7132909d3ab1677",
+      "domain": "general",
+      "targets": 197,
+      "ce": 0.8988276720046997,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2eeaf2c0cb45dd879f1a4557e715df309e4ee21c7345c5f5442cdd2f2ef485f2",
+      "domain": "code",
+      "targets": 49,
+      "ce": 1.041109561920166,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2f65793c72b1976d4a788a1a7ced05b7d16dec9131d4f55ce42da4a451be40ac",
+      "domain": "general",
+      "targets": 267,
+      "ce": 0.8512154817581177,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "2f73d1e419d0db0072b499658582298e09ccedd8514727933cb18eade2aad44f",
+      "domain": "math",
+      "targets": 433,
+      "ce": 0.7390591502189636,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "2fee322e292298021a80dd1171d5e178c348dfa09b051a55d81e0371387e738e",
+      "domain": "general",
+      "targets": 27,
+      "ce": 1.0550055503845215,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "306dc26fb687fa83af232a2c9e433daa407aa6a4b5753c5f18fc53d141bc28ab",
+      "domain": "math",
+      "targets": 855,
+      "ce": 0.6741769313812256,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "307563761a3bcc0f4af1adf7851d16caf6b5220bd2262233c4fc0336fea95a0e",
+      "domain": "math",
+      "targets": 66,
+      "ce": 0.928119957447052,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3185734074d37ba4ef773925230aab2c1eed61e8a0d97467485c3abae7665e0b",
+      "domain": "math",
+      "targets": 1102,
+      "ce": 0.3116186261177063,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3192e085fe38bf6f0415cb1119b90fa544706fd01d7a14f11cb924d8cef10564",
+      "domain": "math",
+      "targets": 1007,
+      "ce": 0.27820754051208496,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "31a1ade853c0ecd842dad8c8dc589e964f201dccee6ed7d7231ac34451205ab6",
+      "domain": "general",
+      "targets": 342,
+      "ce": 0.2958555817604065,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "324ae66e7a2b98c37c8769473d40da805b883a1c58bf1c7974ba65b1fbd8bdb8",
+      "domain": "general",
+      "targets": 116,
+      "ce": 1.3645105361938477,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "324f2bb468f7e28e66646d9fcc38b3a1db98974b069e397fadbe8ad55928a912",
+      "domain": "general",
+      "targets": 83,
+      "ce": 1.2002766132354736,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3286b6e721ec9e73f835f5ddabc95da6201d2fbe59a277ec8507831232117a02",
+      "domain": "general",
+      "targets": 627,
+      "ce": 1.7319250106811523,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "339c6d1ba28ecfa15d7b9e74f6412d5f531a9eb2733fabec694be15c8b744799",
+      "domain": "general",
+      "targets": 949,
+      "ce": 0.8471843004226685,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "33f75d8bc2200ff14d3857b168f562413d7d140370735da59f269e141deb0c4f",
+      "domain": "code",
+      "targets": 1050,
+      "ce": 0.3661750853061676,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "35272b19f33f8ad33a6d4c29d5fa60995c11b5fc3d391a9bf0d7562f89b6df38",
+      "domain": "chinese",
+      "targets": 505,
+      "ce": 1.7392487525939941,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "354895fd5f8b9910380b7c8586633bb0d8262a91fd5c2348b8bf666b53c2c035",
+      "domain": "general",
+      "targets": 30,
+      "ce": 2.1091203689575195,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3597a0267fd98c81ed3fe798803b23feac2d523690df46037c4d7388705b8ff0",
+      "domain": "code",
+      "targets": 840,
+      "ce": 0.33500319719314575,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "366cf1d2b65362f34d24786e4493fbecb9c39bc8170a22c6347f55a07987fd1d",
+      "domain": "general",
+      "targets": 302,
+      "ce": 0.5909478664398193,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "36c8a5d718da7784c4411dc630199e46e9a263cd78efb7b4c0fb48c3a93d6107",
+      "domain": "code",
+      "targets": 684,
+      "ce": 0.5403212904930115,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "37982acf8a8324928f11930dd64737f4bd337975ef74ecf000d7e2f33a1ccc67",
+      "domain": "general",
+      "targets": 25,
+      "ce": 0.6428378224372864,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "38dd7c7fac910d7e9f9c973137628919ed2c96caeb18697371a0eff2fee12640",
+      "domain": "general",
+      "targets": 280,
+      "ce": 1.3365365266799927,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3954cf0f9fb260376b119197e1f226164f038a542ac633c257fc5961febe2f3f",
+      "domain": "general",
+      "targets": 128,
+      "ce": 1.2815581560134888,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "39a86ddaf3758a3c6db9bbad8f7078dcbd165cee6ac3958d6fcc9108a1224dec",
+      "domain": "code",
+      "targets": 451,
+      "ce": 0.6497781276702881,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "39af9a1c6759bf45b211e1a039076294741a47ca77fd9464442dd06132b1fe90",
+      "domain": "code",
+      "targets": 616,
+      "ce": 0.24954327940940857,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3a423c68f90d2d17358f2da47882b0f9ec124855310c0fe4bd1acece418450c6",
+      "domain": "general",
+      "targets": 352,
+      "ce": 0.7207341194152832,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3aa6f1a11950d67a588651bed1e8a70ff47670965bb25908909d5769aef941bc",
+      "domain": "general",
+      "targets": 286,
+      "ce": 0.9431040287017822,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3add6bd8df9a6e69f4880863720210229fdc5f1ab25591bc7e59ff8d787f00c4",
+      "domain": "math",
+      "targets": 177,
+      "ce": 1.6302624940872192,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3b5f93832b82d5f23dd171dd4390e03f37407f3e5185a53f45b20d37ef4ad3b1",
+      "domain": "math",
+      "targets": 385,
+      "ce": 0.6236342787742615,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3c1e9db16ec48d48aa857ee6047034795e04a13f23da2fe2589308ff3f8a1699",
+      "domain": "math",
+      "targets": 165,
+      "ce": 1.1547653675079346,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3c32c2143ba4eec3cbabe34935cd7ea7f069195520d1a2fd2d226fe4f933e0a4",
+      "domain": "math",
+      "targets": 123,
+      "ce": 0.4936148226261139,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "3d1d48afeda0ff56520132274286db49e362133091c0fedc71424b50b12fea6b",
+      "domain": "code",
+      "targets": 366,
+      "ce": 0.3272099792957306,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3d6af479598c1713c51dc39d43f7279fc90406a9145fc28d03f84283a7b06747",
+      "domain": "code",
+      "targets": 433,
+      "ce": 0.337627112865448,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3dcdd3ebe58eec336bf7fc6add61f5432d13b699107de27aa55a3ba694f961b4",
+      "domain": "code",
+      "targets": 671,
+      "ce": 0.8168998956680298,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3e66b8d88e1fcd8fe53f09dc5767d755f78e398cb40dbedf8ae8dd91cfe71d54",
+      "domain": "code",
+      "targets": 348,
+      "ce": 0.3547642230987549,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3ef6eaeea30030e8e00850b233ada3fabc3e1d822ba4baf811e907978dd255d0",
+      "domain": "code",
+      "targets": 778,
+      "ce": 0.6071308255195618,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3f96fbfb720759d6cae83bebc794b21919a0174d252354d436a9666b1c5e6a80",
+      "domain": "general",
+      "targets": 196,
+      "ce": 0.7001137137413025,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3f9af3382c98560b50f26fa0e9c835d6dc30ef9d3948872346b6167226e99051",
+      "domain": "code",
+      "targets": 561,
+      "ce": 0.4369922876358032,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "3ff6cea52c1dba45cc3589af4ad0de46c955aa039f0aa05e01ad54234a20c6eb",
+      "domain": "general",
+      "targets": 154,
+      "ce": 1.4741716384887695,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "40988d9804417bd6b285c2353b215fe92863f8d6715c87ccad9f1a9bd2e6f34c",
+      "domain": "code",
+      "targets": 1424,
+      "ce": 0.22348177433013916,
+      "mean_depth": 35.999996185302734,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "40f4695690e90d8db78d0d3dcc53a6f3de0309f538b8b932e58c932cffd49d72",
+      "domain": "math",
+      "targets": 248,
+      "ce": 1.4153789281845093,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "416e7b0afbe29030b1bca3b8ea53ab7c1fe1ea7ea23cdb980732f71e8be078fa",
+      "domain": "general",
+      "targets": 136,
+      "ce": 0.9559851288795471,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "41a73e6541def694e5bb2cf387386d21f918fd290dff28483b530df81226b850",
+      "domain": "math",
+      "targets": 195,
+      "ce": 0.6605494022369385,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "41ddb6d41fbd5b0f75c30b81c48e88b39baf8116ccdd020d598e5606c668e880",
+      "domain": "general",
+      "targets": 353,
+      "ce": 1.2665668725967407,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4206270ac34e030a5285d76a784fe6fe5484168765d91d468954f36b9b09989a",
+      "domain": "general",
+      "targets": 63,
+      "ce": 1.2550629377365112,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "428409461f4ff1f4193a968264e52668dd5d4f1a155a38d03323dae2539e96c3",
+      "domain": "general",
+      "targets": 241,
+      "ce": 1.2533880472183228,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "42c0017a2c6eafda2ef1f6584a0dc6b7c2f02a0bbe3e8822aea8ca7027452300",
+      "domain": "math",
+      "targets": 81,
+      "ce": 1.681763768196106,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "434adbea6c1f0dbcb10845499522539ae68c02c03eff85dd99e90e38c31a531d",
+      "domain": "math",
+      "targets": 171,
+      "ce": 0.8149963617324829,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4364f377fda6b5b7e1db4bef5bd11eb5f2d2de05f60c220c4bd0a58858e5c2f8",
+      "domain": "code",
+      "targets": 472,
+      "ce": 0.4912928640842438,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4449fbe65a0bea1928f8e8461499dd35dd39727f8cdbe324c033ed504fd84fa4",
+      "domain": "code",
+      "targets": 619,
+      "ce": 0.5452799797058105,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "44bbd0867f91f58ad3594cd812c3722f22935daa4ddfef0ee42357b0e1300588",
+      "domain": "general",
+      "targets": 196,
+      "ce": 0.8870034217834473,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "44fea6087fc9090e8c15ae069c5029489bf96a974427ec12c458d03fc8ce36e6",
+      "domain": "math",
+      "targets": 21,
+      "ce": 0.7613573670387268,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "452a4a3dff0dd9fbf8826a01936efe4df2d926975461c5c73ab8e334c4dd98fa",
+      "domain": "math",
+      "targets": 327,
+      "ce": 0.9856323003768921,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "454610493ce941c18d1496a8bce030b6f7507c55e8b9995ef4d9c6e046feb4d1",
+      "domain": "general",
+      "targets": 263,
+      "ce": 0.9473252892494202,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4637e94e027b1c666601c39a4865b78deabb0ff72f9bf2007a7dfa7e75efabb8",
+      "domain": "general",
+      "targets": 1026,
+      "ce": 2.1626181602478027,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4679ae1f04cc25f3c2b32dd81d2d0fef77338264080ea517708534898d7c1a94",
+      "domain": "code",
+      "targets": 378,
+      "ce": 0.31628572940826416,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "46e36c70adc2022e2b8904047ce772f77e09f642688df193f20b057da876b7a5",
+      "domain": "general",
+      "targets": 72,
+      "ce": 1.1011292934417725,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "46f741ba75ef525de9c68df6b3771f04e8fc6192acdc8e4d4def6d25039cee6c",
+      "domain": "code",
+      "targets": 568,
+      "ce": 0.27389150857925415,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "470154d81c81b7d6f16d6b4a41e50292e439c294be7fa14c55c29f93b33c1acf",
+      "domain": "general",
+      "targets": 389,
+      "ce": 1.3956495523452759,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "47717b041c33f07e83eb44bc9035817614987acf36fb8c1473ecf075396c1f2a",
+      "domain": "math",
+      "targets": 205,
+      "ce": 1.758928656578064,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "47ba1d573821cc2ee6b0d6d344a6a2f2e098feefe0b183c10d18b8fb3e5be923",
+      "domain": "code",
+      "targets": 375,
+      "ce": 0.8767294883728027,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4856359f2230b5ffa0720b66cb42dc2193a7430bf81be313161e93969af20ee9",
+      "domain": "code",
+      "targets": 19,
+      "ce": 1.1622364521026611,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "489d7787f9a230e956180df4bdac6c94f6e0110112aa92bfbaa05a808ef8a2e1",
+      "domain": "general",
+      "targets": 76,
+      "ce": 0.6386850476264954,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "48a0ac16ba512567affb05dc791252e3aed70c0fea82cf4f76c2c4924be3d75e",
+      "domain": "code",
+      "targets": 161,
+      "ce": 0.5281400680541992,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "48bb11cfde202494b4b55590cfae0ab1bdc7d323ccccbbfb4b4df80c1094a869",
+      "domain": "general",
+      "targets": 347,
+      "ce": 1.0682623386383057,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4946b0041167a0f75e6d8304c5aad8a50ad45e595c685934e6e29767c6c99f37",
+      "domain": "general",
+      "targets": 764,
+      "ce": 0.9060341119766235,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "498eb58be8813af4f304226b6ff7d357a14e165691f07d737635b27bb51eb5d7",
+      "domain": "code",
+      "targets": 446,
+      "ce": 0.7042685151100159,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4991ea986247ad4cf61181201c760aa953d9622dd9c42a7687413df4c5968d91",
+      "domain": "general",
+      "targets": 599,
+      "ce": 0.42194151878356934,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "49aaf09786a67fcc1829759b5426d420e21ab4f50627ae39da305b22c3a20e9d",
+      "domain": "math",
+      "targets": 1039,
+      "ce": 0.6087526679039001,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4ace13dd612a05a04812b94772e61308a787057be53571fa83fcba68fabd30bc",
+      "domain": "code",
+      "targets": 444,
+      "ce": 0.427142858505249,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4afd60f9b97e0b41f178f3ddd1cd5633f1ca8c9eed6b5d0fadb4a81dcb392916",
+      "domain": "math",
+      "targets": 316,
+      "ce": 1.4698514938354492,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4b0b1c92397f62632b6d2ece1d7a35455bd2fe2ca2a90b2ef4b549da8f8897b4",
+      "domain": "math",
+      "targets": 172,
+      "ce": 1.3394687175750732,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4b64608de8fdfe06c08d567bbf7d6352f8089f8298ed7a9c6bf7fc687128d727",
+      "domain": "math",
+      "targets": 127,
+      "ce": 0.6279313564300537,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "4b8185c0fd254623fb7b502e49b7de1ff5724cb7a3a09e7919de4477e2afb558",
+      "domain": "math",
+      "targets": 620,
+      "ce": 0.7074329257011414,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4bb25924b276bae33ae1d807a8b5a4baf1421b304db663b7c7c60e41070c0fdc",
+      "domain": "general",
+      "targets": 435,
+      "ce": 1.3339232206344604,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4c26510967c2e5c0434f0c06a14a49cf40510a94956a561a61dcb2efb48a4d16",
+      "domain": "math",
+      "targets": 269,
+      "ce": 0.9874452352523804,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "4cb08f553229d1085954e030836d8ec83c1aaaeac581eceb1351552bc2a41d0c",
+      "domain": "math",
+      "targets": 233,
+      "ce": 0.6100183725357056,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4d228b373b708909c259b6b39154b677df5ac5185deea3ab4a413d6e4e9483cd",
+      "domain": "code",
+      "targets": 24,
+      "ce": 0.4581376314163208,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4d94602cf150ba544611d7aa02afe1dde817069a2e074f0db0f73d07c4b596c7",
+      "domain": "general",
+      "targets": 128,
+      "ce": 1.4161455631256104,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4dd252d90e1562782e02474dc47b7275a9dbea45008c5ee5da3454b7168a0068",
+      "domain": "code",
+      "targets": 488,
+      "ce": 0.28999853134155273,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4e2814955ea1a1287f37293d7603b426684e4d44b8bc18e7924c606a6915d7ba",
+      "domain": "code",
+      "targets": 168,
+      "ce": 0.17869026958942413,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4ea819fe460a1ac3a4fc8162f383aa02e3f8a9baa9b8f8dd8232201aadd4c482",
+      "domain": "math",
+      "targets": 212,
+      "ce": 0.9168620109558105,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4eaf1e59f446792dfbd9231a2c0bf1e48e6cf690a6ed6eb2e7a2d65fceffe5a5",
+      "domain": "general",
+      "targets": 158,
+      "ce": 1.0981781482696533,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4f36024dd07bd39fa6a7183608ed54b69a0db8c758a3a2721dcedddada9b15df",
+      "domain": "code",
+      "targets": 339,
+      "ce": 0.36162856221199036,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4f61a6013f12b733fcd783ee78bc6ec9a5ecccf1e4c5ef4f739a93a5109b3219",
+      "domain": "code",
+      "targets": 823,
+      "ce": 0.26582223176956177,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "4fd0bb0aa9d399f4df464a56689b7c1c7546f20987e8567427ec448e8af65975",
+      "domain": "code",
+      "targets": 495,
+      "ce": 0.7268286943435669,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5026a314674ddfb5c17fda4e4774512b0372f4ed270e06513412a66c2a465029",
+      "domain": "code",
+      "targets": 906,
+      "ce": 0.25796300172805786,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "50398f85e597075cf08132eef118790e995c7e014a5755c74e0555ef2c0bcc01",
+      "domain": "general",
+      "targets": 133,
+      "ce": 0.8734930753707886,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "508f779007ecf4a97094f6e55ea5c3350526074d67157c53f8d9468c49ac8050",
+      "domain": "code",
+      "targets": 563,
+      "ce": 0.348147451877594,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "50a374e295c5935d750229932bac20f333aaeae4b0b7d8c35d776f5051b23f3d",
+      "domain": "code",
+      "targets": 266,
+      "ce": 0.5760563015937805,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "50fe17aee30173f7e2fc75f176019fdc799c08b327e7fd84a6ed584d1bf49390",
+      "domain": "general",
+      "targets": 98,
+      "ce": 0.4799816310405731,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "511c9c1b4afaf63cdf8d69e740233ecf254f893c47924c0dcb039ac69aa26958",
+      "domain": "code",
+      "targets": 492,
+      "ce": 0.90949946641922,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5175910593b09095ac0e9096b351a30a39804cf8e0838107a61821edb3bd1769",
+      "domain": "code",
+      "targets": 561,
+      "ce": 0.23028014600276947,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "51e6f0c72f69a3a0cf06d23643af37b5a9f1025a1d68363eeaf22769da9e5779",
+      "domain": "general",
+      "targets": 142,
+      "ce": 0.5689646601676941,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "521be411aabb54c9556e3fe416adcdab5f2acedaf2e7692b24f30c2519fb69c8",
+      "domain": "math",
+      "targets": 298,
+      "ce": 0.4384074807167053,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5290777daa28cae71369b2ab3078d2c6d78a44012fa6c6b1ceea3337d988cc9d",
+      "domain": "general",
+      "targets": 904,
+      "ce": 1.117628574371338,
+      "mean_depth": 36.000003814697266,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "52bba60b5d96244cd667d39ac6325e38c7e2231f95795442c02103b73086f257",
+      "domain": "general",
+      "targets": 128,
+      "ce": 1.2260823249816895,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "52e9e19165e25496990f90e05d41a4c6590b5c5cb6477e96cafa5dfcda5ce593",
+      "domain": "general",
+      "targets": 340,
+      "ce": 1.090012550354004,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "53009e3e01c38db8b22330e8cf5b1445146a79c543a5b1791d6f8be2a9219f10",
+      "domain": "general",
+      "targets": 79,
+      "ce": 0.6925466060638428,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "53b71d53e633e26b93109510e83bc7017c703cccfb3f8ed51470004ee17ce4f1",
+      "domain": "code",
+      "targets": 200,
+      "ce": 0.6158466935157776,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "56654cbdc75a40078e52c3d99c04c49c329a5c1979fe2b7b6c0cb8900f198b81",
+      "domain": "general",
+      "targets": 81,
+      "ce": 0.6442677974700928,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "57480b767f4eb64dae69ab0ed67b84842aa710299e55f79c94a60985bda245ac",
+      "domain": "math",
+      "targets": 1593,
+      "ce": 0.202776238322258,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "57834042e7397dd80c27a90476b4229e6c852918a7e55ef0850da2229af24188",
+      "domain": "general",
+      "targets": 122,
+      "ce": 1.0243945121765137,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "57c097361b4787821fad819d68a24dace92f8b5b413b3aaac6c8c10d393c5201",
+      "domain": "general",
+      "targets": 390,
+      "ce": 1.3619283437728882,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "57c1cf60e2ed8833b274a78947b3abb0178f8054943f978e156eb7b18c0c9a9f",
+      "domain": "general",
+      "targets": 114,
+      "ce": 0.6995449662208557,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "57d7a1eff0074cede5e0da83e2887f507c32d618464af4ba8bb1ad46afe83990",
+      "domain": "general",
+      "targets": 261,
+      "ce": 1.3444474935531616,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "582f5ed21af7d8bd50fa5903342df6e9d78395bbf09096bd1c72333e8b35cd55",
+      "domain": "code",
+      "targets": 655,
+      "ce": 0.6262671947479248,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "588a0152e47eda2c54f88563ef09c533521a438177943ef9751c31ac273a611d",
+      "domain": "math",
+      "targets": 251,
+      "ce": 1.0620455741882324,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "58b55785becd53413e871cd6077c6a84e9bd69271d6808363e3fd17a3a8762e9",
+      "domain": "code",
+      "targets": 353,
+      "ce": 0.34206268191337585,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "58ce0fea7113e1754f61da483f8d55e9101c913b9890bb3621262ca98084f814",
+      "domain": "general",
+      "targets": 341,
+      "ce": 1.5899361371994019,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "58de15d26c028363a80a3e46c3d4ad07bbd8a32f1ad5a29a5a4056f520379082",
+      "domain": "math",
+      "targets": 872,
+      "ce": 0.2293572872877121,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "58f6587255c9dc6a5fcfb4856c9c8d193d33b5438b2b5f5af619357ad6077326",
+      "domain": "code",
+      "targets": 260,
+      "ce": 0.3088461756706238,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5935f94f5c72172a1cb77d55ee2c8c5b5eb9f30969e79427be4528d8c9ff0d44",
+      "domain": "code",
+      "targets": 505,
+      "ce": 0.3407617211341858,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "596fa67d2deea9262e123dd7dd64663127e347f62b0bc4e9a9c78e3e0cf75e6d",
+      "domain": "math",
+      "targets": 326,
+      "ce": 1.388912320137024,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "5970df21f3bf6c9334e9b88733842c8828f7dbb622f59dacaf1617ba4fb8b0e5",
+      "domain": "code",
+      "targets": 590,
+      "ce": 0.660945475101471,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "59cabefe7c055efb0538ddece690a276771106bbefcf278eec1c845757ff1942",
+      "domain": "general",
+      "targets": 189,
+      "ce": 0.667448878288269,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5a1e0f5262971e79023198279414201eef03e96319fb30a477e81d09a05f7821",
+      "domain": "general",
+      "targets": 368,
+      "ce": 1.0163240432739258,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5ad37c74d7d93c7a51dd1f1d4404f45fd676ef5ea8a9c801958c26247774ad95",
+      "domain": "general",
+      "targets": 230,
+      "ce": 1.1553258895874023,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5b1233ee4626206b0bf675ee374c96c74f71a5ae380df5391dbad13ed58f2987",
+      "domain": "chinese",
+      "targets": 397,
+      "ce": 0.657687783241272,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5b41a8577ce99558af987e5fec0867680e27f1aee3938f01a8a0a3ea9a1cae92",
+      "domain": "general",
+      "targets": 651,
+      "ce": 0.894437849521637,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5b8c9348bf0ba796494424b7c5b1f4963d4b1a89436961a4404c2d31628d9e74",
+      "domain": "code",
+      "targets": 60,
+      "ce": 0.47565701603889465,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5badfda7225a1d01a1bbef965371e0111459a04f7b4d01872bd683d16286f658",
+      "domain": "general",
+      "targets": 271,
+      "ce": 0.4167100489139557,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5bbc7d67a9c2a5e7f4a5959123935aa0cbb6779efb0de708c26d19736655d7ac",
+      "domain": "math",
+      "targets": 1565,
+      "ce": 0.8158156275749207,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "5bc55639e79c73c29d58850dd27243d1d45bd7f18aeac44f509858a48caa6e98",
+      "domain": "math",
+      "targets": 106,
+      "ce": 0.5999085903167725,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5c16f9ba5f56e86e7e8daac0a2b924a0d149580f36739f24bce7dfce5c4bf34b",
+      "domain": "general",
+      "targets": 354,
+      "ce": 0.8949481248855591,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5c658e397ea7c67625b1009ca9c4490e16fc1c9c97d3d48b01deb39c99f2d739",
+      "domain": "general",
+      "targets": 255,
+      "ce": 1.6211018562316895,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5dfe7e08352dceeb64cc402f939cf9267bbefa998871fd0d406e1f562c133589",
+      "domain": "general",
+      "targets": 185,
+      "ce": 0.737580418586731,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5e6d1e7b2a1251c722a3b386ce63f76245a4b77e7f10ab10aa0025076d575406",
+      "domain": "code",
+      "targets": 395,
+      "ce": 0.3932260572910309,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5f700ebc81511680c4e4f0837e4654069de1c204d86ffd833b9dce811102811f",
+      "domain": "general",
+      "targets": 653,
+      "ce": 1.3922700881958008,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5f98a5a8d7d9ba8fc1ff2e274ed56aa3231706909230a4aa6ff2e43d1f31955e",
+      "domain": "code",
+      "targets": 123,
+      "ce": 0.6830935478210449,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "5fa354ba870007461f1c9895000a542fa9c7bc1dbb0545ab5760ce745a79adde",
+      "domain": "general",
+      "targets": 278,
+      "ce": 1.017254114151001,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6002647fd645f089a5c1ec3ce6c9f697912db79e19523641178dab00c5005c50",
+      "domain": "general",
+      "targets": 131,
+      "ce": 1.1055200099945068,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "60569e69b05160e0406ef69d2256f78c0204da40bb339375f86bfbca1b8d9118",
+      "domain": "code",
+      "targets": 575,
+      "ce": 0.6591132879257202,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "60676804609c83937cea31e72ae29993ac583d6dd97259e29a5d3e442351654f",
+      "domain": "general",
+      "targets": 506,
+      "ce": 1.3652021884918213,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "60bf4bb8cc2f6532d67941de8789d9ab2408d9c281337d3340266ef446906a6a",
+      "domain": "general",
+      "targets": 43,
+      "ce": 0.6524226069450378,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "62786db7df3f9e69a765511482c9b2749d581c82b2180fdc722e5fb0113399ff",
+      "domain": "code",
+      "targets": 753,
+      "ce": 0.5522717237472534,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "63f103622b2a39b5ac303d754b065d153d6ce00b3052b9576a23b1a6aacd844f",
+      "domain": "code",
+      "targets": 368,
+      "ce": 0.3597203493118286,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "643ba0e486139347720651fc49a008e2c6a866d89491fe9d2ebc9bf212618d21",
+      "domain": "general",
+      "targets": 65,
+      "ce": 0.40198183059692383,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "64551c6fb9070ffe12122ef7acf6263b5522d9c3c6e4a5779ba9fc608da4f182",
+      "domain": "general",
+      "targets": 82,
+      "ce": 0.7935980558395386,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "6493ac5646dadea29f3c8cd7d22fcb65a61507315b315bcb067d52ddd6fd6e97",
+      "domain": "code",
+      "targets": 1542,
+      "ce": 0.12309448421001434,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6512790671ec4f5513660cca4561fda589da19359d1c5292e81926c933529ff1",
+      "domain": "general",
+      "targets": 31,
+      "ce": 1.237712025642395,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "65138a6f2e8e60bb70ca4d25e40c295f8262b34c700234678f5fd0e4b863dd8b",
+      "domain": "math",
+      "targets": 215,
+      "ce": 0.6467463374137878,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6537b47596bd783be3f16c94495a1f047650db3e5c60b15e145f55170e8686e2",
+      "domain": "math",
+      "targets": 62,
+      "ce": 1.662266492843628,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "66644dd21db96828f3a5dde1992cf29fcd5f87ce680f73f8aae5ab335d7bb186",
+      "domain": "math",
+      "targets": 218,
+      "ce": 0.7654315829277039,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "66945ddadcb3cdd96539b00ed2b717d7ade916f32df7ce7ed728618dfcde6812",
+      "domain": "general",
+      "targets": 689,
+      "ce": 1.0837630033493042,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "6695e499d2fc7d2a26686d6e32a2a7040a81089f631b1fa71a500691fa1cacec",
+      "domain": "general",
+      "targets": 187,
+      "ce": 0.6571173667907715,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "66da679dec6c3270931dec54688fd97a39ec142d5524ee6e00b64bd7c9c02227",
+      "domain": "chinese",
+      "targets": 228,
+      "ce": 0.856231153011322,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "66f4cd0f9e3ae31708dde16f42efb0a24bbbdc50920086d6e381579e6c00e452",
+      "domain": "math",
+      "targets": 713,
+      "ce": 1.158225417137146,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6706ce7ce9d51b706b3eeec6a428c252a3c895a47bfb6332f93281fb08d96b18",
+      "domain": "math",
+      "targets": 217,
+      "ce": 0.8094853162765503,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "67132b496dc344c99f23eb675c891878797f128ff2095708e831f6e3e28d892d",
+      "domain": "general",
+      "targets": 556,
+      "ce": 1.307803750038147,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "671e002d51b9bca26df6fdc436de29274d2e59d5f57253946b5c883cbf6d2693",
+      "domain": "math",
+      "targets": 67,
+      "ce": 0.4827752113342285,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "673b9a54c559663b8b83d7a82e64fe16695288f281a63ee7ad7728910208c65a",
+      "domain": "math",
+      "targets": 6,
+      "ce": 1.654274821281433,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "67acd305708c45625fc6c8773027f6656d6f61ddf034d5abc96916e6d7ce3ff8",
+      "domain": "chinese",
+      "targets": 370,
+      "ce": 1.7284120321273804,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "67ad96b4d8d58cb8a6570cf8450c39b11af643a870dd333e9ee8d0e80365016a",
+      "domain": "math",
+      "targets": 185,
+      "ce": 0.7014678120613098,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "67c2cbf04cc4025b8e1f585a85f07181b94ff66e4be218d00f548e8423230c5a",
+      "domain": "code",
+      "targets": 360,
+      "ce": 0.6093985438346863,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "67c71141dba84feec33184ce39d365b1f33a8cdf014929c8f2d74d00e43c0c3d",
+      "domain": "code",
+      "targets": 619,
+      "ce": 0.8926028609275818,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "68c3e7b4e5c391a93cc51307fde49b60709835ab06769a50cf563a0b417534d4",
+      "domain": "code",
+      "targets": 425,
+      "ce": 0.8914918303489685,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "68cbb0a96a39a4d160b763cbef1f67a2a752dfb3ab7193af3d9b89dd6bbf025b",
+      "domain": "math",
+      "targets": 171,
+      "ce": 1.4545857906341553,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6936a6ced9e945970e6ac1cef5ff29c9c2e62a661e20de68fcc7bf3776f11f40",
+      "domain": "general",
+      "targets": 655,
+      "ce": 1.1244415044784546,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "6a1324ab04f2cad6496f69a644f7ce3f41869e07eea55d71f05ab92ba86cbd78",
+      "domain": "code",
+      "targets": 114,
+      "ce": 0.5054967403411865,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "6a324510d090a0575acfa363b5cff20b4f19ac9c9a21f6bc0833d45d06a7e7d0",
+      "domain": "general",
+      "targets": 73,
+      "ce": 0.6867177486419678,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6a725b644ee10bb52772bea037f32178c2ab4c5064ba231027dd76cbf029c1f4",
+      "domain": "math",
+      "targets": 327,
+      "ce": 0.6478313207626343,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6abecd692b49770d3b052acdcc14096d5cc528b4244f542e9233cee15f9d94c0",
+      "domain": "code",
+      "targets": 50,
+      "ce": 0.9710137248039246,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6ac42524d258a2a8c6f86f56c3d5efef08f9c30f1cf77c348bb198c90e950e93",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.5369599461555481,
+      "mean_depth": 35.999996185302734,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "6b257eddc16ea26f830f7502fff1da9f8f80c986b2ce64e3df6226fd65e699e0",
+      "domain": "code",
+      "targets": 112,
+      "ce": 0.3707343637943268,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6b3cb04981b626776e4fa853e84b7f1692788938131042a705d0508a9c33724a",
+      "domain": "chinese",
+      "targets": 46,
+      "ce": 2.89591908454895,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6c2e6350564f509397092be5e6db464a72d2ea3e4346d6931babccb313a9a4c2",
+      "domain": "general",
+      "targets": 4,
+      "ce": 2.9976744651794434,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6d003237fefa2c74e05e45f6199a602d2e165a68bd63aa0c53b5bee02ecb3da4",
+      "domain": "general",
+      "targets": 108,
+      "ce": 1.0707391500473022,
+      "mean_depth": 36.000003814697266,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6d9a4f6919f1ec9e871ce3d7df9ac4ed617a446b45cf67cca511f25e7f1615ff",
+      "domain": "math",
+      "targets": 525,
+      "ce": 0.36376312375068665,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6dcc0e3c70ceaadd38efee1e9d6bfd533ccde115560d7a98e6bf2c0a5e340b05",
+      "domain": "general",
+      "targets": 456,
+      "ce": 1.484902262687683,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6f43b9be6e7cba6053119003561d3618ad94f05a10ae7321b04c967117f846ee",
+      "domain": "general",
+      "targets": 71,
+      "ce": 1.1782946586608887,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6f62da0946467e81daf5e07a15a1a3363c76c91924203d314c381b5607719af8",
+      "domain": "general",
+      "targets": 113,
+      "ce": 1.0583293437957764,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6f950e93bd87601a24bcfe1c58751e96700dd5f8e3a79080a5321eb7e7e2c2a5",
+      "domain": "general",
+      "targets": 417,
+      "ce": 0.8495381474494934,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "6ff3333569ae17938d424f9c24c0f831c7da80f7ebd25d7295c88bf7ae1384f1",
+      "domain": "code",
+      "targets": 358,
+      "ce": 0.7037928700447083,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "706e7d9dbdb598c23d014ca367a30c8b83aafaa6141559daa04751edd9ef8acc",
+      "domain": "math",
+      "targets": 136,
+      "ce": 0.7713748216629028,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "70bf36bb6234ce82d9a19ea8635a05782af39de517133bfc4a1d5d7b5ea55b0e",
+      "domain": "math",
+      "targets": 68,
+      "ce": 1.6211422681808472,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7146b536c0481aa481d155d48236820a5fd6cb7a741c13823b3ad5e5ecc31900",
+      "domain": "general",
+      "targets": 20,
+      "ce": 1.1961696147918701,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "719fd2adab81c43ab6c2e4d5f9110427a8204073f3c1e03c1fc6bfb99b3b7257",
+      "domain": "general",
+      "targets": 336,
+      "ce": 1.368525743484497,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "725c1d05e2f049747943303ea74a515d94091aa3169c347863ab1da0bde7e9ca",
+      "domain": "general",
+      "targets": 161,
+      "ce": 0.7870110869407654,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "733ba7c2c88dcbd87e8cf0141a86327686cb7757c93b01b4f01cdaa41b4bae61",
+      "domain": "general",
+      "targets": 383,
+      "ce": 1.2564382553100586,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "74790a122ccde7b6ea2e43ed22c8091e257aa3ce88a5112a022cc7a987b050b2",
+      "domain": "general",
+      "targets": 547,
+      "ce": 1.0726759433746338,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7580b5b02c4e12520c8d726a075397a8e20011762332115d9ce91a37b1999c48",
+      "domain": "general",
+      "targets": 84,
+      "ce": 0.14142434298992157,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "75828a33c05e722f05c004d19889b2bf98b9337d075af7fe51ca23ef229a5917",
+      "domain": "code",
+      "targets": 297,
+      "ce": 0.4216885566711426,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "75cb05cdfbbbae62bae0f9d5f6d04318bf0863eed3b215b3d4b635e534ed92a5",
+      "domain": "general",
+      "targets": 105,
+      "ce": 0.7224124670028687,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7685f108558f7d57284b95eceefa783c2b0ec35816a078f942c935258866df52",
+      "domain": "math",
+      "targets": 198,
+      "ce": 0.5768067240715027,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "76c9d774a07aaface1a001d987a780b7b7b104f0b76505d025e5539fe41a1a64",
+      "domain": "math",
+      "targets": 41,
+      "ce": 0.5545759201049805,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "76e5eb3b5226b58e327256ae40b61d94e674996d71be064c6f544fa52eaf2105",
+      "domain": "math",
+      "targets": 495,
+      "ce": 0.9827825427055359,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "76fbe3e8cba556976d328e2a72ecd9217f7ee7033eca245f6ccea10439eacf03",
+      "domain": "math",
+      "targets": 62,
+      "ce": 1.5056129693984985,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "774ff793b2a9064a50f05bb3f031492d93707e725b4c9408b775e0b862cf2bad",
+      "domain": "general",
+      "targets": 590,
+      "ce": 1.1226904392242432,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "779da291410dba7658f15d07bfc78062dfe110a146926c0e69e157ea2e837e39",
+      "domain": "general",
+      "targets": 296,
+      "ce": 1.3741565942764282,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "77a0616bc1fc7bb4b6e913641a1cf67f28c0e77a3efb1de588d7b3a07321d1b4",
+      "domain": "code",
+      "targets": 58,
+      "ce": 2.0284392833709717,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "78245e4e9c99a3087f9806ccc9007534d52f052db417a3a93d7cc5b172dabe70",
+      "domain": "general",
+      "targets": 497,
+      "ce": 0.962755024433136,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "78b10dba0bfc730074146d149b4dbe7f98567e36a655b71e196adde5073ccb81",
+      "domain": "general",
+      "targets": 362,
+      "ce": 0.17219321429729462,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "79de1d1ae5b573c04f4bab0a2e4f5e2b255c907ca4fa20e300ee4acae1b60129",
+      "domain": "general",
+      "targets": 239,
+      "ce": 0.9209217429161072,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7a22c6cbd05f407c045c5d14cd52ad25e4d577e743b1e8049b047faad12fe2d8",
+      "domain": "general",
+      "targets": 110,
+      "ce": 0.4221882224082947,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7a31945fdb302e8aeb7bb61a6a627a4584c5ce7edc0e8cce009edbb05e4308fb",
+      "domain": "chinese",
+      "targets": 245,
+      "ce": 1.4398490190505981,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7a9ab5df78b4da3e2d24cdc41339a071c6d0db168868126401eed04c21fcff27",
+      "domain": "math",
+      "targets": 422,
+      "ce": 1.2186554670333862,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7ae8d65bcaacc699ffc72c3a48ad2f72457c401afa1457f8b2ee88ac5552fb55",
+      "domain": "general",
+      "targets": 379,
+      "ce": 1.6098994016647339,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7c3dde2619994726fad7bceca4be425ba3c3a9dd1d52012e4aebd3213bf2e961",
+      "domain": "math",
+      "targets": 953,
+      "ce": 0.2082165777683258,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7c4272e1dc92b6df56e26b3ead71737f4caa4cc020dfe066cb94be618efc618a",
+      "domain": "general",
+      "targets": 97,
+      "ce": 0.9633471369743347,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7cd981c07039d1a49dde7a8688671608a6187cfc972dc7e6c645c9c69c80dbcb",
+      "domain": "math",
+      "targets": 422,
+      "ce": 0.894375741481781,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7d3efb01c21cfb2638fa6b0eae1dbf4f73dd0c65114a5b7146c43055fe66b2f1",
+      "domain": "code",
+      "targets": 287,
+      "ce": 0.2908754050731659,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7d47d4834b111bed1ba18e18c641f6aed685c939bd8a6aeaa7e26e624603b151",
+      "domain": "general",
+      "targets": 694,
+      "ce": 0.9712119698524475,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7d78a8c9571bd0c2e33779bafb8911f97e8f4e6dbe6f9f50f9b6df403f62539e",
+      "domain": "math",
+      "targets": 378,
+      "ce": 0.9651954174041748,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "7d8293726baa039469aaf060ad3941dacb7d3ee2ff9217bc7050a50d1854ea69",
+      "domain": "math",
+      "targets": 550,
+      "ce": 0.9130281805992126,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7d83cc5bc7cf655b0a105ed70b5790d0cd892accec136ea60b433270f85476b5",
+      "domain": "chinese",
+      "targets": 174,
+      "ce": 1.6252732276916504,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "7ef33afdb4f60030e76a5ee8181d03c3e526609fdb47d87027fdb0a65167cea1",
+      "domain": "general",
+      "targets": 313,
+      "ce": 1.3428997993469238,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7f053c4884884565f39026b53d8ee9af689ed3c0892be216af2dd00bec9d9170",
+      "domain": "general",
+      "targets": 225,
+      "ce": 1.093449354171753,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7f889c7465f9ea9b42bc3cce0fe17461ef6cd7d300d41ff0c3a3136d71ba4199",
+      "domain": "general",
+      "targets": 486,
+      "ce": 1.0856654644012451,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7fbb1e50a63aeb08d0c99bd45f9dc37892a58aa280d2149ae5c099da2c7608f8",
+      "domain": "code",
+      "targets": 508,
+      "ce": 0.722250759601593,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "7ff1978d17eee05998f94f401ab20b7db0b94963f3fa0cd77537149e9d651df1",
+      "domain": "general",
+      "targets": 122,
+      "ce": 1.0078904628753662,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "803e30b31751fb41b4ae19ff4d4b98d6345cb230d941f0bbcd4692fcf4a74d01",
+      "domain": "math",
+      "targets": 243,
+      "ce": 0.48301854729652405,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8046206031e3cba8144f46e42f302fc5370cd373e075f5700883cecd4fb26d96",
+      "domain": "math",
+      "targets": 126,
+      "ce": 1.3783284425735474,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "807b87c1d9b917e1cd9ce055f54395bc0acea548a3a525069294f40b5e3e4e27",
+      "domain": "general",
+      "targets": 95,
+      "ce": 1.4718016386032104,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "819053c84013f47b318e955d880b2a1c1f2f2abf3388a07ccee9f798ffdcb119",
+      "domain": "general",
+      "targets": 35,
+      "ce": 0.5119155645370483,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "827116da98e5b2b62b18d367a400e18297ecc2ba5a6340ed83fb1dd23d3e00cf",
+      "domain": "code",
+      "targets": 183,
+      "ce": 0.030075818300247192,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8292a8d2454f5b5c947a4bfa9609fa8908822495270b5c5f4565ed506bcee193",
+      "domain": "math",
+      "targets": 364,
+      "ce": 0.5540465116500854,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "830937913c2ee40e70d6fa83e909153812ae125c4c7626e9a34fde1fa4acce15",
+      "domain": "code",
+      "targets": 180,
+      "ce": 0.811019241809845,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "839f0f852fa0a65587865e0f74b24bb6793bf9ffb6c4fe670bc6858e523a2d27",
+      "domain": "general",
+      "targets": 476,
+      "ce": 1.2438948154449463,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "83d2f09d1584d60e3432770cd52cdda5ded9ce5b2d3d1da07a1089fe0faba04b",
+      "domain": "general",
+      "targets": 99,
+      "ce": 0.6179799437522888,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8453441e36698d1bc2dda9ce1fd151d380f4d1a61feeeead08f671a20dbda7a1",
+      "domain": "general",
+      "targets": 268,
+      "ce": 1.142298698425293,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8529ce0f8e935b47f4e88fdc59e14a2707765b8b5b51976f2d26b279c082a30f",
+      "domain": "general",
+      "targets": 505,
+      "ce": 1.0099555253982544,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "860030faeafa0312dfe2a4e66b46449c929b171b51423c4bb45c65dffe25f40c",
+      "domain": "math",
+      "targets": 184,
+      "ce": 0.8749728798866272,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "864a0b3ef92ad450547a945a586709d11621e76e7c65128337f62923efd26490",
+      "domain": "general",
+      "targets": 568,
+      "ce": 1.0716350078582764,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8683433899a76ec4a4c0d9230f7fdec50e139da281c2107492d5768799c343cb",
+      "domain": "general",
+      "targets": 666,
+      "ce": 1.5614027976989746,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "87134e23f35df32498e64a86b77d0edc6923b3a1e3cd3bdac59f2af7de66073f",
+      "domain": "general",
+      "targets": 117,
+      "ce": 0.6464834213256836,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "872e77e15f6fce2aa02c38a9eb5e4f90efea277987ecd0614ca098e0249ebbb7",
+      "domain": "code",
+      "targets": 737,
+      "ce": 0.5826148986816406,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "877bfbfe4c619f89d7c54b5cae65619b0a1c37ed2abda6b1af9095621c1d6304",
+      "domain": "math",
+      "targets": 175,
+      "ce": 0.5914731025695801,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "878d12fe273a5dccbad9ce4a9efa71b36031dcd31023bae02ee5266aaac7d5a2",
+      "domain": "general",
+      "targets": 64,
+      "ce": 0.2064848095178604,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "87dbcf06717fa347dc0e0a261c2fd7d48683ad858f7422620d1537b7ec96ab27",
+      "domain": "general",
+      "targets": 678,
+      "ce": 1.836072564125061,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "87eeba0b04f6421aa6e11b553b60cc35230a66d305302438cff1c35a57685e52",
+      "domain": "math",
+      "targets": 117,
+      "ce": 0.9673473834991455,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8808aa920706b20fca86cb02a91a5b703814b733a1e87d7e6f8b1a65c37fd36e",
+      "domain": "math",
+      "targets": 709,
+      "ce": 1.5445044040679932,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "880c7c132a2aadcacda9546bce7cd0c4825ca13009aa891ecf95dc811e45927d",
+      "domain": "general",
+      "targets": 25,
+      "ce": 0.7575628757476807,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "882b278a5b4c00e6e48641787ae9f8cb561bec2d489a0e0e0c91dd8fb7e47e4d",
+      "domain": "general",
+      "targets": 508,
+      "ce": 1.3354347944259644,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8838bb57eebbb90e533ce9df3116c6d65c42da2ff4695ebddf74f4c9fbcb67f4",
+      "domain": "code",
+      "targets": 438,
+      "ce": 0.3298643231391907,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "88d3004fa76a284e7d05aa62ddba307d981cf17838b60d61f8cecbbf04b0458a",
+      "domain": "code",
+      "targets": 295,
+      "ce": 0.20298047363758087,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "89c2b6e31178fed6ff8125912423c0d51f493b00a0e4e640fb2f2c69a7ebfb46",
+      "domain": "code",
+      "targets": 383,
+      "ce": 0.4558579921722412,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8a4f8d8b182fead3a9c45525376997dd7b6127b482e0486fe22dd1a54286956f",
+      "domain": "general",
+      "targets": 566,
+      "ce": 0.7298613786697388,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8a67a99a9d275bb3c7975e5d4cf1fe8393c7ad03e0f5b5f6deac13d49fb006f2",
+      "domain": "code",
+      "targets": 298,
+      "ce": 0.38605064153671265,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8ad2eed5030f97e5af36f3b2a68fdcaa5fbddc8c32985a100e4f97c5eea51f68",
+      "domain": "general",
+      "targets": 648,
+      "ce": 1.1915240287780762,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8b33d2c3604ef148afa410441837d821511abde44c97c1ec25333faf2dfa3c3d",
+      "domain": "code",
+      "targets": 351,
+      "ce": 0.2574731409549713,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "8bfc04ebba617ab3f8fcbb1fe90d4d385eeba53351a7950adcbe97efa01bb2a8",
+      "domain": "code",
+      "targets": 27,
+      "ce": 1.5014288425445557,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8c918e46b0e6d68bde395ce41d612844569d71a4348617816aac5d03c1264f80",
+      "domain": "code",
+      "targets": 275,
+      "ce": 0.40933504700660706,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8c9b79c4082fd176a0d77d13bad6b7adfa148d5de93963cf56b7e5dcc1c2cad5",
+      "domain": "general",
+      "targets": 549,
+      "ce": 0.8749699592590332,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8d03b1b2e2939984de8c63dc30b9fae25c9fb68e805e64417ada2ac793fab8a7",
+      "domain": "general",
+      "targets": 162,
+      "ce": 1.1511744260787964,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8d4a5749271b901c2c5076240fe75afe08652a57dfdc0df20f575cadd7509a30",
+      "domain": "chinese",
+      "targets": 644,
+      "ce": 0.47777411341667175,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "8daf0c140b583e05a368da2f7138988ab55d9d88861e8bca21df16a732978c2f",
+      "domain": "code",
+      "targets": 611,
+      "ce": 0.5945273041725159,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8dc727f504f2894e57913cd3c199b5a8c958b904448f60bb4190df975163b60c",
+      "domain": "general",
+      "targets": 192,
+      "ce": 0.4071706533432007,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8e386144d4cd67209a3c5de009900f3ac06f5bfee3ebd25a505fe7ccf58ef4f3",
+      "domain": "math",
+      "targets": 103,
+      "ce": 1.0154842138290405,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8e882e601f693b81ea3ab76faa970544d2c8901001260036050d7f45330425b8",
+      "domain": "general",
+      "targets": 93,
+      "ce": 0.6587514281272888,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8f1811fd27fd62a7cfeb1677dd23a20fbb2eda0c2c825e19ae74348001d73318",
+      "domain": "math",
+      "targets": 311,
+      "ce": 0.555510401725769,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8f21fd8b4382ca7ec6dc1f327b1e5ee15665dcf1d88edbecbebf8b1922740ccc",
+      "domain": "code",
+      "targets": 597,
+      "ce": 0.6810749769210815,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8f62fe515cb60f249fe0c830daaad93d867e5f7619e653a4a683cddad6c3db0c",
+      "domain": "math",
+      "targets": 817,
+      "ce": 1.6502678394317627,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "8fd6a7946f486d74ac75d295305d03bfd0eb06b017677747f3ffb047dd36a58d",
+      "domain": "general",
+      "targets": 147,
+      "ce": 2.880833387374878,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "90107bc066859981dc2b00a0347aaa96374cb1fed05b8fd17b4a8d2518a22032",
+      "domain": "general",
+      "targets": 74,
+      "ce": 0.1650242656469345,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "91700c000e1ad6c2ea3729d38d97b37df9e2bcacb220c66c51387bbc221f0672",
+      "domain": "math",
+      "targets": 159,
+      "ce": 0.9543137550354004,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "91dc14339642f7a6289bf912e6ed2f4c3583779d867603edef8632918df400c7",
+      "domain": "math",
+      "targets": 8,
+      "ce": 2.3830819129943848,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "91eb2f546ba4a3df8ce55e12edda45d2a587e9993d3b9de4992b04e29c60778d",
+      "domain": "general",
+      "targets": 569,
+      "ce": 1.4344277381896973,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9264575474c60d8e100d3dd613d7b575c55943efee76b9f5baf12dbe9334910d",
+      "domain": "code",
+      "targets": 92,
+      "ce": 0.1438586413860321,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9295049298db80e42b59d9d06410a818b335ef880512aca9850c28384f00309a",
+      "domain": "general",
+      "targets": 167,
+      "ce": 0.8883283138275146,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "930ca5a4337cab48f3f881530642187863b9315e16fd8824236eb7917e3bf9ff",
+      "domain": "math",
+      "targets": 193,
+      "ce": 1.0176492929458618,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "93194f4e5154414f363a4b84e5dd816d8bfe19f88df995e2e256c5096a44d64b",
+      "domain": "math",
+      "targets": 283,
+      "ce": 0.7308149337768555,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "933ed864322f99ab7ccc1499469ce56b2111d872b9b101333490a6445cb67c49",
+      "domain": "code",
+      "targets": 536,
+      "ce": 0.3532426655292511,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "94303cf844db5704c805513f1638771055b85838ab5adb143ac9873dafb20429",
+      "domain": "code",
+      "targets": 315,
+      "ce": 0.7006832957267761,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "94657e8e2b6f0aef869e66c412b803b2f26509f92c35126b35abf677a37f60ae",
+      "domain": "code",
+      "targets": 362,
+      "ce": 0.4415465295314789,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9478df8beffad81f62c068c90566afa95bea206dda4f875befb92d6bb9a516ee",
+      "domain": "code",
+      "targets": 228,
+      "ce": 0.6551544666290283,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "94ae470eeb559df4122f1cd37ce5bd9ac75b194962ea351df10c340727a439b6",
+      "domain": "general",
+      "targets": 708,
+      "ce": 1.391289234161377,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9532e054e0ef1087a30e961bb80aa048bc967aa40b710da4d44d1a87c652954e",
+      "domain": "math",
+      "targets": 627,
+      "ce": 0.6487799882888794,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "95bb98e4d98f30955dc7c4f38242d8e3a33a747b20b929c765c017f5aef01ff0",
+      "domain": "general",
+      "targets": 401,
+      "ce": 1.039965033531189,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "95c2768b5eac4e39b009f403dd72497d412f8ca1e1be843bbb7c664884d87138",
+      "domain": "math",
+      "targets": 209,
+      "ce": 0.4569392502307892,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9635d1a8ce9d685828dd9ab96eb0c9e49faf56b287908fe3c9e794ae408d8fe1",
+      "domain": "general",
+      "targets": 92,
+      "ce": 0.7043872475624084,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "96de944745ee8679038a69041419dc0bd37cd842ef674cce395784ac5670af97",
+      "domain": "code",
+      "targets": 666,
+      "ce": 0.6987077593803406,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "96e1a26cbeecb26f39467eee245c4b0ce7ac851e25da343bac78aa4838019f22",
+      "domain": "code",
+      "targets": 608,
+      "ce": 0.8393890261650085,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "9719051d4468d822da0a8ebeb8cd0285131214d1817cfc39463e16f3fb439aea",
+      "domain": "general",
+      "targets": 296,
+      "ce": 1.3889026641845703,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "979931867b8a93a6a9e62d18f0535498c989d4306315a11b25ec62894ed6904c",
+      "domain": "code",
+      "targets": 287,
+      "ce": 0.3577307164669037,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "98248274ad69c6e5e940a7a63a2eeb409967612748efe1565a8cafbd93bd12a8",
+      "domain": "general",
+      "targets": 346,
+      "ce": 1.1631097793579102,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9837953c1a9be2252341b89bd1f6fe92ed25158eb1a46cd894204aee5b1a11f7",
+      "domain": "general",
+      "targets": 407,
+      "ce": 0.9484070539474487,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9860796e1054e8494f7d92d76fa656a7f5a00bc3cf6d7af96c1edc5e4505cc12",
+      "domain": "code",
+      "targets": 503,
+      "ce": 0.3407090902328491,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "990a9ca931873865ef6e6390eb9bb4ae00de84b2ba30f33c0875d65044da4006",
+      "domain": "math",
+      "targets": 412,
+      "ce": 0.6542683839797974,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "990da9d7d4720b467437610d2fd8b4168b80873681bc26a4620d24eb0ade4b50",
+      "domain": "math",
+      "targets": 79,
+      "ce": 0.8021504282951355,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "99df516488dc25849a7e17d09c1dd37fb5a1c7bf62d0fb76dab8baf496ea1b6c",
+      "domain": "code",
+      "targets": 437,
+      "ce": 1.0258896350860596,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "9a6bd9e5a222ff0e8ef59304edee6f7ad13141772c0fe578e1238507544fa5a1",
+      "domain": "code",
+      "targets": 461,
+      "ce": 0.7140074372291565,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9a9051e3ab99e81f08de44cbe2ac273ca7b81c61c66c6b0b24cbe1a7533fe693",
+      "domain": "code",
+      "targets": 320,
+      "ce": 0.22056421637535095,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9ad1ef60fc900c5891e4d2ab16d55baa3ac19031fb61163946e0914651bd3577",
+      "domain": "general",
+      "targets": 373,
+      "ce": 0.5476556420326233,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9b06e1700961757b101d48f09cdc2237888010cbfff14e495b50d537d2dd8f17",
+      "domain": "code",
+      "targets": 41,
+      "ce": 0.55427485704422,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9b25b441ea667638b04c4222225f984d70017d03828fd763f37bd8c4bef3f086",
+      "domain": "general",
+      "targets": 420,
+      "ce": 1.3748772144317627,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9ba4f67f6bb9cadbce36257b82144fc6e650aec7ca39670f738f30b45c25f477",
+      "domain": "general",
+      "targets": 270,
+      "ce": 1.075279712677002,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9c44b8d63e9cd1a5b8ff987146928765e3ea48375eea6894bcb66bf20eaf8cb9",
+      "domain": "general",
+      "targets": 431,
+      "ce": 1.4041401147842407,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9c91a096ce53dd64f9488186dd14f1b5742f3e760fcccdd6448a3b71a6a24642",
+      "domain": "general",
+      "targets": 363,
+      "ce": 0.3808126449584961,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9cc4be15ab2eec10a5329cee51e88e70a85b821999d30d2184d23a362bb492c8",
+      "domain": "math",
+      "targets": 2215,
+      "ce": 0.08750592172145844,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9d1835a7bc65a00e550fc38586c7f85634292ee37a3733a6834d00c1debf0414",
+      "domain": "math",
+      "targets": 48,
+      "ce": 0.7001050114631653,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9d1ec56a78dd7306ca1497e4e6de155e9c5778b5d3895d2706cca47f9e6670a5",
+      "domain": "general",
+      "targets": 230,
+      "ce": 1.2756918668746948,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9d86ae7ad1be475ca1af017e44da53e37c78e22c485d4cc47532bbcd77e1c8af",
+      "domain": "math",
+      "targets": 361,
+      "ce": 0.16115601360797882,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "9ed06c28a51b0feb62fc32189be82ab2f7f4a0f03f2e5d2997ec66a3f57f307a",
+      "domain": "general",
+      "targets": 450,
+      "ce": 1.5234668254852295,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9ee79e18e6562e1a15e67f8d62d0d4915df50e56004403468479b387f2dc18cc",
+      "domain": "code",
+      "targets": 538,
+      "ce": 0.9803273677825928,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9eef65f704cd8cab7368c919e998a61c25dfe63ef961251e959f878724058f2d",
+      "domain": "general",
+      "targets": 97,
+      "ce": 1.1279016733169556,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9f02a0dd2c496b184da0723ae167991aada2a9f95debb76377d5ba23abbf6c7a",
+      "domain": "general",
+      "targets": 81,
+      "ce": 0.2598332464694977,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9fab8ae356e4ebe37eedfca2b80791033c6b7ea775fdf0c91fc7e85f73c02816",
+      "domain": "general",
+      "targets": 56,
+      "ce": 0.46474987268447876,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9fcdb8d50419a8e5f14154add2aad8e3174d92aba094da258eb6fce17262014b",
+      "domain": "math",
+      "targets": 156,
+      "ce": 0.7949965596199036,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "9ff3de86182ad5872a79a43710182fd2a789b9cb0df83f1013a6c9988eb77745",
+      "domain": "code",
+      "targets": 15,
+      "ce": 0.9190872311592102,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a03a35613163346d2c497f81d7eb82b549d35475d639fe66c1a7cea71ff6ed3d",
+      "domain": "math",
+      "targets": 152,
+      "ce": 1.0538560152053833,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a052ee67aab122f69628aa0d1df105399cba5bb65a424bac5b2ba5e8eaaeb4a7",
+      "domain": "math",
+      "targets": 72,
+      "ce": 0.8240352272987366,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a0ab1ffb4b829947f70c48a02d508f6d7ce1606c37240d2b0666bc332bff6be3",
+      "domain": "code",
+      "targets": 371,
+      "ce": 0.5434683561325073,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a148e714040c5edd85cb5ddc5e4b4af80d8027de55f3d0b03908321a417e4376",
+      "domain": "math",
+      "targets": 141,
+      "ce": 1.3961796760559082,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a1759b934d8c6f5069d667d68a874a5ed099652d41204231263daf3a12096b51",
+      "domain": "general",
+      "targets": 241,
+      "ce": 1.3719892501831055,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a2f0f189b761dc01a80020383e5c6c0f29e3c3adf386ce6e2f99cec2812e7365",
+      "domain": "general",
+      "targets": 448,
+      "ce": 0.7314354777336121,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a3359b0825edc04ab67879e106f66ac410837bce45e9b30ed4dc81c59d401631",
+      "domain": "general",
+      "targets": 349,
+      "ce": 1.004691481590271,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "a377fb3cfc32a13ec37106669da994e938bfafb74efa26ce36c993c92fdcfe2f",
+      "domain": "math",
+      "targets": 72,
+      "ce": 0.7441965937614441,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a41d8b0b48884bb86105828cca8858626c54573664f3beea7c5db652febcdd1d",
+      "domain": "code",
+      "targets": 403,
+      "ce": 0.28426802158355713,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a4a69101a22e35a381b042f1e3a7bb340781830fb87b40c495edbc0250de872c",
+      "domain": "general",
+      "targets": 117,
+      "ce": 0.8404808640480042,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "a4c2a4c41a46ec5efd40a71f0f3515430496f0488f326737b153719e1cf6b300",
+      "domain": "general",
+      "targets": 133,
+      "ce": 0.7363758087158203,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a507ea5335d0e08eb0056f5758ed8c90f648ac105c47dc4dd8860f75bfad5636",
+      "domain": "math",
+      "targets": 180,
+      "ce": 1.014325499534607,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a5a95ab790cef3c821ba831cd4cc4dc562cc35ab2301fd092cb3debb2b091f0a",
+      "domain": "code",
+      "targets": 651,
+      "ce": 0.5862271785736084,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a602c4e3ab72afd08c659a37b6e61f82a5e89d44807d757211f319de27579ba9",
+      "domain": "general",
+      "targets": 418,
+      "ce": 0.3301030099391937,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a7bad5f26b63f7a31e3de66a833d9b79c98d3b98323ae2bd58be830ec3a82633",
+      "domain": "general",
+      "targets": 113,
+      "ce": 0.7153449058532715,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a815ee2bd68bd51bfed933281bb9ee359f90fba5c90045fa1147cba25b3c704c",
+      "domain": "math",
+      "targets": 409,
+      "ce": 0.7761154174804688,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a818ad1cd4e3baba166de5f70f9f3b881c8c3a8c94831043c3ffde5cd884d71e",
+      "domain": "code",
+      "targets": 330,
+      "ce": 0.6143890023231506,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a83de8b4a8c40dcc0e9a1490bf0aee54cb92a99664df8eb448ba9a23e970c8e3",
+      "domain": "code",
+      "targets": 234,
+      "ce": 0.6259230971336365,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a887741fd436e7a12f4d7e4c16f36feeb8c5fa710146614ad23ba2af1eca9f37",
+      "domain": "general",
+      "targets": 609,
+      "ce": 1.0056735277175903,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a92169f85358fae35684510dbd4b21e3ec79821fccdd1aef791740cc4dd20529",
+      "domain": "math",
+      "targets": 524,
+      "ce": 0.47260332107543945,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a92cb4b84adcee156dc9aba663caefa4059b4c07c2a7a36c8cf4227a55395c18",
+      "domain": "code",
+      "targets": 215,
+      "ce": 0.44494158029556274,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a95265722d7dddf8d5e8ed74b213c5a54c4fa490d6a8f8330eabdbb3ceafb9fb",
+      "domain": "code",
+      "targets": 322,
+      "ce": 0.4015311598777771,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a9986eab9779afa0d2ff81139bb60c61dbc133aec6d232f71044a2bf7b744a45",
+      "domain": "code",
+      "targets": 344,
+      "ce": 0.2793411612510681,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "a9d689cdbe0373b811b7ca39f958ee4da03875f1ff388952cc5f4b62222c55b2",
+      "domain": "math",
+      "targets": 278,
+      "ce": 1.0209962129592896,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "aa3e732f8d9d86504da9a1f50c31f78b2839ab34398b3ddfb2d1002d17db32b2",
+      "domain": "general",
+      "targets": 122,
+      "ce": 0.8898268938064575,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "aabf3c6a6cb71688c0b2d9ae71028cacfd2bec85a126838ffa2aea548c0f5c15",
+      "domain": "code",
+      "targets": 693,
+      "ce": 0.4884565472602844,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ab0a00ead7d24a9fbf17686443304e440edb98b9beba52e2ba063c79faff05aa",
+      "domain": "math",
+      "targets": 108,
+      "ce": 0.5510455369949341,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "ab424eeae48fcd03770e9f8ee587bf0373cff6473770b4476ae66a116276071e",
+      "domain": "code",
+      "targets": 366,
+      "ce": 0.8124328851699829,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "abef5799ec2a30896e76ed57a6de87876211ece5d67e29bd05113d00a95b2d3d",
+      "domain": "general",
+      "targets": 184,
+      "ce": 1.7127807140350342,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ac82bd6f0fedcdd65253c5252dc16f28f9a8a5c8d4188aa5d1a3f60b6bf7a353",
+      "domain": "code",
+      "targets": 282,
+      "ce": 0.5677821040153503,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ad15afaea1f72ac4ad2002ac6c69662833af2d436b4beb516a1c5278834b0e6f",
+      "domain": "general",
+      "targets": 373,
+      "ce": 1.439985752105713,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "adac22929071322aad17ff289ee3b55537ee39286ffd3655c6d680d3c45a9cfb",
+      "domain": "general",
+      "targets": 286,
+      "ce": 0.9291650652885437,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ade24da4e8d49ff3bc55a3fbaa9c395ee32ae8e29d69a507693b5e549e750a7a",
+      "domain": "general",
+      "targets": 520,
+      "ce": 1.3870506286621094,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ae0d2e5fd90f351af7e3d5af77c3acccd9a6e08db5ea964973fb7a53189db5f8",
+      "domain": "code",
+      "targets": 632,
+      "ce": 0.76478511095047,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "ae819af96310de6164e17366a04c853c7466119fb63e9720ddebaaf99b768136",
+      "domain": "general",
+      "targets": 870,
+      "ce": 1.5226243734359741,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "aec3ad0ad66d84a465d9d0b1f638119a712e9ef7d268be050dd42b3bfb4c8222",
+      "domain": "math",
+      "targets": 67,
+      "ce": 1.0563939809799194,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "afc42cdc2e65b511cf8d947f72f8a95196152290e743041ab22d849d093ddca3",
+      "domain": "math",
+      "targets": 337,
+      "ce": 0.9470692873001099,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b0353ec548f5fe5759991fe86b96bd6859b27205a0e25c327f958f72e966c957",
+      "domain": "code",
+      "targets": 629,
+      "ce": 0.5067954659461975,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b073ce8212487b8c887dba65c5dc80f708bf62127e0986fa38afbf7d564d5b16",
+      "domain": "code",
+      "targets": 495,
+      "ce": 0.4418717622756958,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b0e04bf2dc215c558250d8ac293ee4d1d540eb56c5e7d9bdff3e984271e9a6c1",
+      "domain": "math",
+      "targets": 603,
+      "ce": 0.2050202637910843,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b0fad8b9f34d01d2b6857dec136d5204867076f18b5d4e7479534bc1f977dd2e",
+      "domain": "math",
+      "targets": 556,
+      "ce": 0.25631141662597656,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b1f8c04033aed0e22d07182010dbecd41ca7ea0808182f67031cd7cc1632951f",
+      "domain": "code",
+      "targets": 793,
+      "ce": 0.44632869958877563,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b1fb5843877fc379881c63191c8e0f59d0d5338612a477df389128b8477d5678",
+      "domain": "general",
+      "targets": 483,
+      "ce": 1.7231996059417725,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b2efa32427e599418ca117e456814801acc118bad0211c1fe8b42904209d13ee",
+      "domain": "chinese",
+      "targets": 620,
+      "ce": 1.8906077146530151,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b3de7072ec911e48d10e4bcfcc2dcbf015700cc7019116b7e7f3fb8bfe529725",
+      "domain": "general",
+      "targets": 105,
+      "ce": 0.4263881742954254,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b406921da36e0404890f21eadee61388302215dca503ee4726b24a45bd9d9ead",
+      "domain": "general",
+      "targets": 347,
+      "ce": 1.255867600440979,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b47ea83c1d1f1f5f5c320b480eaed884539340559822b1f8afde2761b3fcbf90",
+      "domain": "math",
+      "targets": 29,
+      "ce": 3.309195041656494,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b55ecf3958f6e4f6c98fd597b0f91c2f76cf73a7fe496e96c8300af527703288",
+      "domain": "general",
+      "targets": 425,
+      "ce": 1.6150918006896973,
+      "mean_depth": 36.000003814697266,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b625537b45e7a4cda2c66adde5781742f4aede593fbcd36cd9e21a5c1c9cd218",
+      "domain": "chinese",
+      "targets": 253,
+      "ce": 1.9893392324447632,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b6636e28402bcc2e9fadaf30c0a7b11969e4ec7975cf79ff5e3e6b3723a22144",
+      "domain": "code",
+      "targets": 233,
+      "ce": 0.27217546105384827,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b775044746a0faeef68b25db5e54633b43e34b5e936b83dc77f54526aa57df2b",
+      "domain": "math",
+      "targets": 774,
+      "ce": 0.3351385295391083,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b784bbd338291f6e45d716e747c202c2b734a38a5bc1054484d122b076e74293",
+      "domain": "chinese",
+      "targets": 300,
+      "ce": 1.490087628364563,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "b7e7c32911a2411eb1d203208402b61c4a8ef5255ad00368a3f786d4e97efd9b",
+      "domain": "general",
+      "targets": 668,
+      "ce": 1.2635293006896973,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b8d09cea9c60c400685a0cd90114597c2a72f54626c3f1c7e73b081df8736f7c",
+      "domain": "math",
+      "targets": 199,
+      "ce": 1.3557020425796509,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b90bf8f4f8f5a0ffd852e52e1a724b1e2efb8d39a35fc3ee8bb3baf4f37b996f",
+      "domain": "math",
+      "targets": 791,
+      "ce": 0.22073881328105927,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "b92c9f7a7be707960b62aa450652fd6b6ed8292d75910e34ce7487362a0ed923",
+      "domain": "math",
+      "targets": 528,
+      "ce": 0.4696007966995239,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ba1cf3b8e948214103a79eee1a7c34f06cb9fef45f46973eaf15f6f8b3fa1dce",
+      "domain": "code",
+      "targets": 262,
+      "ce": 0.5393567085266113,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ba3b9f3d087b5e9da0c65668e68f2af2533c5eb5e42bf61d6c3a92266e838df6",
+      "domain": "code",
+      "targets": 343,
+      "ce": 0.4553671181201935,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bad87b8b48f9f313ee9ff885eabd23f49f75be8ab21f4c2f66289961cd34b6b9",
+      "domain": "general",
+      "targets": 889,
+      "ce": 0.5580397844314575,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "badbfdf7bb16e1075bd60ba9cfaebeb3bcc416d98d99a6b81da6d6befee49b03",
+      "domain": "general",
+      "targets": 252,
+      "ce": 0.4933529794216156,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bb87cd91f69c786fbe0280a3b9594215df2b4389ad7f3bdf899ea17dd9c288ff",
+      "domain": "code",
+      "targets": 501,
+      "ce": 0.616421639919281,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bc63ae587c3a683fde59b50a33bcb2db79ed58f0927f9b6973b30d09ade599bc",
+      "domain": "math",
+      "targets": 197,
+      "ce": 0.6271994113922119,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bc7058e13f4f07241a8da6516f6aca5634d4e15b6d25b43b9f2bfd17ba3986b8",
+      "domain": "code",
+      "targets": 313,
+      "ce": 0.3824961483478546,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "bd0d8331704c1bd7b55de0cb779bcf0156d9b5e798a2d293297c5c4973f2a732",
+      "domain": "code",
+      "targets": 69,
+      "ce": 0.9667021036148071,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "bd684d1771df07e94a8a3cac1a130cf1594f6e54134badf3aa0053983d815833",
+      "domain": "math",
+      "targets": 857,
+      "ce": 0.22200964391231537,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bd8ac97ef9cdbe083c644505bd3f08833373407c9c1323c5a875423ac3cd24dc",
+      "domain": "general",
+      "targets": 405,
+      "ce": 0.7870532274246216,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bddeb5ad5bdaec19cfddc130ab79fae77a93d7636b95131ed943e80b27592966",
+      "domain": "general",
+      "targets": 841,
+      "ce": 1.0382492542266846,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "be31dfc114455a2d5beb2365dd9639affcc96e508337ea4fd90855ee91beca44",
+      "domain": "general",
+      "targets": 301,
+      "ce": 1.5614043474197388,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "beae62579139dba6400b63c8bf4a5fabde334e46daf970778af19ec77e45870d",
+      "domain": "general",
+      "targets": 130,
+      "ce": 1.3919868469238281,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "bf7f6e3b5f1e8768d5b0171503bf1c6d75f2a4a1fde1cbe8b4fd44d77b2130ff",
+      "domain": "math",
+      "targets": 267,
+      "ce": 1.0151846408843994,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "bf8a69e5201bb41a52479af3e6405158d3d4e70b309c5471bfdf43f8d5f503e7",
+      "domain": "general",
+      "targets": 122,
+      "ce": 0.6170543432235718,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bfde088ea1b7252e08fc3b50f7d33d01732030643f30f88bdc9e5bc2248794b3",
+      "domain": "math",
+      "targets": 317,
+      "ce": 0.8748831152915955,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "bfeb9da2c3c08ed45cd3b136a81749f6c301cacd9c76cf8426b6c7c6260c52a7",
+      "domain": "general",
+      "targets": 485,
+      "ce": 1.28828763961792,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c01a74fa265e031d468ec00f8255213b9802fba2fb33bbb79a310c9a22b025a2",
+      "domain": "general",
+      "targets": 52,
+      "ce": 0.8641960620880127,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c03fff24d54d956da3d1c2a461633c406041c0cf080425d93465a6310d3274de",
+      "domain": "math",
+      "targets": 424,
+      "ce": 0.7083243727684021,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c0aa0afd03ec3b1830f9eb4cafb6018111a64e4e0e0969510eacdfd7690ba2f8",
+      "domain": "math",
+      "targets": 134,
+      "ce": 0.7826876044273376,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "c0ba5e9bca28f93cf26de2d7b26dc08804a93d9fb22dc5892e4fcb87861592a4",
+      "domain": "general",
+      "targets": 346,
+      "ce": 1.326219916343689,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c123a785564f3d7dac6b58cc48ec11bcf5e98ae78d0879e4a9cfd1cfd93f8f84",
+      "domain": "math",
+      "targets": 258,
+      "ce": 0.6434186697006226,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "c1659326d69fb9a1802e46a49cf76a9776c02dc2a13bab6acb32b704b48e57c7",
+      "domain": "code",
+      "targets": 105,
+      "ce": 0.38048356771469116,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c17b8b660bae65155d0698072f016b5586f61aa9f6756a1d2a28773bf56f18d1",
+      "domain": "code",
+      "targets": 328,
+      "ce": 0.7053703665733337,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c26f893e246a8a177a450d5310b94a0c2562ae29d9e08548621771f9b09e9551",
+      "domain": "general",
+      "targets": 581,
+      "ce": 1.3076199293136597,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "c28e5b85d4682efd78f7876b854b88fcc4bd57c534649d359ac7c3259fe3be56",
+      "domain": "general",
+      "targets": 489,
+      "ce": 0.9467565417289734,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c300f304b9704ca243812cdbaa4f3fd42e9f74d99fa497421c0d8167613a1c3c",
+      "domain": "code",
+      "targets": 133,
+      "ce": 0.8319242000579834,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c346d68988d64d68bd47874a0f3cc70c9d4b0631821820844f10e3191d84f5cd",
+      "domain": "general",
+      "targets": 962,
+      "ce": 0.8792136311531067,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c3c5f167922f7e7ddca0d5afc95d97995ed9f2dd9018ab68a1d24a535722875b",
+      "domain": "math",
+      "targets": 669,
+      "ce": 0.3622530698776245,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c4040bdddce5b2255f3581c53b1520cf649d48ac3abd6665933322fb3ddf368c",
+      "domain": "general",
+      "targets": 372,
+      "ce": 0.7694094181060791,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c4ced521836670411a5d51ab881b0681885f5a499eef5a191b30b61cc0a2ec49",
+      "domain": "chinese",
+      "targets": 70,
+      "ce": 2.4174342155456543,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c54c910265b5adb80635129c1fe2bc40ee8de339c138f255d8097a9359bbc06b",
+      "domain": "general",
+      "targets": 130,
+      "ce": 1.1618623733520508,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c5f5c9ff2d6959a445c6a6da9102843d333faed28156e6e1774516cfe2eb9eb2",
+      "domain": "code",
+      "targets": 355,
+      "ce": 0.4823600947856903,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c6c80e1071cb2b5aea0d9ed4ef4a56242706f682c506f105584dda3fb672dc32",
+      "domain": "general",
+      "targets": 95,
+      "ce": 0.313986212015152,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c6df3f45a2926409a1cf413d91e680c24bbd2d7f7405a18ffafa75c069c1b2ec",
+      "domain": "general",
+      "targets": 169,
+      "ce": 0.6244394183158875,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c769567974c6d5139623abd35e79488a6efd3fcea163c82afa48ff44650a2200",
+      "domain": "code",
+      "targets": 821,
+      "ce": 0.42352133989334106,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c77c9113e09edc7684297e73eea09543bde882f0f0d51a07aa0ec9a5f14f9655",
+      "domain": "code",
+      "targets": 359,
+      "ce": 0.26883837580680847,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "c785b86e11645d92c58506ebb985b64d64c3cb9fd4509783ee3b00582990e231",
+      "domain": "general",
+      "targets": 350,
+      "ce": 0.7324736714363098,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c89887920cb61de3d80e831f77e38616cb31f7340cdbaf5e59eec1236d67b7d5",
+      "domain": "math",
+      "targets": 98,
+      "ce": 1.4892818927764893,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c8faf33527a27596bab86f36acd2a56bdadd997c9b4501bf33716482ee6a238f",
+      "domain": "general",
+      "targets": 292,
+      "ce": 1.0437341928482056,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c9be42fbf73e0c2e0b448f924c38c6aaeb293f9b452e531b0df55400c45b4e84",
+      "domain": "chinese",
+      "targets": 206,
+      "ce": 2.0483591556549072,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "c9be6a7a55c59b2bfafc854327c0172fbf1d508b94d7e07ea52dc9791a1a3893",
+      "domain": "general",
+      "targets": 719,
+      "ce": 1.1817044019699097,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ca17601b4fadd06b7c26e23220478efa5477d19a06ef9a5f745efe0c7650623f",
+      "domain": "general",
+      "targets": 354,
+      "ce": 1.2248988151550293,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ca31293230558caba96d9013534a8fcf45f8895675a71d62f06760aed4767983",
+      "domain": "general",
+      "targets": 264,
+      "ce": 0.9916253685951233,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ca8feb47b0c6ceaec4786be4c3f87392e66321bf617afd4306cdd05b72200f50",
+      "domain": "math",
+      "targets": 311,
+      "ce": 1.1093714237213135,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ca9e90a6b31743187fdf8836eab33ba9fa2e61a4af03622fa228b9121358f349",
+      "domain": "math",
+      "targets": 1123,
+      "ce": 0.24657998979091644,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cb3245f94feed19c73085650945109c12e40229a2970109fafb15cff80db8a1d",
+      "domain": "code",
+      "targets": 609,
+      "ce": 0.33220845460891724,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cc46c254993e3cfd9aff17754755ea98ee1fb757afcb3bc2ad6e434327312636",
+      "domain": "code",
+      "targets": 646,
+      "ce": 0.7087475061416626,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cc5abfb6a77f946ab4abd0e5eadcb0952089a7abf42ac3d6820f5401ebbcece3",
+      "domain": "general",
+      "targets": 77,
+      "ce": 1.7019665241241455,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cc5e9101096826b121c3368e3ac0a3e568700c2c177b6e1e049872f1fe60de6e",
+      "domain": "code",
+      "targets": 233,
+      "ce": 0.420092910528183,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cc8eef5e770aaffdfdbbb9508207e368bfebf9246f59e3e9d4cae2386547416b",
+      "domain": "general",
+      "targets": 50,
+      "ce": 0.9120335578918457,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cd2fc2cf1a662cd6a041eb81adea1afdc66809061bd5fa8395f0e7e0ab440e85",
+      "domain": "general",
+      "targets": 511,
+      "ce": 1.062201738357544,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cde46d44d37659e88d5b89ec7467179cbe5423ca9224e3a1127b05a8d57346f8",
+      "domain": "math",
+      "targets": 124,
+      "ce": 0.2620210349559784,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ce8e1aa13c4977e11d92786e72f3be56a13f752fab4d61376de5d6876ed50f94",
+      "domain": "math",
+      "targets": 51,
+      "ce": 0.7083836793899536,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ce92d6267403ff55de2e53a0114b49f018047cd7a3b75be3e4e8474cc1feb115",
+      "domain": "math",
+      "targets": 288,
+      "ce": 0.5146364569664001,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cec1869b5cb3fd1bb4f726ffe236e5aafe13f27061c505a8bc564564f284d650",
+      "domain": "general",
+      "targets": 18,
+      "ce": 0.676971435546875,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cedfbda272c0d97c26a89223df2851a85b95308c9bda3acbeb7efca4e456f84b",
+      "domain": "math",
+      "targets": 1188,
+      "ce": 0.47969692945480347,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cf84fd8898bf43cd75e5c2daa013a039c4f402189bf276caa5f2ea6beeadf10f",
+      "domain": "general",
+      "targets": 140,
+      "ce": 0.8514642715454102,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "cf8f36c3cc8f29975974988a6980fb04140f478e08d6d67d10d3c7b4b1cb7b6c",
+      "domain": "general",
+      "targets": 420,
+      "ce": 1.712809681892395,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d085568abcaa86f92ad85cfaaef8f9dc791704f5c300de2a68dc5ef1484fea96",
+      "domain": "general",
+      "targets": 109,
+      "ce": 1.1146663427352905,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "d0cdd152967ed708216ad52100e7a224bbb5453417862df2aab7c5b48edf865b",
+      "domain": "code",
+      "targets": 103,
+      "ce": 0.7554541826248169,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d0df5d56241d3bc363b10fc8b426ce32b8ccd2cd4cb635525d711ee6df4a710d",
+      "domain": "code",
+      "targets": 15,
+      "ce": 1.061057686805725,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d173fcd2dfc47f16d1da2b1350c34c002ab052882402ac2e398a486199d5ba2b",
+      "domain": "math",
+      "targets": 220,
+      "ce": 0.5366114377975464,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d199acbda80db34d00e652e7f5955c851a7bd6f822c69ec91eece67820649f48",
+      "domain": "math",
+      "targets": 357,
+      "ce": 0.9410879015922546,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d1dde22c5765b9c54b3900bbc9aeed2fc3415e5f0ba6e98347e14d23bdf6b179",
+      "domain": "math",
+      "targets": 87,
+      "ce": 1.1940137147903442,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d1f00a9c1f3e9250852dd2bdd80a07157bfaf6f99d9f1727f188c564bca7a32f",
+      "domain": "general",
+      "targets": 129,
+      "ce": 0.5004920959472656,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "d2af142c8d9da36c4544fb9f25d037b5aef0ec98b1a5be6e5ba3078f140ba16a",
+      "domain": "general",
+      "targets": 524,
+      "ce": 1.1795532703399658,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d2bc819c1d9616d345750445a5e3d8822143f374db0907a896f4697bacaf0a20",
+      "domain": "math",
+      "targets": 771,
+      "ce": 0.6752181053161621,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d320e9d7fb118fb195de6cdfddd541da9d4d222040183e61420b51531e653660",
+      "domain": "general",
+      "targets": 261,
+      "ce": 0.9354398250579834,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "d33386ef6c8555fe2f541edefd835402704a591074c908adf1fb2c2ba0540308",
+      "domain": "general",
+      "targets": 277,
+      "ce": 0.9838402271270752,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d37fd29ae2d57830ff22c72bcfb231c0f38179e03969a788f65e58f37bfcad77",
+      "domain": "code",
+      "targets": 317,
+      "ce": 0.3281653821468353,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d40db9fa42f6e893224e9922d2067ed120035aa0f9e0d8bb850de56d40863359",
+      "domain": "general",
+      "targets": 78,
+      "ce": 1.127578854560852,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d5bc2e2b8a1ca70ee7b0169c1c2980b1cd39776d4e15dd00d9923d575420868f",
+      "domain": "general",
+      "targets": 38,
+      "ce": 0.5652081966400146,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d6413bb45374fa5196ddaa7626a5a4b2c69a562ff5dc50d91a1757eac3b383fb",
+      "domain": "code",
+      "targets": 513,
+      "ce": 0.26904794573783875,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d68dadf5754549b6832a9f455e6b3fbef22b60a1ab25520cfb91cc1188cc7548",
+      "domain": "math",
+      "targets": 829,
+      "ce": 0.8203638195991516,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d71331d3c5677495f267f75b4462f9512a39add5366677282e17a68eb548e7a2",
+      "domain": "general",
+      "targets": 128,
+      "ce": 0.4059559106826782,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d7b6c5a27434b06966a1f725c297b97191c575d77185459d3ca0595031615b41",
+      "domain": "code",
+      "targets": 262,
+      "ce": 0.308375746011734,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d80a14e2363ab19a1bfef6cdfb98ac852da95a014473d6324447b752ad77226f",
+      "domain": "code",
+      "targets": 661,
+      "ce": 0.5465686321258545,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d89983f873b172ef202639866d13597f881e40b66cbfa85ba669e94828d55651",
+      "domain": "chinese",
+      "targets": 212,
+      "ce": 2.0184125900268555,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "d8b60c2c1f506589d74c09aa8c92b21a9f5e7e2f478a9cc56650ae74344595a5",
+      "domain": "code",
+      "targets": 424,
+      "ce": 0.6603360176086426,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "daa9039579aba8f98022804cf4e0c2f67a92a0463838171ea5f4726f5981156f",
+      "domain": "general",
+      "targets": 439,
+      "ce": 1.0928080081939697,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "dab49c042fe206db17f4079ddca9f8ce916fe7e38986c479d4ca8c66b3c078f2",
+      "domain": "general",
+      "targets": 579,
+      "ce": 1.121277928352356,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "dbaa465c911034c70b3a37f2bfef832233825370890cefde26b91ea994ed920d",
+      "domain": "general",
+      "targets": 622,
+      "ce": 1.8422292470932007,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "dc822f6989931e305410444aa6fb6c7e1bd9e678817f821cbdf16ae60d90aea9",
+      "domain": "math",
+      "targets": 264,
+      "ce": 0.6726737022399902,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "dd25260a5508195266daf8923893a283ec4b42d7c21b1bc7fbff66fe4c446aa2",
+      "domain": "chinese",
+      "targets": 217,
+      "ce": 0.5697146058082581,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "dd6082658bfa190c16f43eb036675cf5c8cf152e8d470f2840b2afdbfbf71416",
+      "domain": "math",
+      "targets": 957,
+      "ce": 0.8413030505180359,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ddca66c79c24d13c4fd748445b28187a7f57619c5f598c03b9c74d2d0284fbe3",
+      "domain": "math",
+      "targets": 53,
+      "ce": 0.8204709887504578,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "de0bdd310b4b2ef371b04b39b03c8921f4787d307e1d7f5e32a52ec908e88517",
+      "domain": "code",
+      "targets": 483,
+      "ce": 0.6642268896102905,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "de59af7e605d40fa7003028a4bd6ee747525caaf83a84f98786771e71efff481",
+      "domain": "general",
+      "targets": 62,
+      "ce": 1.052168369293213,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "deb2cbff71b429ae625c54391171bdb638518b7b6eedf6ee479dd9ab09f46b65",
+      "domain": "math",
+      "targets": 158,
+      "ce": 1.5592838525772095,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "dee4d7c1d378d073ca4bf3fafeee442d26966b588fedcfb33f24bbebbd9334f8",
+      "domain": "math",
+      "targets": 182,
+      "ce": 1.2532217502593994,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "df24a07dd590867b047c93335854d8c3163a6051aa8360b94f6cf8c7767005b8",
+      "domain": "general",
+      "targets": 460,
+      "ce": 1.5296119451522827,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "dfcc2add3a1f59fdb9c27febf879910de6047e0794f7baecc36eb1a5a992ec9b",
+      "domain": "code",
+      "targets": 471,
+      "ce": 0.4846171438694,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "dfce26c0fc41b49283dd08a72b0d2bccc51e6206d6ee848c9f31907f3cca8320",
+      "domain": "math",
+      "targets": 228,
+      "ce": 0.9680960774421692,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "dfe223539e6c53e79ee820b3afc690e2b2f087f051e804c509ec0f1ddefa65df",
+      "domain": "code",
+      "targets": 312,
+      "ce": 0.35183626413345337,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e08d30f2bfa4479df574bbcb9f80b208460a4875626caa0b9c7bc5cad1d1b7d4",
+      "domain": "code",
+      "targets": 416,
+      "ce": 0.32561758160591125,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e0bfd9a651e58282bc533ad448b3dde46ececb77c885f605c68a7b5f49308bae",
+      "domain": "code",
+      "targets": 291,
+      "ce": 0.32578232884407043,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e144c13ed19ea109edcd1a58efb9f5eaebe2c789be321830883c25c1b3a90227",
+      "domain": "code",
+      "targets": 505,
+      "ce": 0.6056158542633057,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e15a1d49818af3f0bfcbabc363c27376d1873029b225742d57a7cdf1e27d4c68",
+      "domain": "code",
+      "targets": 514,
+      "ce": 0.33757632970809937,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e1906fea88cc24e0ccc7655116f30f4b5b9d08fe455e28eadca24331406c39cb",
+      "domain": "math",
+      "targets": 472,
+      "ce": 0.6893313527107239,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e1e630f11cda96fb04ad4f07d6a19b935f2dc7a3dde73fcf41d392b3a0232f01",
+      "domain": "math",
+      "targets": 171,
+      "ce": 0.889427661895752,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e22bc5dbb42a44fccb3889a57d0c3bc084f2be7f55bc26d70ec5dcc0a1127414",
+      "domain": "general",
+      "targets": 41,
+      "ce": 0.3535824716091156,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e2451a8f373e422537005c47f3a5a851a37f5d63971338333ba59821809e6af0",
+      "domain": "math",
+      "targets": 301,
+      "ce": 0.7813220024108887,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "e254f84b7244c22a47e9f5b52b9b467783a16e8aadca96060f0f5eaec6df4a5e",
+      "domain": "general",
+      "targets": 286,
+      "ce": 1.2621419429779053,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e2a0ce1737dd4d6489780460881f695458a022a1874d23711accd815d6505f9e",
+      "domain": "code",
+      "targets": 653,
+      "ce": 0.6237142086029053,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e2d413eef5cffd8bc76644ae5086579264b9b4ef09b1e2b0d45a93f908b758c2",
+      "domain": "code",
+      "targets": 93,
+      "ce": 0.049146197736263275,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e30b4ffca02f3161de7787d3cd10e0935f1c7dc3edeae2c923f33dae37962fce",
+      "domain": "general",
+      "targets": 223,
+      "ce": 0.6774596571922302,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "e3b488ee019f3dd0789ae7207d27ecf46f7cb7aef69d9455629687df3da4e5c5",
+      "domain": "general",
+      "targets": 293,
+      "ce": 0.8795120120048523,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e46bcaadff6f09812c754f54954005478070daa8cb664403e46dee9c2bca66b2",
+      "domain": "general",
+      "targets": 304,
+      "ce": 1.0122343301773071,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "e49720bc9c4008401a9961f93c599a1167751c7adfb44e4c4bdde991684f782e",
+      "domain": "general",
+      "targets": 59,
+      "ce": 0.9080134034156799,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "e55cba041693713e5f1c760e585c9aad81b40749190bb18fe146a6d595823f72",
+      "domain": "code",
+      "targets": 623,
+      "ce": 0.48516854643821716,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e6022172bc62bf8daa3bfc1aabbc8d96a2f8c7b35fcc5161db07cdc8fc12814a",
+      "domain": "general",
+      "targets": 659,
+      "ce": 1.3699878454208374,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e60e2feb7fc31b08802a3cd7e051caa9a28641530bcd576fe2ec54caa769bd95",
+      "domain": "general",
+      "targets": 98,
+      "ce": 0.798083484172821,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e67137f57e0f917e8a40857df2995fe07f4c2da8536c7f6474babd44981fb264",
+      "domain": "math",
+      "targets": 193,
+      "ce": 0.43023842573165894,
+      "mean_depth": 36.000003814697266,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e675cb4b2c7df4f89d9aebf3d9a8355e8714983f9251769748966e18a4818204",
+      "domain": "general",
+      "targets": 51,
+      "ce": 0.7410801649093628,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e6c598f99bb817cb51d9f612f75e2dcf3dac97251b3ce4e929f746d297bb6477",
+      "domain": "code",
+      "targets": 364,
+      "ce": 0.8082839846611023,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e6c831020b699a2c943f50e900d4241bbfa5bdf4e92d370766f5dbcf6efb76ab",
+      "domain": "code",
+      "targets": 737,
+      "ce": 0.35267749428749084,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e7629bdd78282f535dcd23529f9a4393759cb40db2e49b0901c4a7518aaea210",
+      "domain": "general",
+      "targets": 376,
+      "ce": 1.8988306522369385,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e77bc9a762e80fa1ee7a58bbe4254e3ece349b6a7fdb8df74e2b30df195f6031",
+      "domain": "code",
+      "targets": 302,
+      "ce": 0.3334009051322937,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "e798eeb30dfa83558a9c6a223f446511ec44127ba6148fdbc13817d73578b27b",
+      "domain": "general",
+      "targets": 394,
+      "ce": 0.6029713153839111,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e7c2e50ba6e1d3008c87a419a6cf43161a6f38593c2e40ee6d3fda666b48f56e",
+      "domain": "general",
+      "targets": 387,
+      "ce": 1.1069786548614502,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "e7dc3900421854831d33067481fdec3bdc90513e807a15c764b386b179364485",
+      "domain": "code",
+      "targets": 549,
+      "ce": 0.39514675736427307,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e7ed0177e2d77f67ef61b08aae3f1d6f05b1753b41c41bbe9d682c414269ad59",
+      "domain": "code",
+      "targets": 278,
+      "ce": 0.3920384645462036,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e872fb610761784de241c4432c407ef573e49ef4f2a1cd6d6549028e3a337770",
+      "domain": "general",
+      "targets": 299,
+      "ce": 0.5268499851226807,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e8751d6ef408a41f22330ab6480f43905b70ddc89bcac8d8498eaea73947377e",
+      "domain": "math",
+      "targets": 1550,
+      "ce": 0.5553165078163147,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e8d84c2c6b595fda38bec9f7d4a749a5ae981c8c2f57f1cb15dd87187696d0e1",
+      "domain": "code",
+      "targets": 111,
+      "ce": 0.6262502670288086,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e94ae47c91a156fbab15be2a32728ccb47aefbb726f0f4ec2d6814bd45fadbd9",
+      "domain": "code",
+      "targets": 723,
+      "ce": 0.47102272510528564,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e95cbed32f6cb330ce51c92c93b9c21b11b5beb19f6d47b487114ed47149e8f0",
+      "domain": "math",
+      "targets": 293,
+      "ce": 0.2938236892223358,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e9da7a802a575cc553a6cc73c4c396427b6d383da6cfa94beca34cd28674e4d0",
+      "domain": "general",
+      "targets": 561,
+      "ce": 1.7654240131378174,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "e9e37b59b351abea863054105b4c8772ac5a9f504ac0866780d0abe9277cf3be",
+      "domain": "code",
+      "targets": 297,
+      "ce": 0.31679046154022217,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "eb210412d0ce8e094004b92e4abad09b6da2dda499e8cc9fc97b952787fb8b23",
+      "domain": "math",
+      "targets": 343,
+      "ce": 0.4458940625190735,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ebcb26f112a757776da02d6043d6517b17531d3cb4f2fb8e0e557483fb3008cf",
+      "domain": "chinese",
+      "targets": 93,
+      "ce": 0.8119518160820007,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "ecda741267a1f1dc6fffb6a1adc8787ba8ae7e9eeb29e0adebd6b0f6875836be",
+      "domain": "math",
+      "targets": 63,
+      "ce": 1.4522078037261963,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ed46f0c3907a77f96d54092d5cd2d571495ffde16318be406c2e67fd6fa2d1b7",
+      "domain": "math",
+      "targets": 470,
+      "ce": 0.6198558807373047,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ed71aabc773b1fd7f72033e03823d5d37a57a674635f2918b4074b1952e4229f",
+      "domain": "math",
+      "targets": 366,
+      "ce": 1.2081310749053955,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ed83faada8545720b23dd87406aa4c867c527bdc9f2503373bf976a04ad643c0",
+      "domain": "math",
+      "targets": 382,
+      "ce": 0.5693206191062927,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "eda6279aceb3a513706d9351abdc326a3a0dc9693aa842ff759a110c62df3ba0",
+      "domain": "general",
+      "targets": 78,
+      "ce": 1.9781023263931274,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ede8613f398ba18920866ed212ef7339653c46e6f13e71ca08cb3bfa31d7ba1a",
+      "domain": "math",
+      "targets": 217,
+      "ce": 1.76475191116333,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "edebe3d26927eb9c5570daf65a24f9db977561033287f2950e73239b61cfbe61",
+      "domain": "general",
+      "targets": 380,
+      "ce": 1.2590140104293823,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ee0622b3cb4ecde2adfecc9bc1f1e37dd6e32a324fe0f3995e95c0bae6fb621e",
+      "domain": "general",
+      "targets": 438,
+      "ce": 0.46621203422546387,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ee6c36e1dd29256c55bf00b30a3e2895c1409e3c8847b90ba586759e3275c64e",
+      "domain": "code",
+      "targets": 304,
+      "ce": 0.2797223627567291,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ee962df059adf0fff3d1abab704c565331809b2763740027c9a17356b1c483bd",
+      "domain": "general",
+      "targets": 309,
+      "ce": 1.2604409456253052,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "eebc2bd22a4016093822aaf2a53e202dcd703dbe8976aba9e0dedba9bb9be6af",
+      "domain": "math",
+      "targets": 1069,
+      "ce": 0.24800628423690796,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "eed2e8d162888d523d41a407bd659cd8491a0ebce0977ec9857e26ebf50214a9",
+      "domain": "general",
+      "targets": 108,
+      "ce": 0.8705058693885803,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "efb50abfa1eac8a9063e36e74c15fa0392ef3683a3cf3e80dfe13d10cb5f11e0",
+      "domain": "general",
+      "targets": 918,
+      "ce": 2.133302688598633,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "efc118d4c9693b99de885c15f2550889ae018e5babd459d8226cf3a61d4a8cac",
+      "domain": "general",
+      "targets": 45,
+      "ce": 0.9409481287002563,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f04404aee8b5bb14c04683dd44118378463e3bf3da08bd2a85fc1dc3d4e5071c",
+      "domain": "general",
+      "targets": 515,
+      "ce": 0.4178617298603058,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f07092b6099fc2161f4d3d974636174ec6a5ac86ab3d794dc26785f917f8b24d",
+      "domain": "general",
+      "targets": 33,
+      "ce": 1.0926218032836914,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f13087e305727b34cf7b57f0f7a342c11bcfac223dd3007aed56d9c7e1543ff9",
+      "domain": "general",
+      "targets": 316,
+      "ce": 1.6771878004074097,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f16f176d813f78deaf686e9a3d57d90508676bd62c2af9fe3301840c9908f5ab",
+      "domain": "code",
+      "targets": 470,
+      "ce": 0.2842192053794861,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f280123f20cdc96974903a25bd108ac1cd51c3ce498a510fe73bff4033c40708",
+      "domain": "code",
+      "targets": 585,
+      "ce": 0.634702205657959,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f28d7f09413895d8a96bee69ca7e69b7013b394d880c7b1c44385b27c2bd1fae",
+      "domain": "general",
+      "targets": 1037,
+      "ce": 0.7085667252540588,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f2c7c8c86d78602a6b3c17aaa0394a71754330235012767e9b0d9ea161c16b94",
+      "domain": "math",
+      "targets": 126,
+      "ce": 1.1624702215194702,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f30f595268ead1ecfb19d233df52a6fce698dab3a392b2b006ebd32881de60a5",
+      "domain": "math",
+      "targets": 492,
+      "ce": 0.5059133768081665,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f3522f373c5843d7927d87e9e8254609f042778606f49698846b49e4a3af0308",
+      "domain": "code",
+      "targets": 262,
+      "ce": 0.4128309190273285,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f46c03bdd2e2d556f89e54877ebaa1e5fc0c62b6c753469c24a943e2cf0ab278",
+      "domain": "general",
+      "targets": 335,
+      "ce": 0.9757997393608093,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f486b74348492397d420ac5943cb65f7ba9a64af8432c9a3ccf5607cd653dd86",
+      "domain": "general",
+      "targets": 578,
+      "ce": 0.9945675730705261,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f546849311592e880fc06b4f0c6cb188faf3614fdbae64b5c51215c1a30aea77",
+      "domain": "general",
+      "targets": 231,
+      "ce": 0.6013733744621277,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "f55997c88d3f921a037313471e8258d7d3df51fbc9f41ad3bc152af291a95f13",
+      "domain": "general",
+      "targets": 525,
+      "ce": 1.2302932739257812,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f57843048a91bb943076a1103377898f8d2b76023a2ac5f2b873eddd7346d3b0",
+      "domain": "math",
+      "targets": 540,
+      "ce": 0.77969890832901,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f5d9c43148a0c16d517b3282931b45b83f3f442f0a42e5be87c0d9d26ac553c9",
+      "domain": "code",
+      "targets": 808,
+      "ce": 0.4664868414402008,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f6259a5a08ebccb278ca94a1e25e9273a224e00178c778e845c415a3940cd183",
+      "domain": "general",
+      "targets": 325,
+      "ce": 1.8320403099060059,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f6bfde570b13f1a86f8f6d1cc5a36cdc7401b447cfebfaeb566bec06d40f6971",
+      "domain": "code",
+      "targets": 728,
+      "ce": 0.6349660754203796,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f6dc19232227363f704e337af0531a8d9817429969dc88280cf9414843f88732",
+      "domain": "general",
+      "targets": 353,
+      "ce": 0.8044828772544861,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f6e010371dffd920472f193f80f75e80d47487eaaf229f61fe9e28e20f42718f",
+      "domain": "general",
+      "targets": 87,
+      "ce": 0.3803247809410095,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f7af9517cc5e47712ee9c0ac812fbfd617c21a5a027f78873da8e6d02d84c4c1",
+      "domain": "chinese",
+      "targets": 43,
+      "ce": 1.9728134870529175,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f843714a9c0c00e16e996c49164dc92c1f26a2c435a004d497d2a61982914468",
+      "domain": "general",
+      "targets": 19,
+      "ce": 1.4181451797485352,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "f9d44ada0e82293c76b3f1f8984d1890dbb20981bad3ac805e2715d0d3dc96f5",
+      "domain": "math",
+      "targets": 157,
+      "ce": 0.5100786685943604,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fa4f94aeb533b5e67945f2ce50db70ae03adf725fd552746135c8ea845dffb6a",
+      "domain": "general",
+      "targets": 51,
+      "ce": 0.12580269575119019,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fa70b18f1742a1085d22271e0d37759ac64cf0246d92a5cac1481ea1e23ef198",
+      "domain": "code",
+      "targets": 325,
+      "ce": 0.25118759274482727,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "faab4992b3c41d77eb5e93afd436914923c0406050fb1e8670e8b2ae277ade1b",
+      "domain": "general",
+      "targets": 94,
+      "ce": 0.7425037026405334,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "faba64c9eac5608d605890de5b2f176d534ff1d1332970403562457c1e05ff89",
+      "domain": "math",
+      "targets": 543,
+      "ce": 0.6875486969947815,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fadc1cef443bc9706c214e65b5ba58cb25bc704c600881812b6ef5285f415d50",
+      "domain": "general",
+      "targets": 135,
+      "ce": 2.4154951572418213,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fb2ef8a120cbed5e5876a2cff06dabad2e5165bd50d42a213fa48e0c91db5ca9",
+      "domain": "math",
+      "targets": 568,
+      "ce": 1.0020021200180054,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fb7fd7d2ed7e70a19a7594a595094956bc7b88977322e3d4d2b38504d0a933fb",
+      "domain": "general",
+      "targets": 799,
+      "ce": 0.5576335787773132,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fb99c79bb37ede27ef995b2c2cfa4d2d46f133437cc980fc74c8c4abfc063cdb",
+      "domain": "general",
+      "targets": 47,
+      "ce": 0.5396072268486023,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fc0fe28e57b6f43c763e286aacf5608910ced76da382fba543d3ccaf8d4d87cd",
+      "domain": "general",
+      "targets": 21,
+      "ce": 0.22397123277187347,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fc5772c1221115fd99dc5dde1667bfa8eb56d24c7185f398c2bc8fb44a037a1c",
+      "domain": "chinese",
+      "targets": 748,
+      "ce": 0.5034781694412231,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fd17b5067992cfae35b1ff8d0505fc4a61be9b6d7e3e44fbc52490164afcb6c0",
+      "domain": "general",
+      "targets": 298,
+      "ce": 1.185577392578125,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "fd193c1af1e995eb4063498eeb59f448531ae462d99805f8cf63eb3cb41ef828",
+      "domain": "code",
+      "targets": 476,
+      "ce": 0.9165361523628235,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fde42cf2f1011c1e1d03ed8ff7644ea2a1d509aaaf0685af07a67e061c574427",
+      "domain": "general",
+      "targets": 735,
+      "ce": 1.464492678642273,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fde8e8bca0c5eaca6939c7fd06c61fbacfd83e789b12b25770179983ff3f05ee",
+      "domain": "general",
+      "targets": 342,
+      "ce": 1.4447671175003052,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fe1109f72af97c64ed4d2758712f6d63df16b2c8b5b8cde5711fc02eedde4108",
+      "domain": "math",
+      "targets": 281,
+      "ce": 1.0839093923568726,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "fe56eca308c46bb6a0ccfbaa8b47dabfcf3cd4871e3a32fe92db613551967fe4",
+      "domain": "general",
+      "targets": 49,
+      "ce": 0.941245436668396,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ff3146bf9aee9750cc6409037ab0b452c317717eadfd2d6422bef8bf9de18e83",
+      "domain": "chinese",
+      "targets": 256,
+      "ce": 1.3281042575836182,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ff4766a7bbb4e08e2826fc58a49818b879421e37c0df97ca29ddf06b18951d77",
+      "domain": "math",
+      "targets": 226,
+      "ce": 0.6975979804992676,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    },
+    {
+      "id": "ff7024d3e4c827c74ee23dab4804a23ee6103f62cc74c445dfe7c2219b9b8b72",
+      "domain": "math",
+      "targets": 166,
+      "ce": 0.9379711151123047,
+      "mean_depth": 36.0,
+      "cap_fraction": 0.9999999403953552
+    },
+    {
+      "id": "ffb6a358bf575df714a1008e23d2d46349a1735c5625dce417b738ca59874bcc",
+      "domain": "general",
+      "targets": 360,
+      "ce": 0.7674283385276794,
+      "mean_depth": 36.0,
+      "cap_fraction": 1.0
+    }
+  ],
+  "scope": "Full documents, assistant CE, independent split; no generation benchmark or broad capability superiority claim"
+}

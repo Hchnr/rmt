@@ -1,0 +1,12 @@
+{
+  "status": "partial_full_tasks",
+  "model": "teacher32_fixed36_eos_fixed",
+  "benchmark": "math_500",
+  "score": 0.81,
+  "correct": 405,
+  "count": 500,
+  "native_same_protocol_score": 0.816,
+  "length_stop_fraction": 0.004,
+  "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/4c47fb321385c9d2",
+  "scope": "This task is complete; remaining five tasks still running. No overall architecture/teacher gain claim from this row."
+}

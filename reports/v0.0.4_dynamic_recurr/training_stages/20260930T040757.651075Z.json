@@ -1,0 +1,10 @@
+[
+  {
+    "config": "configs/dynamic/compile_4b.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/compile_4b.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T040757.651075Z.json",
+    "wall_seconds": 374.6187765169889
+  }
+]

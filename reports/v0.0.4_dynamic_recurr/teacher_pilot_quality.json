@@ -1,0 +1,230 @@
+{
+  "matched_source": {
+    "path": "artifacts/v0.0.4_dynamic_recurr/teacher_pilot/matched_source_train.jsonl",
+    "sha256": "aab0c3ac33c88710a1df5f5e155902ef67bdc60fbc5add54687980d96bcc4cae",
+    "input_tokens": 2714,
+    "targets": 1499
+  },
+  "status": "prepared",
+  "teacher_identities": [
+    {
+      "model": "artifacts/v0.0.4_dynamic_recurr/teacher/Qwen3-32B",
+      "model_config_sha256": "97e295b63283935788fac5e4f8860862a56d4089538cafc93f0431f2ebe483bb",
+      "teacher_manifest_sha256": "593ce7fb958745c329983026d2e54d2ff4ed1eb30b9e1af50ae73e7940e36d7b",
+      "data_sha256": "e8d22eb3a1d77adfa56d2dc531e9db397891b4d1162a36bf41528f56e996e40b",
+      "generation": {
+        "max_new_tokens": 1024,
+        "do_sample": true,
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "top_k": 20,
+        "enable_thinking": false,
+        "batch_size": 4,
+        "seed_base": 17000,
+        "sampling_seed_scope": "batch"
+      },
+      "selection_ids": [
+        "0001f169a1e77435309e44275b4a7ae50cd5e67b4bee054563098ddf096409fd",
+        "0003896c6f075b105ff63414b7b3ff06e50387995760a264ab83ea9fedfee4d1",
+        "0007ba36554c8cca1fcbe0b33ad9b7eeeef6cdba0a1e46d21ffef196cb22f18a",
+        "0007f52c06a4c6cb2b364fa3ff2d7c4bfb84c7efd11d9d8140ff4e946e053491",
+        "000a06a7442f828d66598ba5c50e1e588bfcc7f15d93632558e536bd29fbc85f",
+        "000b3a01b48e433ec44fa540cab62b2a6078263b3aaa98830ee9b09b5d2fc5c8",
+        "000db53ebfc445e3269b2459c964448dc63a7c529d115d048a00dca747f1bfc9",
+        "000e4cd4d07e401cfdc0873d76c6b05e83783dbe882c20ce6ef310f0212556c4",
+        "0013463d67b6b6617ab23eec7f8a5b5de993ec273d149ebc820bbad10c5f0673",
+        "001daa3e89159e885c1199f3f39a4c820b4539d05ce40c464bce45675dcada42",
+        "0020f7b51ff627e5be2eb3678d5b2c0129b98799df910ff5797a01454bb79ab7",
+        "002549f07e51ea0f3eadc271bd7233401af66932c34139d1a20e4a4f28d0a55b",
+        "0025a251b93498117263945e43fb3fef541a4f3be9888c067ddadff38e5b5f91",
+        "0028ac2de128d1894dc755d6cd742a8885750bba357bd030bc99953c48d668b1",
+        "0028cfa1cb13148c979e45abb0552be6779dfcb01c811c6f9a77796113c0912d",
+        "002995bfa017fbaef8168b37eb05ca37719af86c0a257aaf98eefdc63d9280d0",
+        "002fc94a0f2b0da865d49700814bee5439b1e082bd1ed1ae3c02d6a8d3259754",
+        "0032037deb7196c91edf0cd8f2dcabbd98a2ab2e5fe8620513742a34041ae9fa",
+        "00f3c32caf6ba8e88fcfac2762cf9b96eec20ae857baad5b50f145196f394398",
+        "01da85db4c11f557b5e894016404636db5fc39c2dffd1093d1f82d8dcc5af483"
+      ],
+      "unfilled_quotas": {
+        "general": 0,
+        "math": 0,
+        "code": 0,
+        "chinese": 0
+      },
+      "rank": 0,
+      "world_size": 1,
+      "torch": "2.10.0+cu130",
+      "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+    }
+  ],
+  "generated": 20,
+  "accepted": 8,
+  "excluded": {
+    "truncated": 10,
+    "math_unverified": 2
+  },
+  "input_tokens": 5603,
+  "targets": 4388,
+  "sha256": "b16b290a48f71bda99589ae6e49400e5bc5e544f6b43a2153463bf1755227bc3",
+  "domain_counts": {
+    "chinese": {
+      "generated": 2,
+      "accepted": 0
+    },
+    "code": {
+      "generated": 4,
+      "accepted": 1
+    },
+    "general": {
+      "generated": 8,
+      "accepted": 5
+    },
+    "math": {
+      "generated": 6,
+      "accepted": 2
+    }
+  },
+  "audit": [
+    {
+      "id": "0001f169a1e77435309e44275b4a7ae50cd5e67b4bee054563098ddf096409fd",
+      "domain": "code",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "0003896c6f075b105ff63414b7b3ff06e50387995760a264ab83ea9fedfee4d1",
+      "domain": "general",
+      "accepted": true,
+      "reason": null,
+      "verification": "format_only"
+    },
+    {
+      "id": "0007ba36554c8cca1fcbe0b33ad9b7eeeef6cdba0a1e46d21ffef196cb22f18a",
+      "domain": "code",
+      "accepted": true,
+      "reason": null,
+      "verification": "format_only"
+    },
+    {
+      "id": "0007f52c06a4c6cb2b364fa3ff2d7c4bfb84c7efd11d9d8140ff4e946e053491",
+      "domain": "general",
+      "accepted": true,
+      "reason": null,
+      "verification": "format_only"
+    },
+    {
+      "id": "000a06a7442f828d66598ba5c50e1e588bfcc7f15d93632558e536bd29fbc85f",
+      "domain": "general",
+      "accepted": true,
+      "reason": null,
+      "verification": "format_only"
+    },
+    {
+      "id": "000b3a01b48e433ec44fa540cab62b2a6078263b3aaa98830ee9b09b5d2fc5c8",
+      "domain": "general",
+      "accepted": true,
+      "reason": null,
+      "verification": "format_only"
+    },
+    {
+      "id": "000db53ebfc445e3269b2459c964448dc63a7c529d115d048a00dca747f1bfc9",
+      "domain": "general",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "000e4cd4d07e401cfdc0873d76c6b05e83783dbe882c20ce6ef310f0212556c4",
+      "domain": "code",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "0013463d67b6b6617ab23eec7f8a5b5de993ec273d149ebc820bbad10c5f0673",
+      "domain": "general",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "001daa3e89159e885c1199f3f39a4c820b4539d05ce40c464bce45675dcada42",
+      "domain": "math",
+      "accepted": true,
+      "reason": null,
+      "verification": "math_verify_against_source_answer"
+    },
+    {
+      "id": "0020f7b51ff627e5be2eb3678d5b2c0129b98799df910ff5797a01454bb79ab7",
+      "domain": "math",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "002549f07e51ea0f3eadc271bd7233401af66932c34139d1a20e4a4f28d0a55b",
+      "domain": "general",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "0025a251b93498117263945e43fb3fef541a4f3be9888c067ddadff38e5b5f91",
+      "domain": "math",
+      "accepted": true,
+      "reason": null,
+      "verification": "math_verify_against_source_answer"
+    },
+    {
+      "id": "0028ac2de128d1894dc755d6cd742a8885750bba357bd030bc99953c48d668b1",
+      "domain": "math",
+      "accepted": false,
+      "reason": "math_unverified",
+      "verification": "format_only"
+    },
+    {
+      "id": "0028cfa1cb13148c979e45abb0552be6779dfcb01c811c6f9a77796113c0912d",
+      "domain": "code",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "002995bfa017fbaef8168b37eb05ca37719af86c0a257aaf98eefdc63d9280d0",
+      "domain": "general",
+      "accepted": true,
+      "reason": null,
+      "verification": "format_only"
+    },
+    {
+      "id": "002fc94a0f2b0da865d49700814bee5439b1e082bd1ed1ae3c02d6a8d3259754",
+      "domain": "math",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "0032037deb7196c91edf0cd8f2dcabbd98a2ab2e5fe8620513742a34041ae9fa",
+      "domain": "math",
+      "accepted": false,
+      "reason": "math_unverified",
+      "verification": "format_only"
+    },
+    {
+      "id": "00f3c32caf6ba8e88fcfac2762cf9b96eec20ae857baad5b50f145196f394398",
+      "domain": "chinese",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    },
+    {
+      "id": "01da85db4c11f557b5e894016404636db5fc39c2dffd1093d1f82d8dcc5af483",
+      "domain": "chinese",
+      "accepted": false,
+      "reason": "truncated",
+      "verification": "format_only"
+    }
+  ],
+  "scope": "Math source-answer verification; code syntax and other format checks do not establish semantic correctness"
+}

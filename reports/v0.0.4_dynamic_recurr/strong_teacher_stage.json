@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "accepted": 804,
+  "queues": [
+    [
+      "0,1,2,3",
+      [
+        "teacher32_fixed36",
+        "teacher32_fixed40",
+        "teacher32_anchor40"
+      ]
+    ],
+    [
+      "4,5,6,7",
+      [
+        "teacher32_hybrid",
+        "matched_source_fixed36"
+      ]
+    ]
+  ],
+  "wall_seconds": 1150.0277666728944
+}

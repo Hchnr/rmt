@@ -1,0 +1,26 @@
+[
+  {
+    "config": "configs/dynamic/teacher32_fixed36.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/teacher32_fixed36.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "/share/project/eai_pwm/home/hcr/repos/test/rmt/reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298042Z.json",
+    "wall_seconds": 374.93112075701356
+  },
+  {
+    "config": "configs/dynamic/teacher32_fixed40.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/teacher32_fixed40.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "/share/project/eai_pwm/home/hcr/repos/test/rmt/reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298042Z.json",
+    "wall_seconds": 392.10379328019917
+  },
+  {
+    "config": "configs/dynamic/teacher32_anchor40.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/teacher32_anchor40.json",
+    "gpus": "0,1,2,3",
+    "status": "passed",
+    "archive": "/share/project/eai_pwm/home/hcr/repos/test/rmt/reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298042Z.json",
+    "wall_seconds": 380.0677718780935
+  }
+]

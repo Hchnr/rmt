@@ -1,0 +1,24 @@
+{
+  "status": "audited",
+  "warmup_raw_sha256": "7de581f2c4bee46f953088fad0656aee9f2f3c0525ef253cf556ca640b65f0a5",
+  "warmup_retained_documents": 9484,
+  "warmup_used_documents": 179,
+  "rows": [
+    {
+      "split": "halt_calibration",
+      "matches": [],
+      "used_document_matches": 0
+    },
+    {
+      "split": "dev",
+      "matches": [],
+      "used_document_matches": 0
+    },
+    {
+      "split": "test",
+      "matches": [],
+      "used_document_matches": 0
+    }
+  ],
+  "scope": "Post-hoc deterministic normalized text/containment audit across all user turns; no semantic paraphrase guarantee. Does not alter frozen splits or scores; used_document can include a chunk without its original prompt."
+}

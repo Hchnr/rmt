@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "output_tokens": 963253,
+  "successful_generation_batch_gpu_hours": 5.165731274364516,
+  "resume_worker_gpu_hours": 0.9197540499683884,
+  "resume_reserved_gpu_hours": 1.591259511311849,
+  "first_attempt_successful_batch_gpu_hours_lower_bound": 4.714979043042081,
+  "combined_first_successful_batches_plus_resume_reservation_gpu_hours": 6.306238554353929,
+  "scope": "Successful batches deduplicated by rank and batch seed. Combined value includes resume loading/waiting but excludes first-attempt loading and interrupted batch work; it is a lower bound, not an exact all-in cost."
+}

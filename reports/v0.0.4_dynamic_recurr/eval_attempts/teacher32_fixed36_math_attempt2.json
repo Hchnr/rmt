@@ -1,0 +1,17 @@
+{
+  "status": "interrupted_for_cache_repair",
+  "reason": "Eight durable responses lacked EvalScope prediction rows; stopped before duplicate sampling to add exact-response replay",
+  "archive": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/fixed36_math_2",
+  "cost": {
+    "status": "failed",
+    "gpus": [
+      "0",
+      "1"
+    ],
+    "wall_seconds": 120.06766926497221,
+    "reserved_gpu_hours": 0.06670426070276234,
+    "scope": "Allocated replica lifetime including loading, scoring waits and cleanup; not GPU kernel utilization"
+  },
+  "responses_before": 354,
+  "predictions_before": 346
+}

@@ -1,5 +1,6 @@
 """Auditable local Qwen conversion and HF export. Never modifies source weights."""
 import argparse
+import copy
 import json
 from pathlib import Path
 
@@ -80,11 +81,13 @@ def load_qwen_as_rmt(path, dtype=torch.bfloat16, **overrides):
     return model, report
 
 
-def export_hf(model, output, source=None):
+def export_hf(model, output, source=None, generation_config=None):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     RmtConfig.register_for_auto_class()
     RmtForCausalLM.register_for_auto_class("AutoModelForCausalLM")
+    if generation_config is not None:
+        model.generation_config = copy.deepcopy(generation_config)
     model.save_pretrained(output, safe_serialization=True, max_shard_size="4GB")
     if source:
         AutoTokenizer.from_pretrained(source, local_files_only=True).save_pretrained(output)

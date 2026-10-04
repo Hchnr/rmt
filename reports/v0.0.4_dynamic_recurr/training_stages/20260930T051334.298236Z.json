@@ -1,0 +1,18 @@
+[
+  {
+    "config": "configs/dynamic/teacher32_hybrid.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/teacher32_hybrid.json",
+    "gpus": "4,5,6,7",
+    "status": "passed",
+    "archive": "/share/project/eai_pwm/home/hcr/repos/test/rmt/reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298236Z.json",
+    "wall_seconds": 454.63276946917176
+  },
+  {
+    "config": "configs/dynamic/matched_source_fixed36.yaml",
+    "report": "reports/v0.0.4_dynamic_recurr/matched_source_fixed36.json",
+    "gpus": "4,5,6,7",
+    "status": "passed",
+    "archive": "/share/project/eai_pwm/home/hcr/repos/test/rmt/reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298236Z.json",
+    "wall_seconds": 397.28977886401117
+  }
+]

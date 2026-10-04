@@ -1,0 +1,33 @@
+{
+  "source": "artifacts/v0.0.4_dynamic_recurr/train/hybrid/hf",
+  "output": "artifacts/v0.0.4_dynamic_recurr/train/initial_hybrid_eos_fixed/hf",
+  "reference": "/share/project/eai_pwm/models/Qwen/Qwen3-4B/generation_config.json",
+  "old_generation_config": {
+    "_from_model_config": true,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "transformers_version": "4.57.6"
+  },
+  "new_generation_config": {
+    "bos_token_id": 151643,
+    "do_sample": true,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "pad_token_id": 151643,
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 0.95,
+    "transformers_version": "4.51.0"
+  },
+  "generation_config_sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+  "unchanged_weight_files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+  ],
+  "weights_same_inode": true,
+  "model_config_same_inode": true,
+  "scope": "Generation metadata correction only. Model weights, forward config, routing, halting thresholds and teacher-forcing scores are unchanged."
+}

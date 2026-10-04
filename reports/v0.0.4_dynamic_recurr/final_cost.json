@@ -1,0 +1,159 @@
+{
+  "as_of_utc": "2026-10-04T11:55:45.493565+00:00",
+  "known_training_reservations": [
+    {
+      "config": "configs/dynamic/fixed36.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+      "gpu_hours": 0.4170218345233136
+    },
+    {
+      "config": "configs/dynamic/fixed40.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+      "gpu_hours": 0.4406894114965366
+    },
+    {
+      "config": "configs/dynamic/hidden.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+      "gpu_hours": 0.4358846981450915
+    },
+    {
+      "config": "configs/dynamic/probability.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033717.871196Z.json",
+      "gpu_hours": 0.5591107330388493
+    },
+    {
+      "config": "configs/dynamic/hybrid.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T033854.407197Z.json",
+      "gpu_hours": 0.47103424589460097
+    },
+    {
+      "config": "configs/dynamic/compile_4b.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T040757.651075Z.json",
+      "gpu_hours": 0.4162430850188765
+    },
+    {
+      "config": "configs/dynamic/teacher32_fixed36.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298042Z.json",
+      "gpu_hours": 0.4165901341744595
+    },
+    {
+      "config": "configs/dynamic/teacher32_fixed40.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298042Z.json",
+      "gpu_hours": 0.43567088142244353
+    },
+    {
+      "config": "configs/dynamic/teacher32_anchor40.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298042Z.json",
+      "gpu_hours": 0.42229752430899276
+    },
+    {
+      "config": "configs/dynamic/teacher32_hybrid.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298236Z.json",
+      "gpu_hours": 0.505147521632413
+    },
+    {
+      "config": "configs/dynamic/matched_source_fixed36.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T051334.298236Z.json",
+      "gpu_hours": 0.4414330876266791
+    },
+    {
+      "config": "configs/dynamic/compile_4b_generation_fix.yaml",
+      "archive": "reports/v0.0.4_dynamic_recurr/training_stages/20260930T062947.487714Z.json",
+      "gpu_hours": 0.39955108400848177
+    }
+  ],
+  "known_full_eval_reservations": [
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/full_eos_teacher32_fixed36_ifeval_cost.json",
+      "gpu_hours": 2.133502592801427
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/full_eos_teacher32_fixed36_math_cost.json",
+      "gpu_hours": 4.148026326603981
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/full_eos_teacher32_fixed40_ifeval_cost.json",
+      "gpu_hours": 2.809683073930339
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/full_eos_teacher32_fixed40_math_cost.json",
+      "gpu_hours": 1.4226779320696368
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/full_eos_teacher32_hybrid_ifeval_cost.json",
+      "gpu_hours": 2.4954229192891053
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/full_eos_teacher32_hybrid_math_cost.json",
+      "gpu_hours": 0.7640085868972043
+    }
+  ],
+  "failed_eval_attempts": [
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/fixed36_math_1/cost.json",
+      "gpu_hours": 1.178366627762508
+    },
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/fixed36_math_2/cost.json",
+      "gpu_hours": 0.06670426070276234
+    },
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/invalid_eos/full_teacher32_fixed36_ifeval/cost.json",
+      "gpu_hours": 0.8687090364300335
+    },
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/invalid_eos/full_teacher32_fixed36_math/cost.json",
+      "gpu_hours": 0.34966345293240414
+    },
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/invalid_eos/full_teacher32_fixed40_ifeval/cost.json",
+      "gpu_hours": 0.8882359209398014
+    },
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/invalid_eos/full_teacher32_fixed40_math/cost.json",
+      "gpu_hours": 0.8684185642024709
+    },
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/invalid_eos/full_teacher32_hybrid_ifeval/cost.json",
+      "gpu_hours": 0.8580800041846103
+    },
+    {
+      "report": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/invalid_eos/full_teacher32_hybrid_math/cost.json",
+      "gpu_hours": 1.7157821626557659
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/full_resume_eos_teacher32_hybrid_math_cost.json",
+      "gpu_hours": 0.007144628249419232
+    }
+  ],
+  "teacher_pilots": [
+    {
+      "name": "teacher_pilot",
+      "gpu_hours": 0.12307088230891775
+    },
+    {
+      "name": "teacher_batch8_probe",
+      "gpu_hours": 0.10177005645974228
+    }
+  ],
+  "teacher_combined_lower_bound_gpu_hours": 6.306238554353929,
+  "training_reserved_gpu_hours": 5.360674241290738,
+  "full_eval_reserved_gpu_hours": 20.574426089651467,
+  "conservative_all_eight_cards_active_windows": {
+    "pre_interruption": {
+      "start_baseline_commit": "2ff4f41",
+      "start": "2026-09-30T10:58:54+08:00",
+      "end_last_progress_commit": "018f371",
+      "end": "2026-09-30T19:59:16+08:00",
+      "gpu_hours_ceiling": 72.04888888888888
+    },
+    "resume": {
+      "start_first_resume_transport_report": "2026-10-04T09:20:02+00:00",
+      "end": "2026-10-04T11:55:45.493565+00:00",
+      "gpu_hours_ceiling": 20.763319033333335
+    },
+    "combined_gpu_hours_ceiling": 92.81220792222221,
+    "under_192_gpu_hours": true
+  },
+  "scope": "Reservations include replica loading, recovery, evaluation waits and cleanup; not kernel utilization or billing. The eight-card ceilings conservatively charge all eight GPUs during the two documented active windows and exclude the four-day idle gap. Some early probes and interrupted work are not itemized; the ceiling bounds them."
+}

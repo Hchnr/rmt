@@ -1,0 +1,586 @@
+{
+  "model": "artifacts/v0.0.4_dynamic_recurr/train/hidden_calibrated/hf",
+  "output_budget": 32,
+  "repeats": 3,
+  "rows": [
+    {
+      "compiled": false,
+      "batch_size": 1,
+      "warmup_seconds": 3.9854737166315317,
+      "median_seconds": 1.9863539040088654,
+      "median_tokens_per_second": 16.109918748827944,
+      "median_ttft_seconds": 0.08518984727561474,
+      "peak_allocated_bytes": 8149393920,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 2.049086172133684,
+          "ttft": 0.08692525140941143,
+          "tokens": 32
+        },
+        {
+          "seconds": 1.9863539040088654,
+          "ttft": 0.08518984727561474,
+          "tokens": 32
+        },
+        {
+          "seconds": 1.979873239994049,
+          "ttft": 0.08079900406301022,
+          "tokens": 32
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1094,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {},
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          4278,
+          369,
+          678
+        ]
+      ]
+    },
+    {
+      "compiled": false,
+      "batch_size": 4,
+      "warmup_seconds": 3.391090262681246,
+      "median_seconds": 2.003828788176179,
+      "median_tokens_per_second": 63.87771288409402,
+      "median_ttft_seconds": 0.08521667495369911,
+      "peak_allocated_bytes": 8191200256,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 2.0162609722465277,
+          "ttft": 0.08671830780804157,
+          "tokens": 128
+        },
+        {
+          "seconds": 2.003828788176179,
+          "ttft": 0.08330581337213516,
+          "tokens": 128
+        },
+        {
+          "seconds": 1.9969865251332521,
+          "ttft": 0.08521667495369911,
+          "tokens": 128
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1095,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1101,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1101,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1101,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {},
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          4278,
+          369,
+          678
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ]
+      ]
+    },
+    {
+      "compiled": true,
+      "batch_size": 1,
+      "warmup_seconds": 5.222450748085976,
+      "median_seconds": 1.8770321924239397,
+      "median_tokens_per_second": 17.04818922614013,
+      "median_ttft_seconds": 0.09739149175584316,
+      "peak_allocated_bytes": 8149394944,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 1.8853917345404625,
+          "ttft": 0.1064304318279028,
+          "tokens": 32
+        },
+        {
+          "seconds": 1.8770321924239397,
+          "ttft": 0.09739149175584316,
+          "tokens": 32
+        },
+        {
+          "seconds": 1.8345778938382864,
+          "ttft": 0.09389607794582844,
+          "tokens": 32
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1094,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {
+        "stats": {
+          "calls_captured": 105,
+          "unique_graphs": 7
+        },
+        "aot_autograd": {
+          "total": 7,
+          "autograd_cache_hit": 7,
+          "ok": 7
+        },
+        "inductor": {
+          "triton_bundler_load_static_autotuner": 17,
+          "async_compile_cache_miss": 41,
+          "async_compile_cache_hit": 24,
+          "extern_calls": 39,
+          "fxgraph_cache_hit": 7,
+          "cudagraph_recorded_non_static_inputs": 129
+        }
+      },
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          4278,
+          369,
+          678
+        ]
+      ]
+    },
+    {
+      "compiled": true,
+      "batch_size": 4,
+      "warmup_seconds": 3.017042661085725,
+      "median_seconds": 1.90761074796319,
+      "median_tokens_per_second": 67.09964291020546,
+      "median_ttft_seconds": 0.09620102681219578,
+      "peak_allocated_bytes": 8191201280,
+      "greedy_tokens_match_eager": true,
+      "measurements": [
+        {
+          "seconds": 1.90761074796319,
+          "ttft": 0.10458393581211567,
+          "tokens": 128
+        },
+        {
+          "seconds": 1.91194330714643,
+          "ttft": 0.0950369443744421,
+          "tokens": 128
+        },
+        {
+          "seconds": 1.8968170285224915,
+          "ttft": 0.09620102681219578,
+          "tokens": 128
+        }
+      ],
+      "recurrence": [
+        {
+          "prefill_depth_sum": 1095,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1101,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1101,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        },
+        {
+          "prefill_depth_sum": 1101,
+          "prefill_positions": 28,
+          "decode_depth_sum": 1178,
+          "decode_positions": 31,
+          "cap_positions": 0
+        }
+      ],
+      "compile_counters": {
+        "stats": {
+          "calls_captured": 195,
+          "unique_graphs": 11
+        },
+        "aot_autograd": {
+          "total": 11,
+          "autograd_cache_hit": 11,
+          "ok": 11
+        },
+        "inductor": {
+          "triton_bundler_load_static_autotuner": 31,
+          "async_compile_cache_miss": 80,
+          "async_compile_cache_hit": 49,
+          "extern_calls": 69,
+          "fxgraph_cache_hit": 11,
+          "cudagraph_recorded_non_static_inputs": 335
+        }
+      },
+      "token_ids": [
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          304,
+          279,
+          4396,
+          1973,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          4278,
+          369,
+          678
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ],
+        [
+          16451,
+          264,
+          28273,
+          12111,
+          17601,
+          68863,
+          429,
+          279,
+          12111,
+          12440,
+          20853,
+          264,
+          2661,
+          1140,
+          315,
+          5424,
+          13,
+          576,
+          5795,
+          374,
+          311,
+          5978,
+          429,
+          279,
+          12111,
+          374,
+          2176,
+          3070,
+          19928,
+          334,
+          323,
+          3070
+        ]
+      ]
+    }
+  ],
+  "scope": "Projection compilation with eager dynamic control and rectangular KV; measured generation includes routing, stopping and sampling",
+  "speedup_by_batch": {
+    "1": 1.0582417883007915,
+    "4": 1.050439032342276
+  }
+}

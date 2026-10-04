@@ -1,0 +1,58 @@
+{
+  "name": "v004_dynamic_full_non_thinking",
+  "seed": 17,
+  "samples_per_benchmark": 32,
+  "pilot_samples_per_benchmark": 16,
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "max_tokens": 32768,
+    "seed": 17,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    }
+  },
+  "deviations": [
+    "Full IFEval and MATH-500 only; other report benchmarks not covered",
+    "Official EvalScope 1.0.0 prompts/scorers; exact paper prompt parity not established",
+    "One request-specific sample seed; not identical to unpublished paper RNG",
+    "Unmodified official IFEval rules with per-record Python and langdetect seeds; punctuation fallback behavior retained and documented. Native baseline answers rescored identically.",
+    "Trained HF exports corrected to native two-EOS termination; earlier missing-EOS attempts are invalid and preserved separately."
+  ],
+  "benchmarks": {
+    "ifeval": {
+      "repo": "google/IFEval",
+      "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+      "split": "train",
+      "subsets": [
+        "default"
+      ]
+    },
+    "math_500": {
+      "repo": "HuggingFaceH4/MATH-500",
+      "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+      "split": "test",
+      "subsets": [
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5"
+      ]
+    }
+  },
+  "pilot_max_tokens": 1024,
+  "model_args": {
+    "timeout": 7200,
+    "max_retries": 0
+  },
+  "ifeval_score_seed": 17,
+  "expected_eos_token_ids": [
+    151643,
+    151645
+  ]
+}

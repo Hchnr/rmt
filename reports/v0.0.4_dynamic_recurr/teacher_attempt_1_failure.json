@@ -1,0 +1,50 @@
+{
+  "status": "failed",
+  "worker": 5,
+  "error": "cuDNN SDPA mha_graph.execute failure in final 5-record batch",
+  "archive": "artifacts/v0.0.4_dynamic_recurr/teacher_answers/attempt_1_failure",
+  "completed": {
+    "rank_7.jsonl": {
+      "records": 104,
+      "sha256": "d8ee6e58a4149923bf64ad0963ae82461d2b2c7b3412944c787272f7767cf840",
+      "completed_batch_seconds": 2100.48099325411
+    },
+    "rank_4.jsonl": {
+      "records": 120,
+      "sha256": "5b0d5f9bee40315b55574ea4e2272dceb71329aaedc90cae2d1a836bd6d63d3c",
+      "completed_batch_seconds": 2188.0616723001003
+    },
+    "rank_5.jsonl": {
+      "records": 120,
+      "sha256": "dd260230b01c34d14a4bceb537a5fa5aa0de2fc3a8759348807a34721e933efe",
+      "completed_batch_seconds": 2151.807444129139
+    },
+    "rank_2.jsonl": {
+      "records": 120,
+      "sha256": "23327b91d5b326a947da4020afbf254da5e99b915b343aec2bcc5e094559fc78",
+      "completed_batch_seconds": 2022.1081057675183
+    },
+    "rank_1.jsonl": {
+      "records": 120,
+      "sha256": "f29d88f1ff8b654b09962f76791505839d7ec873f0a1cf67f103b43bbf697550",
+      "completed_batch_seconds": 2121.032745588571
+    },
+    "rank_0.jsonl": {
+      "records": 120,
+      "sha256": "4910c0a185a0c4561bdd1334ad03bd44484c5d71cdd0316e517995f70ff90043",
+      "completed_batch_seconds": 2218.7061050981283
+    },
+    "rank_6.jsonl": {
+      "records": 125,
+      "sha256": "173e3815475b6b2c11f113f77643e496ab5c4eff81d8d1b6d0a5e6d25b210b50",
+      "completed_batch_seconds": 2034.5651194434613
+    },
+    "rank_3.jsonl": {
+      "records": 104,
+      "sha256": "62060be3431554350b5276086f5f41489bf0cdeb108b00c50e67e3e17ea47dd7",
+      "completed_batch_seconds": 2137.1623693704605
+    }
+  },
+  "completed_generation_gpu_hours_lower_bound": 4.714979043042081,
+  "cost_scope": "Successful batches only; excludes loading and unfinished batches. Original worker summaries/logs preserved."
+}

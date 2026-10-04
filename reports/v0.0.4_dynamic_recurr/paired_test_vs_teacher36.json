@@ -1,0 +1,133 @@
+{
+  "baseline": "reports/v0.0.4_dynamic_recurr/teacher32_fixed36_test.json",
+  "data_sha256": "f21abd515b7f73257dcb310dcda03e724212f1acc51f1254c8a06a7bf44477e9",
+  "rows": [
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/native_test.json",
+      "ce": 1.4201555252075195,
+      "mean_depth": 36.0,
+      "delta_ce_vs_baseline": 0.22322304618939096,
+      "paired_document_bootstrap_95pct": [
+        0.2059506496355447,
+        0.2420775672420416
+      ],
+      "fraction_at_depth40": 0.0,
+      "fraction_at_depth48": 0.0,
+      "domain_ce": {
+        "general": 1.9267652410903764,
+        "math": 1.2715353886736904,
+        "code": 0.9364736002852776,
+        "chinese": 1.9112252940119134
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/initial_fixed36_test.json",
+      "ce": 0.8323270082473755,
+      "mean_depth": 36.0,
+      "delta_ce_vs_baseline": -0.364605088710724,
+      "paired_document_bootstrap_95pct": [
+        -0.37868401109825145,
+        -0.35080171840090424
+      ],
+      "fraction_at_depth40": 0.0,
+      "fraction_at_depth48": 0.0,
+      "domain_ce": {
+        "general": 1.1709679227146215,
+        "math": 0.7066261437537802,
+        "code": 0.5228316633791533,
+        "chinese": 1.2759254996660805
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/initial_hybrid_test.json",
+      "ce": 0.8522397875785828,
+      "mean_depth": 40.0132942199707,
+      "delta_ce_vs_baseline": -0.34469177094791387,
+      "paired_document_bootstrap_95pct": [
+        -0.35900329078085347,
+        -0.33089250180242624
+      ],
+      "fraction_at_depth40": 0.9970647126039144,
+      "fraction_at_depth48": 0.0012726567495885356,
+      "domain_ce": {
+        "general": 1.1993642305288446,
+        "math": 0.7136991356903658,
+        "code": 0.5431816854111345,
+        "chinese": 1.3000749054867518
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/teacher32_fixed40_test.json",
+      "ce": 1.1463667154312134,
+      "mean_depth": 40.0,
+      "delta_ce_vs_baseline": -0.05056535291867963,
+      "paired_document_bootstrap_95pct": [
+        -0.054578709105361445,
+        -0.046811608651122744
+      ],
+      "fraction_at_depth40": 1.0,
+      "fraction_at_depth48": 0.0,
+      "domain_ce": {
+        "general": 1.4987954246293331,
+        "math": 1.1287265439083345,
+        "code": 0.7313233243057534,
+        "chinese": 1.6456362050391047
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/teacher32_anchor40_test.json",
+      "ce": 1.1509805917739868,
+      "mean_depth": 40.0,
+      "delta_ce_vs_baseline": -0.04595148787303187,
+      "paired_document_bootstrap_95pct": [
+        -0.04980942149182065,
+        -0.0423610016976157
+      ],
+      "fraction_at_depth40": 1.0,
+      "fraction_at_depth48": 0.0,
+      "domain_ce": {
+        "general": 1.5043158365677156,
+        "math": 1.1408288178673147,
+        "code": 0.729005064890594,
+        "chinese": 1.6489231072887685
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/teacher32_hybrid_test.json",
+      "ce": 1.1474590301513672,
+      "mean_depth": 40.00917434692383,
+      "delta_ce_vs_baseline": -0.04947316430965746,
+      "paired_document_bootstrap_95pct": [
+        -0.053530351955764284,
+        -0.045813859424136086
+      ],
+      "fraction_at_depth40": 0.9978006310867902,
+      "fraction_at_depth48": 0.0007338218490213961,
+      "domain_ce": {
+        "general": 1.5007794509028574,
+        "math": 1.1353549435532977,
+        "code": 0.7272863534421553,
+        "chinese": 1.6418485443599038
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/matched_source_fixed36_test.json",
+      "ce": 0.8222972750663757,
+      "mean_depth": 36.0,
+      "delta_ce_vs_baseline": -0.374634940192034,
+      "paired_document_bootstrap_95pct": [
+        -0.38821967194165025,
+        -0.36084528779637753
+      ],
+      "fraction_at_depth40": 0.0,
+      "fraction_at_depth48": 0.0,
+      "domain_ce": {
+        "general": 1.1705996007040653,
+        "math": 0.6973547944946208,
+        "code": 0.5017980474166377,
+        "chinese": 1.2578844652543963
+      }
+    }
+  ],
+  "scope": "2000 paired document bootstrap samples, seed 1704; conditional on one trained seed and these source documents; CE only, no task-score superiority claim."
+}

@@ -1,0 +1,19 @@
+{
+  "status": "failed",
+  "reason": "cuDNN SDPA mha_graph.execute failure",
+  "archive": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/fixed36_math_1",
+  "work": "artifacts/v0.0.4_dynamic_recurr/eval/full/rmt/math_500/1038815bb6e16095",
+  "responses": 354,
+  "responses_sha256": "07fe9d5a6e2506b894ab4a72ce5ba21ba7cf5b587b07844d35172e04a6cde8f1",
+  "cost": {
+    "status": "failed",
+    "gpus": [
+      "0",
+      "1"
+    ],
+    "wall_seconds": 2121.0599299725145,
+    "reserved_gpu_hours": 1.178366627762508,
+    "scope": "Allocated replica lifetime including loading, scoring waits and cleanup; not GPU kernel utilization"
+  },
+  "recovery": "fresh service, same code/backend/weights/protocol/replica count/concurrency; reuse identical EvalScope cache identity"
+}

@@ -1,0 +1,457 @@
+{
+  "rows": [
+    {
+      "candidate": "eos_teacher32_fixed36_math",
+      "benchmark": "math_500",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/4c47fb321385c9d2",
+      "audit": {
+        "status": "passed",
+        "review_count": 500,
+        "unique_responses": 500,
+        "metrics": {
+          "acc": {
+            "mean": 0.81,
+            "n": 500,
+            "wilson_95": [
+              0.7733002877435668,
+              0.8419726211702709
+            ]
+          }
+        },
+        "length_fraction": 0.004,
+        "prompt_tokens": 49079,
+        "completion_tokens": 543713,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this generation seed and protocol.",
+        "output_length_tokens": {
+          "p50": 565.5,
+          "p90": 1875.5,
+          "p99": 7608.589999999997,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        },
+        "recurrence": {
+          "totals": {
+            "prefill_depth_sum": 1766844,
+            "prefill_positions": 49079,
+            "decode_depth_sum": 19555668,
+            "decode_positions": 543213,
+            "cap_positions": 592292
+          },
+          "prefill_token_weighted_mean": 36.0,
+          "decode_token_weighted_mean": 36.0,
+          "decode_request_weighted_mean": 36.0,
+          "scope": "cap_positions denotes the configured execution limit; fixed36/40 limit exits are not hard48 dynamic caps."
+        }
+      },
+      "metric": "acc",
+      "score": 0.81,
+      "native_score_same_scoring": 0.816,
+      "paired_delta": -0.006,
+      "paired_bootstrap_95pct": [
+        -0.032,
+        0.022
+      ],
+      "improved_questions": 24,
+      "worsened_questions": 27,
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "candidate": "eos_teacher32_fixed36_ifeval",
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/5f47147510ed647e",
+      "audit": {
+        "status": "passed",
+        "review_count": 541,
+        "unique_responses": 541,
+        "metrics": {
+          "prompt_level_strict": {
+            "mean": 0.6728280961182994,
+            "n": 541,
+            "wilson_95": [
+              0.6321946278490238,
+              0.7110244810726067
+            ]
+          },
+          "inst_level_strict": {
+            "mean": 0.7624768946395564,
+            "n": 541,
+            "wilson_95": null
+          },
+          "prompt_level_loose": {
+            "mean": 0.7190388170055453,
+            "n": 541,
+            "wilson_95": [
+              0.6797219696332193,
+              0.7552669545080988
+            ]
+          },
+          "inst_level_loose": {
+            "mean": 0.8028342575477511,
+            "n": 541,
+            "wilson_95": null
+          }
+        },
+        "length_fraction": 0.0036968576709796672,
+        "prompt_tokens": 31590,
+        "completion_tokens": 261266,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this generation seed and protocol.",
+        "output_length_tokens": {
+          "p50": 263.0,
+          "p90": 828.0,
+          "p99": 1477.0000000000007,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        },
+        "recurrence": {
+          "totals": {
+            "prefill_depth_sum": 1137240,
+            "prefill_positions": 31590,
+            "decode_depth_sum": 9386100,
+            "decode_positions": 260725,
+            "cap_positions": 292315
+          },
+          "prefill_token_weighted_mean": 36.0,
+          "decode_token_weighted_mean": 36.0,
+          "decode_request_weighted_mean": 36.0,
+          "scope": "cap_positions denotes the configured execution limit; fixed36/40 limit exits are not hard48 dynamic caps."
+        }
+      },
+      "metric": "prompt_level_strict",
+      "score": 0.6728280961182994,
+      "native_score_same_scoring": 0.8059149722735675,
+      "paired_delta": -0.133086876155268,
+      "paired_bootstrap_95pct": [
+        -0.17005545286506468,
+        -0.09611829944547134
+      ],
+      "improved_questions": 22,
+      "worsened_questions": 94,
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "candidate": "eos_teacher32_fixed40_math",
+      "benchmark": "math_500",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d",
+      "audit": {
+        "status": "passed",
+        "review_count": 500,
+        "unique_responses": 500,
+        "metrics": {
+          "acc": {
+            "mean": 0.786,
+            "n": 500,
+            "wilson_95": [
+              0.7479418772435874,
+              0.8196970000124048
+            ]
+          }
+        },
+        "length_fraction": 0.01,
+        "prompt_tokens": 49079,
+        "completion_tokens": 622233,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this generation seed and protocol.",
+        "output_length_tokens": {
+          "p50": 570.5,
+          "p90": 1855.0000000000011,
+          "p99": 11604.769999999806,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        },
+        "recurrence": {
+          "totals": {
+            "prefill_depth_sum": 1963160,
+            "prefill_positions": 49079,
+            "decode_depth_sum": 24869320,
+            "decode_positions": 621733,
+            "cap_positions": 670812
+          },
+          "prefill_token_weighted_mean": 40.0,
+          "decode_token_weighted_mean": 40.0,
+          "decode_request_weighted_mean": 40.0,
+          "scope": "cap_positions denotes the configured execution limit; fixed36/40 limit exits are not hard48 dynamic caps."
+        }
+      },
+      "metric": "acc",
+      "score": 0.786,
+      "native_score_same_scoring": 0.816,
+      "paired_delta": -0.03,
+      "paired_bootstrap_95pct": [
+        -0.06,
+        0.0
+      ],
+      "improved_questions": 23,
+      "worsened_questions": 38,
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "candidate": "eos_teacher32_fixed40_ifeval",
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/97254057c9ea5234",
+      "audit": {
+        "status": "passed",
+        "review_count": 541,
+        "unique_responses": 541,
+        "metrics": {
+          "prompt_level_strict": {
+            "mean": 0.6839186691312384,
+            "n": 541,
+            "wilson_95": [
+              0.6435599655853416,
+              0.7216838989890141
+            ]
+          },
+          "inst_level_strict": {
+            "mean": 0.7908194701170671,
+            "n": 541,
+            "wilson_95": null
+          },
+          "prompt_level_loose": {
+            "mean": 0.7301293900184843,
+            "n": 541,
+            "wilson_95": [
+              0.6911988510753804,
+              0.7658148287186628
+            ]
+          },
+          "inst_level_loose": {
+            "mean": 0.8256315465187924,
+            "n": 541,
+            "wilson_95": null
+          }
+        },
+        "length_fraction": 0.0036968576709796672,
+        "prompt_tokens": 31590,
+        "completion_tokens": 270337,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this generation seed and protocol.",
+        "output_length_tokens": {
+          "p50": 278.0,
+          "p90": 890.0,
+          "p99": 1699.0000000000018,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        },
+        "recurrence": {
+          "totals": {
+            "prefill_depth_sum": 1263600,
+            "prefill_positions": 31590,
+            "decode_depth_sum": 10791840,
+            "decode_positions": 269796,
+            "cap_positions": 301386
+          },
+          "prefill_token_weighted_mean": 40.0,
+          "decode_token_weighted_mean": 40.0,
+          "decode_request_weighted_mean": 40.0,
+          "scope": "cap_positions denotes the configured execution limit; fixed36/40 limit exits are not hard48 dynamic caps."
+        }
+      },
+      "metric": "prompt_level_strict",
+      "score": 0.6839186691312384,
+      "native_score_same_scoring": 0.8059149722735675,
+      "paired_delta": -0.12199630314232902,
+      "paired_bootstrap_95pct": [
+        -0.1589648798521257,
+        -0.08317929759704251
+      ],
+      "improved_questions": 26,
+      "worsened_questions": 92,
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "candidate": "eos_teacher32_hybrid_math",
+      "benchmark": "math_500",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
+      "audit": {
+        "status": "passed",
+        "review_count": 500,
+        "unique_responses": 500,
+        "metrics": {
+          "acc": {
+            "mean": 0.796,
+            "n": 500,
+            "wilson_95": [
+              0.758484663357909,
+              0.8290017270888521
+            ]
+          }
+        },
+        "length_fraction": 0.004,
+        "prompt_tokens": 49079,
+        "completion_tokens": 523713,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this generation seed and protocol.",
+        "output_length_tokens": {
+          "p50": 552.0,
+          "p90": 1888.8000000000027,
+          "p99": 8447.319999999996,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        },
+        "recurrence": {
+          "totals": {
+            "prefill_depth_sum": 1963671,
+            "prefill_positions": 49079,
+            "decode_depth_sum": 20928973,
+            "decode_positions": 523213,
+            "cap_positions": 5
+          },
+          "prefill_token_weighted_mean": 40.010411785081196,
+          "decode_token_weighted_mean": 40.000865804175355,
+          "decode_request_weighted_mean": 40.00125600849031,
+          "scope": "cap_positions denotes the configured execution limit; fixed36/40 limit exits are not hard48 dynamic caps."
+        }
+      },
+      "metric": "acc",
+      "score": 0.796,
+      "native_score_same_scoring": 0.816,
+      "paired_delta": -0.02,
+      "paired_bootstrap_95pct": [
+        -0.054,
+        0.014
+      ],
+      "improved_questions": 33,
+      "worsened_questions": 43,
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "candidate": "eos_teacher32_hybrid_ifeval",
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/fb90b50d4a0b1181",
+      "audit": {
+        "status": "passed",
+        "review_count": 541,
+        "unique_responses": 541,
+        "metrics": {
+          "prompt_level_strict": {
+            "mean": 0.6820702402957486,
+            "n": 541,
+            "wilson_95": [
+              0.6416639929317671,
+              0.719909079033801
+            ]
+          },
+          "inst_level_strict": {
+            "mean": 0.7800369685767098,
+            "n": 541,
+            "wilson_95": null
+          },
+          "prompt_level_loose": {
+            "mean": 0.7375231053604436,
+            "n": 541,
+            "wilson_95": [
+              0.6988662789871457,
+              0.7728305712420472
+            ]
+          },
+          "inst_level_loose": {
+            "mean": 0.818237831176833,
+            "n": 541,
+            "wilson_95": null
+          }
+        },
+        "length_fraction": 0.005545286506469501,
+        "prompt_tokens": 31590,
+        "completion_tokens": 294840,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this generation seed and protocol.",
+        "output_length_tokens": {
+          "p50": 277.0,
+          "p90": 832.0,
+          "p99": 1891.0000000000027,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        },
+        "recurrence": {
+          "totals": {
+            "prefill_depth_sum": 1263878,
+            "prefill_positions": 31590,
+            "decode_depth_sum": 11776056,
+            "decode_positions": 294299,
+            "cap_positions": 45
+          },
+          "prefill_token_weighted_mean": 40.0088002532447,
+          "decode_token_weighted_mean": 40.01391781827325,
+          "decode_request_weighted_mean": 40.02317991851256,
+          "scope": "cap_positions denotes the configured execution limit; fixed36/40 limit exits are not hard48 dynamic caps."
+        }
+      },
+      "metric": "prompt_level_strict",
+      "score": 0.6820702402957486,
+      "native_score_same_scoring": 0.8059149722735675,
+      "paired_delta": -0.12384473197781885,
+      "paired_bootstrap_95pct": [
+        -0.1645101663585952,
+        -0.08687615526802218
+      ],
+      "improved_questions": 31,
+      "worsened_questions": 98,
+      "identical_generation_selection_and_request_seeds": true
+    }
+  ],
+  "paired_student_controls": [
+    {
+      "benchmark": "ifeval",
+      "candidate": "eos_teacher32_hybrid_ifeval",
+      "reference": "eos_teacher32_fixed36_ifeval",
+      "paired_delta": 0.009242144177449169,
+      "paired_bootstrap_95pct": [
+        -0.024029574861367836,
+        0.04251386321626617
+      ],
+      "improved_questions": 45,
+      "worsened_questions": 40
+    },
+    {
+      "benchmark": "ifeval",
+      "candidate": "eos_teacher32_hybrid_ifeval",
+      "reference": "eos_teacher32_fixed40_ifeval",
+      "paired_delta": -0.0018484288354898336,
+      "paired_bootstrap_95pct": [
+        -0.033271719038817,
+        0.027726432532347505
+      ],
+      "improved_questions": 35,
+      "worsened_questions": 36
+    },
+    {
+      "benchmark": "math_500",
+      "candidate": "eos_teacher32_hybrid_math",
+      "reference": "eos_teacher32_fixed36_math",
+      "paired_delta": -0.014,
+      "paired_bootstrap_95pct": [
+        -0.042,
+        0.016
+      ],
+      "improved_questions": 26,
+      "worsened_questions": 33
+    },
+    {
+      "benchmark": "math_500",
+      "candidate": "eos_teacher32_hybrid_math",
+      "reference": "eos_teacher32_fixed40_math",
+      "paired_delta": 0.01,
+      "paired_bootstrap_95pct": [
+        -0.022,
+        0.04
+      ],
+      "improved_questions": 35,
+      "worsened_questions": 30
+    }
+  ],
+  "scope": "Official rules; per-question seeded IFEval for all models, native answers rescored without regeneration. Paired bootstrap conditions on one response per prompt; no paper protocol parity claim."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "gpus": [
+    "2",
+    "3"
+  ],
+  "wall_seconds": 1375.2154564149678,
+  "reserved_gpu_hours": 0.7640085868972043,
+  "scope": "Recovered remainder reservation only; interrupted pre-resume work is bounded in final_cost.json active-window ceiling.",
+  "recovery_report": "reports/v0.0.4_dynamic_recurr/full_resume2_eos_teacher32_hybrid_math_recovery.json"
+}

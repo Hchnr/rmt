@@ -1,0 +1,55 @@
+{
+  "status": "score_changed",
+  "source_work": "artifacts/v0.0.4/eval/full/qwen/ifeval/513cc7667b324bc8",
+  "records": 541,
+  "mismatches": [
+    {
+      "id": 1122,
+      "old": {
+        "prompt_level_strict": 1.0,
+        "inst_level_strict": 1.0,
+        "prompt_level_loose": 1.0,
+        "inst_level_loose": 1.0
+      },
+      "new": {
+        "prompt_level_strict": 0.0,
+        "inst_level_strict": 0.5,
+        "prompt_level_loose": 1.0,
+        "inst_level_loose": 1.0
+      }
+    },
+    {
+      "id": 1129,
+      "old": {
+        "prompt_level_strict": 0.0,
+        "inst_level_strict": 0.5,
+        "prompt_level_loose": 1.0,
+        "inst_level_loose": 1.0
+      },
+      "new": {
+        "prompt_level_strict": 1.0,
+        "inst_level_strict": 1.0,
+        "prompt_level_loose": 0.0,
+        "inst_level_loose": 0.5
+      }
+    },
+    {
+      "id": 3456,
+      "old": {
+        "prompt_level_strict": 0.0,
+        "inst_level_strict": 0.0,
+        "prompt_level_loose": 0.0,
+        "inst_level_loose": 0.5
+      },
+      "new": {
+        "prompt_level_strict": 0.0,
+        "inst_level_strict": 0.0,
+        "prompt_level_loose": 0.0,
+        "inst_level_loose": 0.0
+      }
+    }
+  ],
+  "old_strict_correct": 435.0,
+  "new_strict_correct": 435.0,
+  "scope": "All four official IFEval metrics rescored from saved original answers; no regeneration"
+}

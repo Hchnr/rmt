@@ -1,0 +1,37 @@
+[
+  {
+    "name": "teacher32_fixed36",
+    "status": "passed",
+    "world_size": 4,
+    "next_loss": 0.649573028087616,
+    "parameter_sha256_equal": true
+  },
+  {
+    "name": "teacher32_fixed40",
+    "status": "passed",
+    "world_size": 4,
+    "next_loss": 0.6948736310005188,
+    "parameter_sha256_equal": true
+  },
+  {
+    "name": "teacher32_anchor40",
+    "status": "passed",
+    "world_size": 4,
+    "next_loss": 0.843817412853241,
+    "parameter_sha256_equal": true
+  },
+  {
+    "name": "teacher32_hybrid",
+    "status": "passed",
+    "world_size": 4,
+    "next_loss": 0.8361268639564514,
+    "parameter_sha256_equal": true
+  },
+  {
+    "name": "matched_source_fixed36",
+    "status": "passed",
+    "world_size": 4,
+    "next_loss": 0.7013171315193176,
+    "parameter_sha256_equal": true
+  }
+]

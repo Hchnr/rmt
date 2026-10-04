@@ -18,6 +18,7 @@ from .routing import BoundRouter, selected_probability_st
 from .experts import BoundExpertBank
 from .attention import causal_mask, attend
 from .cache import RmtCache
+from .halting import prior_expert, hidden_stable, probability_stable
 
 
 @dataclass
@@ -27,6 +28,8 @@ class RmtCausalLMOutput(CausalLMOutputWithPast):
     router_probabilities: Optional[tuple] = None
     ce_loss: Optional[torch.Tensor] = None
     kd_loss: Optional[torch.Tensor] = None
+    exit_depths: Optional[torch.Tensor] = None
+    exit_reasons: Optional[torch.Tensor] = None
 
 
 class RmtRecurrentCell(nn.Module):
@@ -37,25 +40,42 @@ class RmtRecurrentCell(nn.Module):
         self.router = BoundRouter(config)
 
     def forward(self, hidden, step, mask, position_embeddings, mode,
-                forced=None, cache=None):
+                forced=None, cache=None, active=None, previous_k=None, previous_v=None):
         b, s, _ = hidden.shape
+        if active is not None and previous_k is not None and not bool(active.any()):
+            if cache is not None:
+                cache.update(previous_k, previous_v, step)
+            return hidden, torch.full((b,s), -1, dtype=torch.long, device=hidden.device), hidden.new_empty(0, dtype=torch.float32), previous_k, previous_v
         uniform = None
         probabilities = hidden.new_empty(0, dtype=torch.float32)
         selected = None
-        if mode == "layer_order":
-            uniform = step % self.config.num_experts
+        if mode == "layer_order" or (mode == "learned" and step < self.config.learned_routing_start):
+            uniform = prior_expert(self.config, step)
             indices = torch.full((b, s), uniform, dtype=torch.long, device=hidden.device)
         elif mode == "forced":
             indices = forced[..., step]
         else:
-            indices, selected, probabilities = self.router(hidden, step)
+            indices, selected, probabilities = self.router(hidden, step, prior_expert(self.config, step))
+        if active is not None:
+            indices = torch.where(active, indices, -1)
+            if not bool(active.all()):
+                uniform = None
         groups = None if uniform is not None else self.bank.groups(indices)
+        if groups is not None:
+            groups = [(e, positions) for e, positions in groups if e >= 0]
         q, k, v = self.bank.qkv(hidden, groups, uniform)
         d = self.config.head_dim
         q = q.view(b, s, -1, d).transpose(1, 2)
         k = k.view(b, s, -1, d).transpose(1, 2)
         v = v.view(b, s, -1, d).transpose(1, 2)
         q, k = apply_rotary_pos_emb(q, k, *position_embeddings)
+        if active is not None and previous_k is not None:
+            keep = active[:, None, :, None]
+            k = torch.where(keep, k, previous_k)
+            v = torch.where(keep, v, previous_v)
+        if active is not None and self.bank.compiled:
+            k, v = k.clone(), v.clone()
+        local_k, local_v = k, v
         if cache is not None:
             k, v = cache.update(k, v, step)
         attended = attend(q, k, v, mask, self.config._attn_implementation,
@@ -63,6 +83,9 @@ class RmtRecurrentCell(nn.Module):
         output = self.bank.output(attended.reshape(b, s, -1), hidden, groups, uniform)
         if selected is not None:
             output = selected_probability_st(output, hidden, selected)
+        if active is not None:
+            output = torch.where(active[..., None], output, hidden)
+            return output, indices, probabilities, local_k, local_v
         return output, indices, probabilities
 
 
@@ -79,7 +102,8 @@ class RmtModel(nn.Module):
     def forward(self, input_ids=None, attention_mask=None, position_ids=None,
                 past_key_values=None, inputs_embeds=None, use_cache=False,
                 output_hidden_states=False, cache_position=None, segment_ids=None,
-                forced_routes=None, routing_mode=None, output_router_trace=False):
+                forced_routes=None, routing_mode=None, output_router_trace=False,
+                recurrence_limit=None, halting_policy=None, forced_exit_depths=None, head_weight=None):
         if (input_ids is None) == (inputs_embeds is None):
             raise ValueError("Specify exactly one of input_ids and inputs_embeds")
         hidden = self.embed_tokens(input_ids) if inputs_embeds is None else inputs_embeds
@@ -118,28 +142,90 @@ class RmtModel(nn.Module):
         mode = routing_mode or self.config.routing_mode
         if mode not in ("layer_order", "forced", "learned"):
             raise ValueError("Invalid routing_mode")
+        policy = self.config.halting_policy if halting_policy is None else halting_policy
+        if policy not in ("fixed", "hidden", "probability", "hybrid"):
+            raise ValueError("Unknown halting policy")
+        limit = (self.config.num_recurrences if policy == "fixed" else self.config.max_recurrences) if recurrence_limit is None else recurrence_limit
+        if not isinstance(limit, int) or not 1 <= limit <= self.config.max_recurrences:
+            raise ValueError("recurrence_limit exceeds configured bounds")
+        if policy != "fixed" and limit < self.config.min_recurrences:
+            raise ValueError("Dynamic recurrence limit is below minimum")
+        if cache is not None and past and any(cache.get_seq_length(i) != past for i in range(limit)):
+            raise ValueError("Incomplete recurrence cache history; reset cache before changing fixed depth")
+        dynamic = policy != "fixed" or forced_exit_depths is not None
+        if forced_exit_depths is not None:
+            if forced_exit_depths.shape != (b,s) or forced_exit_depths.dtype != torch.long or (forced_exit_depths < 1).any() or (forced_exit_depths > limit).any():
+                raise ValueError("forced_exit_depths must be integer [batch, sequence] within recurrence limit")
         if mode == "forced":
-            if forced_routes is None or forced_routes.shape != (b, s, self.config.num_recurrences):
+            if forced_routes is None or forced_routes.shape != (b, s, limit):
                 raise ValueError("forced_routes must have shape [batch, sequence, recurrence]")
             if forced_routes.dtype != torch.long or (forced_routes < 0).any() or (forced_routes >= self.config.num_experts).any():
                 raise ValueError("forced_routes contains invalid expert indices")
         states, routes, probabilities = [], [], []
-        for step in range(self.config.num_recurrences):
+        valid = torch.ones((b,s), dtype=torch.bool, device=hidden.device)
+        if attention_mask is not None:
+            valid = valid & attention_mask[:, -s:].bool()
+        if segment_ids is not None:
+            valid = valid & (segment_ids >= 0)
+        depths = torch.zeros((b,s), dtype=torch.long, device=hidden.device)
+        reasons = torch.zeros_like(depths)  # 0 padding, 1 convergence, 2 cap, 3 forced
+        active = valid
+        streak = torch.zeros_like(depths)
+        h_streak = torch.zeros_like(depths)
+        p_previous = hidden.detach()
+        p_ready = torch.zeros_like(valid)
+        previous_k = previous_v = None
+        # Earlier probability checks cannot contribute to a legal patience window.
+        first_probability_depth = max(1, self.config.min_recurrences - self.config.halt_patience + 1) if self.config.defer_probability_checks else 1
+        for step in range(limit):
             if output_hidden_states:
                 states.append(hidden.clone() if self.cell.bank.compiled else hidden)
             call = partial(self.cell, step=step, mask=mask, position_embeddings=pos,
                            mode=mode, forced=forced_routes, cache=cache)
-            if self.gradient_checkpointing and self.training:
-                hidden, indices, probs = checkpoint(call, hidden, use_reentrant=False)
-            else:
-                hidden, indices, probs = call(hidden)
+            if dynamic:
+                call = partial(call, active=active, previous_k=previous_k, previous_v=previous_v)
+            previous = hidden
+            values = checkpoint(call, hidden, use_reentrant=False) if self.gradient_checkpointing and self.training else call(hidden)
+            hidden, indices, probs = values[:3]
+            if dynamic:
+                previous_k, previous_v = values[3:]
+                # The decision is detached, never the carried hidden/KV graph.
+                hs = hidden_stable(previous, hidden, self.config)
+                h_streak = torch.where(active & hs, h_streak + 1, 0)
+                stable = hs
+                if policy == "probability":
+                    eligible = active if step+1 >= first_probability_depth else torch.zeros_like(active)
+                    stable = probability_stable(previous, hidden, eligible, self.norm, head_weight,
+                                                self.config.halt_probability_threshold)
+                elif policy == "hybrid":
+                    eligible = active & (h_streak >= self.config.halt_patience)
+                    check = eligible & p_ready if step+1 >= first_probability_depth else torch.zeros_like(active)
+                    stable = probability_stable(p_previous, hidden, check, self.norm,
+                                                head_weight, self.config.halt_probability_threshold)
+                    p_previous = torch.where(eligible[...,None], hidden.detach(), p_previous)
+                    p_ready = eligible
+                streak = torch.where(active & stable, streak + 1, 0)
+                stop = active & (streak >= self.config.halt_patience) & (step+1 >= self.config.min_recurrences)
+                reason = 1
+                if forced_exit_depths is not None:
+                    stop = active & (forced_exit_depths <= step+1)
+                    reason = 3
+                if step+1 == limit:
+                    reasons = torch.where(active & ~stop, 2, reasons)
+                    stop = active
+                depths = torch.where(stop, step+1, depths)
+                reasons = torch.where(stop & (reasons == 0), reason, reasons)
+                active = active & ~stop
             if output_router_trace:
                 routes.append(indices)
                 probabilities.append(probs)
+        if not dynamic:
+            depths = torch.where(valid, limit, 0)
+            reasons = torch.where(valid, 2, 0)
         hidden = self.norm(hidden)
         if output_hidden_states:
             states.append(hidden.clone() if self.cell.bank.compiled else hidden)
-        return hidden, cache, tuple(states) if output_hidden_states else None, tuple(routes), tuple(probabilities)
+        return hidden, cache, tuple(states) if output_hidden_states else None, tuple(routes), tuple(probabilities), depths, reasons
 
 
 class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
@@ -186,14 +272,16 @@ class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
                 cache_position=None, logits_to_keep=0, segment_ids=None, forced_routes=None,
                 routing_mode=None, output_router_trace=False, return_hidden_only=False,
                 loss_chunk_size=0, teacher_hidden_states=None, teacher_head_weight=None,
-                kd_weight=0.0, ce_weight=1.0, temperature=1.0, **kwargs):
+                kd_weight=0.0, ce_weight=1.0, temperature=1.0,
+                recurrence_limit=None, halting_policy=None, forced_exit_depths=None, **kwargs):
         if output_attentions:
             raise ValueError("Attention weight materialization is not exposed")
         if use_cache is None:
             use_cache = self.config.use_cache and not self.training
-        hidden, cache, states, routes, probs = self.model(
+        hidden, cache, states, routes, probs, depths, reasons = self.model(
             input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, use_cache,
-            output_hidden_states, cache_position, segment_ids, forced_routes, routing_mode, output_router_trace)
+            output_hidden_states, cache_position, segment_ids, forced_routes, routing_mode, output_router_trace,
+            recurrence_limit, halting_policy, forced_exit_depths, self.lm_head.weight)
         loss = None
         ce_loss = kd_loss = None
         logits = None
@@ -230,7 +318,7 @@ class RmtForCausalLM(Qwen3PreTrainedModel, GenerationMixin):
             loss = loss + zero.to(loss.dtype)
         output = RmtCausalLMOutput(loss=loss, logits=logits, past_key_values=cache,
                                   hidden_states=states, last_hidden_state=hidden,
-                                  ce_loss=ce_loss, kd_loss=kd_loss,
+                                  ce_loss=ce_loss, kd_loss=kd_loss, exit_depths=depths, exit_reasons=reasons,
                                   router_indices=routes if output_router_trace else None,
                                   router_probabilities=probs if output_router_trace else None)
         return output if return_dict else output.to_tuple()

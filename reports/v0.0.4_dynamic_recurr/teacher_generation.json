@@ -1,0 +1,100 @@
+{
+  "status": "completed",
+  "gpus": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "wall_seconds": 716.0667708609253,
+  "workers": [
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 5,
+      "wall_seconds": 195.2989920116961,
+      "output_sha256": "57c34119e3f7acce1f4bd0f41ddd325ef8cbef39b14ac966f6b58e0cb6a13a84",
+      "peak_allocated_bytes": 67228442624,
+      "output_tokens": 121146,
+      "truncated_records": 16
+    },
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 5,
+      "wall_seconds": 497.22594326362014,
+      "output_sha256": "3955e6ab578575d44a7466b05a43f88edda21952d8098adf0e47162f4fc4e57e",
+      "peak_allocated_bytes": 67632603648,
+      "output_tokens": 118434,
+      "truncated_records": 7
+    },
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 5,
+      "wall_seconds": 294.4434455409646,
+      "output_sha256": "a45810e6da41cd429f674d74df4a89864cffcc1c48076cb0c756cb940bddf7fd",
+      "peak_allocated_bytes": 67538550784,
+      "output_tokens": 120059,
+      "truncated_records": 12
+    },
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 21,
+      "wall_seconds": 631.5209017526358,
+      "output_sha256": "99399c0e60165d8fda05d324388a30289b7ace37df4689aac67e09caca3c177b",
+      "peak_allocated_bytes": 70303494656,
+      "output_tokens": 113628,
+      "truncated_records": 14
+    },
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 5,
+      "wall_seconds": 555.8046196568757,
+      "output_sha256": "0bb99976b7cb735eced417af4b484511db54f9bbc26369d9cb9247b1ce3dbd2c",
+      "peak_allocated_bytes": 68775439360,
+      "output_tokens": 128372,
+      "truncated_records": 16
+    },
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 5,
+      "wall_seconds": 434.9200817719102,
+      "output_sha256": "5926096a9982bd7cd08a288b6a8687f09ac747643986c41ab1ee4697aae71795",
+      "peak_allocated_bytes": 67824990208,
+      "output_tokens": 124919,
+      "truncated_records": 12
+    },
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 0,
+      "wall_seconds": 0.018055574968457222,
+      "output_sha256": "173e3815475b6b2c11f113f77643e496ab5c4eff81d8d1b6d0a5e6d25b210b50",
+      "peak_allocated_bytes": null,
+      "output_tokens": 110601,
+      "truncated_records": 6
+    },
+    {
+      "status": "completed",
+      "assigned": 125,
+      "new_records": 21,
+      "wall_seconds": 701.882540313527,
+      "output_sha256": "fd829797369fb3983262c9e19ea68c2a8c1291fc8be071365ddb5dbb89609496",
+      "peak_allocated_bytes": 71868271616,
+      "output_tokens": 126094,
+      "truncated_records": 13
+    }
+  ],
+  "worker_gpu_hours": 0.9197540499683884,
+  "reserved_gpu_hours": 1.591259511311849,
+  "output_tokens": 963253,
+  "truncated_records": 96
+}

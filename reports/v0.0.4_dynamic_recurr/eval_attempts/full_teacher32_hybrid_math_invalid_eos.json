@@ -1,0 +1,15 @@
+{
+  "status": "invalid_protocol_stopped",
+  "reason": "Training export lost native EOS 151643; incomplete runs cannot be compared with native termination policy",
+  "archive": "artifacts/v0.0.4_dynamic_recurr/eval_attempts/invalid_eos/full_teacher32_hybrid_math",
+  "cost": {
+    "status": "failed",
+    "gpus": [
+      "2",
+      "3"
+    ],
+    "wall_seconds": 3088.4078927803785,
+    "reserved_gpu_hours": 1.7157821626557659,
+    "scope": "Allocated replica lifetime including loading, scoring waits and cleanup; not GPU kernel utilization"
+  }
+}

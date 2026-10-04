@@ -1,0 +1,185 @@
+{
+  "frozen_at_utc": "2026-09-30T05:32:46.364091+00:00",
+  "status": "frozen_before_test_scoring",
+  "models": [
+    {
+      "name": "native",
+      "model": "/share/project/eai_pwm/models/Qwen/Qwen3-4B",
+      "original": true,
+      "fingerprint": {
+        "config.json": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+        "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+        "model-00001-of-00003.safetensors": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+        "model-00002-of-00003.safetensors": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+        "model-00003-of-00003.safetensors": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1",
+        "model.safetensors.index.json": "6dc0981b8829fead746441f68f38f24c5ca4a3a66351f652c26c6df0efc43ab2",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "name": "initial_fixed36",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/fixed36/hf",
+      "original": false,
+      "fingerprint": {
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "config.json": "1b169ec44a6efa2beed07e5b22752f6564ce138f38a265e085d6d2c12c0267d2",
+        "generation_config.json": "408371fa2b28ab6f4515fa57b91756037f82922ac00fed4ac545ff0d8dfa356c",
+        "model-00001-of-00003.safetensors": "169b5d353627bc6474ce5c6a26aaed59ef02e5a8f150b8db5c8d7c0affd5bd76",
+        "model-00002-of-00003.safetensors": "cff6d7f5dbe3a5d5754f9cda00f81bb37bac2c3b631345797bc4b77433d40131",
+        "model-00003-of-00003.safetensors": "5aeec5cfefe9aaf5635f85dd1271a7d9b90997e347f696870c4595c40a88adea",
+        "model.safetensors.index.json": "dcbcbed24267162732c36a118add3eedcef4f39f059bbe65175e09c4963cd99c",
+        "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "name": "initial_hybrid",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/hybrid/hf",
+      "original": false,
+      "fingerprint": {
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "config.json": "2d833318b176c5a5fb0c121e3c8f2960d2b5d0403ee84de17780cfba91e312e3",
+        "generation_config.json": "408371fa2b28ab6f4515fa57b91756037f82922ac00fed4ac545ff0d8dfa356c",
+        "model-00001-of-00003.safetensors": "dfd52b6d2446839c3757a78a5738988dbb1edd7384b312a9e3e3e4636c554cd8",
+        "model-00002-of-00003.safetensors": "28b25006b9b5356a72b05e625c5ea34526b3fc793e822c0fb45c883a835845f4",
+        "model-00003-of-00003.safetensors": "1adbef492d7a49e1e15bfc3f5d93bbac332885bfbf8aeff6a5861c94601ad269",
+        "model.safetensors.index.json": "dcbcbed24267162732c36a118add3eedcef4f39f059bbe65175e09c4963cd99c",
+        "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "name": "teacher32_fixed36",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_fixed36/hf",
+      "original": false,
+      "fingerprint": {
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "config.json": "ff227b10542a35690552ead5fc3043a0f2e907a9baabc8ba68c95cfd583d9ac1",
+        "generation_config.json": "408371fa2b28ab6f4515fa57b91756037f82922ac00fed4ac545ff0d8dfa356c",
+        "model-00001-of-00003.safetensors": "89fdc8aecde98b3e5e76b43358353f7544d3d4f4be72601720bb2787db1c9683",
+        "model-00002-of-00003.safetensors": "fa827f2b3cb760544687e5e37f55669afabb6c439f2ccdd3ac08f8bb1f2332d7",
+        "model-00003-of-00003.safetensors": "5b8cc3f9a45672be23382fde642c96634db74dc8d0c9da69d30b48845ecb08d5",
+        "model.safetensors.index.json": "dcbcbed24267162732c36a118add3eedcef4f39f059bbe65175e09c4963cd99c",
+        "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "name": "teacher32_fixed40",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_fixed40/hf",
+      "original": false,
+      "fingerprint": {
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "config.json": "3098f992e572e923a49c9dd68e7fa2438d6a563230225291bc55072ac25119ac",
+        "generation_config.json": "408371fa2b28ab6f4515fa57b91756037f82922ac00fed4ac545ff0d8dfa356c",
+        "model-00001-of-00003.safetensors": "ecb2749f658be6d322cbc6c8cc6b9cbef4c61696ff546c5a458f6e5a7d59c055",
+        "model-00002-of-00003.safetensors": "d4258a4506eb852f72359564d7da48d7f2f29538678c5287138e857fedfeaa84",
+        "model-00003-of-00003.safetensors": "f6ada8c00ed91099da0d2ae33fd6ffe1d169032e8eaebe332a6b2396160ad5f4",
+        "model.safetensors.index.json": "dcbcbed24267162732c36a118add3eedcef4f39f059bbe65175e09c4963cd99c",
+        "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "name": "teacher32_anchor40",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_anchor40/hf",
+      "original": false,
+      "fingerprint": {
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "config.json": "3098f992e572e923a49c9dd68e7fa2438d6a563230225291bc55072ac25119ac",
+        "generation_config.json": "408371fa2b28ab6f4515fa57b91756037f82922ac00fed4ac545ff0d8dfa356c",
+        "model-00001-of-00003.safetensors": "ee62c09edad69145acf32bf71bd5a2f5c342244ff9908be3552ff8b74241b625",
+        "model-00002-of-00003.safetensors": "c48bb4d1902d1b7757323b7e70afb7a2535da6dc10199b4b640470eb77f933cf",
+        "model-00003-of-00003.safetensors": "45867394c9b7eee87b41f64ab54b449a5783407a6889f38d1faa0bef8ebac94d",
+        "model.safetensors.index.json": "dcbcbed24267162732c36a118add3eedcef4f39f059bbe65175e09c4963cd99c",
+        "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "name": "matched_source_fixed36",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/matched_source_fixed36/hf",
+      "original": false,
+      "fingerprint": {
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "config.json": "ff227b10542a35690552ead5fc3043a0f2e907a9baabc8ba68c95cfd583d9ac1",
+        "generation_config.json": "408371fa2b28ab6f4515fa57b91756037f82922ac00fed4ac545ff0d8dfa356c",
+        "model-00001-of-00003.safetensors": "0ddea9afdc03763ac3a3709589c2cac5b877987e91fcad0255faff8ea6cb35db",
+        "model-00002-of-00003.safetensors": "4431acdb278951e2f34c58cd733b21f4b3b48edd0ed440d7366ead060fb4f424",
+        "model-00003-of-00003.safetensors": "a60fe989134203129f3f14566cdd3af6f9dbb40014b22065285be6cf74e7cfb0",
+        "model.safetensors.index.json": "dcbcbed24267162732c36a118add3eedcef4f39f059bbe65175e09c4963cd99c",
+        "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "name": "teacher32_hybrid",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_hybrid_calibrated/hf",
+      "original": false,
+      "fingerprint": {
+        "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+        "config.json": "e29afe6ce6b20652d53ec371f6773abf88a98e74be076efcfaee83af29811cc4",
+        "generation_config.json": "408371fa2b28ab6f4515fa57b91756037f82922ac00fed4ac545ff0d8dfa356c",
+        "model-00001-of-00003.safetensors": "c15b307abdf4cc1989dfb8b60b98a0cafe8745f0b816976fdaec5044ed9f2a28",
+        "model-00002-of-00003.safetensors": "90476d93944eb14835de632f3cb4be80a5a8fe362af9ae1270d4404a5db0ed3b",
+        "model-00003-of-00003.safetensors": "2559df5708f275933257ed845a0abc79fd237cdeec7b9d0b5ba17388e11089cc",
+        "model.safetensors.index.json": "dcbcbed24267162732c36a118add3eedcef4f39f059bbe65175e09c4963cd99c",
+        "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0",
+        "variant_identity.json": "b7b4d84ef460a7552b42d1443f67b3712ee8bc436d3f7f38532dd1e5e6da807d",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    }
+  ],
+  "test_data": "artifacts/v0.0.4_dynamic_recurr/corpus/test.jsonl",
+  "test_sha256": "f21abd515b7f73257dcb310dcda03e724212f1acc51f1254c8a06a7bf44477e9",
+  "core_code": {
+    "src/rmt/__init__.py": "a9f3ed8f7ee47d16a07e0fcaa9b50c6de643c9abe4726e02d95183b3e5043b0b",
+    "src/rmt/configuration_rmt.py": "a367a26feaed841af068da062700c01430b122c90f6ea544dfbd64d67310dbe9",
+    "src/rmt/data.py": "b6f33aae67cbafac4cf300edd4228c219e7e892b7e8d1acf03c9e303865f80b5",
+    "src/rmt/losses.py": "53ecea96f311a1e6570bd862cb5a19cefea5a8b1f6f3ea49cb1a0eac377ecac7",
+    "src/rmt/fsdp_reference.py": "eabc26c6778ed3a70083bc4f802922300014372dd31d91a4ae1fe52ac8d72f20",
+    "src/rmt/smoke_train.py": "1ab1b5cf7ef05ca1e6636b45471e0b882ee9c7fc22a50e00d314a50f72b0fa87",
+    "src/rmt/attention.py": "2dd0d5c0d8eb1818b13482d8f1d5a07a30de56b1013ff0dc46c72651f648a868",
+    "src/rmt/audit.py": "218a500816ff701b1cfaa078061814068f03a08adee53db32abfaeec23591054",
+    "src/rmt/cache.py": "5a33c8ee51c6dc29a54d95dacf9691151219c1ed33c670b33db7170cd522e5a9",
+    "src/rmt/checkpoint.py": "15ca93a6935b78495e828cb49255cb8df153f7194038daf284da066c38c120dd",
+    "src/rmt/experts.py": "891aaa502612f1666d0e0b3cbdc688047812cb65f399a2e79959d4c925131ace",
+    "src/rmt/modeling_rmt.py": "519a3eb1c53c3a6b418f096e7393b96dc065e9986e3b1a5badfc637898ec8a3a",
+    "src/rmt/routing.py": "6ce2caeea73e9d35d00b0d617f3caf771169ad878e8042afe882663c64cd9b51",
+    "src/rmt/runtime.py": "1ab4365e4b9e893d8c382cb1db95c24861e8fe912b860838b26042f13059bd48",
+    "src/rmt/verify.py": "1656a69ed7a5aaff67ed6c4fda13549bdc0d76426ed4726c4342971d4339240e",
+    "src/rmt/train.py": "9e7212e7473d95e2286935eb36f312089eb01e4f4744d8172f12c3f4dd899d75",
+    "src/rmt/training_data.py": "444716bf5c0f41bd444605c9f5ed2f0f9aecb4844902cb13f4028b33c8adb445",
+    "src/rmt/halting.py": "e168dad888fb9c6de8aae1268dfe5ee4fef9a3e17b633605896309916906c2c2"
+  },
+  "primary_full_benchmarks": [
+    "teacher32_fixed36",
+    "teacher32_hybrid"
+  ],
+  "selection": "Predeclared strong-teacher fixed36 versus H+P pair; other models are held-out CE controls. Not a claim that either is the best dev checkpoint.",
+  "halting": "Keep original H=.2/P=.05, full calibration mean40.0104; frozen variant changes no config values or weights.",
+  "prohibition": "Do not tune weights, thresholds, or candidate selection from test or final benchmark scores."
+}

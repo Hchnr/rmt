@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "records": {
+    "train": 20109,
+    "halt_calibration": 682,
+    "dev": 658,
+    "test": 917
+  },
+  "checks": [
+    "pinned full-file SHA256",
+    "counts/input/target totals",
+    "cross-split unique IDs and normalized alphanumeric prompts",
+    "label/ID equality on supervised positions"
+  ],
+  "scope": "Exact normalized groups, not semantic paraphrase decontamination. No held-out model scores read."
+}

@@ -1,0 +1,43 @@
+{
+  "baseline": "reports/v0.0.4_dynamic_recurr/teacher32_fixed40_test.json",
+  "data_sha256": "f21abd515b7f73257dcb310dcda03e724212f1acc51f1254c8a06a7bf44477e9",
+  "rows": [
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/teacher32_hybrid_test.json",
+      "ce": 1.1474590301513672,
+      "mean_depth": 40.00917434692383,
+      "delta_ce_vs_baseline": 0.0010921886090221712,
+      "paired_document_bootstrap_95pct": [
+        0.00035111208782660867,
+        0.0017645524769455275
+      ],
+      "fraction_at_depth40": 0.9978006310867902,
+      "fraction_at_depth48": 0.0007338218490213961,
+      "domain_ce": {
+        "general": 1.5007794509028574,
+        "math": 1.1353549435532977,
+        "code": 0.7272863534421553,
+        "chinese": 1.6418485443599038
+      }
+    },
+    {
+      "report": "reports/v0.0.4_dynamic_recurr/teacher32_anchor40_test.json",
+      "ce": 1.1509805917739868,
+      "mean_depth": 40.0,
+      "delta_ce_vs_baseline": 0.004613865045647764,
+      "paired_document_bootstrap_95pct": [
+        0.003919890314631259,
+        0.005300805233551494
+      ],
+      "fraction_at_depth40": 1.0,
+      "fraction_at_depth48": 0.0,
+      "domain_ce": {
+        "general": 1.5043158365677156,
+        "math": 1.1408288178673147,
+        "code": 0.729005064890594,
+        "chinese": 1.6489231072887685
+      }
+    }
+  ],
+  "scope": "2000 paired document bootstrap samples, seed 1704; conditional on one trained seed and these source documents; CE only, no task-score superiority claim."
+}

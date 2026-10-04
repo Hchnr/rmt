@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
+  "original_key": "c78e767ea1311e77e356b0a53bc0016a9ac1a2e7c40a5f70369a74a49c3abf8f",
+  "durable_unique_responses": 482,
+  "original_responses_sha256": "b0f6dbe959545f97805b9e48c826d7b756d8c93a503d0b1ff237ab09cc95e859",
+  "source_runtime_protocol_equal": true,
+  "replayed_responses": [],
+  "original_response_prefix_unchanged": true,
+  "response_lines_after": 500
+}

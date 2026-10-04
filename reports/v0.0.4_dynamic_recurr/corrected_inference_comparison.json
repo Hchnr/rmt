@@ -1,0 +1,98 @@
+{
+  "rows": [
+    {
+      "candidate": "fixed36",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_fixed36_eos_fixed/hf",
+      "recurrence_config": {
+        "halting_policy": "fixed",
+        "routing_mode": "learned",
+        "learned_routing_start": 36,
+        "num_recurrences": 36,
+        "max_recurrences": 48
+      },
+      "compiled": [
+        {
+          "batch_size": 1,
+          "median_tokens_per_second": 59.93699221895391,
+          "median_ttft_seconds": 0.03323021158576012,
+          "peak_allocated_bytes": 8146558464,
+          "greedy_tokens_match_eager": true
+        },
+        {
+          "batch_size": 4,
+          "median_tokens_per_second": 229.56532972428408,
+          "median_ttft_seconds": 0.03338511660695076,
+          "peak_allocated_bytes": 8179862016,
+          "greedy_tokens_match_eager": true
+        }
+      ],
+      "speedup_vs_eager": {
+        "1": 1.6382407083330923,
+        "4": 1.5835183585964632
+      }
+    },
+    {
+      "candidate": "fixed40",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_fixed40_eos_fixed/hf",
+      "recurrence_config": {
+        "halting_policy": "fixed",
+        "routing_mode": "learned",
+        "learned_routing_start": 36,
+        "num_recurrences": 40,
+        "max_recurrences": 48
+      },
+      "compiled": [
+        {
+          "batch_size": 1,
+          "median_tokens_per_second": 41.01909901517168,
+          "median_ttft_seconds": 0.05539855547249317,
+          "peak_allocated_bytes": 8146947584,
+          "greedy_tokens_match_eager": true
+        },
+        {
+          "batch_size": 4,
+          "median_tokens_per_second": 147.10832922784797,
+          "median_ttft_seconds": 0.058017291128635406,
+          "peak_allocated_bytes": 8181353472,
+          "greedy_tokens_match_eager": true
+        }
+      ],
+      "speedup_vs_eager": {
+        "1": 1.4170422660719677,
+        "4": 1.3165577169774576
+      }
+    },
+    {
+      "candidate": "hybrid",
+      "model": "artifacts/v0.0.4_dynamic_recurr/train/teacher32_hybrid_eos_fixed/hf",
+      "recurrence_config": {
+        "halting_policy": "hybrid",
+        "routing_mode": "learned",
+        "learned_routing_start": 36,
+        "num_recurrences": 40,
+        "max_recurrences": 48
+      },
+      "compiled": [
+        {
+          "batch_size": 1,
+          "median_tokens_per_second": 13.958148062524222,
+          "median_ttft_seconds": 0.10256281681358814,
+          "peak_allocated_bytes": 8248073216,
+          "greedy_tokens_match_eager": true
+        },
+        {
+          "batch_size": 4,
+          "median_tokens_per_second": 54.64651954597233,
+          "median_ttft_seconds": 0.10833122394979,
+          "peak_allocated_bytes": 8294193664,
+          "greedy_tokens_match_eager": true
+        }
+      ],
+      "speedup_vs_eager": {
+        "1": 1.0586235665454717,
+        "4": 1.0446728265776142
+      }
+    }
+  ],
+  "scope": "Same script, prompt family, greedy 32-token budget, three warmed repetitions. GPUs exclusive per process but machine shared; runs not simultaneous or equal-output-content. End-to-end implementation cost, not isolated halting-kernel attribution. Not a full-benchmark throughput estimate."
+}
