@@ -1,57 +1,115 @@
 {
   "as_of": "2026-10-04T11:47:39.294990+00:00",
-  "status": "five_tasks_audited_one_running",
+  "status": "all_six_tasks_audited_complete",
   "rows": [
     {
-      "model": "teacher32_fixed36_eos_fixed",
-      "benchmark": "ifeval",
-      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/5f47147510ed647e",
-      "returned_responses": 541,
-      "returned_length_stops": 2,
-      "returned_split_retries": 0
-    },
-    {
-      "model": "teacher32_fixed40_eos_fixed",
-      "benchmark": "ifeval",
-      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/97254057c9ea5234",
-      "returned_responses": 541,
-      "returned_length_stops": 2,
-      "returned_split_retries": 0
-    },
-    {
-      "model": "teacher32_hybrid_eos_fixed",
-      "benchmark": "ifeval",
-      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/fb90b50d4a0b1181",
-      "returned_responses": 524,
-      "returned_length_stops": 3,
-      "returned_split_retries": 0
-    },
-    {
-      "model": "teacher32_fixed40_eos_fixed",
-      "benchmark": "math_500",
-      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d",
-      "returned_responses": 500,
-      "returned_length_stops": 4,
-      "returned_split_retries": 0,
-      "audit": "passed"
-    },
-    {
-      "model": "teacher32_fixed36_eos_fixed",
+      "model": "eos_teacher32_fixed36_math",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/4c47fb321385c9d2",
       "returned_responses": 500,
       "returned_length_stops": 2,
-      "returned_split_retries": 0
+      "returned_split_retries": 0,
+      "audit": "passed",
+      "review_count": 500,
+      "score": 0.81,
+      "metric": "acc",
+      "paired_delta_vs_native": -0.006,
+      "paired_bootstrap_95pct_vs_native": [
+        -0.032,
+        0.022
+      ],
+      "identical_generation_selection_and_request_seeds": true
     },
     {
-      "model": "teacher32_hybrid_eos_fixed",
+      "model": "eos_teacher32_fixed36_ifeval",
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/5f47147510ed647e",
+      "returned_responses": 541,
+      "returned_length_stops": 2,
+      "returned_split_retries": 0,
+      "audit": "passed",
+      "review_count": 541,
+      "score": 0.6728280961182994,
+      "metric": "prompt_level_strict",
+      "paired_delta_vs_native": -0.133086876155268,
+      "paired_bootstrap_95pct_vs_native": [
+        -0.17005545286506468,
+        -0.09611829944547134
+      ],
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "model": "eos_teacher32_fixed40_math",
+      "benchmark": "math_500",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d",
+      "returned_responses": 500,
+      "returned_length_stops": 5,
+      "returned_split_retries": 0,
+      "audit": "passed",
+      "review_count": 500,
+      "score": 0.786,
+      "metric": "acc",
+      "paired_delta_vs_native": -0.03,
+      "paired_bootstrap_95pct_vs_native": [
+        -0.06,
+        0.0
+      ],
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "model": "eos_teacher32_fixed40_ifeval",
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/97254057c9ea5234",
+      "returned_responses": 541,
+      "returned_length_stops": 2,
+      "returned_split_retries": 0,
+      "audit": "passed",
+      "review_count": 541,
+      "score": 0.6839186691312384,
+      "metric": "prompt_level_strict",
+      "paired_delta_vs_native": -0.12199630314232902,
+      "paired_bootstrap_95pct_vs_native": [
+        -0.1589648798521257,
+        -0.08317929759704251
+      ],
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "model": "eos_teacher32_hybrid_math",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
       "returned_responses": 500,
       "returned_length_stops": 2,
       "returned_split_retries": 0,
-      "audit": "passed"
+      "audit": "passed",
+      "review_count": 500,
+      "score": 0.796,
+      "metric": "acc",
+      "paired_delta_vs_native": -0.02,
+      "paired_bootstrap_95pct_vs_native": [
+        -0.054,
+        0.014
+      ],
+      "identical_generation_selection_and_request_seeds": true
+    },
+    {
+      "model": "eos_teacher32_hybrid_ifeval",
+      "benchmark": "ifeval",
+      "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/fb90b50d4a0b1181",
+      "returned_responses": 541,
+      "returned_length_stops": 3,
+      "returned_split_retries": 0,
+      "audit": "passed",
+      "review_count": 541,
+      "score": 0.6820702402957486,
+      "metric": "prompt_level_strict",
+      "paired_delta_vs_native": -0.12384473197781885,
+      "paired_bootstrap_95pct_vs_native": [
+        -0.1645101663585952,
+        -0.08687615526802218
+      ],
+      "identical_generation_selection_and_request_seeds": true
     }
   ],
-  "scope": "Progress counts only; not quality scores or completion acceptance."
+  "scope": "Official rules; per-question seeded IFEval for all models, native answers rescored without regeneration. Paired bootstrap conditions on one response per prompt; no paper protocol parity claim."
 }

@@ -1,6 +1,6 @@
 # v0.0.4 验收索引
 
-当前工程实现和独立 CE 测试完成，修正 EOS 后的六项完整官方评测仍在运行。最终结论见 [summary](summary.md)，实现选择与失败过程见 [record](../../plans/v0.0.4_dynamic_recurr_record.md)。
+工程实现、独立 CE 测试与修正 EOS 后的六项完整评测均已完成。最终结论见 [summary](summary.md)，实现选择与失败过程见 [record](../../plans/v0.0.4_dynamic_recurr_record.md)。
 
 | 验收项 | 证据 | 边界 |
 |---|---|---|
@@ -17,6 +17,9 @@
 | 原生 EOS 与采样配置 | [修正协议](corrected_generation_protocol.json)、generation_repair_verification.json | 原旧生成分数不作有效原生对比；CE 不受影响 |
 | 编译推理吞吐 | [修复后性能](teacher32_hybrid_eos_performance.json) | 32-token 短测，共享机器；不是长输出端到端成本 |
 | 官方评分可复现性 | ifeval_seeded_baseline.json、durable_recovery_verification.json | 沿用官方规则；逐题固定评分 RNG，非论文逐字节协议 |
-| 完整 IFEval／MATH-500 | 六个 `full_eos_*_runs.json`（完成后生成） | 当前等待全部 541／500 唯一回答与评分，不能提前验收 |
+| 完整 IFEval／MATH-500 | [六项统一分数与配对审计](corrected_full_benchmark_summary.json)、[完整性快照](full_eval_progress.json) | 六项均通过 541／500 唯一响应和 review 审计；固定评测 profile、单 seed、每题一条生成，不声称逐项复现技术报告协议 |
+| 总体结论与原生／学生对照 | [阶段最终报告](summary.md) | IFEval 比原生低约 12–13pp；MATH 接近但未证明优于原生；H+P 对 fixed40 的成对区间跨零 |
+| 实施成本与 192 GPU-hour 上限 | [最终成本汇总](final_cost.json) | 八卡活动时段保守上界 92.39 GPU-hours；reservation 不是 kernel 利用率或账单 |
+| 当前分支回归 | [测试摘要](tests_final.log)、[结构化结果](final_test_summary.json) | 47 passed；14 条既有弃用警告；真实 4B／分布式验收见上方独立证据 |
 
 未纳入本轮：压缩 KV、完全稀疏 attention、可学习退出头、投影解绑、14B 教师、多 seed 大规模复验、50M–100M 数据扩容。以上不是已实现功能。H+P 未显示优于固定 40 的质量证据，因此不启动盲目扩容。

@@ -1,6 +1,6 @@
-# 动态循环阶段报告（实施中）
+# 动态循环阶段报告（最终）
 
-32B 序列蒸馏与独立 CE 盲测已经完成；修复生成元数据后的官方全量评测仍在运行。
+32B 序列蒸馏、独立 CE 盲测以及修复生成元数据后的六项完整评测均已完成。六项任务均通过唯一回答、官方 review 数量、请求身份与原生配对审计。主要结论是：本轮固定退出判据没有显示优于固定深度或原生 Qwen3-4B 的质量证据；H+P 推理也明显慢于固定深度。
 
 ## 工程结果
 
@@ -71,29 +71,31 @@ H+P、SDPA、KV cache、生成预算 32 token，预热后重复三次：
 修复后编译推理 batch1／4 为 13.96／54.65 token/s，加速 1.059／1.045×，已测 greedy token 与 eager 一致。
 H 修复后 decode 均值 40.067；P 为 38.604，低于 39–41 预算区间；初轮 H+P 为 40.024。P 的预算偏离保留，不基于 test 调整。
 
-## 尚在执行
+## 生成配置修正
 
-- 三个冻结 32B 学生的完整 IFEval／MATH-500 官方回归；IFEval 固定逐题评分 RNG，原生同一批答案重评为 436/541，旧 435/541 单独保留。
-- 最终成本汇总、验收清单和结论。
-
-## Generation-metadata correction (full rerun pending)
-
-Earlier trained-checkpoint generation scores and performance used a single EOS instead of the native two-EOS configuration and are historical diagnostics, not valid final native comparisons. Corrected immutable exports preserve identical weights/configuration and real-4B forward logits. Teacher-forced CE remains valid. All six official tasks will be rerun from scratch; thresholds and sampling remain frozen. See generation_repair_verification.json and *_eos_repair.json. The four-prompt stopping probe did not observe the omitted EOS and does not explain all long outputs.
+早期训练 checkpoint 的生成配置仅包含一个 EOS，而原生配置有两个 EOS；早期生成分数只作为历史诊断，不作为有效原生对比。修正后的不可变导出保留相同权重，真实 4B 前向 logits 未改变。Teacher-forced CE 仍然有效。之后六项任务均以修复后的配置重新完整生成，阈值和采样保持冻结。见 generation_repair_verification.json 与 *_eos_repair.json。四条提示的停止诊断没有观察到此前遗漏的 EOS，因此不能解释所有长输出。
 
 ## 修复后推理成本对照
 
 同脚本、32-token greedy、三次重复的编译 batch1/4 吞吐：fixed36 59.94/229.57，fixed40 41.02/147.11，H+P 13.96/54.65 token/s。各自 greedy 与 eager 相同。动态路径在相近平均深度下仍明显更慢，尚无推理效率收益；这是端到端实现对照，不是单算子归因，也不是完整长输出吞吐。见 corrected_inference_comparison.json。
 
-## 修复后的完整官方评测（当前三项完成）
+## 修复后的完整官方评测（六项全部完成）
 
 | 模型 | MATH-500（500 题） | IFEval strict prompt（541 题） |
 |---|---:|---:|
 | 原生 Qwen3-4B，同评分规则 | 81.60% | 80.59% |
 | 32B 蒸馏 fixed36 | 81.00%（405） | 67.28%（364） |
-| 32B 蒸馏 fixed40 | 运行中 | 68.39%（370） |
-| 32B 蒸馏 H+P | 运行中 | 运行中 |
+| 32B 蒸馏 fixed40 | 78.60%（393） | 68.39%（370） |
+| 32B 蒸馏 H+P | 79.60%（398） | 68.21%（369） |
 
-已完成行均通过唯一回答／review 全量审计，未完成项不填分数。
-固定 36 配方的数学接近原生，但指令遵循明显退化；固定 40 的 IFEval 比 fixed36 多 6 题，尚不据此声称显著提升。
-这说明源语料 CE 改善不能代替官方能力验证；尚不能据这些行识别教师规模的独立因果收益。
-详见 fixed36_official_summary.json、fixed40_ifeval_summary.json。
+六项评测各自均完成 500/500 MATH 或 541/541 IFEval 唯一响应及 review，回答身份、逐题 seed、同一选择和原生响应哈希审计通过。以上均为固定 held-out EvalScope 配置、每题一次生成；不宣称与 Qwen 技术报告逐项协议完全一致。
+
+配对原生差值（百分点）与 95% bootstrap 区间：fixed36 MATH −0.6 [−3.2, +2.2]，fixed40 MATH −3.0 [−6.0, 0.0]，H+P MATH −2.0 [−5.4, +1.4]；IFEval 分别 −13.31 [−17.01, −9.61]、−12.20 [−15.90, −8.32]、−12.38 [−16.45, −8.69]。因此 MATH 与原生接近，但 IFEval 明显较低。
+
+同学生配对对照中，H+P 对 fixed40 的 MATH 差 +1.0pp [−2.2, +4.0]、IFEval 差 −0.18pp [−3.33, +2.77]，区间均跨零。H+P 没有胜过固定 40 的证据；退出深度集中在约 40，也没有证明内容自适应收益。详见 [统一配对审计](corrected_full_benchmark_summary.json) 与 [全量进度／审计](full_eval_progress.json)。单训练 seed、每提示单响应限制了结论，不代表多 seed 的不确定性。
+
+## 成本、验收与结论
+
+记录的训练 reservation 为 5.36 GPU-hours，六项修正 EOS 完整任务及归档失败尝试合计为 20.57 GPU-hours；32B 教师生成单列为 6.31 GPU-hours 的保守下界。成本文件另给出两个活跃时段假设八卡全占用的 92.39 GPU-hours 上界，低于 192 GPU-hours 预算。reservation 包括加载、恢复、等待和清理，不等同于 GPU kernel 利用时间或账单；四天中断空档未计入。见 [最终成本](final_cost.json)。
+
+当前源代码回归为 47 passed、14 条既有弃用警告；真实 4B、FSDP2、编译、HF 导出和独立恢复证据见 [验收索引](acceptance.md)。本轮建立了动态循环训练与评测基础设施，但现有实验没有证明质量或推理速度收益；后续应先优化动态推理控制开销，并以多 seed、等算力对照验证质量，再扩大数据或模型范围。

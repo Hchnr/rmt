@@ -3,7 +3,7 @@
   "command": "CUDA_VISIBLE_DEVICES=6 PYTHONPATH=src OMP_NUM_THREADS=1 .venv-cached/bin/python -m pytest -q",
   "passed": 47,
   "warnings": 14,
-  "seconds": 6.26,
-  "log_sha256": "8d1c2990cb0560d352c229295c5abf65f0ab9819a911a90926bde23c98d44bd9",
+  "seconds": 8.3,
+  "log_sha256": "531487d1277013783c21faeb7e600dc2bb603963c83f5455322f579ba3caeb6a",
   "scope": "Current branch final unit/regression suite; real 4B and multi-GPU FSDP evidence is separately recorded."
 }

@@ -5,4 +5,4 @@ tests/test_inference.py: 14 warnings
     warnings.warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-47 passed, 14 warnings in 6.26s
+47 passed, 14 warnings in 8.30s
