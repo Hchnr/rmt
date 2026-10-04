@@ -1,9 +1,9 @@
 {
   "status": "passed",
   "command": "CUDA_VISIBLE_DEVICES=6 PYTHONPATH=src OMP_NUM_THREADS=1 .venv-cached/bin/python -m pytest -q",
-  "passed": 50,
+  "passed": 52,
   "warnings": 14,
-  "seconds": 6.48,
-  "log_sha256": "c5ba5aad8e651cceed2be1c7c49b04d40b2ef4dd84c087a7875c96782f022fae",
-  "scope": "Current branch after all-halted recurrent suffix fast path; real 4B generation comparison, profiler, and mixed-depth KV/gradient tests are recorded separately."
+  "seconds": 6.63,
+  "log_sha256": "000d92bb56103abf4b8a75c02bf8ddc91aef56aebf637b2a2eb944105f8aeef4",
+  "scope": "Current branch after both dynamic inference control fast paths; exact output, mixed-depth KV, gradients, and probability-window tests are included."
 }
