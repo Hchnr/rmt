@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-04T09:46:09.494529+00:00",
-  "status": "two_tasks_running_one_audited",
+  "as_of": "2026-10-04T10:07:21.528540+00:00",
+  "status": "two_tasks_long_generation_one_audited",
   "rows": [
     {
       "model": "teacher32_fixed36_eos_fixed",
