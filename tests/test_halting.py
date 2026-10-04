@@ -39,6 +39,72 @@ def test_dynamic_cached_chunked_and_causal(policy):
         torch.testing.assert_close(full.logits[:,:2],suffix.logits[:,:2],atol=0,rtol=0)
 
 
+def test_all_halted_suffix_preserves_cache_states_and_router_trace():
+    model=make_model('hidden')
+    ids=torch.tensor([[4,7,9]])
+    dynamic_cache=RmtCapacityCache(8);fixed_cache=RmtCapacityCache(8)
+    calls=[]
+    handle=model.model.cell.register_forward_hook(lambda *args:calls.append(1))
+    with torch.no_grad():
+        dynamic=model(ids,past_key_values=dynamic_cache,use_cache=True,
+                      output_hidden_states=True,output_router_trace=True)
+        dynamic_calls=len(calls);calls.clear()
+        fixed=model(ids,past_key_values=fixed_cache,use_cache=True,
+                    recurrence_limit=2,halting_policy='fixed',
+                    output_hidden_states=True,output_router_trace=True)
+    handle.remove()
+    assert dynamic_calls==2
+    torch.testing.assert_close(dynamic.logits,fixed.logits,atol=0,rtol=0)
+    assert torch.equal(dynamic.exit_depths,torch.full_like(ids,2))
+    assert len(dynamic.hidden_states)==model.config.max_recurrences+1
+    assert len(dynamic.router_indices)==model.config.max_recurrences
+    assert len(dynamic.router_probabilities)==model.config.max_recurrences
+    for a,b in zip(dynamic.hidden_states[:2],fixed.hidden_states[:2]):
+        torch.testing.assert_close(a,b,atol=0,rtol=0)
+    assert all(torch.equal(state,dynamic.hidden_states[2]) for state in dynamic.hidden_states[2:-1])
+    for route,reference in zip(dynamic.router_indices[:2],fixed.router_indices):
+        assert torch.equal(route,reference)
+    assert all((route==-1).all() for route in dynamic.router_indices[2:])
+    assert all(probability.numel()==0 for probability in dynamic.router_probabilities[2:])
+    assert all(dynamic_cache.get_seq_length(i)==ids.shape[1] for i in range(model.config.max_recurrences))
+    for layer in range(2,model.config.max_recurrences):
+        for actual,reference in zip(dynamic_cache.storage[layer],dynamic_cache.storage[1]):
+            assert torch.equal(actual[...,:ids.shape[1],:],reference[...,:ids.shape[1],:])
+    for layer in range(2):
+        for actual,reference in zip(dynamic_cache.storage[layer],fixed_cache.storage[layer]):
+            assert torch.equal(actual[...,:ids.shape[1],:],reference[...,:ids.shape[1],:])
+
+
+def test_all_halted_suffix_preserves_training_gradients():
+    dynamic=make_model('hidden').train();fixed=copy.deepcopy(dynamic)
+    ids=torch.tensor([[4,7,9,11]])
+    dynamic(ids,labels=ids,use_cache=False).loss.backward()
+    fixed(ids,labels=ids,use_cache=False,halting_policy='fixed',recurrence_limit=2).loss.backward()
+    for a,b in zip(dynamic.parameters(),fixed.parameters()):
+        torch.testing.assert_close(a.grad,b.grad,atol=0,rtol=0)
+
+
+def test_heterogeneous_early_halts_fill_each_tokens_final_kv():
+    model=make_model('hidden')
+    ids=torch.tensor([[4,7,9,11]])
+    stops=torch.tensor([[1,4,2,5]])
+    calls=[]
+    handle=model.model.cell.register_forward_hook(lambda *args:calls.append(1))
+    cache=RmtCapacityCache(8)
+    with torch.no_grad():
+        full=model(ids,forced_exit_depths=stops,use_cache=False)
+        cached=model(ids,forced_exit_depths=stops,past_key_values=cache,use_cache=True)
+    handle.remove()
+    assert len(calls)==10  # five evaluated steps in each of the two runs
+    torch.testing.assert_close(full.logits,cached.logits,atol=0,rtol=0)
+    assert torch.equal(cached.exit_depths,stops)
+    assert all(cache.get_seq_length(i)==ids.shape[1] for i in range(model.config.max_recurrences))
+    for token,depth in enumerate(stops[0].tolist()):
+        for layer in range(depth,model.config.max_recurrences):
+            for actual,reference in zip(cache.storage[layer],cache.storage[depth-1]):
+                assert torch.equal(actual[...,token:token+1,:],reference[...,token:token+1,:])
+
+
 def test_heterogeneous_stops_retain_history_and_gradients():
     model=make_model().train()
     ids=torch.tensor([[4,7,9,11]])
@@ -152,7 +218,7 @@ def test_inactive_tokens_skip_all_seven_projection_calls():
         for name in counts:
             owner=expert.self_attn if name in ['q_proj','k_proj','v_proj','o_proj'] else expert.mlp
             handles.append(getattr(owner,name).register_forward_pre_hook(count(name)))
-    stops=torch.tensor([[2,6,3,5]])
+    stops=torch.tensor([[2,4,3,5]])
     with torch.no_grad():model(torch.tensor([[4,7,9,11]]),forced_exit_depths=stops,use_cache=False)
     for handle in handles:handle.remove()
     assert counts==dict.fromkeys(counts,stops.sum().item())
