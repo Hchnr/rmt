@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-04T09:38:24.964492+00:00",
+  "as_of": "2026-10-04T09:41:17.915141+00:00",
   "status": "resumed_running",
   "rows": [
     {
@@ -46,7 +46,7 @@
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/c78e767ea1311e77",
-      "returned_responses": 494,
+      "returned_responses": 498,
       "returned_length_stops": 2,
       "returned_split_retries": 0
     }
