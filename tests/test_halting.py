@@ -5,6 +5,7 @@ from rmt.cache import RmtCapacityCache
 from rmt.configuration_rmt import RmtConfig
 from rmt.halting import prior_expert, hidden_stable
 from rmt.modeling_rmt import RmtForCausalLM
+import rmt.modeling_rmt as modeling
 
 
 def make_model(policy='hidden'):
@@ -258,3 +259,17 @@ def test_deferred_probability_checks_preserve_logits_depths_and_gradients(policy
     for a,b in zip(outputs[0],outputs[1]):torch.testing.assert_close(a,b,atol=0,rtol=0)
     assert gradients[0].keys()==gradients[1].keys()
     for name in gradients[0]:torch.testing.assert_close(gradients[0][name],gradients[1][name],atol=0,rtol=0)
+
+
+@pytest.mark.parametrize('policy',['probability','hybrid'])
+def test_probability_function_is_not_called_before_legal_halt_window(policy,monkeypatch):
+    model=make_model(policy);model.config.min_recurrences=5
+    original=modeling.probability_stable;calls=[]
+    def counted(*args,**kwargs):
+        calls.append(args[2].clone())
+        return original(*args,**kwargs)
+    monkeypatch.setattr(modeling,'probability_stable',counted)
+    with torch.no_grad():out=model(torch.tensor([[4,7,9]]),use_cache=False)
+    assert len(calls)==2
+    assert all(mask.all() for mask in calls)
+    assert torch.equal(out.exit_depths,torch.full((1,3),5,dtype=torch.long))

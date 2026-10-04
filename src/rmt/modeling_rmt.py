@@ -203,14 +203,18 @@ class RmtModel(nn.Module):
                 h_streak = torch.where(active & hs, h_streak + 1, 0)
                 stable = hs
                 if policy == "probability":
-                    eligible = active if step+1 >= first_probability_depth else torch.zeros_like(active)
-                    stable = probability_stable(previous, hidden, eligible, self.norm, head_weight,
-                                                self.config.halt_probability_threshold)
+                    if step+1 >= first_probability_depth:
+                        stable = probability_stable(previous, hidden, active, self.norm, head_weight,
+                                                    self.config.halt_probability_threshold)
+                    else:
+                        stable = torch.zeros_like(active)
                 elif policy == "hybrid":
                     eligible = active & (h_streak >= self.config.halt_patience)
-                    check = eligible & p_ready if step+1 >= first_probability_depth else torch.zeros_like(active)
-                    stable = probability_stable(p_previous, hidden, check, self.norm,
-                                                head_weight, self.config.halt_probability_threshold)
+                    if step+1 >= first_probability_depth:
+                        stable = probability_stable(p_previous, hidden, eligible & p_ready, self.norm,
+                                                    head_weight, self.config.halt_probability_threshold)
+                    else:
+                        stable = torch.zeros_like(active)
                     p_previous = torch.where(eligible[...,None], hidden.detach(), p_previous)
                     p_ready = eligible
                 streak = torch.where(active & stable, streak + 1, 0)
