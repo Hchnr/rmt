@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-04T10:42:53.087943+00:00",
-  "status": "two_tasks_long_generation_one_audited",
+  "as_of": "2026-10-04T10:46:32.331684+00:00",
+  "status": "five_tasks_audited_one_running",
   "rows": [
     {
       "model": "teacher32_fixed36_eos_fixed",
@@ -30,9 +30,10 @@
       "model": "teacher32_fixed40_eos_fixed",
       "benchmark": "math_500",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d",
-      "returned_responses": 498,
+      "returned_responses": 500,
       "returned_length_stops": 4,
-      "returned_split_retries": 0
+      "returned_split_retries": 0,
+      "audit": "passed"
     },
     {
       "model": "teacher32_fixed36_eos_fixed",

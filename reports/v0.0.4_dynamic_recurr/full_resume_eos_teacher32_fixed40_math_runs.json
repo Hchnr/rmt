@@ -1,0 +1,7 @@
+[
+  {
+    "candidate": "resume_eos_teacher32_fixed40_math",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/math_500/0d7a5310b4dc245d"
+  }
+]
