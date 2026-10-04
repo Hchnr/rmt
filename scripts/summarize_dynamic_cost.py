@@ -39,7 +39,15 @@ stop_text=subprocess.check_output(['git','show','-s','--format=%cI','018f371'],t
 start=datetime.fromisoformat(start_text);interruption=datetime.fromisoformat(stop_text)
 resume_reports=sorted(root.glob('full_resume*_transport.json'))
 if not resume_reports:raise ValueError('Missing recorded resumed evaluation start')
-resume_start=min(datetime.fromtimestamp(os.path.getmtime(p),timezone.utc) for p in resume_reports)
+recorded_resume_starts=[]
+for path in resume_reports:
+    row=json.loads(path.read_text())
+    if row.get('started_at_utc'):
+        recorded_resume_starts.append(datetime.fromisoformat(row['started_at_utc']))
+# A checked-out report's filesystem mtime is not its launch time. Prefer the
+# durable timestamp when available; retain mtime only for legacy reports.
+resume_start=(min(recorded_resume_starts) if recorded_resume_starts else
+              min(datetime.fromtimestamp(os.path.getmtime(p),timezone.utc) for p in resume_reports))
 end=datetime.now(timezone.utc)
 if not (start<interruption<resume_start<end):raise ValueError('Evaluation active windows are not chronological')
 pre_ceiling=(interruption-start).total_seconds()*8/3600
