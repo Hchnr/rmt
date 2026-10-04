@@ -96,6 +96,6 @@ H 修复后 decode 均值 40.067；P 为 38.604，低于 39–41 预算区间；
 
 ## 成本、验收与结论
 
-记录的训练 reservation 为 5.36 GPU-hours，六项修正 EOS 完整任务及归档失败尝试合计为 20.57 GPU-hours；32B 教师生成单列为 6.31 GPU-hours 的保守下界。成本文件另给出两个活跃时段假设八卡全占用的 92.39 GPU-hours 上界，低于 192 GPU-hours 预算。reservation 包括加载、恢复、等待和清理，不等同于 GPU kernel 利用时间或账单；四天中断空档未计入。见 [最终成本](final_cost.json)。
+记录的训练 reservation 为 5.36 GPU-hours，六项修正 EOS 完整任务及归档失败尝试合计为 20.57 GPU-hours；32B 教师生成单列为 6.31 GPU-hours 的保守下界。成本文件另给出两个活跃时段假设八卡全占用的 92.81 GPU-hours 上界，低于 192 GPU-hours 预算。reservation 包括加载、恢复、等待和清理，不等同于 GPU kernel 利用时间或账单；四天中断空档未计入。见 [最终成本](final_cost.json)。
 
 当前源代码回归为 47 passed、14 条既有弃用警告；真实 4B、FSDP2、编译、HF 导出和独立恢复证据见 [验收索引](acceptance.md)。本轮建立了动态循环训练与评测基础设施，但现有实验没有证明质量或推理速度收益；后续应先优化动态推理控制开销，并以多 seed、等算力对照验证质量，再扩大数据或模型范围。

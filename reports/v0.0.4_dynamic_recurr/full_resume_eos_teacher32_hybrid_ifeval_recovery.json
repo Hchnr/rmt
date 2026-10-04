@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/fb90b50d4a0b1181",
+  "original_key": "fb90b50d4a0b118110bcafbfd558bf0d8d1578d30bc65f2bc859fc1ea28833f3",
+  "durable_unique_responses": 392,
+  "original_responses_sha256": "cb0125bf102ecfebb5728e2f3dd863a33e75ce203af4fe68a51c6edaa339dec8",
+  "source_runtime_protocol_equal": true,
+  "replayed_responses": [],
+  "original_response_prefix_unchanged": true,
+  "response_lines_after": 541
+}
