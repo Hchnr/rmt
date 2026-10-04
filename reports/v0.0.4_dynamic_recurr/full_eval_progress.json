@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-04T11:42:32.470489+00:00",
+  "as_of": "2026-10-04T11:47:39.294990+00:00",
   "status": "five_tasks_audited_one_running",
   "rows": [
     {
@@ -22,7 +22,7 @@
       "model": "teacher32_hybrid_eos_fixed",
       "benchmark": "ifeval",
       "work": "artifacts/v0.0.4_dynamic_recurr/eval_eos_corrected/full/rmt/ifeval/fb90b50d4a0b1181",
-      "returned_responses": 508,
+      "returned_responses": 524,
       "returned_length_stops": 3,
       "returned_split_retries": 0
     },
