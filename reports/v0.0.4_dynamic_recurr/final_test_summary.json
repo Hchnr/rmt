@@ -3,7 +3,7 @@
   "command": "CUDA_VISIBLE_DEVICES=6 PYTHONPATH=src OMP_NUM_THREADS=1 .venv-cached/bin/python -m pytest -q",
   "passed": 52,
   "warnings": 14,
-  "seconds": 6.63,
-  "log_sha256": "000d92bb56103abf4b8a75c02bf8ddc91aef56aebf637b2a2eb944105f8aeef4",
-  "scope": "Current branch after both dynamic inference control fast paths; exact output, mixed-depth KV, gradients, and probability-window tests are included."
+  "seconds": 7.49,
+  "log_sha256": "1382e70e8bc07466becaf6ac5c14586b681fff8329b67fc73f7c07487b130aba",
+  "scope": "Current branch after resolving origin/main conflicts; includes both dynamic inference fast paths, exact output, mixed-depth KV, gradient, probability-window, and recurrence-limit projection-call tests."
 }

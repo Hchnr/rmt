@@ -219,7 +219,7 @@ def test_inactive_tokens_skip_all_seven_projection_calls():
         for name in counts:
             owner=expert.self_attn if name in ['q_proj','k_proj','v_proj','o_proj'] else expert.mlp
             handles.append(getattr(owner,name).register_forward_pre_hook(count(name)))
-    stops=torch.tensor([[2,4,3,5]])
+    stops=torch.tensor([[2,6,3,5]])
     with torch.no_grad():model(torch.tensor([[4,7,9,11]]),forced_exit_depths=stops,use_cache=False)
     for handle in handles:handle.remove()
     assert counts==dict.fromkeys(counts,stops.sum().item())
