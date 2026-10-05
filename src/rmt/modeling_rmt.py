@@ -42,10 +42,6 @@ class RmtRecurrentCell(nn.Module):
     def forward(self, hidden, step, mask, position_embeddings, mode,
                 forced=None, cache=None, active=None, previous_k=None, previous_v=None):
         b, s, _ = hidden.shape
-        if active is not None and previous_k is not None and not bool(active.any()):
-            if cache is not None:
-                cache.update(previous_k, previous_v, step)
-            return hidden, torch.full((b,s), -1, dtype=torch.long, device=hidden.device), hidden.new_empty(0, dtype=torch.float32), previous_k, previous_v
         uniform = None
         probabilities = hidden.new_empty(0, dtype=torch.float32)
         selected = None
@@ -178,6 +174,19 @@ class RmtModel(nn.Module):
         # Earlier probability checks cannot contribute to a legal patience window.
         first_probability_depth = max(1, self.config.min_recurrences - self.config.halt_patience + 1) if self.config.defer_probability_checks else 1
         for step in range(limit):
+            # Once all tokens have halted, recurrent outputs and per-token K/V
+            # are immutable. Fill the remaining logical lanes without revisiting
+            # the cell or running empty halt checks.
+            if dynamic and previous_k is not None and not bool(active.any()):
+                for skipped_step in range(step, limit):
+                    if output_hidden_states:
+                        states.append(hidden.clone() if self.cell.bank.compiled else hidden)
+                    if cache is not None:
+                        cache.update(previous_k, previous_v, skipped_step)
+                    if output_router_trace:
+                        routes.append(torch.full((b, s), -1, dtype=torch.long, device=hidden.device))
+                        probabilities.append(hidden.new_empty(0, dtype=torch.float32))
+                break
             if output_hidden_states:
                 states.append(hidden.clone() if self.cell.bank.compiled else hidden)
             call = partial(self.cell, step=step, mask=mask, position_embeddings=pos,
@@ -194,14 +203,18 @@ class RmtModel(nn.Module):
                 h_streak = torch.where(active & hs, h_streak + 1, 0)
                 stable = hs
                 if policy == "probability":
-                    eligible = active if step+1 >= first_probability_depth else torch.zeros_like(active)
-                    stable = probability_stable(previous, hidden, eligible, self.norm, head_weight,
-                                                self.config.halt_probability_threshold)
+                    if step+1 >= first_probability_depth:
+                        stable = probability_stable(previous, hidden, active, self.norm, head_weight,
+                                                    self.config.halt_probability_threshold)
+                    else:
+                        stable = torch.zeros_like(active)
                 elif policy == "hybrid":
                     eligible = active & (h_streak >= self.config.halt_patience)
-                    check = eligible & p_ready if step+1 >= first_probability_depth else torch.zeros_like(active)
-                    stable = probability_stable(p_previous, hidden, check, self.norm,
-                                                head_weight, self.config.halt_probability_threshold)
+                    if step+1 >= first_probability_depth:
+                        stable = probability_stable(p_previous, hidden, eligible & p_ready, self.norm,
+                                                    head_weight, self.config.halt_probability_threshold)
+                    else:
+                        stable = torch.zeros_like(active)
                     p_previous = torch.where(eligible[...,None], hidden.detach(), p_previous)
                     p_ready = eligible
                 streak = torch.where(active & stable, streak + 1, 0)

@@ -1,9 +1,9 @@
 {
   "status": "passed",
   "command": "CUDA_VISIBLE_DEVICES=6 PYTHONPATH=src OMP_NUM_THREADS=1 .venv-cached/bin/python -m pytest -q",
-  "passed": 47,
+  "passed": 52,
   "warnings": 14,
-  "seconds": 8.3,
-  "log_sha256": "531487d1277013783c21faeb7e600dc2bb603963c83f5455322f579ba3caeb6a",
-  "scope": "Current branch final unit/regression suite; real 4B and multi-GPU FSDP evidence is separately recorded."
+  "seconds": 7.49,
+  "log_sha256": "1382e70e8bc07466becaf6ac5c14586b681fff8329b67fc73f7c07487b130aba",
+  "scope": "Current branch after resolving origin/main conflicts; includes both dynamic inference fast paths, exact output, mixed-depth KV, gradient, probability-window, and recurrence-limit projection-call tests."
 }

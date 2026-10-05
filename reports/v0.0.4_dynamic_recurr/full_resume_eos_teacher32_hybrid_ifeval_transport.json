@@ -1,4 +1,6 @@
 {
+  "started_at_utc": "2026-10-04T09:20:02+00:00",
+  "started_at_source": "previous committed reports/v0.0.4_dynamic_recurr/final_cost.json; persisted before git checkout reset file mtimes",
   "response_wait_seconds": 7200.0,
   "wrapper_sha256": "12bb5883c42bcbdd2850c588b1ecf098135b8d31bc3e081ab56b9c6b4b9b24cf",
   "scope": "Transport waiting only; no model, logits, sampler, generation cap or seed changes."

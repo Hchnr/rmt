@@ -1,0 +1,4 @@
+{
+  "resume_end_utc": "2026-10-04T13:23:47.827660+00:00",
+  "end_evidence": "Last recorded GPU benchmark completion: archived output /tmp/v004_dynamic_after32_final.json was written at 2026-10-04 21:23:47.827660 +08:00 (2026-10-04 13:23:47.827660 UTC). This persisted value prevents later idle or user-wait time from extending the active-window ceiling."
+}
