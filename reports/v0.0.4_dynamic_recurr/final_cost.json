@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-10-04T13:25:55.727973+00:00",
+  "as_of_utc": "2026-10-04T13:23:47.827660+00:00",
   "known_training_reservations": [
     {
       "config": "configs/dynamic/fixed36.yaml",
@@ -149,10 +149,11 @@
     },
     "resume": {
       "start_first_resume_transport_report": "2026-10-04T09:20:02+00:00",
-      "end": "2026-10-04T13:25:55.727973+00:00",
-      "gpu_hours_ceiling": 32.78606216222222
+      "end": "2026-10-04T13:23:47.827660+00:00",
+      "end_evidence": "Last recorded GPU benchmark completion: archived output /tmp/v004_dynamic_after32_final.json was written at 2026-10-04 21:23:47.827660 +08:00 (2026-10-04 13:23:47.827660 UTC). This persisted value prevents later idle or user-wait time from extending the active-window ceiling.",
+      "gpu_hours_ceiling": 32.50183924444445
     },
-    "combined_gpu_hours_ceiling": 104.8349510511111,
+    "combined_gpu_hours_ceiling": 104.55072813333334,
     "under_192_gpu_hours": true
   },
   "scope": "Reservations include replica loading, recovery, evaluation waits and cleanup; not kernel utilization or billing. The eight-card ceilings conservatively charge all eight GPUs during the two documented active windows and exclude the four-day idle gap. Some early probes and interrupted work are not itemized; the ceiling bounds them."

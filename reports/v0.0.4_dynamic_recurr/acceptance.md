@@ -20,7 +20,7 @@
 | 官方评分可复现性 | ifeval_seeded_baseline.json、durable_recovery_verification.json | 沿用官方规则；逐题固定评分 RNG，非论文逐字节协议 |
 | 完整 IFEval／MATH-500 | [六项统一分数与配对审计](corrected_full_benchmark_summary.json)、[完整性快照](full_eval_progress.json) | 六项均通过 541／500 唯一响应和 review 审计；固定评测 profile、单 seed、每题一条生成，不声称逐项复现技术报告协议 |
 | 总体结论与原生／学生对照 | [阶段最终报告](summary.md) | IFEval 比原生低约 12–13pp；MATH 接近但未证明优于原生；H+P 对 fixed40 的成对区间跨零 |
-| 实施成本与 192 GPU-hour 上限 | [最终成本汇总](final_cost.json) | 八卡活动时段保守上界 92.39 GPU-hours；reservation 不是 kernel 利用率或账单 |
+| 实施成本与 192 GPU-hour 上限 | [最终成本汇总](final_cost.json) | 八卡活动时段保守上界 104.55 GPU-hours；恢复窗口锚定到最后 GPU 测试，reservation 不是 kernel 利用率或账单 |
 | 当前分支回归 | [测试摘要](tests_final.log)、[结构化结果](final_test_summary.json) | 52 passed；14 条既有弃用警告；真实 4B／分布式验收见上方独立证据 |
 
 未纳入本轮：压缩 KV、完全稀疏 attention、可学习退出头、投影解绑、14B 教师、多 seed 大规模复验、50M–100M 数据扩容。以上不是已实现功能。H+P 未显示优于固定 40 的质量证据，因此不启动盲目扩容。

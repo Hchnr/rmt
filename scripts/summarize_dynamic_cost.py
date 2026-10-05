@@ -1,7 +1,6 @@
 """Separate measured reservations from conservative active-window ceilings."""
 from datetime import datetime, timezone
 import json
-import os
 from pathlib import Path
 import subprocess
 
@@ -47,8 +46,11 @@ for path in resume_reports:
 # A checked-out report's filesystem mtime is not its launch time. Prefer the
 # durable timestamp when available; retain mtime only for legacy reports.
 resume_start=(min(recorded_resume_starts) if recorded_resume_starts else
-              min(datetime.fromtimestamp(os.path.getmtime(p),timezone.utc) for p in resume_reports))
-end=datetime.now(timezone.utc)
+              min(datetime.fromtimestamp(p.stat().st_mtime,timezone.utc) for p in resume_reports))
+# Anchor the active-window ceiling to the last completed GPU job. Never use
+# wall-clock "now": later user wait time would silently inflate the estimate.
+activity=json.loads((root/'gpu_activity_window.json').read_text())
+end=datetime.fromisoformat(activity['resume_end_utc'])
 if not (start<interruption<resume_start<end):raise ValueError('Evaluation active windows are not chronological')
 pre_ceiling=(interruption-start).total_seconds()*8/3600
 resume_ceiling=(end-resume_start).total_seconds()*8/3600
@@ -62,7 +64,8 @@ result={'as_of_utc':end.isoformat(),'known_training_reservations':training,
                 'start_baseline_commit':'2ff4f41','start':start_text,'end_last_progress_commit':'018f371',
                 'end':interruption.isoformat(),'gpu_hours_ceiling':pre_ceiling},
             'resume':{'start_first_resume_transport_report':resume_start.isoformat(),
-                'end':end.isoformat(),'gpu_hours_ceiling':resume_ceiling},
+                'end':end.isoformat(),'end_evidence':activity['end_evidence'],
+                'gpu_hours_ceiling':resume_ceiling},
             'combined_gpu_hours_ceiling':ceiling,'under_192_gpu_hours':ceiling<=192},
         'scope':'Reservations include replica loading, recovery, evaluation waits and cleanup; not kernel utilization or billing. The eight-card ceilings conservatively charge all eight GPUs during the two documented active windows and exclude the four-day idle gap. Some early probes and interrupted work are not itemized; the ceiling bounds them.'}
 (root/'final_cost.json').write_text(json.dumps(result,indent=2)+'\n')
