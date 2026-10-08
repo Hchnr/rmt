@@ -45,10 +45,16 @@ def main():
         assert base.keys() == trained.keys() and base_ids == trained_ids
         assert bp['protocol']['generation'] == tp['protocol']['generation']
         assert bp['selection'] == tp['selection']
+        assert bp['metadata']['source_sha256'] == tp['metadata']['source_sha256']
+        assert bp['metadata']['attention'] == tp['metadata']['attention']
+        assert bp['metadata']['engine_environment'] == tp['metadata']['engine_environment']
+        assert bp['metadata']['engine_environment']['deterministic_algorithms'] is True
         assert bp['metadata']['weights']['generation_config.json'] == tp['metadata']['weights']['generation_config.json']
         if benchmark == 'ifeval':
             assert bp['scoring']['ifeval_score_seed'] == tp['scoring']['ifeval_score_seed'] == 17
         delta = np.array([trained[k] - base[k] for k in sorted(base)])
+        for checked in (ba, ta):
+            checked['uncertainty_note'] = 'Entire pinned benchmark, one response per prompt; intervals conditional on this protocol and generation seed.'
         indices = np.random.default_rng(17).integers(0, len(delta), (10000, len(delta)))
         results.append({'benchmark': benchmark, 'n': len(delta),
             'native_score': float(np.mean(list(base.values()))),
