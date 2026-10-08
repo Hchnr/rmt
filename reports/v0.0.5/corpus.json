@@ -1,0 +1,89 @@
+{
+  "base": "/share/project/eai_pwm/models/Qwen/Qwen3-0.6B",
+  "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "max_document_tokens": 2048,
+  "splits": {
+    "train": {
+      "source_sha256": "e8d22eb3a1d77adfa56d2dc531e9db397891b4d1162a36bf41528f56e996e40b",
+      "sha256": "80f2bef94740e50adfce030f332643ffd376d816787d1cbcf987142ef0c32aa7",
+      "records": 20066,
+      "input_tokens": 10396346,
+      "targets": 7393829,
+      "domains": {
+        "code": 5338,
+        "general": 9037,
+        "math": 5157,
+        "chinese": 534
+      },
+      "excluded": {
+        "length": 43
+      }
+    },
+    "teacher32_train": {
+      "source_sha256": "acafbd3864c152d9700dbcc596439647ba1e5d0da177b3f6b96ab8730efdf89e",
+      "sha256": "add81145e875f7b421329cfb4ee67a813276157e4ec68304c05f518bcb49ef01",
+      "records": 788,
+      "input_tokens": 763698,
+      "targets": 635763,
+      "domains": {
+        "general": 374,
+        "code": 193,
+        "math": 124,
+        "chinese": 97
+      },
+      "excluded": {
+        "length": 16
+      }
+    },
+    "dev": {
+      "source_sha256": "9c75573f375247593042bf69ec319c26d012bba20b4e50ba925737cec68f4b48",
+      "sha256": "352bf34fdb70c75df5c52748f9de4ce0be71eefe76d53e3099d6d2c9fd3de893",
+      "records": 656,
+      "input_tokens": 334739,
+      "targets": 236240,
+      "domains": {
+        "general": 287,
+        "math": 169,
+        "code": 179,
+        "chinese": 21
+      },
+      "excluded": {
+        "length": 2
+      }
+    },
+    "halt_calibration": {
+      "source_sha256": "6d4a39eb8e5c5aa08de2c1c586415a741f1dd1bfd5d97d52690daa7d256c9ef7",
+      "sha256": "d34bb50e18cca230c987e5f45ec48930821e3668b7b80d6a643e92aca8325e84",
+      "records": 680,
+      "input_tokens": 349509,
+      "targets": 245640,
+      "domains": {
+        "code": 193,
+        "general": 272,
+        "math": 194,
+        "chinese": 21
+      },
+      "excluded": {
+        "length": 2
+      }
+    },
+    "test": {
+      "source_sha256": "f21abd515b7f73257dcb310dcda03e724212f1acc51f1254c8a06a7bf44477e9",
+      "sha256": "c5d5a624e2af5dc8e7a6d1cb1190cb9d14349eb358b8575e09b5fd2bd9119415",
+      "records": 914,
+      "input_tokens": 470575,
+      "targets": 338708,
+      "domains": {
+        "general": 385,
+        "math": 231,
+        "code": 270,
+        "chinese": 28
+      },
+      "excluded": {
+        "length": 3
+      }
+    }
+  },
+  "policy": "Preserve complete answers; exclude long documents, no token truncation. Historical source split identities retained.",
+  "split_overlap_check": "passed"
+}

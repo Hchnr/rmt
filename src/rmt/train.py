@@ -255,10 +255,19 @@ def main():
         if world>1:dist.destroy_process_group()
         return
     if cursor==0 and cfg.get('validation_batches',2):checks.append(validate(0))
+    target_budget=cfg.get('target_budget')
+    if target_budget is not None and (not isinstance(target_budget,int) or target_budget<=0):
+        raise ValueError('target_budget must be a positive integer')
+    consumed_targets=sum(row['targets'] for row in rows)
+    completed_steps=cursor
     for step in range(cursor,total_steps):
+        if target_budget is not None and consumed_targets>=target_budget:break
         rows.append(train_step(step))
+        consumed_targets+=rows[-1]['targets']
+        completed_steps=step+1
         if cfg.get('eval_every',0) and (step+1)%cfg['eval_every']==0:checks.append(validate(step+1))
         if cfg.get('save_every',0) and (step+1)%cfg['save_every']==0:save(step+1)
+    total_steps=completed_steps
     if cfg.get('validation_batches',2):checks.append(validate(total_steps))
     if cfg.get('save',True):save(total_steps)
     # HF export gathers the final model only; optimizer checkpoint remains sharded.
@@ -287,6 +296,9 @@ def main():
                 'wall_seconds':time.monotonic()-started,'train_packs':len(packs),'dev_packs':len(dev),
                 'compile_counters':{str(k):dict(v) for k,v in counters.items()},
                 'teacher_loaded':teacher is not None,
+                'completed_steps':completed_steps,'consumed_targets':consumed_targets,
+                'target_budget':target_budget,
+                'target_budget_reached':target_budget is None or consumed_targets>=target_budget,
                 'scope':'Instruction-training experiment, not a quality superiority claim'}
         write_report(out/'report.json',report);write_report(cfg['report'],report)
     if world>1:dist.destroy_process_group()

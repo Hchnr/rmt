@@ -1,0 +1,37 @@
+tiny: true
+seed: 17
+sequence_length: 16
+steps: 3
+routing_mode: learned
+prior_start: 4.0
+prior_end: 3.0
+prior_warmup_steps: 1
+prior_decay_steps: 2
+learning_rate: 0.0001
+router_learning_rate: 0.001
+lr_warmup_steps: 1
+attention: sdpa
+checkpoint: true
+compile: false
+loss_chunk_size: 4
+kd_weight: 0.0
+validation_batches: 1
+eval_every: 2
+save: true
+export: true
+verify_replay: true
+artifact_dir: artifacts/v0.0.5/tiny_ce_budget
+report: reports/v0.0.5/tiny_ce_budget.json
+deterministic: true
+model_overrides:
+  max_recurrences: 6
+  min_recurrences: 2
+  halting_policy: hidden
+  halt_threshold: 100.0
+  halt_relative_threshold: 100.0
+  recurrence_schedule: tail
+  tail_experts: 2
+recurrence_training:
+  mode: dynamic
+  forced_fraction: 0.2
+target_budget: 12

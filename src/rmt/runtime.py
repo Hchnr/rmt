@@ -5,9 +5,13 @@ from pathlib import Path
 
 
 def enforce_gpu_scope():
-    visible = os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0,1,2,3,4,5,6,7")
-    if visible and any(x.strip() not in {str(i) for i in range(8)} for x in visible.split(",")):
-        raise RuntimeError("Only physical GPUs 0–7 are authorized in this bootstrap run")
+    allowed = os.environ.get("RMT_ALLOWED_GPUS", "0,1,2,3,4,5,6,7")
+    visible = os.environ.setdefault("CUDA_VISIBLE_DEVICES", allowed)
+    allowed_set = {x.strip() for x in allowed.split(',')}
+    if not allowed_set <= {str(i) for i in range(8)}:
+        raise RuntimeError("Invalid physical GPU allowlist")
+    if visible and any(x.strip() not in allowed_set for x in visible.split(",")):
+        raise RuntimeError("CUDA_VISIBLE_DEVICES exceeds RMT_ALLOWED_GPUS")
     return visible
 
 
