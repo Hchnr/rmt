@@ -3,5 +3,10 @@
     "candidate": "native06b_v2",
     "benchmark": "math_500",
     "work": "artifacts/v0.0.5/eval/full/qwen/math_500/4a627e6379cdbd7e"
+  },
+  {
+    "candidate": "native06b_v2",
+    "benchmark": "ifeval",
+    "work": "artifacts/v0.0.5/eval/full/qwen/ifeval/cf3d5ad2638d5125"
   }
 ]

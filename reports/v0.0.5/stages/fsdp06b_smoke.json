@@ -1,0 +1,19 @@
+{
+  "name": "fsdp06b_smoke",
+  "gpus": [
+    "4",
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/torchrun",
+    "--standalone",
+    "--nproc-per-node=2",
+    "-m",
+    "rmt.train",
+    "--config",
+    "configs/v0.0.5/fsdp06b_smoke.yaml"
+  ],
+  "started_at": "2026-10-08T06:42:09.477125+00:00",
+  "status": "running",
+  "commit": "38d606f535b13113b92f35f7e5f3911cee919e79"
+}
