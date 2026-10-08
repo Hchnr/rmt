@@ -1,0 +1,27 @@
+{
+  "name": "detdev_pilot_ce",
+  "gpus": [
+    "6"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/evaluate_06b_development.py",
+    "--model",
+    "artifacts/v0.0.5/pilot_ce/hf",
+    "--backend",
+    "rmt",
+    "--max-new-tokens",
+    "512",
+    "--deterministic",
+    "--output",
+    "reports/v0.0.5/pilot_ce_development_deterministic512.json",
+    "--compile"
+  ],
+  "started_at": "2026-10-08T06:21:33.978246+00:00",
+  "status": "passed",
+  "commit": "30af3593bcc8346bccb86ddc2949b4850607f153",
+  "returncode": 0,
+  "ended_at": "2026-10-08T06:22:25.910549+00:00",
+  "wall_seconds": 51.927446752786636,
+  "reserved_gpu_hours": 0.014424290764662954
+}

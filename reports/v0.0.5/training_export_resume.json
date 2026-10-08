@@ -79,10 +79,21 @@
         "parameter_sha256": "1f3de6f968b0bd50b24630b122e9416f0a38203c41176e65a7ccbdc2e2ed7c01"
       },
       "fresh_resume": {
-        "status": "pending"
+        "status": "passed",
+        "world_size": 1,
+        "next_loss": 1.2674858570098877,
+        "parameter_sha256_equal": true
       },
       "hf_reload": {
-        "status": "pending"
+        "status": "passed",
+        "work": "artifacts/v0.0.5/short_kl05",
+        "expected_training_dev_ce": 1.2906627655029297,
+        "hf_reload_dev_ce": 1.290881064800374,
+        "absolute_difference": 0.00021829929744421328,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
       }
     },
     {

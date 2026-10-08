@@ -6,7 +6,7 @@ import subprocess
 import time
 
 p=argparse.ArgumentParser();p.add_argument('--gpu',choices=['6','7'],required=True);a=p.parse_args()
-prerequisite='short_hf_reload' if a.gpu=='6' else 'native_compiled_reference'
+prerequisite='short_hf_reload' if a.gpu=='6' else 'native_compiled_reference_aligned'
 names=(['pilot_ce','pilot_kl01','pilot_kl05','short_kl05'] if a.gpu=='6'
        else ['native','untrained','mixed_kl05','mixed_kl05_lr1e6'])
 started=time.monotonic()

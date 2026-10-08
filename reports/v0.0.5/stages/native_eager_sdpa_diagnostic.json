@@ -1,0 +1,20 @@
+{
+  "name": "native_eager_sdpa_diagnostic",
+  "gpus": [
+    "7"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/verify_06b_native_compiled.py",
+    "--no-compile",
+    "--output",
+    "reports/v0.0.5/native_eager_sdpa_diagnostic.json"
+  ],
+  "started_at": "2026-10-08T06:26:46.040610+00:00",
+  "status": "failed",
+  "commit": "30af3593bcc8346bccb86ddc2949b4850607f153",
+  "returncode": 1,
+  "ended_at": "2026-10-08T06:27:03.031032+00:00",
+  "wall_seconds": 16.98569142445922,
+  "reserved_gpu_hours": 0.004718247617905339
+}

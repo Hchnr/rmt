@@ -1,0 +1,36 @@
+{
+  "name": "candidate_full",
+  "gpus": [
+    "6",
+    "7"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/evaluate_trained_checkpoint.py",
+    "--work",
+    "artifacts/v0.0.5/mixed_kl05_lr1e6",
+    "--name",
+    "mixed_lr1e6_final",
+    "--gpu",
+    "6,7",
+    "--port",
+    "9220",
+    "--phase",
+    "full",
+    "--config",
+    "configs/v0.0.5/full_non_thinking.json",
+    "--report-root",
+    "reports/v0.0.5",
+    "--output-root",
+    "artifacts/v0.0.5/eval",
+    "--response-timeout",
+    "7200"
+  ],
+  "started_at": "2026-10-08T03:47:49.695023+00:00",
+  "status": "passed",
+  "commit": "be66e80dc2c6f94989bce393970682f7f0d9e0e9",
+  "returncode": 0,
+  "ended_at": "2026-10-08T06:20:25.707104+00:00",
+  "wall_seconds": 9156.008182447404,
+  "reserved_gpu_hours": 5.08667121247078
+}
