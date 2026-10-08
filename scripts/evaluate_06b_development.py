@@ -52,7 +52,10 @@ def main():
     p.add_argument('--output',required=True);p.add_argument('--compile',action='store_true')
     p.add_argument('--max-new-tokens',type=int,default=128)
     p.add_argument('--attention',choices=['eager','sdpa'],default='sdpa')
-    p.add_argument('--deterministic',action='store_true')
+    determinism=p.add_mutually_exclusive_group()
+    determinism.add_argument('--deterministic',dest='deterministic',action='store_true')
+    determinism.add_argument('--allow-nondeterministic',dest='deterministic',action='store_false')
+    p.set_defaults(deterministic=True)
     a=p.parse_args();items=cases()
     if a.deterministic:
         import torch
