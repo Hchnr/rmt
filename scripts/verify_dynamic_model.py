@@ -1,12 +1,14 @@
-"""Real 4B forced-depth cache, HF export and compiled inference checks."""
+"""Real Qwen3 forced-depth cache, HF export and compiled inference checks."""
 import argparse
 import json
+import os
 from pathlib import Path
 import time
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from rmt.checkpoint import load_qwen_as_rmt, export_hf
 from rmt.cache import RmtCapacityCache
+from rmt.runtime import enforce_gpu_scope, versions
 
 
 def main():
@@ -15,7 +17,14 @@ def main():
     p.add_argument('--max-depth',type=int,default=48)
     p.add_argument('--output-root',default='artifacts/v0.0.4_dynamic_recurr/reference_hf')
     p.add_argument('--report',default='reports/v0.0.4_dynamic_recurr/model_verification.json')
+    p.add_argument('--deterministic',action='store_true')
     a=p.parse_args()
+    enforce_gpu_scope()
+    if a.deterministic:
+        os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
+        torch.use_deterministic_algorithms(True)
+        torch.backends.cudnn.deterministic=True
+        torch.backends.cudnn.benchmark=False
     torch.set_num_threads(4)
     source=a.base
     model,_=load_qwen_as_rmt(source,max_recurrences=a.max_depth,halting_policy='hidden',
@@ -25,6 +34,7 @@ def main():
     base_depth=model.config.num_experts
     stops=base_depth+torch.arange(ids.numel(),device='cuda').reshape_as(ids)%(a.max_depth-base_depth+1)
     report={'base':source,'base_depth':base_depth,'max_depth':a.max_depth,
+            'deterministic':a.deterministic,'environment':versions(),
             'scope':'tested real model shapes; numerical tolerances, not universal bitwise equality','checks':{}}
     with torch.inference_mode():
         eager=model(ids,forced_exit_depths=stops,use_cache=False)
