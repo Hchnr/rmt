@@ -121,12 +121,18 @@ class BoundExpertBank(nn.Module):
             kernel = self._prefill_qkv if self.compiled and hidden.shape[-2] > 1 else self._project_qkv
             return kernel(self.experts[uniform_expert], hidden)
         flat = hidden.reshape(-1, hidden.shape[-1])
-        outputs = [flat.new_zeros((flat.shape[0], width)) for width in (self.q_width, self.kv_width, self.kv_width)]
+        # Autocast GEMMs can return BF16 while the residual/master weights stay
+        # FP32 (single-device training does not have FSDP's input casts).
+        outputs = None
         for e, positions in groups:
             if positions.numel() == 0:
                 continue
             values = self.mixed_qkv(self.experts[e], flat.index_select(0, positions))
+            if outputs is None:
+                outputs = [value.new_zeros((flat.shape[0], value.shape[-1])) for value in values]
             outputs = [out.index_copy(0, positions, value) for out, value in zip(outputs, values)]
+        if outputs is None:
+            outputs = [flat.new_zeros((flat.shape[0], width)) for width in (self.q_width, self.kv_width, self.kv_width)]
         return tuple(out.view(*hidden.shape[:-1], -1) for out in outputs)
 
     def output(self, attended, hidden, groups, uniform_expert=None):

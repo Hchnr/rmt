@@ -16,7 +16,7 @@ import torch.distributed as dist
 import torch.distributed.checkpoint as dcp
 from torch.distributed.checkpoint.state_dict import get_state_dict,set_state_dict,StateDictOptions
 from torch.distributed.fsdp import fully_shard,MixedPrecisionPolicy
-from transformers import AutoTokenizer,Qwen3Config,Qwen3ForCausalLM
+from transformers import AutoTokenizer,GenerationConfig,Qwen3Config,Qwen3ForCausalLM
 import yaml
 from .checkpoint import load_qwen_as_rmt,from_qwen_model,export_hf
 from .training_data import load_packs,batch_at,file_sha
@@ -77,11 +77,16 @@ def main():
     if not (a.resume or a.verify_resume) and (out/'report.json').exists():
         raise ValueError('Existing completed run: choose a new artifact_dir or explicit resume')
     tiny=cfg.get('tiny',False);dtype=torch.bfloat16
+    teacher=None
+    use_teacher=bool(cfg.get('kd_weight',0.5))
     if tiny:
         qc=Qwen3Config(vocab_size=97,hidden_size=32,intermediate_size=48,num_hidden_layers=3,
             num_attention_heads=4,num_key_value_heads=2,head_dim=8,max_position_embeddings=4096,
             tie_word_embeddings=True,pad_token_id=0,eos_token_id=2)
-        original=Qwen3ForCausalLM(qc);model=from_qwen_model(original,**cfg.get("model_overrides",{}));teacher=from_qwen_model(original).to(dtype)
+        original=Qwen3ForCausalLM(qc);model=from_qwen_model(original,**cfg.get("model_overrides",{}))
+        generation_config=copy.deepcopy(original.generation_config)
+        if use_teacher:teacher=from_qwen_model(original).to(dtype)
+        del original
         packs=[pack_sequences([[5,7,10,20],[12,21,35,9]],0,cfg['sequence_length'])]
         dev=packs;data_hash={'fixture':True};tokenizer=None
     else:
@@ -96,18 +101,20 @@ def main():
             model.config.layer_types=["full_attention"]*model.config.num_recurrences
         else:
             model,_=load_qwen_as_rmt(cfg['base_model'],dtype=torch.float32,**cfg.get('model_overrides',{}))
-        teacher,_=load_qwen_as_rmt(cfg['base_model'],dtype=dtype)
+        if use_teacher:teacher,_=load_qwen_as_rmt(cfg['base_model'],dtype=dtype)
+        generation_config=GenerationConfig.from_pretrained(cfg['base_model'],local_files_only=True)
         tokenizer=AutoTokenizer.from_pretrained(cfg['base_model'],local_files_only=True)
         paths={name:cfg[name+'_data'] for name in ['train','dev']}
         data_hash={name:file_sha(path) for name,path in paths.items()}
         packs=load_packs(paths['train'],cfg['sequence_length'],tokenizer.pad_token_id,seed)
         dev=load_packs(paths['dev'],cfg['sequence_length'],tokenizer.pad_token_id,seed,shuffle=False)
     model.config._attn_implementation=cfg.get('attention','sdpa')
-    teacher.config._attn_implementation=cfg.get('attention','sdpa')
+    if teacher is not None:teacher.config._attn_implementation=cfg.get('attention','sdpa')
     mode=cfg.get('routing_mode','layer_order');model.config.routing_mode=mode
     if not cfg.get('initial_checkpoint'):
         with torch.no_grad():model.model.cell.router.weight.normal_(std=cfg.get('router_init_std',0.01))
-    teacher=teacher.to(device).eval().requires_grad_(False);model=model.to(device).train()
+    if teacher is not None:teacher=teacher.to(device).eval().requires_grad_(False)
+    model=model.to(device).train()
     if cfg.get('checkpoint',True):model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False})
     if cfg.get('compile',False):model.model.cell.bank.compile_projections(training=True)
     if world>1:
@@ -142,7 +149,7 @@ def main():
                     return_hidden_only=True).last_hidden_state
         with torch.autocast('cuda',dtype=dtype):
             return model(**batch,use_cache=False,loss_chunk_size=cfg.get('loss_chunk_size',64),
-                teacher_hidden_states=teacher_hidden,teacher_head_weight=teacher.lm_head.weight,
+                teacher_hidden_states=teacher_hidden,teacher_head_weight=None if teacher is None else teacher.lm_head.weight,
                 kd_weight=cfg.get('kd_weight',0.5),output_router_trace=trace,**recurrence_controls(cfg,step))
 
     def route_stats(result,batch):
@@ -264,7 +271,7 @@ def main():
             config=RmtConfig.from_dict(model.config.to_dict());config.router_prior_strength=prior_at(cfg,total_steps)
             target=RmtForCausalLM(config).to(dtype=dtype)
             target.load_state_dict(state);target.tie_weights();target.eval()
-            export_hf(target,out/'hf',None if tiny else cfg['base_model'],generation_config=teacher.generation_config)
+            export_hf(target,out/'hf',None if tiny else cfg['base_model'],generation_config=generation_config)
             del target
         del state
         if world>1:dist.barrier()
@@ -279,7 +286,8 @@ def main():
         report={'status':'passed','identity':identity,'steps':rows,'validation':checks,
                 'wall_seconds':time.monotonic()-started,'train_packs':len(packs),'dev_packs':len(dev),
                 'compile_counters':{str(k):dict(v) for k,v in counters.items()},
-                'scope':'Short instruction-training experiment, not a quality superiority claim'}
+                'teacher_loaded':teacher is not None,
+                'scope':'Instruction-training experiment, not a quality superiority claim'}
         write_report(out/'report.json',report);write_report(cfg['report'],report)
     if world>1:dist.destroy_process_group()
 
