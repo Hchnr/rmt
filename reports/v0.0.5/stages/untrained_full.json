@@ -1,0 +1,36 @@
+{
+  "name": "untrained_full",
+  "gpus": [
+    "6",
+    "7"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/evaluate_trained_checkpoint.py",
+    "--work",
+    "artifacts/v0.0.5/untrained_reference",
+    "--name",
+    "untrained06b",
+    "--gpu",
+    "6,7",
+    "--port",
+    "9230",
+    "--backend",
+    "rmt",
+    "--checkpoint",
+    "artifacts/v0.0.5/reference_hf",
+    "--phase",
+    "full",
+    "--config",
+    "configs/v0.0.5/full_non_thinking.json",
+    "--report-root",
+    "reports/v0.0.5",
+    "--output-root",
+    "artifacts/v0.0.5/eval",
+    "--response-timeout",
+    "7200"
+  ],
+  "started_at": "2026-10-08T06:33:14.885779+00:00",
+  "status": "running",
+  "commit": "b34bde13d1c0b8229ccb6dd43fa5723eb8c761a0"
+}
