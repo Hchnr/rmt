@@ -13,6 +13,7 @@ p.add_argument('--gpu',required=True);p.add_argument('--port',type=int,default=9
 p.add_argument('--report-root',default='reports/v0.0.4');p.add_argument('--output-root',default='artifacts/v0.0.4/quick_eval')
 p.add_argument('--phase',choices=['pilot','representative','full'],default='representative')
 p.add_argument('--benchmarks',nargs='+',choices=['math_500','ifeval'],default=['math_500','ifeval'])
+p.add_argument('--backend',choices=['rmt','qwen'],default='rmt')
 p.add_argument('--response-timeout',type=float);p.add_argument('--recover-work');p.add_argument('--eval-batch-size',type=int);p.add_argument('--data-root');p.add_argument('--checkpoint');p.add_argument('--attention',choices=['eager','sdpa']);p.add_argument('--config');a=p.parse_args()
 if a.recover_work and len(a.benchmarks)!=1:raise ValueError('Recovery must name exactly one benchmark')
 a.attention=a.attention or ('sdpa' if a.phase=='full' else 'eager')
@@ -23,7 +24,8 @@ max_context='40960' if a.phase=='full' else '8192'
 Path(a.report_root).mkdir(parents=True,exist_ok=True)
 work=Path(a.work);report=json.loads((work/'report.json').read_text());assert report['status']=='passed'
 root=Path.cwd();gpus=a.gpu.split(',')
-if len(set(gpus))!=len(gpus) or not set(gpus)<=set(map(str,range(8))):
+allowed=set(os.environ.get('RMT_ALLOWED_GPUS','0,1,2,3,4,5,6,7').split(','))
+if len(set(gpus))!=len(gpus) or not set(gpus)<=allowed:
  raise ValueError('GPU IDs must be unique authorized IDs 0-7')
 a.eval_batch_size=4*len(gpus) if a.eval_batch_size is None else a.eval_batch_size
 if a.eval_batch_size<1:raise ValueError('Positive evaluation concurrency required')
@@ -48,7 +50,8 @@ try:
   env={**os.environ,'CUDA_VISIBLE_DEVICES':gpu,'PYTHONPATH':'src','TORCHINDUCTOR_COMPILE_THREADS':'2'}
   entry=([str(root/'.venv-cached/bin/python'),'scripts/serve_eval_transport.py','--response-timeout',str(a.response_timeout)] if a.response_timeout is not None else [str(root/'.venv-cached/bin/python'),'-m','rmt.inference.server'])
   launch(entry+['--model',a.checkpoint or str(work/'hf'),
-   '--attention',a.attention,'--name','rmt','--port',str(port),'--max-context',max_context],env,f'service_{port}')
+   '--attention',a.attention,'--backend',a.backend,'--name',a.backend,'--port',str(port),'--max-context',max_context]
+   +(['--eager'] if a.backend=='qwen' else []),env,f'service_{port}')
  for port,process in zip(ports,processes):ready(port,process)
  if len(gpus)>1:
   pool=launch([str(root/'.venv-cached/bin/python'),'scripts/serve_eval_pool.py',
@@ -60,7 +63,7 @@ try:
   env={**os.environ,'CUDA_VISIBLE_DEVICES':'','PYTHONPATH':'src','OMP_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1'}
   with path.open('w') as output:
    entry=([str(root/'.venv-eval/bin/python'),'scripts/recover_eval_responses.py','--work',a.recover_work,'--report',f'{a.report_root}/{prefix}_{a.name}_recovery.json','--'] if a.recover_work else [str(root/'.venv-eval/bin/python'),'-m','rmt.evaluation.run'])
-   subprocess.run(entry+['--model','rmt','--port',str(a.port),
+   subprocess.run(entry+['--model',a.backend,'--port',str(a.port),
     '--benchmark',benchmark,'--config',a.config,'--phase',a.phase,'--data-root',a.data_root,'--eval-batch-size',str(a.eval_batch_size),'--output-root',a.output_root],env=env,stdout=output,stderr=subprocess.STDOUT,check=True)
   location=next(x.split('=',1)[1] for x in reversed(path.read_text().splitlines()) if x.startswith('EVAL_WORK_DIR='))
   results.append({'candidate':a.name,'benchmark':benchmark,'work':location});print(results[-1],flush=True)

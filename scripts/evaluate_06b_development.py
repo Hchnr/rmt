@@ -39,6 +39,12 @@ def score(row,text):
     return bool(re.fullmatch(r'[+-]?\d+',text)) and int(text)==row['value']
 
 
+def correct(row,text):
+    if row['kind']!='integer':return score(row,text)
+    from math_verify import parse, verify
+    return bool(verify(parse(str(row['value'])),parse(text)))
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--model',required=True)
     p.add_argument('--backend',default='rmt',choices=['rmt','qwen'])
@@ -51,9 +57,10 @@ def main():
         prompts=[runner.render([{'role':'user','content':r['prompt']}]) for r in batch]
         responses=runner.generate(prompts,[Generation(max_new_tokens=128,temperature=0,presence_penalty=0) for _ in batch])
         for row,response in zip(batch,responses):
-            results.append(dict(row,response=response,passed=score(row,response['text'])))
+            results.append(dict(row,response=response,passed=correct(row,response['text']),
+                                format_passed=score(row,response['text'])))
         print(json.dumps({'completed':len(results),'total':len(items)}),flush=True)
-    report={'model':a.model,'cases_sha256':hashlib.sha256(json.dumps(items,sort_keys=True).encode()).hexdigest(),
+    report={'model':a.model,'scoring_version':3,'math_scorer':'math-verify==0.8.0','cases_sha256':hashlib.sha256(json.dumps(items,sort_keys=True).encode()).hexdigest(),
         'generation':dict(max_new_tokens=128,temperature=0,presence_penalty=0,enable_thinking=False),
         'scores':{domain:sum(r['passed'] for r in results if r['domain']==domain)/sum(r['domain']==domain for r in results)
                   for domain in ('instruction','math')},'rows':results,

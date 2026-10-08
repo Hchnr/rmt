@@ -15,3 +15,6 @@ def test_development_scoring_rejects_format_violations():
     row={'kind':'integer','value':17}
     assert score(row, '17')
     assert not score(row, 'The answer is 17.')
+    correct=module['correct']
+    assert correct(row, r'The answer is \boxed{17}.')
+    assert not correct(row, r'17 is an intermediate value; answer: \boxed{18}.')
