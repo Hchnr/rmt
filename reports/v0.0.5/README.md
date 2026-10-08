@@ -52,7 +52,7 @@ This rejects incomplete benchmarks, duplicate/missing scores, different request 
 | Three matched1M loss recipes and follow-up attribution | Executed | No candidate passes both predeclared quality gates |
 | Data/label/exposure audits | Passed | Available corpus size differs from actually visited IDs |
 | Independent resume/export | Five complete;250k follow-up queued | Trained BF16 export uses CE tolerance, not bitwise identity |
-| Full MATH-500 / IFEval | Running | Partial responses are not final scores |
+| Full MATH-500 / IFEval | MATH complete; IFEval running | MATH: native49.2%, candidate47.0%, paired95% CI [−6.0,+1.8]pp; no proven gain |
 |10M/30M fixed32/dynamic main experiment | Not executed, gated | No extra-depth or adaptive-compute benefit established |
 | New32B teacher generation | Not executed, gated | Existing accepted answers reused with provenance |
 
