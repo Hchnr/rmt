@@ -1,0 +1,235 @@
+{
+  "rows": [
+    {
+      "name": "pilot_ce",
+      "initialization": "untrained Qwen3-0.6B layer-order mapping",
+      "recurrences": 28,
+      "completed_steps": 805,
+      "targets": 1000162,
+      "unique_source_ids_seen": 788,
+      "input_tokens": 1201707,
+      "output_budget": 128,
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.625,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.3333333333333333,
+          "paired_bootstrap_95pct": [
+            -0.4791666666666667,
+            -0.1875
+          ],
+          "passes_2pp_engineering_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 0.6458333333333334,
+          "native_score": 1.0,
+          "paired_delta": -0.3541666666666667,
+          "paired_bootstrap_95pct": [
+            -0.5,
+            -0.22916666666666666
+          ],
+          "passes_2pp_engineering_gate": false
+        }
+      },
+      "passes_quality_gate": false,
+      "train_report": "reports/v0.0.5/pilot_ce.json",
+      "probe_report": "reports/v0.0.5/pilot_ce_development.json"
+    },
+    {
+      "name": "pilot_kl01",
+      "initialization": "untrained Qwen3-0.6B layer-order mapping",
+      "recurrences": 28,
+      "completed_steps": 805,
+      "targets": 1000162,
+      "unique_source_ids_seen": 788,
+      "input_tokens": 1201707,
+      "output_budget": 128,
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.6458333333333334,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.3125,
+          "paired_bootstrap_95pct": [
+            -0.4583333333333333,
+            -0.16666666666666666
+          ],
+          "passes_2pp_engineering_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 0.8541666666666666,
+          "native_score": 1.0,
+          "paired_delta": -0.14583333333333334,
+          "paired_bootstrap_95pct": [
+            -0.25,
+            -0.0625
+          ],
+          "passes_2pp_engineering_gate": false
+        }
+      },
+      "passes_quality_gate": false,
+      "train_report": "reports/v0.0.5/pilot_kl01.json",
+      "probe_report": "reports/v0.0.5/pilot_kl01_development.json"
+    },
+    {
+      "name": "pilot_kl05",
+      "initialization": "untrained Qwen3-0.6B layer-order mapping",
+      "recurrences": 28,
+      "completed_steps": 805,
+      "targets": 1000162,
+      "unique_source_ids_seen": 788,
+      "input_tokens": 1201707,
+      "output_budget": 512,
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.9583333333333334,
+          "native_score": 0.9583333333333334,
+          "paired_delta": 0.0,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0625
+          ],
+          "passes_2pp_engineering_gate": true
+        },
+        "math": {
+          "n": 48,
+          "score": 0.9791666666666666,
+          "native_score": 1.0,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_engineering_gate": false
+        }
+      },
+      "passes_quality_gate": false,
+      "train_report": "reports/v0.0.5/pilot_kl05.json",
+      "probe_report": "reports/v0.0.5/pilot_kl05_development512.json"
+    },
+    {
+      "name": "short_kl05",
+      "initialization": "untrained Qwen3-0.6B layer-order mapping",
+      "recurrences": 28,
+      "completed_steps": 204,
+      "targets": 250187,
+      "unique_source_ids_seen": 312,
+      "input_tokens": 299427,
+      "output_budget": 512,
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.625,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.3333333333333333,
+          "paired_bootstrap_95pct": [
+            -0.4791666666666667,
+            -0.1875
+          ],
+          "passes_2pp_engineering_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 1.0,
+          "native_score": 1.0,
+          "paired_delta": 0.0,
+          "paired_bootstrap_95pct": [
+            0.0,
+            0.0
+          ],
+          "passes_2pp_engineering_gate": true
+        }
+      },
+      "passes_quality_gate": false,
+      "train_report": "reports/v0.0.5/short_kl05.json",
+      "probe_report": "reports/v0.0.5/short_kl05_development512.json"
+    },
+    {
+      "name": "mixed_kl05",
+      "initialization": "untrained Qwen3-0.6B layer-order mapping",
+      "recurrences": 28,
+      "completed_steps": 825,
+      "targets": 1000578,
+      "unique_source_ids_seen": 2600,
+      "input_tokens": 1390363,
+      "output_budget": 512,
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.875,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.08333333333333333,
+          "paired_bootstrap_95pct": [
+            -0.16666666666666666,
+            -0.020833333333333332
+          ],
+          "passes_2pp_engineering_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 0.9791666666666666,
+          "native_score": 1.0,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_engineering_gate": false
+        }
+      },
+      "passes_quality_gate": false,
+      "train_report": "reports/v0.0.5/mixed_kl05.json",
+      "probe_report": "reports/v0.0.5/mixed_kl05_development512.json"
+    },
+    {
+      "name": "mixed_kl05_lr1e6",
+      "initialization": "untrained Qwen3-0.6B layer-order mapping",
+      "recurrences": 28,
+      "completed_steps": 825,
+      "targets": 1000578,
+      "unique_source_ids_seen": 2600,
+      "input_tokens": 1390363,
+      "output_budget": 512,
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.9375,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_engineering_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 1.0,
+          "native_score": 1.0,
+          "paired_delta": 0.0,
+          "paired_bootstrap_95pct": [
+            0.0,
+            0.0
+          ],
+          "passes_2pp_engineering_gate": true
+        }
+      },
+      "passes_quality_gate": false,
+      "train_report": "reports/v0.0.5/mixed_kl05_lr1e6.json",
+      "probe_report": "reports/v0.0.5/mixed_kl05_lr1e6_development512.json"
+    }
+  ],
+  "decision": "No candidate passes both predeclared development gates; P2 scale-up not executed.",
+  "uncertainty": "Synthetic development probes only, 48 items per domain, one training seed. Bootstrap is conditional on these responses and does not estimate training-seed variance; all-equal outcomes give degenerate intervals.",
+  "cost": {
+    "completed_stage_reserved_gpu_hours": 1.868039445749277,
+    "running_stages": [
+      "candidate_full"
+    ],
+    "scope": "Stage reservation totals only; nested wrapper costs excluded to avoid double counting. Historical v0.0.4 teacher generation excluded; no new teacher generation."
+  }
+}
