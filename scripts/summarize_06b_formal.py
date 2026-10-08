@@ -26,6 +26,19 @@ def load(run):
     assert len(scores) == expected
     responses = [json.loads(line) for line in (work / 'responses.jsonl').read_text().split('\n') if line.strip()]
     identities = {(r['rmt_metadata']['prompt_sha256'], r['rmt_metadata']['seed']) for r in responses}
+    unique = {(r['rmt_metadata']['prompt_sha256'], r['rmt_metadata']['seed']): r for r in responses}
+    lengths = [r['usage']['completion_tokens'] for r in unique.values()]
+    checked['completion_length'] = {'p50': float(np.quantile(lengths, .5)),
+        'p90': float(np.quantile(lengths, .9)), 'p99': float(np.quantile(lengths, .99)), 'max': max(lengths)}
+    retries = [r['rmt_metadata'].get('batch_split_retries', 0) for r in unique.values()]
+    checked['batch_split_retries'] = {'affected_requests': sum(n > 0 for n in retries), 'max': max(retries)}
+    recurrence = [r['rmt_metadata']['recurrence'] for r in unique.values() if r['rmt_metadata'].get('recurrence')]
+    if recurrence:
+        totals = {key: sum(r[key] for r in recurrence) for key in recurrence[0]}
+        checked['recurrence'] = {'totals': totals,
+            'prefill_mean': totals['prefill_depth_sum'] / totals['prefill_positions'],
+            'decode_mean': totals['decode_depth_sum'] / max(1, totals['decode_positions']),
+            'scope': 'Fixed28 execution; cap_positions means its fixed execution limit, not a dynamic36 hard cap.'}
     return scores, identities, provenance, checked
 
 
