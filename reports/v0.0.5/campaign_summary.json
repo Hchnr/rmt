@@ -1,4 +1,5 @@
 {
+  "generated_at": "2026-10-08T06:09:37.751473+00:00",
   "rows": [
     {
       "name": "pilot_ce",
@@ -223,12 +224,28 @@
       "probe_report": "reports/v0.0.5/mixed_kl05_lr1e6_development512.json"
     }
   ],
-  "decision": "No candidate passes both predeclared development gates; P2 scale-up not executed.",
+  "recorded_original_protocol_gate_passers": [],
+  "deterministic_recheck": "pending",
+  "current_gate_passers": [],
+  "decision": "No trained recipe passes the available gate measurements.",
   "uncertainty": "Synthetic development probes only, 48 items per domain, one training seed. Bootstrap is conditional on these responses and does not estimate training-seed variance; all-equal outcomes give degenerate intervals.",
   "cost": {
-    "completed_stage_reserved_gpu_hours": 1.868039445749277,
+    "completed_stage_reserved_gpu_hours": 1.8793625026946472,
+    "staged_jobs_physical_gpus": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "completed_reserved_gpu_hours_by_category": {
+      "training": 0.691926133393103,
+      "formal_evaluation": 0.7409030572650954,
+      "development_and_verification": 0.44653331203644875
+    },
+    "running_reserved_gpu_hours_estimate": 9.390135732777779,
     "running_stages": [
-      "candidate_full"
+      "candidate_full",
+      "native_full_v2"
     ],
     "scope": "Stage reservation totals only; nested wrapper costs excluded to avoid double counting. Historical v0.0.4 teacher generation excluded; no new teacher generation."
   }

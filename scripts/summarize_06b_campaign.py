@@ -1,5 +1,6 @@
 """Summarize executed training, paired development evidence, and reservation costs."""
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
 
@@ -46,11 +47,23 @@ for stage in stages:
     else:
         category = 'development_and_verification'
     cost_groups[category] += stage.get('reserved_gpu_hours', 0.)
-result = {'rows': rows, 'decision': 'No candidate passes both predeclared development gates; P2 scale-up not executed.',
+now = datetime.now(timezone.utc)
+running_cost = sum(max(0., (now-datetime.fromisoformat(s['started_at'])).total_seconds())*len(s['gpus'])/3600
+                   for s in stages if s['status']=='running')
+historical_passers = [r['name'] for r in rows if r['passes_quality_gate']]
+recheck_path = root / 'deterministic_development_comparison.json'
+recheck = json.loads(recheck_path.read_text()) if recheck_path.exists() else None
+gate_passers = recheck['eligible_trained_recipes'] if recheck else historical_passers
+result = {'generated_at': now.isoformat(), 'rows': rows,
+    'recorded_original_protocol_gate_passers': historical_passers,
+    'deterministic_recheck': str(recheck_path) if recheck else 'pending',
+    'current_gate_passers': gate_passers,
+    'decision': 'No trained recipe passes the available gate measurements.' if not gate_passers else 'Gate-passing trained recipes: '+', '.join(gate_passers),
     'uncertainty': 'Synthetic development probes only, 48 items per domain, one training seed. Bootstrap is conditional on these responses and does not estimate training-seed variance; all-equal outcomes give degenerate intervals.',
     'cost': {'completed_stage_reserved_gpu_hours': sum(s.get('reserved_gpu_hours', 0) for s in stages),
         'staged_jobs_physical_gpus': staged_gpus,
         'completed_reserved_gpu_hours_by_category': cost_groups,
+        'running_reserved_gpu_hours_estimate': running_cost,
         'running_stages': [s['name'] for s in stages if s['status'] == 'running'],
         'scope': 'Stage reservation totals only; nested wrapper costs excluded to avoid double counting. Historical v0.0.4 teacher generation excluded; no new teacher generation.'}}
 (root / 'campaign_summary.json').write_text(json.dumps(result, indent=2) + '\n')
