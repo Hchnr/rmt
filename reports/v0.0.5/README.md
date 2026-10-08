@@ -52,7 +52,7 @@ This rejects incomplete benchmarks, duplicate/missing scores, different request 
 | Three matched1M loss recipes and follow-up attribution | Executed | No candidate passes both predeclared quality gates |
 | Data/label/exposure audits | Passed | Available corpus size differs from actually visited IDs |
 | Independent resume/export | All six passed | Trained BF16 export uses CE tolerance, not bitwise identity |
-| Full MATH-500 / IFEval | MATH complete; IFEval running | MATH: native49.2%, candidate47.0%, paired95% CI [−6.0,+1.8]pp; no proven gain |
+| Full MATH-500 / IFEval | Native/trained complete; untrained RMT running | MATH49.2%→47.0%; IFEval57.67%→49.54%, paired95% CI [−11.83,−4.62]pp; no gain |
 |10M/30M fixed32/dynamic main experiment | Not executed, gated | No extra-depth or adaptive-compute benefit established |
 | New32B teacher generation | Not executed, gated | Existing accepted answers reused with provenance |
 
@@ -63,3 +63,5 @@ P1 is an original-depth SFT/KL control represented by bound experts:28 recurrenc
 ## SDPA attribution follow-up
 
 `native_compiled_reference.json` and `native_eager_sdpa_diagnostic.json` preserve failed cross-path tolerance checks on unpadded batch1. `native_compiled_reference_aligned.json` uses the same explicit mask and passes all96 comparisons bitwise. This separates mask/kernel behavior from compilation; it does not retroactively pass the original check. A full untrained RMT control is queued with unchanged production source and evaluation protocol.
+
+`fsdp06b_verification.json`: real0.6B two-GPU16-step packed/compiled/checkpointed KL training, exact independent resume, and HF loss-tolerance checks pass. This is engineering validation, not a seventh quality candidate or a matched-global-batch scaling experiment.
