@@ -83,6 +83,8 @@ def main():
             'paired_delta': float(delta.mean()),
             'paired_bootstrap_95pct': np.quantile(delta[indices].mean(1), [.025, .975]).tolist(),
             'improved': int((delta > 0).sum()), 'worsened': int((delta < 0).sum()),
+            'paired_scores': [{'review_input_sha256': k, 'native': base[k], 'candidate': trained[k]}
+                              for k in sorted(base)],
             'native_audit': ba, 'candidate_audit': ta,
             'native_work': native[benchmark]['work'], 'candidate_work': candidate[benchmark]['work']})
     Path(a.output).write_text(json.dumps({'rows': results,
