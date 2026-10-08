@@ -57,3 +57,5 @@ This rejects incomplete benchmarks, duplicate/missing scores, different request 
 | New32B teacher generation | Not executed, gated | Existing accepted answers reused with provenance |
 
 Parameter details: `parameter_audit.json`; supervision examples: `label_audit.json`; resume/export checks: `training_export_resume.json`. Native generation is a Transformers eager control and RMT uses compiled projections, so full-service timing is not an architecture-only speed comparison.
+
+P1 is an original-depth SFT/KL control represented by bound experts:28 recurrences, one original expert per step, no learned routing and no extra-depth training. Its quality changes cannot be attributed to adaptive recurrence or used to reject that architecture. The experiment isolates training behavior before introducing that additional factor.
