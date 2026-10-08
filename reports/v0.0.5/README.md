@@ -51,7 +51,7 @@ This rejects incomplete benchmarks, duplicate/missing scores, different request 
 | Eager reference, cache, compile replay, packed training regressions | Passed on tested inputs | No universal cross-backend/shape bitwise guarantee |
 | Three matched1M loss recipes and follow-up attribution | Executed | No candidate passes both predeclared quality gates |
 | Data/label/exposure audits | Passed | Available corpus size differs from actually visited IDs |
-| Independent resume/export | Five complete;250k follow-up queued | Trained BF16 export uses CE tolerance, not bitwise identity |
+| Independent resume/export | All six passed | Trained BF16 export uses CE tolerance, not bitwise identity |
 | Full MATH-500 / IFEval | MATH complete; IFEval running | MATH: native49.2%, candidate47.0%, paired95% CI [−6.0,+1.8]pp; no proven gain |
 |10M/30M fixed32/dynamic main experiment | Not executed, gated | No extra-depth or adaptive-compute benefit established |
 | New32B teacher generation | Not executed, gated | Existing accepted answers reused with provenance |
@@ -59,3 +59,7 @@ This rejects incomplete benchmarks, duplicate/missing scores, different request 
 Parameter details: `parameter_audit.json`; supervision examples: `label_audit.json`; resume/export checks: `training_export_resume.json`. Native generation is a Transformers eager control and RMT uses compiled projections, so full-service timing is not an architecture-only speed comparison.
 
 P1 is an original-depth SFT/KL control represented by bound experts:28 recurrences, one original expert per step, no learned routing and no extra-depth training. Its quality changes cannot be attributed to adaptive recurrence or used to reject that architecture. The experiment isolates training behavior before introducing that additional factor.
+
+## SDPA attribution follow-up
+
+`native_compiled_reference.json` and `native_eager_sdpa_diagnostic.json` preserve failed cross-path tolerance checks on unpadded batch1. `native_compiled_reference_aligned.json` uses the same explicit mask and passes all96 comparisons bitwise. This separates mask/kernel behavior from compilation; it does not retroactively pass the original check. A full untrained RMT control is queued with unchanged production source and evaluation protocol.

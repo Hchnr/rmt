@@ -47,7 +47,8 @@ def load(run):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--native', required=True)
+    p.add_argument('--native', '--reference', dest='native', required=True)
+    p.add_argument('--reference-label', default='native')
     p.add_argument('--candidate', required=True)
     p.add_argument('--output', required=True)
     p.add_argument('--benchmarks', nargs='+', choices=['math_500', 'ifeval'], default=['math_500', 'ifeval'])
@@ -89,9 +90,15 @@ def main():
                               for k in sorted(base)],
             'native_audit': ba, 'candidate_audit': ta,
             'native_work': native[benchmark]['work'], 'candidate_work': candidate[benchmark]['work']})
-    Path(a.output).write_text(json.dumps({'rows': results, 'benchmarks': sorted(set(a.benchmarks)),
-        'scope': 'Frozen best development candidate, fixed28, same generation protocol and request seeds. Full selected official EvalScope sets; paper prompt parity not established. Bootstrap conditions on one training seed and one response per prompt; no dynamic-depth benefit claim.'}, indent=2) + '\n')
-    print(json.dumps([{k: r[k] for k in ['benchmark', 'n', 'native_score', 'candidate_score', 'paired_delta', 'paired_bootstrap_95pct']} for r in results], indent=2))
+    if a.reference_label != 'native':
+        for row in results:
+            for suffix in ('score', 'audit', 'work'):
+                row['reference_' + suffix] = row.pop('native_' + suffix)
+            for pair in row['paired_scores']:
+                pair['reference'] = pair.pop('native')
+    Path(a.output).write_text(json.dumps({'rows': results, 'reference_label': a.reference_label, 'benchmarks': sorted(set(a.benchmarks)),
+        'scope': 'Frozen fixed28 controls, same generation protocol and request seeds; reference_label identifies the baseline. Full selected official EvalScope sets; paper prompt parity not established. Bootstrap conditions on one training seed and one response per prompt; no dynamic-depth benefit claim.'}, indent=2) + '\n')
+    print(json.dumps([{k: r[k] for k in ['benchmark', 'n', ('native_score' if a.reference_label == 'native' else 'reference_score'), 'candidate_score', 'paired_delta', 'paired_bootstrap_95pct']} for r in results], indent=2))
 
 
 if __name__ == '__main__':

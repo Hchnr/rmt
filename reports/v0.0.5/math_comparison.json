@@ -2588,8 +2588,9 @@
       "candidate_work": "artifacts/v0.0.5/eval/full/rmt/math_500/71dfe47ef1c85249"
     }
   ],
+  "reference_label": "native",
   "benchmarks": [
     "math_500"
   ],
-  "scope": "Frozen best development candidate, fixed28, same generation protocol and request seeds. Full selected official EvalScope sets; paper prompt parity not established. Bootstrap conditions on one training seed and one response per prompt; no dynamic-depth benefit claim."
+  "scope": "Frozen fixed28 controls, same generation protocol and request seeds; reference_label identifies the baseline. Full selected official EvalScope sets; paper prompt parity not established. Bootstrap conditions on one training seed and one response per prompt; no dynamic-depth benefit claim."
 }
