@@ -32,7 +32,8 @@ def load(run):
         'p90': float(np.quantile(lengths, .9)), 'p99': float(np.quantile(lengths, .99)), 'max': max(lengths)}
     retries = [r['rmt_metadata'].get('batch_split_retries', 0) for r in unique.values()]
     checked['batch_split_retries'] = {'affected_requests': sum(n > 0 for n in retries), 'max': max(retries)}
-    recurrence = [r['rmt_metadata']['recurrence'] for r in unique.values() if r['rmt_metadata'].get('recurrence')]
+    recurrence = [r['rmt_metadata']['recurrence'] for r in unique.values()
+                  if r['rmt_metadata'].get('recurrence', {}).get('prefill_positions', 0) > 0]
     if recurrence:
         totals = {key: sum(r[key] for r in recurrence) for key in recurrence[0]}
         checked['recurrence'] = {'totals': totals,
@@ -47,12 +48,13 @@ def main():
     p.add_argument('--native', required=True)
     p.add_argument('--candidate', required=True)
     p.add_argument('--output', required=True)
+    p.add_argument('--benchmarks', nargs='+', choices=['math_500', 'ifeval'], default=['math_500', 'ifeval'])
     a = p.parse_args()
     native = {r['benchmark']: r for r in json.loads(Path(a.native).read_text())}
     candidate = {r['benchmark']: r for r in json.loads(Path(a.candidate).read_text())}
-    assert set(native) == set(candidate) == {'math_500', 'ifeval'}
+    assert set(native) >= set(a.benchmarks) and set(candidate) >= set(a.benchmarks)
     results = []
-    for benchmark in sorted(native):
+    for benchmark in sorted(set(a.benchmarks)):
         base, base_ids, bp, ba = load(native[benchmark])
         trained, trained_ids, tp, ta = load(candidate[benchmark])
         assert base.keys() == trained.keys() and base_ids == trained_ids
@@ -87,8 +89,8 @@ def main():
                               for k in sorted(base)],
             'native_audit': ba, 'candidate_audit': ta,
             'native_work': native[benchmark]['work'], 'candidate_work': candidate[benchmark]['work']})
-    Path(a.output).write_text(json.dumps({'rows': results,
-        'scope': 'Frozen best development candidate, fixed28, same generation protocol and request seeds. Full official EvalScope sets; paper prompt parity not established. Bootstrap conditions on one training seed and one response per prompt; no dynamic-depth benefit claim.'}, indent=2) + '\n')
+    Path(a.output).write_text(json.dumps({'rows': results, 'benchmarks': sorted(set(a.benchmarks)),
+        'scope': 'Frozen best development candidate, fixed28, same generation protocol and request seeds. Full selected official EvalScope sets; paper prompt parity not established. Bootstrap conditions on one training seed and one response per prompt; no dynamic-depth benefit claim.'}, indent=2) + '\n')
     print(json.dumps([{k: r[k] for k in ['benchmark', 'n', 'native_score', 'candidate_score', 'paired_delta', 'paired_bootstrap_95pct']} for r in results], indent=2))
 
 
