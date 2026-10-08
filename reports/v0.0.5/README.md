@@ -24,3 +24,21 @@ P2 fixed32/dynamic large-scale training and new32B generation were not executed 
 Frozen full MATH-500/IFEval runs are tracked separately. Interrupted `full_native06b_*` contains only partial historical results and must not be reported as a completed baseline or combined with the new engine's responses. Formal scores are diagnostic only and do not reopen development selection.
 
 Raw training/probe reports preserve full evidence. Stage costs include allocated device lifetime, not only kernel time; nested wrapper cost reports must not be added again. Existing v0.0.4 teacher generation costs are historical and excluded from new-stage totals.
+
+## Reproduction
+
+Use the existing pinned environments (`.venv-cached` for training/inference; `.venv-eval` for official scoring). Set `RMT_ALLOWED_GPUS=4,5,6,7`; launch GPU work through `scripts/run_06b_stage.py` with a new stage name and an explicit free authorized device. Never overwrite completed stage names or run another training job on devices occupied by evaluation replicas.
+
+```sh
+.venv-cached/bin/python scripts/audit_training_exposure.py --configs configs/v0.0.5/pilot_ce.yaml configs/v0.0.5/pilot_kl01.yaml configs/v0.0.5/pilot_kl05.yaml configs/v0.0.5/short_kl05.yaml configs/v0.0.5/mixed_kl05.yaml configs/v0.0.5/mixed_kl05_lr1e6.yaml --world-size 1 --output reports/v0.0.5/all_training_exposure.json
+CUDA_VISIBLE_DEVICES='' .venv-cached/bin/python scripts/audit_06b_labels.py
+.venv-cached/bin/python scripts/summarize_06b_campaign.py
+```
+
+After both complete formal run manifests exist:
+
+```sh
+.venv-cached/bin/python scripts/summarize_06b_formal.py --native reports/v0.0.5/full_native06b_v2_runs.json --candidate reports/v0.0.5/full_mixed_lr1e6_final_runs.json --output reports/v0.0.5/formal_comparison.json
+```
+
+This rejects incomplete benchmarks, duplicate/missing scores, different request identities, different generation semantics, and incompatible inference environments. Exported generation files differ in formatting/version metadata, so each is validated against its own recorded hash and then compared semantically.

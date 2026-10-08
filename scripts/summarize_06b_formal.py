@@ -49,7 +49,15 @@ def main():
         assert bp['metadata']['attention'] == tp['metadata']['attention']
         assert bp['metadata']['engine_environment'] == tp['metadata']['engine_environment']
         assert bp['metadata']['engine_environment']['deterministic_algorithms'] is True
-        assert bp['metadata']['weights']['generation_config.json'] == tp['metadata']['weights']['generation_config.json']
+        generation_configs = []
+        for provenance in (bp, tp):
+            data = (Path(provenance['metadata']['model']) / 'generation_config.json').read_bytes()
+            assert hashlib.sha256(data).hexdigest() == provenance['metadata']['weights']['generation_config.json']
+            config = json.loads(data)
+            config.pop('transformers_version', None)
+            generation_configs.append(config)
+        assert generation_configs[0] == generation_configs[1]
+        assert bp['metadata']['generation_termination'] == tp['metadata']['generation_termination']
         if benchmark == 'ifeval':
             assert bp['scoring']['ifeval_score_seed'] == tp['scoring']['ifeval_score_seed'] == 17
         delta = np.array([trained[k] - base[k] for k in sorted(base)])
