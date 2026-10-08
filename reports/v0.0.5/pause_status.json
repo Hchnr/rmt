@@ -1,0 +1,18 @@
+{
+  "status": "paused_by_user",
+  "stopped_at": "2026-10-08T07:11:00.860702+00:00",
+  "owned_gpu_jobs_remaining": 0,
+  "completed_formal_comparison": "reports/v0.0.5/formal_comparison.json",
+  "incomplete_control": {
+    "stage": "untrained_full",
+    "math_work": "artifacts/v0.0.5/eval/full/rmt/math_500/513f2dd0a6fab600",
+    "math_preserved_unique_responses": 362,
+    "expected_math_responses": 500,
+    "ifeval_started": false
+  },
+  "not_executed": [
+    "P2 fixed32/dynamic main training: quality gate failed",
+    "new32B teacher generation: quality gate failed"
+  ],
+  "resume": "Only after user resumes: new stage name, frozen checkpoint/protocol/source/environment validation, audited recovery of preserved responses; then full IFEval and three-way paired audit. Do not rerun completed stage names or report partial benchmark scores."
+}

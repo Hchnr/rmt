@@ -31,6 +31,11 @@
     "7200"
   ],
   "started_at": "2026-10-08T06:33:14.885779+00:00",
-  "status": "running",
-  "commit": "b34bde13d1c0b8229ccb6dd43fa5723eb8c761a0"
+  "status": "interrupted",
+  "commit": "b34bde13d1c0b8229ccb6dd43fa5723eb8c761a0",
+  "error": "KeyboardInterrupt",
+  "ended_at": "2026-10-08T07:10:24.569985+00:00",
+  "wall_seconds": 2229.679503625259,
+  "reserved_gpu_hours": 1.238710835347366,
+  "interruption_reason": "User explicitly requested stopping and wrapping up; not a validation failure."
 }
