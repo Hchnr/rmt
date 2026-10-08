@@ -49,19 +49,20 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--model',required=True)
     p.add_argument('--backend',default='rmt',choices=['rmt','qwen'])
     p.add_argument('--output',required=True);p.add_argument('--compile',action='store_true')
+    p.add_argument('--max-new-tokens',type=int,default=128)
     a=p.parse_args();items=cases()
     runner=Runner(a.model,backend=a.backend,compiled=a.compile,attention='sdpa',max_context=1024)
     results=[]
     for start in range(0,len(items),4):
         batch=items[start:start+4]
         prompts=[runner.render([{'role':'user','content':r['prompt']}]) for r in batch]
-        responses=runner.generate(prompts,[Generation(max_new_tokens=128,temperature=0,presence_penalty=0) for _ in batch])
+        responses=runner.generate(prompts,[Generation(max_new_tokens=a.max_new_tokens,temperature=0,presence_penalty=0) for _ in batch])
         for row,response in zip(batch,responses):
             results.append(dict(row,response=response,passed=correct(row,response['text']),
                                 format_passed=score(row,response['text'])))
         print(json.dumps({'completed':len(results),'total':len(items)}),flush=True)
     report={'model':a.model,'scoring_version':3,'math_scorer':'math-verify==0.8.0','cases_sha256':hashlib.sha256(json.dumps(items,sort_keys=True).encode()).hexdigest(),
-        'generation':dict(max_new_tokens=128,temperature=0,presence_penalty=0,enable_thinking=False),
+        'generation':dict(max_new_tokens=a.max_new_tokens,temperature=0,presence_penalty=0,enable_thinking=False),
         'scores':{domain:sum(r['passed'] for r in results if r['domain']==domain)/sum(r['domain']==domain for r in results)
                   for domain in ('instruction','math')},'rows':results,
         'scope':'Synthetic formatting and arithmetic development diagnostics; not IFEval/MATH-500 and not broad quality evidence.'}
