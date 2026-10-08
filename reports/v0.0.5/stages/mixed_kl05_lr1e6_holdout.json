@@ -1,0 +1,23 @@
+{
+  "name": "mixed_kl05_lr1e6_holdout",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/evaluate_dynamic_holdout.py",
+    "--model",
+    "artifacts/v0.0.5/mixed_kl05_lr1e6/hf",
+    "--data",
+    "artifacts/v0.0.5/corpus/dev.jsonl",
+    "--output",
+    "reports/v0.0.5/mixed_kl05_lr1e6_holdout.json"
+  ],
+  "started_at": "2026-10-08T03:23:46.630394+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:24:33.406232+00:00",
+  "wall_seconds": 46.77138020284474,
+  "reserved_gpu_hours": 0.012992050056345761
+}

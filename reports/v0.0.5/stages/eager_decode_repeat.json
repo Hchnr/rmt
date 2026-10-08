@@ -1,0 +1,20 @@
+{
+  "name": "eager_decode_repeat",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/verify_06b_compiled_decode.py",
+    "--no-compile",
+    "--output",
+    "reports/v0.0.5/eager_decode_repeat.json"
+  ],
+  "started_at": "2026-10-08T03:30:28.612515+00:00",
+  "status": "failed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 1,
+  "ended_at": "2026-10-08T03:30:46.954203+00:00",
+  "wall_seconds": 18.33722556196153,
+  "reserved_gpu_hours": 0.0050936737672115364
+}

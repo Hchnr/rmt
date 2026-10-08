@@ -1,0 +1,25 @@
+{
+  "name": "reference_performance",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/benchmark_dynamic_inference.py",
+    "--model",
+    "artifacts/v0.0.5/reference_hf",
+    "--output",
+    "reports/v0.0.5/reference_performance.json",
+    "--tokens",
+    "32",
+    "--repeats",
+    "3"
+  ],
+  "started_at": "2026-10-08T03:07:54.827913+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:08:27.887433+00:00",
+  "wall_seconds": 33.05351174622774,
+  "reserved_gpu_hours": 0.009181531040618817
+}

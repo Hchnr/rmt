@@ -1,0 +1,20 @@
+{
+  "name": "smoke_kl05",
+  "gpus": [
+    "6"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "-m",
+    "rmt.train",
+    "--config",
+    "configs/v0.0.5/smoke_kl05.yaml"
+  ],
+  "started_at": "2026-10-08T02:54:33.316872+00:00",
+  "status": "passed",
+  "commit": "4ee8011c256bdba70f1050d77d8a4c049b5ff90c",
+  "returncode": 0,
+  "ended_at": "2026-10-08T02:55:22.446998+00:00",
+  "wall_seconds": 49.124876622110605,
+  "reserved_gpu_hours": 0.01364579906169739
+}

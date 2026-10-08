@@ -1,6 +1,7 @@
 """HF-compatible cached batch runner, shared by service and offline evaluation."""
 import hashlib
 import math
+import os
 from pathlib import Path
 import time
 from dataclasses import dataclass
@@ -10,6 +11,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from ..configuration_rmt import RmtConfig
 from ..modeling_rmt import RmtForCausalLM
 from ..cache import RmtCapacityCache
+from .cache import NativeCapacityCache
 from ..runtime import enforce_gpu_scope,versions
 
 
@@ -38,7 +40,8 @@ class Generation:
 def sample(logits, generated, cfg, generator):
     scores = logits.float().clone()
     if generated and cfg.presence_penalty:
-        scores[torch.tensor(list(set(generated)),device=scores.device)] -= cfg.presence_penalty
+        unique=generated if isinstance(generated,set) else set(generated)
+        scores[torch.tensor(list(unique),device=scores.device)] -= cfg.presence_penalty
     if cfg.temperature == 0:
         return scores.argmax().item()
     scores /= cfg.temperature
@@ -54,8 +57,13 @@ def sample(logits, generated, cfg, generator):
 
 class Runner:
     def __init__(self, path, backend='rmt', compiled=True, device='cuda:0',
-                 attention='eager', max_context=4096, routing=None):
+                 attention='eager', max_context=4096, routing=None, deterministic=True):
         enforce_gpu_scope()
+        if deterministic:
+            os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+        torch.use_deterministic_algorithms(deterministic)
+        torch.backends.cudnn.deterministic=deterministic
+        torch.backends.cudnn.benchmark=False
         torch.set_num_threads(4)
         self.path,self.backend,self.compiled = str(path),backend,compiled
         self.source_hashes={str(p.relative_to(Path(__file__).parents[1])):hashlib.sha256(p.read_bytes()).hexdigest()
@@ -64,7 +72,9 @@ class Runner:
         self.engine_environment=versions()
         self.engine_environment.pop('cuda_visible_devices',None)
         self.engine_environment.update(gpu_name=torch.cuda.get_device_name(self.device),
-            compute_capability=list(torch.cuda.get_device_capability(self.device)))
+            compute_capability=list(torch.cuda.get_device_capability(self.device)),
+            deterministic_algorithms=deterministic,
+            cublas_workspace_config=os.environ.get('CUBLAS_WORKSPACE_CONFIG'))
         self.tokenizer=AutoTokenizer.from_pretrained(path,local_files_only=True)
         self.tokenizer.padding_side='left'
         if backend=='rmt':
@@ -100,8 +110,9 @@ class Runner:
         if width+budget>self.max_context: raise ValueError('Prompt plus output exceeds configured context')
         ids=torch.tensor([[self.pad]*(width-len(x))+x for x in encoded],device=self.device)
         mask=torch.tensor([[0]*(width-len(x))+[1]*len(x) for x in encoded],device=self.device)
-        cache=RmtCapacityCache(width+budget) if use_cache and self.backend=='rmt' else None
+        cache=(RmtCapacityCache(width+budget) if self.backend=='rmt' else NativeCapacityCache(width+budget)) if use_cache else None
         histories=[[] for _ in prompts]; done=[False]*len(prompts); texts=['']*len(prompts)
+        seen_tokens=[set() for _ in prompts]
         reasons=['length']*len(prompts)
         generators=[torch.Generator(device=self.device).manual_seed(c.seed) for c in configs]
         depth_stats=[{'prefill_depth_sum':0,'prefill_positions':0,'decode_depth_sum':0,'decode_positions':0,'cap_positions':0} for _ in prompts]
@@ -129,9 +140,13 @@ class Runner:
             next_ids=[]
             for row,cfg in enumerate(configs):
                 if done[row]: next_ids.append(self.pad); continue
-                token=greedy_batch[row] if greedy_batch is not None else sample(output.logits[row,-1],histories[row],cfg,generators[row])
+                token=greedy_batch[row] if greedy_batch is not None else sample(output.logits[row,-1],seen_tokens[row],cfg,generators[row])
                 histories[row].append(token);next_ids.append(token)
-                texts[row]=self.tokenizer.decode(histories[row],skip_special_tokens=True)
+                seen_tokens[row].add(token)
+                # With no text stop strings, detokenization cannot affect the
+                # next token. Decode once on completion instead of O(T^2) work.
+                if cfg.stop or token in self.eos or len(histories[row])>=cfg.max_new_tokens:
+                    texts[row]=self.tokenizer.decode(histories[row],skip_special_tokens=True)
                 stops=[texts[row].find(s) for s in cfg.stop if s in texts[row]]
                 if token in self.eos or stops:
                     done[row]=True;reasons[row]='stop'

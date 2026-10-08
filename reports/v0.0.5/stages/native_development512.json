@@ -1,0 +1,25 @@
+{
+  "name": "native_development512",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/evaluate_06b_development.py",
+    "--model",
+    "/share/project/eai_pwm/models/Qwen/Qwen3-0.6B",
+    "--backend",
+    "qwen",
+    "--max-new-tokens",
+    "512",
+    "--output",
+    "reports/v0.0.5/native_development512.json"
+  ],
+  "started_at": "2026-10-08T03:06:15.948039+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:07:09.230577+00:00",
+  "wall_seconds": 53.27846607193351,
+  "reserved_gpu_hours": 0.014799573908870418
+}

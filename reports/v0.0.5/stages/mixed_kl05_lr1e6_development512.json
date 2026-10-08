@@ -1,0 +1,24 @@
+{
+  "name": "mixed_kl05_lr1e6_development512",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/evaluate_06b_development.py",
+    "--model",
+    "artifacts/v0.0.5/mixed_kl05_lr1e6/hf",
+    "--compile",
+    "--max-new-tokens",
+    "512",
+    "--output",
+    "reports/v0.0.5/mixed_kl05_lr1e6_development512.json"
+  ],
+  "started_at": "2026-10-08T03:23:20.782502+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:23:46.581633+00:00",
+  "wall_seconds": 25.795136319473386,
+  "reserved_gpu_hours": 0.007165315644298163
+}

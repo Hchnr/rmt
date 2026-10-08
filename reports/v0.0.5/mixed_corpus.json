@@ -1,0 +1,21 @@
+{
+  "records": 20066,
+  "unique_ids": 20066,
+  "replaced_by_teacher": 787,
+  "domains": {
+    "code": 5338,
+    "general": 9037,
+    "math": 5157,
+    "chinese": 534
+  },
+  "targets_by_domain": {
+    "code": 2366930,
+    "general": 3211207,
+    "math": 1982217,
+    "chinese": 202940
+  },
+  "sha256": "8ae550ca82c3d60d5ae1914a4a66a7c9c90af563ccd576a789f370f85321eebd",
+  "source_sha256": "80f2bef94740e50adfce030f332643ffd376d816787d1cbcf987142ef0c32aa7",
+  "teacher_sha256": "add81145e875f7b421329cfb4ee67a813276157e4ec68304c05f518bcb49ef01",
+  "policy": "Replace matching source answers with accepted 32B answers; retain broad source pool without domain oversampling. Natural source-bucket proportions, not a claimed 50/25/15/10 mixture."
+}

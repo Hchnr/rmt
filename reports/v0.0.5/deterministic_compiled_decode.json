@@ -1,0 +1,683 @@
+{
+  "status": "passed",
+  "eager_qkv": false,
+  "eager_output": false,
+  "eager_prefill": false,
+  "compiled": true,
+  "deterministic": true,
+  "rows": [
+    {
+      "batch_size": 1,
+      "step": 0,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 1,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 2,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 3,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 4,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 5,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 6,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 7,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 8,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 9,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 10,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 11,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 12,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 13,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 14,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 15,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 16,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 17,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 18,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 19,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 20,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 21,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 22,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 23,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 24,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 25,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 26,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 27,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 28,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 29,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 30,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 1,
+      "step": 31,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 0,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 1,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 2,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 3,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 4,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 5,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 6,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 7,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 8,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 9,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 10,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 11,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 12,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 13,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 14,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 15,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 16,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 17,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 18,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 19,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 20,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 21,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 22,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 23,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 24,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 25,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 26,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 27,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 28,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 29,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 30,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 4,
+      "step": 31,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 0,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 1,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 2,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 3,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 4,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 5,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 6,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 7,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 8,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 9,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 10,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 11,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 12,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 13,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 14,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 15,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 16,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 17,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 18,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 19,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 20,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 21,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 22,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 23,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 24,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 25,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 26,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 27,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 28,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 29,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 30,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    },
+    {
+      "batch_size": 8,
+      "step": 31,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreements": 0
+    }
+  ],
+  "scope": "Aligned teacher-forced replay of eager greedy continuation; separates numeric differences from free-running divergence."
+}

@@ -1,0 +1,22 @@
+{
+  "name": "pilot_kl05_development",
+  "gpus": [
+    "6"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/evaluate_06b_development.py",
+    "--model",
+    "artifacts/v0.0.5/pilot_kl05/hf",
+    "--compile",
+    "--output",
+    "reports/v0.0.5/pilot_kl05_development.json"
+  ],
+  "started_at": "2026-10-08T03:04:18.302774+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:05:01.922529+00:00",
+  "wall_seconds": 43.61505901813507,
+  "reserved_gpu_hours": 0.012115294171704186
+}

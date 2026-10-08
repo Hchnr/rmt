@@ -1,0 +1,20 @@
+{
+  "name": "deterministic_compiled_decode",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/verify_06b_compiled_decode.py",
+    "--deterministic",
+    "--output",
+    "reports/v0.0.5/deterministic_compiled_decode.json"
+  ],
+  "started_at": "2026-10-08T03:35:13.765311+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:35:39.617149+00:00",
+  "wall_seconds": 25.8469120208174,
+  "reserved_gpu_hours": 0.007179697783560389
+}

@@ -1,0 +1,20 @@
+{
+  "name": "compiled_decode_eager_output",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/verify_06b_compiled_decode.py",
+    "--eager-output",
+    "--output",
+    "reports/v0.0.5/compiled_decode_eager_output.json"
+  ],
+  "started_at": "2026-10-08T03:24:13.076335+00:00",
+  "status": "failed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 1,
+  "ended_at": "2026-10-08T03:24:35.072545+00:00",
+  "wall_seconds": 21.991464383900166,
+  "reserved_gpu_hours": 0.006108740106638935
+}

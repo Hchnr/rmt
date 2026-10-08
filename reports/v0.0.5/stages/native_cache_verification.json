@@ -1,0 +1,17 @@
+{
+  "name": "native_cache_verification",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/verify_06b_native_cache.py"
+  ],
+  "started_at": "2026-10-08T03:42:05.212162+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:42:20.152468+00:00",
+  "wall_seconds": 14.935024170204997,
+  "reserved_gpu_hours": 0.004148617825056944
+}

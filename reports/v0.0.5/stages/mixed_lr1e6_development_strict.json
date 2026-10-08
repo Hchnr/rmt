@@ -1,0 +1,26 @@
+{
+  "name": "mixed_lr1e6_development_strict",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/evaluate_06b_development.py",
+    "--model",
+    "artifacts/v0.0.5/mixed_kl05_lr1e6/hf",
+    "--max-new-tokens",
+    "512",
+    "--attention",
+    "eager",
+    "--deterministic",
+    "--output",
+    "reports/v0.0.5/mixed_lr1e6_development_strict.json"
+  ],
+  "started_at": "2026-10-08T03:34:23.154447+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:34:57.964206+00:00",
+  "wall_seconds": 34.80561573430896,
+  "reserved_gpu_hours": 0.009668226592863599
+}

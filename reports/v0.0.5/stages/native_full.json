@@ -1,0 +1,39 @@
+{
+  "name": "native_full",
+  "gpus": [
+    "7"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/evaluate_trained_checkpoint.py",
+    "--work",
+    "artifacts/v0.0.5/native_reference",
+    "--checkpoint",
+    "/share/project/eai_pwm/models/Qwen/Qwen3-0.6B",
+    "--backend",
+    "qwen",
+    "--name",
+    "native06b",
+    "--gpu",
+    "7",
+    "--port",
+    "9150",
+    "--phase",
+    "full",
+    "--config",
+    "configs/v0.0.5/full_non_thinking.json",
+    "--report-root",
+    "reports/v0.0.5",
+    "--output-root",
+    "artifacts/v0.0.5/eval",
+    "--response-timeout",
+    "7200"
+  ],
+  "started_at": "2026-10-08T02:57:25.734467+00:00",
+  "status": "interrupted",
+  "commit": "1dda5db5be5419ac2e8fd2894d633ac9f789dff1",
+  "error": "KeyboardInterrupt",
+  "ended_at": "2026-10-08T03:41:52.989878+00:00",
+  "wall_seconds": 2667.2510061543435,
+  "reserved_gpu_hours": 0.7409030572650954
+}
