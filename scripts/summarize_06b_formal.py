@@ -40,6 +40,8 @@ def load(run):
             'prefill_mean': totals['prefill_depth_sum'] / totals['prefill_positions'],
             'decode_mean': totals['decode_depth_sum'] / max(1, totals['decode_positions']),
             'scope': 'Fixed28 execution; cap_positions means its fixed execution limit, not a dynamic36 hard cap.'}
+    checked['uncertainty_note'] = 'Entire pinned benchmark, one response per prompt; intervals conditional on this protocol and generation seed.'
+    (work / 'audit.json').write_text(json.dumps(checked, indent=2) + '\n')
     return scores, identities, provenance, checked
 
 
@@ -76,8 +78,6 @@ def main():
         if benchmark == 'ifeval':
             assert bp['scoring']['ifeval_score_seed'] == tp['scoring']['ifeval_score_seed'] == 17
         delta = np.array([trained[k] - base[k] for k in sorted(base)])
-        for checked in (ba, ta):
-            checked['uncertainty_note'] = 'Entire pinned benchmark, one response per prompt; intervals conditional on this protocol and generation seed.'
         indices = np.random.default_rng(17).integers(0, len(delta), (10000, len(delta)))
         results.append({'benchmark': benchmark, 'n': len(delta),
             'native_score': float(np.mean(list(base.values()))),
