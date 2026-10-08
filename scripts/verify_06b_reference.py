@@ -26,6 +26,7 @@ def main():
         for side in ('left', 'right'):
             tok.padding_side = side
             batch = tok(prompts, padding=True, return_tensors='pt').to('cuda')
+            batch['position_ids'] = (batch.attention_mask.cumsum(-1)-1).clamp_min(0)
             x = native(**batch, use_cache=False).logits
             y = rmt(**batch, use_cache=False).logits
             valid = batch.attention_mask.bool()
