@@ -34,6 +34,8 @@ for name in names:
         'domains': domains, 'passes_quality_gate': all(d['passes_2pp_engineering_gate'] for d in domains.values()),
         'train_report': str(root / (name + '.json')), 'probe_report': str(root / probe_file)})
 stages = [json.loads(p.read_text()) for p in sorted((root / 'stages').glob('*.json'))]
+staged_gpus = sorted({gpu for stage in stages for gpu in stage.get('gpus', [])})
+assert set(staged_gpus) <= {'4', '5', '6', '7'}
 cost_groups = {'training': 0., 'formal_evaluation': 0., 'development_and_verification': 0.}
 for stage in stages:
     command = stage.get('command', [])
@@ -47,6 +49,7 @@ for stage in stages:
 result = {'rows': rows, 'decision': 'No candidate passes both predeclared development gates; P2 scale-up not executed.',
     'uncertainty': 'Synthetic development probes only, 48 items per domain, one training seed. Bootstrap is conditional on these responses and does not estimate training-seed variance; all-equal outcomes give degenerate intervals.',
     'cost': {'completed_stage_reserved_gpu_hours': sum(s.get('reserved_gpu_hours', 0) for s in stages),
+        'staged_jobs_physical_gpus': staged_gpus,
         'completed_reserved_gpu_hours_by_category': cost_groups,
         'running_stages': [s['name'] for s in stages if s['status'] == 'running'],
         'scope': 'Stage reservation totals only; nested wrapper costs excluded to avoid double counting. Historical v0.0.4 teacher generation excluded; no new teacher generation.'}}
