@@ -42,3 +42,18 @@ After both complete formal run manifests exist:
 ```
 
 This rejects incomplete benchmarks, duplicate/missing scores, different request identities, different generation semantics, and incompatible inference environments. Exported generation files differ in formatting/version metadata, so each is validated against its own recorded hash and then compared semantically.
+
+## Acceptance status
+
+| Area | Status | Boundary |
+| --- | --- | --- |
+| Pinned0.6B conversion and parameter accounting | Passed | Logical ties audited separately from duplicate native checkpoint storage |
+| Eager reference, cache, compile replay, packed training regressions | Passed on tested inputs | No universal cross-backend/shape bitwise guarantee |
+| Three matched1M loss recipes and follow-up attribution | Executed | No candidate passes both predeclared quality gates |
+| Data/label/exposure audits | Passed | Available corpus size differs from actually visited IDs |
+| Independent resume/export | Five complete;250k follow-up queued | Trained BF16 export uses CE tolerance, not bitwise identity |
+| Full MATH-500 / IFEval | Running | Partial responses are not final scores |
+|10M/30M fixed32/dynamic main experiment | Not executed, gated | No extra-depth or adaptive-compute benefit established |
+| New32B teacher generation | Not executed, gated | Existing accepted answers reused with provenance |
+
+Parameter details: `parameter_audit.json`; supervision examples: `label_audit.json`; resume/export checks: `training_export_resume.json`. Native generation is a Transformers eager control and RMT uses compiled projections, so full-service timing is not an architecture-only speed comparison.
