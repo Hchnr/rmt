@@ -1,0 +1,17 @@
+{
+  "name": "path_probe",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/probe_06b_paths.py"
+  ],
+  "started_at": "2026-10-08T03:05:16.908387+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:05:35.851610+00:00",
+  "wall_seconds": 18.938555324450135,
+  "reserved_gpu_hours": 0.0052607098123472595
+}

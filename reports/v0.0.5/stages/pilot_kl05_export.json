@@ -1,0 +1,18 @@
+{
+  "name": "pilot_kl05_export",
+  "gpus": [
+    "6"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/validate_training_export.py",
+    "artifacts/v0.0.5/pilot_kl05"
+  ],
+  "started_at": "2026-10-08T03:04:05.019617+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:04:18.254373+00:00",
+  "wall_seconds": 13.230235358700156,
+  "reserved_gpu_hours": 0.0036750653774167102
+}

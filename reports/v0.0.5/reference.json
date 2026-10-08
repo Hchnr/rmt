@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu130",
+    "cuda_runtime": "13.0",
+    "transformers": "4.57.6",
+    "cuda_visible_devices": "4",
+    "tf32_override": "1",
+    "nvidia_tf32_override": null
+  },
+  "checks": [
+    {
+      "case": "left_padding",
+      "equal": true,
+      "max_abs": 0.0
+    },
+    {
+      "case": "right_padding",
+      "equal": true,
+      "max_abs": 0.0
+    },
+    {
+      "case": "cached_step_0",
+      "equal": true,
+      "max_abs": 0.0
+    },
+    {
+      "case": "cached_step_1",
+      "equal": true,
+      "max_abs": 0.0
+    },
+    {
+      "case": "cached_step_2",
+      "equal": true,
+      "max_abs": 0.0
+    },
+    {
+      "case": "cached_step_3",
+      "equal": true,
+      "max_abs": 0.0
+    },
+    {
+      "case": "cached_step_4",
+      "equal": true,
+      "max_abs": 0.0
+    }
+  ],
+  "hf_reload_equal": true,
+  "tied_weights": true,
+  "base_parameters": 596049920,
+  "router_parameters": 29680,
+  "scope": "BF16 eager, tested inputs and batch shapes only; not cross-backend equivalence"
+}

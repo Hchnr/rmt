@@ -1,0 +1,203 @@
+{
+  "rows": [
+    {
+      "name": "untrained",
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.9583333333333334,
+          "native_score": 0.9583333333333334,
+          "paired_delta": 0.0,
+          "paired_bootstrap_95pct": [
+            0.0,
+            0.0
+          ],
+          "passes_2pp_gate": true
+        },
+        "math": {
+          "n": 48,
+          "score": 1.0,
+          "native_score": 1.0,
+          "paired_delta": 0.0,
+          "paired_bootstrap_95pct": [
+            0.0,
+            0.0
+          ],
+          "passes_2pp_gate": true
+        }
+      },
+      "passes_quality_gate": true
+    },
+    {
+      "name": "pilot_ce",
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.6458333333333334,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.3125,
+          "paired_bootstrap_95pct": [
+            -0.4583333333333333,
+            -0.16666666666666666
+          ],
+          "passes_2pp_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 0.9791666666666666,
+          "native_score": 1.0,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_gate": false
+        }
+      },
+      "passes_quality_gate": false
+    },
+    {
+      "name": "pilot_kl01",
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.625,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.3333333333333333,
+          "paired_bootstrap_95pct": [
+            -0.4791666666666667,
+            -0.1875
+          ],
+          "passes_2pp_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 0.9791666666666666,
+          "native_score": 1.0,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_gate": false
+        }
+      },
+      "passes_quality_gate": false
+    },
+    {
+      "name": "pilot_kl05",
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.9375,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.10416666666666667,
+            0.041666666666666664
+          ],
+          "passes_2pp_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 0.9791666666666666,
+          "native_score": 1.0,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_gate": false
+        }
+      },
+      "passes_quality_gate": false
+    },
+    {
+      "name": "short_kl05",
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.6041666666666666,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.3541666666666667,
+          "paired_bootstrap_95pct": [
+            -0.5,
+            -0.20833333333333334
+          ],
+          "passes_2pp_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 1.0,
+          "native_score": 1.0,
+          "paired_delta": 0.0,
+          "paired_bootstrap_95pct": [
+            0.0,
+            0.0
+          ],
+          "passes_2pp_gate": true
+        }
+      },
+      "passes_quality_gate": false
+    },
+    {
+      "name": "mixed_kl05",
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.875,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.08333333333333333,
+          "paired_bootstrap_95pct": [
+            -0.16666666666666666,
+            -0.020833333333333332
+          ],
+          "passes_2pp_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 0.9791666666666666,
+          "native_score": 1.0,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_gate": false
+        }
+      },
+      "passes_quality_gate": false
+    },
+    {
+      "name": "mixed_kl05_lr1e6",
+      "domains": {
+        "instruction": {
+          "n": 48,
+          "score": 0.9375,
+          "native_score": 0.9583333333333334,
+          "paired_delta": -0.020833333333333332,
+          "paired_bootstrap_95pct": [
+            -0.0625,
+            0.0
+          ],
+          "passes_2pp_gate": false
+        },
+        "math": {
+          "n": 48,
+          "score": 1.0,
+          "native_score": 1.0,
+          "paired_delta": 0.0,
+          "paired_bootstrap_95pct": [
+            0.0,
+            0.0
+          ],
+          "passes_2pp_gate": true
+        }
+      },
+      "passes_quality_gate": false
+    }
+  ],
+  "eligible_trained_recipes": [],
+  "formal_candidate_frozen_before_recheck": "mixed_kl05_lr1e6",
+  "scope": "Verification of already frozen weights/questions/scorer after deterministic inference fixes; no new training or use of formal scores for selection. One seed and48 synthetic cases per domain, conditional bootstrap only; degenerate all-equal intervals are not population certainty."
+}

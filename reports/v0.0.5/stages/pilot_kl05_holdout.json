@@ -1,0 +1,23 @@
+{
+  "name": "pilot_kl05_holdout",
+  "gpus": [
+    "6"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/evaluate_dynamic_holdout.py",
+    "--model",
+    "artifacts/v0.0.5/pilot_kl05/hf",
+    "--data",
+    "artifacts/v0.0.5/corpus/dev.jsonl",
+    "--output",
+    "reports/v0.0.5/pilot_kl05_holdout.json"
+  ],
+  "started_at": "2026-10-08T03:05:01.972290+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:05:50.447208+00:00",
+  "wall_seconds": 48.47088594920933,
+  "reserved_gpu_hours": 0.01346413498589148
+}

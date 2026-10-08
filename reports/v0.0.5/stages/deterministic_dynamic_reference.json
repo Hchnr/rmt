@@ -1,0 +1,26 @@
+{
+  "name": "deterministic_dynamic_reference",
+  "gpus": [
+    "7"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/verify_dynamic_model.py",
+    "--base",
+    "/share/project/eai_pwm/models/Qwen/Qwen3-0.6B",
+    "--max-depth",
+    "36",
+    "--output-root",
+    "artifacts/v0.0.5/deterministic_dynamic_reference_hf",
+    "--report",
+    "reports/v0.0.5/deterministic_dynamic_reference.json",
+    "--deterministic"
+  ],
+  "started_at": "2026-10-08T06:32:40.127604+00:00",
+  "status": "passed",
+  "commit": "b34bde13d1c0b8229ccb6dd43fa5723eb8c761a0",
+  "returncode": 0,
+  "ended_at": "2026-10-08T06:33:02.973514+00:00",
+  "wall_seconds": 22.841758206486702,
+  "reserved_gpu_hours": 0.006344932835135195
+}

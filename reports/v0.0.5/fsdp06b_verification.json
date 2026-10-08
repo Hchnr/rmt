@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "world_size": 2,
+  "completed_steps": 16,
+  "targets": 36052,
+  "hot_targets_per_second": 4629.703375803833,
+  "peak_allocated_bytes": 8421883392,
+  "fresh_resume": {
+    "status": "passed",
+    "world_size": 2,
+    "next_loss": 0.9701903462409973,
+    "parameter_sha256_equal": true
+  },
+  "hf_reload": {
+    "status": "passed",
+    "work": "artifacts/v0.0.5/fsdp06b_smoke",
+    "expected_training_dev_ce": 1.2985000610351562,
+    "hf_reload_dev_ce": 1.2986187247999366,
+    "absolute_difference": 0.00011866376478031349,
+    "tolerance": 0.005,
+    "routing_mode": "layer_order",
+    "prior": 4.0,
+    "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+  },
+  "scope": "Engineering-only16-step real0.6B FSDP check, not a new quality candidate. Global batch differs from single-GPU runs; no fair scaling claim."
+}

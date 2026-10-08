@@ -1,0 +1,20 @@
+{
+  "name": "short_kl05",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "-m",
+    "rmt.train",
+    "--config",
+    "configs/v0.0.5/short_kl05.yaml"
+  ],
+  "started_at": "2026-10-08T03:07:00.990932+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:09:39.144081+00:00",
+  "wall_seconds": 158.14838612265885,
+  "reserved_gpu_hours": 0.04393010725629413
+}

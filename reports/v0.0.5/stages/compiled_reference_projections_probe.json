@@ -1,0 +1,17 @@
+{
+  "name": "compiled_reference_projections_probe",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/probe_06b_reference_projections.py"
+  ],
+  "started_at": "2026-10-08T03:28:36.077649+00:00",
+  "status": "failed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 1,
+  "ended_at": "2026-10-08T03:28:58.022889+00:00",
+  "wall_seconds": 21.941105322912335,
+  "reserved_gpu_hours": 0.0060947514785867594
+}

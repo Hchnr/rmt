@@ -1,0 +1,18 @@
+{
+  "name": "fsdp06b_hf_reload",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/validate_training_export.py",
+    "artifacts/v0.0.5/fsdp06b_smoke"
+  ],
+  "started_at": "2026-10-08T06:45:05.285865+00:00",
+  "status": "passed",
+  "commit": "e6f8662ce1b33c9221433defa380c978e1710958",
+  "returncode": 0,
+  "ended_at": "2026-10-08T06:45:21.375816+00:00",
+  "wall_seconds": 16.08401519060135,
+  "reserved_gpu_hours": 0.004467781997389264
+}

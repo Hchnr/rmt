@@ -1,0 +1,1800 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "file": "artifacts/v0.0.5/corpus/dev.jsonl",
+      "records": 656,
+      "shifted_targets": 236240,
+      "domain_boundary_examples": {
+        "general": {
+          "id": "006994aef91c325207927a6a6431b5b5729fb0ccc4c987e876b9dc5887d2a31d",
+          "masked_prefix_tokens": 77,
+          "supervised_tokens": 449,
+          "boundary": [
+            {
+              "position": 73,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 74,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 75,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 76,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 77,
+              "id": 68556,
+              "label": 68556,
+              "token": "Maria"
+            },
+            {
+              "position": 78,
+              "id": 572,
+              "label": 572,
+              "token": "Ġwas"
+            },
+            {
+              "position": 79,
+              "id": 304,
+              "label": 304,
+              "token": "Ġin"
+            },
+            {
+              "position": 80,
+              "id": 279,
+              "label": 279,
+              "token": "Ġthe"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 3100,
+              "token": "Ġlight"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "math": {
+          "id": "006af51d0dfe8f1287603bf151e527d67c2b17a241c066feaf75d4764cfbcfdc",
+          "masked_prefix_tokens": 49,
+          "supervised_tokens": 513,
+          "boundary": [
+            {
+              "position": 45,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 46,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 47,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 48,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 49,
+              "id": 18,
+              "label": 18,
+              "token": "3"
+            },
+            {
+              "position": 50,
+              "id": 24,
+              "label": 24,
+              "token": "9"
+            },
+            {
+              "position": 51,
+              "id": 13,
+              "label": 13,
+              "token": "."
+            },
+            {
+              "position": 52,
+              "id": 5542,
+              "label": 5542,
+              "token": "ĠFrom"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 4682,
+              "token": "Ġconditions"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "code": {
+          "id": "01568d23f770c7354073d8ac7d2476286ea5600a7ab38217aafe1ae1f52558dd",
+          "masked_prefix_tokens": 48,
+          "supervised_tokens": 372,
+          "boundary": [
+            {
+              "position": 44,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 45,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 46,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 47,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 48,
+              "id": 8420,
+              "label": 8420,
+              "token": "Here"
+            },
+            {
+              "position": 49,
+              "id": 374,
+              "label": 374,
+              "token": "Ġis"
+            },
+            {
+              "position": 50,
+              "id": 279,
+              "label": 279,
+              "token": "Ġthe"
+            },
+            {
+              "position": 51,
+              "id": 10135,
+              "label": 10135,
+              "token": "Ġpython"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 738,
+              "token": "Ġset"
+            },
+            {
+              "id": 624,
+              "token": ".Ċ"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "chinese": {
+          "id": "0c4885f107e4e28cd2568e0cd800cb147f4ae796c5f6aead6be648af73dd4194",
+          "masked_prefix_tokens": 119,
+          "supervised_tokens": 62,
+          "boundary": [
+            {
+              "position": 115,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 116,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 117,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 118,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 119,
+              "id": 1722,
+              "label": 1722,
+              "token": "package"
+            },
+            {
+              "position": 120,
+              "id": 1887,
+              "label": 1887,
+              "token": "Ġmain"
+            },
+            {
+              "position": 121,
+              "id": 198,
+              "label": 198,
+              "token": "Ċ"
+            },
+            {
+              "position": 122,
+              "id": 474,
+              "label": 474,
+              "token": "import"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 340,
+              "token": ")Ċ"
+            },
+            {
+              "id": 92,
+              "token": "}"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "artifacts/v0.0.5/corpus/halt_calibration.jsonl",
+      "records": 680,
+      "shifted_targets": 245640,
+      "domain_boundary_examples": {
+        "code": {
+          "id": "001b4cf28c3bf76d04c37de3d9344b9a3c32b5558850fcc2717255e8500f2323",
+          "masked_prefix_tokens": 155,
+          "supervised_tokens": 386,
+          "boundary": [
+            {
+              "position": 151,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 152,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 153,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 154,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 155,
+              "id": 73562,
+              "label": 73562,
+              "token": "Ġåľ¨"
+            },
+            {
+              "position": 156,
+              "id": 111584,
+              "label": 111584,
+              "token": "åŁŁåĲį"
+            },
+            {
+              "position": 157,
+              "id": 99716,
+              "label": 99716,
+              "token": "æĬķèµĦ"
+            },
+            {
+              "position": 158,
+              "id": 15946,
+              "label": 15946,
+              "token": "ä¸Ń"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 100735,
+              "token": "æĪĲæŀľ"
+            },
+            {
+              "id": 1773,
+              "token": "ãĢĤ"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "general": {
+          "id": "0152bb65f500ce976c87317bb83cdede20390a49f7628bc1449e1068d14118cd",
+          "masked_prefix_tokens": 486,
+          "supervised_tokens": 310,
+          "boundary": [
+            {
+              "position": 482,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 483,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 484,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 485,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 486,
+              "id": 29535,
+              "label": 29535,
+              "token": "Ma"
+            },
+            {
+              "position": 487,
+              "id": 472,
+              "label": 472,
+              "token": "ĠH"
+            },
+            {
+              "position": 488,
+              "id": 10386,
+              "label": 10386,
+              "token": "uan"
+            },
+            {
+              "position": 489,
+              "id": 594,
+              "label": 594,
+              "token": "'s"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 6321,
+              "token": "si"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "math": {
+          "id": "01890d3b8000cb43f2ee6ac4eedb9d387ad45a13431ed29ac15864205a368da2",
+          "masked_prefix_tokens": 135,
+          "supervised_tokens": 454,
+          "boundary": [
+            {
+              "position": 131,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 132,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 133,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 134,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 135,
+              "id": 36842,
+              "label": 36842,
+              "token": "Solution"
+            },
+            {
+              "position": 136,
+              "id": 25,
+              "label": 25,
+              "token": ":"
+            },
+            {
+              "position": 137,
+              "id": 5542,
+              "label": 5542,
+              "token": "ĠFrom"
+            },
+            {
+              "position": 138,
+              "id": 279,
+              "label": 279,
+              "token": "Ġthe"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 31610,
+              "token": "quad"
+            },
+            {
+              "id": 3,
+              "token": "$"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "chinese": {
+          "id": "0354a62fb58fd2550c6246f08d439e138c923af0f697d79a390848baba22e0cb",
+          "masked_prefix_tokens": 15,
+          "supervised_tokens": 369,
+          "boundary": [
+            {
+              "position": 11,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 12,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 13,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 14,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 15,
+              "id": 51694,
+              "label": 51694,
+              "token": "UART"
+            },
+            {
+              "position": 16,
+              "id": 47007,
+              "label": 47007,
+              "token": "ĠFIFO"
+            },
+            {
+              "position": 17,
+              "id": 9909,
+              "label": 9909,
+              "token": "ï¼Ī"
+            },
+            {
+              "position": 18,
+              "id": 5338,
+              "label": 5338,
+              "token": "First"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 100799,
+              "token": "éĩįè¦ģçļĦ"
+            },
+            {
+              "id": 1773,
+              "token": "ãĢĤ"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "artifacts/v0.0.5/corpus/mixed_train.jsonl",
+      "records": 20066,
+      "shifted_targets": 7763294,
+      "domain_boundary_examples": {
+        "code": {
+          "id": "0001f169a1e77435309e44275b4a7ae50cd5e67b4bee054563098ddf096409fd",
+          "masked_prefix_tokens": 622,
+          "supervised_tokens": 810,
+          "boundary": [
+            {
+              "position": 618,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 619,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 620,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 621,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 622,
+              "id": 16600,
+              "label": 16600,
+              "token": "Ġ###"
+            },
+            {
+              "position": 623,
+              "id": 4377,
+              "label": 4377,
+              "token": "ĠSoftware"
+            },
+            {
+              "position": 624,
+              "id": 37843,
+              "label": 37843,
+              "token": "ĠArchitecture"
+            },
+            {
+              "position": 625,
+              "id": 6982,
+              "label": 6982,
+              "token": "ĠDesign"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 8502,
+              "token": "Ġrequirements"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "general": {
+          "id": "0003896c6f075b105ff63414b7b3ff06e50387995760a264ab83ea9fedfee4d1",
+          "masked_prefix_tokens": 77,
+          "supervised_tokens": 281,
+          "boundary": [
+            {
+              "position": 73,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 74,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 75,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 76,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 77,
+              "id": 334,
+              "label": 334,
+              "token": "**"
+            },
+            {
+              "position": 78,
+              "id": 30665,
+              "label": 30665,
+              "token": "Dear"
+            },
+            {
+              "position": 79,
+              "id": 508,
+              "label": 508,
+              "token": "Ġ["
+            },
+            {
+              "position": 80,
+              "id": 16984,
+              "label": 16984,
+              "token": "Employee"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 3988,
+              "token": "ĠName"
+            },
+            {
+              "id": 78341,
+              "token": "]**"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "math": {
+          "id": "001daa3e89159e885c1199f3f39a4c820b4539d05ce40c464bce45675dcada42",
+          "masked_prefix_tokens": 59,
+          "supervised_tokens": 832,
+          "boundary": [
+            {
+              "position": 55,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 56,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 57,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 58,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 59,
+              "id": 1654,
+              "label": 1654,
+              "token": "We"
+            },
+            {
+              "position": 60,
+              "id": 525,
+              "label": 525,
+              "token": "Ġare"
+            },
+            {
+              "position": 61,
+              "id": 2661,
+              "label": 2661,
+              "token": "Ġgiven"
+            },
+            {
+              "position": 62,
+              "id": 264,
+              "label": 264,
+              "token": "Ġa"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 532,
+              "token": "}Ċ"
+            },
+            {
+              "id": 14085,
+              "token": "$$"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "chinese": {
+          "id": "00f3c32caf6ba8e88fcfac2762cf9b96eec20ae857baad5b50f145196f394398",
+          "masked_prefix_tokens": 20,
+          "supervised_tokens": 1111,
+          "boundary": [
+            {
+              "position": 16,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 17,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 18,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 19,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 20,
+              "id": 103942,
+              "label": 103942,
+              "token": "å½ĵçĦ¶"
+            },
+            {
+              "position": 21,
+              "id": 6313,
+              "label": 6313,
+              "token": "ï¼ģ"
+            },
+            {
+              "position": 22,
+              "id": 87752,
+              "label": 87752,
+              "token": "ä»¥ä¸ĭ"
+            },
+            {
+              "position": 23,
+              "id": 99639,
+              "label": 99639,
+              "token": "æĺ¯ä¸Ģ"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 101037,
+              "token": "åĲĹ"
+            },
+            {
+              "id": 11319,
+              "token": "ï¼Ł"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "artifacts/v0.0.5/corpus/teacher32_train.jsonl",
+      "records": 788,
+      "shifted_targets": 635763,
+      "domain_boundary_examples": {
+        "general": {
+          "id": "0003896c6f075b105ff63414b7b3ff06e50387995760a264ab83ea9fedfee4d1",
+          "masked_prefix_tokens": 77,
+          "supervised_tokens": 281,
+          "boundary": [
+            {
+              "position": 73,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 74,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 75,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 76,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 77,
+              "id": 334,
+              "label": 334,
+              "token": "**"
+            },
+            {
+              "position": 78,
+              "id": 30665,
+              "label": 30665,
+              "token": "Dear"
+            },
+            {
+              "position": 79,
+              "id": 508,
+              "label": 508,
+              "token": "Ġ["
+            },
+            {
+              "position": 80,
+              "id": 16984,
+              "label": 16984,
+              "token": "Employee"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 3988,
+              "token": "ĠName"
+            },
+            {
+              "id": 78341,
+              "token": "]**"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "code": {
+          "id": "000e4cd4d07e401cfdc0873d76c6b05e83783dbe882c20ce6ef310f0212556c4",
+          "masked_prefix_tokens": 419,
+          "supervised_tokens": 1118,
+          "boundary": [
+            {
+              "position": 415,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 416,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 417,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 418,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 419,
+              "id": 7771,
+              "label": 7771,
+              "token": "Your"
+            },
+            {
+              "position": 420,
+              "id": 2856,
+              "label": 2856,
+              "token": "Ġinitial"
+            },
+            {
+              "position": 421,
+              "id": 4226,
+              "label": 4226,
+              "token": "Ġanswer"
+            },
+            {
+              "position": 422,
+              "id": 374,
+              "label": 374,
+              "token": "Ġis"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 10953,
+              "token": "Ġmeasures"
+            },
+            {
+              "id": 0,
+              "token": "!"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "math": {
+          "id": "001daa3e89159e885c1199f3f39a4c820b4539d05ce40c464bce45675dcada42",
+          "masked_prefix_tokens": 59,
+          "supervised_tokens": 832,
+          "boundary": [
+            {
+              "position": 55,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 56,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 57,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 58,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 59,
+              "id": 1654,
+              "label": 1654,
+              "token": "We"
+            },
+            {
+              "position": 60,
+              "id": 525,
+              "label": 525,
+              "token": "Ġare"
+            },
+            {
+              "position": 61,
+              "id": 2661,
+              "label": 2661,
+              "token": "Ġgiven"
+            },
+            {
+              "position": 62,
+              "id": 264,
+              "label": 264,
+              "token": "Ġa"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 532,
+              "token": "}Ċ"
+            },
+            {
+              "id": 14085,
+              "token": "$$"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "chinese": {
+          "id": "00f3c32caf6ba8e88fcfac2762cf9b96eec20ae857baad5b50f145196f394398",
+          "masked_prefix_tokens": 20,
+          "supervised_tokens": 1111,
+          "boundary": [
+            {
+              "position": 16,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 17,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 18,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 19,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 20,
+              "id": 103942,
+              "label": 103942,
+              "token": "å½ĵçĦ¶"
+            },
+            {
+              "position": 21,
+              "id": 6313,
+              "label": 6313,
+              "token": "ï¼ģ"
+            },
+            {
+              "position": 22,
+              "id": 87752,
+              "label": 87752,
+              "token": "ä»¥ä¸ĭ"
+            },
+            {
+              "position": 23,
+              "id": 99639,
+              "label": 99639,
+              "token": "æĺ¯ä¸Ģ"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 101037,
+              "token": "åĲĹ"
+            },
+            {
+              "id": 11319,
+              "token": "ï¼Ł"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "artifacts/v0.0.5/corpus/test.jsonl",
+      "records": 914,
+      "shifted_targets": 338708,
+      "domain_boundary_examples": {
+        "general": {
+          "id": "005e4c1102abfa4d7a1f2bff2d1eb0a19f7c6123d23f92ab7c089af69f60d6d1",
+          "masked_prefix_tokens": 27,
+          "supervised_tokens": 432,
+          "boundary": [
+            {
+              "position": 23,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 24,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 25,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 26,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 27,
+              "id": 40,
+              "label": 40,
+              "token": "I"
+            },
+            {
+              "position": 28,
+              "id": 1513,
+              "label": 1513,
+              "token": "Ġdon"
+            },
+            {
+              "position": 29,
+              "id": 944,
+              "label": 944,
+              "token": "'t"
+            },
+            {
+              "position": 30,
+              "id": 614,
+              "label": 614,
+              "token": "Ġhave"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 21787,
+              "token": "Ġgenerations"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "math": {
+          "id": "00a7d76d6e8488dac66dd4c21431b362d06f78a8b36a6186fcf2aade8cac3bc7",
+          "masked_prefix_tokens": 64,
+          "supervised_tokens": 468,
+          "boundary": [
+            {
+              "position": 60,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 61,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 62,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 63,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 64,
+              "id": 10061,
+              "label": 10061,
+              "token": "Let"
+            },
+            {
+              "position": 65,
+              "id": 57960,
+              "label": 57960,
+              "token": "Ġ$\\"
+            },
+            {
+              "position": 66,
+              "id": 7141,
+              "label": 7141,
+              "token": "alpha"
+            },
+            {
+              "position": 67,
+              "id": 34433,
+              "label": 34433,
+              "token": "=\\"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 7071,
+              "token": "Ġfigure"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "code": {
+          "id": "00caa238fb9aac62c90a28ab43ec119efe9767f6bacc9254be398acd5cde7d07",
+          "masked_prefix_tokens": 50,
+          "supervised_tokens": 522,
+          "boundary": [
+            {
+              "position": 46,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 47,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 48,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 49,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 50,
+              "id": 4710,
+              "label": 4710,
+              "token": "ĠĊĊ"
+            },
+            {
+              "position": 51,
+              "id": 65390,
+              "label": 65390,
+              "token": "Eth"
+            },
+            {
+              "position": 52,
+              "id": 938,
+              "label": 938,
+              "token": "ical"
+            },
+            {
+              "position": 53,
+              "id": 4763,
+              "label": 4763,
+              "token": "Ġsecurity"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 7525,
+              "token": "Ġoperations"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "chinese": {
+          "id": "06dc48a4ad918af7d82d96d69759ca7f63a79bdfbe0b3586f62b1a4978555b96",
+          "masked_prefix_tokens": 22,
+          "supervised_tokens": 291,
+          "boundary": [
+            {
+              "position": 18,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 19,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 20,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 21,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 22,
+              "id": 105464,
+              "label": 105464,
+              "token": "è¿Ļæĺ¯ä¸Ģä¸ª"
+            },
+            {
+              "position": 23,
+              "id": 105172,
+              "label": 105172,
+              "token": "ç®ĢåįķçļĦ"
+            },
+            {
+              "position": 24,
+              "id": 30280,
+              "label": 30280,
+              "token": "Python"
+            },
+            {
+              "position": 25,
+              "id": 74220,
+              "label": 74220,
+              "token": "ç¨ĭåºı"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 91282,
+              "token": "å®ļä¹ī"
+            },
+            {
+              "id": 1773,
+              "token": "ãĢĤ"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "artifacts/v0.0.5/corpus/train.jsonl",
+      "records": 20066,
+      "shifted_targets": 7393829,
+      "domain_boundary_examples": {
+        "code": {
+          "id": "0001f169a1e77435309e44275b4a7ae50cd5e67b4bee054563098ddf096409fd",
+          "masked_prefix_tokens": 622,
+          "supervised_tokens": 810,
+          "boundary": [
+            {
+              "position": 618,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 619,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 620,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 621,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 622,
+              "id": 16600,
+              "label": 16600,
+              "token": "Ġ###"
+            },
+            {
+              "position": 623,
+              "id": 4377,
+              "label": 4377,
+              "token": "ĠSoftware"
+            },
+            {
+              "position": 624,
+              "id": 37843,
+              "label": 37843,
+              "token": "ĠArchitecture"
+            },
+            {
+              "position": 625,
+              "id": 6982,
+              "label": 6982,
+              "token": "ĠDesign"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 8502,
+              "token": "Ġrequirements"
+            },
+            {
+              "id": 13,
+              "token": "."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "general": {
+          "id": "0003896c6f075b105ff63414b7b3ff06e50387995760a264ab83ea9fedfee4d1",
+          "masked_prefix_tokens": 77,
+          "supervised_tokens": 196,
+          "boundary": [
+            {
+              "position": 73,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 74,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 75,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 76,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 77,
+              "id": 30665,
+              "label": 30665,
+              "token": "Dear"
+            },
+            {
+              "position": 78,
+              "id": 508,
+              "label": 508,
+              "token": "Ġ["
+            },
+            {
+              "position": 79,
+              "id": 16984,
+              "label": 16984,
+              "token": "Employee"
+            },
+            {
+              "position": 80,
+              "id": 49088,
+              "label": 49088,
+              "token": "],ĊĊ"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 3988,
+              "token": "ĠName"
+            },
+            {
+              "id": 60,
+              "token": "]"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "math": {
+          "id": "001daa3e89159e885c1199f3f39a4c820b4539d05ce40c464bce45675dcada42",
+          "masked_prefix_tokens": 59,
+          "supervised_tokens": 18,
+          "boundary": [
+            {
+              "position": 55,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 56,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 57,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 58,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 59,
+              "id": 16141,
+              "label": 16141,
+              "token": "Answer"
+            },
+            {
+              "position": 60,
+              "id": 25,
+              "label": 25,
+              "token": ":"
+            },
+            {
+              "position": 61,
+              "id": 400,
+              "label": 400,
+              "token": "Ġ$"
+            },
+            {
+              "position": 62,
+              "id": 47,
+              "label": 47,
+              "token": "P"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 24,
+              "token": "9"
+            },
+            {
+              "id": 12947,
+              "token": "$."
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        },
+        "chinese": {
+          "id": "00f3c32caf6ba8e88fcfac2762cf9b96eec20ae857baad5b50f145196f394398",
+          "masked_prefix_tokens": 20,
+          "supervised_tokens": 68,
+          "boundary": [
+            {
+              "position": 16,
+              "id": 151667,
+              "label": -100,
+              "token": "<think>"
+            },
+            {
+              "position": 17,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 18,
+              "id": 151668,
+              "label": -100,
+              "token": "</think>"
+            },
+            {
+              "position": 19,
+              "id": 271,
+              "label": -100,
+              "token": "ĊĊ"
+            },
+            {
+              "position": 20,
+              "id": 102182,
+              "label": 102182,
+              "token": "æľºåĻ¨"
+            },
+            {
+              "position": 21,
+              "id": 100134,
+              "label": 100134,
+              "token": "åŃ¦ä¹ł"
+            },
+            {
+              "position": 22,
+              "id": 105470,
+              "label": 105470,
+              "token": "çĽ¸åħ³çļĦ"
+            },
+            {
+              "position": 23,
+              "id": 73345,
+              "label": 73345,
+              "token": "é¡¹çĽ®"
+            }
+          ],
+          "last_tokens": [
+            {
+              "id": 104598,
+              "token": "éĶĢéĩı"
+            },
+            {
+              "id": 1773,
+              "token": "ãĢĤ"
+            },
+            {
+              "id": 151645,
+              "token": "<|im_end|>"
+            },
+            {
+              "id": 198,
+              "token": "Ċ"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "policy": "Only final assistant continuation is supervised, including the non-thinking template continuation and EOS. Prior turns and final assistant prefix are masked. Complete docs fit2048; pack boundary/gradient isolation separately covered by unit tests."
+}

@@ -1,0 +1,149 @@
+{
+  "rows": [
+    {
+      "name": "pilot_ce",
+      "in_process_replay": {
+        "loss": 0.6671938300132751,
+        "parameter_sha256": "ec01a70b1d9ac7a8a90f151fe5229637ff968dfd83926aafd88fd43da39037ba"
+      },
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 1,
+        "next_loss": 0.6671938300132751,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.5/pilot_ce",
+        "expected_training_dev_ce": 1.4883785247802734,
+        "hf_reload_dev_ce": 1.4884230015247308,
+        "absolute_difference": 4.447674445740013e-05,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      }
+    },
+    {
+      "name": "pilot_kl01",
+      "in_process_replay": {
+        "loss": 0.6790817975997925,
+        "parameter_sha256": "254a9fadc2672b2528c1c21e5172758472457b000a9364a4086b49e2506d6bbb"
+      },
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 1,
+        "next_loss": 0.6790817975997925,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.5/pilot_kl01",
+        "expected_training_dev_ce": 1.4331762790679932,
+        "hf_reload_dev_ce": 1.4343936637319705,
+        "absolute_difference": 0.0012173846639773611,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      }
+    },
+    {
+      "name": "pilot_kl05",
+      "in_process_replay": {
+        "loss": 0.7913542985916138,
+        "parameter_sha256": "75ca5e5572bb8153c5ae51b99f9d8054b10b0edd3e284a9610c7306984f31705"
+      },
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 1,
+        "next_loss": 0.7913542985916138,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.5/pilot_kl05",
+        "expected_training_dev_ce": 1.3522733449935913,
+        "hf_reload_dev_ce": 1.352216337862215,
+        "absolute_difference": 5.700713137635205e-05,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      }
+    },
+    {
+      "name": "short_kl05",
+      "in_process_replay": {
+        "loss": 1.2674858570098877,
+        "parameter_sha256": "1f3de6f968b0bd50b24630b122e9416f0a38203c41176e65a7ccbdc2e2ed7c01"
+      },
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 1,
+        "next_loss": 1.2674858570098877,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.5/short_kl05",
+        "expected_training_dev_ce": 1.2906627655029297,
+        "hf_reload_dev_ce": 1.290881064800374,
+        "absolute_difference": 0.00021829929744421328,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      }
+    },
+    {
+      "name": "mixed_kl05",
+      "in_process_replay": {
+        "loss": 1.2183233499526978,
+        "parameter_sha256": "c7a74f866875bb3847c7854ab623066016ab5ac6fb5e55c5be151fff9cec37bb"
+      },
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 1,
+        "next_loss": 1.2183233499526978,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.5/mixed_kl05",
+        "expected_training_dev_ce": 1.068147897720337,
+        "hf_reload_dev_ce": 1.0681610564816466,
+        "absolute_difference": 1.3158761309695066e-05,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      }
+    },
+    {
+      "name": "mixed_kl05_lr1e6",
+      "in_process_replay": {
+        "loss": 1.1922950744628906,
+        "parameter_sha256": "f9a0ad6f970d85c50bfc963790ba2083d0040a5b758da11e39e690d25a9f7582"
+      },
+      "fresh_resume": {
+        "status": "passed",
+        "world_size": 1,
+        "next_loss": 1.1922950744628906,
+        "parameter_sha256_equal": true
+      },
+      "hf_reload": {
+        "status": "passed",
+        "work": "artifacts/v0.0.5/mixed_kl05_lr1e6",
+        "expected_training_dev_ce": 1.0810188055038452,
+        "hf_reload_dev_ce": 1.0811115999709735,
+        "absolute_difference": 9.279446712828765e-05,
+        "tolerance": 0.005,
+        "routing_mode": "layer_order",
+        "prior": 4.0,
+        "note": "BF16 export of FP32 master weights; validation checks observed loss, not universal bitwise identity"
+      }
+    }
+  ],
+  "scope": "Fresh resume next update requires exact parameter hash equality. Trained BF16 export from FP32 master is validated with stated loss tolerance, not bitwise identity."
+}

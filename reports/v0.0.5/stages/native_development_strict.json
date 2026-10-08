@@ -1,0 +1,28 @@
+{
+  "name": "native_development_strict",
+  "gpus": [
+    "6"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/evaluate_06b_development.py",
+    "--model",
+    "/share/project/eai_pwm/models/Qwen/Qwen3-0.6B",
+    "--backend",
+    "qwen",
+    "--max-new-tokens",
+    "512",
+    "--attention",
+    "eager",
+    "--deterministic",
+    "--output",
+    "reports/v0.0.5/native_development_strict.json"
+  ],
+  "started_at": "2026-10-08T03:34:21.982366+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:35:27.027331+00:00",
+  "wall_seconds": 65.0401324890554,
+  "reserved_gpu_hours": 0.018066703469182054
+}

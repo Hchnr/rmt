@@ -1,0 +1,17 @@
+{
+  "name": "compiled_long_numeric",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/verify_06b_compiled_long.py"
+  ],
+  "started_at": "2026-10-08T03:15:20.156455+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:15:38.449333+00:00",
+  "wall_seconds": 18.28851297684014,
+  "reserved_gpu_hours": 0.005080142493566705
+}

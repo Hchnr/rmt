@@ -1,0 +1,25 @@
+{
+  "name": "deterministic_performance_short",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/benchmark_dynamic_inference.py",
+    "--model",
+    "artifacts/v0.0.5/reference_hf",
+    "--output",
+    "reports/v0.0.5/deterministic_performance_short.json",
+    "--batch-sizes",
+    "1",
+    "4",
+    "8"
+  ],
+  "started_at": "2026-10-08T03:48:49.365842+00:00",
+  "status": "passed",
+  "commit": "be66e80dc2c6f94989bce393970682f7f0d9e0e9",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:49:30.134354+00:00",
+  "wall_seconds": 40.76300500333309,
+  "reserved_gpu_hours": 0.011323056945370303
+}

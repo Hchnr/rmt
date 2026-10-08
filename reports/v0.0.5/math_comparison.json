@@ -1,0 +1,2596 @@
+{
+  "rows": [
+    {
+      "benchmark": "math_500",
+      "n": 500,
+      "native_score": 0.492,
+      "candidate_score": 0.47,
+      "paired_delta": -0.022,
+      "paired_bootstrap_95pct": [
+        -0.06,
+        0.018
+      ],
+      "improved": 44,
+      "worsened": 55,
+      "paired_scores": [
+        {
+          "review_input_sha256": "003e89d6f4b1c2f228ff2fffa893441fc380dd3f851b20e8b9d05833fc34eed7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "006fcca617a8d0ba7523c47acffcf098b32b35f325ec1732b507102f94fa404f",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0139cd36390e46521587e079281bd82fe59b0678cfd81cbe113e17dab847f604",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "014b0598a0184802dde01693edca10a86ce17acb3436619fe04e53cd61840779",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0156dc374eed2c7d20ed09d4d640f19934b5ac7124166c1e9cfd902020525453",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0230ae114b04cdbc944714fdc68f6755d3781c49509d40f420700c5723c3ec76",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "02460c4cc1b66dac980b9e954143f9d0f81ff65e4e1dc30f49f17bbe023fdd94",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "028b88a98289c0eebd6ca55d7857a6e1ad5f4f30f216e770978b7401e3211146",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "036ec97f53c5d82e0f6d747db58267e6992f83782ad0e9272b883a54099d172d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "047ae3e94706bee51cc1ed2dfa5e8271918ef6846447b9af85ced6304140f5b1",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "04a6425f0de51b5d7f6c13c7d9283816c02298257fa0811cfb0be64c3260b448",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0507147a6fd098bece510e280b511f0178cc9ad7edcbf729b674419deb0a5cd3",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "055cbc3b5bb3682c9c67f84c88bd64c8b6e172a6226dc0461e690bddcea91f46",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "06e377ce9c5f009bfce7b72f4b3063b0f08bf9a6e3d2555d03eb422c2026ab19",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "07eccdebba0f986b186105b78a8d0b23fd8cf01f26f020b45bce139b062f3f44",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "08e44660695707096cc2cf3da029fd2941e06c432804008ae40fa164135dc806",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "08e45846f2e996324b1221d1a970a5a97c89f1cea739f54ac3d18c5e00c62f70",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "09785722fbe6f854b1f58f6bd38cfe95ef71bb9517f99ee940ebe2b79b525f70",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0a80569cfe40f718f46fc743a7750bb5864a9bb12e2f83a69df3963821557704",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0aeba060e2ef4fb949cb30c07aceff40db4d9c2f7f42a4ee95fc44797745871c",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0b37b6a581de12c7152de329d48c3bafe522b48f8b20cdf25c118aff42cff854",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0b381f5a2234a870347e8ab22481c490abd3a4db3054e6a004bd3c158fb3d279",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0b67f5410a9bae0a39d6666aabe77b3f69cf06c73afef96531428ff22fb658d9",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0b766b97ce6cd7cbfe8c7c3fd9c5a818f9a59f09486ba9fa08a1bae29e76ad64",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0b7f4e530b9d5c26673823015a869316c25f5ca782fb2ade5f433aade1771fb0",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0c55efcd81cb18a773f3284c8d7f6d41ce6e35ed44ace89068d030fbe47f0c83",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0cda756582e5998ecda2e293981b885ea93896457fc085cf3800e1a1cab3fa63",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0e0763402336b194e9da8ac7fc70bd7c84de902e24a427693c8f2bf8d765413c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0e473ced2c702f8731907b4042a30da29595a8db214d277f512e8434c0ea90f5",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0e47cce1554ef76b9d95d361d8eb806e6a50ef7002333024f5c6635e92470010",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "0ed9a4bb47b582323fcf1d8b867399b235901aa8db45ea601373bbcfe890810d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0f2911c31d4bd70d2237791a978f6f47da51665c84d415166f68a226e9df6b00",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0f36f9c846dbbc72f557d48f7af10c93dc7767d44999c8266a6a884864325107",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0f5dee4fd9104692c7a48528cbe6908b7fd22650166f7309bb540d2604cd1e90",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "0f7be943c2418bff82fe23cbd3703a5763adde83068489a4fd8fb2b0b9e6f288",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "10094152456388d1a8bba93cc9be6e0ef50ae96b70556e8806ed9444420be3e5",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "116adcecec668d9fcf90c4c0fad3a08e0e8c93dba1cb7883771f1400d7c79d36",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "119b1a1565b1cc6772ff8014232a0e71c818409ed2b5514befc6aa9cd519893f",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "11b697d6170b9b7d6893fe44f7ec079997c5670c91b4eead765c2d1fa1c44785",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1225c4fceccaa4066bd87fcc4cebb5530c4e3a62f468b4b1a5447c1b4a2149f1",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "134942519344c8a469401ec483cd02e2d75a6e2ba2bd4466fc2e1b856c022724",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "136eccaa3cea14d029843fd0e4973a56787c6e853170561eea305a790d2574b8",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "142bc4fe76e43b6c9ed37f4f8ae51c78d8d40f4e0dc41beeb5e7698f606d5135",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "144b37aaada6c18470eb0fbdadd6f2ffc3a54515dff2cdd1d8be4167dd551844",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1453215c3683dd4c582265d25bda7bbf0207da1e0a2be626f33a35757c127099",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "15074fc7d0feb7741ad5bec874938d42ca422898f0881ec9d533b51aff890beb",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "156c65159a5d6b0e66f4a7f57370071dcd06fe0e2eba8a0d113ce36c56f023b3",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "15eefa56aed0a181d4c6c78a132f1fd190a8e36768bc939f49bb926e511a68a7",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "15fec0a987172df1e748dda1b913a3a34cc370a4d30fcfec66a7902ba3728bd0",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "16304f345165f1e1165f8a15d969e7035c008a198acfc66b22aaf5fbf24f422e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "163118d83dfbd3166d8788dcff539b8040adbe47575e96902312d25d27ff1fe6",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "16398c00dfb818b3d3b9a4eb5f27d42961595113d49ab55c197c06d678d74c4b",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "17b5239507e6cd99f4014a96ad739fbd72aa9aa78b3b850712fc8487daad5923",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "17d01a6bece12b8dd5056b980497f2ec36d7bdc352057785607409752169ffe4",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "181876cb04ea4fc789a9afcaf1914709a44f34cd71cce20676ee2575316c5313",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "184e1ce29e6c1bf36ddc16cee882b30d1acdd89525ad7e0c18530820ce560d0f",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "19dc7dc8826615ae9e9f8e005eab1638a55b41fa2d485d335fd8b06d05079e7c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "1a61b2daf333c775effd7c8372dcc839883a55351aafde17ef8888083f63c4d4",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1a7a6d1e59cfbf22d5f740042f0777e47fb8416fc8e70d7c29483c4664a8ab77",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "1a9f4168f1889e6b16e8b0d79d4adc23b3fdd07a6041b3c8bf8dbe7fa0c7aaab",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "1ad6dbb582a86c82ec69be80898d4b61ea390187da77b9b77074943109ab7f18",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1b4c7ed92130f1e41fcd5239c3edf590c4fb3fa1adc9aa70682e0245170c58a7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1bd464e55105fbe2d680d9490e5f52d5803a5f0076f4ae2239275fe5ff0b4b99",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1bf75df808d14e3121808d9e402e6bd0fbc03433d651104b0bc8e3aa371c9793",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1c163b886774bd4e054673093a4416fefad93a7dc5fb57743eae10061f0d233f",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1caaee94c22e0d1645d1e3d5d15a90a38846aca96451a66ca927b5e8133b75c1",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "1cde2cd194b76f50dfd4110d665a635c29f46d20adc43dcdc41b89ba8521e7b5",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1d2c688c6353397c85f9c5829533ba6202621f326ed653a892c663716b49d1b0",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "1dd19f64b6ccfff410d49fea06dcde970af7367bac0425a5c439a6127938e728",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1e1167f199781cf8e0778f421eee67a2c87cfe6dfc2658a96dfa7b52d5d526be",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "1fdbc406267d802abd532d748d9a368dca37c9ac97cde14a79717d383de56d04",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "207028ad0cfb3e792a402695a24234af35a9e19cc23f64c454e67994c7d0e022",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "2150a18b1023690ed6387086daa9dadc4ceb1f0797da842b05a0cb2864999bb8",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "2257b83909e380c4b425960d79a2566958ee1a533d28cc029cda65a729efcecf",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "2381bfe760482e5fa25c6e821faa2a89f6af7a87db64cbb4e71a12e42574c5c7",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "23f340e41d3cda246ad8b947b8ad6f9ae5b9b395160a8e135d1c3a3244bd9700",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "240bdaa2663f81d28f3e5f032cbcffae40d15d22daf96243eca43206072c6de9",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "24b5bb2ac47cab275e1f0db699cd8b8a4caa478020ad15123d2d1c375d4749e1",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "24b8ad8b78d83d9dbe36b09f58ecc3ba2e32377d0caa899bcbc0c301d423672e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2553480c395a6387ede2482b2b8a8d71e16c1c64e057f059363206e66130a382",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "255776648b3829fe8406699c243875be7e30ac4e70be89aeecc850b3ef633f12",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "25588036ca3553e074becca05bbd40b9301a10f49eb57f970d7042e1bd78e056",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "25695ce4a722f62957a390427ee42a50853fd724b86ed6768f074266eb334a68",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "25e98cdb65478cd5f4faba4cc6b51313f79b3829b14be9f92ef22dc900aa2cb5",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2670ec9b37b9da1e90fb96eede7539d57d5dcc319be30b0bb5f92642b2bb538a",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2675ae70b6bea9ab4f4534ea6b00e155ffcab5609dac589865f5298e2867d15a",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "26b6f7118cdd266c11c827218d12af96d71989ebb3d9c0feff1035b8c83cdb01",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "26fad07080606bfb3af38a682bd5c06df7fed8379e23b757fbd9ce8c279a5a0c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2737e64b1b2213be5fe648677adfd3d9ae8f7a0f45247a9e7bf23febcd369d0f",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "27665c9ac4aa0625b32e97dfc8a26d2e40cd298412dc0e7c8594b909151ed154",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "27b83ad7fbfde3b3bd5197d539f88b3444eaafc4517a61f6cff97df3c67cd500",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "27c77b0bcf9057a91715b74bfa48f323245d8ece9e3a106a193dd16b0c605150",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "28aa8d3313961bb3a49130b3e117d2adf9b60569d6cc53aff3228529fa0253fe",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "28bc4eb73516b7be9d43e7f2c524e2783b7bf871e81d422fc96588802b70ba0f",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "2919aee2dfc25b311d5db4b08c3f1c481929cbced1bfbacf744a0c4d77708071",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "29a1c7bb8789f71a5e797c397f40efb5fdd00a6acbfcf1044190337b54d68db7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "2a5327ea6f287e6015e16cb083bbf9485b02269ef8392dd5eea08af7dd4f889c",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "2abe13169dbf2d791d2e3ddfa6ee3f36586719e0f9198460bc6f84120546439c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2b29eeb4dcb3699a9096803e6491c6938536e023a63afc9f90ede8003fd957e6",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2b3bfe3d22b9cd096ddcd4f1ee80a815ce4f6b0324747951f71f0573858a2743",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "2cf3dfe60d9295d20aa6efcf4b2defc0e1a7651530418c65740bee4f00489678",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2e00876102d852ad10a5e331444decf5437c17e452bf946e13da51b8e8934992",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2f77d49895e8928ea2944e4c875918e61a98c8fe04d61e67ad1e6facbc1ba66b",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "2f7d36623ce77e9f3159114975cbe99ca20b8d63890c022f32e09a021681c58e",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3018a7988641ea4de8d0085afd19c9879d4e5b532ea565e7d1767e3a5372d2b7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "30adf42c642fe2bbeab62297d54563506dbedcdd601827f46f220f1660002bfa",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "312bff145fba506b5ee655c3346bf34e27659dc543389a863c0113b942ab4cb7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "324ee65381aac68b192c002a12876d9602212a149fcaf9a5e87b2304eb1cfecd",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "32976805557caa7d3cc8e5058a337d814185b467a0f75990e0f9ffc083a4b291",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "32e596d1ddb8861355d876ffd6fe70c0aabc9c0a20288c632fbf9da1bcbeb6a9",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "33091b581c29a40ed29cfe2b226ddd674711d3a3ff67d9fe90de6645fb269a9e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3336fca4386dbf4543183672e6f0840cb007297be4311383240fe06f37424967",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "338521b6394a6b6d478871ce9634cd299635e4adc99d485abd2440d15888d6c3",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "33c47c02baa030c950ac4fd143d2f9d1bbac5a86c87bd162d4c226cc27425975",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "345894fc4562f84cc15da75832af19693a423d10edb267ab82291419959f691d",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "34ae64748a56be8346c69ed70ef85753bf7a3868868200783426214e803ea716",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "34e2f913296edf3a49f97ff68613c8a957bb160278b1caa5cd4dbbfb02ff9bb5",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "358206d7733731874c735d74f1479e34139ea30b71d82e312c49bc34fb9d8c42",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "36de594ccacf62e389ded40cf79deeac9e10c9409220c4eac206c1873a3647d0",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3873e0879507765d032c30da023a3c8e20c09f4bb7a20176ab81480cb4f0490b",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "38e5149b5728492c6d718dbfc845414819d78ae97d7a3a95abbf56af7f61ff3e",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "38e805f15767acdea83fac241b768953cc9a617e0a14aee1ed32c86f22443e65",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3920b74552729632639438bc7e7cbed1f73ece56814d05242369d843e340fba8",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "39a3ea15eb8a964fa34c9e118607ee792a49bdd0daf5522db1bd3251e7ffbde7",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "39df3f922ac79af788df6341f341c6f8aa5f4cbc68e2742ae900d40be319fd04",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "3a12cdc2691005fdabb7c08c90b7586fbd2dce62dc768e77c202f6e7654a7ea8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3a3d1a9c6989a247685dbe344db53d06a09800c5c7709b532d94a0be475eb66e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3b8c40099661adf3c49a2e21b4678f58040a6be72298b3c4637b709fdc4a1c82",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "3b91bd4b432240cc2420216e72d0eb257fc8c7f2414608cce78fd160b22bfe86",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3bec5fc64440aa413787a069dc5b26459af1b45004ed485c6cc53dd0a8a1268a",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "3bffe11bb169a29f1d5ed93aff458af11e273c0476e3311ec4e9f9421c0f0ef2",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "3c36fdabbf989b99db2e2475d4e7b42c4bec5699739ca8daecfa4e99205138fd",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "3c93c44d46970f981e4b8d1b0157254db19335f9a6e24af090ad79ae4cee532b",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "3d45c3ebedf2f29141485c003949c4778f12f07d5aa3bbbbcd93b30f245d7015",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3da0b1ff5dc5beb158f1af42237b7af69ac20a795ff342d4e0eec811786ebcfc",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "3eea93c687d3fe42cf75fe5c8b6cb6b5105d46a41bfd40b31556017cedff41a2",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "3f0ea619ef533ca7860cf9d6aa2a91f4f0780478aa7ef5d80ec0f5884cc6d507",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "4005be45e2c58d39dc918d69fa11dfc42fd284d7ca7c3e62cf7df1bd2695df4d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4027d2d4bfe4e34d2dc9e92c061edd7780c378ae2366a27571595fd503ca52b3",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "40a2f8d3605ce10d2d09698e8a3cbd5c7f530942e314db9432fa032638b590f8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4117a7be1ebd73266be2d632a2c725c2844fa95a4498650f626e265643237f8a",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "414c037a083c7eeca7ec08949b17daf47173443ee7f7caa141bf05a566c8c7c3",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "41a6dd9e9b4d051d22a75b326377817ac2913152e00a53ffed5bbeb62058e59c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "41acd2c51c7e12feec7866af5676a23400d6d65deb4a3e075ed79c2afa1561a6",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "4258dc69f26959d25bf23cfbef28eb5b9420e4252e65c692434cbeeaa22dd71c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "425be5cf14b04848c7bc39c12ffe09fc9e41c2619540bc127722e116c98c9e1e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "43149fd4d23ed7736bb07d1aa45fc3013ba6b28cacd7a1a5b7eb2e780702d8b4",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "43163ef54e2d0f524718c01f020ba027baff211d0507c4b390555b3a890f0b05",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "44e25b9a46c96e13eba0faf6fb7ca32083f86705be1f8a12274ca7047e1965ad",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "45276af517096024cc882275e2f558577ddfa4a81a30c9d30f4daa147073036a",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "45a3302e7f34f9031f7fb42c0d7aacec5623012bf1c22a9650909279e3b72262",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "46537fe016dfa7220e349099fedc025760e1ba960075242edc8bdd856db244f2",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4653a526d5895b0a25d14def5b8cbdec9698027764777a8601b95fbb4c29ce48",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "46867153bf19899f17d0a9fb094c20d4cdb45ea0b72126a54cbb5a1cacd8d673",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "470c2063d3f70e324b553a8238ba325dce2b48885a9de147c996116e7ffad8b2",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "47193b54fdaaea0480031d228687bf8902cae187c2b4e6587238314c8f2bc65f",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4757dd67506a954ec4fe47e5f4b1f3ec5f4d73c92799f70d18bfe8831a6a999f",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "47f3ad3360db1c22eb7f6321e55ed74a2bbcb4b8c70cc8bdad8486192a987a81",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "48192130f3a8020ca0dc3a7bdd16305f9baafea74fc574aed8ae4262b64e1de7",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "490123a05aa8853404b81677e6bd11a446b3646cc0b1397d2339bb237a72ae56",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "4944a2fca8368b0db1d059957c031dee9850fc8d2f3b8d5c018101ac28bf40c9",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "49e11c0ee0f5ac26fbc82ef4633adfef821504cffa5388ae38917688f2925c06",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4a0955e0894534b6c4eaceeb866824b702d9e545bb2e567da29a325420bb6321",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "4bb9b0922568d2977775b4c236da8b19fbe3b0d7e993efff96e6039d01d759b0",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4c5a14ffd07c286344ffda937f46964319c12fdffd8b605d5847215eb15001cc",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "4cbd06dfaacd9cc5e25f583f2fca316667666bce5b4d316a6725c8ed0d3d8535",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4d8cb6c48f5122622242b77fcf6235f28cba135fd6dfc27eea40e5d7dbcabe8f",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4f5f1cabc2c793f36bfd07286d73ba7a8f9c74f5412b1850e570ec06f2d20298",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "4f6d78f7b1c0492c0e36de49b3d7340919c771b24b90a4ba0c086ccd44c041ab",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4f7d5787feed4b61e2e1bb3ba765d45cdbf62d5548e6c7d98987b25336b4c357",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "4fb17845aa1cf4024a0d948b4c2c5d8793012ed419dac547e911152b4509a6b2",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4fdf8f94f255662e6b3802461b56dec29ec801ca1834e654f97521f14a5f8d18",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "4fe788d110490b14ef92b40935eabec9db6c8a168fd34e704ce1dcf428345a2d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "50f8634c4d3c5dfbfcdfc9bbbaa72fb2b58b2b595e8d06a0da9a7329c62ee500",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "513b1a0f5a25d66f2f05675dfbfbadc4e4b0b8d155102392665eb57a64a8c562",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "514df55252f94c1553e47610ba96c65599632e48a21bd90028e7fdf9d7892170",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "51f7218a14efa6e91225715762890261c5d6f2dedef5d5f1d77f0263a67c9938",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "52156a9fc5706d5c781d8c57cd926ba43b7b4f4d9ef861353e0c9e2d70e540d7",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "53a5103963850f4e5390b74fe5fb2a45afebae4b67c9e1aae01d2bd16136bbd1",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "54ce1834a47af30401eebf4b7765679826c4a9bf3355c06d6156d54ecaee72e4",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "55962b05d9644a90b3914db5de0830229ffdfbd99020075682d4e4c5590988d5",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5611f4d874d45cf0707d375fba0accae8b64dbd768b9ccd81425212b5f724bbc",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "57cdf100287f9407bad8332bb5565b221379437f19870aed822b5a73b6eaf8a8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "595eba442a01a28f40bd7afd235cb7c28152283d4326ca53cbe9c0e19be5b554",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "597cb98b62ebdfe7eaff851ede075c5cc1eacad1e350f59a9de60696121eeee8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "5ae3cc48d0ab0021bfa754b4a8e7b77ca83cf8f6f81de6045315f5d9c4fbfc6d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "5afb0e85365b3daf9366514648b05583185ba2b2c6bd9f0163359710655a4941",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5b6320176a169d565c5eb7274b021d289f11e84d4c6954128c171c2c4739b37f",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5b7e03ff2f1cba4f5f7ca1bf45d118664c9daf0b64476b0134455f1625adba75",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5bc09514d42201c1d6b7c8571d30f897190d7618d9771afff9709a0cd7fb9586",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "5c124daa073cc3bfc744d90891b4b15fed56fe25d34a153f27e18fd9a03a2dbf",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5c502030bdf621ccb2b9b7276f743281fe3a57296d86b54edf6e237f33572c7e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "5d1ec81644e440da7bcaaca0a8a14c6aa990df8e2e9e7e624cb0d5359949ec85",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5d9d93a1c75869762f144aa07f70b702444dbeec60042021b2855a6dc34d4658",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "5dbb3ab48f377c8303a3333a6b814723683e3dba09ec2432cf5dac258c59ad4c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "5df514edc47bdb676a964106bc7d31f04ebc576e4d66425c48cd45d2c4411015",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5df9d22a755dca1e0c624ace75343ff662565e6ddba2e87dc2091ba963a72d2c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5e8a5973263f5d75c93006b3c6b96d50e4850913fc3aaae48ea873e16b995fed",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "5f2e3ad3f01747b1e2d2154d649e9c4519f2f619c9c14ae6768bb35624f349d9",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5f8559d1f09f886c511c76c0d8c889816b289f4404e2a78cd856ec67b94ff20d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "5fbbb6bd8ddab50150a2771a1ed0ca23ebc44d9bab653c73323a821e408dc5a5",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "603e328a98b31d27ebf5b84f6ab5dae51491fb3a9e95a45735e76c47c6a5fd80",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "60f1f48fae441978a5eefc94129f5365478f0bf94173a9650005a2ed323cc407",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "61009368d52cfbfba0355f25a3909732ea8b9742923935231c7bbcb96b0e33b8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "6118c7919a7e7bbf33c9c6558a0261001fcf64dcaf43652bc105b365258a7378",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "61b83614d9aa4347a7bf855f1e330b0cb725e05f45cc36ac13fd6880021debb7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "61cde0a41f03879444e9e108da263e7ba5e99a86c6607a0e7901b9aa1ecddb80",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "6262f72efbd9bd1ccbfec26c54240fd2376d8b546d681130edbae388504ccfee",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "62a8c1f5cc4562e0fcf831c6bca21886c36a3be800627aecd070b9c7f9a73289",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "62f90678e6168b3f82fa420ad598f7fc5e08668920d96d31ec5d77a76573f0c6",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "62ff76a6378258bb0ece781a7a17754630d11cd0824c9e11c2a5bd87def038a8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "63d95733ed82ef4ffb886375b3dd55d257cd9b2756e692da8ff6df61aedcf900",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "63e1a9c2c8f85b9636f792744a52ed81ed8e9f1334ce574e97e72a00ae387599",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "6402ba86b1ba20fe571b1da6726f4b595ab321303e8d33c1ddca17a0421df774",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "6546e8aace3b01fe333b83886d7e8c02f18b6f411f5aae520aaa629bd1b81c8b",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "65eef3d7b9882d52c2b942b110e0988b1a3707a5ea0ed66f3f8373eba8fdddb0",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "66932689be20c2c81fbcb1789e5422208ba64a71a76111ba1a5943c30467db64",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "673bf089f0892f005eff491f5e20c2bb8cfe5e4b096318c441693785ee4d68d6",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "683e0ddb174bd359fb47fc76ef31b3cce02842a770f81604d2130252a40ecbf8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "689486da157d149ced6589bf585254100a62a70d78d4f26511f7f2bd07fa5041",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "6aae79949c68a3234c0f24712fe66e0cf231504ebaa037b015029e154288244f",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "6b76ecd6493e8e45990eeccb89bc3880e1428da005c2f593b0d182790353a2c7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "6c41cfe29e2c3b86dbaf11eae543a2038a9b5771fd60ebdb48638b7e6b688130",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "6ceed1d40de73b323a0baef05c63a4318097bcd366b4a2b8d05f95dcee60a3db",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "6e681da8ca6e637ce6a81b7e569f345db5aebe4b8290b866783a03d0b06554fe",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "6e9c858fe13e0d687248523a5a5c2a062df09d2b04a81f346dddc97e45b4a99f",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "6f7c80a1d98f0cb8906e1da665cfdb581bc480769408e7853b8079a88145f992",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "6fbc0f03fd8704a493fe972fa888159505b4559d1da9d30d94e2efd93d83c128",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "71a5f9410e623d673607d23bc6f8990fb066324330be8346285f673009cfc76b",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "71be35eb9e1e7eed0bcefefe251bdb0f9d3ea14c09bd93b72a16846d2c6ab3e8",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "724adb90704a51852548bb3e767cf28d07e2db2ec076c14787ef25e22ade702b",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7261c5cc50e6aeea9dcc7f25e666c018ab27ec94df850feca6c0b8bf3443c23a",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "73766faed95300450e4a6b9f7d51796b7374d65bfdbe94f2d394133d60342fa3",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "73b799e97f4abca30febef74cc81071d48f06ab0a485538bb01348e304e53375",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "75143e78b699b30f5ab78559690739358759a0ac585f21319711ba0159f3947c",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "751b7398c22454ed0fc9297a45a51111915d6373efb3308ce5d0363da037b7ce",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "75d61d3d77f0412de1f0fb54041ddffff5a6a50ca0ebba0dcb865866e92b0a4d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "75f6eaa99686c01b3abf7a900c16b0bb6862a0ddc8c105a8e8a738d435448b30",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "765d86e829b6e8cffeb7bc37f99642cdd01f56775257043b54e3d6119ca3d6b4",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "76df553605ae3d9613e083ce2bd7b7bd2e2fb2994017885d7c8ac73057316f53",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "7730be1c9feef180300e843685869e3253a7b61fdd7d6184ef00c6211629bccd",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "774becb663a374207719a8270d17306f9501d33fdacb8f85e2541e7a635ebeda",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "786e0768ddf340a3cf33efe54a75c262e146fcea77aeaac91559b6543595fd55",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "78b1fd9840f1ef7b84746d1384086f238336f7d19c592b47aa0b0caafc04940e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "79201ecf9fcd7c1a0aa4351710eec3054abd8bb58c5adb2111e3e37f5d3fefcd",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "79a9572a06abaae842e8c3ced141f4336e1aedaed8551a68ee616b5e2e75f43d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "79bd31114926cba4707daded813f1997191569f4d72e0473ac7381f2fed54609",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "79c8c90817fe075624f0c4ed5837be9ca9355b706935dbc1ec4fc0bea713d942",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7a2e5fda95a86e2ac0eeaece74d69b381a2d07312dc4fdb17b8b1eb88fd0cf49",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7a4cc1dbcb788574769d30ebf7ac1c69592894b091c15812d677d0709bf9cd57",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "7ae09122064900a34e9b7537590cea7ea11d0f225817496d62946c113d006971",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7bc76fa5b16fd754aa6db53a1da5de12a90928e0f219bfd829b8cbcd27d92c7a",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7bfa0bfdf79bf584ca0bc7c765574210bf7c78d6b8ba65b198f4fae27826f57c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7c53d14a21a172666c18bc86187a95b9dcf3de299e37834a6a0b1575b734179e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7c62c3fd10d602b05eb95050f4e6701c68301e8ff697a5f6afaf4cee5e434c6e",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "7db712c1f0fc086b61e296654ce69669ce7816db3ee8606f1fa2a59be98c8f35",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "7f0d18723f59ccbbfa770c8e68b6aad9cc5fab2c29d4cb914ea1a4042f58212f",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "7f9aad27ea955eb5cb3121cf6a9b52b4c8cc7a990b9b0ed045833f71fd25ccb9",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "7fc0e9eaddf3670513f4ccc75fce0f0c002e6917bfa0e7ec67b4843e6824668d",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "804385a30afe31bb4978e81faba9548078356204385dee31501d317b6b8557e0",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "80798da5fea17bea2050d8770f84b117f84842850e6cb4eb3cbc28eb037d4072",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "81f3c2c7cf1c8ab148ed58d90a36c0097454282f5ffeb742240d234d55bc700c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "81fe4278980a6e3bd7cb7fd0cc0f266d237f8af97d53a83e3903fba809f37606",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "81ffe45b7557f6a660b9f47d30c9c5d258919778e83b6691e9a5b24a20fed105",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "82053110e0cc31e9f301d5af67dbe35b96eb85914955f117c335fe94bc653e0d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "82ace3ee909f7c366a74310db9c07056fab217d2292880a7277ef2dde3abe073",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "8353fd527a3151710ad45535ccc3815cd31ec8ec9cc6c65c5ad466fb3d270d9a",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "83a53c93d813d3675606db447e122f3724f37d6784fcd1c5cfc29647ae027b16",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "83bf1aada5f16d4296cd9569643c5785e8aa0ce8e85d5b3a43614c379038c82d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "8415dff8b80ac72971a4cee9dc5e7d5772c5d2fa38517e84b24c0732dea10590",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "8452fa23e1dcaa49eba317efedbce3f629a8949ee65cb113a8511bb2c75445ea",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "85a3cba5183bc6dbf571aae9052240cfcc99d2e620fef405927d88cf157504e5",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "87999ce1f9a10a74e92bfd3b567612f64b705e9feea9ec077e30a5d326c4f51c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "88380147dab2381ff6d6245d4de31194de87a41132c6290de4e59a196500d7cb",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "8b128da1dc83feb5b256279c1b646f3d6f9eb32bc39935fed0de8a6ecce9806c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8bc37e37dc535cb716e642c3c28a5733d8afc4cf010ac1120a1a3fc312ce0b3f",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8bf104edc2344c168f980280906ba4d8a125fc178b0cef560335c292747af99b",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8d28e2a4877f5058ffcc99bb567aefeaf0a63561ac3eafa338df24029ed27968",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8d6cfb237e5dd5c705b85c4332a30372efa05dae0eeee11303846bf76596ae87",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "8d7e81207f7c47148aee76c9262b13f705579606946017d120b3aee71377767e",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8d8b0f3f93571ab602f984d7b8b337752d6b1489b40df038253e6150e9ba7904",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8db89b57670e18af24f91d0d416843b7f608431e5403a6ad7923b63d69a866f5",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8e0a1b8bada1872196b06ebbb2fe993664f78779de35e1ebb0b4b3bfd072999e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "8f08b033f3ad6723e0dcb923d43567e35517d8193e920e31c7fbcce2020e2193",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "8f6bfcd89c7c3cd84fe3ce67fb990c3ed0dc25325bb4143b76617affc2744bcf",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "8ffee23abc7104f6ba02aaf7f41d5b3d763a145c4f2035ae1cbd05beaf618400",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "904ab5a3cf0d6631ca7ea0840d0c2e4106eb1d922f794c4e5f8211fc32532db2",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "909d69788a0e863bd784fd96c38726c34e2e4dc3e69fb4a32d70c32f107ee832",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "9265ac3f69c8b531153661213fa6ae0067bf160fee7a2e601aac9eef9dfb482d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "92b07a143c2950fbb411030f229f7c72e133c5ed304c514caac93ed9233436ac",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "93afbb0dd0832d30787318ef9c5266ca97c47dfe2a21aab1b11ef213cf0bf298",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "93bc27cf190043d4b3d3c93d8f0f090f29a829daf700cd1863dec890f49800af",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "94193021713ec92f70c17a5530236befe51fb6de05fc4ac655ab745f5c8ac28e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "95ef5e3f7810626cec37b4c3b1af69d7f2a9d074e21d6764d9b11c5cfd6ac914",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "961cc9171f540fa16a85357275aa79e220ed97e4be456ab3456b372299e3af20",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "96c34ad2bb6c637feb475d9e427cb90c95665ebe6d051e4a7312f379dceed833",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "97307f6d9449ddccffd2b001aba830911c433c8b847cab53222d39db2939179c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "97d390fa6a1691048ad8b8eabedc83bbc51457f0f2665b91e0015007d64e35d6",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "98130a5956730dfae0acd7aaab3b2a709e1162042d21612219e92e9758106a46",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "98660b1b00537b1ea87a62f767d19a482c8959c59f1d19e1f8ad6914351b359e",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9869a7469eb6c150812b6c0ee6f3470cef869cb9972d719769923418b6876bb3",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "98a1538ece224fa8a08bc0bb5c59e81228ab0f09394dc97fe1dd0ee8ad786713",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "98e2cb108ea031a76d3368e6b8073095496a175aed47e98631d57ca705b57acf",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9912e0dfda48722b1a805832e938b72543d360f77c7c4f8a602656cb1cab3d95",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "9ab5ad65f9c985ebc05eec1ae83d70de1ad5121e54ec21f67bb7bbf7a7e630d4",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9b013a9a6d6ec34085bb5b16100f9b89a8f3fa8beb8ae788fcf4497952459d16",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "9bc03a9e0218b56bbb7450f17e2313da27319278922fa00e09875e9280083803",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9cbc7f97959bc6a1ce2337f108f65216e4a9e61d0263ebd0fd10b17f6bb72c84",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9d165e5bf2e1486d4515355b1c1647a845f06813aa65ce68b971919e8558462a",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9db2ff80b98d03ab2a180d8e9d94c37721bd81335681ccc9880cc8960f178766",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9e1ba7d2b072146327fd39e2eac1916fd397b0b05534fad6fb0561329075f86f",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "9e6a70bb023388a12f8fe062c2c20811dadcb8fac1b0515ddb206e6074a3f452",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9f3f145476dbdecbaaf836b0c277d6f70083edfa18094943e8164041abe05aca",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "9f4eb22de2288efce931f66c6248e8f07c41e3e2c69f3c9c072f0578d97b800a",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "9f67e5e25bf3a159a15330654a59ede085ceb2a62cb280bba0750d4804d520e7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a02611a16ab65151cecfd223c9819067ce91e28210c2f0ecebacecc0fe391b9b",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a04fd1c5e327526767ac374bb1be5ce57c1e5b4969314b0b5682be7c2e293a68",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a06348c6f16b4e877c6e34a70980aeb8114f2cf50a0d71eccd96fa715e5e2521",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a0a0c156ce59b1b4523d64f8fbc1cb34d6477a325cbccb8ad1188703b65d7063",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a0d558fb425bbbe5d99bc06cb7d9523ce6902a18cc16b471eb25bc56827f39f2",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a153789f23822e37fee1f3adfa05b12df00726821dcc31457ab9f89e6d3ee729",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a1b1911f1d1ad800b51d8f7f376c31c9848997b507af2cb70d1ca87a39b2d960",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a21d97cda3ed217b49bcd82fd157a8069144b21ed16f5cac7db2b4e230bbd00c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a289755c5a3f8ea932f526d4e570901d2f274ac150d94d87c93a94c672eaace1",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a2b2fde2e08788a24f0aac73374b4bdaa211e34c2e455f0692a73fcfe3b9ed00",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "a3a2638bc89abdc6ec4ff12ed023108f207b5ab26c68cbf3bef3988874988b7e",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a3d9a9942907c4074853b0d8b25b56e5aa9e8f01b6c024356655045f880eea2c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a3e28c8d3c46c2ff6a64da036fea390c56f667c4c7f5372c0765faea0d7778de",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a4c47f8b3a27dde1efbe4fbf752efa336ad79f1d5c1f718f2f1bc8194fdaae29",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "a53f507bdb38ec12a75ef56d53020622e5b3dd0e487a9ca7501b5d1e34ef16d1",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "a7f769315ab50578f8b000f91449f14e49639d33b03ae80f9c23ecafdb807781",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "a8c8d0bc89677814f96b177ea69bcd3be26a8d26819ae86aa7143cad8d2cc61e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "a923baf22f3909734a4b177e14459b0c4d880f6aaeeae000b08ad5d0139be80d",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a9299032fd7788c21bff6f010f72b6f87461706b9be91ae0f324a0ba1a14ac2a",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "a9403c64b3dea3288959723ea48a91e6a64551e98c423f56b39fd577604bc39e",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "aaace78c89cc3606a5066cb37e1e143968428551d9090121931d5ca9a2880930",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "aac2ba511fe0aef25f9478945e172a7c6e888a20b63d6970d47b7bae68a90a3e",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "aba272c5c0aa90e4dfe30d7cd5a92bcb1fc28a0ff427e8ca943e864a82ffb348",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ac768a74e159838b2ecf4dce8f215137572e765b713f373201c94a27e64e08e8",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ac809d5853cb4388f5920ef3399f0f3beeea73c722c97da0af54fa4ac0f5a65c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "aca73e39b90f0c3c8194eb8bd015877c34e2c797365ea07812429db6801f9d21",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ad6aa04b6b7ee37f62615a225988016d7065ae14cc031a849223b7b320e34df6",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ae46bf37d62845da52add30aab3f1051a173832187f5f2c6efc4baa17ef13806",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ae5612220cead31397bdacd96f719715f9ef576ba21acc4e78de7797a00a4a28",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "af315ddd987577088f4701af96d81d8f1a5344ef09a519a49eb7b0931f43c3a4",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "afcb180f31cf07793a9127a1fecfc8d51a74e9a41fb8431df3733db6c173d7ba",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b019c748633b094082cbb8b7ae83aa535c6ec4a275af4a87687787ebd03c7b5e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "b3771c010bcdbe5686e264f2af9f763d569b0b784afe67ba99763213f2160aef",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "b4deeb678fd76440f3aaed22b3353e92960253b9619d513c26319213f99545ef",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b55ebcd3c228ac097b1d9439f78743b35f22634429747f01b0e1926d7b07e9f4",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b560f7d53e938991e0937d7e92afc8daa7fcc024074e961efef93b4a5d5a182b",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "b5e8d98204276e5dfb658bc93801e0a35f0b8ed4d60ee3d63c64407181e1aff6",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b602a1312855f3d1ca210a36234b51367fcfc2036ef3d133a30ebcaf1eefc045",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b604b26b771746db82a3d1e265ec7881228c83de91e25f7bb7d3eb9dd6860caf",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "b6e0fa26cb027f1139978cdf3856bf17f3ac3c8b65ab281758f6033b75a4be21",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b7e65c3d733bfa1120c598a0335880e3d72272308c732ad4d42db3a5a7e8c9b4",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "b8504390b1f85208ca331419fc6476d2b530bf7c57b0c82541d2c1c21a8a993e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "b8a8756af58b93f157a48cb1b019a227225c67845d584bc69ef74d3822e40209",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "b8b5511511d6a924f803f3604639c06d935b92fec6d11a8372f7255879ee16fb",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b8e6e135f0ab2f0d9324ce3d65cd76d59201ecabb189c5ab5d4c1a101a8f2461",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "b98bf418f7c5ffcfc297a841a6e405aeb78c90ce92530a5fabcfc3274811c5dd",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ba07e0ff0998e4421ccff574fcd651a43aa6407d6a05541f06937d72ced37251",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ba0876b06d2503d63ca697a3979d433fa0dc12302a6a35c480f4242406c01bec",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ba33d091aefba591ef00e224bc32506cd55f4d337ffd6ffbd212977dc2b66e01",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "babafbca28c2b31956b39963f1a9acae3d4a933cdf3670ef9670e43160959bda",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "bb040a943fd78ad5eb851a6ad6e89091a4cb49bd8c00eb00785c46ccefc78202",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "bb24073caa28e0214805e4ae50fb41c40caea874e76549d0955321a78890c0db",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "bb924e6e4ae0a8d2792b3f96f41e9e7fff027bdcb4880f1b3585775f008591fe",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "bcff1d78e2d6b59903b20addfebb9684f30b12813f6a8a6a48f7350f463d671c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "bd4fb0c758fbd0b7ff40aea01ef02e2e26ca2e1000d1b49c7c22d604557efdb8",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "be55855b1cccaae70ef38fb6158eeb18b3008160b1d0fb0b7733bfbc32926608",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "be8aa3bf95bc8a12019990cd0f522034491d80ae4c02dae2e204351c3f49ee9c",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "bebf82676869df3a05db0548eafd678657b03b6aee93ee4077e22e1a494a3d6e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "c17d47fd2f3fb66bf761b9d770e100f05a909a31711e02aec301c7d397a75044",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "c2fca09724a293c6c651540106ebcccac9979d278c5089b8e1895894572db90f",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "c3ca2eb608ba5af948d54e953a7e9c1981bb78f3edf83d83e98aaccff6160d12",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "c489d78bc38d4fd7277c00b041dad4be73ba36c5d0dccd1d098c0306252f0418",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "c4906120669b56adfec0182e170d4254e11e50ace7dd1828fef027430318d5e8",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "c611825a084cf11b26c1f520803b0ee798400639efb00b7a9c99d5fe7b7c0825",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "c73454593e192cb4cf57404aea1b03cc023b0e84739e54f1befe03886decc264",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "c74aec9aa5cd0d3ea93bc9aa04f394d98a0d3cfe737c774022309463e63771ba",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "c7a95265c778450d502571209204904e4f3ac4193d1400a712cd44069c043942",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "c829ffea72ac754abf4753a4a6040323e79423dc8c727bf41ef0c09637cf4b22",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "c9413ee93405568b6d94a58bc851ce047a9cf64847f0e4d34bb0af317e6b834d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "caded4f577d42b9f6c9fc253f7fb1662ea88f7b69994f593c309eba561ff08e7",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "cb377d5b4cb2b1b3bb54576df522ff8eb59bfc9272201e71f4964e2d427a74a8",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "cbaaf8f4e3bcbcdc05dc173d2d20f085928bdf26db4b5c16d211188b3121b986",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "cbc1c18be7e21920a0cb4f5a25d2c1867f1d87f448d85ddfdecfbddc52ea5c87",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "cc7d787016ebf9f0556454aaec5ef318b6b4a059579002c04b313bb0bd631cfb",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "cda7775409474b31f39540e884fddc5249ebc57c6d20f5de7fab23947de35827",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "cdfae90fdfb4aa493eb71b1ac9695045420bc5aabc8c2e88a9d50fecb1fd08fa",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ce2ab8f3f4de7c76cd86d2d0c4947e511464a5f6a7cb3af837e37ce878ef6ad5",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ce9e155bfb54ba731850fa5270240023eeffda27dd6b332588a795e3fb75b82a",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "cf0822a7f9e66ad055053b28c9a564199a29da6d1234a436e83de7a723a7443f",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "cf1dcdfc9dce318c5dca8c01f768ec651468a7bce72ffd4a1f9eda20302fc84b",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "cf4de152a409cdbe2f824de178bf7eff25f51601cc5c5f9f51d5f3e7aa72e49d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d0a669e8a55f963b4230c651ef75da72da62b7e20f653f3ad8384cf65099c0c8",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d16e0dfad40f2387510848b625eccb339016495c4cb158ae4a5a0620897cc3ee",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d1ff12a35f5995ad3f25063b6ea6a45117c0cabab66af96281be0acf4a14f7f9",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d306139e40fc9dda4e4bdd8b316b7bce2f4907e203923855106bda8a4b2d8af1",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d32075b8a000371f399972d3468fbf16360c0d51f1c06bdf77d3ce54b5c5729c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d3d1163b86650fe7547821513c46824f19fbd7567596563aa7f9309ea336d8dd",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d472f38bbb967f9b12f3d4a08f0f8ab2668040c6e7dea0a11018e487c631c107",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d47953c39119dd6565355bc0406542fd993fd4fef449403bf5b5c4eb35ca269a",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d4a07c46f3555c2291b6a3d4f1739340fe9d1bbe622db7efcfb11edecf1da353",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d50cc788cdc3a4066e882152350324f8518808c63d21e837937b3ee4b088b929",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d51638ae4956ef6346517b6c371907a6f8982fe373a95e0cce67eaf1792f1a33",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d58866a064a4053de48838e821096a0e5e5854b3f944147e62981c7be07e07b3",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d62f16610af15d951dc82ccbc9acf8df00c47cdc33fed18c810f93dc053a458a",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d672dcaeaa1e8d7bae2cf0c2457c362507ba1af1378ef591ab02fd4070012932",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d6a2308150e9b2b4270cb6f9157f2e17823666c9735a2d5e7d04b9622cd5c2a2",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d6ae9804e1852128d36eaf3567627f0e04c062cc3b74a382a73069a057c5ee55",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d6f63d2e686d7830da998c2d7262772cdf3f811e8913ddfeae3b8269430a22ee",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d7053a911b0fee3d0d0b4b986da2da71da2e73ef315bf43755802123125b1713",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d72f0998ec9faee524ff4fd48ba0d73e358d38043681ec58f8f236955cb3de19",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d737e8d403ccc3921ed6316a2bfe1bd4a61b268ff1a895ddb5467d8bad03a632",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d77429ec80b7f7226952d9d44ae6c283150c5a489e20e96358459b42903c9135",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d7f2ea834fb374cbd25cf94b7a98dee319ff6cf3511a2c7c988b1e2e4a414641",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "d8e7e0bf10ded2bd99578fd0eca08bb84586655aa70505ca67d48cce9d7efd9e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d8fa98a1bedaedcfac5f18111b91cf23c7ef8c5170375d3c695896a57b5c6693",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d91d92fcb387af5a1108aa3411789c7aac3c5935aa19c1f6509eca5c1be243b3",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d934c825d8e94f44762498565360eff3fe7bd14f0f9541411dccca9901a972ae",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d984037d4845058232d3ec50baa707fd1fef9585cde2e84034ad023efbd9b8f6",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "d9a7fd0e38cb5e800f8985b6c74ebb35277f46d8b3de259a71914affac2384a6",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "dab1ff7409d26c530a9a909bef67b43eb691d76263be8ba21613bb544e5a3f3d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "dadae095f4803b5c0480ab75b6dd919a381c33b04ed59d3ce693c09d2a0b1b39",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "db38f1cd07434537f4df29e148e62b852670db4839787bb493c6e25aaba82fdd",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "db867a489b7650d8b926b465579f0e8e9c20255eaf48bd4bab26bbb48d3dcc43",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "dc1905d044aabf74809faa191aba9a0d3ed7a64eeed4a91efc3b99e026e8d03c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "dc7263cb0b7dc39368c8435d1f9e37d5427b0db37502cf50b56e11989911a83a",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "dd1ee8abd7f1a975e805d864804c87ee5f44119d774529f5f568bfc41750c43a",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "de5f97ae5b55f155d1fbb0d740977b60229ec853b6cc05e86f6b09d1f63d9c15",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "df21b0513a520388c50c7326e942aa1167baf421f51cc580b0aead743744fdf2",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "df6337c250aa21aab62d861ea18b9706c99c0264ff10a802cdba8e6c32dd7455",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "dfa44776a535b73f3eedc4c52ca4f4947cc0d3eb25a48136f051939cf192c436",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "dfb2ee652ef5e3413e310f501882becacdadb88811a3773869d39e36390b17cd",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e0c1885fff0b48efd3ca8ddd7dd4e423986d5cd8f83441408bee4f2e3ff1cc36",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e1e1b216bd02c6de5217d9bc5f45d894787c9b0936c166641ef24e23040b4ebb",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e239269869f1114f11a8230bcac26c965a06f0f8faf8bddbac1cd8bea2a050ff",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e23b541e14219ab35fdf2e5d398f7948b5af818585d73b05213bba8cced02c14",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e29ab2d137e42737af5509a191761da850404ad5fe6eee7b704ec52934228eba",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e39eb8261c83b7c0f736150393eb1048355c33aada93ea0a8297895f973cd083",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e3c114595243e18f6e5fcfbe29bb5c870a17955dfa2a34ca174a1c310c5f7177",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e3f234f5ddb96b400cb93e53fffa17fbd0b20513da2851b543b678961111a237",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e412aab13501c7f9795af58d7c74a860dcd1fff96763867a51a3e326eac8558a",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e42123f48f1ad06b91d7ec2d357ad09fb9c69f3f7ee8af14f7c076789e96de0d",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e4a8d31934d6cb24794eb042c3c630846dac1c9af273e5fb0eeb9b120eeae1ad",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e64999c3857a0dfc48ed458d171f36f3b28d4788ba8633b9a183c2927d5534af",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e6624c299257897d90be875ff456f08bba2b84bf174fc74795027dff9fbc588b",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e6d186d01b23a8b7c38e34a821253c107944788162d4d55c1958eff1e0f530cf",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e7502547ffba69a724d28cdf19cc1da7079a8f866ffe68d212561741395c791d",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e76b37abf17203ccc237c7f95279c515e85790d98625a073267c99f28235a7fa",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e7fe984dd07c0c4ee70adbf4833ec099b82795ec02aad05e7de4ef63249d466c",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e8134dff3948ac36f402efbc14036277d0f0b85dd301613924c1aa14dd4d9823",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e81cd49b0879de965fd6888930f4ebbd8efea34de487b72620ef62bc3b898260",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e8883987a9d80383976a900f00276d02827956db6917c090020c916ceba5b8c2",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e8b573f62bb3d8c1ef5cec22900cf9fe6e1d6b185bf07273a231299bf70e5bac",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "e8c095ef5265e96dc6987cf587ed8dcd414e624b9f005606b1f9d64d2a1d65f2",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e8d2eb3d4cacb20717f988c0f027343ca863222eeaa084e0cc4b4873cd1c5f78",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e928425fb54ebf237d1868c57a7ef628aa51ec4655037deb7e5c0c80560e3ecc",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "e9fa6e40501b8a792d84b37f9113058efbc149090653b635b29bf478d8cad9b2",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ea474ef3a52515061d72aabc55e61c91b1092c2758ca5568e60a2edc9a7cfe9e",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ea52a324750a6de61c47e337db686387d878a26a45b0335225579c6250d2b9dd",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ebc38b94a7c4dcd065febcd29755fafa261dec7aa2f5a15cb365b4692547eb2a",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ecaae5293382c7ba86de3200e61bdab318e26262a119a44a4d51602ba27c6f93",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ecf1ff353425b25157f43b7e905c62932205206f56817bc09b05be95cd64cfe4",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ed08c334fb547c1ae0b8424a66667ebfd2d04ffffc8910c3d59955588b37e771",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ed22f08cf75e554772376461cddc41b2a1f4aa6771d28b79f92045487023c6bc",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ed379d80d99dcc2641e9caec8e959d7640a56451acc6b7c8ce3cc9ac70469bc1",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "ed7822c5680039f3d089b75163a17994336f63494d8f50fde4167c3501be6871",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "eda967bfcc441dd08f4c2d0a89c0ad988ced270329d1043c2f27e72c9f1f654b",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "eec39c9de054f67d6bd73a02610653e9854f2ebdb187430a9b84d913d997d713",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "f0d332e0fb446c49591e27771a2c65dde8d99d8b4654758c1926a4533a2cc8a9",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f164814551017cca32452480d8903bfccb5d68dcb119610471f752e7bb5b4f12",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f2569f2ec3d7d5fdb01014614b6a308879269cf91809877e041f547e765705a4",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f2e5d710ecba14f7f4a46a65bccb9badeb10a9dd105d5d2bd8fff0df585ea78c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "f3396af72f21aec7100ac01115c32506327dfd7eacac0addb1931a7f816d2c81",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f352e005bd06ff7435e55f0e5a6811d138ccbc62145ea45739725fd147ff14a5",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f3ea2139c57825928b2fa01fd475e10031d91c6c7c23df3090071e94dff4ba80",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "f4848849d0741e76ec0d5236a66954fe19a5e7123d93204206e98da92e45736c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "f4cb50f431625c2a335a3f9fa9c2028a844afe822fae7881e89216e34a4da59c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "f4d3f17bb4c8b94739d3fe3083e077e7c720aaa9a874eadd1c59129299824ecc",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f4eb1e4219ea7f2d94cc9d0246fab3fe43765031c8e0c7998c1cf63fb47fb1f9",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f541c6785e91911e36fec95e571e8c0bae418e5b5c311156681b27fd776cef46",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f54e35434ab6c5ad12ebfa127aa439287e8d4155cb659d7859fb4ef05ad52187",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f6c9de465e6da5ab9f9a2c286e8eab516b4e6b16b75f33c8b928cc19e2c8fbeb",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f7aabd2da8653786f732a237c2d7c44d2332cc27b50e46d9a64efa49e467eac2",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "f7ce4a8fc7e654d58d17faa6a968248218ea9806e3a6e1420e3cc200525d4ed9",
+          "native": 0.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f820fab5c90ac7db09b76d0703138d0875cfb92e6d7ada09dc576a323e35b3e0",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f860ccf099d7b52cd0cc6e47c614c3ff03d1205aacef1413e977056b8e4929ab",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f8e8fcb5bc48c1c45ba53f4c9e62ae424f382858b71f10b40dc252d2c34c05ca",
+          "native": 1.0,
+          "candidate": 1.0
+        },
+        {
+          "review_input_sha256": "f8fba90d7e4e7ebc53ea19ba5ed95e2dfeb73e54fba2ead3c8ed36ad1e43fdc0",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "fb40131470a513fb7e0bfac9b9d4dfa9849256a09073297d46139f7c0cec0724",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "fc57781b099113eb9bc3d856a2112d0926609d88f67efddb2c306bf72e405e5a",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "fd199c3889e6cd6e621ead22e2c4d0fe050b380ac84adfa76ecfc36f4844e932",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "fe73b942bde83baddff068a216ecaab452f30af92215a8208d6fce2c44b0d58c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "fe80e29743c2ac756fc5335d1dd2d86672e885356c94ffd2c0268c3503be5c2c",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ff7565fa9def962426ddc138912e9b2f816f14eb09131b5a5b1a44e764a0ed70",
+          "native": 0.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ff9fdcefbef4ea3b16336d0193a839c8139bd57435666d369b708ab0fb263d74",
+          "native": 1.0,
+          "candidate": 0.0
+        },
+        {
+          "review_input_sha256": "ffb3568373a75277e3ea7f86244fa6ca51a231ee9410fbaae5c7339907b6950b",
+          "native": 1.0,
+          "candidate": 0.0
+        }
+      ],
+      "native_audit": {
+        "status": "passed",
+        "review_count": 500,
+        "unique_responses": 500,
+        "metrics": {
+          "acc": {
+            "mean": 0.492,
+            "n": 500,
+            "wilson_95": [
+              0.44840780608924286,
+              0.535714183358142
+            ]
+          }
+        },
+        "length_fraction": 0.002,
+        "prompt_tokens": 49079,
+        "completion_tokens": 364585,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this protocol and generation seed.",
+        "completion_length": {
+          "p50": 453.0,
+          "p90": 1390.1000000000004,
+          "p99": 3097.9199999999983,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        }
+      },
+      "candidate_audit": {
+        "status": "passed",
+        "review_count": 500,
+        "unique_responses": 500,
+        "metrics": {
+          "acc": {
+            "mean": 0.47,
+            "n": 500,
+            "wilson_95": [
+              0.4266480518519465,
+              0.5138094085757468
+            ]
+          }
+        },
+        "length_fraction": 0.004,
+        "prompt_tokens": 49079,
+        "completion_tokens": 408262,
+        "uncertainty_note": "Entire pinned benchmark, one response per prompt; intervals conditional on this protocol and generation seed.",
+        "completion_length": {
+          "p50": 471.5,
+          "p90": 1453.1000000000013,
+          "p99": 3461.279999999999,
+          "max": 32768
+        },
+        "batch_split_retries": {
+          "affected_requests": 0,
+          "max": 0
+        },
+        "recurrence": {
+          "totals": {
+            "prefill_depth_sum": 1374212,
+            "prefill_positions": 49079,
+            "decode_depth_sum": 11417336,
+            "decode_positions": 407762,
+            "cap_positions": 456841
+          },
+          "prefill_mean": 28.0,
+          "decode_mean": 28.0,
+          "scope": "Fixed28 execution; cap_positions means its fixed execution limit, not a dynamic36 hard cap."
+        }
+      },
+      "native_work": "artifacts/v0.0.5/eval/full/qwen/math_500/4a627e6379cdbd7e",
+      "candidate_work": "artifacts/v0.0.5/eval/full/rmt/math_500/71dfe47ef1c85249"
+    }
+  ],
+  "reference_label": "native",
+  "benchmarks": [
+    "math_500"
+  ],
+  "scope": "Frozen fixed28 controls, same generation protocol and request seeds; reference_label identifies the baseline. Full selected official EvalScope sets; paper prompt parity not established. Bootstrap conditions on one training seed and one response per prompt; no dynamic-depth benefit claim."
+}

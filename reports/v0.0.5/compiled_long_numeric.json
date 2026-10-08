@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "batch_size": 1,
+      "prompt_tokens": 493,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreement_fraction": 0.0
+    },
+    {
+      "batch_size": 4,
+      "prompt_tokens": 493,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreement_fraction": 0.0
+    },
+    {
+      "batch_size": 8,
+      "prompt_tokens": 493,
+      "max_abs": 0.0,
+      "relative_rmse": 0.0,
+      "argmax_disagreement_fraction": 0.0
+    }
+  ],
+  "scope": "Aligned last 16 positions of repeated long prompts; numerical tolerance, not bitwise or generated-answer equivalence."
+}

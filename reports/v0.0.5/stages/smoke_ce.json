@@ -1,0 +1,20 @@
+{
+  "name": "smoke_ce",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "-m",
+    "rmt.train",
+    "--config",
+    "configs/v0.0.5/smoke_ce.yaml"
+  ],
+  "started_at": "2026-10-08T02:54:33.316625+00:00",
+  "status": "passed",
+  "commit": "4ee8011c256bdba70f1050d77d8a4c049b5ff90c",
+  "returncode": 0,
+  "ended_at": "2026-10-08T02:55:22.299134+00:00",
+  "wall_seconds": 48.978099692612886,
+  "reserved_gpu_hours": 0.013605027692392468
+}

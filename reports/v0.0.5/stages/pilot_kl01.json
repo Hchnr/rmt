@@ -1,0 +1,20 @@
+{
+  "name": "pilot_kl01",
+  "gpus": [
+    "5"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "-m",
+    "rmt.train",
+    "--config",
+    "configs/v0.0.5/pilot_kl01.yaml"
+  ],
+  "started_at": "2026-10-08T02:56:02.848457+00:00",
+  "status": "passed",
+  "commit": "1dda5db5be5419ac2e8fd2894d633ac9f789dff1",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:03:34.886329+00:00",
+  "wall_seconds": 452.0329457577318,
+  "reserved_gpu_hours": 0.1255647071549255
+}

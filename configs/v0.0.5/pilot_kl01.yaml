@@ -1,0 +1,32 @@
+base_model: /share/project/eai_pwm/models/Qwen/Qwen3-0.6B
+train_data: artifacts/v0.0.5/corpus/teacher32_train.jsonl
+dev_data: artifacts/v0.0.5/corpus/dev.jsonl
+seed: 17
+steps: 10000
+target_budget: 1000000
+attention: sdpa
+checkpoint: true
+compile: true
+loss_chunk_size: 64
+learning_rate: 1.0e-05
+router_learning_rate: 0.0001
+lr_warmup_steps: 8
+validation_batches: 32
+eval_every: 200
+save_every: 200
+save: true
+export: true
+verify_replay: true
+sequence_length: 2048
+routing_mode: layer_order
+prior_start: 4.0
+model_overrides:
+  num_recurrences: 28
+  max_recurrences: 36
+  min_recurrences: 28
+  halting_policy: fixed
+  recurrence_schedule: tail
+  tail_experts: 8
+kd_weight: 0.1
+artifact_dir: artifacts/v0.0.5/pilot_kl01
+report: reports/v0.0.5/pilot_kl01.json

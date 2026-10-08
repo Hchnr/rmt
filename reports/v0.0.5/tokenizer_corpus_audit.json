@@ -1,0 +1,5 @@
+{
+  "records": 23104,
+  "mismatches": [],
+  "scope": "Official fast tokenizer against all retokenized corpus IDs and decoded text; backend offset metadata differs."
+}

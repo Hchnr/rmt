@@ -1,0 +1,18 @@
+{
+  "name": "pilot_ce_export",
+  "gpus": [
+    "4"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/validate_training_export.py",
+    "artifacts/v0.0.5/pilot_ce"
+  ],
+  "started_at": "2026-10-08T03:02:39.703758+00:00",
+  "status": "passed",
+  "commit": "d09ef8c88c3e5e0278dc5a67071f8978128b8acb",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:02:49.885155+00:00",
+  "wall_seconds": 10.176674339920282,
+  "reserved_gpu_hours": 0.0028268539833111897
+}

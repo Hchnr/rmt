@@ -14,7 +14,7 @@ p=argparse.ArgumentParser();p.add_argument('work');a=p.parse_args();work=Path(a.
 report=json.loads((work/'report.json').read_text());cfg=report['identity']['config'];world=report['identity']['world_size']
 config=RmtConfig.from_pretrained(work/'hf');config._attn_implementation=cfg.get('attention','sdpa')
 model=RmtForCausalLM.from_pretrained(work/'hf',config=config,dtype=torch.bfloat16,attn_implementation=config._attn_implementation).cuda().eval()
-assert config.routing_mode==cfg['routing_mode'];assert config.router_prior_strength==prior_at(cfg,cfg['steps'])
+assert config.routing_mode==cfg['routing_mode'];assert config.router_prior_strength==prior_at(cfg,report.get('completed_steps',cfg['steps']))
 if cfg.get('tiny'):
  packs=[pack_sequences([[5,7,10,20],[12,21,35,9]],0,cfg['sequence_length'])]
 else:

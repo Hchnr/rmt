@@ -1,0 +1,18 @@
+{
+  "name": "mixed_kl05_export",
+  "gpus": [
+    "6"
+  ],
+  "command": [
+    "/share/project/eai_pwm/home/hcr/repos/test/rmt/.venv-cached/bin/python",
+    "scripts/validate_training_export.py",
+    "artifacts/v0.0.5/mixed_kl05"
+  ],
+  "started_at": "2026-10-08T03:23:03.747788+00:00",
+  "status": "passed",
+  "commit": "4a9528afd39afe04778fce933935d1776da8e617",
+  "returncode": 0,
+  "ended_at": "2026-10-08T03:23:17.684955+00:00",
+  "wall_seconds": 13.932433784008026,
+  "reserved_gpu_hours": 0.0038701204955577852
+}

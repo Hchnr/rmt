@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "name": "native",
+      "path": "/share/project/eai_pwm/models/Qwen/Qwen3-0.6B",
+      "groups": {
+        "tied_embedding_and_lm_head": 155582464,
+        "normalizations": 65536,
+        "ffn_projections": 264241152,
+        "attention_projections": 176160768
+      },
+      "unique_parameters": 596049920,
+      "serialized_parameters": 751632384,
+      "duplicate_tied_parameters": 155582464
+    },
+    {
+      "name": "rmt",
+      "path": "artifacts/v0.0.5/reference_hf",
+      "groups": {
+        "normalizations": 65536,
+        "ffn_projections": 264241152,
+        "attention_projections": 176160768,
+        "router": 29680,
+        "tied_embedding_and_lm_head": 155582464
+      },
+      "unique_parameters": 596079600,
+      "serialized_parameters": 596079600,
+      "duplicate_tied_parameters": 0
+    }
+  ],
+  "scope": "Logical unique weights. Native file stores identical embedding/head twice; equality verified and shared weights counted once. Runtime tying separately verified by reference.json. Fixed layer-order training does not use router gradients."
+}

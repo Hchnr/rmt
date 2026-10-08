@@ -1,0 +1,679 @@
+{
+  "cases": [
+    {
+      "id": "prefix_0",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about rain. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_0",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about rain. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_0",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "rain",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"rain\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_1",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about forests. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_1",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about forests. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_1",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "forests",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"forests\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_2",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about bicycles. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_2",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about bicycles. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_2",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "bicycles",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"bicycles\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_3",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about libraries. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_3",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about libraries. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_3",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "libraries",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"libraries\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_4",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about gardens. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_4",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about gardens. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_4",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "gardens",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"gardens\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_5",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about rivers. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_5",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about rivers. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_5",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "rivers",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"rivers\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_6",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about birds. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_6",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about birds. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_6",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "birds",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"birds\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_7",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about clouds. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_7",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about clouds. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_7",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "clouds",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"clouds\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_8",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about books. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_8",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about books. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_8",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "books",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"books\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_9",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about bridges. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_9",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about bridges. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_9",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "bridges",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"bridges\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_10",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about music. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_10",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about music. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_10",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "music",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"music\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_11",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about mountains. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_11",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about mountains. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_11",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "mountains",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"mountains\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_12",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about trains. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_12",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about trains. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_12",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "trains",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"trains\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_13",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about oceans. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_13",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about oceans. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_13",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "oceans",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"oceans\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_14",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about flowers. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_14",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about flowers. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_14",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "flowers",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"flowers\". Do not use a code fence."
+    },
+    {
+      "id": "prefix_15",
+      "domain": "instruction",
+      "kind": "prefix",
+      "value": "Note:",
+      "prompt": "Write one sentence about snow. Start your response with the exact text \"Note:\"."
+    },
+    {
+      "id": "upper_15",
+      "domain": "instruction",
+      "kind": "upper",
+      "value": "",
+      "prompt": "Write a short sentence about snow. Use only uppercase letters for all words."
+    },
+    {
+      "id": "json_15",
+      "domain": "instruction",
+      "kind": "json",
+      "value": "snow",
+      "prompt": "Return only a JSON object with exactly one key, \"topic\", whose value is \"snow\". Do not use a code fence."
+    },
+    {
+      "id": "arithmetic_0",
+      "domain": "math",
+      "kind": "integer",
+      "value": 323,
+      "prompt": "Calculate 14 * 21 + 29. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_1",
+      "domain": "math",
+      "kind": "integer",
+      "value": 576,
+      "prompt": "Calculate 33 * 17 + 15. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_2",
+      "domain": "math",
+      "kind": "integer",
+      "value": 973,
+      "prompt": "Calculate 36 * 26 + 37. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_3",
+      "domain": "math",
+      "kind": "integer",
+      "value": 197,
+      "prompt": "Calculate 28 * 6 + 29. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_4",
+      "domain": "math",
+      "kind": "integer",
+      "value": 343,
+      "prompt": "Calculate 16 * 19 + 39. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_5",
+      "domain": "math",
+      "kind": "integer",
+      "value": 314,
+      "prompt": "Calculate 19 * 15 + 29. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_6",
+      "domain": "math",
+      "kind": "integer",
+      "value": 149,
+      "prompt": "Calculate 7 * 21 + 2. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_7",
+      "domain": "math",
+      "kind": "integer",
+      "value": 194,
+      "prompt": "Calculate 6 * 29 + 20. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_8",
+      "domain": "math",
+      "kind": "integer",
+      "value": 179,
+      "prompt": "Calculate 8 * 19 + 27. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_9",
+      "domain": "math",
+      "kind": "integer",
+      "value": 163,
+      "prompt": "Calculate 10 * 16 + 3. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_10",
+      "domain": "math",
+      "kind": "integer",
+      "value": 576,
+      "prompt": "Calculate 24 * 23 + 24. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_11",
+      "domain": "math",
+      "kind": "integer",
+      "value": 758,
+      "prompt": "Calculate 19 * 39 + 17. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_12",
+      "domain": "math",
+      "kind": "integer",
+      "value": 219,
+      "prompt": "Calculate 30 * 7 + 9. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_13",
+      "domain": "math",
+      "kind": "integer",
+      "value": 826,
+      "prompt": "Calculate 34 * 24 + 10. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_14",
+      "domain": "math",
+      "kind": "integer",
+      "value": 83,
+      "prompt": "Calculate 30 * 2 + 23. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_15",
+      "domain": "math",
+      "kind": "integer",
+      "value": 90,
+      "prompt": "Calculate 3 * 24 + 18. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_16",
+      "domain": "math",
+      "kind": "integer",
+      "value": 237,
+      "prompt": "Calculate 10 * 20 + 37. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_17",
+      "domain": "math",
+      "kind": "integer",
+      "value": 399,
+      "prompt": "Calculate 22 * 18 + 3. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_18",
+      "domain": "math",
+      "kind": "integer",
+      "value": 57,
+      "prompt": "Calculate 7 * 5 + 22. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_19",
+      "domain": "math",
+      "kind": "integer",
+      "value": 968,
+      "prompt": "Calculate 39 * 24 + 32. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_20",
+      "domain": "math",
+      "kind": "integer",
+      "value": 188,
+      "prompt": "Calculate 6 * 28 + 20. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_21",
+      "domain": "math",
+      "kind": "integer",
+      "value": 90,
+      "prompt": "Calculate 6 * 11 + 24. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_22",
+      "domain": "math",
+      "kind": "integer",
+      "value": 111,
+      "prompt": "Calculate 12 * 8 + 15. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_23",
+      "domain": "math",
+      "kind": "integer",
+      "value": 54,
+      "prompt": "Calculate 16 * 2 + 22. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_24",
+      "domain": "math",
+      "kind": "integer",
+      "value": 264,
+      "prompt": "Calculate 13 * 20 + 4. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_25",
+      "domain": "math",
+      "kind": "integer",
+      "value": 159,
+      "prompt": "Calculate 32 * 4 + 31. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_26",
+      "domain": "math",
+      "kind": "integer",
+      "value": 135,
+      "prompt": "Calculate 5 * 23 + 20. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_27",
+      "domain": "math",
+      "kind": "integer",
+      "value": 58,
+      "prompt": "Calculate 2 * 28 + 2. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_28",
+      "domain": "math",
+      "kind": "integer",
+      "value": 138,
+      "prompt": "Calculate 11 * 12 + 6. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_29",
+      "domain": "math",
+      "kind": "integer",
+      "value": 65,
+      "prompt": "Calculate 12 * 3 + 29. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_30",
+      "domain": "math",
+      "kind": "integer",
+      "value": 137,
+      "prompt": "Calculate 5 * 21 + 32. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_31",
+      "domain": "math",
+      "kind": "integer",
+      "value": 182,
+      "prompt": "Calculate 36 * 4 + 38. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_32",
+      "domain": "math",
+      "kind": "integer",
+      "value": 267,
+      "prompt": "Calculate 11 * 24 + 3. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_33",
+      "domain": "math",
+      "kind": "integer",
+      "value": 248,
+      "prompt": "Calculate 21 * 11 + 17. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_34",
+      "domain": "math",
+      "kind": "integer",
+      "value": 261,
+      "prompt": "Calculate 22 * 11 + 19. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_35",
+      "domain": "math",
+      "kind": "integer",
+      "value": 712,
+      "prompt": "Calculate 34 * 20 + 32. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_36",
+      "domain": "math",
+      "kind": "integer",
+      "value": 477,
+      "prompt": "Calculate 15 * 30 + 27. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_37",
+      "domain": "math",
+      "kind": "integer",
+      "value": 175,
+      "prompt": "Calculate 5 * 34 + 5. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_38",
+      "domain": "math",
+      "kind": "integer",
+      "value": 149,
+      "prompt": "Calculate 5 * 24 + 29. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_39",
+      "domain": "math",
+      "kind": "integer",
+      "value": 539,
+      "prompt": "Calculate 35 * 15 + 14. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_40",
+      "domain": "math",
+      "kind": "integer",
+      "value": 533,
+      "prompt": "Calculate 21 * 25 + 8. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_41",
+      "domain": "math",
+      "kind": "integer",
+      "value": 769,
+      "prompt": "Calculate 25 * 30 + 19. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_42",
+      "domain": "math",
+      "kind": "integer",
+      "value": 139,
+      "prompt": "Calculate 7 * 17 + 20. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_43",
+      "domain": "math",
+      "kind": "integer",
+      "value": 687,
+      "prompt": "Calculate 30 * 22 + 27. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_44",
+      "domain": "math",
+      "kind": "integer",
+      "value": 251,
+      "prompt": "Calculate 26 * 9 + 17. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_45",
+      "domain": "math",
+      "kind": "integer",
+      "value": 410,
+      "prompt": "Calculate 26 * 15 + 20. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_46",
+      "domain": "math",
+      "kind": "integer",
+      "value": 573,
+      "prompt": "Calculate 17 * 32 + 29. Reply with only the integer answer."
+    },
+    {
+      "id": "arithmetic_47",
+      "domain": "math",
+      "kind": "integer",
+      "value": 911,
+      "prompt": "Calculate 23 * 38 + 37. Reply with only the integer answer."
+    }
+  ],
+  "cases_sha256": "74648cf0a9c1328b0b47d08db0a61899a319434f77f97c4869175490f88c272c",
+  "exact_prompt_overlap": "none in all five corpus files",
+  "scope": "Exact prompt check only; not semantic decontamination"
+}

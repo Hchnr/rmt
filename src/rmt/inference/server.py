@@ -61,8 +61,10 @@ def main():
     p.add_argument('--port',type=int,default=8801);p.add_argument('--name',default='rmt')
     p.add_argument('--batch-size',type=int,default=4);p.add_argument('--max-context',type=int,default=4096)
     p.add_argument('--eager',action='store_true');p.add_argument('--attention',default='eager')
+    p.add_argument('--allow-nondeterministic',action='store_true')
     args=p.parse_args()
-    runner=Runner(args.model,args.backend,not args.eager,max_context=args.max_context,attention=args.attention)
+    runner=Runner(args.model,args.backend,not args.eager,max_context=args.max_context,attention=args.attention,
+                  deterministic=not args.allow_nondeterministic)
     batcher=Batcher(runner,args.batch_size)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args): pass
@@ -76,7 +78,7 @@ def main():
             if self.path=='/metadata':
                 self.send(200,{'model':args.model,'backend':args.backend,'compiled':not args.eager,
                     'generation_termination':{'eos_token_ids':sorted(runner.eos),'pad_token_id':runner.pad},
-                    'cache':'recurrence_capacity' if args.backend=='rmt' else 'hf_dynamic',
+                    'cache':'recurrence_capacity' if args.backend=='rmt' else 'layer_capacity',
                     'max_context':runner.max_context,'batch_size':args.batch_size,'source_sha256':runner.source_hashes,
                     'routing_mode':getattr(runner.model.config,'routing_mode',None),'attention':args.attention,
                     'recurrence_config':{key:getattr(runner.model.config,key,None) for key in (

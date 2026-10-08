@@ -89,3 +89,16 @@ def test_straight_through_proxy_gradient():
     torch.testing.assert_close(probability.grad,torch.tensor([[18.]]))
     torch.testing.assert_close(z.grad,weights)
     torch.testing.assert_close(h.grad,torch.zeros_like(h))
+
+
+def test_mixed_dispatch_autocast_fp32_master(pair):
+    _, model = pair
+    ids = torch.tensor([[5, 7, 10, 20]])
+    routes = torch.tensor([[[0, 1, 2], [1, 2, 0], [2, 0, 1], [0, 2, 1]]])
+    with torch.autocast('cpu', dtype=torch.bfloat16):
+        result = model(ids, labels=ids, forced_routes=routes,
+                       routing_mode='forced', use_cache=False)
+    assert torch.isfinite(result.loss)
+    result.loss.backward()
+    assert model.model.embed_tokens.weight.grad is not None
+    assert torch.isfinite(model.model.embed_tokens.weight.grad).all()

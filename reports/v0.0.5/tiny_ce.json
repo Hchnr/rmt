@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "identity": {
+    "config": {
+      "tiny": true,
+      "seed": 17,
+      "sequence_length": 16,
+      "steps": 3,
+      "routing_mode": "learned",
+      "prior_start": 4.0,
+      "prior_end": 3.0,
+      "prior_warmup_steps": 1,
+      "prior_decay_steps": 2,
+      "learning_rate": 0.0001,
+      "router_learning_rate": 0.001,
+      "lr_warmup_steps": 1,
+      "attention": "sdpa",
+      "checkpoint": true,
+      "compile": false,
+      "loss_chunk_size": 4,
+      "kd_weight": 0.0,
+      "validation_batches": 1,
+      "eval_every": 2,
+      "save": true,
+      "export": true,
+      "verify_replay": true,
+      "artifact_dir": "artifacts/v0.0.5/tiny_ce",
+      "report": "reports/v0.0.5/tiny_ce.json",
+      "deterministic": true,
+      "model_overrides": {
+        "max_recurrences": 6,
+        "min_recurrences": 2,
+        "halting_policy": "hidden",
+        "halt_threshold": 100.0,
+        "halt_relative_threshold": 100.0,
+        "recurrence_schedule": "tail",
+        "tail_experts": 2
+      },
+      "recurrence_training": {
+        "mode": "dynamic",
+        "forced_fraction": 0.2
+      }
+    },
+    "data": {
+      "fixture": true
+    },
+    "world_size": 1,
+    "code": {
+      "src/rmt/__init__.py": "a9f3ed8f7ee47d16a07e0fcaa9b50c6de643c9abe4726e02d95183b3e5043b0b",
+      "src/rmt/configuration_rmt.py": "a367a26feaed841af068da062700c01430b122c90f6ea544dfbd64d67310dbe9",
+      "src/rmt/data.py": "b6f33aae67cbafac4cf300edd4228c219e7e892b7e8d1acf03c9e303865f80b5",
+      "src/rmt/losses.py": "53ecea96f311a1e6570bd862cb5a19cefea5a8b1f6f3ea49cb1a0eac377ecac7",
+      "src/rmt/fsdp_reference.py": "eabc26c6778ed3a70083bc4f802922300014372dd31d91a4ae1fe52ac8d72f20",
+      "src/rmt/smoke_train.py": "1ab1b5cf7ef05ca1e6636b45471e0b882ee9c7fc22a50e00d314a50f72b0fa87",
+      "src/rmt/attention.py": "2dd0d5c0d8eb1818b13482d8f1d5a07a30de56b1013ff0dc46c72651f648a868",
+      "src/rmt/audit.py": "218a500816ff701b1cfaa078061814068f03a08adee53db32abfaeec23591054",
+      "src/rmt/cache.py": "5a33c8ee51c6dc29a54d95dacf9691151219c1ed33c670b33db7170cd522e5a9",
+      "src/rmt/checkpoint.py": "b523731353de1325530f2488a41e50d39092cc9c41727d281ebf4555d04c17bd",
+      "src/rmt/experts.py": "808c48d4fa47d76995d8661649ea2378f2f96111c71447c474207f5244a9b01d",
+      "src/rmt/modeling_rmt.py": "aa17b73f1b476d1e2cc1c6e7d17f7192c53d04949537a7f8924a50e61ea4571e",
+      "src/rmt/routing.py": "6ce2caeea73e9d35d00b0d617f3caf771169ad878e8042afe882663c64cd9b51",
+      "src/rmt/runtime.py": "1ab4365e4b9e893d8c382cb1db95c24861e8fe912b860838b26042f13059bd48",
+      "src/rmt/verify.py": "1656a69ed7a5aaff67ed6c4fda13549bdc0d76426ed4726c4342971d4339240e",
+      "src/rmt/train.py": "7d9ead97fe2b77569ca4f93c04d64f73b4fdbabdb1bb8a2b77306ce7d909b900",
+      "src/rmt/training_data.py": "444716bf5c0f41bd444605c9f5ed2f0f9aecb4844902cb13f4028b33c8adb445",
+      "src/rmt/halting.py": "e168dad888fb9c6de8aae1268dfe5ee4fef9a3e17b633605896309916906c2c2"
+    },
+    "environment": {
+      "python": "3.13.14",
+      "torch": "2.10.0+cu130",
+      "cuda_runtime": "13.0",
+      "transformers": "4.57.6",
+      "tf32_override": "1",
+      "nvidia_tf32_override": null,
+      "gpu": "NVIDIA H100 80GB HBM3"
+    }
+  },
+  "steps": [
+    {
+      "event": "train",
+      "step": 0,
+      "prior": 4.0,
+      "loss": 4.583985805511475,
+      "ce": 4.583985805511475,
+      "kl": 0.0,
+      "grad_norm": 4.33929443359375,
+      "seconds": 0.15719273686408997,
+      "input_tokens": 8,
+      "targets": 6,
+      "input_tokens_per_second": 50.89293670654297,
+      "targets_per_second": 38.169700622558594,
+      "peak_allocated_bytes": 67597312,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        8,
+        8,
+        0
+      ],
+      "off_prior_fraction": 0.0,
+      "exit_depth_counts": [
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_recurrences": 2.0
+    },
+    {
+      "event": "train",
+      "step": 1,
+      "prior": 4.0,
+      "loss": 4.565088272094727,
+      "ce": 4.565088272094727,
+      "kl": 0.0,
+      "grad_norm": 4.291634559631348,
+      "seconds": 0.03969617187976837,
+      "input_tokens": 8,
+      "targets": 6,
+      "input_tokens_per_second": 201.53076171875,
+      "targets_per_second": 151.1480712890625,
+      "peak_allocated_bytes": 67677696,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        8,
+        8,
+        0
+      ],
+      "off_prior_fraction": 0.0,
+      "exit_depth_counts": [
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_recurrences": 2.0
+    },
+    {
+      "event": "train",
+      "step": 2,
+      "prior": 3.5,
+      "loss": 4.546264171600342,
+      "ce": 4.546264171600342,
+      "kl": 0.0,
+      "grad_norm": 4.233736515045166,
+      "seconds": 0.03883887082338333,
+      "input_tokens": 8,
+      "targets": 6,
+      "input_tokens_per_second": 205.97921752929688,
+      "targets_per_second": 154.48440551757812,
+      "peak_allocated_bytes": 67677696,
+      "off_layer_fraction": 0.0,
+      "expert_counts": [
+        8,
+        8,
+        0
+      ],
+      "off_prior_fraction": 0.0,
+      "exit_depth_counts": [
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_recurrences": 2.0
+    }
+  ],
+  "validation": [
+    {
+      "event": "validation",
+      "step": 0,
+      "prior": 4.0,
+      "ce": 4.583985805511475,
+      "kl": 0.0,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 2,
+      "prior": 3.5,
+      "ce": 4.546264171600342,
+      "kl": 0.0,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    },
+    {
+      "event": "validation",
+      "step": 3,
+      "prior": 3.0,
+      "ce": 4.528510570526123,
+      "kl": 0.0,
+      "targets": 6.0,
+      "off_layer_fraction": 0.0,
+      "unique_packs": 1
+    }
+  ],
+  "wall_seconds": 1.2691998798400164,
+  "train_packs": 1,
+  "dev_packs": 1,
+  "compile_counters": {},
+  "teacher_loaded": false,
+  "scope": "Instruction-training experiment, not a quality superiority claim"
+}
