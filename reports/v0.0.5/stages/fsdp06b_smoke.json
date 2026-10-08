@@ -14,6 +14,10 @@
     "configs/v0.0.5/fsdp06b_smoke.yaml"
   ],
   "started_at": "2026-10-08T06:42:09.477125+00:00",
-  "status": "running",
-  "commit": "38d606f535b13113b92f35f7e5f3911cee919e79"
+  "status": "passed",
+  "commit": "38d606f535b13113b92f35f7e5f3911cee919e79",
+  "returncode": 0,
+  "ended_at": "2026-10-08T06:43:20.733625+00:00",
+  "wall_seconds": 71.25212544575334,
+  "reserved_gpu_hours": 0.03958451413652963
 }

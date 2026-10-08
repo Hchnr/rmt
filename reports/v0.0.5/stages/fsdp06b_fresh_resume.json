@@ -1,0 +1,24 @@
+{
+  "name": "fsdp06b_fresh_resume",
+  "gpus": [
+    "4",
+    "5"
+  ],
+  "command": [
+    ".venv-cached/bin/torchrun",
+    "--standalone",
+    "--nproc-per-node=2",
+    "-m",
+    "rmt.train",
+    "--config",
+    "configs/v0.0.5/fsdp06b_smoke.yaml",
+    "--verify-resume"
+  ],
+  "started_at": "2026-10-08T06:43:20.785603+00:00",
+  "status": "passed",
+  "commit": "e6f8662ce1b33c9221433defa380c978e1710958",
+  "returncode": 0,
+  "ended_at": "2026-10-08T06:44:22.075908+00:00",
+  "wall_seconds": 61.28568819351494,
+  "reserved_gpu_hours": 0.03404760455195275
+}
