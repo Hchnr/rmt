@@ -9,7 +9,7 @@ import yaml
 p=argparse.ArgumentParser();p.add_argument('--configs',nargs='+',required=True);p.add_argument('--world-size',type=int,default=4);p.add_argument('--output',required=True);a=p.parse_args()
 reports=[]
 for name in a.configs:
- c=yaml.safe_load(Path(name).read_text());path=Path(c['train_data']);rows=[json.loads(x) for x in path.read_text().splitlines()]
+ c=yaml.safe_load(Path(name).read_text());path=Path(c['train_data']);rows=[json.loads(x) for x in path.read_text().split('\n') if x.strip()]
  random.Random(c.get('seed',17)).shuffle(rows);length=c['sequence_length'];packs=[];current=[];size=0
  for row in rows:
   for start in range(0,len(row['input_ids']),length):
@@ -19,11 +19,18 @@ for name in a.configs:
    if size+len(ids)>length:packs.append(current);current=[];size=0
    current.append({'id':row['id'],'offset':start,'input_tokens':len(ids),'targets':targets});size+=len(ids)
  if current:packs.append(current)
- visited=[packs[i%len(packs)] for i in range(c['steps']*a.world_size)];chunks=[x for pack in visited for x in pack]
+ report_path=Path(c['report']);completed=json.loads(report_path.read_text()) if report_path.exists() else None
+ actual_steps=len(completed['steps']) if completed is not None else c['steps']
+ if completed is not None and completed['identity']['world_size']!=a.world_size:
+  raise ValueError('Requested world size differs from completed run')
+ if completed is None and c.get('target_budget') is not None:
+  raise ValueError('Token-budget exposure requires a completed training report')
+ visited=[packs[i%len(packs)] for i in range(actual_steps*a.world_size)];chunks=[x for pack in visited for x in pack]
  counts=Counter(x['id'] for x in chunks);tokens=sum(x['input_tokens'] for x in chunks);targets=sum(x['targets'] for x in chunks)
- report_path=Path(c['report']);verified=False
- if report_path.exists():
-  r=json.loads(report_path.read_text());assert len(r['steps'])==c['steps']
+ verified=False
+ if completed is not None:
+  r=completed
+  assert len(r['steps'])==r.get('completed_steps',c['steps'])
   assert sum(x['input_tokens'] for x in r['steps'])==tokens
   assert sum(x['targets'] for x in r['steps'])==targets
   verified=True
