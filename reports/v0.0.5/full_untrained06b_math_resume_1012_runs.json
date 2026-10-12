@@ -1,0 +1,7 @@
+[
+  {
+    "candidate": "untrained06b_math_resume_1012",
+    "benchmark": "math_500",
+    "work": "artifacts/v0.0.5/eval/full/rmt/math_500/513f2dd0a6fab600"
+  }
+]

@@ -35,6 +35,10 @@
     "artifacts/v0.0.5/eval/full/rmt/math_500/513f2dd0a6fab600"
   ],
   "started_at": "2026-10-12T02:24:03.673436+00:00",
-  "status": "running",
-  "commit": "8c67cf989eceaad2e9d87dd0fbe2f96fce6b8ada"
+  "status": "passed",
+  "commit": "8c67cf989eceaad2e9d87dd0fbe2f96fce6b8ada",
+  "returncode": 0,
+  "ended_at": "2026-10-12T02:32:43.548012+00:00",
+  "wall_seconds": 519.8694797344506,
+  "reserved_gpu_hours": 0.2888163776302503
 }
