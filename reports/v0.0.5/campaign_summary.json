@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T07:11:01.620118+00:00",
+  "generated_at": "2026-10-12T02:54:30.262544+00:00",
   "rows": [
     {
       "name": "pilot_ce",
@@ -230,7 +230,7 @@
   "decision": "No trained recipe passes the available gate measurements.",
   "uncertainty": "Synthetic development probes only, 48 items per domain, one training seed. Bootstrap is conditional on these responses and does not estimate training-seed variance; all-equal outcomes give degenerate intervals.",
   "cost": {
-    "completed_stage_reserved_gpu_hours": 14.163030361931046,
+    "completed_stage_reserved_gpu_hours": 14.451846739561297,
     "staged_jobs_physical_gpus": [
       "4",
       "5",
@@ -239,11 +239,13 @@
     ],
     "completed_reserved_gpu_hours_by_category": {
       "training": 0.7315106475296327,
-      "formal_evaluation": 12.811750547616327,
+      "formal_evaluation": 13.100566925246577,
       "development_and_verification": 0.6197691667850853
     },
-    "running_reserved_gpu_hours_estimate": 0,
-    "running_stages": [],
+    "running_reserved_gpu_hours_estimate": 1.0141225694444445,
+    "running_stages": [
+      "untrained_ifeval_1012"
+    ],
     "scope": "Stage reservation totals only; nested wrapper costs excluded to avoid double counting. Historical v0.0.4 teacher generation excluded; no new teacher generation."
   }
 }

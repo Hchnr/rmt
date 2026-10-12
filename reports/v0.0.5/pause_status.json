@@ -1,7 +1,6 @@
 {
   "status": "resumed_by_user",
   "stopped_at": "2026-10-08T07:11:00.860702+00:00",
-  "owned_gpu_jobs_remaining": 0,
   "completed_formal_comparison": "reports/v0.0.5/formal_comparison.json",
   "incomplete_control": {
     "stage": "untrained_full",
@@ -19,5 +18,12 @@
   "resume_stages": [
     "untrained_math_resume_1012",
     "untrained_ifeval_1012"
-  ]
+  ],
+  "owned_gpu_jobs_at_pause": 0,
+  "current_control": {
+    "math_status": "passed",
+    "math_unique_responses": 500,
+    "math_recovery_report": "reports/v0.0.5/full_untrained06b_math_resume_1012_recovery.json",
+    "ifeval_status": "running"
+  }
 }
