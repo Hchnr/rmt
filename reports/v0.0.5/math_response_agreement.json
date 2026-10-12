@@ -1,0 +1,166 @@
+{
+  "rows": [
+    {
+      "benchmark": "math_500",
+      "n": 500,
+      "same_answer_text": 475,
+      "same_finish_reason": 500,
+      "same_completion_token_count": 475,
+      "changed_answers": [
+        {
+          "prompt_sha256": "08e605882cc9047f5fafb9f365a841e12343cdb95c9152f6c4d061e8d263b4bf",
+          "seed": 1403549134,
+          "native_completion_tokens": 283,
+          "rmt_completion_tokens": 296
+        },
+        {
+          "prompt_sha256": "16dc5abf510ee98c591c644c15ef6245aa948602f58256822e8ac87410c31ec9",
+          "seed": 2866289728,
+          "native_completion_tokens": 527,
+          "rmt_completion_tokens": 335
+        },
+        {
+          "prompt_sha256": "1e56d9379adcf5241597ce200b60aced5057dd1a213f6659ee59dafc45396d72",
+          "seed": 2134491942,
+          "native_completion_tokens": 565,
+          "rmt_completion_tokens": 432
+        },
+        {
+          "prompt_sha256": "3d01e3d2e23db4e6b382c8c4b4b8600c19262f53b5004ce935e7ca13c75923f3",
+          "seed": 1928379854,
+          "native_completion_tokens": 116,
+          "rmt_completion_tokens": 119
+        },
+        {
+          "prompt_sha256": "58f6201381262edfddcb0df7e5c38cb308cc01f1052048662d1b89e0bcf67e47",
+          "seed": 1417964721,
+          "native_completion_tokens": 269,
+          "rmt_completion_tokens": 255
+        },
+        {
+          "prompt_sha256": "5a5869d3aef66e931e4bca505c04216207c64eb69e1db8cf06d94c461a97a9e0",
+          "seed": 281853884,
+          "native_completion_tokens": 461,
+          "rmt_completion_tokens": 451
+        },
+        {
+          "prompt_sha256": "6d125cd2bd66e50e982cdad2ef2a03a3244965a2d8d6eb067d94e41fa2424fb8",
+          "seed": 1921691249,
+          "native_completion_tokens": 168,
+          "rmt_completion_tokens": 261
+        },
+        {
+          "prompt_sha256": "6fed0e913eeb6ffebfb2a20d8c751d0c3cb773efea55de8d8555d48932422451",
+          "seed": 1035898859,
+          "native_completion_tokens": 356,
+          "rmt_completion_tokens": 352
+        },
+        {
+          "prompt_sha256": "723f221e142d0901bf046b9a394032babed6776cc93efdf20cc97baa36a0d919",
+          "seed": 2881920487,
+          "native_completion_tokens": 210,
+          "rmt_completion_tokens": 192
+        },
+        {
+          "prompt_sha256": "7dcc89b868d9f141e8a200e73f3038620356953bcd666cbdb5600ebf3a9fbd63",
+          "seed": 2810607303,
+          "native_completion_tokens": 636,
+          "rmt_completion_tokens": 548
+        },
+        {
+          "prompt_sha256": "8009c9f0003e4a766e3edbf2e813a7f264f5e842d6d722eede148da2f4ab7663",
+          "seed": 3843501986,
+          "native_completion_tokens": 619,
+          "rmt_completion_tokens": 582
+        },
+        {
+          "prompt_sha256": "8eee8adc31e904038492dbde70dc113ceaca727736e5c010e45037129a8580db",
+          "seed": 1798474348,
+          "native_completion_tokens": 296,
+          "rmt_completion_tokens": 253
+        },
+        {
+          "prompt_sha256": "92ab9b8557f245d27a6482d0b0e8539204437314f81928feba4df326f8a6da2b",
+          "seed": 3005675886,
+          "native_completion_tokens": 409,
+          "rmt_completion_tokens": 417
+        },
+        {
+          "prompt_sha256": "9a1f2bcd4407d98c755c02878f55ff3c9291a2eb794c802146304a2aa13bb547",
+          "seed": 2276031901,
+          "native_completion_tokens": 1032,
+          "rmt_completion_tokens": 1058
+        },
+        {
+          "prompt_sha256": "9b3d4a7af55efde66ad8742abb968b38e09ba98cf76019e0b3044e3f669fa45a",
+          "seed": 2171221618,
+          "native_completion_tokens": 492,
+          "rmt_completion_tokens": 516
+        },
+        {
+          "prompt_sha256": "b4fd397b3ad85c310193490f62304df920c66fe94f11bf507a917d34d93b07bc",
+          "seed": 1144904728,
+          "native_completion_tokens": 404,
+          "rmt_completion_tokens": 295
+        },
+        {
+          "prompt_sha256": "b730cf39915d604fa31d5497a09b8426bf33f9b5f4b5c0b6cd2c8134a8911ae1",
+          "seed": 3581903655,
+          "native_completion_tokens": 606,
+          "rmt_completion_tokens": 609
+        },
+        {
+          "prompt_sha256": "bbdee11a518b1cb88d1caa6615729142ca4f1a868084f9e92a093765a9031e2a",
+          "seed": 4188829838,
+          "native_completion_tokens": 287,
+          "rmt_completion_tokens": 255
+        },
+        {
+          "prompt_sha256": "c7ac526d4b4ad9363d103fcb1d2dd24766fd1aef8bbf226f18d6288c41a254e5",
+          "seed": 1706505706,
+          "native_completion_tokens": 635,
+          "rmt_completion_tokens": 537
+        },
+        {
+          "prompt_sha256": "cfe12ff922078fbc29b089823b86203e26c67784cbf77c57855a16e147d03d4c",
+          "seed": 2633750752,
+          "native_completion_tokens": 757,
+          "rmt_completion_tokens": 1350
+        },
+        {
+          "prompt_sha256": "d7f2449bff61e26e003ce3fbc6033b48572f0fa41411b28befa1eddc68b18f34",
+          "seed": 3695127604,
+          "native_completion_tokens": 260,
+          "rmt_completion_tokens": 200
+        },
+        {
+          "prompt_sha256": "d96b666a507a0ee0f5eb1b4ee46e78ddfd4e74a8ed65f3953e673416ebdecde7",
+          "seed": 3165624905,
+          "native_completion_tokens": 629,
+          "rmt_completion_tokens": 739
+        },
+        {
+          "prompt_sha256": "e0ded6ae2f1ffe043116c30653707f2a1984388562432cd83aef1489cf314f9d",
+          "seed": 4188643823,
+          "native_completion_tokens": 936,
+          "rmt_completion_tokens": 357
+        },
+        {
+          "prompt_sha256": "e5b9ddb3171c82f33f83b8137f7e32cb6108aa10923a8df75b3fdd7aa115780b",
+          "seed": 3684309109,
+          "native_completion_tokens": 274,
+          "rmt_completion_tokens": 337
+        },
+        {
+          "prompt_sha256": "f9df3145a2b32ecdc4a3698e52039bebf2f1cb13b2889927f3354ef32fd27c5b",
+          "seed": 4292699868,
+          "native_completion_tokens": 226,
+          "rmt_completion_tokens": 225
+        }
+      ],
+      "native_work": "artifacts/v0.0.5/eval/full/qwen/math_500/4a627e6379cdbd7e",
+      "rmt_work": "artifacts/v0.0.5/eval/full/rmt/math_500/513f2dd0a6fab600"
+    }
+  ],
+  "scope": "Same frozen sampling protocol and request seeds. Measures observed answer agreement, not logits or token-ID bitwise equality; batch scheduling and backend numerics can affect sampled answers. Equal aggregate scores do not imply identical predictions."
+}
