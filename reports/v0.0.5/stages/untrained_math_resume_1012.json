@@ -1,0 +1,40 @@
+{
+  "name": "untrained_math_resume_1012",
+  "gpus": [
+    "6",
+    "7"
+  ],
+  "command": [
+    ".venv-cached/bin/python",
+    "scripts/evaluate_trained_checkpoint.py",
+    "--work",
+    "artifacts/v0.0.5/untrained_reference",
+    "--name",
+    "untrained06b_math_resume_1012",
+    "--gpu",
+    "6,7",
+    "--port",
+    "9230",
+    "--backend",
+    "rmt",
+    "--checkpoint",
+    "artifacts/v0.0.5/reference_hf",
+    "--phase",
+    "full",
+    "--benchmarks",
+    "math_500",
+    "--config",
+    "configs/v0.0.5/full_non_thinking.json",
+    "--report-root",
+    "reports/v0.0.5",
+    "--output-root",
+    "artifacts/v0.0.5/eval",
+    "--response-timeout",
+    "7200",
+    "--recover-work",
+    "artifacts/v0.0.5/eval/full/rmt/math_500/513f2dd0a6fab600"
+  ],
+  "started_at": "2026-10-12T02:24:03.673436+00:00",
+  "status": "running",
+  "commit": "8c67cf989eceaad2e9d87dd0fbe2f96fce6b8ada"
+}

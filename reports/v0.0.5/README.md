@@ -52,7 +52,7 @@ This rejects incomplete benchmarks, duplicate/missing scores, different request 
 | Three matched1M loss recipes and follow-up attribution | Executed | No candidate passes both predeclared quality gates |
 | Data/label/exposure audits | Passed | Available corpus size differs from actually visited IDs |
 | Independent resume/export | All six passed | Trained BF16 export uses CE tolerance, not bitwise identity |
-| Full MATH-500 / IFEval | Native/trained complete; untrained RMT paused by user | MATH49.2%→47.0%; IFEval57.67%→49.54%, paired95% CI [−11.83,−4.62]pp; no gain |
+| Full MATH-500 / IFEval | Native/trained complete; untrained RMT resumed on2026-10-12 | MATH49.2%→47.0%; IFEval57.67%→49.54%, paired95% CI [−11.83,−4.62]pp; no gain |
 |10M/30M fixed32/dynamic main experiment | Not executed, gated | No extra-depth or adaptive-compute benefit established |
 | New32B teacher generation | Not executed, gated | Existing accepted answers reused with provenance |
 
@@ -69,3 +69,7 @@ P1 is an original-depth SFT/KL control represented by bound experts:28 recurrenc
 ## Paused at user request
 
 All owned evaluation services and follow-up waiters were stopped. The complete native/trained results are in `formal_comparison.json`. Complete inference-versus-training attribution remains unfinished until the untrained control is resumed and audited. Do not run the old automatic waiters or reuse an existing stage name.
+
+## Resume on2026-10-12
+
+The user authorized continuing. Frozen source/protocol checks passed. `untrained_math_resume_1012` recovers preserved answers on GPUs6/7; `untrained_ifeval_1012` runs on GPUs4/5. Each keeps two replicas and evaluation concurrency8. The old interruption and its cost remain recorded; no P2 training was started. The paused-work section above describes the historical stop.
